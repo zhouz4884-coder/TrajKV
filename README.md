@@ -1,3 +1,15 @@
+## Latest: Round 5 — 2026-11-14
+
+[Research report](docs/RESEARCH_PROGRESS_2026-11-14_round5.zh.md) · [Current goal and outcome](docs/GOAL_2026-11-14_v6_REPRESENTATION_AND_REFINEMENT.md) · [Figures and source data](figures/round5_final/figure_manifest.json) · [Incremental raw evidence](https://github.com/zhouz4884-coder/TrajKV/releases/tag/research-round5-20261114)
+
+On 64 new DocVQA source documents / 256 questions, the frozen primary reached **91.445 ANLS at 1.79942 bits per visual-KV scalar**, versus **87.818 at 2.25223 bits** for Base2: **20.1% fewer visual-KV bytes and +3.63pp ANLS** (paired 95% CI +0.87 to +6.47pp; prespecified Holm p=.0244).
+
+Native4 reached 93.495, so the 0.5pp target remains unmet. New-image TextVQA transfer and matched-output timing are reported separately; the current primary is about 11.1% slower than Base2 in the small matched-output timing control. No complete 5,000 x 8 benchmark restart was performed.
+
+This update preserves the earlier history and release. Numerical budgets include actual visual-cache/position payload and the specified encoder constants; text KV remains FP16. The combination and allocator ports are attributed to their prior work in the report.
+
+---
+
 # TrajKV — 视觉KV极低比特研究记录
 
 本仓库汇总2026-11-12起的研究进展、完整模型GPU实验、代码、结果表、科学图和证据。当前处于方法探索阶段；研究结论与尚未验证的设想分别保留。

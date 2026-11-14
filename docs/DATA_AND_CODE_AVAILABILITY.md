@@ -4,7 +4,7 @@ This is a research-progress archive. No target journal or final manuscript has b
 
 ## Data Availability
 
-The generated result tables, figure source data, calibration parameter artifacts and experiment metadata are provided in the project repository at `https://github.com/zhouz4884-coder/TrajKV`. Versioned evidence archives contain derived, path-redacted execution records and source snapshots. Original-run hashes and public-export hashes have distinct scopes and are recorded separately; transformed files are not presented as byte-identical originals.
+The generated result tables, figure source data, calibration parameter artifacts and experiment metadata are provided in the project repository at `__PUBLIC_REPOSITORY_URL__`. Versioned evidence archives contain derived, path-redacted execution records and source snapshots. Original-run hashes and public-export hashes have distinct scopes and are recorded separately; transformed files are not presented as byte-identical originals.
 
 The underlying benchmark images are reused public data obtained from the documented upstream sources. They and the pretrained model weights are not repackaged here. Current source-disjoint DocVQA and TextVQA cohorts use pinned validation exports and preserve original image bytes. Membership files record source IDs, selection rules and image hashes. Historical legacy cohorts also retain their input hashes and provenance notes; some historical asset encodings require the original legacy assets for exact replay.
 
