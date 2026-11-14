@@ -1,0 +1,172 @@
+{
+  "at_utc": "2026-11-13T20:05:59.758414+00:00",
+  "dataset": "configs/a2/docvqa_next_dev64.json",
+  "dataset_sha256": "69b6ee23e9cd00a8d42e22b5c16e68747e3acb8df87decca0e474a908d42510e",
+  "images": 64,
+  "questions": 255,
+  "variants": [
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "name": "base2_8",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "kvarn2_8_quality_port",
+      "method": "kvarn2",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "native_k2v1_8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "v_layout": "channel",
+      "name": "k2_lloyd_v1",
+      "k_encoder": "rtn",
+      "v_encoder": "lloyd"
+    },
+    {
+      "name": "previous_frozen_primary",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "k_fold_gain": "head_residual_norm",
+      "k_fold_factor_path": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/fit_cold/factors.json",
+      "v_fold_factor_path": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/fit_cold/factors.json",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq2_v1",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "name": "cold_first_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s0_v2/first_gain/factors.json"
+    },
+    {
+      "name": "cold_multi_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s0_v2/multi_gain/factors.json"
+    },
+    {
+      "name": "cold_multi_affine",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s0_v2/multi_affine/factors.json"
+    },
+    {
+      "name": "warm_first_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/first_gain/factors.json"
+    },
+    {
+      "name": "warm_multi_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/multi_gain/factors.json"
+    },
+    {
+      "name": "warm_multi_affine",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/multi_affine/factors.json"
+    }
+  ],
+  "expected_sessions": 896,
+  "jobs": [
+    "trajectory_development64_s0_v1",
+    "trajectory_development64_s1_v1"
+  ],
+  "config_sha256": {
+    "trajectory_development64_s0_v1.json": "e9b4cb69f92b55c2dbd92bd6924daa2cb50fd8d64c70ac7da417f580585931d9",
+    "trajectory_development64_s1_v1.json": "ec92b9b371916be6f277594afbd5dd478da266627b7af329d31fec054f868400"
+  },
+  "status": "prepared, not launched; requires packed affine integration and GPU arithmetic parity check",
+  "role": "development only, all observed scores may inform selection; confirm256 still unused"
+}

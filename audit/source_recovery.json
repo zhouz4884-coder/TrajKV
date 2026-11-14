@@ -1,0 +1,47 @@
+{
+  "schema": "trajkv.source_recovery.v1",
+  "created_at": "2026-11-12T21:03:51.515054+08:00",
+  "status": "PASS_ALL_THREE_DECLARED_SOURCE_GAPS_EXACT_HASH",
+  "original_manifests_modified": false,
+  "old_assets_modified": false,
+  "gpu_used": false,
+  "broad_session_logs_read": false,
+  "recovery_objects": [
+    {
+      "name": "run_cycle.py",
+      "sha256": "ab58c28ef49528d19f0adf5b2bf87c6493964fbf6a83c6afde356815ff9e5026",
+      "bytes": 17103,
+      "object": "audit\\recovered-by-content-hash\\ab58c28ef49528d19f0adf5b2bf87c6493964fbf6a83c6afde356815ff9e5026\\run_cycle.py",
+      "method": "byte_copy_from_immutable_job_source",
+      "source": "audit\\job_sources\\fidelity_dev8_gpu1_v2.source\\code\\experiments\\run_cycle.py",
+      "source_sha256": "ab58c28ef49528d19f0adf5b2bf87c6493964fbf6a83c6afde356815ff9e5026",
+      "remote_source": "/path/to/TrajKV/jobs/fidelity_dev8_gpu1_v2.source/code/experiments/run_cycle.py",
+      "target_manifests": [
+        "results/fidelity_dev8_gpu1_v2/manifest.json"
+      ]
+    },
+    {
+      "name": "bank.py",
+      "sha256": "be3de3fa2b119168d78f877b45498a9330fc15e63c358899f949c08e07403122",
+      "bytes": 8529,
+      "object": "audit\\recovered-by-content-hash\\be3de3fa2b119168d78f877b45498a9330fc15e63c358899f949c08e07403122\\bank.py",
+      "method": "reverse_known_constructor_cleanup_revision_then_require_exact_target_sha256",
+      "base_candidate": "audit\\source_recovery_candidates\\bank_5701.candidate.py",
+      "base_sha256": "5701ca1b374ead4fc5365018147c19aaf2b39d9d628946ad27b46cb4bb8709b7",
+      "base_remote_source": "/path/to/TrajKV/results/kvarn_dev8_gpu0_v1/source_snapshot/bank.py",
+      "changes": [
+        "replace __init__(*args,**kwargs)/try/_initialize wrapper with original typed __init__",
+        "remove early self.cache=cache added by cleanup wrapper",
+        "preserve LF encoding and every other byte"
+      ],
+      "diff": "audit\\recovered-by-content-hash\\be3de3fa2b119168d78f877b45498a9330fc15e63c358899f949c08e07403122\\known_revision_reversal.patch",
+      "diff_sha256": "e0368b42efc5c8c6e6ce8aac90168719a0021ae4eadd68c8e71df6b1a5e00bbc",
+      "candidate_variants_checked": 8,
+      "target_manifests": [
+        "results/mechanism_dev8_gpu1_v1/manifest.json",
+        "results/mechanism_gpu1_smoke_v1/manifest.json"
+      ]
+    }
+  ],
+  "decision": "Archive only exact SHA256 matches; do not rewrite original manifest or claim original run-local snapshot existed."
+}

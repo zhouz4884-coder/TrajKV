@@ -1,0 +1,30 @@
+{
+  "schema": "trajkv.external-ocr.split.v1",
+  "source": "/path/to/benchmark_samples\\textvqa_samples.jsonl",
+  "source_sha256": "19b3acdb371fcd71a812bc7b51098b52efbec04828b14dc672f7c4bf5c626369",
+  "source_rows": 1000,
+  "eligible_unique_images": 641,
+  "excluded": [],
+  "selection": "first32 and next128 eligible content hashes, first source QA per image; no model outcomes used",
+  "split_hashes": {
+    "textvqa_dev32.json": "f882192ccc1fefec288b5e66ad63d063a6f3adf6fc000bf60bebbc7c0b1f1fe5",
+    "textvqa_dev32_refs.json": "f12e816e56cd77ca2b8b8a132f98a8d3c2a326ef6a383f40da3d28ab1b656fcb",
+    "textvqa_eval128.json": "b29a48d507e73c1c7e61577aeab8cb2cb43112844a4dfb1c86f7c215b8a8262c",
+    "textvqa_eval128_refs.json": "f0ebd32c3c98f6570eba16e01bca3fb6ab8e0b80678fa7a50e0595bf10b633fb"
+  },
+  "inference_started": false,
+  "metric": "official TextVQA normalized10-annotator leave-one-out soft accuracy; ANLS only secondary if requested",
+  "history_boundary": "current-cycle prospective external split; prior whole-project exposure not exhaustively audited",
+  "path_revision_before_inference": {
+    "old_manifest_hashes": {
+      "textvqa_dev32.json": "01e210bdd5af38415987e67c248a2097e9be7e0b9168f7dcb0f92f909c9f8b53",
+      "textvqa_eval128.json": "11900fa5e4b1029710c4f7eca66ebdf730f423ecca7c53ce1887b92e129c1ab0"
+    },
+    "reason": "historical remote image filenames use a different subset/order; fresh content-addressed image copies, membership unchanged",
+    "new_manifest_hashes": {
+      "textvqa_dev32.json": "f882192ccc1fefec288b5e66ad63d063a6f3adf6fc000bf60bebbc7c0b1f1fe5",
+      "textvqa_eval128.json": "b29a48d507e73c1c7e61577aeab8cb2cb43112844a4dfb1c86f7c215b8a8262c"
+    },
+    "images": 160
+  }
+}

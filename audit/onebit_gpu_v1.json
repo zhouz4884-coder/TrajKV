@@ -1,0 +1,1768 @@
+{
+  "label": "TrajKV local 1-bit progressive extension; not official KIVI",
+  "evidence_scope": "synthetic_correctness_only_no_model_or_heldout_data",
+  "source_audit": {
+    "legacy_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1",
+    "local_sha256": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+    "kernel_arithmetic_only_changed_by_refinement_split": true,
+    "diff": "--- legacy/p202_fused.py\n+++ local/fused_progressive.py\n@@ -3,11 +3,39 @@\n Uses the established tiled online-softmax algorithm (FlashAttention;\n https://triton-lang.org/main/getting-started/tutorials/06-fused-attention.html).\n Our layout reads visual backing and append-only text directly; no KV concatenation.\n-The packed path reads KIVI2-g128 directly. No split-K or backward support.\n+Local extension: base 1/2/4-bit g128, independent K-r2 / V-sign reads.\n+1-bit is a TrajKV local extension, NOT official KIVI. No split-K or backward support.\n \"\"\"\n import torch\n import triton\n import triton.language as tl\n+\n+\n+def unpack_last_generic(code, bits):\n+    \"\"\"Independent uint32-word reference, including local 1-bit codes.\n+\n+    The official generic Triton encoder stores 32//bits consecutive scalars\n+    in each int32 word, lowest position in the lowest bits. Zero-extending\n+    signed words before shifting also exercises a set high/sign bit safely.\n+    \"\"\"\n+    if bits not in (1, 2, 4):\n+        raise ValueError('Supported local base widths are 1, 2, 4')\n+    word = code.to(torch.int64) & 0xffffffff\n+    shifts = torch.arange(32 // bits, device=code.device, dtype=torch.int64) * bits\n+    values = (word.unsqueeze(-1) >> shifts) & ((1 << bits) - 1)\n+    return values.reshape(*code.shape[:-1], code.shape[-1] * (32 // bits)).to(torch.int16)\n+\n+\n+def decode_last_generic(code, scale, minimum, group_size=128, bits=2):\n+    \"\"\"Reference matching separate FP16 multiply/add in the fused base path.\"\"\"\n+    values = unpack_last_generic(code, bits)\n+    if values.shape[-1] % group_size:\n+        raise ValueError('Incomplete reference quantization group')\n+    groups = values.reshape(*values.shape[:-1], -1, group_size)\n+    if tuple(scale.shape) != tuple(groups.shape[:-1]) or scale.shape != minimum.shape:\n+        raise ValueError('Metadata does not match the packed tensor groups')\n+    decoded = groups.to(scale.dtype) * scale[..., None]\n+    return (decoded + minimum[..., None]).reshape(values.shape).contiguous()\n \n \n @triton.jit\n@@ -17,7 +45,7 @@\n           vs0: tl.constexpr, vs1: tl.constexpr,\n           ts0: tl.constexpr, ts1: tl.constexpr,\n           H: tl.constexpr, G: tl.constexpr, D: tl.constexpr,\n-          PACKED: tl.constexpr, NVFULL: tl.constexpr, BITS: tl.constexpr, REFINE: tl.constexpr, OBSERVE: tl.constexpr,\n+          PACKED: tl.constexpr, NVFULL: tl.constexpr, BITS: tl.constexpr, REFINE_K: tl.constexpr, REFINE_V: tl.constexpr, OBSERVE: tl.constexpr,\n           SELECTED: tl.constexpr, NI: tl.constexpr,\n           BM: tl.constexpr, BN: tl.constexpr):\n     bh = tl.program_id(1)\n@@ -54,7 +82,7 @@\n                 vs=tl.load(VS+owner*NVFULL*(D//128)+offset[:,None]*(D//128)+dims[None,:]//128,valid[:,None],0)\n                 vm=tl.load(VM+owner*NVFULL*(D//128)+offset[:,None]*(D//128)+dims[None,:]//128,valid[:,None],0)\n                 v=((vi.to(tl.float16)*vs).to(tl.float16)+vm).to(tl.float16)\n-                if REFINE:\n+                if REFINE_K:\n                     total=(H//G)*D*NVFULL//8\n                     ix=(owner*D+dims[:,None])*NVFULL+offset[None,:]\n                     a=tl.load(RK+ix//8,valid[None,:],0)\n@@ -64,6 +92,7 @@\n                     rm=tl.load(RKM+owner*D*(NVFULL//128)+dims[:,None]*(NVFULL//128)+offset[None,:]//128,valid[None,:],0).to(tl.float32)\n                     residual=code.to(tl.float32)*rs+rm\n                     k=(k.to(tl.float32)+residual).to(tl.float16)\n+                if REFINE_V:\n                     ix=(owner*NVFULL+offset[:,None])*D+dims[None,:]\n                     a=tl.load(RV+ix//8,valid[:,None],0)\n                     code=(a>>(ix%8))&1\n@@ -99,18 +128,26 @@\n     tl.store(O+((batch*H+head)*nq+rows[:, None])*D+dims[None, :], output, rows[:, None] < nq)\n \n \n-def attention(query, state, selected=None, query_start=None, refinement=None, bits=2, observe=False):\n+def attention(query, state, selected=None, query_start=None, refinement=None, bits=2, observe=False,\n+              refine_k=True, refine_v=True):\n     if query.dtype != torch.float16 or query.shape[-1] not in (16, 32, 64, 128):\n         raise ValueError('FP16 power-of-two head dimensions 16..128 required')\n     if query.shape[-1] != state.text_k.shape[-1] or query.stride(-1) != 1:\n         raise ValueError('Incompatible query layout')\n     b, h, n, d = query.shape\n-    assert b==1 and bits in (2,4)\n-    assert refinement is None or bits==2\n+    assert b==1 and bits in (1,2,4)\n+    active_k = refinement is not None and bool(refine_k)\n+    active_v = refinement is not None and bool(refine_v)\n+    if (active_k or active_v) and bits not in (1,2):\n+        raise ValueError(\"K-r2/V-sign refinement requires a 1/2-bit base\")\n+    if refinement is not None and len(refinement) != 6:\n+        raise ValueError(\"Expected six residual tensors: RK,RKS,RKM,RV,RVS,RVM\")\n     if h % state.text_k.shape[1]:\n         raise ValueError('Invalid GQA ratio')\n     groups = h // state.text_k.shape[1]\n     packed=hasattr(state,'k_code')\n+    if (active_k or active_v) and not packed:\n+        raise ValueError('Residual refinement requires a packed visual state')\n     if packed and (d!=128 or state.visual_pos.numel()%128):\n         raise ValueError('Packed g128 path requires head_dim=128 and complete visual groups')\n     vk=state.k_code if packed else state.visual_k\n@@ -125,6 +162,6 @@\n         *meta, *(refinement if refinement is not None else [query]*6), norm,\n         n, nv, state.text_length, state.length-n if query_start is None else query_start,\n         *query.stride()[:3], *vk.stride()[:2], *state.text_k.stride()[:2],\n-        h, groups, d, packed, state.visual_pos.numel(), bits, refinement is not None, observe, selected is not None, nv, 16, 32,\n+        h, groups, d, packed, state.visual_pos.numel(), bits, active_k, active_v, observe, selected is not None, nv, 16, 32,\n         num_warps=4, num_stages=2, enable_fp_fusion=False)\n     return (output,norm) if observe else output\n",
+    "index_reasoning": [
+      "base words hold 32//BITS scalars; BITS=1 gives 32 per int32 word",
+      "K base offset = owner*D*(NVFULL/pack) + channel*(NVFULL/pack) + token/pack",
+      "V base offset = owner*NVFULL*(D/pack) + token*(D/pack) + channel/pack",
+      "K residual planes retain owner-major [KV-head,D,NVFULL] flattening",
+      "V residual sign retains owner-major [KV-head,NVFULL,D] flattening",
+      "original visual/text positions, GQA owner mapping and causal mask are unchanged",
+      "batch remains restricted to one; visual count/head_dim must satisfy g128 constraints"
+    ]
+  },
+  "cpu": {
+    "status": "PASS_CPU_PACKING_AND_METADATA",
+    "base_width_checks": [
+      {
+        "bits": 1,
+        "signed_word_roundtrip": true,
+        "group_metadata_decode": true,
+        "negative_word_exercised": true
+      },
+      {
+        "bits": 2,
+        "signed_word_roundtrip": true,
+        "group_metadata_decode": true,
+        "negative_word_exercised": true
+      },
+      {
+        "bits": 4,
+        "signed_word_roundtrip": true,
+        "group_metadata_decode": true,
+        "negative_word_exercised": true
+      }
+    ],
+    "residual_bitplane_roundtrip": true,
+    "gpu_used": false
+  },
+  "torch": "2.4.1+cu121",
+  "official_encoder_sha256": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+  "storage_policy": "base plus both refinements fixed across K/V read ablations",
+  "planned_gpu_cases": 54,
+  "not_established": [
+    "model_quality_gain",
+    "end_to_end_speedup",
+    "physical_dram_traffic"
+  ],
+  "gpu": {
+    "status": "PASS_GPU_NUMERICAL_CHECK",
+    "gpu_used": true,
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "atol": 0.02,
+    "rtol": 0.02,
+    "results": [
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.001953125,
+          "relative_l2": 0.0001719924621284008
+        },
+        "logsumexp_error": {
+          "max_abs": 2.86102294921875e-06,
+          "relative_l2": 2.0893033081392787e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 2.60595703125,
+          "relative_l2": 11.024027824401855
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.001953125,
+          "relative_l2": 0.00010683472646633163
+        },
+        "logsumexp_error": {
+          "max_abs": 2.86102294921875e-06,
+          "relative_l2": 2.0437596504052635e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 2.65966796875,
+          "relative_l2": 10.636417388916016
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.00048828125,
+          "relative_l2": 0.00014235012349672616
+        },
+        "logsumexp_error": {
+          "max_abs": 2.86102294921875e-06,
+          "relative_l2": 2.0893033081392787e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 3.5107421875,
+          "relative_l2": 3.6306066513061523
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.0009765625,
+          "relative_l2": 0.0001311199157498777
+        },
+        "logsumexp_error": {
+          "max_abs": 2.86102294921875e-06,
+          "relative_l2": 2.0437596504052635e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 3.60369873046875,
+          "relative_l2": 3.4803335666656494
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00022914890723768622
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 6.15885511479064e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.5377197265625,
+          "relative_l2": 1.5166159868240356
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00023132299247663468
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 6.44253432824371e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.617706298828125,
+          "relative_l2": 1.2721164226531982
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.0001220703125,
+          "relative_l2": 0.00021096110867802054
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 6.15885511479064e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.19622802734375,
+          "relative_l2": 0.5143324136734009
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.0001220703125,
+          "relative_l2": 0.00021730732987634838
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 6.44253432824371e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.25091552734375,
+          "relative_l2": 0.4078863859176636
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00025651001487858593
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 7.215968622631408e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.2989501953125,
+          "relative_l2": 0.6392635703086853
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00021038507111370564
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 5.750233000867411e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.21941375732421875,
+          "relative_l2": 0.4399566054344177
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00021574849961325526
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 7.215968622631408e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.250244140625,
+          "relative_l2": 0.4902855157852173
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00021676687174476683
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 5.750233000867411e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.20709228515625,
+          "relative_l2": 0.3322072923183441
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.0001220703125,
+          "relative_l2": 0.0002472650376148522
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.788165052284967e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.116943359375,
+          "relative_l2": 0.351418137550354
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.0002315117890248075
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 6.489234749551542e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.11712646484375,
+          "relative_l2": 0.2596898376941681
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.0001220703125,
+          "relative_l2": 0.00022704160073772073
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.788165052284967e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.0711669921875,
+          "relative_l2": 0.20433825254440308
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.0002051636838587001
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 6.489234749551542e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.07177734375,
+          "relative_l2": 0.15631480515003204
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 4,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00023820475325919688
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 6.189993939642591e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.03662109375,
+          "relative_l2": 0.09798019379377365
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 34816,
+        "all_refinement_storage_bytes": 0,
+        "fixed_visual_storage_bytes": 34816,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 4,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 1,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00022162417008075863
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-07,
+          "relative_l2": 7.67189618500197e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.03672027587890625,
+          "relative_l2": 0.07282833755016327
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 34816,
+        "all_refinement_storage_bytes": 0,
+        "fixed_visual_storage_bytes": 34816,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.001953125,
+          "relative_l2": 0.00015274708857759833
+        },
+        "logsumexp_error": {
+          "max_abs": 3.814697265625e-06,
+          "relative_l2": 1.5971725986219099e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 2.810302734375,
+          "relative_l2": 9.089365005493164
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.001953125,
+          "relative_l2": 0.00011534449004102498
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-06,
+          "relative_l2": 1.7143642594419362e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 2.94384765625,
+          "relative_l2": 9.34434986114502
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.0009765625,
+          "relative_l2": 0.00014815002214163542
+        },
+        "logsumexp_error": {
+          "max_abs": 3.814697265625e-06,
+          "relative_l2": 1.5971725986219099e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 2.9598388671875,
+          "relative_l2": 3.0370421409606934
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.00048828125,
+          "relative_l2": 0.00011557115794857964
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-06,
+          "relative_l2": 1.7143642594419362e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 4.346435546875,
+          "relative_l2": 3.078594923019409
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.00048828125,
+          "relative_l2": 0.00023544720897916704
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.144338726699061e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.837890625,
+          "relative_l2": 1.6719385385513306
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.00048828125,
+          "relative_l2": 0.00021326571004465222
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.639780281147978e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.742279052734375,
+          "relative_l2": 1.428505778312683
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.0002103817241732031
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.144338726699061e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.617767333984375,
+          "relative_l2": 0.5547202825546265
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.00048828125,
+          "relative_l2": 0.0001880783383967355
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.639780281147978e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.512451171875,
+          "relative_l2": 0.45689165592193604
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 10240,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 24064,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.0002271862467750907
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.879386577589685e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.335693359375,
+          "relative_l2": 0.5334261655807495
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00020082268747501075
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 7.368599597157299e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.3656005859375,
+          "relative_l2": 0.4577869474887848
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.0002204003685619682
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.879386577589685e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.251220703125,
+          "relative_l2": 0.40042775869369507
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00019776199769694358
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 7.368599597157299e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.3343505859375,
+          "relative_l2": 0.345202773809433
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00023177656112238765
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.738477426575628e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.17767333984375,
+          "relative_l2": 0.3637973666191101
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00021948666835669428
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.96789754783822e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.201904296875,
+          "relative_l2": 0.30483660101890564
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00022589380387216806
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.738477426575628e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.10662841796875,
+          "relative_l2": 0.2040814906358719
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.0002157669368898496
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.96789754783822e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.1126708984375,
+          "relative_l2": 0.17264260351657867
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 18432,
+        "all_refinement_storage_bytes": 13824,
+        "fixed_visual_storage_bytes": 32256,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 4,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00022680241090711206
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.087365278517609e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.04620361328125,
+          "relative_l2": 0.09289119392633438
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 34816,
+        "all_refinement_storage_bytes": 0,
+        "fixed_visual_storage_bytes": 34816,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 4,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 128,
+        "query_tokens": 17,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00022211593750398606
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.643342942425079e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.046844482421875,
+          "relative_l2": 0.07806883007287979
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 34816,
+        "all_refinement_storage_bytes": 0,
+        "fixed_visual_storage_bytes": 34816,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.001953125,
+          "relative_l2": 0.00013223117275629193
+        },
+        "logsumexp_error": {
+          "max_abs": 5.7220458984375e-06,
+          "relative_l2": 1.6342526976131921e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 3.0544795989990234,
+          "relative_l2": 11.939208030700684
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 20480,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 48128,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.001953125,
+          "relative_l2": 0.0001372810802422464
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-06,
+          "relative_l2": 1.5778655892972893e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 3.25030517578125,
+          "relative_l2": 11.64819622039795
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 20480,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 48128,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.0009765625,
+          "relative_l2": 0.00013755586405750364
+        },
+        "logsumexp_error": {
+          "max_abs": 5.7220458984375e-06,
+          "relative_l2": 1.6342526976131921e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 3.91656494140625,
+          "relative_l2": 4.020748615264893
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 20480,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 48128,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.0009765625,
+          "relative_l2": 0.0001343356561847031
+        },
+        "logsumexp_error": {
+          "max_abs": 4.76837158203125e-06,
+          "relative_l2": 1.5778655892972893e-07
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 4.268344879150391,
+          "relative_l2": 3.946019172668457
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 20480,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 48128,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.00048828125,
+          "relative_l2": 0.00022025336511433125
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.624287169325726e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.60687255859375,
+          "relative_l2": 1.7374944686889648
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 20480,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 48128,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.00048828125,
+          "relative_l2": 0.00021780708630103618
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.581218331940363e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.5194091796875,
+          "relative_l2": 1.4161477088928223
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 20480,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 48128,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00020137404499109834
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.624287169325726e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.40380859375,
+          "relative_l2": 0.5888826847076416
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 20480,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 48128,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 1,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00019791789236478508
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.581218331940363e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.40505218505859375,
+          "relative_l2": 0.4664013683795929
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": null,
+        "base_storage_bytes": 20480,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 48128,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00019535448518581688
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.205281266602469e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.409912109375,
+          "relative_l2": 0.5951070189476013
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 36864,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 64512,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00020465759735088795
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.500502098243487e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.2862548828125,
+          "relative_l2": 0.4784104526042938
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 36864,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 64512,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00019916088785976171
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.205281266602469e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.367523193359375,
+          "relative_l2": 0.46162497997283936
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 36864,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 64512,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": false,
+        "refine_v": true,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00019936703029088676
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.500502098243487e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.304443359375,
+          "relative_l2": 0.365543931722641
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 36864,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 64512,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00021422655845526606
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.630816701795993e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.153717041015625,
+          "relative_l2": 0.3824360966682434
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 36864,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 64512,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00021206465316936374
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.04505672185951e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.120635986328125,
+          "relative_l2": 0.3059510588645935
+        },
+        "legacy_kernel_error": null,
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 36864,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 64512,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00020948934252373874
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.630816701795993e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.08935546875,
+          "relative_l2": 0.22277143597602844
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 36864,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 64512,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 2,
+        "refine_k": true,
+        "refine_v": true,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.000244140625,
+          "relative_l2": 0.00020765064982697368
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 6.04505672185951e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.078369140625,
+          "relative_l2": 0.17603051662445068
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 36864,
+        "all_refinement_storage_bytes": 27648,
+        "fixed_visual_storage_bytes": 64512,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 4,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "all",
+        "same_representation_error": {
+          "max_abs": 0.0001220703125,
+          "relative_l2": 0.00020794713054783642
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.666623081879152e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.0364990234375,
+          "relative_l2": 0.10171989351511002
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 69632,
+        "all_refinement_storage_bytes": 0,
+        "fixed_visual_storage_bytes": 69632,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      },
+      {
+        "bits": 4,
+        "refine_k": false,
+        "refine_v": false,
+        "visual_tokens": 256,
+        "query_tokens": 33,
+        "kv_heads": 2,
+        "query_heads": 8,
+        "selection": "alternating_per_kv_head",
+        "same_representation_error": {
+          "max_abs": 0.0001220703125,
+          "relative_l2": 0.00020352717547211796
+        },
+        "logsumexp_error": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_l2": 5.805362945920933e-08
+        },
+        "vs_original_fp16_error": {
+          "max_abs": 0.0396728515625,
+          "relative_l2": 0.08171320706605911
+        },
+        "legacy_kernel_error": {
+          "max_abs": 0.0,
+          "relative_l2": 0.0
+        },
+        "generic_vs_legacy_decode_exact": true,
+        "base_storage_bytes": 69632,
+        "all_refinement_storage_bytes": 0,
+        "fixed_visual_storage_bytes": 69632,
+        "finite": true,
+        "numerical_tolerance_pass": true
+      }
+    ]
+  },
+  "status": "PASS_GPU_NUMERICAL_CHECK",
+  "error_matrix": [
+    {
+      "bits": 1,
+      "refine_k": false,
+      "refine_v": false,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.001953125,
+      "max_relative_l2": 0.0001719924621284008,
+      "all_pass": true
+    },
+    {
+      "bits": 1,
+      "refine_k": false,
+      "refine_v": true,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.0009765625,
+      "max_relative_l2": 0.00014815002214163542,
+      "all_pass": true
+    },
+    {
+      "bits": 1,
+      "refine_k": true,
+      "refine_v": false,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.00048828125,
+      "max_relative_l2": 0.00023544720897916704,
+      "all_pass": true
+    },
+    {
+      "bits": 1,
+      "refine_k": true,
+      "refine_v": true,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.00048828125,
+      "max_relative_l2": 0.00021730732987634838,
+      "all_pass": true
+    },
+    {
+      "bits": 2,
+      "refine_k": false,
+      "refine_v": false,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.000244140625,
+      "max_relative_l2": 0.00025651001487858593,
+      "all_pass": true
+    },
+    {
+      "bits": 2,
+      "refine_k": false,
+      "refine_v": true,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.000244140625,
+      "max_relative_l2": 0.0002204003685619682,
+      "all_pass": true
+    },
+    {
+      "bits": 2,
+      "refine_k": true,
+      "refine_v": false,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.000244140625,
+      "max_relative_l2": 0.0002472650376148522,
+      "all_pass": true
+    },
+    {
+      "bits": 2,
+      "refine_k": true,
+      "refine_v": true,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.000244140625,
+      "max_relative_l2": 0.00022704160073772073,
+      "all_pass": true
+    },
+    {
+      "bits": 4,
+      "refine_k": false,
+      "refine_v": false,
+      "gpu_cases_measured": 6,
+      "max_abs_error": 0.000244140625,
+      "max_relative_l2": 0.00023820475325919688,
+      "all_pass": true
+    }
+  ],
+  "old_source_unchanged": true
+}

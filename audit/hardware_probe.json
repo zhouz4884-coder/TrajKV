@@ -1,0 +1,76 @@
+{
+  "schema": "trajkv.hardware_probe.v1",
+  "checked_at": "2026-11-12T22:24:00.769035+08:00",
+  "status": "HARDWARE_COUNTER_UNAVAILABLE_CUDA_INIT_ERROR36",
+  "ncu_version": "2020.3.1.0 (build 29567428)",
+  "ncu_paths": [
+    "/usr/local/cuda-11.2/bin/ncu",
+    "/usr/local/cuda/bin/ncu"
+  ],
+  "gpu_model": "NVIDIA GeForce RTX 3090",
+  "driver_version": "570.133.07",
+  "metrics_available": [
+    "dram__bytes_read.sum",
+    "dram__bytes_write.sum"
+  ],
+  "permission_preflight": {
+    "RmProfilingAdminOnly": 0,
+    "uid": 1000,
+    "counter_access_verified_by_kernel": false
+  },
+  "actual_error": "RuntimeError: cudaGetDeviceCount Error 36: API call is not supported in the installed CUDA driver",
+  "profiler_error": "The application returned an error code (1). No kernels were profiled.",
+  "captured_kernels": 0,
+  "physical_dram_read_bytes": null,
+  "physical_dram_write_bytes": null,
+  "profile_pass_count": null,
+  "profiling_request": {
+    "method": "asym",
+    "policy": "probe_l7_t0.02",
+    "profile_from_start": "off",
+    "target_layer": 7,
+    "launch_count": 2,
+    "cache_control": "none",
+    "clock_control": "none",
+    "replay_mode": "kernel",
+    "metrics": [
+      "dram__bytes_read.sum",
+      "dram__bytes_write.sum"
+    ]
+  },
+  "version_adjustment": "This ncu version exposes --kernel-regex; used _read.* instead of unsupported modern --kernel-name syntax.",
+  "profiler_behavior_limit": "No metric collection reached. cache-control none and clock-control none were requested; replay/pass and L2 effects cannot be assessed.",
+  "interpretation": "No hardware memory-traffic or speed conclusion. Logical tensor payload remains a separate proxy. CUDA-init error under NCU injection is recorded; version/driver incompatibility is plausible but not independently isolated.",
+  "gpu0_release": {
+    "side_check_worker_pid": 195226,
+    "worker_exit_observed": true,
+    "gpu0_compute_processes_empty_when_released": true,
+    "root_notified_before_replication_launch": true
+  },
+  "gpu1_untouched": true,
+  "no_sudo_or_driver_changes": true,
+  "no_retry_after_failure": true,
+  "artifacts": {
+    "results/hardware_probe_v1/complete.json": "0c977bdd6fa6b689580b789fd589e19f727e094c6cab7820cbba55c54be7d7c9",
+    "results/hardware_probe_v1/job.json": "3e560cbf3c6abfe0c1b6f678d752b942f6b86223f0c1b7f14c9b33140a5451f3",
+    "results/hardware_probe_v1/job_source_sha256.json": "8f5d228f65d7cb9bb02973a2ffeffe3e3d428724dc532dd492a1d74740c5ffed",
+    "results/hardware_probe_v1/launch_receipt.json": "6bea7c065e89c2696d6b4cf42f4a15bc3550d4d08cf2ab4e1627a80e7d5b5545",
+    "results/hardware_probe_v1/manifest.json": "ffc87e05070f9ee3d3fa497f425d48b9fd3eefcbd49344e95e5ea8ae74897934",
+    "results/hardware_probe_v1/preflight_0.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/hardware_probe_v1/preflight_0.stdout.txt": "7e5682528ba8c8a30efe830d497eb414e635a2fd64b208ed526c22e6a9fd66e4",
+    "results/hardware_probe_v1/preflight_1.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/hardware_probe_v1/preflight_1.stdout.txt": "7e5682528ba8c8a30efe830d497eb414e635a2fd64b208ed526c22e6a9fd66e4",
+    "results/hardware_probe_v1/preflight_2.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results/hardware_probe_v1/preflight_2.stdout.txt": "909558eff5e84ceb580a83cc7730ceda25f3f5ed77d690dfa06867e5a7515e30",
+    "results/hardware_probe_v1/raw_metrics.csv": "ff5ba456111315d10d26aa1225d8c3a05231f549490b407543cd8a2c5774db0d",
+    "results/hardware_probe_v1/raw_stdout_stderr.txt": "2b05f2bf769a8a40997529b66c5887a228c955afe1861e32ae433840479094d4"
+  },
+  "sources": {
+    "results/hardware_probe_v1/source_snapshot/bank.py": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+    "results/hardware_probe_v1/source_snapshot/new_pack.py": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+    "results/hardware_probe_v1/source_snapshot/p202_fused.py": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1",
+    "results/hardware_probe_v1/source_snapshot/profile_probe.py": "cb3961f4abff8527d697d98e17081aaa69dc411df726d93e2f4c252240cb36bc",
+    "results/hardware_probe_v1/source_snapshot/run_cycle.py": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+    "results/hardware_probe_v1/source_snapshot/self_probe.py": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "variants": [
+    {
+      "name": "full16",
+      "method": "full",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 8
+    },
+    {
+      "name": "base2",
+      "method": "base2",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 8
+    },
+    {
+      "name": "kvarn2_8",
+      "method": "kvarn2",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 8
+    },
+    {
+      "name": "kvarn2_16",
+      "method": "kvarn2",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "base1",
+      "method": "base1",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "k_only",
+      "method": "asym1_k",
+      "selector": "all",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "v_only",
+      "method": "asym1_v",
+      "selector": "all",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "native_k2v1_8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "native_k2v1_16",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 16,
+      "store_selector_meta": false
+    },
+    {
+      "name": "a2_none",
+      "method": "asym",
+      "selector": "none",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_random",
+      "method": "asym",
+      "selector": "random",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_mass",
+      "method": "asym",
+      "selector": "mass",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_risk",
+      "method": "asym",
+      "selector": "risk",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_layer_uniform",
+      "method": "asym",
+      "selector": "layer_uniform",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "hybrid_packed_8",
+      "method": "hybrid_packed",
+      "clip_v": 0.3,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "hybrid_packed_16",
+      "method": "hybrid_packed",
+      "clip_v": 0.3,
+      "cap": 16,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib1_post",
+      "method": "calibpost",
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": -3.0,
+      "cap": 16,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib_k2v1_tau0",
+      "method": "calibpost",
+      "bits_k": 2,
+      "bits_v": 1,
+      "clip_k": 1.0,
+      "clip_v": 0.3,
+      "tau": 0,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib_k2v1_tau3",
+      "method": "calibpost",
+      "bits_k": 2,
+      "bits_v": 1,
+      "clip_k": 1.0,
+      "clip_v": 0.3,
+      "tau": -3,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib_k2v2_tau3",
+      "method": "calibpost",
+      "bits_k": 2,
+      "bits_v": 2,
+      "clip_k": 1.0,
+      "clip_v": 1.0,
+      "tau": -3,
+      "cap": 8,
+      "store_selector_meta": false
+    }
+  ],
+  "questions": "dev8,37 total",
+  "first_token": "compression before first question, no shared FP16 answer token",
+  "candidate_selection": "development only; all failures retained; confirmation not started"
+}

@@ -1,0 +1,36 @@
+{
+  "created_at_utc": "2026-11-14T05:35:35.896818+00:00",
+  "reason": "OS Errno28 in home-based Triton cache; home free0, project data volume about6.5TB free",
+  "run_mapping": {
+    "metadata_confirm_doc_s0_v1": "metadata_confirm_doc_s0_v2",
+    "metadata_confirm_doc_s1_v1": "metadata_confirm_doc_s1_v2",
+    "metadata_confirm_text_s0_v1": "metadata_confirm_text_s0_v2",
+    "metadata_confirm_text_s1_v1": "metadata_confirm_text_s1_v2",
+    "metadata_timing_gpu0_v1": "metadata_timing_gpu0_v2"
+  },
+  "config_mapping": {
+    "metadata_confirm_doc_s0_v2": "configs/a2/metadata_confirm_doc_s0_v1.json",
+    "metadata_confirm_doc_s1_v2": "configs/a2/metadata_confirm_doc_s1_v1.json",
+    "metadata_confirm_text_s0_v2": "configs/a2/metadata_confirm_text_s0_v1.json",
+    "metadata_confirm_text_s1_v2": "configs/a2/metadata_confirm_text_s1_v1.json",
+    "metadata_timing_gpu0_v2": "configs/a2/metadata_timing_gpu0_v1.json"
+  },
+  "environment": {
+    "HF_HUB_OFFLINE": "1",
+    "HF_HUB_DISABLE_PROGRESS_BARS": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/metadata_execution_v2/triton",
+    "TMPDIR": "/path/to/TrajKV/cache/metadata_execution_v2/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/metadata_execution_v2/inductor",
+    "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/metadata_execution_v2/cuda",
+    "CUDA_CACHE_MAXSIZE": "1073741824"
+  },
+  "method_data_parameter_changes": false,
+  "frozen_contract_sha256": "7880e137fe5514b6fdf39544051f647b4e415ddcd19d0a69087b868f66d24be0",
+  "preserved_failed_complete_sessions": [
+    61,
+    71
+  ],
+  "partial_scores_used_for_selection": false,
+  "restart_scope": "rerun complete fixed cohorts with identical original method configs, source and parameters; compare132 completed prior sessions as repeat controls; no cache deletion or global environment change"
+}

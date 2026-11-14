@@ -1,0 +1,83 @@
+{
+  "created_at_utc": "2026-11-13T19:53:50.948467+00:00",
+  "membership_sha256": "92843f073a16ce47ce0f081af3d4b324507f518edf624579ea6f35cf7b5f4014",
+  "calibration_images": 32,
+  "independent_question_cases": 83,
+  "labels_used": false,
+  "cases_sha256": "b615cd5eff5a4fc3d039a3db98f5f76e2eaec8e9c8020942885096691af36a48",
+  "design": [
+    {
+      "job": "trajectory_next32_s0_v1",
+      "task": "first_gain",
+      "mode": "compressed_question",
+      "targets": 1,
+      "parameters": 224,
+      "config_sha256": "66c6aaaaf150d9e6c1994deeb3439994d4800b269064f80694aad8922d88ca1c"
+    },
+    {
+      "job": "trajectory_next32_s0_v1",
+      "task": "multi_gain",
+      "mode": "compressed_question",
+      "targets": 8,
+      "parameters": 224,
+      "config_sha256": "5dd89a8b61b6299743a372bacc3c11c5914fa5399e0d3ddf3c7dd49785c13447"
+    },
+    {
+      "job": "trajectory_next32_s0_v1",
+      "task": "multi_affine",
+      "mode": "compressed_question",
+      "targets": 8,
+      "parameters": 448,
+      "config_sha256": "e5ca5d209114d1ff9848fd52d0869173b2433586e363f0ef9239ca83c9d679e4"
+    },
+    {
+      "job": "trajectory_next32_s1_v1",
+      "task": "first_gain",
+      "mode": "native_question_history",
+      "targets": 1,
+      "parameters": 224,
+      "config_sha256": "acb04a6bf9ec32078d169cf727dae77bb2cc06124f37816032a8772cb0dc8217"
+    },
+    {
+      "job": "trajectory_next32_s1_v1",
+      "task": "multi_gain",
+      "mode": "native_question_history",
+      "targets": 8,
+      "parameters": 224,
+      "config_sha256": "dd2f094c7fcb2a9051bbef8ab0aa5b16e2917a9118482294f11353b8bd2bcc55"
+    },
+    {
+      "job": "trajectory_next32_s1_v1",
+      "task": "multi_affine",
+      "mode": "native_question_history",
+      "targets": 8,
+      "parameters": 448,
+      "config_sha256": "962aae1a6e1344910816fa449b3ea86482a008fec38ae84d04218c92407bf9c4"
+    }
+  ],
+  "jobs": [
+    "trajectory_next32_s0_v1",
+    "trajectory_next32_s1_v1"
+  ],
+  "fixed_conditions": "same cases,400 updates, Adam0.01, regularizer0.001, identity K2 initialization, frozen model, all other input and value encoding identical",
+  "teacher": "FP16 self-generated answer trajectory up to8 tokens, first1 for first-token arms; no GT answers",
+  "center_scope": "add headwise offset in final quantizer scale units to existing minimum; no additional packed decoder tensor",
+  "selection": "after evaluating actual packed free generation on new source-disjoint dev64, choose the best <=1.8bit candidate; break ties by conservative bits then name; keep old frozen candidate and strong references; freeze before confirm256",
+  "confirmation": "256 source-disjoint documents/999 questions remain unused, selected by fixed ID hash before fitting",
+  "source_sha256": {
+    "prepare_next_trajectory.py": "8c2708e5bbca71d37bbd22d639e17a17f493dbe6dac5e355b7317c14397bbc7f",
+    "calibrate_trajectory_affine.py": "84c50effe0f65bb5ec978beb68c2ed601872728863e68b05f1f77aad2f07cfb6"
+  },
+  "config_sha256": {
+    "configs/a2/trajectory_next32_s0_v1_gradient_check.json": "f65fa2056735ed16bc3de44149add4376ba8e4b1773935af15d1c278de890c18",
+    "configs/a2/trajectory_next32_s0_v1_first_gain.json": "66c6aaaaf150d9e6c1994deeb3439994d4800b269064f80694aad8922d88ca1c",
+    "configs/a2/trajectory_next32_s0_v1_multi_gain.json": "5dd89a8b61b6299743a372bacc3c11c5914fa5399e0d3ddf3c7dd49785c13447",
+    "configs/a2/trajectory_next32_s0_v1_multi_affine.json": "e5ca5d209114d1ff9848fd52d0869173b2433586e363f0ef9239ca83c9d679e4",
+    "configs/a2/trajectory_next32_s0_v1_queue.json": "4d48fba73d7a312beafa7a9a8d327e9beac74e4b2d1591415c13c10e55e1d480",
+    "configs/a2/trajectory_next32_s1_v1_gradient_check.json": "e17502fb3b5fc60fd1116066c25201b8a939e5d1dff64e7b7050a5d3f4f54ddc",
+    "configs/a2/trajectory_next32_s1_v1_first_gain.json": "acb04a6bf9ec32078d169cf727dae77bb2cc06124f37816032a8772cb0dc8217",
+    "configs/a2/trajectory_next32_s1_v1_multi_gain.json": "dd2f094c7fcb2a9051bbef8ab0aa5b16e2917a9118482294f11353b8bd2bcc55",
+    "configs/a2/trajectory_next32_s1_v1_multi_affine.json": "962aae1a6e1344910816fa449b3ea86482a008fec38ae84d04218c92407bf9c4",
+    "configs/a2/trajectory_next32_s1_v1_queue.json": "a73f4f81b253be45e1e41f3c7410c1e4143a1f5020b3c4cc90c8bc4037e83bd0"
+  }
+}

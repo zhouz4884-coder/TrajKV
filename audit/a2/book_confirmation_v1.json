@@ -1,0 +1,404 @@
+{
+  "frozen_at_utc": "2026-11-14T02:12:09.679232+00:00",
+  "candidate": "decoder_warm_joint",
+  "development_selected_row": {
+    "variant": "decoder_warm_joint",
+    "images": 64,
+    "questions": 255,
+    "anls": 0.8869873605839079,
+    "ci_low": 0.842655856860655,
+    "ci_high": 0.9260942897544657,
+    "exact": 0.796078431372549,
+    "effective_visual_bits": 1.730049603174603,
+    "budget_bits_including_encoder_constants": 1.730188492063492,
+    "encoder_constants_bytes_per_session": 896.0,
+    "role": "actual packed runtime",
+    "visual_bytes_total": 714297344,
+    "extra_reads_total": 11693585792,
+    "logical_cache_reads_total": 41484231040,
+    "free_session_seconds_median": 1.9771962564991554,
+    "cache_reused_calls": 0,
+    "cache_fresh_calls": 0
+  },
+  "development_quality_reference": "native4_8",
+  "selection_rule": "among actual packed candidates <=1.8bits, choose cheapest within0.5pp of fixed Native4 reference; otherwise highest complete dev ANLS, break ties by actual bytes then name",
+  "development_target_met": false,
+  "variants": [
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "name": "base2_8",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "v_layout": "channel",
+      "name": "k2_lloyd_v1",
+      "k_encoder": "rtn",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq2_v1",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "fwht_global"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "fwht_untrained_headwise",
+      "untrained_headwise_control": true
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_cold_book_only",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s0_v2/book_only/decoder_books.json"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_cold_joint",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s0_v2/joint/decoder_books.json"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_book_only",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/book_only/decoder_books.json"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_joint",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_cold_joint_konly",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s0_v2/joint/decoder_books.json",
+      "apply_value_metadata": false
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_cold_joint_vonly",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s0_v2/joint/decoder_books.json",
+      "apply_key_decoder": false
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_joint_konly",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json",
+      "apply_value_metadata": false
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_joint_vonly",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json",
+      "apply_key_decoder": false
+    },
+    {
+      "name": "calib2_fp32",
+      "method": "calib_packed",
+      "bits_k": 2,
+      "bits_v": 2,
+      "clip_k": 1.0,
+      "clip_v": 1.0,
+      "tau": -3.0,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib_k2v1_fp32",
+      "method": "calib_packed",
+      "bits_k": 2,
+      "bits_v": 1,
+      "clip_k": 1.0,
+      "clip_v": 0.3,
+      "tau": 0.0,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib2_fp32_tau0",
+      "method": "calib_packed",
+      "bits_k": 2,
+      "bits_v": 2,
+      "clip_k": 1.0,
+      "clip_v": 1.0,
+      "tau": 0.0,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    }
+  ],
+  "quality_reference": "native4_8",
+  "quality_margin": 0.005,
+  "budget_bits": 1.8,
+  "doc_source_documents": 128,
+  "doc_questions_per_variant": 501,
+  "doc_free_sessions": 2304,
+  "text_images": 256,
+  "text_strata": {
+    "numeric": 128,
+    "text": 128
+  },
+  "text_free_answers": 4608,
+  "primary_superiority_pairs_holm": [
+    [
+      "decoder_warm_joint",
+      "direction_vq2_v1"
+    ],
+    [
+      "decoder_warm_joint",
+      "k2_lloyd_v1"
+    ],
+    [
+      "decoder_warm_joint",
+      "base2_8"
+    ],
+    [
+      "decoder_warm_joint",
+      "fwht_untrained_headwise"
+    ],
+    [
+      "decoder_cold_book_only",
+      "decoder_warm_book_only"
+    ],
+    [
+      "decoder_cold_joint",
+      "decoder_warm_joint"
+    ],
+    [
+      "decoder_cold_joint",
+      "decoder_cold_book_only"
+    ],
+    [
+      "decoder_warm_joint",
+      "decoder_warm_book_only"
+    ],
+    [
+      "fwht_global",
+      "direction_vq2_v1"
+    ],
+    [
+      "decoder_warm_joint",
+      "decoder_warm_joint_vonly"
+    ],
+    [
+      "decoder_cold_joint",
+      "decoder_cold_joint_vonly"
+    ],
+    [
+      "decoder_warm_joint_vonly",
+      "fwht_global"
+    ],
+    [
+      "decoder_cold_joint_vonly",
+      "fwht_global"
+    ],
+    [
+      "decoder_warm_joint",
+      "calib_k2v1_fp32"
+    ],
+    [
+      "decoder_warm_joint",
+      "calib2_fp32"
+    ]
+  ],
+  "primary_family_size": 15,
+  "identity_comparison_rule": "retain any identical-method contrast with p=1; do not remove a frozen candidate or revise family after test outcomes",
+  "primary_ni_rule": "candidate vs Native4, point margin0.5pp and paired source-document95%CI noninferiority reported separately; budget includes encoder constants",
+  "official_operator_controls": "same frozen CalibQuant quant/encode/QK/WV source, HF visual-only adaptation; not original model/serving reproduction; different actual byte prices remain visible",
+  "transfer_rule": "TextVQA official10-annotator soft accuracy; balanced within-subset transfer, not official overall distribution; no selection using Text outcomes",
+  "inference_source_sha256": {
+    "affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "allocation_bank.py": "5748e7cc4aa02b4115f65eaa5ed1ab367ca703be48e6bc501f766a8d98047df7",
+    "anchor_bank.py": "0201d8136dfa1bda03b92b24bbf36dfc346606a36a506502fa7c9f2332243512",
+    "anchor_protocol_v2.py": "5c5499e69a91577c86eb987b0c8bb6fec005b0c222d17d91b2e8df86e907af3b",
+    "cached_refinement_bank.py": "a2b3d73e194b1b439efc76f0c2e4de3dc29e56093ef00662b18905d6d17c9546",
+    "calib_bank.py": "de28e382f8597aba5ae899b9a947f928e58e567cba61841a3ae0a19ccc1565e4",
+    "calib_packed_bank.py": "ff021fb53051d670916d1d5f0a1303382fa769111f5903d93892953be960444b",
+    "direction_bank.py": "7ea07ef64a6a84b0d392a1c5c7e248aa1e6e0c9c7032a35a056dbf3bacb1e81d",
+    "factory.py": "a98672dd4bf63b9d01aa8090438cfe24df329730cfb06941278f93e875e66d6a",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "fused_direction.py": "d0ba567bc856fff1382c3369be44f9dc7c7fb1d6d3dd7a13a517ca8fe2f1f900",
+    "fused_hybrid.py": "c2a5e27741f1258f2bbe9de9a0befc04a5dc59d664d27d4921f8da778a04ed22",
+    "fused_learned_direction.py": "0f3b78a14cf62468b2a3ba3a60ece3e37a010eed454ecf82bef5a88f198295b3",
+    "fused_masked.py": "1c46ceb968e679f9b9c66c79ba9ab92bde61944df431be3928bfd13009f1c8f9",
+    "fused_postscale.py": "e95d99b1a27562656218338c11bf900b610dc308d2ca1630f1e740a55e4cf135",
+    "fused_rates.py": "58e036a878966aa6813ffe9c13d64a11f7dbc8c86785d9234517f420e3659b63",
+    "geometry_bank.py": "d40e13008b8ae655590c218920a09eda38e30af8e901394c70d3484d09968113",
+    "hybrid_bank.py": "3b83bdaac30e002068c5b166f229ca22e080935f668409b3c1f914152b95e85e",
+    "hybrid_packed_bank.py": "35531549bf4f334654244f974e3f21efd3cdf2c2aecba3a56c7e72fbc9939d3e",
+    "learned_direction_bank.py": "0ee57d34ba74dd426aecb51e985efe3df50852a5e67b624122789719b7547c40",
+    "masked_bank.py": "7c313fddfdadc81939235b0a4fd843540961f8841c69d7400101b33a66737d9d",
+    "oracle_bank.py": "396ee013b9a677c26497e2d6fc23a4d0ab8bf57e9e5cb6e9d78c5167688c0f50",
+    "quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "query_moments_bank.py": "281ffcbc0afa7eb6b8f724747066d2688eeb6dcb507168c8d070366613b5d132",
+    "rate_bank.py": "ef30a5a6f14d5b71c950a9ec12f05c5f1925ee01c6a6cefb3bb384852c587b20",
+    "run_variants.py": "931c80a1e31bad36409316f9dd4b84cf67e919a2d74e4bb32e6fb07580ac55cc",
+    "session.py": "58ee5792c205b1d53a4ced6fa617d62f94765112d10ba37145892dff431cd996",
+    "session_anchor.py": "88d956d10f422d77088d6499aaeffa348f485498e66769b3342a69f592a2eefc",
+    "session_anchor_v2.py": "10f81213448581d0d5e5414b765cf9b9bdd5afac60721dfc2b83afdbf64c9701",
+    "session_boundary.py": "cfcfc2c4263cada8672b1084da77b7670990d23c3dd2af2f490e00304f799419",
+    "session_teacher.py": "a45344395e2525c3ad4deff978d88b23dc0583379529874c9d11390d691d6927",
+    "single_axis_bank.py": "228aff0c9be785b29f91cc1c3bc761e38a27d25b33b3fa4a5635a03addf95b91"
+  },
+  "external_codec_inputs_sha256": {
+    "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json": "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae",
+    "/path/to/TrajKV/results/next_books_s0_v2/book_only/decoder_books.json": "eed437a2af5036f93417c313656fb7248dbfdccb6c1bf86b21ebf8f278e43313",
+    "/path/to/TrajKV/results/next_books_s0_v2/joint/decoder_books.json": "9766bf6b0873c986e67a24e61f05c27c826aa57a69bd6833013714bc709029f2",
+    "/path/to/TrajKV/results/next_books_s1_v2/book_only/decoder_books.json": "244c10ea076488778c3b0cc846c84d487afe7ffb1214acd0a8a0db54d2d79d9c",
+    "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json": "74f151cdd0d2afecd81aabab9023a261196cd97b584c09e659efe48b163179ea"
+  },
+  "input_sha256": {
+    "configs/a2/docvqa_future128.json": "d2013c248a27bf9a827d73ce48105c88108f778df3ff649840c8dcf50c06b7de",
+    "configs/data/docvqa_future128_references.jsonl": "c666cdbfe3dd00e78e91dcf538a2f75fcaa75a7e2a2de2d891c5290730d460c3",
+    "configs/a2/textvqa_future256.json": "bf5ccefae57fe581bc332b2e95756a91fdb5747716557a2b6ce6c8aae3e40baa",
+    "configs/data/textvqa_future256_references.json": "30383b8d4bc3694999a16f24e69383961b9df0851685d7a3819fcef8e00be50a"
+  },
+  "job_config_sha256": {
+    "configs/a2/book_confirm_doc_s0_v1.json": "09ac629b8876c847955c3556f2810dcb8ed96d8deca24058256686afdfaaf71a",
+    "configs/a2/book_confirm_doc_s0_v1_wait.json": "161c12062be101d38841d9ef7377874ec3136d5d1d69ab89e041b76f3cc57b85",
+    "configs/jobs/book_confirm_doc_s0_v1.json": "5aedc9501bc08175573043417a589d964c99915d4ced40efddc53213b25f8b90",
+    "configs/a2/book_confirm_doc_s1_v1.json": "511fb70608065e8e4640f74c4f3b0011c5cb5dcccc547994298d339215e93736",
+    "configs/a2/book_confirm_doc_s1_v1_wait.json": "54720cabc7ee89e225f32ea99848d9fc8398ae433e9cbcd361d11af2b4e63308",
+    "configs/jobs/book_confirm_doc_s1_v1.json": "cab783ab6292c949cbace655531d56cdeee20eba0304b0e205337eef0465c5fb",
+    "configs/a2/book_confirm_text_s0_v1.json": "5497447d3ff10d4d78d0d2f0b8707d35a6bbb56f89581a2f28f5b62036ade85d",
+    "configs/a2/book_confirm_text_s0_v1_wait.json": "59ec409ed3ce27772cec37fafe605bec797dff3632979fc3e4d0ca1db824b6ae",
+    "configs/jobs/book_confirm_text_s0_v1.json": "4f731974d4b21e07df0a866d9d760b6497c111c30d711385691e7112c212cd44",
+    "configs/a2/book_confirm_text_s1_v1.json": "e07daba7c0fec74b35d0c330414136ae3e8569f64ed5206f92752348dbb118ca",
+    "configs/a2/book_confirm_text_s1_v1_wait.json": "e8bee8b0f9e5a734009812a8c553b74adde0b281a26dd7bc42daf4a1679f8d4a",
+    "configs/jobs/book_confirm_text_s1_v1.json": "1589c4ae4b95f4c68ca23c963f93ab71922c67a7db17ca3d7348e20f90eab936"
+  },
+  "jobs": [
+    "book_confirm_doc_s0_v1",
+    "book_confirm_doc_s1_v1",
+    "book_confirm_text_s0_v1",
+    "book_confirm_text_s1_v1"
+  ],
+  "development_summary_sha256": "5d6f6228244d7d7d74df8d6e52a867d932444f2f67a68e301b2f0407be4c5332",
+  "source_disjoint_membership_sha256": {
+    "audit/a2/future_doc128_membership.json": "68496e3487d5ee3d3f545adfa4d22544a5ba42c0363b71b67de7da0f4bc26732",
+    "audit/a2/textvqa_future256_membership.json": "1d2eb981ce0d1b85b260a6aac36d153bdc571715eb063fe857f3a788a486b193"
+  },
+  "new_test_model_outcomes_seen": false,
+  "scope": "new data confirmation of fixed candidates; old Doc256/Text128 are already observed and not relabeled as blind"
+}

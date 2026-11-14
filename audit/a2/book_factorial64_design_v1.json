@@ -1,0 +1,116 @@
+{
+  "created_at_utc": "2026-11-14T01:57:24.434513+00:00",
+  "variants": [
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "fwht_global"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_joint",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json"
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_cold_joint_konly",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s0_v2/joint/decoder_books.json",
+      "apply_value_metadata": false
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_cold_joint_vonly",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s0_v2/joint/decoder_books.json",
+      "apply_key_decoder": false
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_joint_konly",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json",
+      "apply_value_metadata": false
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_joint_vonly",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json",
+      "apply_key_decoder": false
+    }
+  ],
+  "images": 64,
+  "actual_sessions": 448,
+  "new_unique_sessions": 256,
+  "repeated_controls": 192,
+  "scope": "open development extension motivated by completed joint-vs-book-only results; same fixed joint fit split into K-only/V-only applications; no retraining",
+  "vonly_cost": "compact global decoder, no learned headwise table retained; count896B encoder-only V metadata; same numerical base interpretation verified by global/headwise controls",
+  "control_requirement": "three repeated methods must match previous first logits, whole token trajectories and actual owner bytes on all64 images",
+  "source_sha256": {
+    "learned_direction_bank.py": "0ee57d34ba74dd426aecb51e985efe3df50852a5e67b624122789719b7547c40",
+    "fused_learned_direction.py": "0f3b78a14cf62468b2a3ba3a60ece3e37a010eed454ecf82bef5a88f198295b3",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "run_variants.py": "931c80a1e31bad36409316f9dd4b84cf67e919a2d74e4bb32e6fb07580ac55cc"
+  },
+  "jobs": [
+    "book_factorial64_s0_v1",
+    "book_factorial64_s1_v1"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "class": "GotOcr2ImageProcessor",
+  "source": "/home/RESEARCHER/miniconda3/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/got_ocr2/image_processing_got_ocr2.py",
+  "thumbnail_related": [
+    {
+      "line": 24,
+      "context": [
+        "        images: \"torch.Tensor\",",
+        "        min_patches: int,",
+        "        max_patches: int,",
+        "        use_thumbnail: bool = True,",
+        "        patch_size: SizeDict | None = None,",
+        "        resample: \"PILImageResampling | tvF.InterpolationMode | int | None\" = None,",
+        "    ):",
+        "        \"\"\""
+      ]
+    },
+    {
+      "line": 41,
+      "context": [
+        "                The minimum number of patches to be extracted from the image.",
+        "            max_patches (`int`):",
+        "                The maximum number of patches to be extracted from the image.",
+        "            use_thumbnail (`bool`, *optional*, defaults to `True`):",
+        "                Whether to add a thumbnail image to the list of cropped patches.",
+        "            patch_size (`SizeDict`, *optional*):",
+        "                The size of the output patches.",
+        "            resample (`PILImageResampling | tvF.InterpolationMode | int | None`, *optional*):"
+      ]
+    },
+    {
+      "line": 42,
+      "context": [
+        "            max_patches (`int`):",
+        "                The maximum number of patches to be extracted from the image.",
+        "            use_thumbnail (`bool`, *optional*, defaults to `True`):",
+        "                Whether to add a thumbnail image to the list of cropped patches.",
+        "            patch_size (`SizeDict`, *optional*):",
+        "                The size of the output patches.",
+        "            resample (`PILImageResampling | tvF.InterpolationMode | int | None`, *optional*):",
+        "                Resampling filter to use when resizing."
+      ]
+    },
+    {
+      "line": 77,
+      "context": [
+        "            patch_image = resized_image[..., box[1] : box[3], box[0] : box[2]]",
+        "            processed_images.append(patch_image)",
+        "",
+        "        if use_thumbnail and len(processed_images) != 1:",
+        "            thumbnail_img = self.resize(images, patch_size, resample=resample)",
+        "            processed_images.append(thumbnail_img)",
+        "",
+        "        processed_images = torch.stack(processed_images, dim=0).transpose(0, 1).contiguous()"
+      ]
+    },
+    {
+      "line": 78,
+      "context": [
+        "            processed_images.append(patch_image)",
+        "",
+        "        if use_thumbnail and len(processed_images) != 1:",
+        "            thumbnail_img = self.resize(images, patch_size, resample=resample)",
+        "            processed_images.append(thumbnail_img)",
+        "",
+        "        processed_images = torch.stack(processed_images, dim=0).transpose(0, 1).contiguous()",
+        ""
+      ]
+    },
+    {
+      "line": 79,
+      "context": [
+        "",
+        "        if use_thumbnail and len(processed_images) != 1:",
+        "            thumbnail_img = self.resize(images, patch_size, resample=resample)",
+        "            processed_images.append(thumbnail_img)",
+        "",
+        "        processed_images = torch.stack(processed_images, dim=0).transpose(0, 1).contiguous()",
+        "",
+        "        return processed_images"
+      ]
+    }
+  ]
+}

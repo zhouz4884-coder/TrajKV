@@ -1,0 +1,60 @@
+{
+  "created_at_utc": "2026-11-13T23:14:55.540035+00:00",
+  "timing_job": "next_timing_gpu0_v1",
+  "timing_images": 6,
+  "timing_variants": 16,
+  "timing_measurements": 288,
+  "timing_warmups": 96,
+  "scope": "all four frozen quality jobs must finish, then both-card quiet timing, only then new model calibration",
+  "new_book_jobs": [
+    "next_books_s0_v1",
+    "next_books_s1_v1"
+  ],
+  "new_book_design": [
+    {
+      "job": "next_books_s0_v1",
+      "task": "book_only",
+      "mode": "compressed_question",
+      "joint_value": false,
+      "steps": 400,
+      "images": 32,
+      "cases": 83,
+      "config_sha256": "91bd25d8ead97373b601f5a6660a73e6e135aedef4d107a1b6cd26303c612464"
+    },
+    {
+      "job": "next_books_s0_v1",
+      "task": "joint",
+      "mode": "compressed_question",
+      "joint_value": true,
+      "steps": 400,
+      "images": 32,
+      "cases": 83,
+      "config_sha256": "580b1e4c51b39366f644bff3de088b895db126010b1ddc03a3819fd6a25a9f39"
+    },
+    {
+      "job": "next_books_s1_v1",
+      "task": "book_only",
+      "mode": "native_question_history",
+      "joint_value": false,
+      "steps": 400,
+      "images": 32,
+      "cases": 83,
+      "config_sha256": "57ce88297661c62840ad5a06a37011c97f2e4d33c534423ee058658cb3e535f1"
+    },
+    {
+      "job": "next_books_s1_v1",
+      "task": "joint",
+      "mode": "native_question_history",
+      "joint_value": true,
+      "steps": 400,
+      "images": 32,
+      "cases": 83,
+      "config_sha256": "a21cde5d23676129fc15a2de50b0d7d8d237fed10922a9358d8c8e12ad655f03"
+    }
+  ],
+  "new_book_scope": "future representation study, not retroactively part of current confirm256; no current test score used for this design",
+  "calibration": "32already-assigned calibration source docs,83question inputs,noGT,Full self-generated<=8tokens; pretrained model frozen;114688 decoder entries plus224 folded value parameters if joint",
+  "forward": "exact packed attention with dense straight-through gradient; numeric and gradient checks must run before fits",
+  "budget": "FWHT removes65536-byte matrix; headwise FP16 decoder table229376bytes plus fixed2048-byte encoder; choose global compact decoder on small images if required to stay<=1.8bits",
+  "future_validation": "existing open dev64 for selection; reserve another unused source-document set before future confirmation; do not relabel already-running confirm256 as blind for later methods"
+}

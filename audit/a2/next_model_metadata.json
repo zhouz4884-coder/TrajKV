@@ -1,0 +1,86 @@
+{
+  "models": [
+    {
+      "name": "LLaVA-1.5-7B-HF",
+      "model_type": "llava",
+      "architecture": [
+        "LlavaForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": 32000,
+      "text": {
+        "model_type": "llama",
+        "num_hidden_layers": null,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "torch_dtype": "float16",
+        "dtype": null
+      }
+    },
+    {
+      "name": "llava-v1.6-vicuna-7b-hf",
+      "model_type": "llava_next",
+      "architecture": [
+        "LlavaNextForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": 32000,
+      "text": {
+        "model_type": "llama",
+        "num_hidden_layers": null,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "torch_dtype": "float16",
+        "dtype": null
+      }
+    },
+    {
+      "name": "InternVL2_5-8B",
+      "model_type": "internvl_chat",
+      "architecture": [
+        "InternVLChatModel"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "text": {
+        "model_type": "internlm2",
+        "num_hidden_layers": 32,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 4096,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      }
+    }
+  ],
+  "caches": [
+    {
+      "path": "/path/to/storage/datasets/hf_cache",
+      "exists": true,
+      "entries": [
+        "hub",
+        "transformers"
+      ]
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache",
+      "exists": true,
+      "entries": [
+        "datasets",
+        "tmp"
+      ]
+    },
+    {
+      "path": "/path/to/storage/datasets/sources",
+      "exists": true,
+      "entries": [
+        "LongBench-main.zip",
+        "RULER-main.zip",
+        "contractkv_datasets.zip",
+        "repobench-main.zip"
+      ]
+    }
+  ]
+}

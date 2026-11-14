@@ -1,0 +1,23 @@
+{
+  "at_utc": "2026-11-13T21:50:19.659340+00:00",
+  "new_variant": {
+    "method": "cached_asym",
+    "page": 128,
+    "cap": 16,
+    "store_selector_meta": true,
+    "selector_query_last": true,
+    "name": "cachedread_prefill_freshrisk50",
+    "selector": "prefill_risk",
+    "fraction": 0.5,
+    "global_read_equivalents": 32.0
+  },
+  "sessions": 64,
+  "jobs": [
+    "read_factorial_dev64_s0_v1",
+    "read_factorial_dev64_s1_v1"
+  ],
+  "motivation": "prefill+cached50 improved development quality; add prefill+fresh50 so phase protection and mask amortization are not conflated",
+  "conditions": "same4.0679-bit stored representation,0.5 fraction,16 full-forward-equivalent global budget; prefill full, fresh risk on decode",
+  "first_question_control": "same all-refined first-question state as prefill+cached; verify initial-logit identity from complete records",
+  "role": "additional adaptive development control, declared before prospective confirm256"
+}

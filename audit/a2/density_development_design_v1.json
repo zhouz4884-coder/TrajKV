@@ -1,0 +1,59 @@
+{
+  "at_utc": "2026-11-13T21:36:29.296957+00:00",
+  "variants": [
+    {
+      "name": "full8_cap16",
+      "method": "full",
+      "selector": "none",
+      "cap": 16
+    },
+    {
+      "name": "base2_cap16",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 16,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_cap16",
+      "method": "native4",
+      "cap": 16,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "warm_multi_gain_cap16",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 16,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/multi_gain/factors.json"
+    },
+    {
+      "method": "direction",
+      "cap": 16,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq2_v1_cap16",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    }
+  ],
+  "sessions": 320,
+  "jobs": [
+    "density_development64_s0_v1",
+    "density_development64_s1_v1"
+  ],
+  "motivation": "read-none and read-all nearly tie on new dev64, so add matched Full16/Native4 references and test density transfer without refitting; baseline cap16 Base2 must match cachedread_none",
+  "reporting": "different caps are different inputs; report actual total cache bytes, matched quality references and image token counts, not just bit ratios",
+  "scope": "open development only; no source-document confirmation or external balanced128 outcome used"
+}

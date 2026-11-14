@@ -1,0 +1,116 @@
+{
+  "created_at_utc": "2026-11-13T20:17:05.385147+00:00",
+  "motivation": "frozen risk policy saved78.56% extra logical reads but fixed-output median session was12.4% slower than all; amortize scoring once per question and sweep dose",
+  "data": "new source-disjoint dev64,255questions",
+  "expected_sessions": 576,
+  "variants": [
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_all",
+      "selector": "all",
+      "fraction": 0.25
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_none",
+      "selector": "none",
+      "fraction": 0.25,
+      "global_read_equivalents": 64.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_periodic25",
+      "selector": "periodic",
+      "fraction": 0.25,
+      "global_read_equivalents": 64.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_risk25",
+      "selector": "risk",
+      "fraction": 0.25,
+      "global_read_equivalents": 64.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_risk50",
+      "selector": "risk",
+      "fraction": 0.5,
+      "global_read_equivalents": 32.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_cached25",
+      "selector": "cached_risk",
+      "fraction": 0.25,
+      "global_read_equivalents": 64.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_cached50",
+      "selector": "cached_risk",
+      "fraction": 0.5,
+      "global_read_equivalents": 32.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_prefill_cached25",
+      "selector": "prefill_cached_risk",
+      "fraction": 0.25,
+      "global_read_equivalents": 64.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_prefill_cached50",
+      "selector": "prefill_cached_risk",
+      "fraction": 0.5,
+      "global_read_equivalents": 32.0
+    }
+  ],
+  "jobs": [
+    "cached_reads_dev64_s0_v1",
+    "cached_reads_dev64_s1_v1"
+  ],
+  "comparison_storage": "all read policies own identical base+residual+selector statistics+cached uint8 masks+CPU turn/count tensors",
+  "global_budget": "16 full residual forward equivalents for every non-all method, including explicit selection fees; per-forward fractions separate",
+  "quality_target": "at least50% aggregate extra logical read saving and ANLS delta>=-0.005 vsall; end-to-end timing evaluated separately",
+  "endpoint_probe": "2 old docs, same all/none answer IDs and initial logit hashes with/without cache buffers; no endpoint quality-based selection",
+  "scope": "development exploration, method selection before untouched confirm256; no new current64 or Text128 confirmation claim",
+  "source_sha256": "b78eb977fedd878307bfb8be05034ebaee71a42ef21dba36863dd442d4b2253f"
+}

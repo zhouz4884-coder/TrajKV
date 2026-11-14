@@ -1,0 +1,51 @@
+{
+  "frozen_at_utc": "2026-11-14T02:49:02.494496+00:00",
+  "job": "direction_floor16_gpu0_v1",
+  "images": 16,
+  "free_sessions": 64,
+  "variants": [
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq2_v1",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "channel",
+      "name": "direction_vq2_v2",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "rtn"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 16,
+      "v_layout": "channel",
+      "name": "direction_vq2_v16_diagnostic",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "rtn"
+    }
+  ],
+  "selection": "first16 existing development rows, no error filtering; only interprets remaining K/V fidelity bottleneck",
+  "scope": "V16 and V2 exceed the1.8-bit deployment budget and are high-storage diagnostic controls; V2 uses valid RTN2 encoding, not the1-bit Lloyd encoder",
+  "ordering": "after all four independent confirmation jobs; before existing quiet timing; no frozen quality/config changes; original timing waiter held/released with process identity checks and finally handler",
+  "source_sha256": "0d4272cdbfe87db7b97102d1278e91c155d79413c0d7a4ffccff644b661260fd"
+}
