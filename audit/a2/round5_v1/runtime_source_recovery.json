@@ -1,0 +1,608 @@
+{
+  "schema": "trajkv.round5.runtime-source-recovery.v1",
+  "created_at_utc": "2026-11-14T11:15:30.864770+00:00",
+  "status": "PASS",
+  "scope": "authorized read-only SFTP; exact original Python sources, SHA deduplicated; no GPU, remote write or public checkout operation",
+  "needs": [
+    {
+      "source": "code/a2/manage.py",
+      "expected_sha256": "af14bac56483c9fed15de33af48f9360b7a8b37c82b2560c3eb807253548cbf6",
+      "current_sha256": "23a4f9beb3a07de379cb474b2a827a65d61cdd83a8ee4f5bb30a85ede7ba3f9d",
+      "declaring_manifests": [
+        "results/round5_v1/confirm_doc_s0/manifest.json",
+        "results/round5_v1/confirm_doc_s1/manifest.json",
+        "results/round5_v1/policy_s0/manifest.json",
+        "results/round5_v1/policy_s1/manifest.json",
+        "results/round5_v1/quiet_timing/manifest.json",
+        "results/round5_v1/ranking_baselines_s0/manifest.json",
+        "results/round5_v1/ranking_baselines_s1/manifest.json",
+        "results/round5_v1/v_eval/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/roundtrip/manifest.json",
+        "results/round5_v1/sparse_queue/development16/manifest.json",
+        "results/round5_v1/sparse64_s1/development24/manifest.json",
+        "results/round5_v1/sparse64_s0/development24/manifest.json",
+        "results/round5_v1/mixed_prefix/development64/manifest.json",
+        "results/round5_v1/metric_queue/development16/manifest.json",
+        "results/round5_v1/mechanism_queue/continuous16/manifest.json",
+        "results/round5_v1/mechanism_queue/norm_development16/manifest.json",
+        "results/round5_v1/mean_eval/development16/manifest.json",
+        "results/round5_v1/matched_swap_s1/development32/manifest.json",
+        "results/round5_v1/matched_swap_s0/development32/manifest.json",
+        "results/round5_v1/gain8_queue/development64/manifest.json",
+        "results/round5_v1/gain8_queue/smoke/manifest.json",
+        "results/round5_v1/gain4_queue/development64/manifest.json",
+        "results/round5_v1/functional48_v2/development48/manifest.json",
+        "results/round5_v1/fixed_query/development16/manifest.json",
+        "results/round5_v1/fixed_query/pilot4/manifest.json",
+        "results/round5_v1/confirm_text_s1/transfer32/manifest.json",
+        "results/round5_v1/confirm_text_s0/transfer32/manifest.json",
+        "results/round5_v1/common_queue/collector/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/gain_quant_residual_bank.py",
+      "expected_sha256": "acf8fe4c405841b5e5fc91ea918a0369be5bdc20674e7dfe64861719628be3b2",
+      "current_sha256": "fca3fc68bb9bce05be027e3ed47f5d4943b155d94f6e7f2cb6d134d5f95a6f9d",
+      "declaring_manifests": [
+        "results/round5_v1/confirm_doc_s0/manifest.json",
+        "results/round5_v1/confirm_doc_s1/manifest.json",
+        "results/round5_v1/quiet_timing/manifest.json",
+        "results/round5_v1/gain8_queue/development64/manifest.json",
+        "results/round5_v1/gain8_queue/smoke/manifest.json",
+        "results/round5_v1/gain4_queue/development64/manifest.json",
+        "results/round5_v1/confirm_text_s1/transfer32/manifest.json",
+        "results/round5_v1/confirm_text_s0/transfer32/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/progress.py",
+      "expected_sha256": "1a2c002da3e39e04aeeabf08a7cd3913d7307d9a7a5163ebb0d583ecee8e1678",
+      "current_sha256": "95d93b7159d424cf8b16d92c8a11f9b4d8dc7cf4b7145006c1bb56d42a340b10",
+      "declaring_manifests": [
+        "results/round5_v1/confirm_doc_s0/manifest.json",
+        "results/round5_v1/confirm_doc_s1/manifest.json",
+        "results/round5_v1/policy_s0/manifest.json",
+        "results/round5_v1/policy_s1/manifest.json",
+        "results/round5_v1/quiet_timing/manifest.json",
+        "results/round5_v1/ranking_baselines_s0/manifest.json",
+        "results/round5_v1/ranking_baselines_s1/manifest.json",
+        "results/round5_v1/v_eval/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/roundtrip/manifest.json",
+        "results/round5_v1/sparse_queue/development16/manifest.json",
+        "results/round5_v1/sparse64_s1/development24/manifest.json",
+        "results/round5_v1/sparse64_s0/development24/manifest.json",
+        "results/round5_v1/mixed_prefix/development64/manifest.json",
+        "results/round5_v1/metric_queue/development16/manifest.json",
+        "results/round5_v1/mechanism_queue/continuous16/manifest.json",
+        "results/round5_v1/mechanism_queue/norm_development16/manifest.json",
+        "results/round5_v1/mean_eval/development16/manifest.json",
+        "results/round5_v1/matched_swap_s1/development32/manifest.json",
+        "results/round5_v1/matched_swap_s0/development32/manifest.json",
+        "results/round5_v1/gain8_queue/development64/manifest.json",
+        "results/round5_v1/gain8_queue/smoke/manifest.json",
+        "results/round5_v1/gain4_queue/development64/manifest.json",
+        "results/round5_v1/functional48_v2/development48/manifest.json",
+        "results/round5_v1/fixed_query/development16/manifest.json",
+        "results/round5_v1/fixed_query/pilot4/manifest.json",
+        "results/round5_v1/confirm_text_s1/transfer32/manifest.json",
+        "results/round5_v1/confirm_text_s0/transfer32/manifest.json",
+        "results/round5_v1/common_queue/collector/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/round5_runner.py",
+      "expected_sha256": "f88d5584e06fce5b26f197d19efab08e51249ea6426245f55215402d798e63a9",
+      "current_sha256": "134cb3d5782f0255c971baba888612dc477cdb8917abb4c98ab4e67fc092a364",
+      "declaring_manifests": [
+        "results/round5_v1/policy_s0/manifest.json",
+        "results/round5_v1/policy_s1/manifest.json",
+        "results/round5_v1/mixed_prefix/development64/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/collect_round5.py",
+      "expected_sha256": "001877d1d67f459cb7f1fa3e3ac76b9c97ba6adf4e10b48fb5f98cfb6a85dff3",
+      "current_sha256": "81f94b489cf3495b219f562266ca11d5d521e915a7f4c768ba70ffbd6a6582c8",
+      "declaring_manifests": [
+        "results/round5_v1/ranking_baselines_s0/manifest.json",
+        "results/round5_v1/ranking_baselines_s1/manifest.json",
+        "results/round5_v1/v_eval/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/roundtrip/manifest.json",
+        "results/round5_v1/sparse_queue/development16/manifest.json",
+        "results/round5_v1/sparse64_s1/development24/manifest.json",
+        "results/round5_v1/sparse64_s0/development24/manifest.json",
+        "results/round5_v1/metric_queue/development16/manifest.json",
+        "results/round5_v1/mechanism_queue/continuous16/manifest.json",
+        "results/round5_v1/mechanism_queue/norm_development16/manifest.json",
+        "results/round5_v1/mean_eval/development16/manifest.json",
+        "results/round5_v1/matched_swap_s1/development32/manifest.json",
+        "results/round5_v1/matched_swap_s0/development32/manifest.json",
+        "results/round5_v1/functional48_v2/development48/manifest.json",
+        "results/round5_v1/fixed_query/development16/manifest.json",
+        "results/round5_v1/fixed_query/pilot4/manifest.json",
+        "results/round5_v1/common_queue/collector/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/round5_runner.py",
+      "expected_sha256": "11acb181b08759786e77b207169a3e6b9d1236dcab4a80468047ef6f33baf686",
+      "current_sha256": "134cb3d5782f0255c971baba888612dc477cdb8917abb4c98ab4e67fc092a364",
+      "declaring_manifests": [
+        "results/round5_v1/ranking_baselines_s0/manifest.json",
+        "results/round5_v1/ranking_baselines_s1/manifest.json",
+        "results/round5_v1/sparse_queue/development16/manifest.json",
+        "results/round5_v1/sparse64_s1/development24/manifest.json",
+        "results/round5_v1/sparse64_s0/development24/manifest.json",
+        "results/round5_v1/metric_queue/development16/manifest.json",
+        "results/round5_v1/mechanism_queue/continuous16/manifest.json",
+        "results/round5_v1/mechanism_queue/norm_development16/manifest.json",
+        "results/round5_v1/mean_eval/development16/manifest.json",
+        "results/round5_v1/matched_swap_s1/development32/manifest.json",
+        "results/round5_v1/matched_swap_s0/development32/manifest.json",
+        "results/round5_v1/functional48_v2/development48/manifest.json",
+        "results/round5_v1/fixed_query/development16/manifest.json",
+        "results/round5_v1/fixed_query/pilot4/manifest.json",
+        "results/round5_v1/common_queue/collector/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/round5_moments_bank.py",
+      "expected_sha256": "a5e54f518a8c8389fcb1c69dc6b763978d7be894822724c20d2ddd900af4ae74",
+      "current_sha256": "f1534e7711672660ec45446aeae7287301c7c742de916c5e44d399456c5f6be8",
+      "declaring_manifests": [
+        "results/round5_v1/ranking_baselines_s0/manifest.json",
+        "results/round5_v1/ranking_baselines_s1/manifest.json",
+        "results/round5_v1/sparse_queue/development16/manifest.json",
+        "results/round5_v1/sparse64_s1/development24/manifest.json",
+        "results/round5_v1/sparse64_s0/development24/manifest.json",
+        "results/round5_v1/mechanism_queue/continuous16/manifest.json",
+        "results/round5_v1/mechanism_queue/norm_development16/manifest.json",
+        "results/round5_v1/matched_swap_s1/development32/manifest.json",
+        "results/round5_v1/matched_swap_s0/development32/manifest.json",
+        "results/round5_v1/fixed_query/development16/manifest.json",
+        "results/round5_v1/fixed_query/pilot4/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/query_spectrum_port.py",
+      "expected_sha256": "f2a79b09c042bf789c890435affd388f8237b23856e628496d75f33a560d5265",
+      "current_sha256": "33d439e6516b29ec40d9911edb78c449c2c208ad092d5713ddefb3c95f98e4c7",
+      "declaring_manifests": [
+        "results/round5_v1/v_eval/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/roundtrip/manifest.json",
+        "results/round5_v1/sparse_queue/development16/manifest.json",
+        "results/round5_v1/metric_queue/development16/manifest.json",
+        "results/round5_v1/mean_eval/development16/manifest.json",
+        "results/round5_v1/functional48_v2/development48/manifest.json",
+        "results/round5_v1/common_queue/collector/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/round5_runner.py",
+      "expected_sha256": "9cae4f2c1e622bef04acfb227587ec1462896fa423e445130e8045708a0ca94c",
+      "current_sha256": "134cb3d5782f0255c971baba888612dc477cdb8917abb4c98ab4e67fc092a364",
+      "declaring_manifests": [
+        "results/round5_v1/v_eval/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/roundtrip/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/round5_moments_bank.py",
+      "expected_sha256": "1775898093c5e5c0805014f162124c463ce139c12a02b2ad0d19ebe75807d72d",
+      "current_sha256": "f1534e7711672660ec45446aeae7287301c7c742de916c5e44d399456c5f6be8",
+      "declaring_manifests": [
+        "results/round5_v1/v_eval/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/development16/manifest.json",
+        "results/round5_v1/spectrum_queue/roundtrip/manifest.json",
+        "results/round5_v1/mean_eval/development16/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/mixed_residual_bank.py",
+      "expected_sha256": "0d8a23a3065f45cf9e136089b2e6a58f82bc12561bcf15950b9e1ca1eacdd9f0",
+      "current_sha256": "2fbc7c5d22c8c2381abdc555dad4a0f49cb6a1a949cf6295cd8c75f686518781",
+      "declaring_manifests": [
+        "results/round5_v1/mixed_prefix/development64/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/sparse_v_residual_attention.py",
+      "expected_sha256": "dbb33760449939d851147c32cca6f2b7670b8e091fc254fc2faadb3ce1d2d1df",
+      "current_sha256": "74856ef0d428981892bd028043c4859facbda145cdb86402f6b8f45c231efbe2",
+      "declaring_manifests": [
+        "results/round5_v1/metric_queue/development16/manifest.json",
+        "results/round5_v1/functional48_v2/development48/manifest.json",
+        "results/round5_v1/common_queue/collector/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/sparse_v_residual_check.py",
+      "expected_sha256": "daaa30b80c8c888bf922323936a88956f9d26b5ffc71dcb3a14c2b7e2a9728e3",
+      "current_sha256": "e616391c0b754059299d4e2c222e193e83c3a09b755b3a31be1e0875781ed051",
+      "declaring_manifests": [
+        "results/round5_v1/metric_queue/development16/manifest.json",
+        "results/round5_v1/functional48_v2/development48/manifest.json",
+        "results/round5_v1/common_queue/collector/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/round5_moments_bank.py",
+      "expected_sha256": "826e8c20eccc5165175a8659265bba20349e85e56ad2055ae1890317e5af9362",
+      "current_sha256": "f1534e7711672660ec45446aeae7287301c7c742de916c5e44d399456c5f6be8",
+      "declaring_manifests": [
+        "results/round5_v1/metric_queue/development16/manifest.json",
+        "results/round5_v1/functional48_v2/development48/manifest.json",
+        "results/round5_v1/common_queue/collector/manifest.json"
+      ]
+    },
+    {
+      "source": "code/a2/sparse_v_residual_bank.py",
+      "expected_sha256": "d421dd8f23c21b536c2abd78477a5235d22df339a88162c3b71d506094afca8b",
+      "current_sha256": "98021ba90bcf1a7e6810e5f1f05544d3bf81fba668a0d520b54293c39be0a8bd",
+      "declaring_manifests": [
+        "results/round5_v1/functional48_v2/development48/manifest.json"
+      ]
+    }
+  ],
+  "matches": [
+    {
+      "source": "code/a2/manage.py",
+      "expected_sha256": "af14bac56483c9fed15de33af48f9360b7a8b37c82b2560c3eb807253548cbf6",
+      "job": "round5_common_queue_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/code/a2/manage.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/sha256.json",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\af14bac56483c9fed15de33af48f9360b7a8b37c82b2560c3eb807253548cbf6.py",
+      "bytes": 2784,
+      "verified_sha256": "af14bac56483c9fed15de33af48f9360b7a8b37c82b2560c3eb807253548cbf6",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/progress.py",
+      "expected_sha256": "1a2c002da3e39e04aeeabf08a7cd3913d7307d9a7a5163ebb0d583ecee8e1678",
+      "job": "round5_common_queue_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/code/a2/progress.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/sha256.json",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\1a2c002da3e39e04aeeabf08a7cd3913d7307d9a7a5163ebb0d583ecee8e1678.py",
+      "bytes": 1546,
+      "verified_sha256": "1a2c002da3e39e04aeeabf08a7cd3913d7307d9a7a5163ebb0d583ecee8e1678",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/collect_round5.py",
+      "expected_sha256": "001877d1d67f459cb7f1fa3e3ac76b9c97ba6adf4e10b48fb5f98cfb6a85dff3",
+      "job": "round5_common_queue_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/code/a2/collect_round5.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/sha256.json",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\001877d1d67f459cb7f1fa3e3ac76b9c97ba6adf4e10b48fb5f98cfb6a85dff3.py",
+      "bytes": 4056,
+      "verified_sha256": "001877d1d67f459cb7f1fa3e3ac76b9c97ba6adf4e10b48fb5f98cfb6a85dff3",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/round5_runner.py",
+      "expected_sha256": "11acb181b08759786e77b207169a3e6b9d1236dcab4a80468047ef6f33baf686",
+      "job": "round5_common_queue_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/code/a2/round5_runner.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/sha256.json",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\11acb181b08759786e77b207169a3e6b9d1236dcab4a80468047ef6f33baf686.py",
+      "bytes": 1708,
+      "verified_sha256": "11acb181b08759786e77b207169a3e6b9d1236dcab4a80468047ef6f33baf686",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/query_spectrum_port.py",
+      "expected_sha256": "f2a79b09c042bf789c890435affd388f8237b23856e628496d75f33a560d5265",
+      "job": "round5_common_queue_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/code/a2/query_spectrum_port.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/sha256.json",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\f2a79b09c042bf789c890435affd388f8237b23856e628496d75f33a560d5265.py",
+      "bytes": 15513,
+      "verified_sha256": "f2a79b09c042bf789c890435affd388f8237b23856e628496d75f33a560d5265",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/sparse_v_residual_attention.py",
+      "expected_sha256": "dbb33760449939d851147c32cca6f2b7670b8e091fc254fc2faadb3ce1d2d1df",
+      "job": "round5_common_queue_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/code/a2/sparse_v_residual_attention.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/sha256.json",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\dbb33760449939d851147c32cca6f2b7670b8e091fc254fc2faadb3ce1d2d1df.py",
+      "bytes": 4656,
+      "verified_sha256": "dbb33760449939d851147c32cca6f2b7670b8e091fc254fc2faadb3ce1d2d1df",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/sparse_v_residual_check.py",
+      "expected_sha256": "daaa30b80c8c888bf922323936a88956f9d26b5ffc71dcb3a14c2b7e2a9728e3",
+      "job": "round5_common_queue_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/code/a2/sparse_v_residual_check.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/sha256.json",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\daaa30b80c8c888bf922323936a88956f9d26b5ffc71dcb3a14c2b7e2a9728e3.py",
+      "bytes": 6857,
+      "verified_sha256": "daaa30b80c8c888bf922323936a88956f9d26b5ffc71dcb3a14c2b7e2a9728e3",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/round5_moments_bank.py",
+      "expected_sha256": "826e8c20eccc5165175a8659265bba20349e85e56ad2055ae1890317e5af9362",
+      "job": "round5_common_queue_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/code/a2/round5_moments_bank.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_common_queue_v1.source/sha256.json",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\826e8c20eccc5165175a8659265bba20349e85e56ad2055ae1890317e5af9362.py",
+      "bytes": 10978,
+      "verified_sha256": "826e8c20eccc5165175a8659265bba20349e85e56ad2055ae1890317e5af9362",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/gain_quant_residual_bank.py",
+      "expected_sha256": "acf8fe4c405841b5e5fc91ea918a0369be5bdc20674e7dfe64861719628be3b2",
+      "job": "round5_confirm_doc_s0_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_confirm_doc_s0_v1.source/code/a2/gain_quant_residual_bank.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_confirm_doc_s0_v1.source/sha256.json",
+      "source_manifest_sha256": "f8ebc722fd86904cea1be6756826d5507cd7d93efb9f426e8af9d4f379f55311",
+      "launch_sha256": "4369a9fc438e10154e0e19743a92634c90fd0534088462d0bfde9c4c2458a7f2",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\acf8fe4c405841b5e5fc91ea918a0369be5bdc20674e7dfe64861719628be3b2.py",
+      "bytes": 18574,
+      "verified_sha256": "acf8fe4c405841b5e5fc91ea918a0369be5bdc20674e7dfe64861719628be3b2",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/round5_moments_bank.py",
+      "expected_sha256": "a5e54f518a8c8389fcb1c69dc6b763978d7be894822724c20d2ddd900af4ae74",
+      "job": "round5_fixed_query_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_fixed_query_v1.source/code/a2/round5_moments_bank.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_fixed_query_v1.source/sha256.json",
+      "source_manifest_sha256": "13bacccb654ab88b9935a3bcdbd8482f6daa3ac4572965e4da5781c5d5a951bb",
+      "launch_sha256": "08472b24b4568ece5af679bbf0f3f218ad1b367b8815a0b8625474711f977380",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\a5e54f518a8c8389fcb1c69dc6b763978d7be894822724c20d2ddd900af4ae74.py",
+      "bytes": 12465,
+      "verified_sha256": "a5e54f518a8c8389fcb1c69dc6b763978d7be894822724c20d2ddd900af4ae74",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/sparse_v_residual_bank.py",
+      "expected_sha256": "d421dd8f23c21b536c2abd78477a5235d22df339a88162c3b71d506094afca8b",
+      "job": "round5_functional48_v2",
+      "remote_source": "/path/to/TrajKV/jobs/round5_functional48_v2.source/code/a2/sparse_v_residual_bank.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_functional48_v2.source/sha256.json",
+      "source_manifest_sha256": "bb2f3319f840bcef520d5638a5ab65485a2c26be7cdc9f7d392b8625b6d75aaf",
+      "launch_sha256": "e460d1ecfba6f4dd1c96658157bd966a6c7caf4c95dea8a18511c0b1895c63c2",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\d421dd8f23c21b536c2abd78477a5235d22df339a88162c3b71d506094afca8b.py",
+      "bytes": 13951,
+      "verified_sha256": "d421dd8f23c21b536c2abd78477a5235d22df339a88162c3b71d506094afca8b",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/round5_runner.py",
+      "expected_sha256": "f88d5584e06fce5b26f197d19efab08e51249ea6426245f55215402d798e63a9",
+      "job": "round5_interaction_cal_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_interaction_cal_v1.source/code/a2/round5_runner.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_interaction_cal_v1.source/sha256.json",
+      "source_manifest_sha256": "eef1cfca74dd98cdf7c1b79cee0c95b0a3bee29f05b918cb5a03b97b0cc614f0",
+      "launch_sha256": "1b18c191841fca11a496940eed3cab6d69acac2475e6c86ca64d6fabbece1d35",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\f88d5584e06fce5b26f197d19efab08e51249ea6426245f55215402d798e63a9.py",
+      "bytes": 1858,
+      "verified_sha256": "f88d5584e06fce5b26f197d19efab08e51249ea6426245f55215402d798e63a9",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/mixed_residual_bank.py",
+      "expected_sha256": "0d8a23a3065f45cf9e136089b2e6a58f82bc12561bcf15950b9e1ca1eacdd9f0",
+      "job": "round5_interaction_cal_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_interaction_cal_v1.source/code/a2/mixed_residual_bank.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_interaction_cal_v1.source/sha256.json",
+      "source_manifest_sha256": "eef1cfca74dd98cdf7c1b79cee0c95b0a3bee29f05b918cb5a03b97b0cc614f0",
+      "launch_sha256": "1b18c191841fca11a496940eed3cab6d69acac2475e6c86ca64d6fabbece1d35",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\0d8a23a3065f45cf9e136089b2e6a58f82bc12561bcf15950b9e1ca1eacdd9f0.py",
+      "bytes": 13870,
+      "verified_sha256": "0d8a23a3065f45cf9e136089b2e6a58f82bc12561bcf15950b9e1ca1eacdd9f0",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/round5_moments_bank.py",
+      "expected_sha256": "1775898093c5e5c0805014f162124c463ce139c12a02b2ad0d19ebe75807d72d",
+      "job": "round5_mean_eval_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_mean_eval_v1.source/code/a2/round5_moments_bank.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_mean_eval_v1.source/sha256.json",
+      "source_manifest_sha256": "a6d95a3ff7497d2170621772c0cd31b0cc732fe40cb22c1afeb1ece9ebe63f3c",
+      "launch_sha256": "6f19f8914bdb03bbbac100eb67b835124d52746cb56c62587f55cf9cbe4d5565",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\1775898093c5e5c0805014f162124c463ce139c12a02b2ad0d19ebe75807d72d.py",
+      "bytes": 8724,
+      "verified_sha256": "1775898093c5e5c0805014f162124c463ce139c12a02b2ad0d19ebe75807d72d",
+      "reused_existing_blob": false
+    },
+    {
+      "source": "code/a2/round5_runner.py",
+      "expected_sha256": "9cae4f2c1e622bef04acfb227587ec1462896fa423e445130e8045708a0ca94c",
+      "job": "round5_spectrum_analysis_v1",
+      "remote_source": "/path/to/TrajKV/jobs/round5_spectrum_analysis_v1.source/code/a2/round5_runner.py",
+      "source_manifest": "/path/to/TrajKV/jobs/round5_spectrum_analysis_v1.source/sha256.json",
+      "source_manifest_sha256": "3dade5382c0b594eb13815d78a62bc40fc6431f8a8209aa23f3d1449b30fdd2f",
+      "launch_sha256": "00de61811d2c3c627ee24e605559a959f41528a5161e1c3fd6a1184b07cd3e02",
+      "local_blob": "/path/to/TrajKV\\artifacts\\round5_private_runtime_sources\\9cae4f2c1e622bef04acfb227587ec1462896fa423e445130e8045708a0ca94c.py",
+      "bytes": 1320,
+      "verified_sha256": "9cae4f2c1e622bef04acfb227587ec1462896fa423e445130e8045708a0ca94c",
+      "reused_existing_blob": false
+    }
+  ],
+  "missing": [],
+  "prohibited_skipped": [],
+  "examined_source_manifests": [
+    {
+      "job": "round5_common_queue_v1",
+      "launch_sha256": "a842934572f7679d5d4a854f9f8a57834ca5e716055897e1d1359aa4df6c61c8",
+      "source_manifest_sha256": "96dc5f5b4f1815ec81133198b138a1b9112efdabe3cecc173f7f38de3e6ec696"
+    },
+    {
+      "job": "round5_confirm_doc_s0_v1",
+      "launch_sha256": "4369a9fc438e10154e0e19743a92634c90fd0534088462d0bfde9c4c2458a7f2",
+      "source_manifest_sha256": "f8ebc722fd86904cea1be6756826d5507cd7d93efb9f426e8af9d4f379f55311"
+    },
+    {
+      "job": "round5_confirm_doc_s1_v1",
+      "launch_sha256": "96e4b2ce37ade71a61b8ef1ad7449f218e1bfe76ad2f53d8f0d00cfa76b51de8",
+      "source_manifest_sha256": "f8ebc722fd86904cea1be6756826d5507cd7d93efb9f426e8af9d4f379f55311"
+    },
+    {
+      "job": "round5_confirm_text_s0_v1",
+      "launch_sha256": "d85efa77be0f14015ab9276f50dce4ef8e091e928be94cbf648ea52229b3006b",
+      "source_manifest_sha256": "f8ebc722fd86904cea1be6756826d5507cd7d93efb9f426e8af9d4f379f55311"
+    },
+    {
+      "job": "round5_confirm_text_s1_v1",
+      "launch_sha256": "652fb87453e2a0ca27cfe50aff8dc32a8c1e6ae3433c8a3f2746e34274edc819",
+      "source_manifest_sha256": "f8ebc722fd86904cea1be6756826d5507cd7d93efb9f426e8af9d4f379f55311"
+    },
+    {
+      "job": "round5_fixed_query_v1",
+      "launch_sha256": "08472b24b4568ece5af679bbf0f3f218ad1b367b8815a0b8625474711f977380",
+      "source_manifest_sha256": "13bacccb654ab88b9935a3bcdbd8482f6daa3ac4572965e4da5781c5d5a951bb"
+    },
+    {
+      "job": "round5_functional48_v1",
+      "launch_sha256": "bceb4c30bbf3ae338d3d086f68dc6a038f59e64782e2d95cc6f5f65fe3a50db3",
+      "source_manifest_sha256": "9e8352cd08d8887b0e821c09e1cf6fa7c6f989bacbbcecccf9919ee063f66edf"
+    },
+    {
+      "job": "round5_functional48_v2",
+      "launch_sha256": "e460d1ecfba6f4dd1c96658157bd966a6c7caf4c95dea8a18511c0b1895c63c2",
+      "source_manifest_sha256": "bb2f3319f840bcef520d5638a5ab65485a2c26be7cdc9f7d392b8625b6d75aaf"
+    },
+    {
+      "job": "round5_gain4_v1",
+      "launch_sha256": "2372f06ff468ae459e88836be5e63a1f10dece8250611703f7abfd622972f60e",
+      "source_manifest_sha256": "f8ebc722fd86904cea1be6756826d5507cd7d93efb9f426e8af9d4f379f55311"
+    },
+    {
+      "job": "round5_gain8_v1",
+      "launch_sha256": "756925c5491bfa1819a7aab08eec12677922e53e310eaddfbf79262fc7b0b982",
+      "source_manifest_sha256": "f8ebc722fd86904cea1be6756826d5507cd7d93efb9f426e8af9d4f379f55311"
+    },
+    {
+      "job": "round5_gradient_rank_v1",
+      "launch_sha256": "17541e4795430897aaa69b831d585237ba84139c24632923f661458839b06444",
+      "source_manifest_sha256": "a2ec7ec7945078821dd0c4aeddd3fd5234a8052f58e98093a1743283d3abdaf7"
+    },
+    {
+      "job": "round5_interaction_cal_v1",
+      "launch_sha256": "1b18c191841fca11a496940eed3cab6d69acac2475e6c86ca64d6fabbece1d35",
+      "source_manifest_sha256": "eef1cfca74dd98cdf7c1b79cee0c95b0a3bee29f05b918cb5a03b97b0cc614f0"
+    },
+    {
+      "job": "round5_interaction_policy_analysis_v1",
+      "launch_sha256": "93c4c78eeda2e1ad8b982c5f8192d8d0b6126262468c2f0b3de14e23c52383f5",
+      "source_manifest_sha256": "af1743616f90d5de2908ac8027e340181627f53403bb09ef3dfe07ee81cdfba6"
+    },
+    {
+      "job": "round5_joint_rate_v1",
+      "launch_sha256": "80f5a78eb273351c24ca52a1afd86d22e79ffb7fe719e9e57784c83ec1d0d7c0",
+      "source_manifest_sha256": "b4a6cbf2ecacac158e86df381f65461841b8b2c9e41615654375585dc94baad3"
+    },
+    {
+      "job": "round5_matched_swap_s0_v1",
+      "launch_sha256": "d9340b4c7c0c33343bb35e8c7bb22c06710628bc54dc62912a3d1397455bd787",
+      "source_manifest_sha256": "a2ec7ec7945078821dd0c4aeddd3fd5234a8052f58e98093a1743283d3abdaf7"
+    },
+    {
+      "job": "round5_matched_swap_s1_v1",
+      "launch_sha256": "45132daf4de45a87bec60241c5a03881b2cffcd9a8178438eac251cbeb92254b",
+      "source_manifest_sha256": "a2ec7ec7945078821dd0c4aeddd3fd5234a8052f58e98093a1743283d3abdaf7"
+    },
+    {
+      "job": "round5_mean_eval_v1",
+      "launch_sha256": "6f19f8914bdb03bbbac100eb67b835124d52746cb56c62587f55cf9cbe4d5565",
+      "source_manifest_sha256": "a6d95a3ff7497d2170621772c0cd31b0cc732fe40cb22c1afeb1ece9ebe63f3c"
+    },
+    {
+      "job": "round5_mechanism_queue_v1",
+      "launch_sha256": "a1ec2ec304b66fd82e617c23b143dfbcb8c4c6b3dbc1bed06417df74a76357b1",
+      "source_manifest_sha256": "f824b4b7d4e8e25f52dfd1ad3d1fe77cd74ccc1ba00eb3c5199d5360c84828b5"
+    },
+    {
+      "job": "round5_metric_queue_v1",
+      "launch_sha256": "3115d0078e9d01aa19906dec198bc3ddf4a38a7918b02b290388bd39633003cf",
+      "source_manifest_sha256": "bf03580411a2f193ed6c9d9b3cca345eb5de0f5ba6045e2e24c88ab1f1d8fce7"
+    },
+    {
+      "job": "round5_mixed_prefix_v1",
+      "launch_sha256": "af388669f72c21fdbcdd5ae0b3776111dd2fcb66b6cdfaa77971ce45f281f6f4",
+      "source_manifest_sha256": "eef1cfca74dd98cdf7c1b79cee0c95b0a3bee29f05b918cb5a03b97b0cc614f0"
+    },
+    {
+      "job": "round5_policy_s0_v1",
+      "launch_sha256": "8d4d07237aa51c6d5b633511602b1596ddef731249776ad5beb092af58d6c6a1",
+      "source_manifest_sha256": "f92cee763165f4e4deb7a560619a1c0b17891ce0b9004a2dfcc0c6c1d9ecd573"
+    },
+    {
+      "job": "round5_policy_s1_v1",
+      "launch_sha256": "e4c07a092ebc6d4e179e5946c87f4927f7f93f8dcf102bf0176930196bca14f0",
+      "source_manifest_sha256": "f92cee763165f4e4deb7a560619a1c0b17891ce0b9004a2dfcc0c6c1d9ecd573"
+    },
+    {
+      "job": "round5_quiet_timing_v1",
+      "launch_sha256": "20180cf670c7c1d45c7926414f5a969bfc52c506bcb5318cd3b6262c1f0fd6d0",
+      "source_manifest_sha256": "eb8772c5d50e070b74025923e865a130fc5bbbe3584e16cef57aef0893353244"
+    },
+    {
+      "job": "round5_ranking_baselines_s0_v1",
+      "launch_sha256": "72288e2b2b907787d491cfc2cc03bf78d1aa7116232fa4c6b8cf3260da5fa307",
+      "source_manifest_sha256": "a2ec7ec7945078821dd0c4aeddd3fd5234a8052f58e98093a1743283d3abdaf7"
+    },
+    {
+      "job": "round5_ranking_baselines_s1_v1",
+      "launch_sha256": "7ddaee776f1968c6de0c2ada89033fca5d0a9497dedaff32c018268af159a6ba",
+      "source_manifest_sha256": "a2ec7ec7945078821dd0c4aeddd3fd5234a8052f58e98093a1743283d3abdaf7"
+    },
+    {
+      "job": "round5_refinement_gain_v1",
+      "launch_sha256": "72581c79a61b42f74dbcb354b28140126737a56bf95ba9596a8eda879da8bf43",
+      "source_manifest_sha256": "33152f9dd11b2b39914074ba6c8d4c1022272f58fdba6e92c93d47a96c75a81e"
+    },
+    {
+      "job": "round5_sparse64_s0_v1",
+      "launch_sha256": "97d89b0363c9d087af88ee5210277c5da7fc824bf027038c1589057c3bb8b0c8",
+      "source_manifest_sha256": "f824b4b7d4e8e25f52dfd1ad3d1fe77cd74ccc1ba00eb3c5199d5360c84828b5"
+    },
+    {
+      "job": "round5_sparse64_s1_v1",
+      "launch_sha256": "9879702dd24b47eb1c995a1cc8e323d4c07f5dde15f94c02368904ae0639dde6",
+      "source_manifest_sha256": "f824b4b7d4e8e25f52dfd1ad3d1fe77cd74ccc1ba00eb3c5199d5360c84828b5"
+    },
+    {
+      "job": "round5_sparse_queue_v1",
+      "launch_sha256": "2e2add24836ef1264518ee0861795fb29b75f16ad2dc4231a262dc8d5cbd36b7",
+      "source_manifest_sha256": "e342f09a5050bb12e83bd989cdff0ccd8f7ab516f7f78a23edaa40646284a548"
+    },
+    {
+      "job": "round5_spectrum_analysis_v1",
+      "launch_sha256": "00de61811d2c3c627ee24e605559a959f41528a5161e1c3fd6a1184b07cd3e02",
+      "source_manifest_sha256": "3dade5382c0b594eb13815d78a62bc40fc6431f8a8209aa23f3d1449b30fdd2f"
+    }
+  ],
+  "read_errors": [],
+  "distinct_blobs": 15,
+  "bytes": 118860,
+  "credentials_accessed_by_script": false,
+  "credential_route": "approved existing connect helper; no credential values inspected or emitted"
+}

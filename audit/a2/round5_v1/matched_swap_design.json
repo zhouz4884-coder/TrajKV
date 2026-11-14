@@ -1,0 +1,490 @@
+{
+  "schema": "trajkv_matched_delta_mse_swap_v1",
+  "created_at_utc": "2026-11-14T09:46:42.703324+00:00",
+  "status": "READY",
+  "requested_pairs": 8,
+  "selected_pairs": 8,
+  "strict_mse_gain_ratio": [
+    0.9,
+    1.1
+  ],
+  "eligible_edges": 314,
+  "maximum_nonoverlapping_pairs": 47,
+  "matching": "exact eight-edge maximum total finite-gain-gap matching; ROI integer resolution 1e-9; no MSE-caliper relaxation",
+  "calibration_only": true,
+  "development_or_confirmation_answers_read": false,
+  "inputs": {
+    "/path/to/TrajKV\\configs\\a2\\round5_v1\\sparse_rankings.json": "3fcc8a570efa5dbb9318b9dcd19a3467809ee98ef6dd99e58d6eb4a620ed3525",
+    "/path/to/TrajKV\\results\\round5_v1\\gradient_queue\\calibration16\\ranking_scores.json": "23f8698569c9429b195debd4c83ec93d152d0f286ae2e8856d6fcd33d70c9615",
+    "/path/to/TrajKV\\configs\\a2\\round5_v1\\sparse_dev24_s0.json": "afce9ecf476b02edb052c0b114c4a9bfea3426f1e00f787a4ccea0ff422adf9f",
+    "/path/to/TrajKV\\results\\metadata_followup_v1\\calibration_s0\\all_kv\\factors.json": "d60fe4ffcf31e36306ed2c5a4069634627c83b3af2f0b86fdb5c37e456113671",
+    "/path/to/TrajKV\\results\\direction_books_gpu1_v1\\books\\gaussian_vq_g4_256.json": "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae"
+  },
+  "finite_source_sha256": "202f92d618c41769f8344c584e6bd00e29300e171bea7dbf8721191d4a262e18",
+  "finite_scope": "same teacher q/text; quantized K/V baseline, one finite sign-residual intervention; equal doc and phase weights",
+  "mse_calibration_cases": 16,
+  "mse_calibration_images": 16,
+  "mse_calibration_ids": [
+    "docvqa_next_2126_cal_q1",
+    "docvqa_next_14738_cal_q1",
+    "docvqa_next_9398_cal_q1",
+    "docvqa_next_4505_cal_q1",
+    "docvqa_next_9214_cal_q1",
+    "docvqa_next_10230_cal_q1",
+    "docvqa_next_13475_cal_q1",
+    "docvqa_next_14671_cal_q1",
+    "docvqa_next_4187_cal_q1",
+    "docvqa_next_2782_cal_q1",
+    "docvqa_next_13560_cal_q1",
+    "docvqa_next_3010_cal_q1",
+    "docvqa_next_10147_cal_q1",
+    "docvqa_next_8411_cal_q1",
+    "docvqa_next_4701_cal_q1",
+    "docvqa_next_1361_cal_q1"
+  ],
+  "pairs": [
+    {
+      "pair": 1,
+      "high_layer": 26,
+      "high_head": 2,
+      "low_layer": 27,
+      "low_head": 3,
+      "high_roi": 241.8329311211904,
+      "low_roi": 172.66763093074164,
+      "roi_gap": 69.16530019044876,
+      "high_mse_gain": 6.154679557255337,
+      "low_mse_gain": 5.864166940961565,
+      "mse_gain_ratio": 1.0495403045681602,
+      "high_base_mse": 9.537352868488858,
+      "low_base_mse": 9.370594276700702,
+      "high_refined_mse": 3.3826735973358155,
+      "low_refined_mse": 3.506427281243461
+    },
+    {
+      "pair": 2,
+      "high_layer": 23,
+      "high_head": 2,
+      "low_layer": 27,
+      "low_head": 1,
+      "high_roi": 66.70771602789561,
+      "low_roi": 1.0749198993047078,
+      "roi_gap": 65.63279612859091,
+      "high_mse_gain": 1.1244872995785304,
+      "low_mse_gain": 1.12158243060112,
+      "mse_gain_ratio": 1.0025899736819643,
+      "high_base_mse": 1.7195736391203744,
+      "low_base_mse": 1.6378432427133829,
+      "high_refined_mse": 0.595086350611278,
+      "low_refined_mse": 0.5162608180727277
+    },
+    {
+      "pair": 3,
+      "high_layer": 22,
+      "high_head": 3,
+      "low_layer": 24,
+      "low_head": 0,
+      "high_roi": 60.34327491124471,
+      "low_roi": 2.768135465681553,
+      "roi_gap": 57.57513944556316,
+      "high_mse_gain": 0.3530278642262731,
+      "low_mse_gain": 0.3257893496326038,
+      "mse_gain_ratio": 1.083607750297505,
+      "high_base_mse": 0.5363591666732517,
+      "low_base_mse": 0.5055361339024135,
+      "high_refined_mse": 0.1833313041499683,
+      "low_refined_mse": 0.17974678778222627
+    },
+    {
+      "pair": 4,
+      "high_layer": 27,
+      "high_head": 2,
+      "low_layer": 27,
+      "low_head": 0,
+      "high_roi": 284.3979541659355,
+      "low_roi": 228.11814071734747,
+      "roi_gap": 56.279813448588044,
+      "high_mse_gain": 7.165925121307373,
+      "low_mse_gain": 6.639662293025426,
+      "mse_gain_ratio": 1.0792604811896465,
+      "high_base_mse": 10.6968113558633,
+      "low_base_mse": 10.892003638403756,
+      "high_refined_mse": 3.530886370795114,
+      "low_refined_mse": 4.252341205733163
+    },
+    {
+      "pair": 5,
+      "high_layer": 25,
+      "high_head": 3,
+      "low_layer": 26,
+      "low_head": 1,
+      "high_roi": 58.54379001011451,
+      "low_roi": 16.80704974134763,
+      "roi_gap": 41.73674026876688,
+      "high_mse_gain": 2.7707231555666243,
+      "low_mse_gain": 2.696966998917716,
+      "mse_gain_ratio": 1.0273478157791722,
+      "high_base_mse": 4.344373038836888,
+      "low_base_mse": 4.3262962681906565,
+      "high_refined_mse": 1.5736499343599593,
+      "low_refined_mse": 1.6293293203626362
+    },
+    {
+      "pair": 6,
+      "high_layer": 22,
+      "high_head": 1,
+      "low_layer": 21,
+      "low_head": 0,
+      "high_roi": 27.527954523762066,
+      "low_roi": 5.256642039244373,
+      "roi_gap": 22.271312484517694,
+      "high_mse_gain": 0.34845736260925025,
+      "low_mse_gain": 0.3470782739775521,
+      "mse_gain_ratio": 1.0039734225248202,
+      "high_base_mse": 0.516305411713464,
+      "low_base_mse": 0.5725536921194622,
+      "high_refined_mse": 0.1678480531488146,
+      "low_refined_mse": 0.2254754255924906
+    },
+    {
+      "pair": 7,
+      "high_layer": 19,
+      "high_head": 2,
+      "low_layer": 18,
+      "low_head": 3,
+      "high_roi": 21.216823454014957,
+      "low_roi": 0.8939366052703311,
+      "roi_gap": 20.322886848744627,
+      "high_mse_gain": 0.2669528150132724,
+      "low_mse_gain": 0.2728525974920818,
+      "mse_gain_ratio": 0.9783774003508227,
+      "high_base_mse": 0.40409190590892513,
+      "low_base_mse": 0.42397735927786145,
+      "high_refined_mse": 0.13713909536600113,
+      "low_refined_mse": 0.1511247670011861
+    },
+    {
+      "pair": 8,
+      "high_layer": 23,
+      "high_head": 0,
+      "low_layer": 25,
+      "low_head": 2,
+      "high_roi": 19.832977287471294,
+      "low_roi": 0.07536329080661137,
+      "roi_gap": 19.757613996664684,
+      "high_mse_gain": 0.26264801706586566,
+      "low_mse_gain": 0.24960867911577228,
+      "mse_gain_ratio": 1.0522391208362012,
+      "high_base_mse": 0.414532807469368,
+      "low_base_mse": 0.38405318217618123,
+      "high_refined_mse": 0.15188479721546175,
+      "low_refined_mse": 0.13444450284753526
+    }
+  ],
+  "matching_scope": "MSE reduction is matched within 10%; base MSE is reported but not a second matching restriction; summed finite gains are a local nonadditive proxy, not a predicted ANLS",
+  "common_units": [
+    [
+      26,
+      0
+    ],
+    [
+      25,
+      1
+    ],
+    [
+      22,
+      0
+    ],
+    [
+      23,
+      1
+    ],
+    [
+      24,
+      3
+    ],
+    [
+      24,
+      1
+    ],
+    [
+      26,
+      3
+    ],
+    [
+      19,
+      3
+    ],
+    [
+      20,
+      1
+    ],
+    [
+      24,
+      2
+    ],
+    [
+      21,
+      1
+    ],
+    [
+      15,
+      2
+    ],
+    [
+      14,
+      0
+    ],
+    [
+      20,
+      2
+    ],
+    [
+      14,
+      1
+    ],
+    [
+      16,
+      1
+    ]
+  ],
+  "high_arm": {
+    "units": [
+      [
+        26,
+        0
+      ],
+      [
+        25,
+        1
+      ],
+      [
+        22,
+        0
+      ],
+      [
+        23,
+        1
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        24,
+        1
+      ],
+      [
+        26,
+        3
+      ],
+      [
+        19,
+        3
+      ],
+      [
+        20,
+        1
+      ],
+      [
+        24,
+        2
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        15,
+        2
+      ],
+      [
+        14,
+        0
+      ],
+      [
+        20,
+        2
+      ],
+      [
+        14,
+        1
+      ],
+      [
+        16,
+        1
+      ],
+      [
+        26,
+        2
+      ],
+      [
+        23,
+        2
+      ],
+      [
+        22,
+        3
+      ],
+      [
+        27,
+        2
+      ],
+      [
+        25,
+        3
+      ],
+      [
+        22,
+        1
+      ],
+      [
+        19,
+        2
+      ],
+      [
+        23,
+        0
+      ]
+    ],
+    "mse_gain_sum": 34.05089501408594,
+    "base_mse_sum": 53.06933048271708,
+    "refined_mse_sum": 19.018436134553383,
+    "finite_local_gain_sum": 1807.22603545757
+  },
+  "low_arm": {
+    "units": [
+      [
+        26,
+        0
+      ],
+      [
+        25,
+        1
+      ],
+      [
+        22,
+        0
+      ],
+      [
+        23,
+        1
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        24,
+        1
+      ],
+      [
+        26,
+        3
+      ],
+      [
+        19,
+        3
+      ],
+      [
+        20,
+        1
+      ],
+      [
+        24,
+        2
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        15,
+        2
+      ],
+      [
+        14,
+        0
+      ],
+      [
+        20,
+        2
+      ],
+      [
+        14,
+        1
+      ],
+      [
+        16,
+        1
+      ],
+      [
+        27,
+        3
+      ],
+      [
+        27,
+        1
+      ],
+      [
+        24,
+        0
+      ],
+      [
+        27,
+        0
+      ],
+      [
+        26,
+        1
+      ],
+      [
+        21,
+        0
+      ],
+      [
+        18,
+        3
+      ],
+      [
+        25,
+        2
+      ]
+    ],
+    "mse_gain_sum": 33.12170138518725,
+    "base_mse_sum": 53.01278808212706,
+    "refined_mse_sum": 19.891086740206397,
+    "finite_local_gain_sum": 1454.4844326456855
+  },
+  "mse_gain_sum_difference": 0.9291936288986875,
+  "mse_gain_sum_ratio": 1.0280539220522724,
+  "finite_local_gain_sum_difference": 352.7416028118846,
+  "expected_owner_budgets": [
+    {
+      "visual_tokens": 256,
+      "units": 24,
+      "bits": 1.7832554408482142,
+      "complete_owner_bytes": 1636144
+    },
+    {
+      "visual_tokens": 768,
+      "units": 24,
+      "bits": 1.7179303850446428,
+      "complete_owner_bytes": 4728624
+    },
+    {
+      "visual_tokens": 1792,
+      "units": 24,
+      "bits": 1.6992660833864797,
+      "complete_owner_bytes": 10913584
+    },
+    {
+      "visual_tokens": 4352,
+      "units": 24,
+      "bits": 1.691031832654937,
+      "complete_owner_bytes": 26375984
+    }
+  ],
+  "runtime_requirement": "verify both arms retain exactly24 units and equal actual bytes per image",
+  "output_config": "/path/to/TrajKV\\configs\\a2\\round5_v1\\matched_swap_dev64.json",
+  "output_config_sha256": "2ab32cac21e427a5126bca13801471a6b964f07a98912126c5365df3cedab1dd"
+}
