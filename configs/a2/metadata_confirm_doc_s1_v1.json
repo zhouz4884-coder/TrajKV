@@ -1,0 +1,103 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/docvqa_meta128.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 8,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 64,
+  "variants": [
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "base2_8",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "fwht_global"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_joint",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json"
+    },
+    {
+      "method": "direction_meta",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "metadata_identity_all",
+      "v_group_size": "all"
+    },
+    {
+      "method": "direction_meta",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "cold_meta_g128_kv",
+      "v_group_size": 128,
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/g128_kv/factors.json"
+    },
+    {
+      "method": "direction_meta",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "cold_meta_all_kv",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json"
+    }
+  ],
+  "start": 64
+}

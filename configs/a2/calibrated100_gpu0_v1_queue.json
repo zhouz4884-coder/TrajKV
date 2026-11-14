@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/endogenous20_warm_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/endogenous20_warm_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/calibrated100_gpu0_v1.json"
+      ]
+    }
+  ]
+}

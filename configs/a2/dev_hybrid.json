@@ -1,0 +1,67 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "hybrid_kvarn2_native1_cap8",
+      "method": "hybrid",
+      "value_codec": "native1",
+      "clip_v": 1,
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "hybrid_kvarn2_calib1_cap8",
+      "method": "hybrid",
+      "value_codec": "calib1",
+      "clip_v": 0.3,
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "hybrid_kvarn2_calib1_clip1_cap8",
+      "method": "hybrid",
+      "value_codec": "calib1",
+      "clip_v": 1,
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "hybrid_kvarn2_native1_cap16",
+      "method": "hybrid",
+      "value_codec": "native1",
+      "clip_v": 1,
+      "cap": 16,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "hybrid_kvarn2_calib1_cap16",
+      "method": "hybrid",
+      "value_codec": "calib1",
+      "clip_v": 0.3,
+      "cap": 16,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "hybrid_kvarn2_calib1_clip1_cap16",
+      "method": "hybrid",
+      "value_codec": "calib1",
+      "clip_v": 1,
+      "cap": 16,
+      "selector": "none",
+      "store_selector_meta": false
+    }
+  ]
+}

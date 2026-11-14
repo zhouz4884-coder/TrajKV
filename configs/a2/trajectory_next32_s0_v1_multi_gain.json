@@ -1,0 +1,22 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/next_cal32_independent_questions.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 8,
+    "compress_before_question": true,
+    "turns": 1
+  },
+  "images": 83,
+  "bits_k": 2,
+  "bits_v": 1,
+  "train_value": true,
+  "base_rms": false,
+  "steps": 400,
+  "learning_rate": 0.01,
+  "regularization": 0.001,
+  "mode": "compressed_question",
+  "target_tokens": 8,
+  "train_center": false
+}

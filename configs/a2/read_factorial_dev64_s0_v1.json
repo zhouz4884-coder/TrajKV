@@ -1,0 +1,27 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/docvqa_next_dev64.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 32,
+  "variants": [
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "cachedread_prefill_freshrisk50",
+      "selector": "prefill_risk",
+      "fraction": 0.5,
+      "global_read_equivalents": 32.0
+    }
+  ],
+  "start": 0
+}

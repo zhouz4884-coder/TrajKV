@@ -1,0 +1,53 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "random_bounded",
+      "method": "asym",
+      "selector": "random",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 256
+    },
+    {
+      "name": "spread_bounded",
+      "method": "asym",
+      "selector": "spread",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 256
+    },
+    {
+      "name": "mass_bounded",
+      "method": "asym",
+      "selector": "mass",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 256
+    },
+    {
+      "name": "risk_bounded",
+      "method": "asym",
+      "selector": "risk",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 256
+    },
+    {
+      "name": "layer_uniform_bounded",
+      "method": "asym",
+      "selector": "layer_uniform",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 256
+    }
+  ]
+}

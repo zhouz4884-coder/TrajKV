@@ -1,0 +1,22 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true
+  },
+  "count": 1,
+  "variants": [
+    {
+      "name": "model_kernel_check",
+      "method": "hybrid_packed",
+      "clip_v": 0.3,
+      "cap": 16,
+      "diagnostic_compare": true
+    }
+  ],
+  "start": 0
+}

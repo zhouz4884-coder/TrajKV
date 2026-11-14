@@ -1,0 +1,49 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "native2_clipped1_8",
+      "method": "hybrid_packed",
+      "key_codec": "native2",
+      "clip_v": 0.3,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "native2_clipped1_16",
+      "method": "hybrid_packed",
+      "key_codec": "native2",
+      "clip_v": 0.3,
+      "cap": 16,
+      "store_selector_meta": false
+    },
+    {
+      "name": "factorial_kvarn2_native1",
+      "method": "hybrid",
+      "value_codec": "native1",
+      "clip_v": 0.3,
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "factorial_kvarn2_calib1",
+      "method": "hybrid",
+      "value_codec": "calib1",
+      "clip_v": 0.3,
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    }
+  ],
+  "start": 0
+}

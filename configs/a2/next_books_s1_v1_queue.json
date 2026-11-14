@@ -1,0 +1,35 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/next_timing_gpu0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/next_timing_gpu0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "arithmetic",
+      "entrypoint": "check_learned_direction.py",
+      "arguments": []
+    },
+    {
+      "name": "gradient",
+      "entrypoint": "calibrate_direction_books.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/next_books_s1_v1_gradient.json"
+      ]
+    },
+    {
+      "name": "book_only",
+      "entrypoint": "calibrate_direction_books.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/next_books_s1_v1_book_only.json"
+      ]
+    },
+    {
+      "name": "joint",
+      "entrypoint": "calibrate_direction_books.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/next_books_s1_v1_joint.json"
+      ]
+    }
+  ]
+}

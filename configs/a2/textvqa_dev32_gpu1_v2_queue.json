@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/direction_books_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/direction_books_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/textvqa_dev32_gpu1_v2.json"
+      ]
+    }
+  ]
+}

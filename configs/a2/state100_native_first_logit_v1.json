@@ -1,0 +1,75 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/mechanism100.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": false,
+    "turns": 1,
+    "native_question_history": false
+  },
+  "count": 100,
+  "variants": [
+    {
+      "name": "rtn_k1v1",
+      "method": "base1",
+      "bits_k": 1,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "base2_reference",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native_k2v1",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "rtn_k1_vmadc_headgain",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_encoder": "mad",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false,
+      "k_token_gain": "ls"
+    },
+    {
+      "name": "mad_k1_vmadc",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "v_encoder": "mad",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "fp16_reference100",
+      "method": "full",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    }
+  ],
+  "start": 0,
+  "diagnostic_protocol": "native_first_logit"
+}

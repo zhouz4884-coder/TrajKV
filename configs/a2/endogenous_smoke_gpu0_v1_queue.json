@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/fold100_gpu0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/fold100_gpu0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "feasibility",
+      "entrypoint": "calibrate_endogenous.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/endogenous_smoke_gpu0_v1.json"
+      ]
+    }
+  ]
+}

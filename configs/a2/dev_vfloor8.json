@@ -1,0 +1,102 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8_short.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "vlate1_cap8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_clip": 1,
+      "v_layers": [
+        27
+      ],
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "vlate2_cap8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_clip": 1,
+      "v_layers": [
+        26,
+        27
+      ],
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "vearly2_cap8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_clip": 1,
+      "v_layers": [
+        0,
+        1
+      ],
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "vmid2_cap8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_clip": 1,
+      "v_layers": [
+        13,
+        14
+      ],
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "vlate2_kclip08_cap8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_clip": 0.8,
+      "v_layers": [
+        26,
+        27
+      ],
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "vlate2_kclip06_cap8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_clip": 0.6,
+      "v_layers": [
+        26,
+        27
+      ],
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "kclip08_only_cap8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_clip": 0.8,
+      "v_layers": [],
+      "cap": 8,
+      "store_selector_meta": false
+    }
+  ],
+  "start": 0
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "post_official",
+      "method": "calibpost",
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": -3,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "post_tau0",
+      "method": "calibpost",
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": 0,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "post_tau1",
+      "method": "calibpost",
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": -1,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "post_k05v1_tau0",
+      "method": "calibpost",
+      "clip_k": 0.5,
+      "clip_v": 1,
+      "tau": 0,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "post_k075v05_tau0",
+      "method": "calibpost",
+      "clip_k": 0.75,
+      "clip_v": 0.5,
+      "tau": 0,
+      "selector": "none",
+      "store_selector_meta": false
+    }
+  ]
+}

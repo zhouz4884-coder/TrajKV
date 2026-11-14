@@ -1,0 +1,242 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8_short.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true
+  },
+  "count": 4,
+  "variants": [
+    {
+      "name": "full16",
+      "method": "full",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 8
+    },
+    {
+      "name": "base2",
+      "method": "base2",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 8
+    },
+    {
+      "name": "kvarn2_8",
+      "method": "kvarn2",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 8
+    },
+    {
+      "name": "kvarn2_16",
+      "method": "kvarn2",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "base1",
+      "method": "base1",
+      "selector": "none",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "k_only",
+      "method": "asym1_k",
+      "selector": "all",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "v_only",
+      "method": "asym1_v",
+      "selector": "all",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "cap": 16
+    },
+    {
+      "name": "native_k2v1_8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "native_k2v1_16",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 16,
+      "store_selector_meta": false
+    },
+    {
+      "name": "a2_none",
+      "method": "asym",
+      "selector": "none",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_random",
+      "method": "asym",
+      "selector": "random",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_mass",
+      "method": "asym",
+      "selector": "mass",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_risk",
+      "method": "asym",
+      "selector": "risk",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_layer_uniform",
+      "method": "asym",
+      "selector": "layer_uniform",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "hybrid_packed_8",
+      "method": "hybrid_packed",
+      "clip_v": 0.3,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "hybrid_packed_16",
+      "method": "hybrid_packed",
+      "clip_v": 0.3,
+      "cap": 16,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib1_post",
+      "method": "calibpost",
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": -3.0,
+      "cap": 16,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib_k2v1_tau0",
+      "method": "calibpost",
+      "bits_k": 2,
+      "bits_v": 1,
+      "clip_k": 1.0,
+      "clip_v": 0.3,
+      "tau": 0,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib_k2v2_tau3",
+      "method": "calibpost",
+      "bits_k": 2,
+      "bits_v": 2,
+      "clip_k": 1.0,
+      "clip_v": 1.0,
+      "tau": -3,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "native2_clipped1_8",
+      "method": "hybrid_packed",
+      "key_codec": "native2",
+      "clip_v": 0.3,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "native2_clipped1_16",
+      "method": "hybrid_packed",
+      "key_codec": "native2",
+      "clip_v": 0.3,
+      "cap": 16,
+      "store_selector_meta": false
+    },
+    {
+      "name": "a2_thumb_random",
+      "method": "asym",
+      "selector": "thumb_random",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "a2_all",
+      "method": "asym",
+      "selector": "all",
+      "fraction": 1,
+      "page": 128,
+      "cap": 16,
+      "selector_query_last": true
+    },
+    {
+      "name": "hybrid_materialized_8",
+      "method": "hybrid",
+      "value_codec": "calib1",
+      "clip_v": 0.3,
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    }
+  ],
+  "start": 0
+}

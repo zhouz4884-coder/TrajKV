@@ -1,0 +1,36 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/a2_grid_dev8_gpu0_v2/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/a2_grid_dev8_gpu0_v2.launch.json",
+  "tasks": [
+    {
+      "name": "diag",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/d0_diag.json"
+      ]
+    },
+    {
+      "name": "onebit",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/dev_onebit.json"
+      ]
+    },
+    {
+      "name": "history",
+      "entrypoint": "run_c.py",
+      "arguments": [
+        "--model",
+        "/path/to/InternVL3-8B-hf",
+        "--legacy-scripts",
+        "/path/to/VisContract_P14_2/scripts",
+        "--kivi-source",
+        "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+        "--samples",
+        "/path/to/TrajKV/configs/a2/c_contexts.json"
+      ]
+    }
+  ]
+}

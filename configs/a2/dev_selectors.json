@@ -1,0 +1,122 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "base2",
+      "method": "asym",
+      "selector": "none"
+    },
+    {
+      "name": "all_refined",
+      "method": "asym",
+      "selector": "all",
+      "fraction": 1
+    },
+    {
+      "name": "random_0.25",
+      "method": "asym",
+      "selector": "random",
+      "fraction": 0.25,
+      "page": 256
+    },
+    {
+      "name": "spread_0.25",
+      "method": "asym",
+      "selector": "spread",
+      "fraction": 0.25,
+      "page": 256
+    },
+    {
+      "name": "mass_0.25",
+      "method": "asym",
+      "selector": "mass",
+      "fraction": 0.25,
+      "page": 256
+    },
+    {
+      "name": "uncertainty_0.25",
+      "method": "asym",
+      "selector": "uncertainty",
+      "fraction": 0.25,
+      "page": 256
+    },
+    {
+      "name": "risk_0.25",
+      "method": "asym",
+      "selector": "risk",
+      "fraction": 0.25,
+      "page": 256
+    },
+    {
+      "name": "tie_0.25",
+      "method": "asym",
+      "selector": "tie",
+      "fraction": 0.25,
+      "page": 256
+    },
+    {
+      "name": "layer_uniform_0.25",
+      "method": "asym",
+      "selector": "layer_uniform",
+      "fraction": 0.25,
+      "page": 256
+    },
+    {
+      "name": "random_0.5",
+      "method": "asym",
+      "selector": "random",
+      "fraction": 0.5,
+      "page": 256
+    },
+    {
+      "name": "spread_0.5",
+      "method": "asym",
+      "selector": "spread",
+      "fraction": 0.5,
+      "page": 256
+    },
+    {
+      "name": "mass_0.5",
+      "method": "asym",
+      "selector": "mass",
+      "fraction": 0.5,
+      "page": 256
+    },
+    {
+      "name": "uncertainty_0.5",
+      "method": "asym",
+      "selector": "uncertainty",
+      "fraction": 0.5,
+      "page": 256
+    },
+    {
+      "name": "risk_0.5",
+      "method": "asym",
+      "selector": "risk",
+      "fraction": 0.5,
+      "page": 256
+    },
+    {
+      "name": "tie_0.5",
+      "method": "asym",
+      "selector": "tie",
+      "fraction": 0.5,
+      "page": 256
+    },
+    {
+      "name": "layer_uniform_0.5",
+      "method": "asym",
+      "selector": "layer_uniform",
+      "fraction": 0.5,
+      "page": 256
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "calibrated_s12",
+      "method": "alloc1",
+      "selector": "all",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "slots": 12,
+      "k_layers": [
+        27
+      ],
+      "v_layers": [
+        14,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "estimated_local_gain": 80.89612438238692,
+      "calibration_scope": "same-query output MSE to retained FP16 visual, first two decode events, dev8; no future answers"
+    },
+    {
+      "name": "calibrated_s24",
+      "method": "alloc1",
+      "selector": "all",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "slots": 24,
+      "k_layers": [
+        25,
+        26,
+        27
+      ],
+      "v_layers": [
+        8,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "estimated_local_gain": 90.56038433514186,
+      "calibration_scope": "same-query output MSE to retained FP16 visual, first two decode events, dev8; no future answers"
+    },
+    {
+      "name": "calibrated_s36",
+      "method": "alloc1",
+      "selector": "all",
+      "fraction": 1,
+      "store_selector_meta": false,
+      "slots": 36,
+      "k_layers": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "v_layers": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "estimated_local_gain": 93.55165602608395,
+      "calibration_scope": "same-query output MSE to retained FP16 visual, first two decode events, dev8; no future answers"
+    },
+    {
+      "name": "random_128_bounded",
+      "method": "asym",
+      "selector": "random",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128
+    },
+    {
+      "name": "mass_128_bounded",
+      "method": "asym",
+      "selector": "mass",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128
+    },
+    {
+      "name": "risk_128_bounded",
+      "method": "asym",
+      "selector": "risk",
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "page": 128
+    }
+  ]
+}

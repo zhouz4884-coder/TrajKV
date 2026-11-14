@@ -1,0 +1,56 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/docvqa_dev16_floor.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 8,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 16,
+  "variants": [
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq2_v1",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "channel",
+      "name": "direction_vq2_v2",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "rtn"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 16,
+      "v_layout": "channel",
+      "name": "direction_vq2_v16_diagnostic",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "rtn"
+    }
+  ],
+  "start": 0,
+  "diagnostic_protocol": "fixed_K2_vector_V_precision_dose_response"
+}

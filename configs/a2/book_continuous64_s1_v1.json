@@ -1,0 +1,147 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/docvqa_next_dev64.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 8,
+    "compress_before_question": true,
+    "turns": 1,
+    "references": "/media/user/5bc0dc8d-c938-4b2a-af1b-94174fc511a9/VLAtest/TrajKV/configs/data/docvqa_bookdev_first_refs.json"
+  },
+  "count": 32,
+  "variants": [
+    {
+      "name": "base2_8",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "v_layout": "channel",
+      "name": "k2_lloyd_v1",
+      "k_encoder": "rtn",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq2_v1",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "fwht_global"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "fwht_untrained_headwise",
+      "untrained_headwise_control": true
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_cold_book_only",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s0_v2/book_only/decoder_books.json"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_cold_joint",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s0_v2/joint/decoder_books.json"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_book_only",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/book_only/decoder_books.json"
+    },
+    {
+      "method": "learned_direction",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "headwise_if_budget": true,
+      "book_budget_bits": 1.8,
+      "name": "decoder_warm_joint",
+      "decoder_book_path": "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json"
+    }
+  ],
+  "start": 32,
+  "usage": "canonical_reference_diagnostics_only",
+  "external_codec_inputs_sha256": {
+    "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json": "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae",
+    "/path/to/TrajKV/results/next_books_s0_v2/book_only/decoder_books.json": "eed437a2af5036f93417c313656fb7248dbfdccb6c1bf86b21ebf8f278e43313",
+    "/path/to/TrajKV/results/next_books_s0_v2/joint/decoder_books.json": "9766bf6b0873c986e67a24e61f05c27c826aa57a69bd6833013714bc709029f2",
+    "/path/to/TrajKV/results/next_books_s1_v2/book_only/decoder_books.json": "244c10ea076488778c3b0cc846c84d487afe7ffb1214acd0a8a0db54d2d79d9c",
+    "/path/to/TrajKV/results/next_books_s1_v2/joint/decoder_books.json": "74f151cdd0d2afecd81aabab9023a261196cd97b584c09e659efe48b163179ea"
+  },
+  "frozen_contract_sha256": "5ac73ecb6c0ad20f34110186479fbdd73f1d28a37480490ffcd06918cbbc15b6"
+}

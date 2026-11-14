@@ -1,0 +1,88 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/mechanism100.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 1
+  },
+  "count": 20,
+  "variants": [
+    {
+      "name": "rtn_head_norm",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "k_fold_gain": "head_norm",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "rtn_head_residual_norm",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "k_fold_gain": "head_residual_norm",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "mad_head_norm",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "k_fold_gain": "head_norm",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "mad_head_residual_norm",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "k_fold_gain": "head_residual_norm",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "lloyd_head_norm",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "lloyd",
+      "k_fold_gain": "head_norm",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "lloyd_head_residual_norm",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "lloyd",
+      "k_fold_gain": "head_residual_norm",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    }
+  ],
+  "start": 0
+}

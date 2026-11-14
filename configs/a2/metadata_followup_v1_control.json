@@ -1,0 +1,66 @@
+{
+  "held_parent_launch": "/path/to/TrajKV/jobs/direction_floor16_gpu0_v1.launch.json",
+  "held_parent_guard": "/path/to/TrajKV/results/direction_floor16_gpu0_v1/guard.json",
+  "dependencies": [
+    {
+      "complete": "/path/to/TrajKV/results/book_confirm_doc_s0_v1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/book_confirm_doc_s0_v1.launch.json"
+    },
+    {
+      "complete": "/path/to/TrajKV/results/book_confirm_doc_s1_v1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/book_confirm_doc_s1_v1.launch.json"
+    },
+    {
+      "complete": "/path/to/TrajKV/results/book_confirm_text_s0_v1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/book_confirm_text_s0_v1.launch.json"
+    },
+    {
+      "complete": "/path/to/TrajKV/results/book_confirm_text_s1_v1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/book_confirm_text_s1_v1.launch.json"
+    }
+  ],
+  "phases": [
+    {
+      "name": "calibration",
+      "workers": [
+        {
+          "name": "calibration_s0",
+          "entrypoint": "run_queue.py",
+          "arguments": [
+            "--config",
+            "/path/to/TrajKV/configs/a2/metadata_followup_v1_s0_queue.json"
+          ]
+        },
+        {
+          "name": "calibration_s1",
+          "entrypoint": "run_queue.py",
+          "arguments": [
+            "--config",
+            "/path/to/TrajKV/configs/a2/metadata_followup_v1_s1_queue.json"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "development",
+      "workers": [
+        {
+          "name": "development_s0",
+          "entrypoint": "run_representation_variants.py",
+          "arguments": [
+            "--config",
+            "/path/to/TrajKV/configs/a2/metadata_followup_v1_dev_s0.json"
+          ]
+        },
+        {
+          "name": "development_s1",
+          "entrypoint": "run_representation_variants.py",
+          "arguments": [
+            "--config",
+            "/path/to/TrajKV/configs/a2/metadata_followup_v1_dev_s1.json"
+          ]
+        }
+      ]
+    }
+  ]
+}

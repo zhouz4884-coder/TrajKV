@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/a2_value_probe20_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/a2_value_probe20_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/a2_boundary_dev4_s1_v1.json"
+      ]
+    }
+  ]
+}

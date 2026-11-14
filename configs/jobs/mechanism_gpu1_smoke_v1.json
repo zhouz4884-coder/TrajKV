@@ -1,0 +1,37 @@
+{
+  "name": "mechanism_gpu1_smoke_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "HF_HUB_OFFLINE": "1",
+    "HF_HUB_DISABLE_PROGRESS_BARS": "1",
+    "TOKENIZERS_PARALLELISM": "false"
+  },
+  "argv": [
+    "/home/RESEARCHER/miniconda3/envs/p72_modern_vlm/bin/python",
+    "-u",
+    "/path/to/TrajKV/code/experiments/mechanism.py",
+    "--model",
+    "/path/to/InternVL3-8B-hf",
+    "--samples",
+    "/path/to/TrajKV/configs/data/clevr_smoke8_runner.json",
+    "--legacy-scripts",
+    "/path/to/VisContract_P14_2/scripts",
+    "--kivi-source",
+    "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "--output",
+    "/path/to/TrajKV/results/mechanism_gpu1_smoke_v1",
+    "--count",
+    "1",
+    "--turns",
+    "3",
+    "--max-tokens",
+    "12",
+    "--actions",
+    "layer0:text_prefill",
+    "layer1:early",
+    "--action-turns",
+    "2",
+    "--future-horizon",
+    "1"
+  ]
+}

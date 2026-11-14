@@ -1,0 +1,19 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/radial_oracle100_s0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/radial_oracle100_s0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "kernel",
+      "entrypoint": "check_gain_reader.py",
+      "arguments": []
+    },
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/origin_norm_dev.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/docvqa_next_dev64.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 32,
+  "variants": [
+    {
+      "name": "full8_cap16",
+      "method": "full",
+      "selector": "none",
+      "cap": 16
+    },
+    {
+      "name": "base2_cap16",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 16,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_cap16",
+      "method": "native4",
+      "cap": 16,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "warm_multi_gain_cap16",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 16,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/multi_gain/factors.json"
+    },
+    {
+      "method": "direction",
+      "cap": 16,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq2_v1_cap16",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    }
+  ],
+  "start": 32
+}

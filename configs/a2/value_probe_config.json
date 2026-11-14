@@ -1,0 +1,60 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/value_probe20.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 8,
+    "turns": 1,
+    "compress_before_question": true
+  },
+  "count": 20,
+  "variants": [
+    {
+      "name": "fp16_both",
+      "method": "full",
+      "selector": "none"
+    },
+    {
+      "name": "v1_token_other_fp16",
+      "method": "axisdiag",
+      "axis": "v",
+      "axis_bits": 1,
+      "layout": "token",
+      "selector": "none"
+    },
+    {
+      "name": "v2_token_other_fp16",
+      "method": "axisdiag",
+      "axis": "v",
+      "axis_bits": 2,
+      "layout": "token",
+      "selector": "none"
+    },
+    {
+      "name": "v1_channel_other_fp16",
+      "method": "axisdiag",
+      "axis": "v",
+      "axis_bits": 1,
+      "layout": "channel",
+      "selector": "none"
+    },
+    {
+      "name": "k1_channel_other_fp16",
+      "method": "axisdiag",
+      "axis": "k",
+      "axis_bits": 1,
+      "layout": "channel",
+      "selector": "none"
+    },
+    {
+      "name": "k2_channel_other_fp16",
+      "method": "axisdiag",
+      "axis": "k",
+      "axis_bits": 2,
+      "layout": "channel",
+      "selector": "none"
+    }
+  ]
+}

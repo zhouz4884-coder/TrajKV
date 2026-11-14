@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/geometry20_gpu0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/geometry20_gpu0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/state100_native_history_v1.json"
+      ]
+    }
+  ]
+}

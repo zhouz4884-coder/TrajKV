@@ -1,0 +1,25 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/next_cal32_independent_questions.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 8,
+    "compress_before_question": true,
+    "turns": 1
+  },
+  "images": 4,
+  "target_tokens": 3,
+  "steps": 2,
+  "learning_rate": 0.003,
+  "regularization": 0.01,
+  "encoder_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+  "mode": "native_question_history",
+  "train_value": true,
+  "packed_forward": true,
+  "assert_forward_identity": true,
+  "headwise_if_budget": true,
+  "book_budget_bits": 1.8,
+  "key_gain_mode": "centered",
+  "value_group_size": "all"
+}

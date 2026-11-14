@@ -1,0 +1,24 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/a2_refine_dev_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/a2_refine_dev_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "kernel",
+      "entrypoint": "check_rates.py",
+      "arguments": [
+        "--legacy-scripts",
+        "/path/to/VisContract_P14_2/scripts",
+        "--kivi-source",
+        "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py"
+      ]
+    },
+    {
+      "name": "rates",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/dev_rates.json"
+      ]
+    }
+  ]
+}

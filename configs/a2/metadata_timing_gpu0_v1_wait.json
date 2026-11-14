@@ -1,0 +1,26 @@
+{
+  "dependencies": [
+    {
+      "complete": "/path/to/TrajKV/results/metadata_confirm_doc_s0_v1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/metadata_confirm_doc_s0_v1.launch.json"
+    },
+    {
+      "complete": "/path/to/TrajKV/results/metadata_confirm_doc_s1_v1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/metadata_confirm_doc_s1_v1.launch.json"
+    },
+    {
+      "complete": "/path/to/TrajKV/results/metadata_confirm_text_s0_v1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/metadata_confirm_text_s0_v1.launch.json"
+    },
+    {
+      "complete": "/path/to/TrajKV/results/metadata_confirm_text_s1_v1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/metadata_confirm_text_s1_v1.launch.json"
+    }
+  ],
+  "settle_seconds": 3,
+  "entrypoint": "run_metadata_timing.py",
+  "arguments": [
+    "--config",
+    "/path/to/TrajKV/configs/a2/metadata_timing_gpu0_v1.json"
+  ]
+}

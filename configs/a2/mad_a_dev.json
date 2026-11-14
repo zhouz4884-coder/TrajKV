@@ -1,0 +1,65 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8_short.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "joint_mad",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "v_encoder": "mad",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "k_mad_v_rtn",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "v_encoder": "rtn",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "k_rtn_v_mad",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_encoder": "mad",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "joint_sign",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "sign",
+      "v_encoder": "sign",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "k2_v_mad",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_encoder": "mad",
+      "cap": 8,
+      "store_selector_meta": false
+    }
+  ],
+  "start": 0
+}

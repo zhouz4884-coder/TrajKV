@@ -1,0 +1,360 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/confirm64_short.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 32,
+  "variants": [
+    {
+      "name": "storage_primary",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "k_fold_gain": "head_residual_norm",
+      "k_fold_factor_path": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/fit_cold/factors.json",
+      "v_fold_factor_path": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/fit_cold/factors.json",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "name": "base2_8",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "kvarn2_8_quality_port",
+      "method": "kvarn2",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "native_k2v1_8",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "v_layout": "channel",
+      "name": "k2_lloyd_v1",
+      "k_encoder": "rtn",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "v_layout": "channel",
+      "name": "k2_global_mad_v1",
+      "k_encoder": "rtn",
+      "v_encoder": "mad",
+      "v_group_size": "all"
+    },
+    {
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "v_layout": "channel",
+      "name": "lloyd_joint",
+      "k_encoder": "lloyd",
+      "v_encoder": "lloyd"
+    },
+    {
+      "name": "lloyd_rms125_joint",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "lloyd",
+      "k_fold_gain": "head_residual_norm",
+      "k_fold_gain_factor": 1.25,
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "rtn_rms125_joint",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "k_fold_gain": "head_residual_norm",
+      "k_fold_gain_factor": 1.25,
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq2_v1",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "channel",
+      "name": "direction_k1_v2"
+    },
+    {
+      "name": "calibration_warm",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "k_fold_gain": "head_residual_norm",
+      "k_fold_factor_path": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/fit_warm/factors.json",
+      "v_fold_factor_path": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/fit_warm/factors.json",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calibration_none_rms",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "k_fold_gain": "head_residual_norm",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib2_fp32",
+      "method": "calib_packed",
+      "bits_k": 2,
+      "bits_v": 2,
+      "clip_k": 1.0,
+      "clip_v": 1.0,
+      "tau": -3.0,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib_k2v1_fp32",
+      "method": "calib_packed",
+      "bits_k": 2,
+      "bits_v": 1,
+      "clip_k": 1.0,
+      "clip_v": 0.3,
+      "tau": 0.0,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib1_mean_fp32",
+      "method": "calib_packed",
+      "bits_k": 1,
+      "bits_v": 1,
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": 0.0,
+      "preserve_center_k": true,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib1_mean_fp16",
+      "method": "calib_packed",
+      "bits_k": 1,
+      "bits_v": 1,
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": 0.0,
+      "preserve_center_k": true,
+      "score_fp32": false,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "method": "hybrid_packed",
+      "key_codec": "kvarn2",
+      "clip_v": 0.3,
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "name": "kvarn2_k_clipped_v1"
+    },
+    {
+      "method": "oraclek",
+      "encoder": "lloyd",
+      "oracle_mode": "quant_norm_quant_direction",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "name": "oracle_lloyd_A00"
+    },
+    {
+      "method": "oraclek",
+      "encoder": "lloyd",
+      "oracle_mode": "true_norm_quant_direction",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "name": "oracle_lloyd_A10"
+    },
+    {
+      "method": "oraclek",
+      "encoder": "lloyd",
+      "oracle_mode": "quant_norm_true_direction",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "name": "oracle_lloyd_A01"
+    },
+    {
+      "method": "asym",
+      "selector": "none",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "name": "read_none"
+    },
+    {
+      "method": "asym",
+      "selector": "all",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "read_all"
+    },
+    {
+      "method": "asym",
+      "selector": "periodic",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "name": "read_periodic"
+    },
+    {
+      "method": "asym",
+      "selector": "prefill_only",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "name": "read_prefill_only"
+    },
+    {
+      "method": "asym",
+      "selector": "random",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "name": "read_random"
+    },
+    {
+      "method": "asym",
+      "selector": "mass",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "name": "read_mass"
+    },
+    {
+      "method": "asym",
+      "selector": "risk",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "name": "read_risk"
+    },
+    {
+      "method": "asym",
+      "selector": "thumb_random",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "fraction": 0.25,
+      "global_read_equivalents": 32,
+      "name": "read_thumb_random"
+    },
+    {
+      "method": "full",
+      "selector": "none",
+      "cap": 16,
+      "store_selector_meta": false,
+      "name": "full16"
+    },
+    {
+      "method": "base2",
+      "selector": "none",
+      "cap": 16,
+      "store_selector_meta": false,
+      "name": "base2_16"
+    }
+  ],
+  "start": 0
+}

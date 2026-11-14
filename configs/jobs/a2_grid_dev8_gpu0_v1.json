@@ -1,0 +1,24 @@
+{
+  "name": "a2_grid_dev8_gpu0_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "HF_HUB_OFFLINE": "1",
+    "HF_HUB_DISABLE_PROGRESS_BARS": "1",
+    "TOKENIZERS_PARALLELISM": "false"
+  },
+  "argv": [
+    "/home/RESEARCHER/miniconda3/envs/p72_modern_vlm/bin/python",
+    "-u",
+    "/path/to/TrajKV/code/a2/run_grid.py",
+    "--model",
+    "/path/to/InternVL3-8B-hf",
+    "--samples",
+    "/path/to/TrajKV/configs/a2/dev8.json",
+    "--legacy-scripts",
+    "/path/to/VisContract_P14_2/scripts",
+    "--kivi-source",
+    "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "--output",
+    "/path/to/TrajKV/results/a2_grid_dev8_gpu0_v1"
+  ]
+}

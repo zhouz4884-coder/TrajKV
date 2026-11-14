@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/axis_flip100_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/axis_flip100_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "calibration",
+      "entrypoint": "calibrate_endogenous.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/endogenous20_warm_gpu1_v1.json"
+      ]
+    }
+  ]
+}

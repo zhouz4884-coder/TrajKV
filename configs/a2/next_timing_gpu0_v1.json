@@ -1,0 +1,173 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8_short.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "images": 6,
+  "repeats": 3,
+  "tokens_per_turn": 8,
+  "variants": [
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "name": "base2_8",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "v_layout": "channel",
+      "name": "k2_lloyd_v1",
+      "k_encoder": "rtn",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "new_storage_primary",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "name": "warm_multi_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/multi_gain/factors.json"
+    },
+    {
+      "name": "full16",
+      "method": "full",
+      "selector": "none",
+      "cap": 16
+    },
+    {
+      "name": "base2_16",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 16,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_16",
+      "method": "native4",
+      "cap": 16,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "newread_all",
+      "selector": "all",
+      "fraction": 0.25
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "newread_none",
+      "selector": "none",
+      "fraction": 0.25,
+      "global_read_equivalents": 64.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "newread_freshrisk",
+      "selector": "risk",
+      "fraction": 0.5,
+      "global_read_equivalents": 32.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "newread_cached",
+      "selector": "cached_risk",
+      "fraction": 0.5,
+      "global_read_equivalents": 32.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "new_read_primary",
+      "selector": "prefill_cached_risk",
+      "fraction": 0.5,
+      "global_read_equivalents": 32.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "newread_prefill_fresh",
+      "selector": "prefill_risk",
+      "fraction": 0.5,
+      "global_read_equivalents": 32.0
+    },
+    {
+      "method": "cached_asym",
+      "page": 128,
+      "cap": 16,
+      "store_selector_meta": true,
+      "selector_query_last": true,
+      "name": "newread_periodic",
+      "selector": "periodic",
+      "fraction": 0.25,
+      "global_read_equivalents": 64.0
+    }
+  ],
+  "frozen_contract_sha256": "99c5e5392e4d37b5bb8858b81a872dd7956d351d55797ab76097898b8b1cefce",
+  "declaration": "timing methods fixed before viewing confirm256 or balanced128 outcomes; matched8 outputIDs/question; quality not scored"
+}

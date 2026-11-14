@@ -1,0 +1,97 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/mechanism100.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 1
+  },
+  "count": 50,
+  "variants": [
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "token",
+      "name": "direction_sign_norm_v2_token"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "projection",
+      "bits_v": 2,
+      "v_layout": "token",
+      "name": "direction_sign_projection_v2_token"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "channel",
+      "name": "direction_sign_norm_v2_channel"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "token",
+      "name": "direction_sign_norm_q0.5_v2_token",
+      "query_scale_path": "/path/to/TrajKV/configs/a2/query_scales20.json",
+      "query_scale_power": 0.5
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "token",
+      "name": "direction_sign_norm_q1_v2_token",
+      "query_scale_path": "/path/to/TrajKV/configs/a2/query_scales20.json",
+      "query_scale_power": 1.0
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq4_norm_v1_lloyd",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "ls",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_vq4_ls_v1_lloyd",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "direction_sign_norm_v1_lloyd",
+      "v_encoder": "lloyd"
+    }
+  ],
+  "start": 0
+}

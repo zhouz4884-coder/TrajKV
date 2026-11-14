@@ -1,0 +1,119 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8_short.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "origin_norm_kmad_vmad_head",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "v_encoder": "mad",
+      "v_layout": "channel",
+      "k_token_gain": "origin_norm",
+      "gain_shared": false,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "origin_norm_kmad_vmad_shared",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "v_encoder": "mad",
+      "v_layout": "channel",
+      "k_token_gain": "origin_norm",
+      "gain_shared": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "origin_norm_kmad_vlloyd_head",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "k_token_gain": "origin_norm",
+      "gain_shared": false,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "origin_norm_kmad_vlloyd_shared",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "mad",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "k_token_gain": "origin_norm",
+      "gain_shared": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "origin_norm_klloyd_vmad_head",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "lloyd",
+      "v_encoder": "mad",
+      "v_layout": "channel",
+      "k_token_gain": "origin_norm",
+      "gain_shared": false,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "origin_norm_klloyd_vmad_shared",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "lloyd",
+      "v_encoder": "mad",
+      "v_layout": "channel",
+      "k_token_gain": "origin_norm",
+      "gain_shared": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "origin_norm_klloyd_vlloyd_head",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "lloyd",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "k_token_gain": "origin_norm",
+      "gain_shared": false,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "origin_norm_klloyd_vlloyd_shared",
+      "method": "rate",
+      "bits_k": 1,
+      "bits_v": 1,
+      "k_encoder": "lloyd",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "k_token_gain": "origin_norm",
+      "gain_shared": true,
+      "cap": 8,
+      "store_selector_meta": false
+    }
+  ],
+  "start": 0
+}

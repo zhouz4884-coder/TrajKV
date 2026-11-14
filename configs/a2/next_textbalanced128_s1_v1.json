@@ -1,0 +1,159 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/textvqa_balanced128.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 1
+  },
+  "count": 64,
+  "variants": [
+    {
+      "method": "direction",
+      "cap": 8,
+      "store_selector_meta": false,
+      "gain": "norm",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "name": "new_storage_primary",
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "v_encoder": "lloyd"
+    },
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "name": "base2_8",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "kvarn2_8_quality_port",
+      "method": "kvarn2",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "cap": 8,
+      "store_selector_meta": false,
+      "v_layout": "channel",
+      "name": "k2_lloyd_v1",
+      "k_encoder": "rtn",
+      "v_encoder": "lloyd"
+    },
+    {
+      "name": "previous_frozen_primary",
+      "method": "rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "k_fold_gain": "head_residual_norm",
+      "k_fold_factor_path": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/fit_cold/factors.json",
+      "v_fold_factor_path": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/fit_cold/factors.json",
+      "v_encoder": "lloyd",
+      "v_layout": "channel",
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "cold_first_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s0_v2/first_gain/factors.json"
+    },
+    {
+      "name": "warm_first_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/first_gain/factors.json"
+    },
+    {
+      "name": "cold_multi_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s0_v2/multi_gain/factors.json"
+    },
+    {
+      "name": "warm_multi_gain",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/multi_gain/factors.json"
+    },
+    {
+      "name": "cold_multi_affine",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s0_v2/multi_affine/factors.json"
+    },
+    {
+      "name": "warm_multi_affine",
+      "method": "affine_rate",
+      "bits_k": 2,
+      "bits_v": 1,
+      "k_encoder": "rtn",
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "affine_factor_path": "/path/to/TrajKV/results/trajectory_next32_s1_v2/multi_affine/factors.json"
+    }
+  ],
+  "start": 64
+}

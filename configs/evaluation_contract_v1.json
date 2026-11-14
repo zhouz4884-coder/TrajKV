@@ -1,0 +1,53 @@
+{
+  "schema": "trajkv.evaluation-contract.v1",
+  "data_manifest": "configs/data/final_eval64_runner.json",
+  "model": "InternVL3-8B-hf",
+  "model_identity": "audit/model_identity.json",
+  "generation": {
+    "do_sample": false,
+    "max_tokens": 16,
+    "max_patches": 4,
+    "turns": 10,
+    "margin": 2.0,
+    "max_replays": 1,
+    "policy_seed": 12000
+  },
+  "allocation_calibration": "configs/frozen_gain_tables_dev8_v2.json",
+  "allocation_training_sessions": 8,
+  "primary_comparison_scope": "fixed asym K2+r2/V2+sign storage, same 16 MiB extra logical read allowance",
+  "extra_read_allowance_bytes": 16777216,
+  "methods": [
+    "full",
+    "base2",
+    "native4",
+    "asym"
+  ],
+  "asym_policies": [
+    "base",
+    "uniform",
+    "random",
+    "periodic",
+    "prefill",
+    "early",
+    "margin",
+    "margin_write",
+    "carrier_write",
+    "table_current",
+    "table_future",
+    "probe_l0_t0.05",
+    "probe_l7_t0.02",
+    "probe_l14_t0.02"
+  ],
+  "primary_new_policy": "probe_l7_t0.02",
+  "primary_new_policy_origin": "mid-layer current-query base/residual discrepancy suggested before heldout outcomes",
+  "threshold_selection": "fixed development choices; all listed policies retained regardless of evaluation outcome",
+  "quality": "strict normalized CLEVR exact and image-cluster paired confidence intervals",
+  "resources": "actual packed storage and CUDA peak; per-call logical tensor read payload and measured natural-generation time; no HBM-throughput claim",
+  "comparison_limits": [
+    "Common allowance does not imply identical realized reads",
+    "KVarN materialized mechanism-port is a separate quality reference",
+    "Raw development repair budget violations excluded",
+    "This is local image-heldout evaluation, not official test-server submission"
+  ],
+  "reporting": "retain all prespecified methods, all images, per-turn outcomes, regressions and failed claims"
+}

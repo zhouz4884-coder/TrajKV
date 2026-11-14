@@ -1,0 +1,66 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/mechanism100.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 1
+  },
+  "count": 100,
+  "variants": [
+    {
+      "name": "calib1_center_fp32_100",
+      "method": "calib_packed",
+      "bits_k": 1,
+      "bits_v": 1,
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": 0.0,
+      "preserve_center_k": true,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib1_center_fp16_100",
+      "method": "calib_packed",
+      "bits_k": 1,
+      "bits_v": 1,
+      "clip_k": 0.5,
+      "clip_v": 0.3,
+      "tau": 0.0,
+      "preserve_center_k": true,
+      "score_fp32": false,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib2_fp32_control",
+      "method": "calib_packed",
+      "bits_k": 2,
+      "bits_v": 2,
+      "clip_k": 1.0,
+      "clip_v": 1.0,
+      "tau": -3.0,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    },
+    {
+      "name": "calib_k2v1_fp32_control",
+      "method": "calib_packed",
+      "bits_k": 2,
+      "bits_v": 1,
+      "clip_k": 1.0,
+      "clip_v": 0.3,
+      "tau": 0.0,
+      "score_fp32": true,
+      "cap": 8,
+      "store_selector_meta": false
+    }
+  ],
+  "start": 0
+}

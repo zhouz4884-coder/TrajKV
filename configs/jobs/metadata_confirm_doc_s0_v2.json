@@ -1,0 +1,23 @@
+{
+  "name": "metadata_confirm_doc_s0_v2",
+  "env": {
+    "HF_HUB_OFFLINE": "1",
+    "HF_HUB_DISABLE_PROGRESS_BARS": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/metadata_execution_v2/triton",
+    "TMPDIR": "/path/to/TrajKV/cache/metadata_execution_v2/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/metadata_execution_v2/inductor",
+    "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/metadata_execution_v2/cuda",
+    "CUDA_CACHE_MAXSIZE": "1073741824",
+    "CUDA_VISIBLE_DEVICES": "0"
+  },
+  "argv": [
+    "/home/RESEARCHER/miniconda3/envs/p72_modern_vlm/bin/python",
+    "-u",
+    "/path/to/TrajKV/code/a2/run_after_dependencies.py",
+    "--config",
+    "/path/to/TrajKV/configs/a2/metadata_confirm_doc_s0_v2_wait.json",
+    "--output",
+    "/path/to/TrajKV/results/metadata_confirm_doc_s0_v2"
+  ]
+}

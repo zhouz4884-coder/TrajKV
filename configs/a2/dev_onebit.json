@@ -1,0 +1,41 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16
+  },
+  "count": 8,
+  "variants": [
+    {
+      "name": "base1",
+      "method": "base1",
+      "selector": "none"
+    },
+    {
+      "name": "k_only",
+      "method": "asym1_k",
+      "selector": "all",
+      "fraction": 1
+    },
+    {
+      "name": "v_only",
+      "method": "asym1_v",
+      "selector": "all",
+      "fraction": 1
+    },
+    {
+      "name": "kv_refined",
+      "method": "asym1",
+      "selector": "all",
+      "fraction": 1
+    },
+    {
+      "name": "calibquant1_port",
+      "method": "calib1",
+      "selector": "none"
+    }
+  ]
+}

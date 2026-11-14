@@ -1,0 +1,130 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/mechanism100.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 1
+  },
+  "count": 20,
+  "variants": [
+    {
+      "name": "rotation_v2token_q0_norm",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "token"
+    },
+    {
+      "name": "rotation_v2token_q0_projection",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "projection",
+      "bits_v": 2,
+      "v_layout": "token"
+    },
+    {
+      "name": "rotation_v2token_q0.5_norm",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "token",
+      "query_scale_path": "/path/to/TrajKV/configs/a2/query_scales20.json",
+      "query_scale_power": 0.5
+    },
+    {
+      "name": "rotation_v2token_q0.5_projection",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "projection",
+      "bits_v": 2,
+      "v_layout": "token",
+      "query_scale_path": "/path/to/TrajKV/configs/a2/query_scales20.json",
+      "query_scale_power": 0.5
+    },
+    {
+      "name": "rotation_v2token_q1_norm",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "token",
+      "query_scale_path": "/path/to/TrajKV/configs/a2/query_scales20.json",
+      "query_scale_power": 1.0
+    },
+    {
+      "name": "rotation_v2token_q1_projection",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "projection",
+      "bits_v": 2,
+      "v_layout": "token",
+      "query_scale_path": "/path/to/TrajKV/configs/a2/query_scales20.json",
+      "query_scale_power": 1.0
+    },
+    {
+      "name": "rotation_v2channel_norm",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "norm",
+      "bits_v": 2,
+      "v_layout": "channel"
+    },
+    {
+      "name": "rotation_v2channel_projection",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "projection",
+      "bits_v": 2,
+      "v_layout": "channel"
+    },
+    {
+      "name": "rotation_projection_vfp16",
+      "method": "rotk_port",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "center": true,
+      "rotate": true,
+      "gain": "projection"
+    }
+  ],
+  "start": 0
+}

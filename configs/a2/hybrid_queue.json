@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/a2_c_recheck_gpu0_v2/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/a2_c_recheck_gpu0_v2.launch.json",
+  "tasks": [
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/dev_hybrid.json"
+      ]
+    }
+  ]
+}
