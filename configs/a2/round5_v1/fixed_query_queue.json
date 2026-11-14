@@ -1,0 +1,22 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/round5_v1/sparse64_s0/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/round5_sparse64_s0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "pilot4",
+      "entrypoint": "collect_fixed_query.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round5_v1/fixed_query4.json"
+      ]
+    },
+    {
+      "name": "development16",
+      "entrypoint": "collect_fixed_query.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round5_v1/fixed_query16.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/round5_v1/spectrum_analysis/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/round5_spectrum_analysis_v1.launch.json",
+  "tasks": [
+    {
+      "name": "roundtrip",
+      "entrypoint": "round5_runner.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round5_v1/spectrum_roundtrip.json"
+      ]
+    },
+    {
+      "name": "development16",
+      "entrypoint": "round5_runner.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round5_v1/spectrum_dev16.json"
+      ]
+    }
+  ]
+}

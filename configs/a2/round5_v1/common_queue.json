@@ -1,0 +1,19 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/round5_v1/mean_eval/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/round5_mean_eval_v1.launch.json",
+  "tasks": [
+    {
+      "name": "collector",
+      "entrypoint": "collect_round5.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round5_v1/t0_common.json"
+      ]
+    },
+    {
+      "name": "sparse_v_check",
+      "entrypoint": "sparse_v_residual_check.py",
+      "arguments": []
+    }
+  ]
+}

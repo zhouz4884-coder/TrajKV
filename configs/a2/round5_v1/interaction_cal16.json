@@ -1,0 +1,23 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/next_cal32_independent_questions.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 8,
+    "compress_before_question": true,
+    "turns": 1,
+    "max_tokens": 16
+  },
+  "images": 16,
+  "codec": {
+    "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+    "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+    "v_group_size": "all",
+    "decode_samples": 4,
+    "selector": "none",
+    "store_selector_meta": false,
+    "measure_sign_refinement_gain": true,
+    "interaction_gram": true
+  }
+}

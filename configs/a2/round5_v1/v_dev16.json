@@ -1,0 +1,107 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/round5_v1/dev16.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 16,
+  "variants": [
+    {
+      "name": "full8",
+      "method": "full",
+      "selector": "none",
+      "cap": 8
+    },
+    {
+      "name": "native4_8",
+      "method": "native4",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    },
+    {
+      "name": "base2_8",
+      "method": "base2",
+      "bits_k": 2,
+      "bits_v": 2,
+      "cap": 8,
+      "store_selector_meta": false,
+      "selector": "none"
+    },
+    {
+      "method": "direction_meta",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "cold_meta_all_kv",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json"
+    },
+    {
+      "method": "direction_functional_v",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "g1_b0",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+      "functional_v_factor_path": "/path/to/TrajKV/results/round5_v1/v_queue/g1_b0/factors.json"
+    },
+    {
+      "method": "direction_functional_v",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "g1_b1",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+      "functional_v_factor_path": "/path/to/TrajKV/results/round5_v1/v_queue/g1_b1/factors.json"
+    },
+    {
+      "method": "direction_functional_v",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "g8_b0",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+      "functional_v_factor_path": "/path/to/TrajKV/results/round5_v1/v_queue/g8_b0/factors.json"
+    },
+    {
+      "method": "direction_functional_v",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "g8_b1",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+      "functional_v_factor_path": "/path/to/TrajKV/results/round5_v1/v_queue/g8_b1/factors.json"
+    }
+  ],
+  "start": 0
+}

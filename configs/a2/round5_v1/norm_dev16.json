@@ -1,0 +1,60 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/round5_v1/dev16.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 16,
+  "variants": [
+    {
+      "method": "query_spectrum_port",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "project_query_r16_norm",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+      "spectrum_artifact_path": "/path/to/TrajKV/results/round5_v1/spectrum_analysis/transforms.pt",
+      "basis_dtype": "float32",
+      "gain_rule": "original_space_norm",
+      "collect_score_metrics": true,
+      "score_metric_decode_steps": 2,
+      "transform": "query_aware_mixed",
+      "key_encoding": "projection",
+      "rank": 16,
+      "projection_restore_norm": true
+    },
+    {
+      "method": "query_spectrum_port",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "project_query_r32_norm",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+      "spectrum_artifact_path": "/path/to/TrajKV/results/round5_v1/spectrum_analysis/transforms.pt",
+      "basis_dtype": "float32",
+      "gain_rule": "original_space_norm",
+      "collect_score_metrics": true,
+      "score_metric_decode_steps": 2,
+      "transform": "query_aware_mixed",
+      "key_encoding": "projection",
+      "rank": 32,
+      "projection_restore_norm": true
+    }
+  ],
+  "start": 0
+}

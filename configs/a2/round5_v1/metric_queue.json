@@ -1,0 +1,34 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/round5_v1/spectrum_queue/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/round5_spectrum_queue_v1.launch.json",
+  "tasks": [
+    {
+      "name": "identity",
+      "entrypoint": "prepare_metric_pq_proxy.py",
+      "arguments": [
+        "--stats",
+        "/path/to/TrajKV/results/round5_v1/t0_v2/moments.pt",
+        "--mode",
+        "identity"
+      ]
+    },
+    {
+      "name": "query",
+      "entrypoint": "prepare_metric_pq_proxy.py",
+      "arguments": [
+        "--stats",
+        "/path/to/TrajKV/results/round5_v1/t0_v2/moments.pt",
+        "--mode",
+        "query"
+      ]
+    },
+    {
+      "name": "development16",
+      "entrypoint": "round5_runner.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round5_v1/metric_dev16.json"
+      ]
+    }
+  ]
+}

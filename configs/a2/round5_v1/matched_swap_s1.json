@@ -1,0 +1,251 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/docvqa_next_dev64.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 32,
+  "variants": [
+    {
+      "method": "sparse_v_residual",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "v_matched_high_gain_24",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+      "selected_units": [
+        [
+          26,
+          0
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          22,
+          0
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24,
+          3
+        ],
+        [
+          24,
+          1
+        ],
+        [
+          26,
+          3
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          24,
+          2
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          26,
+          2
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          22,
+          3
+        ],
+        [
+          27,
+          2
+        ],
+        [
+          25,
+          3
+        ],
+        [
+          22,
+          1
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          23,
+          0
+        ]
+      ],
+      "residual_axis": "v",
+      "budget_bits": 1.8,
+      "selection_calibration_sha256": "202f92d618c41769f8344c584e6bd00e29300e171bea7dbf8721191d4a262e18",
+      "residual_units_limit": 24,
+      "selection_mse_calibration_sha256": "23f8698569c9429b195debd4c83ec93d152d0f286ae2e8856d6fcd33d70c9615",
+      "selection_protocol": "strict matched-DeltaMSE eight-pair swap, sixteen common units; calibration-only"
+    },
+    {
+      "method": "sparse_v_residual",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+      "name": "v_matched_low_gain_24",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+      "selected_units": [
+        [
+          26,
+          0
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          22,
+          0
+        ],
+        [
+          23,
+          1
+        ],
+        [
+          24,
+          3
+        ],
+        [
+          24,
+          1
+        ],
+        [
+          26,
+          3
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          24,
+          2
+        ],
+        [
+          21,
+          1
+        ],
+        [
+          15,
+          2
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          20,
+          2
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          27,
+          3
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          24,
+          0
+        ],
+        [
+          27,
+          0
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          21,
+          0
+        ],
+        [
+          18,
+          3
+        ],
+        [
+          25,
+          2
+        ]
+      ],
+      "residual_axis": "v",
+      "budget_bits": 1.8,
+      "selection_calibration_sha256": "202f92d618c41769f8344c584e6bd00e29300e171bea7dbf8721191d4a262e18",
+      "residual_units_limit": 24,
+      "selection_mse_calibration_sha256": "23f8698569c9429b195debd4c83ec93d152d0f286ae2e8856d6fcd33d70c9615",
+      "selection_protocol": "strict matched-DeltaMSE eight-pair swap, sixteen common units; calibration-only"
+    }
+  ],
+  "start": 32,
+  "analysis_role": "open-development matched-DeltaMSE mechanism intervention"
+}
