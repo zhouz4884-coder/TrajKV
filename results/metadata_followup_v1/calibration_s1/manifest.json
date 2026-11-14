@@ -1,0 +1,65 @@
+{
+  "tasks": [
+    {
+      "name": "arithmetic",
+      "entrypoint": "check_metadata_direction.py",
+      "arguments": []
+    },
+    {
+      "name": "gradient",
+      "entrypoint": "calibrate_direction_metadata.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/metadata_followup_v1_s1_gradient.json"
+      ]
+    },
+    {
+      "name": "g128_v",
+      "entrypoint": "calibrate_direction_metadata.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/metadata_followup_v1_s1_g128_v.json"
+      ]
+    },
+    {
+      "name": "g128_k",
+      "entrypoint": "calibrate_direction_metadata.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/metadata_followup_v1_s1_g128_k.json"
+      ]
+    },
+    {
+      "name": "g128_kv",
+      "entrypoint": "calibrate_direction_metadata.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/metadata_followup_v1_s1_g128_kv.json"
+      ]
+    },
+    {
+      "name": "g128_wholekv",
+      "entrypoint": "calibrate_direction_metadata.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/metadata_followup_v1_s1_g128_wholekv.json"
+      ]
+    },
+    {
+      "name": "all_v",
+      "entrypoint": "calibrate_direction_metadata.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/metadata_followup_v1_s1_all_v.json"
+      ]
+    },
+    {
+      "name": "all_kv",
+      "entrypoint": "calibrate_direction_metadata.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/metadata_followup_v1_s1_all_kv.json"
+      ]
+    }
+  ]
+}

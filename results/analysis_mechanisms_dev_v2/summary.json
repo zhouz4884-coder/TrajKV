@@ -1,0 +1,4081 @@
+{
+  "four_arm": {
+    "n_sessions": 8,
+    "n_turns": 40,
+    "effect_summary": [
+      {
+        "metric": "direct_kl",
+        "mean": 0.03007432031568319,
+        "ci_lower": 0.013941477146662534,
+        "ci_upper": 0.047166224877256684,
+        "n_questions": 40,
+        "n_images": 8,
+        "status": "ok",
+        "repeats": 2000,
+        "n_sessions": 8
+      },
+      {
+        "metric": "history_kl",
+        "mean": 0.0022881518837637475,
+        "ci_lower": 0.0007226156355984005,
+        "ci_upper": 0.00440840573435328,
+        "n_questions": 40,
+        "n_images": 8,
+        "status": "ok",
+        "repeats": 2000,
+        "n_sessions": 8
+      },
+      {
+        "metric": "joint_kl",
+        "mean": 0.03621117328191191,
+        "ci_lower": 0.019706437531306513,
+        "ci_upper": 0.05307381415476079,
+        "n_questions": 40,
+        "n_images": 8,
+        "status": "ok",
+        "repeats": 2000,
+        "n_sessions": 8
+      },
+      {
+        "metric": "kl_interaction",
+        "mean": 0.0038487010824649797,
+        "ci_lower": -0.0006731680044517498,
+        "ci_upper": 0.009427357309951803,
+        "n_questions": 40,
+        "n_images": 8,
+        "status": "ok",
+        "repeats": 2000,
+        "n_sessions": 8
+      },
+      {
+        "metric": "reference_history_rescue_kl",
+        "mean": 0.006136852966228727,
+        "ci_lower": 0.0015646677964856668,
+        "ci_upper": 0.011342422946607858,
+        "n_questions": 40,
+        "n_images": 8,
+        "status": "ok",
+        "repeats": 2000,
+        "n_sessions": 8
+      },
+      {
+        "metric": "reference_read_rescue_kl",
+        "mean": 0.033923021398148165,
+        "ci_lower": 0.018668675678349844,
+        "ci_upper": 0.04905945923162749,
+        "n_questions": 40,
+        "n_images": 8,
+        "status": "ok",
+        "repeats": 2000,
+        "n_sessions": 8
+      },
+      {
+        "metric": "history_k_rms",
+        "mean": 0.09708920371573895,
+        "ci_lower": 0.09299480038213401,
+        "ci_upper": 0.10110986397014414,
+        "n_questions": 40,
+        "n_images": 8,
+        "status": "ok",
+        "repeats": 2000,
+        "n_sessions": 8
+      },
+      {
+        "metric": "history_v_rms",
+        "mean": 0.13878916114662737,
+        "ci_lower": 0.13275183145557584,
+        "ci_upper": 0.14499170991285262,
+        "n_questions": 40,
+        "n_images": 8,
+        "status": "ok",
+        "repeats": 2000,
+        "n_sessions": 8
+      }
+    ],
+    "numerical_nulls": [
+      {
+        "control": "N1_allref_reencoding_repeat",
+        "n_turns": 40,
+        "logit_max_abs": {
+          "n": 40,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "p05": 0.0,
+          "p95": 0.0
+        },
+        "kl": {
+          "n": 40,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "p05": 0.0,
+          "p95": 0.0
+        },
+        "total_argmax_flips": 0,
+        "state_k_max": 0,
+        "state_v_max": 0
+      },
+      {
+        "control": "N2_base_free_vs_teacher_forced",
+        "n_turns": 40,
+        "logit_max_abs": {
+          "n": 40,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "p05": 0.0,
+          "p95": 0.0
+        },
+        "kl": {
+          "n": 40,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "p05": 0.0,
+          "p95": 0.0
+        },
+        "total_argmax_flips": 0,
+        "state_k_max": 0,
+        "state_v_max": 0
+      },
+      {
+        "control": "N3_precomputed_allref_vs_four_arm",
+        "n_turns": 40,
+        "logit_max_abs": {
+          "n": 40,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "p05": 0.0,
+          "p95": 0.0
+        },
+        "kl": {
+          "n": 40,
+          "mean": 0.0,
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "p05": 0.0,
+          "p95": 0.0
+        },
+        "total_argmax_flips": 0,
+        "state_k_max": 0,
+        "state_v_max": 0
+      }
+    ],
+    "history_reference_rescue_negative": [
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 2,
+        "direct_kl": 0.028481962744724514,
+        "history_kl": 0.004930545050308143,
+        "joint_kl": 0.024156043859368835,
+        "kl_interaction": -0.00925646393566382,
+        "reference_history_rescue_kl": -0.004325918885355679,
+        "reference_read_rescue_kl": 0.019225498809060694,
+        "history_k_rms": 0.07185126707876724,
+        "history_v_rms": 0.09505801254952904,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.05738879876248515,
+          "base_history_effect_given_ref_read": -0.07383014722968426,
+          "joint_base_effect": 0.026957611119996394,
+          "interaction": 0.0433989595871955,
+          "reference_history_rescue_given_base_read": 0.030431187642488755,
+          "reference_read_rescue_given_base_history": -0.10078775834968065
+        }
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 6,
+        "direct_kl": 0.11118532721151812,
+        "history_kl": 0.00025235435996705756,
+        "joint_kl": 0.0998569775468497,
+        "kl_interaction": -0.011580704024635471,
+        "reference_history_rescue_kl": -0.011328349664668419,
+        "reference_read_rescue_kl": 0.09960462318688265,
+        "history_k_rms": 0.1121991362690164,
+        "history_v_rms": 0.1627148078958948,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.3899401063779877,
+          "base_history_effect_given_ref_read": -0.019663285811243103,
+          "joint_base_effect": 0.3659077605583334,
+          "interaction": -0.004369060008411196,
+          "reference_history_rescue_given_base_read": 0.0240323458196543,
+          "reference_read_rescue_given_base_history": -0.3855710463695765
+        }
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 3,
+        "direct_kl": 0.009186070030094784,
+        "history_kl": 0.0003473631068497633,
+        "joint_kl": 0.005963768457664899,
+        "kl_interaction": -0.0035696646792796475,
+        "reference_history_rescue_kl": -0.003222301572429884,
+        "reference_read_rescue_kl": 0.005616405350815136,
+        "history_k_rms": 0.10569451066310084,
+        "history_v_rms": 0.14268978875362176,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.035771525436618504,
+          "base_history_effect_given_ref_read": -0.009692877084966509,
+          "joint_base_effect": 0.030521621175823088,
+          "interaction": 0.004442972824171096,
+          "reference_history_rescue_given_base_read": 0.00524990426079542,
+          "reference_read_rescue_given_base_history": -0.0402144982607896
+        }
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 5,
+        "direct_kl": 0.28962173103299343,
+        "history_kl": 2.341016458453036e-06,
+        "joint_kl": 0.27218670105322135,
+        "kl_interaction": -0.01743737099623055,
+        "reference_history_rescue_kl": -0.017435029979772088,
+        "reference_read_rescue_kl": 0.2721843600367629,
+        "history_k_rms": 0.10229052198534892,
+        "history_v_rms": 0.14154657200466242,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": -0.6193466356895508,
+          "base_history_effect_given_ref_read": -0.0002658811028825505,
+          "joint_base_effect": -0.5836489892686907,
+          "interaction": 0.03596352752374268,
+          "reference_history_rescue_given_base_read": -0.03569764642086015,
+          "reference_read_rescue_given_base_history": 0.5833831081658082
+        }
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 6,
+        "direct_kl": 0.007093891087344434,
+        "history_kl": 3.332186698375422e-05,
+        "joint_kl": 0.007060410228747012,
+        "kl_interaction": -6.680272558117623e-05,
+        "reference_history_rescue_kl": -3.348085859742212e-05,
+        "reference_read_rescue_kl": 0.007027088361763258,
+        "history_k_rms": 0.10168436522742602,
+        "history_v_rms": 0.1416295484300153,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.023570635495460943,
+          "base_history_effect_given_ref_read": 0.001342715437381188,
+          "joint_base_effect": 0.023549415568396438,
+          "interaction": -0.0013639353644456925,
+          "reference_history_rescue_given_base_read": 2.1219927064506164e-05,
+          "reference_read_rescue_given_base_history": -0.02220670013101525
+        }
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 4,
+        "direct_kl": 0.02885903613933179,
+        "history_kl": 0.005597796084615074,
+        "joint_kl": 0.011398053598031213,
+        "kl_interaction": -0.02305877862591565,
+        "reference_history_rescue_kl": -0.017460982541300577,
+        "reference_read_rescue_kl": 0.005800257513416139,
+        "history_k_rms": 0.08728213014310778,
+        "history_v_rms": 0.13831210072432906,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": -0.15367821421762687,
+          "base_history_effect_given_ref_read": 0.032091938870301276,
+          "joint_base_effect": -0.04254989905596515,
+          "interaction": 0.07903637629136043,
+          "reference_history_rescue_given_base_read": -0.11112831516166172,
+          "reference_read_rescue_given_base_history": 0.07464183792626643
+        }
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 6,
+        "direct_kl": 0.03502095441339328,
+        "history_kl": 0.00018031454299667396,
+        "joint_kl": 0.031584564815202,
+        "kl_interaction": -0.0036167041411879555,
+        "reference_history_rescue_kl": -0.0034363895981912793,
+        "reference_read_rescue_kl": 0.03140425027220532,
+        "history_k_rms": 0.10721975688142965,
+        "history_v_rms": 0.17076025281942958,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.03772793245892761,
+          "base_history_effect_given_ref_read": 0.005213568703639648,
+          "joint_base_effect": 0.03716812752206398,
+          "interaction": -0.005773373640503281,
+          "reference_history_rescue_given_base_read": 0.000559804936863638,
+          "reference_read_rescue_given_base_history": -0.03195455881842433
+        }
+      },
+      {
+        "session_id": "clevr_dialog_6653",
+        "image_id": "CLEVR_val_006653",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 6,
+        "direct_kl": 0.007625181379639168,
+        "history_kl": 0.001319008965544042,
+        "joint_kl": 0.0017273187839933152,
+        "kl_interaction": -0.007216871561189895,
+        "reference_history_rescue_kl": -0.005897862595645853,
+        "reference_read_rescue_kl": 0.0004083098184492731,
+        "history_k_rms": 0.10550261053376594,
+        "history_v_rms": 0.1507667997634875,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.08229529526676088,
+          "base_history_effect_given_ref_read": -0.04093414798169903,
+          "joint_base_effect": 0.04186919407865075,
+          "interaction": 0.000508046793588901,
+          "reference_history_rescue_given_base_read": 0.04042610118811013,
+          "reference_read_rescue_given_base_history": -0.08280334206034978
+        }
+      },
+      {
+        "session_id": "clevr_dialog_247",
+        "image_id": "CLEVR_val_000247",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 2,
+        "direct_kl": 0.015925465013481438,
+        "history_kl": 4.430902591074819e-05,
+        "joint_kl": 0.015619291514107755,
+        "kl_interaction": -0.00035048252528443145,
+        "reference_history_rescue_kl": -0.0003061734993736829,
+        "reference_read_rescue_kl": 0.015574982488197006,
+        "history_k_rms": 0.11481701838429927,
+        "history_v_rms": 0.1436276820840318,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": -0.08800130011710736,
+          "base_history_effect_given_ref_read": 0.003047522114352455,
+          "joint_base_effect": -0.08680110827524026,
+          "interaction": -0.0018473302724853619,
+          "reference_history_rescue_given_base_read": -0.0012001918418670932,
+          "reference_read_rescue_given_base_history": 0.08984863038959272
+        }
+      },
+      {
+        "session_id": "clevr_dialog_247",
+        "image_id": "CLEVR_val_000247",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 5,
+        "direct_kl": 0.019435318802963165,
+        "history_kl": 0.0017595780948473315,
+        "joint_kl": 0.017118477826148473,
+        "kl_interaction": -0.004076419071662023,
+        "reference_history_rescue_kl": -0.002316840976814692,
+        "reference_read_rescue_kl": 0.015358899731301142,
+        "history_k_rms": 0.09326617304491623,
+        "history_v_rms": 0.13095179992633682,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.07150310829870728,
+          "base_history_effect_given_ref_read": -0.033168286376068945,
+          "joint_base_effect": 0.035939942472286185,
+          "interaction": -0.002394879450352133,
+          "reference_history_rescue_given_base_read": 0.03556316582642109,
+          "reference_read_rescue_given_base_history": -0.06910822884835513
+        }
+      },
+      {
+        "session_id": "clevr_dialog_247",
+        "image_id": "CLEVR_val_000247",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 6,
+        "direct_kl": 0.000683216497710227,
+        "history_kl": 0.000561433295992941,
+        "joint_kl": 0.00017985569136048221,
+        "kl_interaction": -0.0010647941023426857,
+        "reference_history_rescue_kl": -0.0005033608063497448,
+        "reference_read_rescue_kl": -0.0003815776046324587,
+        "history_k_rms": 0.08932362408574145,
+        "history_v_rms": 0.12644905600523662,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.012818797338849788,
+          "base_history_effect_given_ref_read": -0.013248315308684297,
+          "joint_base_effect": 0.006758118390028191,
+          "interaction": 0.0071876363598626924,
+          "reference_history_rescue_given_base_read": 0.006060678948821598,
+          "reference_read_rescue_given_base_history": -0.020006433698712488
+        }
+      },
+      {
+        "session_id": "clevr_dialog_8334",
+        "image_id": "CLEVR_val_008334",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 5,
+        "direct_kl": 0.09441849515510449,
+        "history_kl": 0.00014158880917647065,
+        "joint_kl": 0.08431875313520279,
+        "kl_interaction": -0.010241330829078174,
+        "reference_history_rescue_kl": -0.0100997420199017,
+        "reference_read_rescue_kl": 0.08417716432602632,
+        "history_k_rms": 0.09709724972169068,
+        "history_v_rms": 0.1400769468861002,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.07962493194325376,
+          "base_history_effect_given_ref_read": -0.01070626925896323,
+          "joint_base_effect": 0.09435261647141602,
+          "interaction": 0.025433953787125485,
+          "reference_history_rescue_given_base_read": -0.014727684528162255,
+          "reference_read_rescue_given_base_history": -0.10505888573037925
+        }
+      }
+    ],
+    "current_reference_rescue_negative": [
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 5,
+        "direct_kl": 4.722307104031475e-06,
+        "history_kl": 3.241376965670888e-05,
+        "joint_kl": 8.96865215012448e-06,
+        "kl_interaction": -2.8167424610615873e-05,
+        "reference_history_rescue_kl": 4.2463450460930055e-06,
+        "reference_read_rescue_kl": -2.34451175065844e-05,
+        "history_k_rms": 0.11678664148084543,
+        "history_v_rms": 0.17172368313589773,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.00019568660526042558,
+          "base_history_effect_given_ref_read": -0.0005771331176554362,
+          "joint_base_effect": -0.000290926656765343,
+          "interaction": 9.051985562966765e-05,
+          "reference_history_rescue_given_base_read": 0.0004866132620257686,
+          "reference_read_rescue_given_base_history": -0.00028620646089009324
+        }
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 6,
+        "direct_kl": 8.676619414438655e-06,
+        "history_kl": 2.8198989126076557e-05,
+        "joint_kl": 8.911562192575453e-06,
+        "kl_interaction": -2.796404634793976e-05,
+        "reference_history_rescue_kl": 2.349427781367984e-07,
+        "reference_read_rescue_kl": -1.9287426933501105e-05,
+        "history_k_rms": 0.11574648001467092,
+        "history_v_rms": 0.17164483474659337,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.00035295246792843744,
+          "base_history_effect_given_ref_read": -0.000825985526987965,
+          "joint_base_effect": -0.000331141411392696,
+          "interaction": 0.00014189164766683152,
+          "reference_history_rescue_given_base_read": 0.0006840938793211335,
+          "reference_read_rescue_given_base_history": -0.000494844115595269
+        }
+      },
+      {
+        "session_id": "clevr_dialog_247",
+        "image_id": "CLEVR_val_000247",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "turn": 6,
+        "direct_kl": 0.000683216497710227,
+        "history_kl": 0.000561433295992941,
+        "joint_kl": 0.00017985569136048221,
+        "kl_interaction": -0.0010647941023426857,
+        "reference_history_rescue_kl": -0.0005033608063497448,
+        "reference_read_rescue_kl": -0.0003815776046324587,
+        "history_k_rms": 0.08932362408574145,
+        "history_v_rms": 0.12644905600523662,
+        "target_logprob_contrasts_diagnostic": {
+          "current_base_effect_given_ref_history": 0.012818797338849788,
+          "base_history_effect_given_ref_read": -0.013248315308684297,
+          "joint_base_effect": 0.006758118390028191,
+          "interaction": 0.0071876363598626924,
+          "reference_history_rescue_given_base_read": 0.006060678948821598,
+          "reference_read_rescue_given_base_history": -0.020006433698712488
+        }
+      }
+    ]
+  },
+  "actions": {
+    "rankings": [
+      {
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "spearman_current_future": 0.2633868947559428,
+        "current_order": [
+          "layer1:text_prefill",
+          "layer0:text_prefill",
+          "layer3:early",
+          "layer0:early",
+          "layer0:late",
+          "layer1:late",
+          "layer2:late",
+          "layer3:late",
+          "layer1:early",
+          "layer2:early",
+          "layer2:text_prefill",
+          "layer3:text_prefill"
+        ],
+        "future_order": [
+          "layer0:text_prefill",
+          "layer1:text_prefill",
+          "layer2:text_prefill",
+          "layer1:late",
+          "layer0:late",
+          "layer3:text_prefill",
+          "layer3:early",
+          "layer2:early",
+          "layer3:late",
+          "layer2:late",
+          "layer0:early",
+          "layer1:early"
+        ]
+      }
+    ],
+    "n_write_interventions": 192,
+    "current_positive_future_negative": [
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.015563411087523647,
+        "future_gain": -0.0015796873377366977,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 23267328,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:early",
+        "layer_group": 2,
+        "phase": "early",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 3.121036351070344e-05,
+        "future_gain": -0.00016696851270012886,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 25202688,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:text_prefill",
+        "layer_group": 2,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.0012532734850439057,
+        "future_gain": -0.09223740682320265,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 24471552,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.004766510416621539,
+        "future_gain": -0.002241839410522024,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 19310592,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer1:text_prefill",
+        "layer_group": 1,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.006624937462582913,
+        "future_gain": -0.0014127576875896048,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 19310592,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.007262152589981489,
+        "future_gain": -0.00016265571874459102,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 33073152,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer1:text_prefill",
+        "layer_group": 1,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.0015559915470419697,
+        "future_gain": -0.00024387179693316843,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 33073152,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:text_prefill",
+        "layer_group": 3,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.008249418867884871,
+        "future_gain": -7.438830329577033e-05,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 33073152,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:early",
+        "layer_group": 3,
+        "phase": "early",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.002957853811728748,
+        "future_gain": -5.077174825321053e-06,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 24055808,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 1.224169224197733e-05,
+        "future_gain": -0.00020889100271898574,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 30779392,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:early",
+        "layer_group": 2,
+        "phase": "early",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 6.529000704320947e-09,
+        "future_gain": -1.7323446578762234e-06,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 31166464,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:early",
+        "layer_group": 3,
+        "phase": "early",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 8.213498699643122e-09,
+        "future_gain": -1.6450668075307959e-07,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 31166464,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6653",
+        "image_id": "CLEVR_val_006653",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.0020806874354319595,
+        "future_gain": -0.0001417391394549451,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 31467520,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6653",
+        "image_id": "CLEVR_val_006653",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:early",
+        "layer_group": 2,
+        "phase": "early",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.0011015496445420322,
+        "future_gain": -0.0005826068843819009,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 31854592,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6653",
+        "image_id": "CLEVR_val_006653",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:early",
+        "layer_group": 3,
+        "phase": "early",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.001592463870005622,
+        "future_gain": -0.0003317497012177051,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 31854592,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_247",
+        "image_id": "CLEVR_val_000247",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:text_prefill",
+        "layer_group": 2,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.03410395491039703,
+        "future_gain": -0.002023578265177261,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 18278400,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_247",
+        "image_id": "CLEVR_val_000247",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.006512392137024982,
+        "future_gain": -0.00029413188771962035,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 32155648,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_247",
+        "image_id": "CLEVR_val_000247",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:text_prefill",
+        "layer_group": 2,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 0.006161228620780303,
+        "future_gain": -0.0005790134811692249,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 32155648,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_8334",
+        "image_id": "CLEVR_val_008334",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:text_prefill",
+        "layer_group": 2,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": 1.4801484395719218e-09,
+        "future_gain": -0.0040521365194413,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 26191872,
+        "target_turns": 2
+      }
+    ],
+    "current_negative_future_positive": [
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:text_prefill",
+        "layer_group": 3,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.0034082705144348954,
+        "future_gain": 0.0008632461477619674,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 17934336,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer1:early",
+        "layer_group": 1,
+        "phase": "early",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -4.730815380108088e-06,
+        "future_gain": 0.00024993704535822265,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 25202688,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:text_prefill",
+        "layer_group": 2,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.00039340698615690533,
+        "future_gain": 0.00018616456717001213,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 24815616,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.0002820972464865597,
+        "future_gain": 0.008080707840389105,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 24471552,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer1:text_prefill",
+        "layer_group": 1,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.0013708292048315964,
+        "future_gain": 0.00808067813725505,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 24471552,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:text_prefill",
+        "layer_group": 3,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.009567984132328334,
+        "future_gain": 0.00016149158311316815,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 19310592,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:text_prefill",
+        "layer_group": 3,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.015485520272055856,
+        "future_gain": 0.00011145700943790068,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 26880000,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:early",
+        "layer_group": 0,
+        "phase": "early",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -3.138121955888117e-07,
+        "future_gain": 0.01866947731356707,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 33460224,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.028802570664232675,
+        "future_gain": 2.0057411356674656e-05,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 23668736,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer1:early",
+        "layer_group": 1,
+        "phase": "early",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.00036502775795584346,
+        "future_gain": 1.1100014883742852e-05,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 24055808,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:early",
+        "layer_group": 2,
+        "phase": "early",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.0016761309970416377,
+        "future_gain": 3.083343740938225e-05,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 24055808,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:text_prefill",
+        "layer_group": 3,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.015515737895555394,
+        "future_gain": 3.7855356631909597e-06,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 23668736,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer1:text_prefill",
+        "layer_group": 1,
+        "phase": "text_prefill",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -5.4221747292101445e-05,
+        "future_gain": 0.00020734110494619002,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 30779392,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_6926",
+        "image_id": "CLEVR_val_006926",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer1:early",
+        "layer_group": 1,
+        "phase": "early",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -6.158652831655068e-10,
+        "future_gain": 0.00042195770370833345,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 31166464,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_247",
+        "image_id": "CLEVR_val_000247",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer2:early",
+        "layer_group": 2,
+        "phase": "early",
+        "write_turn": 4,
+        "target_turn": 5,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -2.0931783212863854e-06,
+        "future_gain": 0.00025025813835245075,
+        "residual_read_bytes": 774144,
+        "action_logical_read_bytes": 32542720,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_8334",
+        "image_id": "CLEVR_val_008334",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer0:text_prefill",
+        "layer_group": 0,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.0601451594551663,
+        "future_gain": 0.2830189728480923,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 18622464,
+        "target_turns": 2
+      },
+      {
+        "session_id": "clevr_dialog_8334",
+        "image_id": "CLEVR_val_008334",
+        "split": "development",
+        "schema": "trajkv.mechanism_fidelity.v2",
+        "action": "layer3:text_prefill",
+        "layer_group": 3,
+        "phase": "text_prefill",
+        "write_turn": 2,
+        "target_turn": 3,
+        "horizon": 1,
+        "metric": "KL_fidelity_gain_not_accuracy",
+        "current_gain": -0.05203286259784723,
+        "future_gain": 0.0026957027227002706,
+        "residual_read_bytes": 387072,
+        "action_logical_read_bytes": 18622464,
+        "target_turns": 2
+      }
+    ],
+    "interpretation": "v1 likelihood is diagnostic only; v2 fidelity remains distribution fidelity, not accuracy"
+  },
+  "carrier": {
+    "n_sessions": 4,
+    "n_interventions": 300,
+    "n_lexical_cases": 10,
+    "all_positions_unchanged": true,
+    "all_token_schedules_unchanged": true,
+    "all_matched_position_counts": true,
+    "all_matched_layer_sets": true,
+    "all_matched_value_write_bytes": true,
+    "matched_control_position_overlap_count": 0,
+    "position_counts": [
+      1,
+      2
+    ],
+    "logical_write_byte_values": [
+      28672,
+      57344
+    ],
+    "alpha1_amplitude_summary": [
+      {
+        "position_type": "carrier",
+        "axis": "k",
+        "alpha": 1,
+        "intervention_l2": {
+          "n": 10,
+          "mean": 15.522703567277722,
+          "median": 14.221504572028703,
+          "minimum": 7.746163316693494,
+          "maximum": 21.973810472081748,
+          "p05": 9.6995711469939,
+          "p95": 21.807423793896408
+        },
+        "zero_amplitude_cases": []
+      },
+      {
+        "position_type": "carrier",
+        "axis": "v",
+        "alpha": 1,
+        "intervention_l2": {
+          "n": 10,
+          "mean": 19.59490181086335,
+          "median": 17.803760821567337,
+          "minimum": 13.443161364118415,
+          "maximum": 27.063956909482584,
+          "p05": 14.227455066443339,
+          "p95": 27.044576061458873
+        },
+        "zero_amplitude_cases": []
+      },
+      {
+        "position_type": "prompt_control",
+        "axis": "k",
+        "alpha": 1,
+        "intervention_l2": {
+          "n": 10,
+          "mean": 11.702857779819427,
+          "median": 11.51271582309024,
+          "minimum": 7.272062930584184,
+          "maximum": 17.773253403812095,
+          "p05": 7.992947731585358,
+          "p95": 16.638675337158066
+        },
+        "zero_amplitude_cases": []
+      },
+      {
+        "position_type": "prompt_control",
+        "axis": "v",
+        "alpha": 1,
+        "intervention_l2": {
+          "n": 10,
+          "mean": 18.091073824119444,
+          "median": 18.227964548104893,
+          "minimum": 11.341587609954276,
+          "maximum": 27.585902575885516,
+          "p05": 11.911271729789124,
+          "p95": 25.491559425711667
+        },
+        "zero_amplitude_cases": []
+      },
+      {
+        "position_type": "random_control",
+        "axis": "k",
+        "alpha": 1,
+        "intervention_l2": {
+          "n": 10,
+          "mean": 2.5671209116102203,
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 17.516124684341616,
+          "p05": 0.0,
+          "p95": 13.303656570680143
+        },
+        "zero_amplitude_cases": [
+          {
+            "session_id": "clevr_dialog_12324",
+            "carrier_id": "t2_carrier0",
+            "write_turn": 2
+          },
+          {
+            "session_id": "clevr_dialog_12324",
+            "carrier_id": "t4_carrier0",
+            "write_turn": 4
+          },
+          {
+            "session_id": "clevr_dialog_7843",
+            "carrier_id": "t2_carrier0",
+            "write_turn": 2
+          },
+          {
+            "session_id": "clevr_dialog_7843",
+            "carrier_id": "t2_carrier1",
+            "write_turn": 2
+          },
+          {
+            "session_id": "clevr_dialog_7843",
+            "carrier_id": "t4_carrier0",
+            "write_turn": 4
+          },
+          {
+            "session_id": "clevr_dialog_8937",
+            "carrier_id": "t2_carrier0",
+            "write_turn": 2
+          },
+          {
+            "session_id": "clevr_dialog_8937",
+            "carrier_id": "t4_carrier0",
+            "write_turn": 4
+          },
+          {
+            "session_id": "clevr_dialog_3845",
+            "carrier_id": "t4_carrier1",
+            "write_turn": 4
+          }
+        ]
+      },
+      {
+        "position_type": "random_control",
+        "axis": "v",
+        "alpha": 1,
+        "intervention_l2": {
+          "n": 10,
+          "mean": 3.556798744323454,
+          "median": 0.0,
+          "minimum": 0.0,
+          "maximum": 25.696617174155982,
+          "p05": 0.0,
+          "p95": 18.575256066871127
+        },
+        "zero_amplitude_cases": [
+          {
+            "session_id": "clevr_dialog_12324",
+            "carrier_id": "t2_carrier0",
+            "write_turn": 2
+          },
+          {
+            "session_id": "clevr_dialog_12324",
+            "carrier_id": "t4_carrier0",
+            "write_turn": 4
+          },
+          {
+            "session_id": "clevr_dialog_7843",
+            "carrier_id": "t2_carrier0",
+            "write_turn": 2
+          },
+          {
+            "session_id": "clevr_dialog_7843",
+            "carrier_id": "t2_carrier1",
+            "write_turn": 2
+          },
+          {
+            "session_id": "clevr_dialog_7843",
+            "carrier_id": "t4_carrier0",
+            "write_turn": 4
+          },
+          {
+            "session_id": "clevr_dialog_8937",
+            "carrier_id": "t2_carrier0",
+            "write_turn": 2
+          },
+          {
+            "session_id": "clevr_dialog_8937",
+            "carrier_id": "t4_carrier0",
+            "write_turn": 4
+          },
+          {
+            "session_id": "clevr_dialog_3845",
+            "carrier_id": "t4_carrier1",
+            "write_turn": 4
+          }
+        ]
+      }
+    ],
+    "amplitude_matching_scope": "position/layer/write-byte matched, not perturbation-L2 matched",
+    "alpha0_max_abs_logits": 0.0,
+    "alpha0_argmax_flips": 0,
+    "numerical_control_max_abs_logits": 0.0,
+    "total_future_argmax_flips": 0,
+    "total_future_content_argmax_flips": 0,
+    "n_future_responses": 600,
+    "n_dose_curves": 120,
+    "dose_nondecreasing_tolerance": "max(1e-12, maximum absolute curve KL * 1e-7); descriptive only",
+    "dose_nonmonotone": [
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          4.211084072484499e-06,
+          7.601221519984361e-08,
+          4.214877165898433e-06,
+          1.6701088386902867e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.0363312750996762e-06,
+          9.835527450824853e-06,
+          3.4475074057044105e-05,
+          2.5102577298405536e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          4.150892504542309e-06,
+          4.085639750327817e-09,
+          4.198211366947998e-06,
+          3.020039247874589e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          4.186533559109186e-06,
+          4.17204192347124e-06,
+          4.178436941139879e-06,
+          1.6568278098900677e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          5.0749984494236186e-05,
+          4.654021745586658e-05,
+          0.000153740888772854,
+          0.0002788349042744
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          6.103022963724662e-07,
+          1.5162284813013323e-07,
+          2.688058749218247e-10,
+          1.5154456769978756e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.6251107011387938e-05,
+          1.3616549187810903e-05,
+          1.5401826249765008e-05,
+          2.0444996768858082e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.5150392101383995e-07,
+          3.260762260269433e-11,
+          1.517442441434736e-07,
+          1.515551486864118e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          8.14607722461556e-06,
+          1.527588817497363e-05,
+          7.717227095297686e-06,
+          1.5255508256562065e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.525164763049664e-07,
+          6.856688758464412e-10,
+          4.333198402031131e-10,
+          8.185541159990491e-10
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          7.990441617030062e-06,
+          1.524936191192523e-05,
+          6.534465225512587e-06,
+          1.965250991205873e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.5228851270365705e-07,
+          1.516784863752504e-07,
+          1.5164566011788204e-07,
+          1.5162543859792335e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          9.190501465277818e-06,
+          3.425899015789951e-06,
+          1.3383049918302096e-05,
+          1.526081443371182e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          5.298276079735075e-10,
+          8.072544126078567e-08,
+          1.8570636390146707e-07,
+          1.8873648327867477e-09
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.2570099515574554e-07,
+          5.817338210362829e-08,
+          5.81232293639697e-08,
+          8.883109377935951e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.225204025766714e-08,
+          1.8909803768659826e-07,
+          2.5045262125904093e-08,
+          2.5862145513358635e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.149522884120503e-10,
+          5.811357189976229e-08,
+          2.253117333381489e-07,
+          5.175570404469157e-10
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.0298952359502233e-08,
+          8.313308395376048e-08,
+          2.059893071512618e-08,
+          1.9967706361528276e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.678538564743136e-10,
+          5.67285975823092e-08,
+          5.617812127406196e-08,
+          5.607512560059499e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          5.710569251616961e-08,
+          2.2743197072343966e-07,
+          2.272615835668328e-07,
+          8.835519764552741e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.9957391797775086e-08,
+          7.915946250603615e-08,
+          2.072512052570835e-08,
+          2.0587267630329312e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          5.634543599730441e-08,
+          5.628362021829694e-08,
+          5.647132873627875e-08,
+          5.6304374743305325e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          0.0001729454418772845,
+          4.347979667691538e-05,
+          0.0005251681553615213,
+          0.00017294530780687814
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          3.571875804437105e-07,
+          1.0924638608414968e-09,
+          3.388565350960121e-10,
+          1.4326649056789428e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          3.5599642003196903e-07,
+          3.587210168403712e-07,
+          3.587044529327357e-07,
+          3.5716849345749245e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          9.755571092121706e-05,
+          4.348030987920513e-05,
+          0.0003869348328175068,
+          0.0002694666220546588
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          3.5738805056433334e-07,
+          3.569114645950307e-07,
+          3.5679500408656994e-07,
+          3.5685047862225296e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          4.347981976495926e-05,
+          4.348007249262447e-05,
+          4.347977715087117e-05,
+          4.3482619558032334e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          3.565379244528896e-07,
+          1.6293553690497201e-09,
+          3.585874165383306e-07,
+          3.6055462173615693e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.4782630587773342e-05,
+          1.0028556418215701e-05,
+          1.4785242426028738e-05,
+          1.478829504354946e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.4765608916007252e-05,
+          9.517288898430956e-06,
+          1.4782002311813223e-05,
+          1.66694041274114e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.4656195068789679e-05,
+          6.68795137259471e-07,
+          3.809570241287793e-05,
+          9.163110302547058e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          5.601782291039833e-09,
+          2.793052358172933e-09,
+          1.7004789635821616e-06,
+          1.6981023465215933e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.4762643824457098e-05,
+          1.4657948962068973e-05,
+          1.4472082283639574e-05,
+          9.633713920183276e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.031460858247992e-06,
+          1.232640961591954e-08,
+          1.594855767325302e-08,
+          1.6556253100180617e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          9.384866250255598e-07,
+          3.3923368736399126e-06,
+          3.4878502208876515e-06,
+          8.682288289013316e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.4986927777683435e-05,
+          1.4976908724665171e-05,
+          1.5077223739934113e-05,
+          1.496831981436238e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          3.296085028272789e-06,
+          3.565499457804031e-06,
+          3.3663891416734848e-06,
+          3.545806403284158e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.5157215852937188e-05,
+          1.5082241558889855e-05,
+          1.539075684942232e-05,
+          1.5161215283932126e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.7539887828138816e-08,
+          3.3271700730527094e-06,
+          8.167527880453311e-09,
+          6.727145578091774e-09
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.509369708569244e-05,
+          9.90724578128979e-07,
+          1.686732296579803e-05,
+          2.401334563009284e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          7.624795955075384e-06,
+          3.3303352981193843e-06,
+          8.591036859214192e-07,
+          8.300280329566105e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          4.034666467017305e-06,
+          1.039737059148468e-05,
+          1.249441026578724e-06,
+          2.9684682796351856e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          4.3066623899415724e-06,
+          4.875432652347062e-06,
+          1.608583669302234e-06,
+          2.8872500403105467e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "random_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          7.882020708306857e-07,
+          1.1494226757863813e-06,
+          1.1569122868104314e-05,
+          3.7019988119415452e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.4784015518148794e-07,
+          9.933992770710783e-07,
+          1.05293925512658e-06,
+          3.5757562893597805e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          4.209518020669005e-06,
+          1.0019802994344385e-05,
+          7.955032435158604e-06,
+          5.440679161837949e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "random_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.6275238556855208e-06,
+          4.2112726714512856e-07,
+          2.7854141146878096e-06,
+          3.947353369797505e-06
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.002097983263529e-07,
+          1.8204044856887632e-06,
+          2.0028152494844827e-07,
+          8.050045382249168e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          6.236352206424662e-08,
+          1.4825222297480326e-05,
+          3.2437652695490944e-10,
+          1.4833731547630937e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.9809231790087379e-07,
+          1.9810182342166184e-07,
+          2.999831806159249e-11,
+          1.1215024296814404e-11
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "random_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.1681917907333552e-09,
+          2.911791443804494e-10,
+          6.958795111515992e-10,
+          6.328345446407351e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "random_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          5.593006551462778e-12,
+          8.048280186007644e-07,
+          6.542072567084579e-12,
+          7.282170795281522e-12
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.3648918266292093e-10,
+          1.4836419031399794e-05,
+          1.4920686956178954e-05,
+          1.4800860497178861e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.980974876656792e-07,
+          1.115204072513586e-11,
+          2.001545831569141e-07,
+          2.0016942119773546e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "random_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.547542078297015e-11,
+          1.9812174739620203e-07,
+          7.883211363715077e-07,
+          2.001665035222517e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          5.930857966955901e-05,
+          1.4835786482887391e-05,
+          1.483578459430703e-05,
+          5.939065088768105e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          8.048262364370137e-07,
+          8.048315972012933e-07,
+          4.483295940152569e-12,
+          8.048268781823531e-07
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.4799251167333902e-05,
+          3.661499734396097e-10,
+          1.610055584881576e-09,
+          6.408772479271488e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "k",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          1.981222205917751e-07,
+          1.9813609812561303e-07,
+          1.2475381217824123e-11,
+          1.130963686387282e-11
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          6.232736267780891e-08,
+          3.729819525786869e-10,
+          5.9184133483962634e-05,
+          1.481066128965814e-05
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 1,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.210972508464127e-09,
+          6.58262797557141e-08,
+          6.642378362175669e-10,
+          6.920785126975235e-08
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "prompt_control",
+        "axis": "v",
+        "horizon": 2,
+        "alphas": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ],
+        "kl_values": [
+          0.0,
+          2.001526519664257e-07,
+          2.0016565911586148e-07,
+          2.0015299454622768e-07,
+          1.222020041604915e-12
+        ],
+        "nondecreasing": false,
+        "argmax_flips": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "carrier_alpha1_v_dominant": [
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 1.6701088386902867e-05,
+        "v_kl": 0.0008781763338406863,
+        "v_minus_k_kl": 0.0008614752454537834,
+        "k_rms": 0.022166533570847063,
+        "v_rms": 0.08001385483842453,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 21.973810472081748,
+        "v_intervention_l2": 27.02088835831878,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 2.5102577298405536e-05,
+        "v_kl": 0.00010899444724062356,
+        "v_minus_k_kl": 8.389186994221802e-05,
+        "k_rms": 0.012870007067969407,
+        "v_rms": 0.03581636562463518,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 21.973810472081748,
+        "v_intervention_l2": 27.02088835831878,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 1.4451544262242306e-06,
+        "v_kl": 1.8463490153949935e-05,
+        "v_minus_k_kl": 1.7018335727725706e-05,
+        "k_rms": 0.014757390005166874,
+        "v_rms": 0.06677631345165473,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 21.18769049052071,
+        "v_intervention_l2": 23.9300694075131,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 57344
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 2.5862145513358635e-08,
+        "v_kl": 1.7784961268340504e-07,
+        "v_minus_k_kl": 1.5198746717004641e-07,
+        "k_rms": 0.010091230037371559,
+        "v_rms": 0.008409697151461705,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 16.590542996719726,
+        "v_intervention_l2": 18.569716343971116,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 5.175570404469157e-10,
+        "v_kl": 8.835519764552741e-07,
+        "v_minus_k_kl": 8.830344194148273e-07,
+        "k_rms": 0.01035619405370154,
+        "v_rms": 0.015641964966139062,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 16.590542996719726,
+        "v_intervention_l2": 18.569716343971116,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 0.00017294530780687814,
+        "v_kl": 0.0002694666220546588,
+        "v_minus_k_kl": 9.652131424778068e-05,
+        "k_rms": 0.011867508141637307,
+        "v_rms": 0.013289105012668077,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 12.496496439842725,
+        "v_intervention_l2": 15.1860362581738,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 0.003658361018156196,
+        "v_kl": 0.010909555261639503,
+        "v_minus_k_kl": 0.007251194243483307,
+        "k_rms": 0.03839717177652987,
+        "v_rms": 0.06417998869856512,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 12.087069606249955,
+        "v_intervention_l2": 17.423869797982515,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 1.2599418554244755e-05,
+        "v_kl": 0.00024495345538035106,
+        "v_minus_k_kl": 0.0002323540368261063,
+        "k_rms": 0.015012121478589003,
+        "v_rms": 0.019571139216305336,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 12.087069606249955,
+        "v_intervention_l2": 17.423869797982515,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 0.001806353762795899,
+        "v_kl": 0.0024689762876074772,
+        "v_minus_k_kl": 0.0006626225248115782,
+        "k_rms": 0.05417386337646953,
+        "v_rms": 0.04871544611813986,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 21.60406229833655,
+        "v_intervention_l2": 27.063956909482584,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 57344
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 8.050045382249168e-07,
+        "v_kl": 2.098312439171793e-05,
+        "v_minus_k_kl": 2.0178119853493015e-05,
+        "k_rms": 0.016612536032628408,
+        "v_rms": 0.02130843244235038,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 21.60406229833655,
+        "v_intervention_l2": 27.063956909482584,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 57344
+      }
+    ],
+    "carrier_alpha1_k_dominant": [
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 1.5154456769978756e-07,
+        "v_kl": 8.185541159990491e-10,
+        "v_minus_k_kl": -1.5072601358378852e-07,
+        "k_rms": 0.009242975867843015,
+        "v_rms": 0.009510088287757804,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 13.09819090827491,
+        "v_intervention_l2": 17.778552435714783,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 2.0444996768858082e-05,
+        "v_kl": 1.965250991205873e-05,
+        "v_minus_k_kl": -7.924868567993503e-07,
+        "k_rms": 0.01134665761217639,
+        "v_rms": 0.01639536368652807,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 13.09819090827491,
+        "v_intervention_l2": 17.778552435714783,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 7.269512063908757e-05,
+        "v_kl": 2.5765723448925966e-06,
+        "v_minus_k_kl": -7.011854829419497e-05,
+        "k_rms": 0.08364567056274748,
+        "v_rms": 0.033390892912631934,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 21.18769049052071,
+        "v_intervention_l2": 23.9300694075131,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 57344
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 1.4326649056789428e-06,
+        "v_kl": 3.5685047862225296e-07,
+        "v_minus_k_kl": -1.0758144270566899e-06,
+        "k_rms": 0.006956011983815709,
+        "v_rms": 0.006710875098852924,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 12.496496439842725,
+        "v_intervention_l2": 15.1860362581738,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 0.00013103404924436667,
+        "v_kl": 4.1206087288241466e-05,
+        "v_minus_k_kl": -8.982796195612521e-05,
+        "k_rms": 0.041768361786567045,
+        "v_rms": 0.034534656110749115,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 14.007325543224361,
+        "v_intervention_l2": 17.703798025938532,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 1.478829504354946e-05,
+        "v_kl": 9.163110302547058e-06,
+        "v_minus_k_kl": -5.625184741002403e-06,
+        "k_rms": 0.011611262683261996,
+        "v_rms": 0.005348354135890787,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 14.007325543224361,
+        "v_intervention_l2": 17.703798025938532,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 1.6556253100180617e-05,
+        "v_kl": 1.5161215283932126e-05,
+        "v_minus_k_kl": -1.3950378162484908e-06,
+        "k_rms": 0.006959871773417713,
+        "v_rms": 0.005722554124322929,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 7.746163316693494,
+        "v_intervention_l2": 13.443161364118415,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 8.682288289013316e-07,
+        "v_kl": 6.727145578091774e-09,
+        "v_minus_k_kl": -8.615016833232398e-07,
+        "k_rms": 0.006755703533529646,
+        "v_rms": 0.0069188109706663815,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 7.746163316693494,
+        "v_intervention_l2": 13.443161364118415,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 1,
+        "k_kl": 5.939065088768105e-05,
+        "v_kl": 1.481066128965814e-05,
+        "v_minus_k_kl": -4.457998959802291e-05,
+        "k_rms": 0.005584684555475626,
+        "v_rms": 0.010974618705952937,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 14.435683600833043,
+        "v_intervention_l2": 17.82896920741989,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_3845",
+        "image_id": "CLEVR_val_003845",
+        "carrier_id": "t4_carrier1",
+        "write_turn": 4,
+        "position_type": "carrier",
+        "alpha": 1.0,
+        "horizon": 2,
+        "k_kl": 8.048268781823531e-07,
+        "v_kl": 1.9814665721374237e-07,
+        "v_minus_k_kl": -6.066802209686106e-07,
+        "k_rms": 0.010086889711428584,
+        "v_rms": 0.012228408442072963,
+        "k_argmax_flips": 0,
+        "v_argmax_flips": 0,
+        "k_intervention_l2": 14.435683600833043,
+        "v_intervention_l2": 17.82896920741989,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "logical_value_write_bytes": 28672
+      }
+    ],
+    "carrier_alpha1_equal_count": 0,
+    "carrier_alpha1_control_dominant": [
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "axis": "v",
+        "alpha": 1.0,
+        "horizon": 2,
+        "control": "prompt_control",
+        "carrier_kl": 0.00010899444724062356,
+        "control_kl": 0.0002788349042744,
+        "delta_kl": -0.00016984045703377643,
+        "carrier_rms": 0.03581636562463518,
+        "control_rms": 0.019239970505596796,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 27.02088835831878,
+        "control_intervention_l2": 14.20441179982918,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          321
+        ],
+        "control_positions": [
+          313
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "axis": "k",
+        "alpha": 1.0,
+        "horizon": 1,
+        "control": "prompt_control",
+        "carrier_kl": 1.5154456769978756e-07,
+        "control_kl": 1.515551486864118e-07,
+        "delta_kl": -1.0580986624239363e-11,
+        "carrier_rms": 0.009242975867843015,
+        "control_rms": 0.006178026275889563,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 13.09819090827491,
+        "control_intervention_l2": 12.392544063146792,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          352
+        ],
+        "control_positions": [
+          343
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_12324",
+        "image_id": "CLEVR_val_012324",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "axis": "v",
+        "alpha": 1.0,
+        "horizon": 1,
+        "control": "prompt_control",
+        "carrier_kl": 8.185541159990491e-10,
+        "control_kl": 1.5162543859792335e-07,
+        "delta_kl": -1.508068844819243e-07,
+        "carrier_rms": 0.009510088287757804,
+        "control_rms": 0.00742396211148798,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 17.778552435714783,
+        "control_intervention_l2": 18.947263713293513,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          352
+        ],
+        "control_positions": [
+          343
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t2_carrier1",
+        "write_turn": 2,
+        "axis": "k",
+        "alpha": 1.0,
+        "horizon": 2,
+        "control": "prompt_control",
+        "carrier_kl": 5.175570404469157e-10,
+        "control_kl": 5.607512560059499e-08,
+        "delta_kl": -5.555756856014808e-08,
+        "carrier_rms": 0.01035619405370154,
+        "control_rms": 0.010043216585491257,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 16.590542996719726,
+        "control_intervention_l2": 11.176635905020756,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          325
+        ],
+        "control_positions": [
+          317
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "axis": "k",
+        "alpha": 1.0,
+        "horizon": 1,
+        "control": "prompt_control",
+        "carrier_kl": 0.00017294530780687814,
+        "control_kl": 0.00017294568302172366,
+        "delta_kl": -3.752148455219567e-10,
+        "carrier_rms": 0.011867508141637307,
+        "control_rms": 0.01039143723722231,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 12.496496439842725,
+        "control_intervention_l2": 13.291742173497662,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          359
+        ],
+        "control_positions": [
+          349
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_7843",
+        "image_id": "CLEVR_val_007843",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "axis": "v",
+        "alpha": 1.0,
+        "horizon": 2,
+        "control": "prompt_control",
+        "carrier_kl": 3.5685047862225296e-07,
+        "control_kl": 3.6055462173615693e-07,
+        "delta_kl": -3.7041431139039686e-09,
+        "carrier_rms": 0.006710875098852924,
+        "control_rms": 0.006382034930664831,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 15.1860362581738,
+        "control_intervention_l2": 22.02620164642794,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          359
+        ],
+        "control_positions": [
+          349
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "axis": "k",
+        "alpha": 1.0,
+        "horizon": 2,
+        "control": "prompt_control",
+        "carrier_kl": 1.478829504354946e-05,
+        "control_kl": 1.66694041274114e-05,
+        "delta_kl": -1.8811090838619413e-06,
+        "carrier_rms": 0.011611262683261996,
+        "control_rms": 0.009128187624001988,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 14.007325543224361,
+        "control_intervention_l2": 8.874029155031236,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          329
+        ],
+        "control_positions": [
+          321
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "carrier_id": "t2_carrier0",
+        "write_turn": 2,
+        "axis": "v",
+        "alpha": 1.0,
+        "horizon": 2,
+        "control": "prompt_control",
+        "carrier_kl": 9.163110302547058e-06,
+        "control_kl": 9.633713920183276e-06,
+        "delta_kl": -4.706036176362184e-07,
+        "carrier_rms": 0.005348354135890787,
+        "control_rms": 0.007292505358563943,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 17.703798025938532,
+        "control_intervention_l2": 14.810082792285517,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          329
+        ],
+        "control_positions": [
+          321
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "axis": "k",
+        "alpha": 1.0,
+        "horizon": 2,
+        "control": "prompt_control",
+        "carrier_kl": 8.682288289013316e-07,
+        "control_kl": 3.545806403284158e-06,
+        "delta_kl": -2.6775775743828265e-06,
+        "carrier_rms": 0.006755703533529646,
+        "control_rms": 0.010713820150536563,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 7.746163316693494,
+        "control_intervention_l2": 10.048603925446347,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          373
+        ],
+        "control_positions": [
+          359
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      },
+      {
+        "session_id": "clevr_dialog_8937",
+        "image_id": "CLEVR_val_008937",
+        "carrier_id": "t4_carrier0",
+        "write_turn": 4,
+        "axis": "v",
+        "alpha": 1.0,
+        "horizon": 2,
+        "control": "prompt_control",
+        "carrier_kl": 6.727145578091774e-09,
+        "control_kl": 8.300280329566105e-07,
+        "delta_kl": -8.233008873785187e-07,
+        "carrier_rms": 0.0069188109706663815,
+        "control_rms": 0.008451451373016125,
+        "carrier_argmax_flips": 0,
+        "control_argmax_flips": 0,
+        "carrier_intervention_l2": 13.443161364118415,
+        "control_intervention_l2": 12.607552320698383,
+        "equal_intervention_l2": false,
+        "equal_position_count": true,
+        "equal_layer_set": true,
+        "equal_value_write_bytes": true,
+        "carrier_positions": [
+          373
+        ],
+        "control_positions": [
+          359
+        ],
+        "position_overlap_count": 0,
+        "logical_value_write_bytes": 28672
+      }
+    ],
+    "interpretation": "lexical candidate locations; continuous reference-directed synthetic KV interpolation; output displacement from base is not correctness"
+  },
+  "input_sha256": {
+    "/path/to/TrajKV\\results\\fidelity_dev8_gpu1_v2\\records.jsonl": "ca0176a4eefbea2d8506f25a54d104022c4f1580e8c49d1a81169257ef20604c",
+    "/path/to/TrajKV\\results\\carrier_dev4_gpu1_v1\\surgery_records.jsonl": "b620471623c4a0047e4f047d1e2abc87f74e6bef3a6760896a59a3180b6add91",
+    "/path/to/TrajKV\\results\\carrier_dev4_gpu1_v1\\controls.jsonl": "60b33d3289e563b4e4aaea2f683100217c75ce639a966b2d00bfd19b79b09c0e",
+    "/path/to/TrajKV\\results\\carrier_dev4_gpu1_v1\\sessions.jsonl": "d8cf9e4ddfa62d7901e624503b691dfca33d16db835f3b60b07806d6cb0103e5"
+  },
+  "analysis_script_sha256": "95943b441b0b490155bc51cd555d4472e44af7f6dd80f4a8baf62506bb384e0c",
+  "bootstrap": {
+    "unit": "source image",
+    "repeats": 2000,
+    "seed": 1212
+  },
+  "scope": "development numerical mechanisms; no test-set generalization or task accuracy claim",
+  "figures": [
+    "figures\\mechanisms_dev_v2\\mechanism_development_fidelity_v2.png",
+    "figures\\mechanisms_dev_v2\\mechanism_development_fidelity_v2.pdf"
+  ]
+}

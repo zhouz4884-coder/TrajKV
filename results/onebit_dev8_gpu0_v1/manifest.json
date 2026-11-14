@@ -1,0 +1,56 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/data/clevr_dev32_runner.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "output": "/path/to/TrajKV/results/onebit_dev8_gpu0_v1",
+    "methods": [
+      "base1",
+      "asym1",
+      "asym1_k",
+      "asym1_v"
+    ],
+    "policies": [
+      "always"
+    ],
+    "count": 8,
+    "start": 0,
+    "turns": 10,
+    "max_tokens": 16,
+    "max_patches": 4,
+    "margin": 1.0,
+    "max_replays": 2,
+    "save_states": false,
+    "read_budget_bytes": null,
+    "description_tokens": 96,
+    "hide_visual_after_description": false,
+    "gain_table": null,
+    "reference": null,
+    "resume": false,
+    "gain_table_data": null
+  },
+  "selected_ids": [
+    "clevr_dialog_12324",
+    "clevr_dialog_7843",
+    "clevr_dialog_8937",
+    "clevr_dialog_3845",
+    "clevr_dialog_6926",
+    "clevr_dialog_6653",
+    "clevr_dialog_247",
+    "clevr_dialog_8334"
+  ],
+  "torch": "2.4.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "sources": {
+    "/path/to/TrajKV/code/experiments/run_cycle.py": "154e1cd6492dd49e7c69948b183c304cbab6343199a85a700081d94dc6719725",
+    "/path/to/TrajKV/code/experiments/bank.py": "8ad03f3a62805f1918551cf387044dbbba1de41c6681210f4b22fcb4d505f5ac",
+    "/path/to/TrajKV/configs/data/clevr_dev32_runner.json": "a5e5aadb012f1d79c03ef93b2656ea689f769ba6b077a3488dbb2014dcab29ba"
+  },
+  "reference_answers_visible_to_runner": false,
+  "model_identity": {
+    "config.json": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+    "model.safetensors.index.json": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+    "tokenizer_config.json": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f"
+  }
+}

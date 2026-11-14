@@ -1,0 +1,231 @@
+{
+  "base_bits": 1,
+  "n_sessions": 4,
+  "n_cases": 10,
+  "n_interventions": 300,
+  "n_matched_interventions": 300,
+  "n_future_responses": 600,
+  "matching_case_status_counts": {
+    "matched": 300
+  },
+  "all_location_pairs_complete": true,
+  "all_token_schedules_unchanged": true,
+  "all_position_hashes_unchanged": true,
+  "all_matched_position_counts": true,
+  "all_matched_layer_sets": true,
+  "all_matched_write_bytes": true,
+  "actual_amplitude_ratios": [
+    {
+      "position_type": "carrier",
+      "axis": "k",
+      "ratio_to_alpha_carrier": {
+        "n": 40,
+        "mean": 0.9999995084868623,
+        "median": 1.0,
+        "minimum": 0.9998864239171569,
+        "maximum": 1.0000730026807536,
+        "p05": 0.9998915673177889,
+        "p95": 1.000054332613454
+      },
+      "zero_positive_dose_cases": 0,
+      "rounded_to_zero_cases": 0
+    },
+    {
+      "position_type": "carrier",
+      "axis": "v",
+      "ratio_to_alpha_carrier": {
+        "n": 40,
+        "mean": 1.0000019044128639,
+        "median": 1.0,
+        "minimum": 0.9999627587208872,
+        "maximum": 1.0000393401588263,
+        "p05": 0.9999854338222148,
+        "p95": 1.0000242571798375
+      },
+      "zero_positive_dose_cases": 0,
+      "rounded_to_zero_cases": 0
+    },
+    {
+      "position_type": "prompt_control",
+      "axis": "k",
+      "ratio_to_alpha_carrier": {
+        "n": 40,
+        "mean": 0.999719223959179,
+        "median": 1.000516590914169,
+        "minimum": 0.9838030555920767,
+        "maximum": 1.0284886722864621,
+        "p05": 0.9838104041964025,
+        "p95": 1.028471927253139
+      },
+      "zero_positive_dose_cases": 0,
+      "rounded_to_zero_cases": 0
+    },
+    {
+      "position_type": "prompt_control",
+      "axis": "v",
+      "ratio_to_alpha_carrier": {
+        "n": 40,
+        "mean": 1.0002527807833996,
+        "median": 0.9996220132181038,
+        "minimum": 0.9850741796973873,
+        "maximum": 1.0121532677271583,
+        "p05": 0.9850767201172252,
+        "p95": 1.0121452580685806
+      },
+      "zero_positive_dose_cases": 0,
+      "rounded_to_zero_cases": 0
+    },
+    {
+      "position_type": "random_control",
+      "axis": "k",
+      "ratio_to_alpha_carrier": {
+        "n": 40,
+        "mean": 1.0233323858628065,
+        "median": 1.013063828033498,
+        "minimum": 0.9276276250848075,
+        "maximum": 1.1879729914871247,
+        "p05": 0.9276454429706689,
+        "p95": 1.1879427687441817
+      },
+      "zero_positive_dose_cases": 0,
+      "rounded_to_zero_cases": 0
+    },
+    {
+      "position_type": "random_control",
+      "axis": "v",
+      "ratio_to_alpha_carrier": {
+        "n": 40,
+        "mean": 0.9890233748149087,
+        "median": 0.9879625703885341,
+        "minimum": 0.9073784897160672,
+        "maximum": 1.0724799099164426,
+        "p05": 0.9073815978226114,
+        "p95": 1.0724697664413922
+      },
+      "zero_positive_dose_cases": 0,
+      "rounded_to_zero_cases": 0
+    }
+  ],
+  "alpha1_carrier_minus_control": [
+    {
+      "axis": "k",
+      "control": "prompt_control",
+      "alpha": 1,
+      "mean": 0.06570103115329402,
+      "ci_lower": -0.11894024615981733,
+      "ci_upper": 0.28717319433511945,
+      "n_questions": 20,
+      "n_images": 4,
+      "status": "ok",
+      "repeats": 2000,
+      "carrier_mean_kl": 0.4092166273669521,
+      "control_mean_kl": 0.34351559621365807,
+      "carrier_larger_cases": 13,
+      "control_larger_cases": 7,
+      "actual_l2_ratio": {
+        "n": 20,
+        "mean": 0.9997162395793551,
+        "median": 1.000498809186922,
+        "minimum": 0.9838039595501428,
+        "maximum": 1.0284709847400755,
+        "p05": 0.9838039595501428,
+        "p95": 1.0284709847400755
+      }
+    },
+    {
+      "axis": "k",
+      "control": "random_control",
+      "alpha": 1,
+      "mean": -0.0014368585068466598,
+      "ci_lower": -0.29848127050995776,
+      "ci_upper": 0.1678951647587847,
+      "n_questions": 20,
+      "n_images": 4,
+      "status": "ok",
+      "repeats": 2000,
+      "carrier_mean_kl": 0.4092166273669521,
+      "control_mean_kl": 0.41065348587379874,
+      "carrier_larger_cases": 12,
+      "control_larger_cases": 8,
+      "actual_l2_ratio": {
+        "n": 20,
+        "mean": 1.023325597400258,
+        "median": 1.0130875004087398,
+        "minimum": 0.9276276250848075,
+        "maximum": 1.1879430360065266,
+        "p05": 0.9276276250848075,
+        "p95": 1.1879430360065266
+      }
+    },
+    {
+      "axis": "v",
+      "control": "prompt_control",
+      "alpha": 1,
+      "mean": 0.1346021305957539,
+      "ci_lower": 0.042339063865073016,
+      "ci_upper": 0.30005160867788094,
+      "n_questions": 20,
+      "n_images": 4,
+      "status": "ok",
+      "repeats": 2000,
+      "carrier_mean_kl": 0.42711081482969426,
+      "control_mean_kl": 0.29250868423394033,
+      "carrier_larger_cases": 13,
+      "control_larger_cases": 7,
+      "actual_l2_ratio": {
+        "n": 20,
+        "mean": 1.0002522875070745,
+        "median": 0.9996208159045576,
+        "minimum": 0.9850767645087802,
+        "maximum": 1.0121434389055832,
+        "p05": 0.9850767645087802,
+        "p95": 1.0121434389055832
+      }
+    },
+    {
+      "axis": "v",
+      "control": "random_control",
+      "alpha": 1,
+      "mean": 0.02253947395381061,
+      "ci_lower": -0.12924566200856816,
+      "ci_upper": 0.2337129823893474,
+      "n_questions": 20,
+      "n_images": 4,
+      "status": "ok",
+      "repeats": 2000,
+      "carrier_mean_kl": 0.42711081482969426,
+      "control_mean_kl": 0.40457134087588364,
+      "carrier_larger_cases": 11,
+      "control_larger_cases": 9,
+      "actual_l2_ratio": {
+        "n": 20,
+        "mean": 0.9890243661129124,
+        "median": 0.9879647401541528,
+        "minimum": 0.9073784897160672,
+        "maximum": 1.0724742816562063,
+        "p05": 0.9073784897160672,
+        "p95": 1.0724742816562063
+      }
+    }
+  ],
+  "alpha0_max_logit_difference": 0.0,
+  "total_future_argmax_comparison_flips": 946,
+  "total_future_compared_token_positions": 5430,
+  "alpha1_carrier_v_greater_count": 11,
+  "alpha1_carrier_k_greater_count": 9,
+  "n_dose_curves": 120,
+  "n_nonmonotone_dose_curves": 27,
+  "interpretation": "synthetic state-response displacement, not accuracy; base1 canonical text and chosen spans differ from v1 base2; no pooled bitwidth mean",
+  "norm_matching_scope": "within each axis, locations target carrier injection norm; post-FP16-write ratios reported explicitly; K and V norms are not matched to one another",
+  "omitted": [],
+  "input_sha256": {
+    "/path/to/TrajKV\\results\\carrier_normmatched_dev4_gpu0_v2\\surgery_records.jsonl": "73b3874e3902cbd8baadd94a9e86f5ad8f240c3d1f0cc6740f9b0b583f98f768",
+    "/path/to/TrajKV\\results\\carrier_normmatched_dev4_gpu0_v2\\controls.jsonl": "f6299408ac76860128e8058710c4cac9d3fd96fc7b4c9f7dc3a499f8bf24d24e",
+    "/path/to/TrajKV\\results\\carrier_normmatched_dev4_gpu0_v2\\sessions.jsonl": "c22245830c58590a4514e6c307bcbe9b7e44f54997598684c14743ee3c7be89b"
+  },
+  "figures": [
+    "figures\\carrier_normmatched_dev4_v2\\carrier_normmatched_base1.png",
+    "figures\\carrier_normmatched_dev4_v2\\carrier_normmatched_base1.pdf"
+  ],
+  "script_sha256": "7c1d1ca7c379c7c926ef42e2e20e975c58a75f6b1a27bb20b884f8d2a35777dd"
+}

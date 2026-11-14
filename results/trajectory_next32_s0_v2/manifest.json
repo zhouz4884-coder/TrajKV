@@ -1,0 +1,38 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/frozen_timing_gpu0_v2/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/frozen_timing_gpu0_v2.launch.json",
+  "tasks": [
+    {
+      "name": "gradient_check",
+      "entrypoint": "calibrate_trajectory_affine.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/trajectory_next32_s0_v1_gradient_check.json"
+      ]
+    },
+    {
+      "name": "first_gain",
+      "entrypoint": "calibrate_trajectory_affine.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/trajectory_next32_s0_v1_first_gain.json"
+      ]
+    },
+    {
+      "name": "multi_gain",
+      "entrypoint": "calibrate_trajectory_affine.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/trajectory_next32_s0_v1_multi_gain.json"
+      ]
+    },
+    {
+      "name": "multi_affine",
+      "entrypoint": "calibrate_trajectory_affine.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/trajectory_next32_s0_v1_multi_affine.json"
+      ]
+    }
+  ]
+}

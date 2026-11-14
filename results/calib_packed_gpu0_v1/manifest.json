@@ -1,0 +1,22 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/fold_gain20_gpu0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/fold_gain20_gpu0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "reference100",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/calib_packed100_v1.json"
+      ]
+    },
+    {
+      "name": "bias20",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/calib_bias20_v1.json"
+      ]
+    }
+  ]
+}

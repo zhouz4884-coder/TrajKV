@@ -1,0 +1,38 @@
+{
+  "scope": "statistical rules fixed before local confirmation score inspection; inference already completed",
+  "primary_family": [
+    "asym:table_future - base2:base",
+    "asym:table_future - asym:table_current"
+  ],
+  "secondary_family": [
+    "asym:table_future - full:base",
+    "asym:table_future - native4:base",
+    "asym:table_future - asym:base",
+    "asym:table_future - asym:uniform",
+    "asym:table_future - asym:periodic",
+    "asym:table_future - asym:probe_l7_t0.02",
+    "asym:table_future - asym:margin_write",
+    "asym:table_future - kvarn2:base",
+    "asym:table_future - kvarn4:base"
+  ],
+  "effect": "sum of per-image sums of paired question ANLS differences / 294",
+  "cluster_bootstrap": {
+    "repeats": 2000,
+    "seed": 1212,
+    "weighting": "resample images; retain all questions and recompute numerator/denominator"
+  },
+  "monte_carlo": {
+    "repeats": 100000,
+    "seed": 1212,
+    "null": "sign-flip each image question-difference sum",
+    "alternative": "two-sided",
+    "finite_mc_correction": "(extreme+1)/(B+1)"
+  },
+  "multiplicity": "Holm2 primary; Holm9 secondary; Holm11 sensitivity only; no switching families after results",
+  "score_protocol": "docvqa_organizer_code_anls_inclusive_0.5_v1",
+  "exact_auxiliary": true,
+  "soft_only_improvement_is_not_exact_correct": true,
+  "sample_contract_sha256": "47194e5f81193c0824021ab647c6b23777eaed899f4fd3abb097fa9f198c0add",
+  "manifest_sha256": "25a9dac82654f75db96feca0388b44ee5c750292436f3b643ea83d955e6024f3",
+  "quality_scores_read_before_this_plan": false
+}

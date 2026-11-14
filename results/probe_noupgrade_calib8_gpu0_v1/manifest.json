@@ -1,0 +1,59 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/data/clevr_dev32_runner.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "output": "/path/to/TrajKV/results/probe_noupgrade_calib8_gpu0_v1",
+    "methods": [
+      "asym",
+      "asym1_k"
+    ],
+    "policies": [
+      "probe_l0_t1000000",
+      "probe_l7_t1000000",
+      "probe_l14_t1000000"
+    ],
+    "count": 8,
+    "start": 0,
+    "turns": 10,
+    "max_tokens": 16,
+    "max_patches": 4,
+    "margin": 1.0,
+    "max_replays": 2,
+    "save_states": false,
+    "read_budget_bytes": null,
+    "description_tokens": 96,
+    "hide_visual_after_description": false,
+    "gain_table": null,
+    "probe_layer": 7,
+    "probe_threshold": 0.02,
+    "reference": null,
+    "resume": false,
+    "gain_table_data": null
+  },
+  "selected_ids": [
+    "clevr_dialog_12324",
+    "clevr_dialog_7843",
+    "clevr_dialog_8937",
+    "clevr_dialog_3845",
+    "clevr_dialog_6926",
+    "clevr_dialog_6653",
+    "clevr_dialog_247",
+    "clevr_dialog_8334"
+  ],
+  "torch": "2.4.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "sources": {
+    "/path/to/TrajKV/jobs/probe_noupgrade_calib8_gpu0_v1.source/code/experiments/run_cycle.py": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+    "/path/to/TrajKV/jobs/probe_noupgrade_calib8_gpu0_v1.source/code/experiments/bank.py": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+    "/path/to/TrajKV/configs/data/clevr_dev32_runner.json": "a5e5aadb012f1d79c03ef93b2656ea689f769ba6b077a3488dbb2014dcab29ba",
+    "/path/to/TrajKV/jobs/probe_noupgrade_calib8_gpu0_v1.source/code/experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c"
+  },
+  "reference_answers_visible_to_runner": false,
+  "model_identity": {
+    "config.json": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+    "model.safetensors.index.json": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+    "tokenizer_config.json": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f"
+  }
+}

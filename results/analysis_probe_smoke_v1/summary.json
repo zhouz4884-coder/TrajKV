@@ -1,0 +1,180 @@
+{
+  "status": "OK",
+  "completeness": [
+    {
+      "source_records": "results\\probe_smoke_gpu1_v1\\records.jsonl",
+      "observed_records": 1,
+      "completion_receipt_present": true,
+      "expected_records": 1,
+      "missing_records": 0,
+      "status": "COMPLETE",
+      "missing_record_keys": []
+    }
+  ],
+  "budget_and_ledger_audit": {
+    "n_sessions": 1,
+    "all_computed_ledger_equal": true,
+    "n_sessions_with_reported_ledger": 1,
+    "all_recorded_ledger_exact": true,
+    "all_computed_budgets_ok": true,
+    "n_sessions_with_read_budget": 1,
+    "ledger_mismatches": [],
+    "budget_overruns": []
+  },
+  "probe_layer_phase_summary": [
+    {
+      "context_id": "f2a631d89c57",
+      "storage_id": "c3c613f58905",
+      "variant": "asym:probe_l7_t0.02",
+      "probe_layer": 7,
+      "phase": "decode",
+      "threshold": 0.02,
+      "n_events": 7,
+      "n_observed": 7,
+      "n_skipped": 0,
+      "upgrades": 7,
+      "upgrade_rate": 1.0,
+      "upgrade_rate_ci_lower": null,
+      "upgrade_rate_ci_upper": null,
+      "n_images": 1,
+      "threshold_met": 7,
+      "relative_l2_distribution": {
+        "n": 7,
+        "mean": 0.13045171728217522,
+        "median": 0.14595342048827534,
+        "minimum": 0.07375805498597116,
+        "maximum": 0.1923803430809668,
+        "p05": 0.07621451927609241,
+        "p95": 0.18413335501068726
+      },
+      "rms_distribution": {
+        "n": 7,
+        "mean": 0.016854169361386628,
+        "median": 0.019549401712462774,
+        "minimum": 0.009383626976337057,
+        "maximum": 0.02423437706109413,
+        "p05": 0.00949577960758298,
+        "p95": 0.02368074096167224
+      },
+      "invalid_signals": 0,
+      "near_zero_denominators": 0,
+      "controller_charges_exact": true
+    },
+    {
+      "context_id": "f2a631d89c57",
+      "storage_id": "c3c613f58905",
+      "variant": "asym:probe_l7_t0.02",
+      "probe_layer": 7,
+      "phase": "text_prefill",
+      "threshold": 0.02,
+      "n_events": 2,
+      "n_observed": 2,
+      "n_skipped": 0,
+      "upgrades": 2,
+      "upgrade_rate": 1.0,
+      "upgrade_rate_ci_lower": null,
+      "upgrade_rate_ci_upper": null,
+      "n_images": 1,
+      "threshold_met": 2,
+      "relative_l2_distribution": {
+        "n": 2,
+        "mean": 0.08893681808190071,
+        "median": 0.08893681808190071,
+        "minimum": 0.08565685168553815,
+        "maximum": 0.09221678447826327,
+        "p05": 0.0859848483251744,
+        "p95": 0.09188878783862701
+      },
+      "rms_distribution": {
+        "n": 2,
+        "mean": 0.015503961846247844,
+        "median": 0.015503961846247844,
+        "minimum": 0.014833149690565081,
+        "maximum": 0.016174774001930608,
+        "p05": 0.014900230906133358,
+        "p95": 0.016107692786362333
+      },
+      "invalid_signals": 0,
+      "near_zero_denominators": 0,
+      "controller_charges_exact": true
+    }
+  ],
+  "same_storage_quality": [
+    {
+      "context_id": "f2a631d89c57",
+      "storage_id": "c3c613f58905",
+      "variant": "asym:probe_l7_t0.02",
+      "mean": 0.3333333333333333,
+      "ci_lower": null,
+      "ci_upper": null,
+      "n_questions": 3,
+      "n_images": 1,
+      "status": "insufficient_clusters",
+      "repeats": 0,
+      "n_sessions": 1,
+      "mean_extra_read_bytes": 12331008.0,
+      "mean_raw_read_bytes": 64972800.0,
+      "mean_owned_visual_bytes": 3612672.0,
+      "mean_owned_visual_ratio": 0.24609375,
+      "mean_committed_residual_bytes": 9953280.0,
+      "mean_probe_base_reread_bytes": 663552.0,
+      "mean_probe_text_reread_bytes": 1216512.0,
+      "mean_probe_residual_bytes": 497664.0,
+      "mean_replay_all_bytes": 0.0,
+      "mean_session_ms": 1857.0207090015174,
+      "all_ledger_equal": true,
+      "all_recorded_ledger_exact": true,
+      "all_budgets_ok": true,
+      "pairing": "same question intersection within an exact stored-owner/kernel layout"
+    }
+  ],
+  "n_probe_events": 9,
+  "n_probe_skipped": 0,
+  "contexts": {
+    "f2a631d89c57": {
+      "model": "/path/to/InternVL3-8B-hf",
+      "dataset": "clevr_dialog",
+      "data_protocol": "native_caption_then_10qa",
+      "protocol": "free_running",
+      "settings": {
+        "max_tokens": 12,
+        "max_patches": 4,
+        "turns": 3
+      }
+    }
+  },
+  "storage_profiles": {
+    "c3c613f58905": {
+      "method": "asym",
+      "visual_base_ratio": 0.140625,
+      "visual_residual_ratio": 0.10546875,
+      "extra_packed_reference_ratio": 0.0,
+      "diagnostic_reference_ratio": 0.0,
+      "runtime": "fused_packed_visual_append_only_fp16_text",
+      "kernel_variant": "legacy_p202_fused",
+      "kernel_source_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1",
+      "explicit_layout": null
+    }
+  },
+  "feature_scope": "current same-query base/residual correction magnitude; no FP16 reference or future outcomes used online",
+  "cost_scope": "global extra = all residual reads + probe/replay/repair base and text rereads; not measured HBM bandwidth",
+  "controller_cost_scope": "two-read local probe charge includes a normal first read; do not add it wholesale to global extra",
+  "quality_scope": "same-question, same-owner/kernel development comparison under each policy's own generated history",
+  "final_test_access": false,
+  "input_sha256": {
+    "/path/to/TrajKV\\results\\probe_smoke_gpu1_v1\\records.jsonl": "6215963b5c8a359f3a0e994a8fd397d5be48adeaa768505f3a2f8c1c35fb24d2",
+    "/path/to/TrajKV\\configs\\data\\clevr_references.jsonl": "f17d5fa2e17fcffdc77297d71b766ba8187bafd66cf20c80204d539aeae40502"
+  },
+  "script_sha256": "77c1840508d1ea005bcca4179cae007efdf494b39963a289502004ba7afec1fe",
+  "bootstrap": {
+    "unit": "source image",
+    "repeats": 2000,
+    "seed": 1212
+  },
+  "figures": [
+    "figures\\probe_smoke_v1\\same_storage_probe_f2a631d89c57_c3c613f58905.png",
+    "figures\\probe_smoke_v1\\same_storage_probe_f2a631d89c57_c3c613f58905.pdf",
+    "figures\\probe_smoke_v1\\probe_delta_f2a631d89c57_c3c613f58905.png",
+    "figures\\probe_smoke_v1\\probe_delta_f2a631d89c57_c3c613f58905.pdf"
+  ]
+}

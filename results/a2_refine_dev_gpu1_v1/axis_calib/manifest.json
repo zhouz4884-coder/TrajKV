@@ -1,0 +1,57 @@
+{
+  "config": {
+    "schema": "trajkv.a2.variant-config.v1",
+    "arguments": {
+      "model": "/path/to/InternVL3-8B-hf",
+      "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+      "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+      "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+      "max_patches": 16
+    },
+    "count": 8,
+    "variants": [
+      {
+        "name": "axis_calibration",
+        "method": "asym1",
+        "selector": "all",
+        "fraction": 1,
+        "store_selector_meta": false,
+        "local_calibration": true
+      }
+    ]
+  },
+  "config_sha256": "e3c58ab406ae9a6c8329d25bdeee58fdde7df234f0dbb331302d54146f486844",
+  "samples_sha256": "bd468aa4fdcfff14fd276941d585c92410970298fc366132345c0b9c4a1f9364",
+  "selected_ids": [
+    "docvqa_bc890fc601022295",
+    "docvqa_bcddb15635a996b8",
+    "docvqa_04245207f046237d",
+    "docvqa_b818a25121b39070",
+    "docvqa_6b1ae0d9d4486833",
+    "docvqa_3612ff4a8e2d7cbc",
+    "docvqa_558b55217d833b67",
+    "docvqa_3c7d0b5ff265af83"
+  ],
+  "answers_visible_to_runner": false,
+  "sources": {
+    "code/a2/analyze.py": "60101fcc226779a4ac2fde239948b91bca953e4e06ecc1b5dd2bee96e9170f06",
+    "code/a2/manage.py": "af14bac56483c9fed15de33af48f9360b7a8b37c82b2560c3eb807253548cbf6",
+    "code/a2/prepare.py": "f2f04b913b764603de00d5c4eeccc73e6e93a588f6fc2aef8e7ed561c23d71eb",
+    "code/a2/run_c.py": "3bd16a983f1edbe7a24d562723604611de3f7c800ae06d879291c4fd13dc0286",
+    "code/a2/allocation_bank.py": "5748e7cc4aa02b4115f65eaa5ed1ab367ca703be48e6bc501f766a8d98047df7",
+    "code/a2/check_kernel.py": "714982f5572fa80dfe72e20b0c5b17fe670e75e3dcbad54be3737119d4c39a7b",
+    "code/a2/session.py": "58ee5792c205b1d53a4ced6fa617d62f94765112d10ba37145892dff431cd996",
+    "code/a2/configure_followup.py": "703eff4ae2ddb106a913414fe02848460e606b9447c99708828cb7560e62a626",
+    "code/a2/configure.py": "38d76255db8c58fbdba16625ed113c99608ae644b6f5f42ac1c14875f0d07f04",
+    "code/a2/derive_sources.py": "3c1beef89264978441b8b40b4d7fb44d065f319ae7e49c6381f8f2b093103e25",
+    "code/a2/fused_masked.py": "5e939fb1cfc5b3720a99904b557910ae8258ff4c89f5773836c1e6f117d6fc03",
+    "code/a2/masked_bank.py": "fd6fd3d82c252ccbaf87cf24b8df419df155df9b3c4ce3d76c39c5947f1eb69e",
+    "code/a2/run_variants.py": "bc727c4df3ecc3b8e1ebdddedf7b0de25f7c981ca3531b5627234eb41cdd10da",
+    "code/a2/run_queue.py": "52af5c31624a5885a859fa93d00e3bfabf7cdd0db5e75773bfc0d2d2bb29ee33",
+    "code/a2/run_grid.py": "4a4c4bb77dad64b3a6e52d75d4f7fb44a4b5a321efb58bb89064dd21cd16a3e6",
+    "code/a2/prepare_c.py": "b199902169bdafba966032b62b25e55abf542f5893ae318ae880ef53014f0cff",
+    "code/a2/calib_bank.py": "d0c94d6530b0c8e42bd7154732e774fb907fb9621d3947e5d1bd032aa8619691"
+  },
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "torch": "2.4.1+cu121"
+}

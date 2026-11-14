@@ -1,0 +1,151 @@
+{
+  "status": "COMPLETE",
+  "records": 512,
+  "table": [
+    {
+      "variant": "cold_meta_g128_kv",
+      "questions": 256,
+      "accuracy": 0.814453125,
+      "ci_low": 0.7679687500000001,
+      "ci_high": 0.858984375,
+      "budget_bits_including_encoder_constants": 1.6950384468734112,
+      "numeric_accuracy": 0.8257812500000001,
+      "text_accuracy": 0.8031250000000001
+    },
+    {
+      "variant": "cold_meta_all_kv",
+      "questions": 256,
+      "accuracy": 0.81015625,
+      "ci_low": 0.764453125,
+      "ci_high": 0.85546875,
+      "budget_bits_including_encoder_constants": 1.5795283638366377,
+      "numeric_accuracy": 0.81875,
+      "text_accuracy": 0.8015625
+    }
+  ],
+  "comparisons": [
+    {
+      "candidate": "cold_meta_g128_kv",
+      "reference": "fwht_global",
+      "role": "secondary previously evaluated cohort",
+      "delta": 0.013281250000000001,
+      "ci_low": -0.00625,
+      "ci_high": 0.03359375,
+      "p": 0.22642773572264277,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_g128_kv",
+      "reference": "base2_8",
+      "role": "secondary previously evaluated cohort",
+      "delta": 0.008203125,
+      "ci_low": -0.018359374999999997,
+      "ci_high": 0.03515625,
+      "p": 0.5754142458575414,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_g128_kv",
+      "reference": "decoder_warm_joint",
+      "role": "secondary previously evaluated cohort",
+      "delta": 0.0031249999999999993,
+      "ci_low": -0.012900390624999992,
+      "ci_high": 0.01953125,
+      "p": 0.7358726412735873,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_g128_kv",
+      "reference": "full8",
+      "role": "secondary previously evaluated cohort",
+      "delta": 0.0023437500000000003,
+      "ci_low": -0.025390625,
+      "ci_high": 0.030078125,
+      "p": 0.8848211517884821,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_g128_kv",
+      "reference": "native4_8",
+      "role": "secondary previously evaluated cohort",
+      "delta": -0.00546875,
+      "ci_low": -0.035546875000000006,
+      "ci_high": 0.024619140624999862,
+      "p": 0.7402025979740202,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_all_kv",
+      "reference": "fwht_global",
+      "role": "secondary previously evaluated cohort",
+      "delta": 0.008984375,
+      "ci_low": -0.010546874999999999,
+      "ci_high": 0.0296875,
+      "p": 0.41010589894101057,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_all_kv",
+      "reference": "base2_8",
+      "role": "secondary previously evaluated cohort",
+      "delta": 0.003906249999999999,
+      "ci_low": -0.025390625000000003,
+      "ci_high": 0.034765624999999994,
+      "p": 0.8144818551814482,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_all_kv",
+      "reference": "decoder_warm_joint",
+      "role": "secondary previously evaluated cohort",
+      "delta": -0.0011718750000000002,
+      "ci_low": -0.01796875,
+      "ci_high": 0.015625,
+      "p": 0.9511504884951151,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_all_kv",
+      "reference": "full8",
+      "role": "secondary previously evaluated cohort",
+      "delta": -0.001953125000000001,
+      "ci_low": -0.030078124999999997,
+      "ci_high": 0.0265625,
+      "p": 0.9205207947920521,
+      "images": 256,
+      "questions": 256
+    },
+    {
+      "candidate": "cold_meta_all_kv",
+      "reference": "native4_8",
+      "role": "secondary previously evaluated cohort",
+      "delta": -0.009765625,
+      "ci_low": -0.040234375,
+      "ci_high": 0.021093749999999998,
+      "p": 0.5540644593554065,
+      "images": 256,
+      "questions": 256
+    }
+  ],
+  "audit": {
+    "status": "PASS",
+    "records": 512,
+    "frozen_source_checks": 68,
+    "external_codec_checks": 6,
+    "independent_owner_formula_cases": 512,
+    "maximum_per_image_budget_bits": {
+      "cold_meta_g128_kv": 1.7013811383928572,
+      "cold_meta_all_kv": 1.5972144717261905
+    }
+  },
+  "metric": "official MMF10-annotator soft accuracy",
+  "scope": "reused already-evaluated256-image transfer cohort; candidate selection solely from Doc development; old controls retain original frozen source records; not a new-image confirmation"
+}

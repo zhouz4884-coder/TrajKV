@@ -1,0 +1,239 @@
+{
+  "contrasts": [
+    {
+      "left": "k2_vlloyd_channel",
+      "right": "native_k2v1",
+      "delta": 0.16533994191903992,
+      "ci_low": 0.07949237237958466,
+      "ci_high": 0.25151516005113683,
+      "p": 0.0002099979000209998,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "k2_vlloyd_channel",
+      "right": "k2_vrtn_channel",
+      "delta": 0.11909840378574393,
+      "ci_low": 0.0485441685765215,
+      "ci_high": 0.19215004660512977,
+      "p": 0.0014899851001489986,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "k2_vlloyd_channel",
+      "right": "k2_vlloyd_token",
+      "delta": 0.018063131313131312,
+      "ci_low": -0.03025145202020202,
+      "ci_high": 0.06757613636363637,
+      "p": 0.4819551804481955,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "k2_vmad_global",
+      "right": "native_k2v1",
+      "delta": 0.14946138256989233,
+      "ci_low": 0.06381063693065565,
+      "ci_high": 0.23373592275058402,
+      "p": 0.000949990500094999,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "k2_vlloyd_channel",
+      "right": "base2_reference",
+      "delta": -0.035367122466309825,
+      "ci_low": -0.08735163349212778,
+      "ci_high": 0.012899918337112579,
+      "p": 0.18003819961800382,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "k2_vlloyd_channel",
+      "right": "fp16_reference100",
+      "delta": -0.04613748740602961,
+      "ci_low": -0.10313569179648142,
+      "ci_high": 0.005688928931256294,
+      "p": 0.10578894211057889,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "lloyd_joint_centerls",
+      "right": "lloyd_joint_none",
+      "delta": 0.13488831095410042,
+      "ci_low": 0.06991294094419094,
+      "ci_high": 0.19981440625519573,
+      "p": 0.00015999840001599985,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "mad_k1_vmadc_headgain",
+      "right": "mad_k1_vmadc",
+      "delta": 0.0973917103324998,
+      "ci_low": 0.04112176249890065,
+      "ci_high": 0.15873599834701813,
+      "p": 0.0013699863001369987,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "mad_origin_norm",
+      "right": "mad_k1_vmadc",
+      "delta": 0.07521889440968386,
+      "ci_low": 0.024173542995746942,
+      "ci_high": 0.1309755152741995,
+      "p": 0.006889931100688993,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "left": "mad_global_head",
+      "right": "mad_k1_vmadc_headgain",
+      "delta": -0.16332126890822546,
+      "ci_low": -0.23578429212695512,
+      "ci_high": -0.09594970995188386,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    }
+  ],
+  "empirical_frontier": [
+    {
+      "variant": "mad_global_none",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.2201374458874459,
+      "ci_low": 0.15270892857142854,
+      "ci_high": 0.29178244047619056,
+      "exact": 0.09,
+      "numeric_anls": 0.2382649243760355,
+      "effective_bits": 1.0199878246753247,
+      "session_ms_median": 1084.52738699998
+    },
+    {
+      "variant": "mad_global_shared",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.2210800865800866,
+      "ci_low": 0.15528483946608945,
+      "ci_high": 0.29353885281385284,
+      "exact": 0.06,
+      "numeric_anls": 0.239869595425151,
+      "effective_bits": 1.0356128246753247,
+      "session_ms_median": 1052.1901789979893
+    },
+    {
+      "variant": "mad_global_head",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.2693503348503349,
+      "ci_low": 0.19797159738409742,
+      "ci_high": 0.3419987704425204,
+      "exact": 0.07,
+      "numeric_anls": 0.2834016806239028,
+      "effective_bits": 1.0824878246753247,
+      "session_ms_median": 1069.7755459987093
+    },
+    {
+      "variant": "lloyd_joint_none",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.36982466809583514,
+      "ci_low": 0.28843965509128555,
+      "ci_high": 0.4534010105132102,
+      "exact": 0.18,
+      "numeric_anls": 0.3592871433451144,
+      "effective_bits": 1.2522321428571428,
+      "session_ms_median": 1155.1842325061443
+    },
+    {
+      "variant": "lloyd_origin_shared",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.4600743644330601,
+      "ci_low": 0.3787085993814255,
+      "ci_high": 0.541286369263815,
+      "exact": 0.21,
+      "numeric_anls": 0.4717518078629191,
+      "effective_bits": 1.2678571428571428,
+      "session_ms_median": 967.8803450005944
+    },
+    {
+      "variant": "lloyd_joint_centerls",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.5047129790499355,
+      "ci_low": 0.4185419372294372,
+      "ci_high": 0.5903471222617962,
+      "exact": 0.32,
+      "numeric_anls": 0.5192303893994715,
+      "effective_bits": 1.3147321428571428,
+      "session_ms_median": 1194.8966900017695
+    },
+    {
+      "variant": "k2_vmad_global",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.8047296242404937,
+      "ci_low": 0.7324827337517554,
+      "ci_high": 0.8742819264069264,
+      "exact": 0.68,
+      "numeric_anls": 0.8463116697818791,
+      "effective_bits": 1.6361099837662338,
+      "session_ms_median": 1113.7205749982968
+    },
+    {
+      "variant": "k2_vlloyd_channel",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.8206081835896414,
+      "ci_low": 0.7481950740968323,
+      "ci_high": 0.8868492885790681,
+      "exact": 0.7,
+      "numeric_anls": 0.8372787959341905,
+      "effective_bits": 1.7522321428571428,
+      "session_ms_median": 1007.4570784927346
+    },
+    {
+      "variant": "base2_reference",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.8559753060559513,
+      "ci_low": 0.7892987012987014,
+      "ci_high": 0.9148596099241261,
+      "exact": 0.73,
+      "numeric_anls": 0.8862211177025991,
+      "effective_bits": 2.252232142857143,
+      "session_ms_median": 1131.7209894987172
+    },
+    {
+      "variant": "native4_reference",
+      "role": "actual packed runtime",
+      "images": 100,
+      "anls": 0.8644381391555305,
+      "ci_low": 0.8016473563272477,
+      "ci_high": 0.9217361158165506,
+      "exact": 0.77,
+      "numeric_anls": 0.8902677569344236,
+      "effective_bits": 4.252232142857143,
+      "session_ms_median": 1174.7135465047904
+    },
+    {
+      "variant": "fp16_reference100",
+      "role": "FP16 runtime",
+      "images": 100,
+      "anls": 0.866745670995671,
+      "ci_low": 0.8046102002164504,
+      "ci_high": 0.9228645833333333,
+      "exact": 0.76,
+      "numeric_anls": 0.8929644772237366,
+      "effective_bits": 16.002232142857142,
+      "session_ms_median": 1171.6899355014903
+    }
+  ],
+  "scope": "old-image development100; finite observed points, not theoretical optimum; materialized KVarN quality port excluded from resource frontier"
+}

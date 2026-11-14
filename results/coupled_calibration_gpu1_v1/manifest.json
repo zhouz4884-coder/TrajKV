@@ -1,0 +1,30 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/axis_flip100_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/axis_flip100_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "fit_cold",
+      "entrypoint": "calibrate_endogenous.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/coupled20_cold_v1.json"
+      ]
+    },
+    {
+      "name": "fit_warm",
+      "entrypoint": "calibrate_endogenous.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/coupled20_warm_v1.json"
+      ]
+    },
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/coupled_calibrated100_v1.json"
+      ]
+    }
+  ]
+}

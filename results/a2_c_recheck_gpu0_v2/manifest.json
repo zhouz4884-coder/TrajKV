@@ -1,0 +1,20 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/a2_global_dev_gpu0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/a2_global_dev_gpu0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "history",
+      "entrypoint": "run_c.py",
+      "arguments": [
+        "--model",
+        "/path/to/InternVL3-8B-hf",
+        "--legacy-scripts",
+        "/path/to/VisContract_P14_2/scripts",
+        "--kivi-source",
+        "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+        "--samples",
+        "/path/to/TrajKV/configs/a2/c_contexts_v2.json"
+      ]
+    }
+  ]
+}

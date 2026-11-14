@@ -1,0 +1,99 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/data/clevr_smoke8_runner.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "output": "/path/to/TrajKV/results/fidelity_dev8_gpu1_v2",
+    "count": 8,
+    "start": 0,
+    "turns": 6,
+    "max_tokens": 12,
+    "max_patches": 4,
+    "min_target_turn": 2,
+    "actions": [
+      "all"
+    ],
+    "action_turns": [
+      2,
+      4
+    ],
+    "future_horizon": 2,
+    "save_logits": false,
+    "resume": false,
+    "parsed_actions": [
+      [
+        0,
+        "text_prefill"
+      ],
+      [
+        0,
+        "early"
+      ],
+      [
+        0,
+        "late"
+      ],
+      [
+        1,
+        "text_prefill"
+      ],
+      [
+        1,
+        "early"
+      ],
+      [
+        1,
+        "late"
+      ],
+      [
+        2,
+        "text_prefill"
+      ],
+      [
+        2,
+        "early"
+      ],
+      [
+        2,
+        "late"
+      ],
+      [
+        3,
+        "text_prefill"
+      ],
+      [
+        3,
+        "early"
+      ],
+      [
+        3,
+        "late"
+      ]
+    ]
+  },
+  "selected_ids": [
+    "clevr_dialog_12324",
+    "clevr_dialog_7843",
+    "clevr_dialog_8937",
+    "clevr_dialog_3845",
+    "clevr_dialog_6926",
+    "clevr_dialog_6653",
+    "clevr_dialog_247",
+    "clevr_dialog_8334"
+  ],
+  "torch": "2.4.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "sources": {
+    "/path/to/TrajKV/code/experiments/mechanism_fidelity.py": "8ffc74b6db34c303e3ffed0fc75e7659b6acb178dce8eef8ee7cb19dbe552527",
+    "/path/to/TrajKV/code/experiments/bank.py": "8ad03f3a62805f1918551cf387044dbbba1de41c6681210f4b22fcb4d505f5ac",
+    "/path/to/TrajKV/code/experiments/run_cycle.py": "ab58c28ef49528d19f0adf5b2bf87c6493964fbf6a83c6afde356815ff9e5026",
+    "/path/to/TrajKV/configs/data/clevr_smoke8_runner.json": "4becbeabc999925d5f1e97e26880fa86ed0908fd3d46a9dc14ce9aa2166b4b2b"
+  },
+  "schema": "trajkv.mechanism_fidelity.v2",
+  "frozen_v1_lineage_sha256": "e13d4fcf97ba5b5506e32b29480adcb1c093ae885dbaee7bdb918837007a5c65",
+  "primary_objective": "same-token full-reference logit KL fidelity gain, not answer accuracy",
+  "canonical_generation": "packed base2, all visual support",
+  "reference_answers_visible_to_runner": false,
+  "paid_calls": 0
+}

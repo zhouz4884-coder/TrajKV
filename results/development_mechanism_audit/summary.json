@@ -1,0 +1,213 @@
+{
+  "status": "PASS",
+  "base2_equals_no_refinement_whole_trajectory": 64,
+  "prefill_fresh_equals_cached_first_logits": 64,
+  "anchor_independent_owner_formula_cases": 576,
+  "same_anchor_input_and_store_pairs": 128,
+  "coverage": [
+    {
+      "variant": "cachedread_all",
+      "phase": "decode",
+      "selected_head_pages": 4301920,
+      "available_head_pages": 4301920,
+      "actual_selected_page_fraction": 1.0
+    },
+    {
+      "variant": "cachedread_all",
+      "phase": "prefill",
+      "selected_head_pages": 717920,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 1.0
+    },
+    {
+      "variant": "cachedread_cached25",
+      "phase": "decode",
+      "selected_head_pages": 410172,
+      "available_head_pages": 4362848,
+      "actual_selected_page_fraction": 0.09401473532884941
+    },
+    {
+      "variant": "cachedread_cached25",
+      "phase": "prefill",
+      "selected_head_pages": 67060,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 0.09340873634945397
+    },
+    {
+      "variant": "cachedread_cached50",
+      "phase": "decode",
+      "selected_head_pages": 1430788,
+      "available_head_pages": 4311328,
+      "actual_selected_page_fraction": 0.3318671184377528
+    },
+    {
+      "variant": "cachedread_cached50",
+      "phase": "prefill",
+      "selected_head_pages": 244492,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 0.34055605081346113
+    },
+    {
+      "variant": "cachedread_none",
+      "phase": "decode",
+      "selected_head_pages": 0,
+      "available_head_pages": 4341792,
+      "actual_selected_page_fraction": 0.0
+    },
+    {
+      "variant": "cachedread_none",
+      "phase": "prefill",
+      "selected_head_pages": 0,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 0.0
+    },
+    {
+      "variant": "cachedread_periodic25",
+      "phase": "decode",
+      "selected_head_pages": 1262688,
+      "available_head_pages": 4285120,
+      "actual_selected_page_fraction": 0.29466806063774176
+    },
+    {
+      "variant": "cachedread_periodic25",
+      "phase": "prefill",
+      "selected_head_pages": 706272,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 0.9837753510140406
+    },
+    {
+      "variant": "cachedread_prefill_cached25",
+      "phase": "decode",
+      "selected_head_pages": 397796,
+      "available_head_pages": 4234272,
+      "actual_selected_page_fraction": 0.09394672803258743
+    },
+    {
+      "variant": "cachedread_prefill_cached25",
+      "phase": "prefill",
+      "selected_head_pages": 717920,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 1.0
+    },
+    {
+      "variant": "cachedread_prefill_cached50",
+      "phase": "decode",
+      "selected_head_pages": 1321260,
+      "available_head_pages": 4312000,
+      "actual_selected_page_fraction": 0.30641465677179963
+    },
+    {
+      "variant": "cachedread_prefill_cached50",
+      "phase": "prefill",
+      "selected_head_pages": 677971,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 0.9443545241809672
+    },
+    {
+      "variant": "cachedread_prefill_freshrisk50",
+      "phase": "decode",
+      "selected_head_pages": 1161022,
+      "available_head_pages": 4285344,
+      "actual_selected_page_fraction": 0.27092854155932405
+    },
+    {
+      "variant": "cachedread_prefill_freshrisk50",
+      "phase": "prefill",
+      "selected_head_pages": 612400,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 0.8530198350791175
+    },
+    {
+      "variant": "cachedread_risk25",
+      "phase": "decode",
+      "selected_head_pages": 409652,
+      "available_head_pages": 4359936,
+      "actual_selected_page_fraction": 0.09395825993776055
+    },
+    {
+      "variant": "cachedread_risk25",
+      "phase": "prefill",
+      "selected_head_pages": 67060,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 0.09340873634945397
+    },
+    {
+      "variant": "cachedread_risk50",
+      "phase": "decode",
+      "selected_head_pages": 1266714,
+      "available_head_pages": 4312896,
+      "actual_selected_page_fraction": 0.29370381293682946
+    },
+    {
+      "variant": "cachedread_risk50",
+      "phase": "prefill",
+      "selected_head_pages": 225444,
+      "available_head_pages": 717920,
+      "actual_selected_page_fraction": 0.3140238466681524
+    }
+  ],
+  "anchor_comparisons": [
+    {
+      "left": "anchor_affine_native",
+      "right": "anchor_affine_compressed",
+      "delta": -0.005574088221147045,
+      "ci_low": -0.02142734912348786,
+      "ci_high": 0.00962349354486451,
+      "p": 0.4973950260497395,
+      "images": 64,
+      "questions": 255
+    },
+    {
+      "left": "anchor_affine_native",
+      "right": "anchor_affine_original",
+      "delta": -0.024508763195994186,
+      "ci_low": -0.05300813098148886,
+      "ci_high": -0.0003445565920126791,
+      "p": 0.06495935040649593,
+      "images": 64,
+      "questions": 255
+    },
+    {
+      "left": "anchor_affine_compressed",
+      "right": "anchor_affine_original",
+      "delta": -0.018934674974847143,
+      "ci_low": -0.044031517795812075,
+      "ci_high": -0.00011897522017736913,
+      "p": 0.09149908500914991,
+      "images": 64,
+      "questions": 255
+    },
+    {
+      "left": "anchor_direction_native",
+      "right": "anchor_direction_compressed",
+      "delta": 0.0011764705882352938,
+      "ci_low": 0.0,
+      "ci_high": 0.0031746031746031737,
+      "p": 0.4993750062499375,
+      "images": 64,
+      "questions": 255
+    },
+    {
+      "left": "anchor_direction_native",
+      "right": "anchor_direction_original",
+      "delta": 0.008066239316239315,
+      "ci_low": -0.0003831417624521072,
+      "ci_high": 0.01877396440436774,
+      "p": 0.25146748532514673,
+      "images": 64,
+      "questions": 255
+    },
+    {
+      "left": "anchor_direction_compressed",
+      "right": "anchor_direction_original",
+      "delta": 0.006889768728004023,
+      "ci_low": -0.0015564202334630347,
+      "ci_high": 0.017793817312407707,
+      "p": 0.25146748532514673,
+      "images": 64,
+      "questions": 255
+    }
+  ],
+  "wording": "0.5 is a per-read byte-budget fraction, not necessarily50% selected pages; selection overhead is deducted; use measured coverage",
+  "scope": "completed open development only; no confirm256 or balanced128 scores read"
+}

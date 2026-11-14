@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "name": "endpoints",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/cached_reads_endpoint_probe_v1.json"
+      ]
+    },
+    {
+      "name": "endpoint_audit",
+      "entrypoint": "check_cached_endpoints.py",
+      "arguments": [
+        "--input",
+        "/path/to/TrajKV/results/cached_reads_dev64_s1_v1/endpoints"
+      ]
+    },
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/cached_reads_dev64_s1_v1.json"
+      ]
+    }
+  ]
+}

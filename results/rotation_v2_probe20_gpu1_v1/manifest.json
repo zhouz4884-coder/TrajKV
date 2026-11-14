@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/coupled_calibration_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/coupled_calibration_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/rotation_v2_probe20_gpu1_v1.json"
+      ]
+    }
+  ]
+}

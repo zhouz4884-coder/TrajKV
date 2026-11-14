@@ -1,0 +1,4 @@
+{
+  "mechanism100_norm_direction": "100 distinct development images, one question each. V remains original FP16. A00 uses actual quantized norms and directions; A10 restores only norms, A01 only directions, A11 both. All four are FP16-materialized diagnostic arms, not low-bit deployment candidates. Error bars are 95% image bootstrap intervals. Energy shares are computed from the exact radial/angular squared-error identity; they are not task-causal percentages.",
+  "mechanism100_joint_quality_continuous": "Same 100 development images and official short-answer prompt. Left: free end-to-end GPU generation with actual packed joint KV. Right: canonical-reference teacher-forced logit KL, separate GPU forwards at identical gold contexts; never treated as free-answer accuracy. Metadata and gain costs differ and are reported in the resource table."
+}

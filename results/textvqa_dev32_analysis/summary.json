@@ -1,0 +1,42 @@
+{
+  "table": [
+    {
+      "variant": "base2_8",
+      "images": 32,
+      "vqa_accuracy": 0.8375,
+      "ci_low": 0.709375,
+      "ci_high": 0.953125,
+      "effective_bits": 2.252232142857143,
+      "role": "actual packed runtime"
+    },
+    {
+      "variant": "full8",
+      "images": 32,
+      "vqa_accuracy": 0.84375,
+      "ci_low": 0.715625,
+      "ci_high": 0.946875,
+      "effective_bits": 16.002232142857142,
+      "role": "FP16 runtime"
+    },
+    {
+      "variant": "k2_vlloyd_channel",
+      "images": 32,
+      "vqa_accuracy": 0.80625,
+      "ci_low": 0.653125,
+      "ci_high": 0.9281250000000001,
+      "effective_bits": 1.7522321428571428,
+      "role": "actual packed runtime"
+    },
+    {
+      "variant": "native_k2v1_8",
+      "images": 32,
+      "vqa_accuracy": 0.7625,
+      "ci_low": 0.6187499999999999,
+      "ci_high": 0.8875,
+      "effective_bits": 1.7522321428571428,
+      "role": "actual packed runtime"
+    }
+  ],
+  "metric": "official MMF TextVQA10-annotator soft accuracy, normalization unchanged",
+  "references": "configs\\a2\\textvqa_dev32_refs.json"
+}

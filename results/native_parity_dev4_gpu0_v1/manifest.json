@@ -1,0 +1,42 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/data/clevr_dev32_runner.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "output": "/path/to/TrajKV/results/native_parity_dev4_gpu0_v1",
+    "count": 4,
+    "start": 0,
+    "turns": 3,
+    "max_tokens": 12,
+    "max_patches": 4,
+    "generate_side": "native",
+    "order": "alternate",
+    "dtype": "float16",
+    "resume": false
+  },
+  "selected_ids": [
+    "clevr_dialog_12324",
+    "clevr_dialog_7843",
+    "clevr_dialog_8937",
+    "clevr_dialog_3845"
+  ],
+  "torch": "2.4.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "sources": {
+    "/path/to/TrajKV/code/experiments/native_parity.py": "cbd224c9e88ae52f450756e0a3a761d1937b757619719a1b4407707cd972e4f8",
+    "/path/to/TrajKV/code/experiments/mechanism.py": "e13d4fcf97ba5b5506e32b29480adcb1c093ae885dbaee7bdb918837007a5c65",
+    "/path/to/TrajKV/code/experiments/bank.py": "8ad03f3a62805f1918551cf387044dbbba1de41c6681210f4b22fcb4d505f5ac",
+    "/path/to/TrajKV/code/experiments/run_cycle.py": "154e1cd6492dd49e7c69948b183c304cbab6343199a85a700081d94dc6719725",
+    "/path/to/TrajKV/configs/data/clevr_dev32_runner.json": "a5e5aadb012f1d79c03ef93b2656ea689f769ba6b077a3488dbb2014dcab29ba"
+  },
+  "native_sdpa_function_module": "transformers.integrations.sdpa_attention",
+  "native_sdpa_function_name": "sdpa_attention_forward",
+  "sdpa_enabled": {
+    "flash": true,
+    "memory_efficient": true,
+    "math": true
+  },
+  "reference_answers_visible_to_runner": false,
+  "paid_calls": 0
+}

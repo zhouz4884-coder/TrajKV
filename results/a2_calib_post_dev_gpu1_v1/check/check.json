@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "thresholds": {
+    "qk": 0.03125,
+    "wv": 0.002
+  },
+  "cases": [
+    {
+      "nv": 256,
+      "official_vs_torch_discrete_qk_max_abs": 0.0,
+      "official_vs_torch_discrete_wv_max_abs": 0.0,
+      "pass": true
+    },
+    {
+      "nv": 768,
+      "official_vs_torch_discrete_qk_max_abs": 0.0,
+      "official_vs_torch_discrete_wv_max_abs": 0.0,
+      "pass": true
+    }
+  ],
+  "scope": "unmodified official packed operators vs same discrete code PyTorch matmuls, not end-to-end original-model reproduction"
+}

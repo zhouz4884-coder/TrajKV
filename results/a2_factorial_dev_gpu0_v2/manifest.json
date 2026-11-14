@@ -1,0 +1,32 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/a2_boundary_dev4_s0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/a2_boundary_dev4_s0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "kernel_native",
+      "entrypoint": "check_hybrid_native.py",
+      "arguments": [
+        "--legacy-scripts",
+        "/path/to/VisContract_P14_2/scripts",
+        "--kivi-source",
+        "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py"
+      ]
+    },
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/dev_factorial.json"
+      ]
+    },
+    {
+      "name": "value_clip",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/value_probe_clip_config.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "config": {
+    "schema": "trajkv.a2.variant-config.v1",
+    "arguments": {
+      "model": "/path/to/InternVL3-8B-hf",
+      "samples": "/path/to/TrajKV/configs/a2/dev8.json",
+      "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+      "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+      "max_patches": 16
+    },
+    "count": 8,
+    "variants": [
+      {
+        "name": "post_official",
+        "method": "calibpost",
+        "clip_k": 0.5,
+        "clip_v": 0.3,
+        "tau": -3,
+        "selector": "none",
+        "store_selector_meta": false
+      },
+      {
+        "name": "post_tau0",
+        "method": "calibpost",
+        "clip_k": 0.5,
+        "clip_v": 0.3,
+        "tau": 0,
+        "selector": "none",
+        "store_selector_meta": false
+      },
+      {
+        "name": "post_tau1",
+        "method": "calibpost",
+        "clip_k": 0.5,
+        "clip_v": 0.3,
+        "tau": -1,
+        "selector": "none",
+        "store_selector_meta": false
+      },
+      {
+        "name": "post_k05v1_tau0",
+        "method": "calibpost",
+        "clip_k": 0.5,
+        "clip_v": 1,
+        "tau": 0,
+        "selector": "none",
+        "store_selector_meta": false
+      },
+      {
+        "name": "post_k075v05_tau0",
+        "method": "calibpost",
+        "clip_k": 0.75,
+        "clip_v": 0.5,
+        "tau": 0,
+        "selector": "none",
+        "store_selector_meta": false
+      }
+    ]
+  },
+  "config_sha256": "50309e88aaa9a841ece2e2003a4c1d0dbb0f104271f47efb55a6c99dc66465cb",
+  "samples_sha256": "bd468aa4fdcfff14fd276941d585c92410970298fc366132345c0b9c4a1f9364",
+  "selected_ids": [
+    "docvqa_bc890fc601022295",
+    "docvqa_bcddb15635a996b8",
+    "docvqa_04245207f046237d",
+    "docvqa_b818a25121b39070",
+    "docvqa_6b1ae0d9d4486833",
+    "docvqa_3612ff4a8e2d7cbc",
+    "docvqa_558b55217d833b67",
+    "docvqa_3c7d0b5ff265af83"
+  ],
+  "answers_visible_to_runner": false,
+  "sources": {
+    "code/a2/analyze.py": "60101fcc226779a4ac2fde239948b91bca953e4e06ecc1b5dd2bee96e9170f06",
+    "code/a2/manage.py": "af14bac56483c9fed15de33af48f9360b7a8b37c82b2560c3eb807253548cbf6",
+    "code/a2/prepare.py": "f2f04b913b764603de00d5c4eeccc73e6e93a588f6fc2aef8e7ed561c23d71eb",
+    "code/a2/run_c.py": "3bd16a983f1edbe7a24d562723604611de3f7c800ae06d879291c4fd13dc0286",
+    "code/a2/allocation_bank.py": "5748e7cc4aa02b4115f65eaa5ed1ab367ca703be48e6bc501f766a8d98047df7",
+    "code/a2/calibrate_global.py": "d97eeb5f39fecf04111a825563d3ca2ee09168c0aa57bcccb78a480da7dff183",
+    "code/a2/check_kernel.py": "714982f5572fa80dfe72e20b0c5b17fe670e75e3dcbad54be3737119d4c39a7b",
+    "code/a2/session.py": "58ee5792c205b1d53a4ced6fa617d62f94765112d10ba37145892dff431cd996",
+    "code/a2/check_rates.py": "55a2df4f4057a3819b7eeecfdfc68c38ec0958bc0ceb3046389365ca504d853c",
+    "code/a2/mechanism_1bit.py": "66f035b2bedc26fd87e0b2c1e479288dfdd198bdaba6d8e16bec460bb2fc1dd9",
+    "code/a2/derive_rates.py": "ca71193a618e23bc0b65df3d0cb9548524487e197de92cf93571a46e1d32c39c",
+    "code/a2/configure_followup.py": "703eff4ae2ddb106a913414fe02848460e606b9447c99708828cb7560e62a626",
+    "code/a2/analyze_c.py": "1e4a6211ac6a968f7704e57c04395250e8433e5893768670315101735cc466cf",
+    "code/a2/configure.py": "38d76255db8c58fbdba16625ed113c99608ae644b6f5f42ac1c14875f0d07f04",
+    "code/a2/derive_sources.py": "3c1beef89264978441b8b40b4d7fb44d065f319ae7e49c6381f8f2b093103e25",
+    "code/a2/fused_masked.py": "5e939fb1cfc5b3720a99904b557910ae8258ff4c89f5773836c1e6f117d6fc03",
+    "code/a2/rate_bank.py": "c05bdcca0ddb2364358411697f625643164b183c48b183da3af0fd7a0bcafed1",
+    "code/a2/masked_bank.py": "fd6fd3d82c252ccbaf87cf24b8df419df155df9b3c4ce3d76c39c5947f1eb69e",
+    "code/a2/run_variants.py": "9e5e62b7f59fcba6a8f017b76d22c9b86b25e0935c05ea0c10a9ca88e81e866c",
+    "code/a2/run_queue.py": "52af5c31624a5885a859fa93d00e3bfabf7cdd0db5e75773bfc0d2d2bb29ee33",
+    "code/a2/calib_post.py": "72ed95402c71a97de419b97832766576e8c8a48f0ce879c64989bcdaf8de2966",
+    "code/a2/fit_allocation.py": "3295cc24b7407944ba08fa9e00d1e4f6ed3056e06caa65691ce4966e16ebffd1",
+    "code/a2/run_grid.py": "4a4c4bb77dad64b3a6e52d75d4f7fb44a4b5a321efb58bb89064dd21cd16a3e6",
+    "code/a2/check_calib_post.py": "9f73417a81ad721349f7463a5794b56943cb105cb3e7055ed1d3692c97afe9cf",
+    "code/a2/fused_rates.py": "a6d9e426a597e86611e5c956db504021d105881ed3f364a076094b565a3e5cae",
+    "code/a2/prepare_c.py": "b199902169bdafba966032b62b25e55abf542f5893ae318ae880ef53014f0cff",
+    "code/a2/calib_bank.py": "75506b9c5b0fbf1c76993461895a8ed30b457f3b0fd94c22203d644525663b6d"
+  },
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "torch": "2.4.1+cu121"
+}

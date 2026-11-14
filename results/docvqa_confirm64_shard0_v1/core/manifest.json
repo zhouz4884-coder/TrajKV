@@ -1,0 +1,4098 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/data/docvqa_confirm64_remote_runner.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "output": "/path/to/TrajKV/results/docvqa_confirm64_shard0_v1/core",
+    "methods": [
+      "full",
+      "base2",
+      "native4",
+      "asym"
+    ],
+    "policies": [
+      "base",
+      "uniform",
+      "periodic",
+      "table_current",
+      "table_future",
+      "probe_l7_t0.02",
+      "margin_write"
+    ],
+    "count": 32,
+    "start": 0,
+    "turns": 6,
+    "max_tokens": 32,
+    "max_patches": 4,
+    "margin": 2.0,
+    "max_replays": 1,
+    "save_states": false,
+    "read_budget_bytes": 16777216,
+    "description_tokens": 96,
+    "hide_visual_after_description": false,
+    "gain_table": "/path/to/TrajKV/configs/frozen_gain_tables_dev8_v2.json",
+    "probe_layer": 7,
+    "probe_threshold": 0.02,
+    "reference": null,
+    "resume": false,
+    "gain_table_data": {
+      "schema": "trajkv.gain_tables.fidelity.v2",
+      "status": "OK",
+      "requested_training_session_ids": [
+        "clevr_dialog_12324",
+        "clevr_dialog_247",
+        "clevr_dialog_3845",
+        "clevr_dialog_6653",
+        "clevr_dialog_6926",
+        "clevr_dialog_7843",
+        "clevr_dialog_8334",
+        "clevr_dialog_8937"
+      ],
+      "training_session_ids": [
+        "clevr_dialog_12324",
+        "clevr_dialog_247",
+        "clevr_dialog_3845",
+        "clevr_dialog_6653",
+        "clevr_dialog_6926",
+        "clevr_dialog_7843",
+        "clevr_dialog_8334",
+        "clevr_dialog_8937"
+      ],
+      "training_image_ids": {
+        "clevr_dialog_12324": "CLEVR_val_012324",
+        "clevr_dialog_247": "CLEVR_val_000247",
+        "clevr_dialog_3845": "CLEVR_val_003845",
+        "clevr_dialog_6653": "CLEVR_val_006653",
+        "clevr_dialog_6926": "CLEVR_val_006926",
+        "clevr_dialog_7843": "CLEVR_val_007843",
+        "clevr_dialog_8334": "CLEVR_val_008334",
+        "clevr_dialog_8937": "CLEVR_val_008937"
+      },
+      "missing_requested_sessions": [],
+      "shared_action_library": [
+        "layer0:early",
+        "layer0:text_prefill",
+        "layer1:early",
+        "layer1:text_prefill",
+        "layer2:early",
+        "layer2:text_prefill",
+        "layer3:early",
+        "layer3:text_prefill"
+      ],
+      "omitted_nonshared_action_instances": 24,
+      "same_training_observations_for_current_and_future": true,
+      "source_sha256": {
+        "/path/to/TrajKV\\results\\fidelity_dev8_gpu1_v2\\records.jsonl": "ca0176a4eefbea2d8506f25a54d104022c4f1580e8c49d1a81169257ef20604c",
+        "/path/to/TrajKV\\results\\fidelity_dev8_gpu1_v2\\manifest.json": "acc2090bb4c3b54f0f5335d813fa4919e050f39ac2933ec7eeff900ebb642fec"
+      },
+      "model_generation_settings": {
+        "model": "/path/to/InternVL3-8B-hf",
+        "turns": 6,
+        "max_tokens": 12,
+        "max_patches": 4,
+        "future_horizon": 2
+      },
+      "primary_objective": "content-token mean D_KL(p_base||p_allref)-D_KL(p_action||p_allref), not answer accuracy",
+      "reference_condition": "complete original-FP16-visual history teacher-forced on identical canonical base tokens",
+      "future_aggregation": "mean of per-target-turn content-token mean fidelity gains, then equal-session averaging",
+      "resource_scope": "logical injected residual bytes per action; not measured HBM traffic; fixed stored representation",
+      "fit_reference_access": "offline only; online schedule reads frozen ranking/table, never logits from reference or future",
+      "observations": [
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.01275428193846333,
+          "future_gain": 0.041642492346723174,
+          "future_gain_sum_over_turns": 0.08328498469344635,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 17934336,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.004814080773883882,
+          "future_gain_sum_over_turns": 0.009628161547767765,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18321408,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.01813090983509302,
+          "future_gain": 0.036057200325590705,
+          "future_gain_sum_over_turns": 0.07211440065118141,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 17934336,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0021139870067194595,
+          "future_gain_sum_over_turns": -0.004227974013438919,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18321408,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": -0.5205992113943221,
+          "future_gain": -0.02068749279142807,
+          "future_gain_sum_over_turns": -0.04137498558285614,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 17934336,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.010791612347936994,
+          "future_gain_sum_over_turns": 0.02158322469587399,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18321408,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -0.0034082705144348954,
+          "future_gain": 0.0008632461477619674,
+          "future_gain_sum_over_turns": 0.0017264922955239348,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 17934336,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -7.908316791066516e-06,
+          "future_gain_sum_over_turns": -1.5816633582133033e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18321408,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.015563411087523647,
+          "future_gain": -0.0015796873377366977,
+          "future_gain_sum_over_turns": -0.0031593746754733955,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 23267328,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0007047339661030287,
+          "future_gain_sum_over_turns": -0.0014094679322060573,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 23654400,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.03131506058653599,
+          "future_gain": 0.0011827697463003214,
+          "future_gain_sum_over_turns": 0.002365539492600643,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 23267328,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0001317031249733425,
+          "future_gain_sum_over_turns": -0.000263406249946685,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 23654400,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.020104938135712742,
+          "future_gain": 0.00017682774592503214,
+          "future_gain_sum_over_turns": 0.0003536554918500643,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 23267328,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0005386141612243583,
+          "future_gain_sum_over_turns": -0.0010772283224487166,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 23654400,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": 0.005786488464538123,
+          "future_gain": 0.00020023127748021078,
+          "future_gain_sum_over_turns": 0.00040046255496042156,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 23267328,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "image_id": "CLEVR_val_012324",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.00020024108895392903,
+          "future_gain_sum_over_turns": 0.00040048217790785806,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 23654400,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.00011205168882398288,
+          "future_gain": 4.4273362845894065e-05,
+          "future_gain_sum_over_turns": 8.854672569178813e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 24815616,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 4.371954856775546e-09,
+          "future_gain": 2.8332842826248733e-05,
+          "future_gain_sum_over_turns": 5.6665685652497466e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 25202688,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.00011292943977631054,
+          "future_gain": 0.00017212499145062685,
+          "future_gain_sum_over_turns": 0.0003442499829012537,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 24815616,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": -4.730815380108088e-06,
+          "future_gain": 0.00024993704535822265,
+          "future_gain_sum_over_turns": 0.0004998740907164453,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 25202688,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": -0.00039340698615690533,
+          "future_gain": 0.00018616456717001213,
+          "future_gain_sum_over_turns": 0.00037232913434002426,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 24815616,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 3.121036351070344e-05,
+          "future_gain": -0.00016696851270012886,
+          "future_gain_sum_over_turns": -0.0003339370254002577,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 25202688,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": 0.0001357401337269219,
+          "future_gain": 7.341384728148763e-08,
+          "future_gain_sum_over_turns": 1.4682769456297526e-07,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 24815616,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 1.0795733630580907e-05,
+          "future_gain": 3.02189776897957e-07,
+          "future_gain_sum_over_turns": 6.04379553795914e-07,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 25202688,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": -0.0002820972464865597,
+          "future_gain": 0.008080707840389105,
+          "future_gain_sum_over_turns": 0.01616141568077821,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 24471552,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.01000880039565388,
+          "future_gain_sum_over_turns": 0.02001760079130776,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 24858624,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": -0.0013708292048315964,
+          "future_gain": 0.00808067813725505,
+          "future_gain_sum_over_turns": 0.0161613562745101,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 24471552,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.00212163978614731,
+          "future_gain_sum_over_turns": -0.00424327957229462,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 24858624,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.0012532734850439057,
+          "future_gain": -0.09223740682320265,
+          "future_gain_sum_over_turns": -0.1844748136464053,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 24471552,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.03607288058335722,
+          "future_gain_sum_over_turns": -0.07214576116671444,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 24858624,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -0.00015663750475883396,
+          "future_gain": -0.002118319338374944,
+          "future_gain_sum_over_turns": -0.004236638676749888,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 24471552,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "image_id": "CLEVR_val_007843",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 8.235427185486046e-08,
+          "future_gain_sum_over_turns": 1.6470854370972092e-07,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 24858624,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.004766510416621539,
+          "future_gain": -0.002241839410522024,
+          "future_gain_sum_over_turns": -0.004483678821044048,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 19310592,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0002668617792171372,
+          "future_gain_sum_over_turns": -0.0005337235584342744,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19697664,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.006624937462582913,
+          "future_gain": -0.0014127576875896048,
+          "future_gain_sum_over_turns": -0.0028255153751792095,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 19310592,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0002343033109082882,
+          "future_gain_sum_over_turns": 0.0004686066218165764,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19697664,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.0016593910026389217,
+          "future_gain": 0.0017796779811694876,
+          "future_gain_sum_over_turns": 0.003559355962338975,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 19310592,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0015635166643323643,
+          "future_gain_sum_over_turns": -0.0031270333286647287,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19697664,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -0.009567984132328334,
+          "future_gain": 0.00016149158311316815,
+          "future_gain_sum_over_turns": 0.0003229831662263363,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 19310592,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 5.361511943327568e-05,
+          "future_gain_sum_over_turns": 0.00010723023886655136,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19697664,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.0032344797500899218,
+          "future_gain": 5.6055369438453954e-05,
+          "future_gain_sum_over_turns": 0.00011211073887690791,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 26880000,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.008739551159406923,
+          "future_gain_sum_over_turns": -0.017479102318813847,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 27267072,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.004062298708135171,
+          "future_gain": 0.00023846583428194928,
+          "future_gain_sum_over_turns": 0.00047693166856389857,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 26880000,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -4.5102950805282586e-05,
+          "future_gain_sum_over_turns": -9.020590161056517e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 27267072,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": -0.0012986274957444612,
+          "future_gain": -0.12924404275761184,
+          "future_gain_sum_over_turns": -0.2584880855152237,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 26880000,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.00012687820913450613,
+          "future_gain_sum_over_turns": 0.00025375641826901225,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 27267072,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -0.015485520272055856,
+          "future_gain": 0.00011145700943790068,
+          "future_gain_sum_over_turns": 0.00022291401887580137,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 26880000,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "image_id": "CLEVR_val_008937",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.00011452456017967214,
+          "future_gain_sum_over_turns": 0.00022904912035934429,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 27267072,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.08158570944168314,
+          "future_gain": 0.02279842470949031,
+          "future_gain_sum_over_turns": 0.04559684941898062,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 19310592,
+          "current_content_tokens": 1,
+          "future_content_tokens": 3
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0014634565667773372,
+          "future_gain_sum_over_turns": 0.0029269131335546744,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19697664,
+          "current_content_tokens": 1,
+          "future_content_tokens": 3
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.01075709891956031,
+          "future_gain": 0.012515719533931874,
+          "future_gain_sum_over_turns": 0.02503143906786375,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 19310592,
+          "current_content_tokens": 1,
+          "future_content_tokens": 3
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0036429455568227137,
+          "future_gain_sum_over_turns": 0.007285891113645427,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19697664,
+          "current_content_tokens": 1,
+          "future_content_tokens": 3
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": -0.03130939125834098,
+          "future_gain": -0.010739553090669391,
+          "future_gain_sum_over_turns": -0.021479106181338782,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 19310592,
+          "current_content_tokens": 1,
+          "future_content_tokens": 3
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.020230792308367357,
+          "future_gain_sum_over_turns": 0.040461584616734714,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19697664,
+          "current_content_tokens": 1,
+          "future_content_tokens": 3
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": 0.04022099566861945,
+          "future_gain": 0.0009215124563853547,
+          "future_gain_sum_over_turns": 0.0018430249127707095,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 19310592,
+          "current_content_tokens": 1,
+          "future_content_tokens": 3
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0001461613498952985,
+          "future_gain_sum_over_turns": 0.000292322699790597,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19697664,
+          "current_content_tokens": 1,
+          "future_content_tokens": 3
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.007262152589981489,
+          "future_gain": -0.00016265571874459102,
+          "future_gain_sum_over_turns": -0.00032531143748918204,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 33073152,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": -3.138121955888117e-07,
+          "future_gain": 0.01866947731356707,
+          "future_gain_sum_over_turns": 0.03733895462713414,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 33460224,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.0015559915470419697,
+          "future_gain": -0.00024387179693316843,
+          "future_gain_sum_over_turns": -0.00048774359386633687,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 33073152,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 2.0125144082700286e-07,
+          "future_gain": 0.046920708335918646,
+          "future_gain_sum_over_turns": 0.09384141667183729,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 33460224,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.0027784619511203048,
+          "future_gain": 0.00017593274440884724,
+          "future_gain_sum_over_turns": 0.00035186548881769447,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 33073152,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": -2.166115891685865e-06,
+          "future_gain": -0.09618783353407016,
+          "future_gain_sum_over_turns": -0.19237566706814033,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 33460224,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": 0.008249418867884871,
+          "future_gain": -7.438830329577033e-05,
+          "future_gain_sum_over_turns": -0.00014877660659154066,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 33073152,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "image_id": "CLEVR_val_003845",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": -3.3525190888945894e-05,
+          "future_gain": -0.009406861912992115,
+          "future_gain_sum_over_turns": -0.01881372382598423,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 33460224,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": -0.028802570664232675,
+          "future_gain": 2.0057411356674656e-05,
+          "future_gain_sum_over_turns": 4.011482271334931e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 23668736,
+          "current_content_tokens": 2,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0011122952771189048,
+          "future_gain": 1.1267002522047336e-07,
+          "future_gain_sum_over_turns": 2.2534005044094672e-07,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 24055808,
+          "current_content_tokens": 2,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": -0.06074760638910755,
+          "future_gain": -1.4388447042456964e-06,
+          "future_gain_sum_over_turns": -2.8776894084913927e-06,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 23668736,
+          "current_content_tokens": 2,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": -0.00036502775795584346,
+          "future_gain": 1.1100014883742852e-05,
+          "future_gain_sum_over_turns": 2.2200029767485705e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 24055808,
+          "current_content_tokens": 2,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": -0.0034378818926518993,
+          "future_gain": -1.8923789131170858e-05,
+          "future_gain_sum_over_turns": -3.7847578262341716e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 23668736,
+          "current_content_tokens": 2,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": -0.0016761309970416377,
+          "future_gain": 3.083343740938225e-05,
+          "future_gain_sum_over_turns": 6.16668748187645e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 24055808,
+          "current_content_tokens": 2,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -0.015515737895555394,
+          "future_gain": 3.7855356631909597e-06,
+          "future_gain_sum_over_turns": 7.571071326381919e-06,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 23668736,
+          "current_content_tokens": 2,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.002957853811728748,
+          "future_gain": -5.077174825321053e-06,
+          "future_gain_sum_over_turns": -1.0154349650642107e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 24055808,
+          "current_content_tokens": 2,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 1.224169224197733e-05,
+          "future_gain": -0.00020889100271898574,
+          "future_gain_sum_over_turns": -0.0004177820054379715,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 30779392,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": -2.504896959738964e-10,
+          "future_gain": -0.0002128270139876378,
+          "future_gain_sum_over_turns": -0.0004256540279752756,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 31166464,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": -5.4221747292101445e-05,
+          "future_gain": 0.00020734110494619002,
+          "future_gain_sum_over_turns": 0.00041468220989238005,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 30779392,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": -6.158652831655068e-10,
+          "future_gain": 0.00042195770370833345,
+          "future_gain_sum_over_turns": 0.0008439154074166669,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 31166464,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.00013166422037596634,
+          "future_gain": 1.2881278880402713e-06,
+          "future_gain_sum_over_turns": 2.5762557760805426e-06,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 30779392,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 6.529000704320947e-09,
+          "future_gain": -1.7323446578762234e-06,
+          "future_gain_sum_over_turns": -3.464689315752447e-06,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 31166464,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -1.1042759360140022e-05,
+          "future_gain": -3.0405829053891908e-06,
+          "future_gain_sum_over_turns": -6.0811658107783815e-06,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 30779392,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6926",
+          "image_id": "CLEVR_val_006926",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 8.213498699643122e-09,
+          "future_gain": -1.6450668075307959e-07,
+          "future_gain_sum_over_turns": -3.2901336150615917e-07,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 31166464,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.13758083174531754,
+          "future_gain": 0.0015835209119697533,
+          "future_gain_sum_over_turns": 0.0031670418239395067,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 17934336,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 2.7631683937286275e-05,
+          "future_gain_sum_over_turns": 5.526336787457255e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18321408,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.17805770011256425,
+          "future_gain": 0.0012810072860554445,
+          "future_gain_sum_over_turns": 0.002562014572110889,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 17934336,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0005096044925759851,
+          "future_gain_sum_over_turns": -0.0010192089851519702,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18321408,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.07738528999545319,
+          "future_gain": 0.0005855089424398843,
+          "future_gain_sum_over_turns": 0.0011710178848797685,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 17934336,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0003265366338827694,
+          "future_gain_sum_over_turns": 0.0006530732677655388,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18321408,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -0.33950100330642274,
+          "future_gain": -4.993808579549231e-05,
+          "future_gain_sum_over_turns": -9.987617159098462e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 17934336,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 2.703877871534788e-07,
+          "future_gain_sum_over_turns": 5.407755743069576e-07,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18321408,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.0020806874354319595,
+          "future_gain": -0.0001417391394549451,
+          "future_gain_sum_over_turns": -0.0002834782789098902,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 31467520,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": -0.000174903545342948,
+          "future_gain": -7.526856734250422e-05,
+          "future_gain_sum_over_turns": -0.00015053713468500844,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 31854592,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": -0.002071831581779868,
+          "future_gain": -0.0004807208246519279,
+          "future_gain_sum_over_turns": -0.0009614416493038559,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 31467520,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": -7.78811522255693e-05,
+          "future_gain": -0.0005613512166846712,
+          "future_gain_sum_over_turns": -0.0011227024333693423,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 31854592,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": -0.003908172471966297,
+          "future_gain": -4.3020444195342785e-05,
+          "future_gain_sum_over_turns": -8.604088839068557e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 31467520,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0011015496445420322,
+          "future_gain": -0.0005826068843819009,
+          "future_gain_sum_over_turns": -0.0011652137687638018,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 31854592,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -0.0006120274116861453,
+          "future_gain": -6.3626943565381865e-06,
+          "future_gain_sum_over_turns": -1.2725388713076373e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 31467520,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "image_id": "CLEVR_val_006653",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.001592463870005622,
+          "future_gain": -0.0003317497012177051,
+          "future_gain_sum_over_turns": -0.0006634994024354102,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 31854592,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.026223648991695037,
+          "future_gain": 0.016915872110762592,
+          "future_gain_sum_over_turns": 0.033831744221525184,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 18278400,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0015076059455648113,
+          "future_gain_sum_over_turns": -0.0030152118911296226,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18665472,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.007098266489533128,
+          "future_gain": 0.013301966720503822,
+          "future_gain_sum_over_turns": 0.026603933441007643,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 18278400,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0018504643847232398,
+          "future_gain_sum_over_turns": 0.0037009287694464797,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18665472,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.03410395491039703,
+          "future_gain": -0.002023578265177261,
+          "future_gain_sum_over_turns": -0.004047156530354522,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 18278400,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.03034144066187151,
+          "future_gain_sum_over_turns": -0.06068288132374302,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18665472,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": 0.01777811426457602,
+          "future_gain": 2.9486383848571592e-05,
+          "future_gain_sum_over_turns": 5.8972767697143185e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 18278400,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0001996991307454574,
+          "future_gain_sum_over_turns": 0.0003993982614909148,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 18665472,
+          "current_content_tokens": 1,
+          "future_content_tokens": 4
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 0.006512392137024982,
+          "future_gain": -0.00029413188771962035,
+          "future_gain_sum_over_turns": -0.0005882637754392407,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 32155648,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 2.372615013699977e-07,
+          "future_gain": 8.185427675174662e-05,
+          "future_gain_sum_over_turns": 0.00016370855350349324,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 32542720,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.004573931567212953,
+          "future_gain": 0.0009956992379871624,
+          "future_gain_sum_over_turns": 0.0019913984759743248,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 32155648,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 2.1046383338758018e-07,
+          "future_gain": 0.00027673177185214313,
+          "future_gain_sum_over_turns": 0.0005534635437042863,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 32542720,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.006161228620780303,
+          "future_gain": -0.0005790134811692249,
+          "future_gain_sum_over_turns": -0.0011580269623384497,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 32155648,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": -2.0931783212863854e-06,
+          "future_gain": 0.00025025813835245075,
+          "future_gain_sum_over_turns": 0.0005005162767049015,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 32542720,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": 0.0020704008778714878,
+          "future_gain": 1.0876933101630409e-05,
+          "future_gain_sum_over_turns": 2.1753866203260818e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 32155648,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "image_id": "CLEVR_val_000247",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 5.715212120494263e-07,
+          "future_gain": 1.0788205370761432e-05,
+          "future_gain_sum_over_turns": 2.1576410741522864e-05,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 32542720,
+          "current_content_tokens": 2,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": -0.0601451594551663,
+          "future_gain": 0.2830189728480923,
+          "future_gain_sum_over_turns": 0.5660379456961846,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 18622464,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 2,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.08453747746837627,
+          "future_gain_sum_over_turns": -0.16907495493675254,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19009536,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 0.035163898505056815,
+          "future_gain": 0.13610576617397818,
+          "future_gain_sum_over_turns": 0.27221153234795636,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 18622464,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 2,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.13193068560117777,
+          "future_gain_sum_over_turns": -0.26386137120235553,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19009536,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 0.0872766954667415,
+          "future_gain": 0.38005561771365026,
+          "future_gain_sum_over_turns": 0.7601112354273005,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 18622464,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 2,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.126627766134131,
+          "future_gain_sum_over_turns": 0.253255532268262,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19009536,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": -0.05203286259784723,
+          "future_gain": 0.0026957027227002706,
+          "future_gain_sum_over_turns": 0.005391405445400541,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 18622464,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 2,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.002993715733473496,
+          "future_gain_sum_over_turns": 0.005987431466946992,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 19009536,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer0:text_prefill",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "text_prefill",
+          "current_gain": 1.744741597192707e-08,
+          "future_gain": 0.0001224191913350506,
+          "future_gain_sum_over_turns": 0.0002448383826701012,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 26191872,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer0:early",
+          "write_turn": 4,
+          "layer_group": 0,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0013390155201043806,
+          "future_gain_sum_over_turns": -0.0026780310402087612,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 26578944,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer1:text_prefill",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "text_prefill",
+          "current_gain": 3.067169122069133e-08,
+          "future_gain": 0.0023951615821532876,
+          "future_gain_sum_over_turns": 0.004790323164306575,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 26191872,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer1:early",
+          "write_turn": 4,
+          "layer_group": 1,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": -0.0003790659436043098,
+          "future_gain_sum_over_turns": -0.0007581318872086196,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 26578944,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer2:text_prefill",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "text_prefill",
+          "current_gain": 1.4801484395719218e-09,
+          "future_gain": -0.0040521365194413,
+          "future_gain_sum_over_turns": -0.0081042730388826,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 26191872,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer2:early",
+          "write_turn": 4,
+          "layer_group": 2,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0010708515135595315,
+          "future_gain_sum_over_turns": 0.002141703027119063,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 26578944,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer3:text_prefill",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "text_prefill",
+          "current_gain": 4.8284451753361644e-08,
+          "future_gain": 0.0010911837950484424,
+          "future_gain_sum_over_turns": 0.0021823675900968847,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 387072,
+          "action_total_logical_read_bytes": 26191872,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "image_id": "CLEVR_val_008334",
+          "split": "development",
+          "action": "layer3:early",
+          "write_turn": 4,
+          "layer_group": 3,
+          "phase": "early",
+          "current_gain": 0.0,
+          "future_gain": 0.0010944888363846473,
+          "future_gain_sum_over_turns": 0.0021889776727692946,
+          "target_turn_count": 2,
+          "horizons": [
+            1,
+            2
+          ],
+          "residual_read_bytes": 774144,
+          "action_total_logical_read_bytes": 26578944,
+          "current_content_tokens": 1,
+          "future_content_tokens": 2
+        }
+      ],
+      "skipped": [
+        {
+          "session_id": "clevr_dialog_12324",
+          "write_turn": 2,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "write_turn": 2,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "write_turn": 2,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "write_turn": 2,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "write_turn": 4,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "write_turn": 4,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "write_turn": 4,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_12324",
+          "write_turn": 4,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "write_turn": 4,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "write_turn": 4,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "write_turn": 4,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_7843",
+          "write_turn": 4,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "write_turn": 2,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "write_turn": 2,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "write_turn": 2,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "write_turn": 2,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "write_turn": 4,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "write_turn": 4,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "write_turn": 4,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8937",
+          "write_turn": 4,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "write_turn": 2,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "write_turn": 2,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "write_turn": 2,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_3845",
+          "write_turn": 2,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "write_turn": 2,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "write_turn": 2,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "write_turn": 2,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_6653",
+          "write_turn": 2,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "write_turn": 2,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "write_turn": 2,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "write_turn": 2,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_247",
+          "write_turn": 2,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "write_turn": 2,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "write_turn": 2,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "write_turn": 2,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "write_turn": 2,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "write_turn": 4,
+          "action": "layer0:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "write_turn": 4,
+          "action": "layer1:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "write_turn": 4,
+          "action": "layer2:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        },
+        {
+          "session_id": "clevr_dialog_8334",
+          "write_turn": 4,
+          "action": "layer3:late",
+          "reason": "requires matched current/future content fidelity and positive residual read cost"
+        }
+      ],
+      "tables": {
+        "current": {
+          "entries": [
+            {
+              "action": "layer0:early",
+              "phase": "early",
+              "layer_group": 0,
+              "key": "early|layer0|all",
+              "expected_gain": 5.858245640918117e-05,
+              "gain_per_residual_byte": 7.567384932154893e-11,
+              "unit_residual_read_bytes": 774144.0,
+              "min_residual_read_bytes": 774144,
+              "max_residual_read_bytes": 774144,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.1875,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 1.1863075068499884e-07,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": -1.5690609779440586e-07,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": -8.7451772671474e-05,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": 0.0005561475133146044,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": 2.185977428387773e-09,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                }
+              ]
+            },
+            {
+              "action": "layer0:text_prefill",
+              "phase": "text_prefill",
+              "layer_group": 0,
+              "key": "text_prefill|layer0|all",
+              "expected_gain": 0.013028661812276812,
+              "gain_per_residual_byte": 3.36595305583375e-08,
+              "unit_residual_read_bytes": 387072.0,
+              "min_residual_read_bytes": 387072,
+              "max_residual_read_bytes": 387072,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.8125,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.014158846512993489,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 0.01636802056436001,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 0.044423931015832314,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": 0.06983075959037476,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -0.014395164485995348,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": -8.502277883128842e-05,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": -0.030072571003875163,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 0.00400049508335573,
+                  "mean_residual_read_bytes": 387072.0
+                }
+              ]
+            },
+            {
+              "action": "layer1:early",
+              "phase": "early",
+              "layer_group": 1,
+              "key": "early|layer1|all",
+              "expected_gain": -2.7951789134536837e-05,
+              "gain_per_residual_byte": -3.610670512790493e-11,
+              "unit_residual_read_bytes": 774144.0,
+              "min_residual_read_bytes": 774144,
+              "max_residual_read_bytes": 774144,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.125,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 1.0523191669379009e-07,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 1.0062572041350143e-07,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": -3.894057611278465e-05,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -0.0001825141869105633,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": -2.365407690054044e-06,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                }
+              ]
+            },
+            {
+              "action": "layer1:text_prefill",
+              "phase": "text_prefill",
+              "layer_group": 1,
+              "key": "text_prefill|layer1|all",
+              "expected_gain": 0.014575535307610809,
+              "gain_per_residual_byte": 3.765587618740392e-08,
+              "unit_residual_read_bytes": 387072.0,
+              "min_residual_read_bytes": 387072,
+              "max_residual_read_bytes": 387072,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.75,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.024722985210814508,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 0.005836099028373041,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 0.00615654523330114,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": 0.08799293426539219,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -0.030400914068199825,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": -0.0006289498825276429,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.017581964588374018,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 0.005343618085359042,
+                  "mean_residual_read_bytes": 387072.0
+                }
+              ]
+            },
+            {
+              "action": "layer2:early",
+              "phase": "early",
+              "layer_group": 2,
+              "key": "early|layer2|all",
+              "expected_gain": -3.422648463757313e-05,
+              "gain_per_residual_byte": -4.4212038894021177e-11,
+              "unit_residual_read_bytes": 774144.0,
+              "min_residual_read_bytes": 774144,
+              "max_residual_read_bytes": 774144,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.1875,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": -1.0465891606431927e-06,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": -1.0830579458429325e-06,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": 0.0005507748222710161,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -0.0008380622340204667,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": 1.560518175535172e-05,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                }
+              ]
+            },
+            {
+              "action": "layer2:text_prefill",
+              "phase": "text_prefill",
+              "layer_group": 2,
+              "key": "text_prefill|layer2|all",
+              "expected_gain": -0.020630737014423143,
+              "gain_per_residual_byte": -5.3299481787427514e-08,
+              "unit_residual_read_bytes": 387072.0,
+              "min_residual_read_bytes": 387072,
+              "max_residual_read_bytes": 387072,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.625,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": -0.25024713662930465,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 0.020132591765588667,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": -0.014265464653610338,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": 0.036738558761743444,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -0.0016531088361379665,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": 0.0004299332494435002,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.043638348473444964,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 0.00018038175344723024,
+                  "mean_residual_read_bytes": 387072.0
+                }
+              ]
+            },
+            {
+              "action": "layer3:early",
+              "phase": "early",
+              "layer_group": 3,
+              "key": "early|layer3|all",
+              "expected_gain": 0.0002830104974491721,
+              "gain_per_residual_byte": 3.6557862290371316e-10,
+              "unit_residual_read_bytes": 774144.0,
+              "min_residual_read_bytes": 774144,
+              "max_residual_read_bytes": 774144,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.3125,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 2.8576060602471315e-07,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": -1.6762595444472947e-05,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": 0.000796231935002811,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": 0.0014789310126137238,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": 5.3978668152904536e-06,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 0.0,
+                  "mean_residual_read_bytes": 774144.0
+                }
+              ]
+            },
+            {
+              "action": "layer3:text_prefill",
+              "phase": "text_prefill",
+              "layer_group": 3,
+              "key": "text_prefill|layer3|all",
+              "expected_gain": -0.02262811748954881,
+              "gain_per_residual_byte": -5.845971160287701e-08,
+              "unit_residual_read_bytes": 387072.0,
+              "min_residual_read_bytes": 387072,
+              "max_residual_read_bytes": 387072,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.4375,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.0011891089750516136,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 0.009924257571223753,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 0.024235207268252158,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": -0.17005651535905444,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -0.007763390327457767,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": -1.0448685515956031e-05,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": -0.026016407156697736,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": -0.012526752202192095,
+                  "mean_residual_read_bytes": 387072.0
+                }
+              ]
+            }
+          ],
+          "ranked_actions": [
+            "layer1:text_prefill",
+            "layer0:text_prefill",
+            "layer3:early",
+            "layer0:early",
+            "layer1:early",
+            "layer2:early",
+            "layer2:text_prefill",
+            "layer3:text_prefill"
+          ],
+          "phase_layer_group_ranking": {
+            "early": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "text_prefill": [
+              1,
+              0,
+              2,
+              3
+            ]
+          },
+          "positive_ranked_actions": [
+            "layer1:text_prefill",
+            "layer0:text_prefill",
+            "layer3:early",
+            "layer0:early"
+          ],
+          "policy_lookup": {
+            "early|layer0|all": 5.858245640918117e-05,
+            "text_prefill|layer0|all": 0.013028661812276812,
+            "early|layer1|all": -2.7951789134536837e-05,
+            "text_prefill|layer1|all": 0.014575535307610809,
+            "early|layer2|all": -3.422648463757313e-05,
+            "text_prefill|layer2|all": -0.020630737014423143,
+            "early|layer3|all": 0.0002830104974491721,
+            "text_prefill|layer3|all": -0.02262811748954881
+          },
+          "policy_score_lookup": {
+            "early|layer0|all": 7.567384932154893e-11,
+            "text_prefill|layer0|all": 3.36595305583375e-08,
+            "early|layer1|all": -3.610670512790493e-11,
+            "text_prefill|layer1|all": 3.765587618740392e-08,
+            "early|layer2|all": -4.4212038894021177e-11,
+            "text_prefill|layer2|all": -5.3299481787427514e-08,
+            "early|layer3|all": 3.6557862290371316e-10,
+            "text_prefill|layer3|all": -5.845971160287701e-08
+          },
+          "score_definition": "ratio of session-mean fidelity gain to session-mean residual read bytes",
+          "online_feature_availability": "online_after_table_frozen",
+          "source_outcome_availability": "offline_reference_only"
+        },
+        "future": {
+          "entries": [
+            {
+              "action": "layer0:early",
+              "phase": "early",
+              "layer_group": 0,
+              "key": "early|layer0|all",
+              "expected_gain": -0.0038930996810425007,
+              "gain_per_residual_byte": -5.028908938185274e-09,
+              "unit_residual_read_bytes": 774144.0,
+              "min_residual_read_bytes": 774144,
+              "max_residual_read_bytes": 774144,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.5,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.002054673403890427,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": -0.0007128758344065323,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 0.010066466940172204,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": -2.3818441702608972e-05,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -0.00010635717198120866,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": 0.005018566619240064,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": -0.04293824649424032,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": -0.00450320646931203,
+                  "mean_residual_read_bytes": 774144.0
+                }
+              ]
+            },
+            {
+              "action": "layer0:text_prefill",
+              "phase": "text_prefill",
+              "layer_group": 0,
+              "key": "text_prefill|layer0|all",
+              "expected_gain": 0.023103365725344154,
+              "gain_per_residual_byte": 5.968751479141905e-08,
+              "unit_residual_read_bytes": 387072.0,
+              "min_residual_read_bytes": 387072,
+              "max_residual_read_bytes": 387072,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.625,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.02003140250449324,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 0.008310870111521486,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 0.011317884495372861,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": 0.0007208908862574041,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -9.441679568115554e-05,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": 0.0040624906016175,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.14157069601971367,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": -0.0010928920205417851,
+                  "mean_residual_read_bytes": 387072.0
+                }
+              ]
+            },
+            {
+              "action": "layer1:early",
+              "phase": "early",
+              "layer_group": 1,
+              "key": "early|layer1|all",
+              "expected_gain": -0.00526156199990705,
+              "gain_per_residual_byte": -6.796619233510885e-09,
+              "unit_residual_read_bytes": 774144.0,
+              "min_residual_read_bytes": 774144,
+              "max_residual_read_bytes": 774144,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.5,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": -0.001122845065846401,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 0.0010635980782876915,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 0.02528182694637068,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": -0.0005354778546303281,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": 0.00021652885929603814,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": -0.0009358513703945436,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": -0.06615487577239104,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 9.460018005150281e-05,
+                  "mean_residual_read_bytes": 774144.0
+                }
+              ]
+            },
+            {
+              "action": "layer1:text_prefill",
+              "phase": "text_prefill",
+              "layer_group": 1,
+              "key": "text_prefill|layer1|all",
+              "expected_gain": 0.013149694470034728,
+              "gain_per_residual_byte": 3.397221826955897e-08,
+              "unit_residual_read_bytes": 387072.0,
+              "min_residual_read_bytes": 387072,
+              "max_residual_read_bytes": 387072,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.75,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.018619985035945513,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 0.007148832979245492,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 0.006135923868499353,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": 0.0004001432307017583,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": 0.00010295113012097217,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": 0.004126401564352839,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.06925046387806573,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": -0.0005871459266538277,
+                  "mean_residual_read_bytes": 387072.0
+                }
+              ]
+            },
+            {
+              "action": "layer2:early",
+              "phase": "early",
+              "layer_group": 2,
+              "key": "early|layer2|all",
+              "expected_gain": -0.00037500403898884586,
+              "gain_per_residual_byte": -4.844112193452973e-10,
+              "unit_residual_read_bytes": 774144.0,
+              "min_residual_read_bytes": 774144,
+              "max_residual_read_bytes": 774144,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.5,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.005126499093356318,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": -0.01504559126175953,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": -0.0379785206128514,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": -0.00012803512524956574,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": 1.4550546375753012e-05,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": -0.018119924548028674,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.06384930882384526,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": -0.0007183192275989291,
+                  "mean_residual_read_bytes": 774144.0
+                }
+              ]
+            },
+            {
+              "action": "layer2:text_prefill",
+              "phase": "text_prefill",
+              "layer_group": 2,
+              "key": "text_prefill|layer2|all",
+              "expected_gain": 0.0077084906162890815,
+              "gain_per_residual_byte": 1.9914875310766684e-08,
+              "unit_residual_read_bytes": 387072.0,
+              "min_residual_read_bytes": 387072,
+              "max_residual_read_bytes": 387072,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.4375,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": -0.01025533252275152,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": -0.001301295873173243,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": -0.005281810173130272,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": 0.00027124424912227074,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -8.817830621565293e-06,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": -0.04602562112801632,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.18800174059710448,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": -0.06373218238822118,
+                  "mean_residual_read_bytes": 387072.0
+                }
+              ]
+            },
+            {
+              "action": "layer3:early",
+              "phase": "early",
+              "layer_group": 3,
+              "key": "early|layer3|all",
+              "expected_gain": -0.0003086170410146573,
+              "gain_per_residual_byte": -3.9865585861888394e-10,
+              "unit_residual_read_bytes": 774144.0,
+              "min_residual_read_bytes": 774144,
+              "max_residual_read_bytes": 774144,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.6875,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 9.616638608143126e-05,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 0.00010524366805810941,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": -0.004630350281548408,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": -0.0001657396567152758,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": -2.6208407530370665e-06,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": 1.9227202437640873e-07,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.0020441022849290716,
+                  "mean_residual_read_bytes": 774144.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 8.406983980647391e-05,
+                  "mean_residual_read_bytes": 774144.0
+                }
+              ]
+            },
+            {
+              "action": "layer3:text_prefill",
+              "phase": "text_prefill",
+              "layer_group": 3,
+              "key": "text_prefill|layer3|all",
+              "expected_gain": 0.00023981239085374097,
+              "gain_per_residual_byte": 6.195549945584826e-10,
+              "unit_residual_read_bytes": 387072.0,
+              "min_residual_read_bytes": 387072,
+              "max_residual_read_bytes": 387072,
+              "training_sessions": 8,
+              "action_instances": 16,
+              "positive_instance_fraction": 0.6875,
+              "per_session": [
+                {
+                  "session_id": "clevr_dialog_12324",
+                  "mean_gain": 0.0005317387126210891,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_247",
+                  "mean_gain": 2.0181658475101e-05,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_3845",
+                  "mean_gain": 0.0004235620765447922,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6653",
+                  "mean_gain": -2.8150390076015247e-05,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_6926",
+                  "mean_gain": 3.7247637890088444e-07,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_7843",
+                  "mean_gain": -0.0010591229622638311,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8334",
+                  "mean_gain": 0.0018934432588743565,
+                  "mean_residual_read_bytes": 387072.0
+                },
+                {
+                  "session_id": "clevr_dialog_8937",
+                  "mean_gain": 0.00013647429627553441,
+                  "mean_residual_read_bytes": 387072.0
+                }
+              ]
+            }
+          ],
+          "ranked_actions": [
+            "layer0:text_prefill",
+            "layer1:text_prefill",
+            "layer2:text_prefill",
+            "layer3:text_prefill",
+            "layer3:early",
+            "layer2:early",
+            "layer0:early",
+            "layer1:early"
+          ],
+          "phase_layer_group_ranking": {
+            "early": [
+              3,
+              2,
+              0,
+              1
+            ],
+            "text_prefill": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "positive_ranked_actions": [
+            "layer0:text_prefill",
+            "layer1:text_prefill",
+            "layer2:text_prefill",
+            "layer3:text_prefill"
+          ],
+          "policy_lookup": {
+            "early|layer0|all": -0.0038930996810425007,
+            "text_prefill|layer0|all": 0.023103365725344154,
+            "early|layer1|all": -0.00526156199990705,
+            "text_prefill|layer1|all": 0.013149694470034728,
+            "early|layer2|all": -0.00037500403898884586,
+            "text_prefill|layer2|all": 0.0077084906162890815,
+            "early|layer3|all": -0.0003086170410146573,
+            "text_prefill|layer3|all": 0.00023981239085374097
+          },
+          "policy_score_lookup": {
+            "early|layer0|all": -5.028908938185274e-09,
+            "text_prefill|layer0|all": 5.968751479141905e-08,
+            "early|layer1|all": -6.796619233510885e-09,
+            "text_prefill|layer1|all": 3.397221826955897e-08,
+            "early|layer2|all": -4.844112193452973e-10,
+            "text_prefill|layer2|all": 1.9914875310766684e-08,
+            "early|layer3|all": -3.9865585861888394e-10,
+            "text_prefill|layer3|all": 6.195549945584826e-10
+          },
+          "score_definition": "ratio of session-mean fidelity gain to session-mean residual read bytes",
+          "online_feature_availability": "online_after_table_frozen",
+          "source_outcome_availability": "offline_reference_only"
+        }
+      },
+      "fit_script_sha256": "212d8bd27ccf5e251927d95cde583da12eaadefdd851e6e3b1c0acf0d068a1ef",
+      "training_id_file": "/path/to/TrajKV\\configs\\data\\clevr_smoke8_runner.json",
+      "training_id_file_sha256": "4becbeabc999925d5f1e97e26880fa86ed0908fd3d46a9dc14ce9aa2166b4b2b"
+    }
+  },
+  "selected_ids": [
+    "docvqa_84f29281985341b8",
+    "docvqa_9ddeb3e8e6b70721",
+    "docvqa_47e39e42f390b34d",
+    "docvqa_c236ca08244bd2b3",
+    "docvqa_e8658ae2fda26c40",
+    "docvqa_27a60b87871f7997",
+    "docvqa_98a04093b8df3a7b",
+    "docvqa_2952f87b119560e8",
+    "docvqa_46fd6e0c8ff34fcb",
+    "docvqa_348059f7934806e8",
+    "docvqa_47a1aa6615ad690d",
+    "docvqa_8cffeefad438105c",
+    "docvqa_3c4fe759b8d4e92b",
+    "docvqa_8f0fd188526522e6",
+    "docvqa_e24d4c92759de0db",
+    "docvqa_7b4570241d82d037",
+    "docvqa_58dd3a7e5f30e1bf",
+    "docvqa_15dbda6e1b22184d",
+    "docvqa_4327f1deed70b7a5",
+    "docvqa_f189344a780a3076",
+    "docvqa_46ce115717b1a4ab",
+    "docvqa_54f9f471770cf9f8",
+    "docvqa_ba239d11374a4b2b",
+    "docvqa_9d7dc38edbaed507",
+    "docvqa_957d61a2cea19cb0",
+    "docvqa_3dd64582edfe0145",
+    "docvqa_8284354e4362772a",
+    "docvqa_79d8001532aed12e",
+    "docvqa_c490cafc6072e28a",
+    "docvqa_617cc2760d4c4749",
+    "docvqa_9fb5682cfafd3cb2",
+    "docvqa_852a22f534d653ff"
+  ],
+  "torch": "2.4.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "sources": {
+    "/path/to/TrajKV/jobs/docvqa_confirm64_shard0_v1.source/code/experiments/run_cycle.py": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+    "/path/to/TrajKV/jobs/docvqa_confirm64_shard0_v1.source/code/experiments/bank.py": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+    "/path/to/TrajKV/configs/data/docvqa_confirm64_remote_runner.json": "25a9dac82654f75db96feca0388b44ee5c750292436f3b643ea83d955e6024f3",
+    "/path/to/TrajKV/jobs/docvqa_confirm64_shard0_v1.source/code/experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c"
+  },
+  "reference_answers_visible_to_runner": false,
+  "model_identity": {
+    "config.json": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+    "model.safetensors.index.json": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+    "tokenizer_config.json": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": "RECOVERED_EXACT_ORIGINAL_INPUT_SNAPSHOT",
+  "recovered_at_utc": "2026-11-12T15:24:31.691821+00:00",
+  "analysis_summary": "/path/to/TrajKV\\results\\analysis_dev_baselines_gpu0_v1_partial\\summary.json",
+  "analysis_summary_sha256_before": "9328d48fc996c8885ae8c88bddb8c676cfe66e6a112ae7730673b223475248ab",
+  "recorded_input": "/path/to/TrajKV\\results\\dev_baselines_gpu0_v1\\records.jsonl",
+  "recorded_input_sha256": "3a42a9f4a675dd0c15c98cfb79cd2119a437d4957761b6f7f8629e89af929331",
+  "original_observed_records": 19,
+  "current_raw": "/path/to/TrajKV\\results\\dev_baselines_gpu0_v1\\records.jsonl",
+  "current_raw_sha256": "2975bbb29e589b4f0680ca1706c9697580c5d22f36d0db5530701ef37058d4b7",
+  "current_complete_line_count": 72,
+  "recovery_method": "Exact unmodified byte prefix of current complete raw, bounded to the first 19 record lines; no JSON reserialization or score changes",
+  "trials": [
+    {
+      "candidate": "first_19_complete_lines_with_original_endings",
+      "bytes": 2167492,
+      "sha256": "3a42a9f4a675dd0c15c98cfb79cd2119a437d4957761b6f7f8629e89af929331",
+      "match": true
+    }
+  ],
+  "original_raw_unchanged": true,
+  "historical_summary_unchanged": true,
+  "historical_partial_status_remains_partial": true,
+  "snapshot": "/path/to/TrajKV\\results\\analysis_dev_baselines_gpu0_v1_partial\\recovered_inputs\\dev_baselines_gpu0_v1_records_original_partial19.jsonl",
+  "snapshot_sha256": "3a42a9f4a675dd0c15c98cfb79cd2119a437d4957761b6f7f8629e89af929331"
+}

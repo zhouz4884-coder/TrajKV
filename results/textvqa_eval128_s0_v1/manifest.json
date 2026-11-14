@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/confirm64_continuous_s0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/confirm64_continuous_s0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/textvqa_eval128_s0_v1.json"
+      ]
+    }
+  ]
+}

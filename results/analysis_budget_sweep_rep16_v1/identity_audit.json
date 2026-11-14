@@ -1,0 +1,1669 @@
+{
+  "schema": "trajkv.rep16-budget-sweep.identity-audit.v1",
+  "audit_time_utc": "2026-11-12T15:02:10.925018+00:00",
+  "parent_complete": {
+    "budgets_mib": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "children": [
+      {
+        "artifacts": {
+          "complete.json": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+          "manifest.json": "05ae4827746aea3460f29da3d18c0c9de9ceaf09a348d634b6ed5adb661830a2",
+          "records.jsonl": "f57f92a1a62acee2fcf53739bf40f07a8aec35614779da0974a44838788f61c6"
+        },
+        "budget_mib": 4,
+        "complete": {
+          "paid_calls": 0,
+          "records_added": 64
+        },
+        "paired_images": 16,
+        "quality_scores_read": false,
+        "records": 64
+      },
+      {
+        "artifacts": {
+          "complete.json": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+          "manifest.json": "819aff8469f6ddef40a8b043246ef769f7df4900ed3bea6e8e066c95544e844a",
+          "records.jsonl": "bac37a65d5a63ef825816221daa96cb974e6f70910209c5c3e02bec88e4e289b"
+        },
+        "budget_mib": 8,
+        "complete": {
+          "paid_calls": 0,
+          "records_added": 64
+        },
+        "paired_images": 16,
+        "quality_scores_read": false,
+        "records": 64
+      },
+      {
+        "artifacts": {
+          "complete.json": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+          "manifest.json": "f3183914d79ab0cc7cabb87e0758c28e42b081f8fba1d925fffa619af9a1733f",
+          "records.jsonl": "778381fb4adae7cc09739c50f3fadf2eca62804ef942d03de933397543afcb8c"
+        },
+        "budget_mib": 16,
+        "complete": {
+          "paid_calls": 0,
+          "records_added": 64
+        },
+        "paired_images": 16,
+        "quality_scores_read": false,
+        "records": 64
+      },
+      {
+        "artifacts": {
+          "complete.json": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+          "manifest.json": "f6f70b59f542625b27cd10ed17047874953d71ab492770be885e4700a0736da0",
+          "records.jsonl": "2d5ff0224531504338159651430f8b9554b24469b5d2089d8accfec2a332677c"
+        },
+        "budget_mib": 32,
+        "complete": {
+          "paid_calls": 0,
+          "records_added": 64
+        },
+        "paired_images": 16,
+        "quality_scores_read": false,
+        "records": 64
+      }
+    ],
+    "finished_at_utc": "2026-11-12T14:34:36.179004+00:00",
+    "method": "asym",
+    "paid_calls": 0,
+    "policies": [
+      "uniform",
+      "periodic",
+      "table_future",
+      "probe_l7_t0.02"
+    ],
+    "quality_scores_read": false,
+    "records": 256,
+    "schema": "trajkv.budget_sweep.v1",
+    "sessions_per_budget": 16,
+    "status": "ALL_FOUR_BUDGETS_COMPLETE",
+    "sweep_manifest_sha256": "e7d7f69bc810fb63bdece8693d54985a9a5da700f5d1efe2eafaf4895f070cd7"
+  },
+  "parent_manifest_sha256": "e7d7f69bc810fb63bdece8693d54985a9a5da700f5d1efe2eafaf4895f070cd7",
+  "parent_receipt_manifest_hash_match": true,
+  "source": {
+    "job": "budget_sweep_rep16_gpu1_v1",
+    "source_snapshot": "audit\\job_sources\\budget_sweep_rep16_gpu1_v1.source",
+    "launch_immutable": true,
+    "launch_entrypoint": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/budget_sweep.py",
+    "snapshot_checks": [
+      {
+        "path": "code/bytes.py",
+        "expected": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+        "actual": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+        "match": true
+      },
+      {
+        "path": "code/experiments/carrier_surgery_v2.py",
+        "expected": "55120e2ac6a3c130c77f275dcc5035a8691d99bbd89763589316fb60ac5a81c7",
+        "actual": "55120e2ac6a3c130c77f275dcc5035a8691d99bbd89763589316fb60ac5a81c7",
+        "match": true
+      },
+      {
+        "path": "code/experiments/carrier_surgery.py",
+        "expected": "f52ddb87714b4dcdc954ff8d7e4dab0441715ebda6e93a7a2904e7d68be65b09",
+        "actual": "f52ddb87714b4dcdc954ff8d7e4dab0441715ebda6e93a7a2904e7d68be65b09",
+        "match": true
+      },
+      {
+        "path": "code/experiments/mechanism_fidelity.py",
+        "expected": "8ffc74b6db34c303e3ffed0fc75e7659b6acb178dce8eef8ee7cb19dbe552527",
+        "actual": "8ffc74b6db34c303e3ffed0fc75e7659b6acb178dce8eef8ee7cb19dbe552527",
+        "match": true
+      },
+      {
+        "path": "code/experiments/profile_probe.py",
+        "expected": "cb3961f4abff8527d697d98e17081aaa69dc411df726d93e2f4c252240cb36bc",
+        "actual": "cb3961f4abff8527d697d98e17081aaa69dc411df726d93e2f4c252240cb36bc",
+        "match": true
+      },
+      {
+        "path": "code/experiments/run_suite.py",
+        "expected": "7f8e1ab240f36a963667f9add95b10a9ca6347ce19b1dd805d7b593d78ccb9cd",
+        "actual": "7f8e1ab240f36a963667f9add95b10a9ca6347ce19b1dd805d7b593d78ccb9cd",
+        "match": true
+      },
+      {
+        "path": "code/experiments/kvarn_quality_smoke.py",
+        "expected": "6bdf1984a3b459532b6b93162564fdd95f3c2e5dd7b7cdb047777a4f19fe09a0",
+        "actual": "6bdf1984a3b459532b6b93162564fdd95f3c2e5dd7b7cdb047777a4f19fe09a0",
+        "match": true
+      },
+      {
+        "path": "code/experiments/native_parity.py",
+        "expected": "cbd224c9e88ae52f450756e0a3a761d1937b757619719a1b4407707cd972e4f8",
+        "actual": "cbd224c9e88ae52f450756e0a3a761d1937b757619719a1b4407707cd972e4f8",
+        "match": true
+      },
+      {
+        "path": "code/experiments/self_probe.py",
+        "expected": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+        "actual": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+        "match": true
+      },
+      {
+        "path": "code/experiments/fused_progressive.py",
+        "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+        "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+        "match": true
+      },
+      {
+        "path": "code/experiments/timing_control.py",
+        "expected": "18fa6089c4c6fefb84ff41238449b90befe0b95c2819aa3a014201d95de8280e",
+        "actual": "18fa6089c4c6fefb84ff41238449b90befe0b95c2819aa3a014201d95de8280e",
+        "match": true
+      },
+      {
+        "path": "code/experiments/bank.py",
+        "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+        "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+        "match": true
+      },
+      {
+        "path": "code/experiments/mechanism.py",
+        "expected": "e13d4fcf97ba5b5506e32b29480adcb1c093ae885dbaee7bdb918837007a5c65",
+        "actual": "e13d4fcf97ba5b5506e32b29480adcb1c093ae885dbaee7bdb918837007a5c65",
+        "match": true
+      },
+      {
+        "path": "code/experiments/run_cycle.py",
+        "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+        "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+        "match": true
+      },
+      {
+        "path": "code/experiments/budget_sweep.py",
+        "expected": "910a4f6ec1160dfcb59b80699704513a757b0959559ff33ec8cb9599ef2a18d4",
+        "actual": "910a4f6ec1160dfcb59b80699704513a757b0959559ff33ec8cb9599ef2a18d4",
+        "match": true
+      },
+      {
+        "path": "code/experiments/check_fused_progressive.py",
+        "expected": "b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55",
+        "actual": "b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55",
+        "match": true
+      }
+    ],
+    "old_frozen_core_checks": [
+      {
+        "path": "code/experiments/run_cycle.py",
+        "original_eval64_expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+        "snapshot": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+        "current": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+        "match": true
+      },
+      {
+        "path": "code/experiments/bank.py",
+        "original_eval64_expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+        "snapshot": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+        "current": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+        "match": true
+      },
+      {
+        "path": "code/experiments/self_probe.py",
+        "original_eval64_expected": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+        "snapshot": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+        "current": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+        "match": true
+      },
+      {
+        "path": "code/experiments/fused_progressive.py",
+        "original_eval64_expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+        "snapshot": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+        "current": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+        "match": true
+      },
+      {
+        "path": "code/bytes.py",
+        "original_eval64_expected": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+        "snapshot": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+        "current": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+        "match": true
+      }
+    ]
+  },
+  "children": [
+    {
+      "budget_mib": 4,
+      "completed": {
+        "records_added": 64,
+        "paid_calls": 0
+      },
+      "path": "results\\budget_sweep_rep16_gpu1_v1\\budget_4MiB",
+      "records": 64,
+      "turns": 640,
+      "unique_images": 16,
+      "ids": [
+        "clevr_dialog_10417",
+        "clevr_dialog_11070",
+        "clevr_dialog_2525",
+        "clevr_dialog_27",
+        "clevr_dialog_2767",
+        "clevr_dialog_2983",
+        "clevr_dialog_403",
+        "clevr_dialog_5730",
+        "clevr_dialog_6004",
+        "clevr_dialog_6025",
+        "clevr_dialog_6048",
+        "clevr_dialog_824",
+        "clevr_dialog_8597",
+        "clevr_dialog_8818",
+        "clevr_dialog_9595",
+        "clevr_dialog_9717"
+      ],
+      "selected_ids_exact": true,
+      "all_expected_configurations": true,
+      "source_checks": [
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/run_cycle.py",
+          "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/bank.py",
+          "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/configs/data/replication32_runner.json",
+          "expected": "2dfd92aa5deea33bc067e11161fe60b10523d8bfb3221e68a44650eb97a2d623",
+          "actual": "2dfd92aa5deea33bc067e11161fe60b10523d8bfb3221e68a44650eb97a2d623",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/fused_progressive.py",
+          "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "match": true
+        }
+      ],
+      "args": {
+        "model": "/path/to/InternVL3-8B-hf",
+        "samples": "/path/to/TrajKV/configs/data/replication32_runner.json",
+        "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+        "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+        "output": "/path/to/TrajKV/results/budget_sweep_rep16_gpu1_v1/budget_4MiB",
+        "methods": [
+          "asym"
+        ],
+        "policies": [
+          "uniform",
+          "periodic",
+          "table_future",
+          "probe_l7_t0.02"
+        ],
+        "count": 16,
+        "start": 0,
+        "turns": 10,
+        "max_tokens": 16,
+        "max_patches": 4,
+        "margin": 2.0,
+        "max_replays": 1,
+        "save_states": false,
+        "read_budget_bytes": 4194304,
+        "description_tokens": 96,
+        "hide_visual_after_description": false,
+        "gain_table": "/path/to/TrajKV/configs/frozen_gain_tables_dev8_v2.json",
+        "probe_layer": 7,
+        "probe_threshold": 0.02,
+        "reference": null,
+        "resume": false
+      },
+      "reference_answers_visible": false,
+      "reference_argument": null,
+      "gain_table_equals_frozen": true,
+      "initial_hash_equal_across_methods": true,
+      "checks": {
+        "expected_id": 64,
+        "expected_config": 64,
+        "ten_turns": 64,
+        "budget_metadata": 64,
+        "raw_ledger_equal": 64,
+        "recorded_ledger_exact": 64,
+        "recorded_budget_ok": 64,
+        "computed_budget_ok": 64,
+        "free_running": 64,
+        "paid_zero": 64,
+        "model_path_match": 64,
+        "initial_hash_matches_rep_full": 64,
+        "literal_matches_controller": 16
+      },
+      "violations": [],
+      "record_sha256": "f57f92a1a62acee2fcf53739bf40f07a8aec35614779da0974a44838788f61c6",
+      "manifest_sha256": "05ae4827746aea3460f29da3d18c0c9de9ceaf09a348d634b6ed5adb661830a2",
+      "receipt_sha256": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "probe_event_counts": {
+        "probe_l7_t0.02": 483
+      },
+      "extra_ranges": {
+        "asym:uniform": {
+          "minimum": 4147200,
+          "maximum": 4147200,
+          "mean": 4147200.0
+        },
+        "asym:periodic": {
+          "minimum": 4147200,
+          "maximum": 4147200,
+          "mean": 4147200.0
+        },
+        "asym:table_future": {
+          "minimum": 4147200,
+          "maximum": 4147200,
+          "mean": 4147200.0
+        },
+        "asym:probe_l7_t0.02": {
+          "minimum": 4018176,
+          "maximum": 4098048,
+          "mean": 4059136.0
+        }
+      },
+      "model_fingerprint_checks": [
+        {
+          "name": "config.json",
+          "actual": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "expected_full_model_audit": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "match": true
+        },
+        {
+          "name": "model.safetensors.index.json",
+          "actual": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "expected_full_model_audit": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "match": true
+        },
+        {
+          "name": "tokenizer_config.json",
+          "actual": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+          "expected_full_model_audit": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+          "match": true
+        }
+      ],
+      "model_fingerprints_all_three_present": true,
+      "generation_parameter_checks": [
+        {
+          "parameter": "turns",
+          "actual": 10,
+          "expected": 10,
+          "match": true
+        },
+        {
+          "parameter": "max_tokens",
+          "actual": 16,
+          "expected": 16,
+          "match": true
+        },
+        {
+          "parameter": "max_patches",
+          "actual": 4,
+          "expected": 4,
+          "match": true
+        },
+        {
+          "parameter": "margin",
+          "actual": 2.0,
+          "expected": 2.0,
+          "match": true
+        },
+        {
+          "parameter": "max_replays",
+          "actual": 1,
+          "expected": 1,
+          "match": true
+        }
+      ]
+    },
+    {
+      "budget_mib": 8,
+      "completed": {
+        "records_added": 64,
+        "paid_calls": 0
+      },
+      "path": "results\\budget_sweep_rep16_gpu1_v1\\budget_8MiB",
+      "records": 64,
+      "turns": 640,
+      "unique_images": 16,
+      "ids": [
+        "clevr_dialog_10417",
+        "clevr_dialog_11070",
+        "clevr_dialog_2525",
+        "clevr_dialog_27",
+        "clevr_dialog_2767",
+        "clevr_dialog_2983",
+        "clevr_dialog_403",
+        "clevr_dialog_5730",
+        "clevr_dialog_6004",
+        "clevr_dialog_6025",
+        "clevr_dialog_6048",
+        "clevr_dialog_824",
+        "clevr_dialog_8597",
+        "clevr_dialog_8818",
+        "clevr_dialog_9595",
+        "clevr_dialog_9717"
+      ],
+      "selected_ids_exact": true,
+      "all_expected_configurations": true,
+      "source_checks": [
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/run_cycle.py",
+          "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/bank.py",
+          "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/configs/data/replication32_runner.json",
+          "expected": "2dfd92aa5deea33bc067e11161fe60b10523d8bfb3221e68a44650eb97a2d623",
+          "actual": "2dfd92aa5deea33bc067e11161fe60b10523d8bfb3221e68a44650eb97a2d623",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/fused_progressive.py",
+          "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "match": true
+        }
+      ],
+      "args": {
+        "model": "/path/to/InternVL3-8B-hf",
+        "samples": "/path/to/TrajKV/configs/data/replication32_runner.json",
+        "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+        "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+        "output": "/path/to/TrajKV/results/budget_sweep_rep16_gpu1_v1/budget_8MiB",
+        "methods": [
+          "asym"
+        ],
+        "policies": [
+          "uniform",
+          "periodic",
+          "table_future",
+          "probe_l7_t0.02"
+        ],
+        "count": 16,
+        "start": 0,
+        "turns": 10,
+        "max_tokens": 16,
+        "max_patches": 4,
+        "margin": 2.0,
+        "max_replays": 1,
+        "save_states": false,
+        "read_budget_bytes": 8388608,
+        "description_tokens": 96,
+        "hide_visual_after_description": false,
+        "gain_table": "/path/to/TrajKV/configs/frozen_gain_tables_dev8_v2.json",
+        "probe_layer": 7,
+        "probe_threshold": 0.02,
+        "reference": null,
+        "resume": false
+      },
+      "reference_answers_visible": false,
+      "reference_argument": null,
+      "gain_table_equals_frozen": true,
+      "initial_hash_equal_across_methods": true,
+      "checks": {
+        "expected_id": 64,
+        "expected_config": 64,
+        "ten_turns": 64,
+        "budget_metadata": 64,
+        "raw_ledger_equal": 64,
+        "recorded_ledger_exact": 64,
+        "recorded_budget_ok": 64,
+        "computed_budget_ok": 64,
+        "free_running": 64,
+        "paid_zero": 64,
+        "model_path_match": 64,
+        "initial_hash_matches_rep_full": 64,
+        "literal_matches_controller": 16
+      },
+      "violations": [],
+      "record_sha256": "bac37a65d5a63ef825816221daa96cb974e6f70910209c5c3e02bec88e4e289b",
+      "manifest_sha256": "819aff8469f6ddef40a8b043246ef769f7df4900ed3bea6e8e066c95544e844a",
+      "receipt_sha256": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "probe_event_counts": {
+        "probe_l7_t0.02": 483
+      },
+      "extra_ranges": {
+        "asym:uniform": {
+          "minimum": 8349696,
+          "maximum": 8349696,
+          "mean": 8349696.0
+        },
+        "asym:periodic": {
+          "minimum": 8349696,
+          "maximum": 8349696,
+          "mean": 8349696.0
+        },
+        "asym:table_future": {
+          "minimum": 8349696,
+          "maximum": 8349696,
+          "mean": 8349696.0
+        },
+        "asym:probe_l7_t0.02": {
+          "minimum": 8122368,
+          "maximum": 8353792,
+          "mean": 8215296.0
+        }
+      },
+      "model_fingerprint_checks": [
+        {
+          "name": "config.json",
+          "actual": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "expected_full_model_audit": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "match": true
+        },
+        {
+          "name": "model.safetensors.index.json",
+          "actual": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "expected_full_model_audit": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "match": true
+        },
+        {
+          "name": "tokenizer_config.json",
+          "actual": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+          "expected_full_model_audit": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+          "match": true
+        }
+      ],
+      "model_fingerprints_all_three_present": true,
+      "generation_parameter_checks": [
+        {
+          "parameter": "turns",
+          "actual": 10,
+          "expected": 10,
+          "match": true
+        },
+        {
+          "parameter": "max_tokens",
+          "actual": 16,
+          "expected": 16,
+          "match": true
+        },
+        {
+          "parameter": "max_patches",
+          "actual": 4,
+          "expected": 4,
+          "match": true
+        },
+        {
+          "parameter": "margin",
+          "actual": 2.0,
+          "expected": 2.0,
+          "match": true
+        },
+        {
+          "parameter": "max_replays",
+          "actual": 1,
+          "expected": 1,
+          "match": true
+        }
+      ]
+    },
+    {
+      "budget_mib": 16,
+      "completed": {
+        "records_added": 64,
+        "paid_calls": 0
+      },
+      "path": "results\\budget_sweep_rep16_gpu1_v1\\budget_16MiB",
+      "records": 64,
+      "turns": 640,
+      "unique_images": 16,
+      "ids": [
+        "clevr_dialog_10417",
+        "clevr_dialog_11070",
+        "clevr_dialog_2525",
+        "clevr_dialog_27",
+        "clevr_dialog_2767",
+        "clevr_dialog_2983",
+        "clevr_dialog_403",
+        "clevr_dialog_5730",
+        "clevr_dialog_6004",
+        "clevr_dialog_6025",
+        "clevr_dialog_6048",
+        "clevr_dialog_824",
+        "clevr_dialog_8597",
+        "clevr_dialog_8818",
+        "clevr_dialog_9595",
+        "clevr_dialog_9717"
+      ],
+      "selected_ids_exact": true,
+      "all_expected_configurations": true,
+      "source_checks": [
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/run_cycle.py",
+          "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/bank.py",
+          "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/configs/data/replication32_runner.json",
+          "expected": "2dfd92aa5deea33bc067e11161fe60b10523d8bfb3221e68a44650eb97a2d623",
+          "actual": "2dfd92aa5deea33bc067e11161fe60b10523d8bfb3221e68a44650eb97a2d623",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/fused_progressive.py",
+          "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "match": true
+        }
+      ],
+      "args": {
+        "model": "/path/to/InternVL3-8B-hf",
+        "samples": "/path/to/TrajKV/configs/data/replication32_runner.json",
+        "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+        "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+        "output": "/path/to/TrajKV/results/budget_sweep_rep16_gpu1_v1/budget_16MiB",
+        "methods": [
+          "asym"
+        ],
+        "policies": [
+          "uniform",
+          "periodic",
+          "table_future",
+          "probe_l7_t0.02"
+        ],
+        "count": 16,
+        "start": 0,
+        "turns": 10,
+        "max_tokens": 16,
+        "max_patches": 4,
+        "margin": 2.0,
+        "max_replays": 1,
+        "save_states": false,
+        "read_budget_bytes": 16777216,
+        "description_tokens": 96,
+        "hide_visual_after_description": false,
+        "gain_table": "/path/to/TrajKV/configs/frozen_gain_tables_dev8_v2.json",
+        "probe_layer": 7,
+        "probe_threshold": 0.02,
+        "reference": null,
+        "resume": false
+      },
+      "reference_answers_visible": false,
+      "reference_argument": null,
+      "gain_table_equals_frozen": true,
+      "initial_hash_equal_across_methods": true,
+      "checks": {
+        "expected_id": 64,
+        "expected_config": 64,
+        "ten_turns": 64,
+        "budget_metadata": 64,
+        "raw_ledger_equal": 64,
+        "recorded_ledger_exact": 64,
+        "recorded_budget_ok": 64,
+        "computed_budget_ok": 64,
+        "free_running": 64,
+        "paid_zero": 64,
+        "model_path_match": 64,
+        "initial_hash_matches_rep_full": 64,
+        "literal_matches_controller": 16
+      },
+      "violations": [],
+      "record_sha256": "778381fb4adae7cc09739c50f3fadf2eca62804ef942d03de933397543afcb8c",
+      "manifest_sha256": "f3183914d79ab0cc7cabb87e0758c28e42b081f8fba1d925fffa619af9a1733f",
+      "receipt_sha256": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "probe_event_counts": {
+        "probe_l7_t0.02": 483
+      },
+      "extra_ranges": {
+        "asym:uniform": {
+          "minimum": 11225088,
+          "maximum": 12386304,
+          "mean": 11708928.0
+        },
+        "asym:periodic": {
+          "minimum": 16754688,
+          "maximum": 16754688,
+          "mean": 16754688.0
+        },
+        "asym:table_future": {
+          "minimum": 11225088,
+          "maximum": 11225088,
+          "mean": 11225088.0
+        },
+        "asym:probe_l7_t0.02": {
+          "minimum": 16631808,
+          "maximum": 16777216,
+          "mean": 16737280.0
+        }
+      },
+      "model_fingerprint_checks": [
+        {
+          "name": "config.json",
+          "actual": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "expected_full_model_audit": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "match": true
+        },
+        {
+          "name": "model.safetensors.index.json",
+          "actual": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "expected_full_model_audit": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "match": true
+        },
+        {
+          "name": "tokenizer_config.json",
+          "actual": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+          "expected_full_model_audit": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+          "match": true
+        }
+      ],
+      "model_fingerprints_all_three_present": true,
+      "generation_parameter_checks": [
+        {
+          "parameter": "turns",
+          "actual": 10,
+          "expected": 10,
+          "match": true
+        },
+        {
+          "parameter": "max_tokens",
+          "actual": 16,
+          "expected": 16,
+          "match": true
+        },
+        {
+          "parameter": "max_patches",
+          "actual": 4,
+          "expected": 4,
+          "match": true
+        },
+        {
+          "parameter": "margin",
+          "actual": 2.0,
+          "expected": 2.0,
+          "match": true
+        },
+        {
+          "parameter": "max_replays",
+          "actual": 1,
+          "expected": 1,
+          "match": true
+        }
+      ]
+    },
+    {
+      "budget_mib": 32,
+      "completed": {
+        "records_added": 64,
+        "paid_calls": 0
+      },
+      "path": "results\\budget_sweep_rep16_gpu1_v1\\budget_32MiB",
+      "records": 64,
+      "turns": 640,
+      "unique_images": 16,
+      "ids": [
+        "clevr_dialog_10417",
+        "clevr_dialog_11070",
+        "clevr_dialog_2525",
+        "clevr_dialog_27",
+        "clevr_dialog_2767",
+        "clevr_dialog_2983",
+        "clevr_dialog_403",
+        "clevr_dialog_5730",
+        "clevr_dialog_6004",
+        "clevr_dialog_6025",
+        "clevr_dialog_6048",
+        "clevr_dialog_824",
+        "clevr_dialog_8597",
+        "clevr_dialog_8818",
+        "clevr_dialog_9595",
+        "clevr_dialog_9717"
+      ],
+      "selected_ids_exact": true,
+      "all_expected_configurations": true,
+      "source_checks": [
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/run_cycle.py",
+          "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/bank.py",
+          "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/configs/data/replication32_runner.json",
+          "expected": "2dfd92aa5deea33bc067e11161fe60b10523d8bfb3221e68a44650eb97a2d623",
+          "actual": "2dfd92aa5deea33bc067e11161fe60b10523d8bfb3221e68a44650eb97a2d623",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/budget_sweep_rep16_gpu1_v1.source/code/experiments/fused_progressive.py",
+          "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "match": true
+        }
+      ],
+      "args": {
+        "model": "/path/to/InternVL3-8B-hf",
+        "samples": "/path/to/TrajKV/configs/data/replication32_runner.json",
+        "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+        "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+        "output": "/path/to/TrajKV/results/budget_sweep_rep16_gpu1_v1/budget_32MiB",
+        "methods": [
+          "asym"
+        ],
+        "policies": [
+          "uniform",
+          "periodic",
+          "table_future",
+          "probe_l7_t0.02"
+        ],
+        "count": 16,
+        "start": 0,
+        "turns": 10,
+        "max_tokens": 16,
+        "max_patches": 4,
+        "margin": 2.0,
+        "max_replays": 1,
+        "save_states": false,
+        "read_budget_bytes": 33554432,
+        "description_tokens": 96,
+        "hide_visual_after_description": false,
+        "gain_table": "/path/to/TrajKV/configs/frozen_gain_tables_dev8_v2.json",
+        "probe_layer": 7,
+        "probe_threshold": 0.02,
+        "reference": null,
+        "resume": false
+      },
+      "reference_answers_visible": false,
+      "reference_argument": null,
+      "gain_table_equals_frozen": true,
+      "initial_hash_equal_across_methods": true,
+      "checks": {
+        "expected_id": 64,
+        "expected_config": 64,
+        "ten_turns": 64,
+        "budget_metadata": 64,
+        "raw_ledger_equal": 64,
+        "recorded_ledger_exact": 64,
+        "recorded_budget_ok": 64,
+        "computed_budget_ok": 64,
+        "free_running": 64,
+        "paid_zero": 64,
+        "model_path_match": 64,
+        "initial_hash_matches_rep_full": 64,
+        "literal_matches_controller": 16
+      },
+      "violations": [],
+      "record_sha256": "2d5ff0224531504338159651430f8b9554b24469b5d2089d8accfec2a332677c",
+      "manifest_sha256": "f6f70b59f542625b27cd10ed17047874953d71ab492770be885e4700a0736da0",
+      "receipt_sha256": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "probe_event_counts": {
+        "probe_l7_t0.02": 483
+      },
+      "extra_ranges": {
+        "asym:uniform": {
+          "minimum": 11225088,
+          "maximum": 12386304,
+          "mean": 11708928.0
+        },
+        "asym:periodic": {
+          "minimum": 29417472,
+          "maximum": 29417472,
+          "mean": 29417472.0
+        },
+        "asym:table_future": {
+          "minimum": 11225088,
+          "maximum": 11225088,
+          "mean": 11225088.0
+        },
+        "asym:probe_l7_t0.02": {
+          "minimum": 33116160,
+          "maximum": 33550336,
+          "mean": 33492224.0
+        }
+      },
+      "model_fingerprint_checks": [
+        {
+          "name": "config.json",
+          "actual": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "expected_full_model_audit": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "match": true
+        },
+        {
+          "name": "model.safetensors.index.json",
+          "actual": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "expected_full_model_audit": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "match": true
+        },
+        {
+          "name": "tokenizer_config.json",
+          "actual": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+          "expected_full_model_audit": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+          "match": true
+        }
+      ],
+      "model_fingerprints_all_three_present": true,
+      "generation_parameter_checks": [
+        {
+          "parameter": "turns",
+          "actual": 10,
+          "expected": 10,
+          "match": true
+        },
+        {
+          "parameter": "max_tokens",
+          "actual": 16,
+          "expected": 16,
+          "match": true
+        },
+        {
+          "parameter": "max_patches",
+          "actual": 4,
+          "expected": 4,
+          "match": true
+        },
+        {
+          "parameter": "margin",
+          "actual": 2.0,
+          "expected": 2.0,
+          "match": true
+        },
+        {
+          "parameter": "max_replays",
+          "actual": 1,
+          "expected": 1,
+          "match": true
+        }
+      ]
+    }
+  ],
+  "parent_child_artifact_hash_checks": [
+    {
+      "budget_mib": 4,
+      "path": "complete.json",
+      "expected": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "actual": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "match": true
+    },
+    {
+      "budget_mib": 4,
+      "path": "manifest.json",
+      "expected": "05ae4827746aea3460f29da3d18c0c9de9ceaf09a348d634b6ed5adb661830a2",
+      "actual": "05ae4827746aea3460f29da3d18c0c9de9ceaf09a348d634b6ed5adb661830a2",
+      "match": true
+    },
+    {
+      "budget_mib": 4,
+      "path": "records.jsonl",
+      "expected": "f57f92a1a62acee2fcf53739bf40f07a8aec35614779da0974a44838788f61c6",
+      "actual": "f57f92a1a62acee2fcf53739bf40f07a8aec35614779da0974a44838788f61c6",
+      "match": true
+    },
+    {
+      "budget_mib": 8,
+      "path": "complete.json",
+      "expected": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "actual": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "match": true
+    },
+    {
+      "budget_mib": 8,
+      "path": "manifest.json",
+      "expected": "819aff8469f6ddef40a8b043246ef769f7df4900ed3bea6e8e066c95544e844a",
+      "actual": "819aff8469f6ddef40a8b043246ef769f7df4900ed3bea6e8e066c95544e844a",
+      "match": true
+    },
+    {
+      "budget_mib": 8,
+      "path": "records.jsonl",
+      "expected": "bac37a65d5a63ef825816221daa96cb974e6f70910209c5c3e02bec88e4e289b",
+      "actual": "bac37a65d5a63ef825816221daa96cb974e6f70910209c5c3e02bec88e4e289b",
+      "match": true
+    },
+    {
+      "budget_mib": 16,
+      "path": "complete.json",
+      "expected": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "actual": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "match": true
+    },
+    {
+      "budget_mib": 16,
+      "path": "manifest.json",
+      "expected": "f3183914d79ab0cc7cabb87e0758c28e42b081f8fba1d925fffa619af9a1733f",
+      "actual": "f3183914d79ab0cc7cabb87e0758c28e42b081f8fba1d925fffa619af9a1733f",
+      "match": true
+    },
+    {
+      "budget_mib": 16,
+      "path": "records.jsonl",
+      "expected": "778381fb4adae7cc09739c50f3fadf2eca62804ef942d03de933397543afcb8c",
+      "actual": "778381fb4adae7cc09739c50f3fadf2eca62804ef942d03de933397543afcb8c",
+      "match": true
+    },
+    {
+      "budget_mib": 32,
+      "path": "complete.json",
+      "expected": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "actual": "3bb33cda05366331a142adb814643e013db9e341c960677e89e30ddc61331b53",
+      "match": true
+    },
+    {
+      "budget_mib": 32,
+      "path": "manifest.json",
+      "expected": "f6f70b59f542625b27cd10ed17047874953d71ab492770be885e4700a0736da0",
+      "actual": "f6f70b59f542625b27cd10ed17047874953d71ab492770be885e4700a0736da0",
+      "match": true
+    },
+    {
+      "budget_mib": 32,
+      "path": "records.jsonl",
+      "expected": "2d5ff0224531504338159651430f8b9554b24469b5d2089d8accfec2a332677c",
+      "actual": "2d5ff0224531504338159651430f8b9554b24469b5d2089d8accfec2a332677c",
+      "match": true
+    }
+  ],
+  "counts": {
+    "records": 256,
+    "answers": 2560,
+    "budgets": 4,
+    "images_per_budget": 16,
+    "configurations_per_image_per_budget": 4,
+    "unique_images_across_all_budgets": 16,
+    "independent_cohort_scope": "the same first16 images of replication32, not an independent additional16; do not count 32+16 as 48"
+  },
+  "nested_data": {
+    "first16_replication_ids": [
+      "clevr_dialog_10417",
+      "clevr_dialog_11070",
+      "clevr_dialog_2525",
+      "clevr_dialog_27",
+      "clevr_dialog_2767",
+      "clevr_dialog_2983",
+      "clevr_dialog_403",
+      "clevr_dialog_5730",
+      "clevr_dialog_6004",
+      "clevr_dialog_6025",
+      "clevr_dialog_6048",
+      "clevr_dialog_824",
+      "clevr_dialog_8597",
+      "clevr_dialog_8818",
+      "clevr_dialog_9595",
+      "clevr_dialog_9717"
+    ],
+    "subset_of_replication32": true,
+    "original_eval64_image_overlap": []
+  },
+  "policies": {
+    "expected": [
+      [
+        "asym",
+        "periodic"
+      ],
+      [
+        "asym",
+        "probe_l7_t0.02"
+      ],
+      [
+        "asym",
+        "table_future"
+      ],
+      [
+        "asym",
+        "uniform"
+      ]
+    ],
+    "probe_scope": "sweep evaluates prespecified original probe_l7_t0.02 at all four caps; it does not substitute budget-calibrated eta7"
+  },
+  "repeated_16mib_conditions_against_rep32": [
+    {
+      "session_id": "clevr_dialog_2983",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2983",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2983",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2983",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2767",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2767",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2767",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2767",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_403",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_403",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_403",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_403",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_824",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_824",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_824",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_824",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6025",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6025",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6025",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6025",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6048",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6048",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6048",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6048",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2525",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2525",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2525",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_2525",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_8818",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_8818",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_8818",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_8818",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_11070",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_11070",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_11070",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_11070",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_9717",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_9717",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_9717",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_9717",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_9595",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_9595",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_9595",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_9595",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_8597",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_8597",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_8597",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_8597",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_5730",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_5730",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_5730",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_5730",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_10417",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_10417",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_10417",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_10417",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_27",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_27",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_27",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_27",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6004",
+      "method": "asym",
+      "policy": "uniform",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6004",
+      "method": "asym",
+      "policy": "periodic",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6004",
+      "method": "asym",
+      "policy": "table_future",
+      "tokens_equal": true,
+      "extra_equal": true
+    },
+    {
+      "session_id": "clevr_dialog_6004",
+      "method": "asym",
+      "policy": "probe_l7_t0.02",
+      "tokens_equal": true,
+      "extra_equal": true
+    }
+  ],
+  "threshold_source_scope": "no threshold refit performed; frozen dev8 table remains only calibration provenance for the separate replication primary",
+  "limits": [
+    "The contract records a freeze timestamp and immutable job arguments match it; this audit does not independently timestamp the first remote outcome.",
+    "All read budgets are allowances, not exact realized-cost matching. Actual fused-call extra bytes are independently retained.",
+    "Tracked old core and archived snapshots were hashed; not every transitive historical helper or remote process memory is attested.",
+    "Model identity relies on the prior full-shard audit and matching runtime config/index/tokenizer fingerprints, not a post-run remote weight reread.",
+    "No new Doc64 data was opened and no algorithm, threshold or generation setting was changed by this audit."
+  ],
+  "status": "PASS_DECLARED_NESTED_BUDGET_SWEEP_IDENTITY_AND_LEDGER_SCOPE",
+  "aggregate_checks": {
+    "count": 58,
+    "all_pass": true
+  },
+  "model_and_generation_additional_checks_pass": true,
+  "prior_eval64_preservation": {
+    "original_frozen_artifact_checks": [
+      {
+        "path": "configs/evaluation_contract_v1.json",
+        "expected": "1447d0e2c577d7187e62ab59568a27fe27b248d6d4f24610ae4efdd8c0cea662",
+        "actual": "1447d0e2c577d7187e62ab59568a27fe27b248d6d4f24610ae4efdd8c0cea662",
+        "match": true
+      },
+      {
+        "path": "configs/data/final_eval64_runner.json",
+        "expected": "539c265fbd402d647737c20b2dcda696ca076e9bfb2bc04893fbb721256a3623",
+        "actual": "539c265fbd402d647737c20b2dcda696ca076e9bfb2bc04893fbb721256a3623",
+        "match": true
+      },
+      {
+        "path": "configs/frozen_gain_tables_dev8_v2.json",
+        "expected": "8a3ed7c9ea106c78c750f95bda825186924442b7a72a1b2c86fd4d02e07cc78c",
+        "actual": "8a3ed7c9ea106c78c750f95bda825186924442b7a72a1b2c86fd4d02e07cc78c",
+        "match": true
+      },
+      {
+        "path": "code/experiments/run_cycle.py",
+        "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+        "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+        "match": true
+      },
+      {
+        "path": "code/experiments/bank.py",
+        "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+        "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+        "match": true
+      },
+      {
+        "path": "code/experiments/self_probe.py",
+        "expected": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+        "actual": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+        "match": true
+      },
+      {
+        "path": "code/experiments/fused_progressive.py",
+        "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+        "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+        "match": true
+      },
+      {
+        "path": "code/bytes.py",
+        "expected": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+        "actual": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+        "match": true
+      },
+      {
+        "path": "audit/model_identity.json",
+        "expected": "0c69739ab29005d4504bf55d05974ef0e35ea6899da2c02652d95a5e3d3c73e0",
+        "actual": "0c69739ab29005d4504bf55d05974ef0e35ea6899da2c02652d95a5e3d3c73e0",
+        "match": true
+      }
+    ],
+    "original_eval64_record_checks": [
+      {
+        "path": "results\\eval64_shard0_v1/records.jsonl",
+        "expected": "4bd3323b634ac69bca77f9534ae310331cac784e37f0914a6bf5a8f17f675083",
+        "actual": "4bd3323b634ac69bca77f9534ae310331cac784e37f0914a6bf5a8f17f675083",
+        "match": true
+      },
+      {
+        "path": "results\\eval64_shard1_v1/records.jsonl",
+        "expected": "8d6839d0732cd9e513b6af3290cd7073703e1944af67adcf824c78b62008befb",
+        "actual": "8d6839d0732cd9e513b6af3290cd7073703e1944af67adcf824c78b62008befb",
+        "match": true
+      }
+    ],
+    "all_unchanged": true
+  }
+}

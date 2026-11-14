@@ -1,0 +1,44 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/a2_aux_gpu0_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/a2_aux_gpu0_v1.launch.json",
+  "tasks": [
+    {
+      "name": "global_calib",
+      "entrypoint": "calibrate_global.py",
+      "arguments": [
+        "--model",
+        "/path/to/InternVL3-8B-hf",
+        "--legacy-scripts",
+        "/path/to/VisContract_P14_2/scripts",
+        "--kivi-source",
+        "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+        "--samples",
+        "/path/to/TrajKV/configs/a2/dev8.json",
+        "--evaluation-config",
+        "/path/to/TrajKV/configs/a2/dev_calibrated.json"
+      ]
+    },
+    {
+      "name": "rules",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/results/a2_global_dev_gpu0_v1/global_calib/fitted_variants.json"
+      ]
+    },
+    {
+      "name": "mechanism",
+      "entrypoint": "mechanism_1bit.py",
+      "arguments": [
+        "--model",
+        "/path/to/InternVL3-8B-hf",
+        "--legacy-scripts",
+        "/path/to/VisContract_P14_2/scripts",
+        "--kivi-source",
+        "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+        "--samples",
+        "/path/to/TrajKV/configs/a2/dev8.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "contrasts": [
+    {
+      "encoder": "mad",
+      "contrast": "restore_norm_at_quant_direction",
+      "left": "mad_A10",
+      "right": "mad_A00",
+      "delta": 0.1781784954885978,
+      "ci_low": 0.10916025941722536,
+      "ci_high": 0.2509634866055633,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "mad",
+      "contrast": "restore_direction_at_quant_norm",
+      "left": "mad_A01",
+      "right": "mad_A00",
+      "delta": 0.3682966104327997,
+      "ci_low": 0.2831106614061184,
+      "ci_high": 0.45336797278645113,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "mad",
+      "contrast": "restore_direction_at_true_norm",
+      "left": "A11_fp16",
+      "right": "mad_A10",
+      "delta": 0.19377640677640678,
+      "ci_low": 0.12498628606753606,
+      "ci_high": 0.2671271345208845,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "mad",
+      "contrast": "restore_norm_at_true_direction",
+      "left": "A11_fp16",
+      "right": "mad_A01",
+      "delta": 0.003658291832204874,
+      "ci_low": -0.028809140040661787,
+      "ci_high": 0.03751025637438681,
+      "p": 0.8340016599834001,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "mad",
+      "contrast": "direction_arm_minus_norm_arm",
+      "left": "mad_A01",
+      "right": "mad_A10",
+      "delta": 0.19011811494420194,
+      "ci_low": 0.11983965261139173,
+      "ci_high": 0.2619913415022111,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "mad",
+      "contrast": "factorial_interaction",
+      "left": "A11-A10-A01+A00",
+      "right": "zero",
+      "delta": -0.17452020365639292,
+      "ci_low": -0.2540767811156348,
+      "ci_high": -0.09836973293314401,
+      "p": 1.999980000199998e-05,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "lloyd",
+      "contrast": "restore_norm_at_quant_direction",
+      "left": "lloyd_A10",
+      "right": "lloyd_A00",
+      "delta": 0.11299657287157286,
+      "ci_low": 0.059262049062049064,
+      "ci_high": 0.17089858405483407,
+      "p": 2.999970000299997e-05,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "lloyd",
+      "contrast": "restore_direction_at_quant_norm",
+      "left": "lloyd_A01",
+      "right": "lloyd_A00",
+      "delta": 0.3375629895140765,
+      "ci_low": 0.25754525075965295,
+      "ci_high": 0.42187044840400817,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "lloyd",
+      "contrast": "restore_direction_at_true_norm",
+      "left": "A11_fp16",
+      "right": "lloyd_A10",
+      "delta": 0.20445089895089893,
+      "ci_low": 0.13424970043095044,
+      "ci_high": 0.27823128510003514,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "lloyd",
+      "contrast": "restore_norm_at_true_direction",
+      "left": "A11_fp16",
+      "right": "lloyd_A01",
+      "delta": -0.020115517691604648,
+      "ci_low": -0.06323119206162685,
+      "ci_high": 0.020764061887974937,
+      "p": 0.3745662543374566,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "lloyd",
+      "contrast": "direction_arm_minus_norm_arm",
+      "left": "lloyd_A01",
+      "right": "lloyd_A10",
+      "delta": 0.2245664166425036,
+      "ci_low": 0.15433521490505187,
+      "ci_high": 0.29933635645103035,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "encoder": "lloyd",
+      "contrast": "factorial_interaction",
+      "left": "A11-A10-A01+A00",
+      "right": "zero",
+      "delta": -0.1331120905631775,
+      "ci_low": -0.20020537103662106,
+      "ci_high": -0.06507260232953169,
+      "p": 0.0001999980000199998,
+      "images": 100,
+      "questions": 100
+    }
+  ],
+  "energies": [
+    {
+      "encoder": "mad",
+      "images": 100,
+      "radial_energy_share": 0.060094610251481405,
+      "decomposition_relative_error": 4.214805925339606e-07,
+      "mean_cosine": 0.9355880468711257,
+      "true_norm_cv": 0.08739812631865787,
+      "quant_norm_cv": 0.07065128203898244,
+      "within_norm_corr": 0.6936125061250226,
+      "undefined_corr_count": 0.0
+    },
+    {
+      "encoder": "lloyd",
+      "images": 100,
+      "radial_energy_share": 0.05851831897366097,
+      "decomposition_relative_error": 4.972732606393557e-07,
+      "mean_cosine": 0.936917500650244,
+      "true_norm_cv": 0.08739812631865787,
+      "quant_norm_cv": 0.06971109485715715,
+      "within_norm_corr": 0.7290526222597274,
+      "undefined_corr_count": 0.0
+    }
+  ],
+  "scope": "all arms materialized FP16 diagnostics; conditional factorial contrasts, not causal attribution percentages"
+}

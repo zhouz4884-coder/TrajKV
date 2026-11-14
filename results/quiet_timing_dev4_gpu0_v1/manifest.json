@@ -1,0 +1,167 @@
+{
+  "contract": {
+    "configurations": [
+      {
+        "method": "full",
+        "policy": "base",
+        "configuration": "full:base"
+      },
+      {
+        "method": "base2",
+        "policy": "base",
+        "configuration": "base2:base"
+      },
+      {
+        "method": "native4",
+        "policy": "base",
+        "configuration": "native4:base"
+      },
+      {
+        "method": "asym",
+        "policy": "uniform",
+        "configuration": "asym:uniform"
+      },
+      {
+        "method": "asym",
+        "policy": "periodic",
+        "configuration": "asym:periodic"
+      },
+      {
+        "method": "asym",
+        "policy": "table_current",
+        "configuration": "asym:table_current"
+      },
+      {
+        "method": "asym",
+        "policy": "table_future",
+        "configuration": "asym:table_future"
+      },
+      {
+        "method": "asym",
+        "policy": "probe_l7_t0.02",
+        "configuration": "asym:probe_l7_t0.02"
+      },
+      {
+        "method": "asym",
+        "policy": "margin_write",
+        "configuration": "asym:margin_write"
+      }
+    ],
+    "selected_ids": [
+      "clevr_dialog_12324",
+      "clevr_dialog_7843",
+      "clevr_dialog_8937",
+      "clevr_dialog_3845"
+    ],
+    "turns": 10,
+    "max_tokens": 16,
+    "max_patches": 4,
+    "description_tokens": 96,
+    "read_budget_bytes": 16777216,
+    "gain_table_sha256": "8a3ed7c9ea106c78c750f95bda825186924442b7a72a1b2c86fd4d02e07cc78c",
+    "seed": 20261112,
+    "warmups": 1,
+    "repeats": 3,
+    "sources": {
+      "/path/to/TrajKV/jobs/quiet_timing_dev4_gpu0_v1.source/code/experiments/timing_control.py": "18fa6089c4c6fefb84ff41238449b90befe0b95c2819aa3a014201d95de8280e",
+      "/path/to/TrajKV/jobs/quiet_timing_dev4_gpu0_v1.source/code/experiments/run_cycle.py": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+      "/path/to/TrajKV/jobs/quiet_timing_dev4_gpu0_v1.source/code/experiments/bank.py": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+      "/path/to/TrajKV/configs/data/clevr_dev32_runner.json": "a5e5aadb012f1d79c03ef93b2656ea689f769ba6b077a3488dbb2014dcab29ba",
+      "/path/to/VisContract_P14_2/scripts/p202_fused.py": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1",
+      "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+      "/path/to/TrajKV/jobs/quiet_timing_dev4_gpu0_v1.source/code/experiments/self_probe.py": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+      "/path/to/TrajKV/jobs/quiet_timing_dev4_gpu0_v1.source/code/experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+      "/path/to/TrajKV/configs/frozen_gain_tables_dev8_v2.json": "8a3ed7c9ea106c78c750f95bda825186924442b7a72a1b2c86fd4d02e07cc78c"
+    },
+    "runner_options": {
+      "model": "/path/to/InternVL3-8B-hf",
+      "samples": "/path/to/TrajKV/configs/data/clevr_dev32_runner.json",
+      "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+      "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+      "methods": [
+        "full",
+        "base2",
+        "native4",
+        "asym"
+      ],
+      "policies": [
+        "uniform",
+        "periodic",
+        "table_current",
+        "table_future",
+        "probe_l7_t0.02",
+        "margin_write"
+      ],
+      "gain_table": "/path/to/TrajKV/configs/frozen_gain_tables_dev8_v2.json",
+      "read_budget_bytes": 16777216,
+      "count": 4,
+      "start": 0,
+      "turns": 10,
+      "max_tokens": 16,
+      "max_patches": 4,
+      "description_tokens": 96,
+      "hide_visual_after_description": false,
+      "margin": 2.0,
+      "max_replays": 1,
+      "probe_layer": 7,
+      "probe_threshold": 0.02,
+      "warmups": 1,
+      "repeats": 3,
+      "seed": 20261112
+    }
+  },
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/data/clevr_dev32_runner.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "output": "/path/to/TrajKV/results/quiet_timing_dev4_gpu0_v1",
+    "methods": [
+      "full",
+      "base2",
+      "native4",
+      "asym"
+    ],
+    "policies": [
+      "uniform",
+      "periodic",
+      "table_current",
+      "table_future",
+      "probe_l7_t0.02",
+      "margin_write"
+    ],
+    "gain_table": "/path/to/TrajKV/configs/frozen_gain_tables_dev8_v2.json",
+    "read_budget_bytes": 16777216,
+    "count": 4,
+    "start": 0,
+    "turns": 10,
+    "max_tokens": 16,
+    "max_patches": 4,
+    "description_tokens": 96,
+    "hide_visual_after_description": false,
+    "margin": 2.0,
+    "max_replays": 1,
+    "probe_layer": 7,
+    "probe_threshold": 0.02,
+    "warmups": 1,
+    "repeats": 3,
+    "seed": 20261112,
+    "allow_busy": false,
+    "resume": false
+  },
+  "created_utc": "2026-11-12T13:42:31.914311+00:00",
+  "torch": "2.4.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "initial_quiet": {
+    "verified": true,
+    "quiet": true,
+    "processes": [],
+    "foreign_processes": [],
+    "scope": "NVIDIA compute-process inventory at boundary; not continuous OS/thermal isolation"
+  },
+  "quality": "not_scored",
+  "reference_answers_visible_to_runner": false,
+  "paid_calls": 0,
+  "canonical_source": "Full free generation solely to freeze output tokens",
+  "full_baseline_scope": "full FP16 P202 fused bank after native visual prefill; native SDPA parity is a separate audit"
+}

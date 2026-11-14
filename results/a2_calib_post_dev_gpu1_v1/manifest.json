@@ -1,0 +1,22 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/a2_rates_dev_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/a2_rates_dev_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "check",
+      "entrypoint": "check_calib_post.py",
+      "arguments": [
+        "--legacy-scripts",
+        "/path/to/VisContract_P14_2/scripts"
+      ]
+    },
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/dev_calib_post.json"
+      ]
+    }
+  ]
+}

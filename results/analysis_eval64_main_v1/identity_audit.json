@@ -1,0 +1,1489 @@
+{
+  "schema": "trajkv.eval64.identity-audit.v1",
+  "mode": "independent local artifact verification; no experiment or threshold mutation",
+  "audit_time_utc": "2026-11-12T13:52:24.640205+00:00",
+  "contract": {
+    "path": "configs/evaluation_contract_v1.json",
+    "sha256": "1447d0e2c577d7187e62ab59568a27fe27b248d6d4f24610ae4efdd8c0cea662",
+    "frozen_at": "2026-11-12T21:11:39.989807+08:00",
+    "primary_new_policy": "probe_l7_t0.02",
+    "prespecified_configurations": [
+      [
+        "asym",
+        "base"
+      ],
+      [
+        "asym",
+        "carrier_write"
+      ],
+      [
+        "asym",
+        "early"
+      ],
+      [
+        "asym",
+        "margin"
+      ],
+      [
+        "asym",
+        "margin_write"
+      ],
+      [
+        "asym",
+        "periodic"
+      ],
+      [
+        "asym",
+        "prefill"
+      ],
+      [
+        "asym",
+        "probe_l0_t0.05"
+      ],
+      [
+        "asym",
+        "probe_l14_t0.02"
+      ],
+      [
+        "asym",
+        "probe_l7_t0.02"
+      ],
+      [
+        "asym",
+        "random"
+      ],
+      [
+        "asym",
+        "table_current"
+      ],
+      [
+        "asym",
+        "table_future"
+      ],
+      [
+        "asym",
+        "uniform"
+      ],
+      [
+        "base2",
+        "base"
+      ],
+      [
+        "full",
+        "base"
+      ],
+      [
+        "native4",
+        "base"
+      ]
+    ],
+    "extra_read_allowance_bytes": 16777216
+  },
+  "frozen_hash_checks": [
+    {
+      "path": "configs/evaluation_contract_v1.json",
+      "expected": "1447d0e2c577d7187e62ab59568a27fe27b248d6d4f24610ae4efdd8c0cea662",
+      "actual": "1447d0e2c577d7187e62ab59568a27fe27b248d6d4f24610ae4efdd8c0cea662",
+      "match": true
+    },
+    {
+      "path": "configs/data/final_eval64_runner.json",
+      "expected": "539c265fbd402d647737c20b2dcda696ca076e9bfb2bc04893fbb721256a3623",
+      "actual": "539c265fbd402d647737c20b2dcda696ca076e9bfb2bc04893fbb721256a3623",
+      "match": true
+    },
+    {
+      "path": "configs/frozen_gain_tables_dev8_v2.json",
+      "expected": "8a3ed7c9ea106c78c750f95bda825186924442b7a72a1b2c86fd4d02e07cc78c",
+      "actual": "8a3ed7c9ea106c78c750f95bda825186924442b7a72a1b2c86fd4d02e07cc78c",
+      "match": true
+    },
+    {
+      "path": "code/experiments/run_cycle.py",
+      "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+      "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+      "match": true
+    },
+    {
+      "path": "code/experiments/bank.py",
+      "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+      "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+      "match": true
+    },
+    {
+      "path": "code/experiments/self_probe.py",
+      "expected": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+      "actual": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+      "match": true
+    },
+    {
+      "path": "code/experiments/fused_progressive.py",
+      "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+      "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+      "match": true
+    },
+    {
+      "path": "code/bytes.py",
+      "expected": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+      "actual": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+      "match": true
+    },
+    {
+      "path": "audit/model_identity.json",
+      "expected": "0c69739ab29005d4504bf55d05974ef0e35ea6899da2c02652d95a5e3d3c73e0",
+      "actual": "0c69739ab29005d4504bf55d05974ef0e35ea6899da2c02652d95a5e3d3c73e0",
+      "match": true
+    }
+  ],
+  "shards": [
+    {
+      "shard": 0,
+      "path": "results\\eval64_shard0_v1",
+      "complete_receipt": {
+        "records_added": 544,
+        "paid_calls": 0
+      },
+      "records": 544,
+      "turns": 5440,
+      "unique_sessions": 32,
+      "unique_images": 32,
+      "records_sha256": "4bd3323b634ac69bca77f9534ae310331cac784e37f0914a6bf5a8f17f675083",
+      "manifest_sha256": "c1a17ce9e0fff7b59ab96bebb509d1ae2d9ebeced272aeb267974307f9e564c3",
+      "receipt_sha256": "57a2b74a5a3aeecf4d2df78218fadfd9bada6e2b603ad2e368c79232df834faa",
+      "selected_ids": [
+        "clevr_dialog_644",
+        "clevr_dialog_8895",
+        "clevr_dialog_10207",
+        "clevr_dialog_13376",
+        "clevr_dialog_1428",
+        "clevr_dialog_3557",
+        "clevr_dialog_12505",
+        "clevr_dialog_9550",
+        "clevr_dialog_6162",
+        "clevr_dialog_5669",
+        "clevr_dialog_8647",
+        "clevr_dialog_4530",
+        "clevr_dialog_74",
+        "clevr_dialog_12343",
+        "clevr_dialog_11720",
+        "clevr_dialog_2899",
+        "clevr_dialog_3542",
+        "clevr_dialog_8533",
+        "clevr_dialog_6806",
+        "clevr_dialog_10119",
+        "clevr_dialog_7280",
+        "clevr_dialog_9441",
+        "clevr_dialog_9245",
+        "clevr_dialog_8835",
+        "clevr_dialog_10497",
+        "clevr_dialog_6262",
+        "clevr_dialog_2398",
+        "clevr_dialog_9967",
+        "clevr_dialog_3059",
+        "clevr_dialog_4119",
+        "clevr_dialog_10756",
+        "clevr_dialog_4941"
+      ],
+      "selected_ids_match_manifest_slice": true,
+      "expected_configuration_set_complete": true,
+      "all_methods_initial_logit_hash_equal": true,
+      "per_record_pass_counts": {
+        "expected_selected_id": 544,
+        "ten_unique_turns": 544,
+        "ledger_recomputed_equal": 544,
+        "runtime_ledger_exact": 544,
+        "recorded_budget_ok": 544,
+        "budget_is_16mib": 544,
+        "computed_within_budget": 544,
+        "paid_calls_zero": 544,
+        "free_running": 544,
+        "model_path_equal": 544,
+        "no_diagnostic_or_kvarn_reference_owner": 544
+      },
+      "violations": [],
+      "source_snapshot_sha256_checks": [
+        {
+          "path": "code/bytes.py",
+          "expected": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+          "actual": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+          "match": true
+        },
+        {
+          "path": "code/experiments/carrier_surgery_v2.py",
+          "expected": "55120e2ac6a3c130c77f275dcc5035a8691d99bbd89763589316fb60ac5a81c7",
+          "actual": "55120e2ac6a3c130c77f275dcc5035a8691d99bbd89763589316fb60ac5a81c7",
+          "match": true
+        },
+        {
+          "path": "code/experiments/carrier_surgery.py",
+          "expected": "f52ddb87714b4dcdc954ff8d7e4dab0441715ebda6e93a7a2904e7d68be65b09",
+          "actual": "f52ddb87714b4dcdc954ff8d7e4dab0441715ebda6e93a7a2904e7d68be65b09",
+          "match": true
+        },
+        {
+          "path": "code/experiments/mechanism_fidelity.py",
+          "expected": "8ffc74b6db34c303e3ffed0fc75e7659b6acb178dce8eef8ee7cb19dbe552527",
+          "actual": "8ffc74b6db34c303e3ffed0fc75e7659b6acb178dce8eef8ee7cb19dbe552527",
+          "match": true
+        },
+        {
+          "path": "code/experiments/kvarn_quality_smoke.py",
+          "expected": "00d25c29046e6f1464c26d77c525a694a695affebed554c94e0bd546aa213a4e",
+          "actual": "00d25c29046e6f1464c26d77c525a694a695affebed554c94e0bd546aa213a4e",
+          "match": true
+        },
+        {
+          "path": "code/experiments/native_parity.py",
+          "expected": "cbd224c9e88ae52f450756e0a3a761d1937b757619719a1b4407707cd972e4f8",
+          "actual": "cbd224c9e88ae52f450756e0a3a761d1937b757619719a1b4407707cd972e4f8",
+          "match": true
+        },
+        {
+          "path": "code/experiments/self_probe.py",
+          "expected": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+          "actual": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+          "match": true
+        },
+        {
+          "path": "code/experiments/fused_progressive.py",
+          "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "match": true
+        },
+        {
+          "path": "code/experiments/bank.py",
+          "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "match": true
+        },
+        {
+          "path": "code/experiments/mechanism.py",
+          "expected": "e13d4fcf97ba5b5506e32b29480adcb1c093ae885dbaee7bdb918837007a5c65",
+          "actual": "e13d4fcf97ba5b5506e32b29480adcb1c093ae885dbaee7bdb918837007a5c65",
+          "match": true
+        },
+        {
+          "path": "code/experiments/run_cycle.py",
+          "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "match": true
+        },
+        {
+          "path": "code/experiments/check_fused_progressive.py",
+          "expected": "b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55",
+          "actual": "b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55",
+          "match": true
+        }
+      ],
+      "runtime_manifest_source_checks": [
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/eval64_shard0_v1.source/code/experiments/run_cycle.py",
+          "local_evidence": "code/experiments/run_cycle.py",
+          "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/eval64_shard0_v1.source/code/experiments/bank.py",
+          "local_evidence": "code/experiments/bank.py",
+          "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/configs/data/final_eval64_runner.json",
+          "local_evidence": "configs/data/final_eval64_runner.json",
+          "expected": "539c265fbd402d647737c20b2dcda696ca076e9bfb2bc04893fbb721256a3623",
+          "actual": "539c265fbd402d647737c20b2dcda696ca076e9bfb2bc04893fbb721256a3623",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/eval64_shard0_v1.source/code/experiments/fused_progressive.py",
+          "local_evidence": "code/experiments/fused_progressive.py",
+          "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "match": true
+        }
+      ],
+      "gain_table_object_exactly_equals_frozen_table": true,
+      "reference_answers_visible_to_runner": false,
+      "reference_argument": null,
+      "model_runtime_fingerprints": {
+        "values": {
+          "config.json": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "model.safetensors.index.json": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "tokenizer_config.json": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f"
+        },
+        "all_match_prior_full_model_audit": true
+      },
+      "torch": "2.4.1+cu121",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "realized_extra_ranges_bytes": {
+        "full:base": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0.0
+        },
+        "base2:base": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0.0
+        },
+        "native4:base": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0.0
+        },
+        "asym:base": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0.0
+        },
+        "asym:uniform": {
+          "minimum": 11225088,
+          "maximum": 12773376,
+          "mean": 11793600.0
+        },
+        "asym:random": {
+          "minimum": 12386304,
+          "maximum": 15482880,
+          "mean": 13112064.0
+        },
+        "asym:periodic": {
+          "minimum": 16754688,
+          "maximum": 16754688,
+          "mean": 16754688.0
+        },
+        "asym:prefill": {
+          "minimum": 13934592,
+          "maximum": 13934592,
+          "mean": 13934592.0
+        },
+        "asym:early": {
+          "minimum": 16754688,
+          "maximum": 16754688,
+          "mean": 16754688.0
+        },
+        "asym:margin": {
+          "minimum": 0,
+          "maximum": 15955968,
+          "mean": 9841408.0
+        },
+        "asym:margin_write": {
+          "minimum": 0,
+          "maximum": 12386304,
+          "mean": 4790016.0
+        },
+        "asym:carrier_write": {
+          "minimum": 0,
+          "maximum": 12386304,
+          "mean": 4790016.0
+        },
+        "asym:table_current": {
+          "minimum": 11225088,
+          "maximum": 11225088,
+          "mean": 11225088.0
+        },
+        "asym:table_future": {
+          "minimum": 11225088,
+          "maximum": 11225088,
+          "mean": 11225088.0
+        },
+        "asym:probe_l0_t0.05": {
+          "minimum": 16726016,
+          "maximum": 16775168,
+          "mean": 16747712.0
+        },
+        "asym:probe_l7_t0.02": {
+          "minimum": 16613376,
+          "maximum": 16777216,
+          "mean": 16736448.0
+        },
+        "asym:probe_l14_t0.02": {
+          "minimum": 16343040,
+          "maximum": 16777216,
+          "mean": 16642240.0
+        }
+      },
+      "storage_profiles": {
+        "full:base": [
+          {
+            "base_ratio": 1.0,
+            "residual_ratio": 0.0,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "base2:base": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.0,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "native4:base": [
+          {
+            "base_ratio": 0.265625,
+            "residual_ratio": 0.0,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:base": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:uniform": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:random": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:periodic": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:prefill": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:early": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:margin": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:margin_write": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:carrier_write": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:table_current": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:table_future": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:probe_l0_t0.05": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:probe_l7_t0.02": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:probe_l14_t0.02": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ]
+      }
+    },
+    {
+      "shard": 1,
+      "path": "results\\eval64_shard1_v1",
+      "complete_receipt": {
+        "records_added": 544,
+        "paid_calls": 0
+      },
+      "records": 544,
+      "turns": 5440,
+      "unique_sessions": 32,
+      "unique_images": 32,
+      "records_sha256": "8d6839d0732cd9e513b6af3290cd7073703e1944af67adcf824c78b62008befb",
+      "manifest_sha256": "c2a1d1db200ff1a5aa697ffc01d6f989ba8f11fc65e75b2082c2cf78179c7a65",
+      "receipt_sha256": "57a2b74a5a3aeecf4d2df78218fadfd9bada6e2b603ad2e368c79232df834faa",
+      "selected_ids": [
+        "clevr_dialog_1198",
+        "clevr_dialog_195",
+        "clevr_dialog_1289",
+        "clevr_dialog_1077",
+        "clevr_dialog_6983",
+        "clevr_dialog_12683",
+        "clevr_dialog_940",
+        "clevr_dialog_14239",
+        "clevr_dialog_13477",
+        "clevr_dialog_3605",
+        "clevr_dialog_13682",
+        "clevr_dialog_13823",
+        "clevr_dialog_5311",
+        "clevr_dialog_9229",
+        "clevr_dialog_7902",
+        "clevr_dialog_2548",
+        "clevr_dialog_3736",
+        "clevr_dialog_539",
+        "clevr_dialog_4837",
+        "clevr_dialog_8185",
+        "clevr_dialog_3172",
+        "clevr_dialog_10887",
+        "clevr_dialog_8843",
+        "clevr_dialog_8234",
+        "clevr_dialog_9876",
+        "clevr_dialog_10528",
+        "clevr_dialog_10958",
+        "clevr_dialog_3646",
+        "clevr_dialog_4313",
+        "clevr_dialog_10572",
+        "clevr_dialog_10471",
+        "clevr_dialog_3520"
+      ],
+      "selected_ids_match_manifest_slice": true,
+      "expected_configuration_set_complete": true,
+      "all_methods_initial_logit_hash_equal": true,
+      "per_record_pass_counts": {
+        "expected_selected_id": 544,
+        "ten_unique_turns": 544,
+        "ledger_recomputed_equal": 544,
+        "runtime_ledger_exact": 544,
+        "recorded_budget_ok": 544,
+        "budget_is_16mib": 544,
+        "computed_within_budget": 544,
+        "paid_calls_zero": 544,
+        "free_running": 544,
+        "model_path_equal": 544,
+        "no_diagnostic_or_kvarn_reference_owner": 544
+      },
+      "violations": [],
+      "source_snapshot_sha256_checks": [
+        {
+          "path": "code/bytes.py",
+          "expected": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+          "actual": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+          "match": true
+        },
+        {
+          "path": "code/experiments/carrier_surgery_v2.py",
+          "expected": "55120e2ac6a3c130c77f275dcc5035a8691d99bbd89763589316fb60ac5a81c7",
+          "actual": "55120e2ac6a3c130c77f275dcc5035a8691d99bbd89763589316fb60ac5a81c7",
+          "match": true
+        },
+        {
+          "path": "code/experiments/carrier_surgery.py",
+          "expected": "f52ddb87714b4dcdc954ff8d7e4dab0441715ebda6e93a7a2904e7d68be65b09",
+          "actual": "f52ddb87714b4dcdc954ff8d7e4dab0441715ebda6e93a7a2904e7d68be65b09",
+          "match": true
+        },
+        {
+          "path": "code/experiments/mechanism_fidelity.py",
+          "expected": "8ffc74b6db34c303e3ffed0fc75e7659b6acb178dce8eef8ee7cb19dbe552527",
+          "actual": "8ffc74b6db34c303e3ffed0fc75e7659b6acb178dce8eef8ee7cb19dbe552527",
+          "match": true
+        },
+        {
+          "path": "code/experiments/kvarn_quality_smoke.py",
+          "expected": "00d25c29046e6f1464c26d77c525a694a695affebed554c94e0bd546aa213a4e",
+          "actual": "00d25c29046e6f1464c26d77c525a694a695affebed554c94e0bd546aa213a4e",
+          "match": true
+        },
+        {
+          "path": "code/experiments/native_parity.py",
+          "expected": "cbd224c9e88ae52f450756e0a3a761d1937b757619719a1b4407707cd972e4f8",
+          "actual": "cbd224c9e88ae52f450756e0a3a761d1937b757619719a1b4407707cd972e4f8",
+          "match": true
+        },
+        {
+          "path": "code/experiments/self_probe.py",
+          "expected": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+          "actual": "7742694cfd90583202a557fc92cc90ecb1604e24ec63e4827dafa6ea609bc3a7",
+          "match": true
+        },
+        {
+          "path": "code/experiments/fused_progressive.py",
+          "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "match": true
+        },
+        {
+          "path": "code/experiments/bank.py",
+          "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "match": true
+        },
+        {
+          "path": "code/experiments/mechanism.py",
+          "expected": "e13d4fcf97ba5b5506e32b29480adcb1c093ae885dbaee7bdb918837007a5c65",
+          "actual": "e13d4fcf97ba5b5506e32b29480adcb1c093ae885dbaee7bdb918837007a5c65",
+          "match": true
+        },
+        {
+          "path": "code/experiments/run_cycle.py",
+          "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "match": true
+        },
+        {
+          "path": "code/experiments/check_fused_progressive.py",
+          "expected": "b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55",
+          "actual": "b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55",
+          "match": true
+        }
+      ],
+      "runtime_manifest_source_checks": [
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/eval64_shard1_v1.source/code/experiments/run_cycle.py",
+          "local_evidence": "code/experiments/run_cycle.py",
+          "expected": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "actual": "9ecd9fa9b25317a6a67ddfb314429d2c56ef87bd7847a68267bb13d36f3e7551",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/eval64_shard1_v1.source/code/experiments/bank.py",
+          "local_evidence": "code/experiments/bank.py",
+          "expected": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "actual": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/configs/data/final_eval64_runner.json",
+          "local_evidence": "configs/data/final_eval64_runner.json",
+          "expected": "539c265fbd402d647737c20b2dcda696ca076e9bfb2bc04893fbb721256a3623",
+          "actual": "539c265fbd402d647737c20b2dcda696ca076e9bfb2bc04893fbb721256a3623",
+          "match": true
+        },
+        {
+          "runtime_path": "/path/to/TrajKV/jobs/eval64_shard1_v1.source/code/experiments/fused_progressive.py",
+          "local_evidence": "code/experiments/fused_progressive.py",
+          "expected": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "actual": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+          "match": true
+        }
+      ],
+      "gain_table_object_exactly_equals_frozen_table": true,
+      "reference_answers_visible_to_runner": false,
+      "reference_argument": null,
+      "model_runtime_fingerprints": {
+        "values": {
+          "config.json": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+          "model.safetensors.index.json": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "tokenizer_config.json": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f"
+        },
+        "all_match_prior_full_model_audit": true
+      },
+      "torch": "2.4.1+cu121",
+      "gpu_name": "NVIDIA GeForce RTX 3090",
+      "realized_extra_ranges_bytes": {
+        "full:base": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0.0
+        },
+        "base2:base": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0.0
+        },
+        "native4:base": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0.0
+        },
+        "asym:base": {
+          "minimum": 0,
+          "maximum": 0,
+          "mean": 0.0
+        },
+        "asym:uniform": {
+          "minimum": 11225088,
+          "maximum": 12773376,
+          "mean": 11708928.0
+        },
+        "asym:random": {
+          "minimum": 12386304,
+          "maximum": 15482880,
+          "mean": 12918528.0
+        },
+        "asym:periodic": {
+          "minimum": 16754688,
+          "maximum": 16754688,
+          "mean": 16754688.0
+        },
+        "asym:prefill": {
+          "minimum": 13934592,
+          "maximum": 13934592,
+          "mean": 13934592.0
+        },
+        "asym:early": {
+          "minimum": 16754688,
+          "maximum": 16754688,
+          "mean": 16754688.0
+        },
+        "asym:margin": {
+          "minimum": 0,
+          "maximum": 15962112,
+          "mean": 9912320.0
+        },
+        "asym:margin_write": {
+          "minimum": 0,
+          "maximum": 7741440,
+          "mean": 4451328.0
+        },
+        "asym:carrier_write": {
+          "minimum": 0,
+          "maximum": 7741440,
+          "mean": 4451328.0
+        },
+        "asym:table_current": {
+          "minimum": 11225088,
+          "maximum": 11225088,
+          "mean": 11225088.0
+        },
+        "asym:table_future": {
+          "minimum": 11225088,
+          "maximum": 11225088,
+          "mean": 11225088.0
+        },
+        "asym:probe_l0_t0.05": {
+          "minimum": 16723968,
+          "maximum": 16777216,
+          "mean": 16749696.0
+        },
+        "asym:probe_l7_t0.02": {
+          "minimum": 16631808,
+          "maximum": 16775168,
+          "mean": 16739264.0
+        },
+        "asym:probe_l14_t0.02": {
+          "minimum": 16351232,
+          "maximum": 16777216,
+          "mean": 16684544.0
+        }
+      },
+      "storage_profiles": {
+        "full:base": [
+          {
+            "base_ratio": 1.0,
+            "residual_ratio": 0.0,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "base2:base": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.0,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "native4:base": [
+          {
+            "base_ratio": 0.265625,
+            "residual_ratio": 0.0,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:base": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:uniform": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:random": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:periodic": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:prefill": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:early": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:margin": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:margin_write": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:carrier_write": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:table_current": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:table_future": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:probe_l0_t0.05": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:probe_l7_t0.02": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ],
+        "asym:probe_l14_t0.02": [
+          {
+            "base_ratio": 0.140625,
+            "residual_ratio": 0.10546875,
+            "kernel_variant": "legacy_p202_fused",
+            "kernel_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1"
+          }
+        ]
+      }
+    }
+  ],
+  "totals": {
+    "records": 1088,
+    "turns": 10880,
+    "unique_sessions": 64,
+    "unique_images": 64,
+    "expected_records": 1088,
+    "expected_answers": 10880,
+    "records_exact": true,
+    "answers_exact": true,
+    "shard_session_overlap": [],
+    "selected_ids_exactly_frozen_eval64": true,
+    "snapshot_receipts_equal": true,
+    "generation_and_model_arguments_equal": true
+  },
+  "data_and_calibration": {
+    "runner_target_answer_key_occurrences": [],
+    "local_image_sha256_checks": [
+      {
+        "session_id": "clevr_dialog_644",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_000644.png",
+        "expected": "120f332aee45a40b363e23f5505b7d4e87009614f325160eb64ee85f8d226357",
+        "actual": "120f332aee45a40b363e23f5505b7d4e87009614f325160eb64ee85f8d226357",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_8895",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_008895.png",
+        "expected": "d5134425805be6709d9e73b218a0e0d9d10ec2055da835f0d29bc7f966491c2c",
+        "actual": "d5134425805be6709d9e73b218a0e0d9d10ec2055da835f0d29bc7f966491c2c",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10207",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010207.png",
+        "expected": "225fc04c14831abb9722d3bf78d0223d641768a59e14c0f632893b17281a05bf",
+        "actual": "225fc04c14831abb9722d3bf78d0223d641768a59e14c0f632893b17281a05bf",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_13376",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_013376.png",
+        "expected": "9088bc366cb58a5d66f502eb2d1eb8f82dd6cb49fce8e60ad4662b7e8897b745",
+        "actual": "9088bc366cb58a5d66f502eb2d1eb8f82dd6cb49fce8e60ad4662b7e8897b745",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_1428",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_001428.png",
+        "expected": "d29550ebba2853bac03d41007f15e97a1a7830ebad56f1ea8cc54708b0a3b4f1",
+        "actual": "d29550ebba2853bac03d41007f15e97a1a7830ebad56f1ea8cc54708b0a3b4f1",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_3557",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_003557.png",
+        "expected": "98fc8f4c3bb836f4a0447733406baadcb5d39092a6ffea1ecd17e33541d95a85",
+        "actual": "98fc8f4c3bb836f4a0447733406baadcb5d39092a6ffea1ecd17e33541d95a85",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_12505",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_012505.png",
+        "expected": "7c715a38c695348935e289e817e3a902e7f2dea22cb6ccb7ac94cb98759b14df",
+        "actual": "7c715a38c695348935e289e817e3a902e7f2dea22cb6ccb7ac94cb98759b14df",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_9550",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_009550.png",
+        "expected": "cbceca356c2f52bde3c2fc307552be26b4bd0c80f34fbcd2fdff2a8de8259bfd",
+        "actual": "cbceca356c2f52bde3c2fc307552be26b4bd0c80f34fbcd2fdff2a8de8259bfd",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_6162",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_006162.png",
+        "expected": "e68f86cfe608a02d805b71452f4d561f0d587a4f6622968523b1315d2ef069b7",
+        "actual": "e68f86cfe608a02d805b71452f4d561f0d587a4f6622968523b1315d2ef069b7",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_5669",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_005669.png",
+        "expected": "f04606cb0d211f831991d763c9cc2962cf375aafc35d2a1eeed6eb6155664497",
+        "actual": "f04606cb0d211f831991d763c9cc2962cf375aafc35d2a1eeed6eb6155664497",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_8647",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_008647.png",
+        "expected": "09e71bc30df519cce88a6a91bf90ca706ae308d0d51ec8a95b2537d8ac7b02bf",
+        "actual": "09e71bc30df519cce88a6a91bf90ca706ae308d0d51ec8a95b2537d8ac7b02bf",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_4530",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_004530.png",
+        "expected": "e9346b068e2dea931ac03b4c68af36435416b1b0ddcccb7a948fcaaa806b964e",
+        "actual": "e9346b068e2dea931ac03b4c68af36435416b1b0ddcccb7a948fcaaa806b964e",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_74",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_000074.png",
+        "expected": "7f9196a4d668c182493c5e2137c92f75e8a24e7dc1a28b594f9eb0a32159966c",
+        "actual": "7f9196a4d668c182493c5e2137c92f75e8a24e7dc1a28b594f9eb0a32159966c",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_12343",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_012343.png",
+        "expected": "549c21580348f5325436823a0e29ed6eb0a989e0ae0a4686fe30f644c0554c63",
+        "actual": "549c21580348f5325436823a0e29ed6eb0a989e0ae0a4686fe30f644c0554c63",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_11720",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_011720.png",
+        "expected": "8bb365a7bb05f0f93ac3e6036d32348ceecae7491c8894ca10ccd4eb89e4bccc",
+        "actual": "8bb365a7bb05f0f93ac3e6036d32348ceecae7491c8894ca10ccd4eb89e4bccc",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_2899",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_002899.png",
+        "expected": "f5d672df75398634a72b3bcfd7d5c35504e02e0618e5315aaef464fdcce436f7",
+        "actual": "f5d672df75398634a72b3bcfd7d5c35504e02e0618e5315aaef464fdcce436f7",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_3542",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_003542.png",
+        "expected": "884aad944128c2b064e12243b7ac104d475a2693be0669de0cb6f055dc15d91b",
+        "actual": "884aad944128c2b064e12243b7ac104d475a2693be0669de0cb6f055dc15d91b",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_8533",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_008533.png",
+        "expected": "b4365c62324ba9c09d1b3a0ebc8feed395cbb89b8c779a4092605fdb16f679ee",
+        "actual": "b4365c62324ba9c09d1b3a0ebc8feed395cbb89b8c779a4092605fdb16f679ee",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_6806",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_006806.png",
+        "expected": "61e8e88a8fb9021587af825ad8ae97dc2322779b0711d2aafeeb4d7c1b201e49",
+        "actual": "61e8e88a8fb9021587af825ad8ae97dc2322779b0711d2aafeeb4d7c1b201e49",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10119",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010119.png",
+        "expected": "bd4a5552131d8d37010021ff8afd5ece30a4940be973a2cfd74a2e88251a97d4",
+        "actual": "bd4a5552131d8d37010021ff8afd5ece30a4940be973a2cfd74a2e88251a97d4",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_7280",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_007280.png",
+        "expected": "205f5a1c21eabc274e49c2bee3de309db5f9fe243d4851cdc1e606dbfdf355c5",
+        "actual": "205f5a1c21eabc274e49c2bee3de309db5f9fe243d4851cdc1e606dbfdf355c5",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_9441",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_009441.png",
+        "expected": "a9de8f580c5e9b554fbdcf4e416533afb1155357d38e87199b6ebf6903a70d0a",
+        "actual": "a9de8f580c5e9b554fbdcf4e416533afb1155357d38e87199b6ebf6903a70d0a",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_9245",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_009245.png",
+        "expected": "6f01e4b8c28d61a9f127947322e5132ddc5dcd6f624850d6d16d7d163d606a78",
+        "actual": "6f01e4b8c28d61a9f127947322e5132ddc5dcd6f624850d6d16d7d163d606a78",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_8835",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_008835.png",
+        "expected": "f0426a45018d989d4faff8eaf8a59cae2590e06a2482dd374f40fdc9c71dc150",
+        "actual": "f0426a45018d989d4faff8eaf8a59cae2590e06a2482dd374f40fdc9c71dc150",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10497",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010497.png",
+        "expected": "b8019a3cb96111f8f89ec5367f889056098890792a07fac59b49a3ebecc3478c",
+        "actual": "b8019a3cb96111f8f89ec5367f889056098890792a07fac59b49a3ebecc3478c",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_6262",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_006262.png",
+        "expected": "e182e332754e215c958e30896cba503676a01ac653f3f51e7bb1005b9b40bcad",
+        "actual": "e182e332754e215c958e30896cba503676a01ac653f3f51e7bb1005b9b40bcad",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_2398",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_002398.png",
+        "expected": "3387a70efb458a896e2b641fc74221125e90b63d63f55f5171c0e90079974180",
+        "actual": "3387a70efb458a896e2b641fc74221125e90b63d63f55f5171c0e90079974180",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_9967",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_009967.png",
+        "expected": "4fa95c484f6a703bb3dd6f1b5f168af77078c849554dcedcd3e802a6e197f299",
+        "actual": "4fa95c484f6a703bb3dd6f1b5f168af77078c849554dcedcd3e802a6e197f299",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_3059",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_003059.png",
+        "expected": "f0efde0d6b74fcab05795b5a4dd18f2e84a0189b2254ff5915908f4acbf0c3da",
+        "actual": "f0efde0d6b74fcab05795b5a4dd18f2e84a0189b2254ff5915908f4acbf0c3da",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_4119",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_004119.png",
+        "expected": "a892271929ae715798b6f59db0eae92b6db426b44d40f7b1c46ffefa806a0c73",
+        "actual": "a892271929ae715798b6f59db0eae92b6db426b44d40f7b1c46ffefa806a0c73",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10756",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010756.png",
+        "expected": "ef3176267bdd60f0a2cd28ae5fef49eb27f0fbb521432f1e42e86ef56467c0c0",
+        "actual": "ef3176267bdd60f0a2cd28ae5fef49eb27f0fbb521432f1e42e86ef56467c0c0",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_4941",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_004941.png",
+        "expected": "cfae5d293193f8b0ecf70a6325e4bd8915291f78cc229d0314294d5fe8859295",
+        "actual": "cfae5d293193f8b0ecf70a6325e4bd8915291f78cc229d0314294d5fe8859295",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_1198",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_001198.png",
+        "expected": "8379f62672bd495a3560cedea648f4a4b446e2c889d1380bd15d450f0d4d0963",
+        "actual": "8379f62672bd495a3560cedea648f4a4b446e2c889d1380bd15d450f0d4d0963",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_195",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_000195.png",
+        "expected": "2454a59d088adae016f63f06c8de9243511cb9df1ecc57c01518c233b210bcb1",
+        "actual": "2454a59d088adae016f63f06c8de9243511cb9df1ecc57c01518c233b210bcb1",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_1289",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_001289.png",
+        "expected": "3fc7f6eccbfe8c153dcaf97ea10e493dab9599ec6d29c6bb08adcf7c462edae0",
+        "actual": "3fc7f6eccbfe8c153dcaf97ea10e493dab9599ec6d29c6bb08adcf7c462edae0",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_1077",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_001077.png",
+        "expected": "e745ff736ac038fa8f3c34781fee2777427338d28f27f8470733ab4cd43906bc",
+        "actual": "e745ff736ac038fa8f3c34781fee2777427338d28f27f8470733ab4cd43906bc",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_6983",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_006983.png",
+        "expected": "27c0e2cabc541cf311dcfa641a050ce485530da3caf28ad4a95fe16e2ce288f0",
+        "actual": "27c0e2cabc541cf311dcfa641a050ce485530da3caf28ad4a95fe16e2ce288f0",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_12683",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_012683.png",
+        "expected": "ca707acb37a61156e795e57700bee1b5d88cf715ac2eb49e9ab1061b4639dfef",
+        "actual": "ca707acb37a61156e795e57700bee1b5d88cf715ac2eb49e9ab1061b4639dfef",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_940",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_000940.png",
+        "expected": "9cf24621ee0b7e66380bb7cfd97633dfad0a96d7163149e755a774c842c8c9a9",
+        "actual": "9cf24621ee0b7e66380bb7cfd97633dfad0a96d7163149e755a774c842c8c9a9",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_14239",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_014239.png",
+        "expected": "ff800a5f2a288915805c0b3f8188c5d4a7a81223ab88d5a2ef5ca25215b78d56",
+        "actual": "ff800a5f2a288915805c0b3f8188c5d4a7a81223ab88d5a2ef5ca25215b78d56",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_13477",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_013477.png",
+        "expected": "86ba5ad95c50756a8a59caf19d0d21957d185f2e8506ff00b68bc2b69d1be0fd",
+        "actual": "86ba5ad95c50756a8a59caf19d0d21957d185f2e8506ff00b68bc2b69d1be0fd",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_3605",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_003605.png",
+        "expected": "074130cca507864cbcd416439802da2fa6b9587f04b3fcefa0ea5e3d3bd4de92",
+        "actual": "074130cca507864cbcd416439802da2fa6b9587f04b3fcefa0ea5e3d3bd4de92",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_13682",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_013682.png",
+        "expected": "4e6f554c330da2eaea3355611021c90afc908867531eb9d78ce7b822caeb1270",
+        "actual": "4e6f554c330da2eaea3355611021c90afc908867531eb9d78ce7b822caeb1270",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_13823",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_013823.png",
+        "expected": "c2fe235d0ab6c85b268897eb73f73a260088d6b855ecb27a418a651b67f8cb31",
+        "actual": "c2fe235d0ab6c85b268897eb73f73a260088d6b855ecb27a418a651b67f8cb31",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_5311",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_005311.png",
+        "expected": "9ce00203070a487f3727030a97331e92e2f5dc954d41588785b97c456b795636",
+        "actual": "9ce00203070a487f3727030a97331e92e2f5dc954d41588785b97c456b795636",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_9229",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_009229.png",
+        "expected": "0571d25a60d3113ecf19b18b12c4c971f3264dc5e1a114190377e51f73713955",
+        "actual": "0571d25a60d3113ecf19b18b12c4c971f3264dc5e1a114190377e51f73713955",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_7902",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_007902.png",
+        "expected": "ba37313c1a9f016de2113ca7f6280c32029f3d785658a40bfbe0630f843b679b",
+        "actual": "ba37313c1a9f016de2113ca7f6280c32029f3d785658a40bfbe0630f843b679b",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_2548",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_002548.png",
+        "expected": "6c1da5b05008d413b2efbc33b8898fe480b0e7a4c9338d8e6b0399b548f5a3a6",
+        "actual": "6c1da5b05008d413b2efbc33b8898fe480b0e7a4c9338d8e6b0399b548f5a3a6",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_3736",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_003736.png",
+        "expected": "657be8a3b28d3a5b54fea70d46e0fd9cb4e916e168ebe7eae167d7146b0b2405",
+        "actual": "657be8a3b28d3a5b54fea70d46e0fd9cb4e916e168ebe7eae167d7146b0b2405",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_539",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_000539.png",
+        "expected": "a00b8baa797ed2715130fef9a51c687ee389596fd6a27ff59200a10e6c1dc671",
+        "actual": "a00b8baa797ed2715130fef9a51c687ee389596fd6a27ff59200a10e6c1dc671",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_4837",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_004837.png",
+        "expected": "0dbf5b88e6ab13dbbb804ce88be18d641adcf805c7c065e365c5f1c094937dc6",
+        "actual": "0dbf5b88e6ab13dbbb804ce88be18d641adcf805c7c065e365c5f1c094937dc6",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_8185",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_008185.png",
+        "expected": "ac3652cd02077f1be95bb0077c95b379bfbc00a2b1eb4cc1ce4eb77ed9d9111c",
+        "actual": "ac3652cd02077f1be95bb0077c95b379bfbc00a2b1eb4cc1ce4eb77ed9d9111c",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_3172",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_003172.png",
+        "expected": "7f9e0c2bceb4dc035ef09e1f99e93d8a50de0e226558e87d27823703770813af",
+        "actual": "7f9e0c2bceb4dc035ef09e1f99e93d8a50de0e226558e87d27823703770813af",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10887",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010887.png",
+        "expected": "30fbd4fa41408b6fd6ba1e60917372db87fe1359ab523457ea3fda28538ab764",
+        "actual": "30fbd4fa41408b6fd6ba1e60917372db87fe1359ab523457ea3fda28538ab764",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_8843",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_008843.png",
+        "expected": "afefd2358c9d916b8bbc387782b75af096e04e4c8176ba955509d78f29505767",
+        "actual": "afefd2358c9d916b8bbc387782b75af096e04e4c8176ba955509d78f29505767",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_8234",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_008234.png",
+        "expected": "d1dc6b92cf3dde6da8d8cc547332b7f3d2913ae69b6cf069b09f086aa312e389",
+        "actual": "d1dc6b92cf3dde6da8d8cc547332b7f3d2913ae69b6cf069b09f086aa312e389",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_9876",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_009876.png",
+        "expected": "af48d3e3a18b6f5b81fed92f571ebac2051c8f91868272e0e1565775983be594",
+        "actual": "af48d3e3a18b6f5b81fed92f571ebac2051c8f91868272e0e1565775983be594",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10528",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010528.png",
+        "expected": "ff268851fc43798add076de599b4915d8b1c8fac325ed1a62c78f9549e7e8ae0",
+        "actual": "ff268851fc43798add076de599b4915d8b1c8fac325ed1a62c78f9549e7e8ae0",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10958",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010958.png",
+        "expected": "c597d17e4496e66dfa12b950825926219ceaa47d5fb95ffa63fcbf82f5b028e1",
+        "actual": "c597d17e4496e66dfa12b950825926219ceaa47d5fb95ffa63fcbf82f5b028e1",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_3646",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_003646.png",
+        "expected": "6bc8d14f7bd492b297dc1211dc52c30491fda06f6058aac52f3d455ca85468f0",
+        "actual": "6bc8d14f7bd492b297dc1211dc52c30491fda06f6058aac52f3d455ca85468f0",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_4313",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_004313.png",
+        "expected": "30a4d4b91909a351fdada2ed54d9203b47a98b397a7f7a3e347484b53d4a328b",
+        "actual": "30a4d4b91909a351fdada2ed54d9203b47a98b397a7f7a3e347484b53d4a328b",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10572",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010572.png",
+        "expected": "4ac031dab9b4d9752a94842ca8437d88d858dc9ec1d89801344e4356a1d7b6d8",
+        "actual": "4ac031dab9b4d9752a94842ca8437d88d858dc9ec1d89801344e4356a1d7b6d8",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_10471",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_010471.png",
+        "expected": "d4152e7f0a67e2f8d74441bb07b914445f204595b7f103bcdb4d5326f7e57fa8",
+        "actual": "d4152e7f0a67e2f8d74441bb07b914445f204595b7f103bcdb4d5326f7e57fa8",
+        "match": true
+      },
+      {
+        "session_id": "clevr_dialog_3520",
+        "local_image": "/path/to/VisContract_P14_2\\results\\p182_dataset_audit\\clevr_dialog_prepared\\images\\CLEVR_val_003520.png",
+        "expected": "6854404c1889f2cdc2eb5db880c89a23261b36dbdc5b659d2004bf6d4e3d4a7e",
+        "actual": "6854404c1889f2cdc2eb5db880c89a23261b36dbdc5b659d2004bf6d4e3d4a7e",
+        "match": true
+      }
+    ],
+    "gain_training_sessions": [
+      "clevr_dialog_12324",
+      "clevr_dialog_247",
+      "clevr_dialog_3845",
+      "clevr_dialog_6653",
+      "clevr_dialog_6926",
+      "clevr_dialog_7843",
+      "clevr_dialog_8334",
+      "clevr_dialog_8937"
+    ],
+    "gain_training_id_overlap": [],
+    "gain_training_image_overlap": [],
+    "development32_image_overlap": [],
+    "reserved_rep32_id_overlap_from_freeze_metadata_only": [],
+    "gain_calibration_source_sha256_checks": [
+      {
+        "path": "/path/to/TrajKV\\results\\fidelity_dev8_gpu1_v2\\records.jsonl",
+        "expected": "ca0176a4eefbea2d8506f25a54d104022c4f1580e8c49d1a81169257ef20604c",
+        "actual": "ca0176a4eefbea2d8506f25a54d104022c4f1580e8c49d1a81169257ef20604c",
+        "match": true
+      },
+      {
+        "path": "/path/to/TrajKV\\results\\fidelity_dev8_gpu1_v2\\manifest.json",
+        "expected": "acc2090bb4c3b54f0f5335d813fa4919e050f39ac2933ec7eeff900ebb642fec",
+        "actual": "acc2090bb4c3b54f0f5335d813fa4919e050f39ac2933ec7eeff900ebb642fec",
+        "match": true
+      }
+    ],
+    "prior_use_flags_all_false": true,
+    "local_holdout_claim": "image-heldout for this cycle; prior-use scan does not establish absence from model pretraining"
+  },
+  "model_evidence_scope": {
+    "receipt": "audit/model_identity.json",
+    "status": "PASS_FULL_MODEL_IDENTITY",
+    "receipt_completed_at": "2026-11-12T20:48:46.553285+08:00",
+    "full_file_audit_count": 11,
+    "weight_shard_count": 4,
+    "all_files_stable_during_original_hash": true,
+    "runtime_manifest_fingerprint_keys": [
+      "config.json",
+      "model.safetensors.index.json",
+      "tokenizer_config.json"
+    ],
+    "weights_rehashed_by_this_audit": false,
+    "scope": "prior full 4-shard weight/tokenizer/config SHA256 audit plus matching runtime config/index/tokenizer_config fingerprints"
+  },
+  "runtime_kernel": {
+    "local_legacy_kernel": "/path/to/VisContract_P14_2\\scripts\\p202_fused.py",
+    "local_sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1",
+    "all_records_match_local_legacy_kernel": true,
+    "records": [
+      {
+        "variant": "legacy_p202_fused",
+        "sha256": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1",
+        "count": 1088
+      }
+    ]
+  },
+  "limits": [
+    "Local frozen source files, archived job snapshots and runtime-declared hashes were verified; this is not an exhaustive import-tree or remote process-memory attestation.",
+    "Historical legacy_scripts helpers and official KIVI codec are imported by frozen core from the historical directory; not every transitive dependency has an individually recorded launch hash.",
+    "All model weights were fully hashed before evaluation, while runtime manifests fingerprint config/index/tokenizer_config; this audit did not reread remote weight shards after inference.",
+    "All 64 local input image hashes match frozen sample metadata; remote image bytes were not rehashed by this local audit during generation.",
+    "The common 16 MiB allowance is not exact realized-read matching. Per-policy observed ranges are retained.",
+    "Probe controller local two-read charges include one normal read; global extra was recomputed only from actual fused-call residuals plus replay/repair/probe base/text rereads."
+  ],
+  "status": "PASS_DECLARED_ARTIFACT_IDENTITY_AND_LEDGER_SCOPE"
+}

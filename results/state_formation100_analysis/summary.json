@@ -1,0 +1,535 @@
+{
+  "table": [
+    {
+      "protocol": "compressed_question",
+      "variant": "base2_reference",
+      "images": 100,
+      "anls": 0.8559753060559513,
+      "exact": 0.73
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "fp16_reference100",
+      "images": 100,
+      "anls": 0.866745670995671,
+      "exact": 0.76
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "mad_k1_vmadc",
+      "images": 100,
+      "anls": 0.33527989342606046,
+      "exact": 0.15
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "native_k2v1",
+      "images": 100,
+      "anls": 0.6552682416706014,
+      "exact": 0.47
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "rtn_k1_vmadc_headgain",
+      "images": 100,
+      "anls": 0.4788480523100088,
+      "exact": 0.3
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "rtn_k1v1",
+      "images": 100,
+      "anls": 0.0,
+      "exact": 0.0
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "base2_reference",
+      "images": 100,
+      "anls": 0.8677114171670623,
+      "exact": 0.74
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "fp16_reference100",
+      "images": 100,
+      "anls": 0.866745670995671,
+      "exact": 0.76
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "mad_k1_vmadc",
+      "images": 100,
+      "anls": 0.628580240189508,
+      "exact": 0.41
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "native_k2v1",
+      "images": 100,
+      "anls": 0.7794144804953629,
+      "exact": 0.57
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "rtn_k1_vmadc_headgain",
+      "images": 100,
+      "anls": 0.6636567755205863,
+      "exact": 0.43
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "rtn_k1v1",
+      "images": 100,
+      "anls": 0.0,
+      "exact": 0.0
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "base2_reference",
+      "images": 100,
+      "anls": 0.8460518246373511,
+      "exact": 0.72
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "fp16_reference100",
+      "images": 100,
+      "anls": 0.866745670995671,
+      "exact": 0.76
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "mad_k1_vmadc",
+      "images": 100,
+      "anls": 0.6534136784903376,
+      "exact": 0.43
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "native_k2v1",
+      "images": 100,
+      "anls": 0.8254230000259412,
+      "exact": 0.65
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "rtn_k1_vmadc_headgain",
+      "images": 100,
+      "anls": 0.6588510028618725,
+      "exact": 0.45
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "rtn_k1v1",
+      "images": 100,
+      "anls": 0.0,
+      "exact": 0.0
+    }
+  ],
+  "contrasts": [
+    {
+      "variant": "base2_reference",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.011736111111111112,
+      "ci_low": -0.0015972222222222232,
+      "ci_high": 0.03666666666666667,
+      "p": 0.3740962590374096,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "base2_reference",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": -0.021659592529711374,
+      "ci_low": -0.055,
+      "ci_high": 0.0033404074702886245,
+      "p": 0.25045749542504575,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "base2_reference",
+      "left": "native_question_shared_first",
+      "right": "compressed_question",
+      "delta": -0.009923481418600267,
+      "ci_low": -0.048611111111111105,
+      "ci_high": 0.024861287964534993,
+      "p": 0.6370636293637063,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "fp16_reference100",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p": 1.0,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "fp16_reference100",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p": 1.0,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "fp16_reference100",
+      "left": "native_question_shared_first",
+      "right": "compressed_question",
+      "delta": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p": 1.0,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "mad_k1_vmadc",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.29330034676344746,
+      "ci_low": 0.20899539060982136,
+      "ci_high": 0.3802740210312507,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "mad_k1_vmadc",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": 0.024833438300829607,
+      "ci_low": -0.02472904360132621,
+      "ci_high": 0.07490166138209617,
+      "p": 0.34873651263487365,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "mad_k1_vmadc",
+      "left": "native_question_shared_first",
+      "right": "compressed_question",
+      "delta": 0.31813378506427703,
+      "ci_low": 0.2350423974597387,
+      "ci_high": 0.4077893319373512,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "native_k2v1",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.12414623882476139,
+      "ci_low": 0.05766000264634413,
+      "ci_high": 0.19422257968968384,
+      "p": 0.00044999550004499957,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "native_k2v1",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": 0.04600851953057836,
+      "ci_low": -0.014358072319837024,
+      "ci_high": 0.10589204119682062,
+      "p": 0.14912850871491284,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "native_k2v1",
+      "left": "native_question_shared_first",
+      "right": "compressed_question",
+      "delta": 0.17015475835533977,
+      "ci_low": 0.08071258873555386,
+      "ci_high": 0.25846735304424256,
+      "p": 0.00011999880001199988,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1_vmadc_headgain",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.18480872321057742,
+      "ci_low": 0.10439511193640828,
+      "ci_high": 0.26664682145877006,
+      "p": 2.999970000299997e-05,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1_vmadc_headgain",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": -0.004805772658713835,
+      "ci_low": -0.04526197478991597,
+      "ci_high": 0.037680119880119885,
+      "p": 0.8240717592824072,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1_vmadc_headgain",
+      "left": "native_question_shared_first",
+      "right": "compressed_question",
+      "delta": 0.1800029505518636,
+      "ci_low": 0.10513937982307549,
+      "ci_high": 0.26034357574792366,
+      "p": 1.999980000199998e-05,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1v1",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p": 1.0,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1v1",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p": 1.0,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1v1",
+      "left": "native_question_shared_first",
+      "right": "compressed_question",
+      "delta": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p": 1.0,
+      "images": 100,
+      "questions": 100
+    }
+  ],
+  "differences_in_differences": [
+    {
+      "variant": "base2_reference",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.011736111111111112,
+      "ci_low": -0.0015972222222222232,
+      "ci_high": 0.03666666666666667,
+      "p": 0.3740962590374096,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "base2_reference",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": -0.021659592529711374,
+      "ci_low": -0.055,
+      "ci_high": 0.0033404074702886245,
+      "p": 0.25045749542504575,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "mad_k1_vmadc",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.29330034676344746,
+      "ci_low": 0.20899539060982136,
+      "ci_high": 0.3802740210312507,
+      "p": 9.99990000099999e-06,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "mad_k1_vmadc",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": 0.024833438300829607,
+      "ci_low": -0.02472904360132621,
+      "ci_high": 0.07490166138209617,
+      "p": 0.34873651263487365,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "native_k2v1",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.12414623882476139,
+      "ci_low": 0.05766000264634413,
+      "ci_high": 0.19422257968968384,
+      "p": 0.00044999550004499957,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "native_k2v1",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": 0.04600851953057836,
+      "ci_low": -0.014358072319837024,
+      "ci_high": 0.10589204119682062,
+      "p": 0.14912850871491284,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1_vmadc_headgain",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.18480872321057742,
+      "ci_low": 0.10439511193640828,
+      "ci_high": 0.26664682145877006,
+      "p": 2.999970000299997e-05,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1_vmadc_headgain",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": -0.004805772658713835,
+      "ci_low": -0.04526197478991597,
+      "ci_high": 0.037680119880119885,
+      "p": 0.8240717592824072,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1v1",
+      "left": "native_question_replay_last",
+      "right": "compressed_question",
+      "delta": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p": 1.0,
+      "images": 100,
+      "questions": 100
+    },
+    {
+      "variant": "rtn_k1v1",
+      "left": "native_question_shared_first",
+      "right": "native_question_replay_last",
+      "delta": 0.0,
+      "ci_low": 0.0,
+      "ci_high": 0.0,
+      "p": 1.0,
+      "images": 100,
+      "questions": 100
+    }
+  ],
+  "first_token_agreement": [
+    {
+      "protocol": "compressed_question",
+      "variant": "base2_reference",
+      "first_token_agreement_with_same_protocol_fp16": 0.9
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "fp16_reference100",
+      "first_token_agreement_with_same_protocol_fp16": 1.0
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "mad_k1_vmadc",
+      "first_token_agreement_with_same_protocol_fp16": 0.54
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "native_k2v1",
+      "first_token_agreement_with_same_protocol_fp16": 0.73
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "rtn_k1_vmadc_headgain",
+      "first_token_agreement_with_same_protocol_fp16": 0.65
+    },
+    {
+      "protocol": "compressed_question",
+      "variant": "rtn_k1v1",
+      "first_token_agreement_with_same_protocol_fp16": 0.02
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "base2_reference",
+      "first_token_agreement_with_same_protocol_fp16": 0.92
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "fp16_reference100",
+      "first_token_agreement_with_same_protocol_fp16": 1.0
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "mad_k1_vmadc",
+      "first_token_agreement_with_same_protocol_fp16": 0.86
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "native_k2v1",
+      "first_token_agreement_with_same_protocol_fp16": 0.82
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "rtn_k1_vmadc_headgain",
+      "first_token_agreement_with_same_protocol_fp16": 0.82
+    },
+    {
+      "protocol": "native_question_replay_last",
+      "variant": "rtn_k1v1",
+      "first_token_agreement_with_same_protocol_fp16": 0.0
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "base2_reference",
+      "first_token_agreement_with_same_protocol_fp16": 1.0
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "fp16_reference100",
+      "first_token_agreement_with_same_protocol_fp16": 1.0
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "mad_k1_vmadc",
+      "first_token_agreement_with_same_protocol_fp16": 1.0
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "native_k2v1",
+      "first_token_agreement_with_same_protocol_fp16": 1.0
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "rtn_k1_vmadc_headgain",
+      "first_token_agreement_with_same_protocol_fp16": 1.0
+    },
+    {
+      "protocol": "native_question_shared_first",
+      "variant": "rtn_k1v1",
+      "first_token_agreement_with_same_protocol_fp16": 1.0
+    }
+  ],
+  "scope": "matched100 development; native-question protocols are diagnostic, excluded from primary compression quality"
+}

@@ -1,0 +1,14 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/rotation_v2_probe20_gpu1_v1/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/rotation_v2_probe20_gpu1_v1.launch.json",
+  "tasks": [
+    {
+      "name": "quality",
+      "entrypoint": "run_variants.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/calib_read_precision100_gpu1_v1.json"
+      ]
+    }
+  ]
+}
