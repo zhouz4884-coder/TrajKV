@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "scope": "CPU formula, fallback, rounding and legacy-mode compatibility only; no GPU/model/task result",
+  "formula_name": "projection_preserving",
+  "provenance": "reuse of existing DirectionBank projection gain; not a new formula",
+  "formula": "norm(r)^2 / dot(r,t) for dot>1e-12, otherwise original norm gain",
+  "analytical_cases": 5,
+  "nonpositive_or_tiny_dot_fallback_cases": 4,
+  "legacy_modes": [
+    {
+      "book_words": 16,
+      "mode": "norm",
+      "indices_bitwise_unchanged": true,
+      "gain_bitwise_unchanged": true
+    },
+    {
+      "book_words": 16,
+      "mode": "ls",
+      "indices_bitwise_unchanged": true,
+      "gain_bitwise_unchanged": true
+    },
+    {
+      "book_words": 16,
+      "mode": "metric_ls",
+      "indices_bitwise_unchanged": true,
+      "gain_bitwise_unchanged": true
+    },
+    {
+      "book_words": 256,
+      "mode": "norm",
+      "indices_bitwise_unchanged": true,
+      "gain_bitwise_unchanged": true
+    },
+    {
+      "book_words": 256,
+      "mode": "ls",
+      "indices_bitwise_unchanged": true,
+      "gain_bitwise_unchanged": true
+    },
+    {
+      "book_words": 256,
+      "mode": "metric_ls",
+      "indices_bitwise_unchanged": true,
+      "gain_bitwise_unchanged": true
+    }
+  ],
+  "projection_book_sizes": [
+    16,
+    256
+  ],
+  "fp16_fold_rounding_sensitive_tokens": 23,
+  "old_encode_key_AST_unchanged": true,
+  "encode_key_AST_sha256": "87d2c3e16cd908b1b7a4079776a9902f8cb4cab906ad1098b12fbe8b9612a993",
+  "previous_codec_sha256": "ff0633da7f4f3448746e81c1d93842881e3469b2e1c31e323acddec0707e5bec",
+  "new_deployment_tensor_constants": 0,
+  "reader_modified": false,
+  "gpu_executed": false,
+  "claims_excluded": [
+    "unbiasedness",
+    "Euclidean optimality",
+    "task-quality benefit"
+  ],
+  "sources": {
+    "round7_projection_check.py": "c2278bcaa1d2203367d8a2569c59e65f26b92445a63a49cdb57a902333a4cee7",
+    "round7_key_codec.py": "80c2c16220097242b25d3f843a3b57569590131c02618e766e35f0f0791ab651",
+    "round7_key_bank.py": "38b6e0ea2486a900e404fa6347c91972198795f8972dc7ab2bf90527fbc1cdc5",
+    "round7_tail_key_bank.py": "151398dec2528492eaa8933672a3230fb89d348d0c380fd2d22e69267329807a",
+    "round7_key_attention.py": "b054e8629083b7685ad9e02289b500008b45fbeadbd2bc48455f91d0b6a728a0",
+    "round7_tail_key_attention.py": "c642cca03e9bdc189fd900d5809f8675c4979a944a952315231659c4575245d2",
+    "direction_bank.py": "7ea07ef64a6a84b0d392a1c5c7e248aa1e6e0c9c7032a35a056dbf3bacb1e81d"
+  }
+}

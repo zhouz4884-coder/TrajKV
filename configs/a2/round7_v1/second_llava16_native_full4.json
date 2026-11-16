@@ -1,0 +1,35 @@
+{
+  "schema": "trajkv.round7.second-backbone-native-full-config.v1",
+  "arguments": {
+    "model": "/path/to/storage/models/llava-v1.6-vicuna-7b-hf",
+    "samples": "/path/to/TrajKV/configs/a2/round7_v1/doc_select16_first_questions.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "turns": 1,
+    "max_tokens": 32
+  },
+  "start": 0,
+  "count": 4,
+  "variants": [
+    {
+      "name": "r7_llava16_native_hf",
+      "method": "native_hf"
+    },
+    {
+      "name": "r7_llava16_full_boundary",
+      "method": "full",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    }
+  ],
+  "official_chat_template_path": "/path/to/TrajKV/configs/a2/round7_v1/llava16_official_chat_template.json",
+  "official_chat_template_sha256": "2eabebdd61f13f04c29ce6c6ebf70e76ea49b7503fa7f0ac36ccbb4d1023ed6e",
+  "official_chat_template_source": {
+    "repo": "llava-hf/llava-v1.6-vicuna-7b-hf",
+    "revision": "c916e6cdcd760b4cecd1dd4907f84ac649f93b23",
+    "url": "https://huggingface.co/llava-hf/llava-v1.6-vicuna-7b-hf/raw/c916e6cdcd760b4cecd1dd4907f84ac649f93b23/chat_template.json",
+    "sha256": "2eabebdd61f13f04c29ce6c6ebf70e76ea49b7503fa7f0ac36ccbb4d1023ed6e"
+  },
+  "expected_model_config_sha256": "3ea1ed765b0b79834892d8060cb46162121ef01596e56ca6e168a48a8da08336"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "trajkv.a2.variant-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/docvqa_next_dev64.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16,
+    "compress_before_question": true,
+    "turns": 6
+  },
+  "count": 64,
+  "variants": [
+    {
+      "name": "r7_hybrid_kvarn2_v1",
+      "method": "hybrid_packed",
+      "key_codec": "kvarn2",
+      "clip_v": 0.3,
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    }
+  ]
+}

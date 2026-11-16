@@ -1,0 +1,744 @@
+[
+  {
+    "batch": 0,
+    "candidate_ids": [
+      "swap_00",
+      "swap_01"
+    ],
+    "static_initial_state_scores": [
+      {
+        "pair": {
+          "id": "swap_00",
+          "remove": [
+            "v",
+            27,
+            2
+          ],
+          "add": [
+            "v",
+            21,
+            3
+          ],
+          "frozen_gradient_remove_score": 8.991215761075256e-09,
+          "frozen_gradient_add_score": 7.359467910945708e-09
+        },
+        "baseline_allocation": "allocation_000",
+        "remove_allocation": "allocation_001",
+        "add_allocation": "allocation_002",
+        "joint_allocation": "allocation_003",
+        "predicted_improvement_additive": 0.013996842701089918,
+        "actual_improvement_joint": 0.013378737763559911,
+        "per_target": {
+          "gt": {
+            "predicted_improvement_additive": 0.013996842701089918,
+            "actual_improvement_joint": 0.013378737763559911
+          },
+          "self": {
+            "predicted_improvement_additive": 0.0037545248942478793,
+            "actual_improvement_joint": 0.0032320339742000215
+          }
+        }
+      },
+      {
+        "pair": {
+          "id": "swap_01",
+          "remove": [
+            "k",
+            17,
+            2
+          ],
+          "add": [
+            "v",
+            8,
+            3
+          ],
+          "frozen_gradient_remove_score": 9.270670839098832e-09,
+          "frozen_gradient_add_score": 7.345109324672632e-09
+        },
+        "baseline_allocation": "allocation_000",
+        "remove_allocation": "allocation_004",
+        "add_allocation": "allocation_005",
+        "joint_allocation": "allocation_006",
+        "predicted_improvement_additive": 0.0026552543095021974,
+        "actual_improvement_joint": 0.002096051994158188,
+        "per_target": {
+          "gt": {
+            "predicted_improvement_additive": 0.0026552543095021974,
+            "actual_improvement_joint": 0.002096051994158188
+          },
+          "self": {
+            "predicted_improvement_additive": -0.019948094774008496,
+            "actual_improvement_joint": -0.020086099815671332
+          }
+        }
+      }
+    ],
+    "conditional_current_state_scores": [
+      {
+        "pair": {
+          "id": "swap_00",
+          "remove": [
+            "v",
+            27,
+            2
+          ],
+          "add": [
+            "v",
+            21,
+            3
+          ],
+          "frozen_gradient_remove_score": 8.991215761075256e-09,
+          "frozen_gradient_add_score": 7.359467910945708e-09
+        },
+        "baseline_allocation": "allocation_000",
+        "remove_allocation": "allocation_001",
+        "add_allocation": "allocation_002",
+        "joint_allocation": "allocation_003",
+        "predicted_improvement_additive": 0.013996842701089918,
+        "actual_improvement_joint": 0.013378737763559911,
+        "per_target": {
+          "gt": {
+            "predicted_improvement_additive": 0.013996842701089918,
+            "actual_improvement_joint": 0.013378737763559911
+          },
+          "self": {
+            "predicted_improvement_additive": 0.0037545248942478793,
+            "actual_improvement_joint": 0.0032320339742000215
+          }
+        }
+      },
+      {
+        "pair": {
+          "id": "swap_01",
+          "remove": [
+            "k",
+            17,
+            2
+          ],
+          "add": [
+            "v",
+            8,
+            3
+          ],
+          "frozen_gradient_remove_score": 9.270670839098832e-09,
+          "frozen_gradient_add_score": 7.345109324672632e-09
+        },
+        "baseline_allocation": "allocation_000",
+        "remove_allocation": "allocation_004",
+        "add_allocation": "allocation_005",
+        "joint_allocation": "allocation_006",
+        "predicted_improvement_additive": 0.0026552543095021974,
+        "actual_improvement_joint": 0.002096051994158188,
+        "per_target": {
+          "gt": {
+            "predicted_improvement_additive": 0.0026552543095021974,
+            "actual_improvement_joint": 0.002096051994158188
+          },
+          "self": {
+            "predicted_improvement_additive": -0.019948094774008496,
+            "actual_improvement_joint": -0.020086099815671332
+          }
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "id": "swap_00",
+        "remove": [
+          "v",
+          27,
+          2
+        ],
+        "add": [
+          "v",
+          21,
+          3
+        ],
+        "frozen_gradient_remove_score": 8.991215761075256e-09,
+        "frozen_gradient_add_score": 7.359467910945708e-09
+      }
+    ],
+    "student_state_changed": true,
+    "after_acceptance_allocation": "allocation_007",
+    "after_scores": {
+      "gt": {
+        "source_macro_nll": 0.9118672121403506,
+        "dataset_macro_nll": {
+          "doc": 0.4393132721306756,
+          "text": 1.3844211521500256
+        },
+        "per_source_mean_nll": {
+          "doc": {
+            "ggmx0225": 0.7943997830152512,
+            "fqdg0072": 0.1438741167075932,
+            "rphx0227": 0.3662640154361725,
+            "hmxn0226": 0.4527151733636856
+          },
+          "text": {
+            "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0007811648538336158,
+            "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.10552269127219915,
+            "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 5.411642551422119,
+            "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019738201051950455
+          }
+        },
+        "questions": 14,
+        "sources": 8,
+        "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+      },
+      "self": {
+        "source_macro_nll": 0.20787612545245793,
+        "dataset_macro_nll": {
+          "doc": 0.1981162956217304,
+          "text": 0.21763595528318547
+        },
+        "per_source_mean_nll": {
+          "doc": {
+            "ggmx0225": 0.19907113164663315,
+            "fqdg0072": 0.029256897512823343,
+            "rphx0227": 0.3640313521027565,
+            "hmxn0226": 0.20010580122470856
+          },
+          "text": {
+            "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0006252335151657462,
+            "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.10552269127219915,
+            "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 0.7446576952934265,
+            "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019738201051950455
+          }
+        },
+        "questions": 14,
+        "sources": 8,
+        "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+      }
+    },
+    "static_partial_policy_verification": {
+      "one_shot_additive": {
+        "selected_pairs": [
+          {
+            "id": "swap_00",
+            "remove": [
+              "v",
+              27,
+              2
+            ],
+            "add": [
+              "v",
+              21,
+              3
+            ],
+            "frozen_gradient_remove_score": 8.991215761075256e-09,
+            "frozen_gradient_add_score": 7.359467910945708e-09
+          }
+        ],
+        "allocation_id": "allocation_007",
+        "scores": {
+          "gt": {
+            "source_macro_nll": 0.9118672121403506,
+            "dataset_macro_nll": {
+              "doc": 0.4393132721306756,
+              "text": 1.3844211521500256
+            },
+            "per_source_mean_nll": {
+              "doc": {
+                "ggmx0225": 0.7943997830152512,
+                "fqdg0072": 0.1438741167075932,
+                "rphx0227": 0.3662640154361725,
+                "hmxn0226": 0.4527151733636856
+              },
+              "text": {
+                "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0007811648538336158,
+                "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.10552269127219915,
+                "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 5.411642551422119,
+                "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019738201051950455
+              }
+            },
+            "questions": 14,
+            "sources": 8,
+            "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+          },
+          "self": {
+            "source_macro_nll": 0.20787612545245793,
+            "dataset_macro_nll": {
+              "doc": 0.1981162956217304,
+              "text": 0.21763595528318547
+            },
+            "per_source_mean_nll": {
+              "doc": {
+                "ggmx0225": 0.19907113164663315,
+                "fqdg0072": 0.029256897512823343,
+                "rphx0227": 0.3640313521027565,
+                "hmxn0226": 0.20010580122470856
+              },
+              "text": {
+                "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0006252335151657462,
+                "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.10552269127219915,
+                "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 0.7446576952934265,
+                "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019738201051950455
+              }
+            },
+            "questions": 14,
+            "sources": 8,
+            "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+          }
+        },
+        "validation_does_not_update_static_candidate_scores": true
+      },
+      "static_whole_pair": {
+        "selected_pairs": [
+          {
+            "id": "swap_00",
+            "remove": [
+              "v",
+              27,
+              2
+            ],
+            "add": [
+              "v",
+              21,
+              3
+            ],
+            "frozen_gradient_remove_score": 8.991215761075256e-09,
+            "frozen_gradient_add_score": 7.359467910945708e-09
+          }
+        ],
+        "allocation_id": "allocation_007",
+        "scores": {
+          "gt": {
+            "source_macro_nll": 0.9118672121403506,
+            "dataset_macro_nll": {
+              "doc": 0.4393132721306756,
+              "text": 1.3844211521500256
+            },
+            "per_source_mean_nll": {
+              "doc": {
+                "ggmx0225": 0.7943997830152512,
+                "fqdg0072": 0.1438741167075932,
+                "rphx0227": 0.3662640154361725,
+                "hmxn0226": 0.4527151733636856
+              },
+              "text": {
+                "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0007811648538336158,
+                "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.10552269127219915,
+                "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 5.411642551422119,
+                "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019738201051950455
+              }
+            },
+            "questions": 14,
+            "sources": 8,
+            "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+          },
+          "self": {
+            "source_macro_nll": 0.20787612545245793,
+            "dataset_macro_nll": {
+              "doc": 0.1981162956217304,
+              "text": 0.21763595528318547
+            },
+            "per_source_mean_nll": {
+              "doc": {
+                "ggmx0225": 0.19907113164663315,
+                "fqdg0072": 0.029256897512823343,
+                "rphx0227": 0.3640313521027565,
+                "hmxn0226": 0.20010580122470856
+              },
+              "text": {
+                "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0006252335151657462,
+                "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.10552269127219915,
+                "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 0.7446576952934265,
+                "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019738201051950455
+              }
+            },
+            "questions": 14,
+            "sources": 8,
+            "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+          }
+        },
+        "validation_does_not_update_static_candidate_scores": true
+      }
+    }
+  },
+  {
+    "batch": 1,
+    "candidate_ids": [
+      "swap_02",
+      "swap_03"
+    ],
+    "static_initial_state_scores": [
+      {
+        "pair": {
+          "id": "swap_02",
+          "remove": [
+            "k",
+            8,
+            3
+          ],
+          "add": [
+            "v",
+            18,
+            2
+          ],
+          "frozen_gradient_remove_score": 1.0067222982631065e-08,
+          "frozen_gradient_add_score": 6.891343567315065e-09
+        },
+        "baseline_allocation": "allocation_000",
+        "remove_allocation": "allocation_008",
+        "add_allocation": "allocation_009",
+        "joint_allocation": "allocation_010",
+        "predicted_improvement_additive": 0.0028503015819296706,
+        "actual_improvement_joint": 0.0020000881813757587,
+        "per_target": {
+          "gt": {
+            "predicted_improvement_additive": 0.0028503015819296706,
+            "actual_improvement_joint": 0.0020000881813757587
+          },
+          "self": {
+            "predicted_improvement_additive": 0.010774896261864342,
+            "actual_improvement_joint": 0.010671465057384921
+          }
+        }
+      },
+      {
+        "pair": {
+          "id": "swap_03",
+          "remove": [
+            "v",
+            25,
+            1
+          ],
+          "add": [
+            "k",
+            25,
+            3
+          ],
+          "frozen_gradient_remove_score": 1.0680761639436377e-08,
+          "frozen_gradient_add_score": 6.8058917347250356e-09
+        },
+        "baseline_allocation": "allocation_000",
+        "remove_allocation": "allocation_011",
+        "add_allocation": "allocation_012",
+        "joint_allocation": "allocation_013",
+        "predicted_improvement_additive": 0.007386012157439836,
+        "actual_improvement_joint": 0.007132634489607881,
+        "per_target": {
+          "gt": {
+            "predicted_improvement_additive": 0.007386012157439836,
+            "actual_improvement_joint": 0.007132634489607881
+          },
+          "self": {
+            "predicted_improvement_additive": 0.0028580775997397723,
+            "actual_improvement_joint": 0.0029605739309772616
+          }
+        }
+      }
+    ],
+    "conditional_current_state_scores": [
+      {
+        "pair": {
+          "id": "swap_02",
+          "remove": [
+            "k",
+            8,
+            3
+          ],
+          "add": [
+            "v",
+            18,
+            2
+          ],
+          "frozen_gradient_remove_score": 1.0067222982631065e-08,
+          "frozen_gradient_add_score": 6.891343567315065e-09
+        },
+        "baseline_allocation": "allocation_007",
+        "remove_allocation": "allocation_014",
+        "add_allocation": "allocation_015",
+        "joint_allocation": "allocation_016",
+        "predicted_improvement_additive": -0.00018826294763130136,
+        "actual_improvement_joint": 0.0005425122471933719,
+        "per_target": {
+          "gt": {
+            "predicted_improvement_additive": -0.00018826294763130136,
+            "actual_improvement_joint": 0.0005425122471933719
+          },
+          "self": {
+            "predicted_improvement_additive": 0.009602064015780343,
+            "actual_improvement_joint": 0.01009093821994611
+          }
+        }
+      },
+      {
+        "pair": {
+          "id": "swap_03",
+          "remove": [
+            "v",
+            25,
+            1
+          ],
+          "add": [
+            "k",
+            25,
+            3
+          ],
+          "frozen_gradient_remove_score": 1.0680761639436377e-08,
+          "frozen_gradient_add_score": 6.8058917347250356e-09
+        },
+        "baseline_allocation": "allocation_007",
+        "remove_allocation": "allocation_017",
+        "add_allocation": "allocation_018",
+        "joint_allocation": "allocation_019",
+        "predicted_improvement_additive": 0.007601915667692083,
+        "actual_improvement_joint": 0.00888285497239849,
+        "per_target": {
+          "gt": {
+            "predicted_improvement_additive": 0.007601915667692083,
+            "actual_improvement_joint": 0.00888285497239849
+          },
+          "self": {
+            "predicted_improvement_additive": 0.003216064234948135,
+            "actual_improvement_joint": 0.0036104725895711454
+          }
+        }
+      }
+    ],
+    "accepted": [
+      {
+        "id": "swap_03",
+        "remove": [
+          "v",
+          25,
+          1
+        ],
+        "add": [
+          "k",
+          25,
+          3
+        ],
+        "frozen_gradient_remove_score": 1.0680761639436377e-08,
+        "frozen_gradient_add_score": 6.8058917347250356e-09
+      }
+    ],
+    "student_state_changed": true,
+    "after_acceptance_allocation": "allocation_020",
+    "after_scores": {
+      "gt": {
+        "source_macro_nll": 0.9029843571679521,
+        "dataset_macro_nll": {
+          "doc": 0.43483592657139525,
+          "text": 1.371132787764509
+        },
+        "per_source_mean_nll": {
+          "doc": {
+            "ggmx0225": 0.7878555208444595,
+            "fqdg0072": 0.1460938488598913,
+            "rphx0227": 0.3551224619150162,
+            "hmxn0226": 0.450271874666214
+          },
+          "text": {
+            "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0007522798841819167,
+            "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.09882069150626194,
+            "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 5.3651556968688965,
+            "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019802482798695564
+          }
+        },
+        "questions": 14,
+        "sources": 8,
+        "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+      },
+      "self": {
+        "source_macro_nll": 0.20426565286288678,
+        "dataset_macro_nll": {
+          "doc": 0.19514472497394308,
+          "text": 0.21338658075183048
+        },
+        "per_source_mean_nll": {
+          "doc": {
+            "ggmx0225": 0.19293662160634995,
+            "fqdg0072": 0.03598794690333307,
+            "rphx0227": 0.35659468173980713,
+            "hmxn0226": 0.1950596496462822
+          },
+          "text": {
+            "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0005645995843224227,
+            "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.09882069150626194,
+            "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 0.734358549118042,
+            "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019802482798695564
+          }
+        },
+        "questions": 14,
+        "sources": 8,
+        "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+      }
+    },
+    "static_partial_policy_verification": {
+      "one_shot_additive": {
+        "selected_pairs": [
+          {
+            "id": "swap_00",
+            "remove": [
+              "v",
+              27,
+              2
+            ],
+            "add": [
+              "v",
+              21,
+              3
+            ],
+            "frozen_gradient_remove_score": 8.991215761075256e-09,
+            "frozen_gradient_add_score": 7.359467910945708e-09
+          },
+          {
+            "id": "swap_03",
+            "remove": [
+              "v",
+              25,
+              1
+            ],
+            "add": [
+              "k",
+              25,
+              3
+            ],
+            "frozen_gradient_remove_score": 1.0680761639436377e-08,
+            "frozen_gradient_add_score": 6.8058917347250356e-09
+          }
+        ],
+        "allocation_id": "allocation_020",
+        "scores": {
+          "gt": {
+            "source_macro_nll": 0.9029843571679521,
+            "dataset_macro_nll": {
+              "doc": 0.43483592657139525,
+              "text": 1.371132787764509
+            },
+            "per_source_mean_nll": {
+              "doc": {
+                "ggmx0225": 0.7878555208444595,
+                "fqdg0072": 0.1460938488598913,
+                "rphx0227": 0.3551224619150162,
+                "hmxn0226": 0.450271874666214
+              },
+              "text": {
+                "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0007522798841819167,
+                "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.09882069150626194,
+                "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 5.3651556968688965,
+                "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019802482798695564
+              }
+            },
+            "questions": 14,
+            "sources": 8,
+            "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+          },
+          "self": {
+            "source_macro_nll": 0.20426565286288678,
+            "dataset_macro_nll": {
+              "doc": 0.19514472497394308,
+              "text": 0.21338658075183048
+            },
+            "per_source_mean_nll": {
+              "doc": {
+                "ggmx0225": 0.19293662160634995,
+                "fqdg0072": 0.03598794690333307,
+                "rphx0227": 0.35659468173980713,
+                "hmxn0226": 0.1950596496462822
+              },
+              "text": {
+                "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0005645995843224227,
+                "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.09882069150626194,
+                "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 0.734358549118042,
+                "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019802482798695564
+              }
+            },
+            "questions": 14,
+            "sources": 8,
+            "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+          }
+        },
+        "validation_does_not_update_static_candidate_scores": true
+      },
+      "static_whole_pair": {
+        "selected_pairs": [
+          {
+            "id": "swap_00",
+            "remove": [
+              "v",
+              27,
+              2
+            ],
+            "add": [
+              "v",
+              21,
+              3
+            ],
+            "frozen_gradient_remove_score": 8.991215761075256e-09,
+            "frozen_gradient_add_score": 7.359467910945708e-09
+          },
+          {
+            "id": "swap_03",
+            "remove": [
+              "v",
+              25,
+              1
+            ],
+            "add": [
+              "k",
+              25,
+              3
+            ],
+            "frozen_gradient_remove_score": 1.0680761639436377e-08,
+            "frozen_gradient_add_score": 6.8058917347250356e-09
+          }
+        ],
+        "allocation_id": "allocation_020",
+        "scores": {
+          "gt": {
+            "source_macro_nll": 0.9029843571679521,
+            "dataset_macro_nll": {
+              "doc": 0.43483592657139525,
+              "text": 1.371132787764509
+            },
+            "per_source_mean_nll": {
+              "doc": {
+                "ggmx0225": 0.7878555208444595,
+                "fqdg0072": 0.1460938488598913,
+                "rphx0227": 0.3551224619150162,
+                "hmxn0226": 0.450271874666214
+              },
+              "text": {
+                "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0007522798841819167,
+                "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.09882069150626194,
+                "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 5.3651556968688965,
+                "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019802482798695564
+              }
+            },
+            "questions": 14,
+            "sources": 8,
+            "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+          },
+          "self": {
+            "source_macro_nll": 0.20426565286288678,
+            "dataset_macro_nll": {
+              "doc": 0.19514472497394308,
+              "text": 0.21338658075183048
+            },
+            "per_source_mean_nll": {
+              "doc": {
+                "ggmx0225": 0.19293662160634995,
+                "fqdg0072": 0.03598794690333307,
+                "rphx0227": 0.35659468173980713,
+                "hmxn0226": 0.1950596496462822
+              },
+              "text": {
+                "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d": 0.0005645995843224227,
+                "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67": 0.09882069150626194,
+                "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e": 0.734358549118042,
+                "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7": 0.019802482798695564
+              }
+            },
+            "questions": 14,
+            "sources": 8,
+            "aggregation": "equal datasets; equal independent sources within dataset; equal questions within source"
+          }
+        },
+        "validation_does_not_update_static_candidate_scores": true
+      }
+    }
+  }
+]

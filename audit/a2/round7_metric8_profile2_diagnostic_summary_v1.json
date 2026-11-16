@@ -1,0 +1,606 @@
+{
+  "schema": "trajkv_round7_metric8_profile2_diagnostic_summary_v1",
+  "status": "COMPLETE",
+  "scope": "CPU descriptive recount of already completed GPU diagnostics/development only; no new model/metric fit/GPU run",
+  "metric8": {
+    "source_images": 8,
+    "labels_used": false,
+    "inference_units": "original source images; source/layer/head/query cells are correlated descriptive observations, not independent samples",
+    "phase_rho_correlated_cell_quantiles": {
+      "prefill": {
+        "descriptive_cells": 896,
+        "min": 0.8849536776542664,
+        "p05": 0.9505493640899658,
+        "p25": 0.9868190288543701,
+        "median": 1.0110456943511963,
+        "p75": 1.0423083007335663,
+        "p95": 1.1149619817733765,
+        "max": 2.4778668880462646
+      },
+      "decode": {
+        "descriptive_cells": 1792,
+        "min": 0.8711130023002625,
+        "p05": 0.949549213051796,
+        "p25": 0.9835633337497711,
+        "median": 1.0086389183998108,
+        "p75": 1.0374386310577393,
+        "p95": 1.1032961666584011,
+        "max": 2.5006818771362305
+      }
+    },
+    "phase_source_median_quantiles": {
+      "prefill": {
+        "descriptive_cells": 8,
+        "min": 1.0066803097724915,
+        "p05": 1.0069312125444412,
+        "p25": 1.0093305557966232,
+        "median": 1.0103882253170013,
+        "p75": 1.012265905737877,
+        "p95": 1.0187889993190766,
+        "max": 1.0218196511268616
+      },
+      "decode": {
+        "descriptive_cells": 8,
+        "min": 1.0037437081336975,
+        "p05": 1.0040791004896163,
+        "p25": 1.005130097270012,
+        "median": 1.0080130696296692,
+        "p75": 1.0099197328090668,
+        "p95": 1.0146083533763885,
+        "max": 1.0167014002799988
+      }
+    },
+    "phase_source_medians": {
+      "prefill": {
+        "docvqa_next_3977_cal_q1": 1.010407030582428,
+        "docvqa_next_4505_cal_q1": 1.011967658996582,
+        "docvqa_next_4187_cal_q1": 1.0103694200515747,
+        "docvqa_next_9381_cal_q1": 1.007397174835205,
+        "docvqa_next_10703_cal_q1": 1.0218196511268616,
+        "docvqa_next_2126_cal_q1": 1.009975016117096,
+        "docvqa_next_4763_cal_q1": 1.0066803097724915,
+        "docvqa_next_9095_cal_q1": 1.0131606459617615
+      },
+      "decode": {
+        "docvqa_next_3977_cal_q1": 1.009652554988861,
+        "docvqa_next_4505_cal_q1": 1.0047019720077515,
+        "docvqa_next_4187_cal_q1": 1.0078818798065186,
+        "docvqa_next_9381_cal_q1": 1.0037437081336975,
+        "docvqa_next_10703_cal_q1": 1.0167014002799988,
+        "docvqa_next_2126_cal_q1": 1.0081442594528198,
+        "docvqa_next_4763_cal_q1": 1.0052728056907654,
+        "docvqa_next_9095_cal_q1": 1.0107212662696838
+      }
+    },
+    "actual_to_native_bridge_energy_ratio": {
+      "prefill": {
+        "descriptive_cells": 896,
+        "min": 0.9949693083763123,
+        "p05": 0.9996777176856995,
+        "p25": 0.9999216347932816,
+        "median": 0.9999952614307404,
+        "p75": 1.000064104795456,
+        "p95": 1.0002059042453766,
+        "max": 1.0008635520935059
+      },
+      "decode": {
+        "descriptive_cells": 1792,
+        "min": 0.9943814873695374,
+        "p05": 0.9996659904718399,
+        "p25": 0.9999209940433502,
+        "median": 0.9999932050704956,
+        "p75": 1.000060260295868,
+        "p95": 1.0001986086368562,
+        "max": 1.000680685043335
+      }
+    },
+    "rho_definition": "128*sum_{g,t}(qr_g dot delta_wht_t)^2 / (sum_g||qr_g||^2 * sum_t||delta_wht_t||^2)",
+    "delta_definition": "WHT(FP16(inverseWHT(actual packed sequential-FP16 Khat_rot)+stored mean)-original FP16 K)",
+    "query_definition": "actual oldDepth student FP16 WHT(q), uncentered, grouped GQA heads; first-question final-prefill query and first two available decode queries",
+    "not_task_Hessian": true,
+    "not_task_loss_rank": true,
+    "not_an_execution_gate": true,
+    "top1_eigenvalue_trace_fraction_by_112_correlated_heads": {
+      "descriptive_cells": 112,
+      "min": 0.2888896256164446,
+      "p05": 0.4196615337385309,
+      "p25": 0.5901387419673585,
+      "median": 0.6758742967066439,
+      "p75": 0.7610581765973929,
+      "p95": 0.8497693492332221,
+      "max": 0.882559074580571
+    },
+    "gamma_uncapped": {
+      "descriptive_cells": 112,
+      "min": 50.593936920166016,
+      "p05": 90.8642635345459,
+      "p25": 181.86155319213867,
+      "median": 263.8328094482422,
+      "p75": 403.5108947753906,
+      "p95": 717.5168243408201,
+      "max": 953.394775390625
+    },
+    "gamma_above_cap16_heads": 112,
+    "metric_tensor_bytes": 29120,
+    "gamma_cap16_range": {
+      "descriptive_cells": 112,
+      "min": 16.0,
+      "p05": 16.0,
+      "p25": 16.0,
+      "median": 16.0,
+      "p75": 16.0,
+      "p95": 16.0,
+      "max": 16.0
+    },
+    "deployed_FP16_u_norm": {
+      "descriptive_cells": 112,
+      "min": 0.9999359250068665,
+      "p05": 0.9999527305364608,
+      "p25": 0.999983161687851,
+      "median": 1.0000008344650269,
+      "p75": 1.0000154078006744,
+      "p95": 1.0000384151935577,
+      "max": 1.0000697374343872
+    },
+    "q_count_per_head_range": {
+      "descriptive_cells": 112,
+      "min": 168.0,
+      "p05": 168.0,
+      "p25": 168.0,
+      "median": 168.0,
+      "p75": 168.0,
+      "p95": 168.0,
+      "max": 168.0
+    },
+    "phase_count_per_head": {
+      "prefill": {
+        "descriptive_cells": 112,
+        "min": 56.0,
+        "p05": 56.0,
+        "p25": 56.0,
+        "median": 56.0,
+        "p75": 56.0,
+        "p95": 56.0,
+        "max": 56.0
+      },
+      "decode": {
+        "descriptive_cells": 112,
+        "min": 112.0,
+        "p05": 112.0,
+        "p25": 112.0,
+        "median": 112.0,
+        "p75": 112.0,
+        "p95": 112.0,
+        "max": 112.0
+      }
+    },
+    "diagnostic_owner_bits": {
+      "descriptive_cells": 8,
+      "min": 9.799984834632095,
+      "p05": 9.799984834632095,
+      "p25": 9.799984834632095,
+      "median": 9.799984834632095,
+      "p75": 9.799984834632095,
+      "p95": 9.799984834632095,
+      "max": 9.799984834632095
+    },
+    "FP16_reference_K_retained_diagnostic_only": true,
+    "deployment_budget_eligible": false
+  },
+  "profile2": {
+    "second_source_id": "docvqa_next_7822",
+    "second_source_components": [
+      {
+        "variant": "r7_k2_norm",
+        "visual_tokens": 1792,
+        "encoding_wall_ms": 170.96682102419436,
+        "instrumented_session_ms": 1339.239157969132,
+        "generated_tokens": 8,
+        "reader_calls": 280,
+        "forced_canonical_chat_closure": [
+          true
+        ],
+        "components": {
+          "plan": {
+            "calls": 1,
+            "gpu_interval_total_ms": 0.5722560286521912,
+            "gpu_interval_mean_ms": 0.5722560286521912,
+            "cpu_wall_total_ms": 0.5435560015030205,
+            "cpu_wall_mean_ms": 0.5435560015030205,
+            "wrapper_wall_total_ms": 0.6621389766223729,
+            "failures": 0
+          },
+          "encoder_FWHT": {
+            "calls": 28,
+            "gpu_interval_total_ms": 2.077247990295291,
+            "gpu_interval_mean_ms": 0.07418742822483182,
+            "cpu_wall_total_ms": 2.106674946844578,
+            "cpu_wall_mean_ms": 0.07523839095873493,
+            "wrapper_wall_total_ms": 3.76923696603626,
+            "failures": 0
+          },
+          "PQ_and_gain": {
+            "calls": 28,
+            "gpu_interval_total_ms": 70.15702366828918,
+            "gpu_interval_mean_ms": 2.505607988153185,
+            "cpu_wall_total_ms": 32.30941796209663,
+            "cpu_wall_mean_ms": 1.153907784360594,
+            "wrapper_wall_total_ms": 33.94897992257029,
+            "failures": 0
+          },
+          "V_Lloyd": {
+            "calls": 28,
+            "gpu_interval_total_ms": 22.020672142505646,
+            "gpu_interval_mean_ms": 0.7864525765180588,
+            "cpu_wall_total_ms": 31.47115692263469,
+            "cpu_wall_mean_ms": 1.1239698900940962,
+            "wrapper_wall_total_ms": 33.17657200386748,
+            "failures": 0
+          },
+          "residual_sign_depth": {
+            "calls": 44,
+            "gpu_interval_total_ms": 29.299488186836243,
+            "gpu_interval_mean_ms": 0.6658974587917328,
+            "cpu_wall_total_ms": 45.23219098336995,
+            "cpu_wall_mean_ms": 1.0280043405311352,
+            "wrapper_wall_total_ms": 48.156228789594024,
+            "failures": 0
+          },
+          "reader_FWHT": {
+            "calls": 280,
+            "gpu_interval_total_ms": 29.197376042604446,
+            "gpu_interval_mean_ms": 0.1042763430093016,
+            "cpu_wall_total_ms": 22.09782926365733,
+            "cpu_wall_mean_ms": 0.07892081879877619,
+            "wrapper_wall_total_ms": 38.95990893943235,
+            "failures": 0
+          }
+        }
+      },
+      {
+        "variant": "r7_k2_projection",
+        "visual_tokens": 1792,
+        "encoding_wall_ms": 172.4917269893922,
+        "instrumented_session_ms": 1269.1198050160892,
+        "generated_tokens": 8,
+        "reader_calls": 280,
+        "forced_canonical_chat_closure": [
+          true
+        ],
+        "components": {
+          "plan": {
+            "calls": 1,
+            "gpu_interval_total_ms": 0.4631040096282959,
+            "gpu_interval_mean_ms": 0.4631040096282959,
+            "cpu_wall_total_ms": 0.4360959865152836,
+            "cpu_wall_mean_ms": 0.4360959865152836,
+            "wrapper_wall_total_ms": 0.5278760218061507,
+            "failures": 0
+          },
+          "encoder_FWHT": {
+            "calls": 28,
+            "gpu_interval_total_ms": 2.0172800067812204,
+            "gpu_interval_mean_ms": 0.07204571452790073,
+            "cpu_wall_total_ms": 2.0397980115376413,
+            "cpu_wall_mean_ms": 0.07284992898348719,
+            "wrapper_wall_total_ms": 3.6948060151189566,
+            "failures": 0
+          },
+          "PQ_and_gain": {
+            "calls": 28,
+            "gpu_interval_total_ms": 71.47632026672363,
+            "gpu_interval_mean_ms": 2.5527257238115584,
+            "cpu_wall_total_ms": 36.13223624415696,
+            "cpu_wall_mean_ms": 1.2904370087198913,
+            "wrapper_wall_total_ms": 37.78560779755935,
+            "failures": 0
+          },
+          "V_Lloyd": {
+            "calls": 28,
+            "gpu_interval_total_ms": 22.61481562256813,
+            "gpu_interval_mean_ms": 0.8076719865202904,
+            "cpu_wall_total_ms": 32.24054514430463,
+            "cpu_wall_mean_ms": 1.1514480408680225,
+            "wrapper_wall_total_ms": 33.9605588815175,
+            "failures": 0
+          },
+          "residual_sign_depth": {
+            "calls": 44,
+            "gpu_interval_total_ms": 30.1114239692688,
+            "gpu_interval_mean_ms": 0.684350544756109,
+            "cpu_wall_total_ms": 44.2887939279899,
+            "cpu_wall_mean_ms": 1.0065634983634069,
+            "wrapper_wall_total_ms": 47.11200692690909,
+            "failures": 0
+          },
+          "reader_FWHT": {
+            "calls": 280,
+            "gpu_interval_total_ms": 25.12719999998808,
+            "gpu_interval_mean_ms": 0.08973999999995742,
+            "cpu_wall_total_ms": 18.112881225533783,
+            "cpu_wall_mean_ms": 0.06468886151976351,
+            "wrapper_wall_total_ms": 34.92292418377474,
+            "failures": 0
+          }
+        }
+      },
+      {
+        "variant": "r7_k1_projection_fixedK2",
+        "visual_tokens": 1792,
+        "encoding_wall_ms": 158.0027430318296,
+        "instrumented_session_ms": 1287.0582119794562,
+        "generated_tokens": 8,
+        "reader_calls": 280,
+        "forced_canonical_chat_closure": [
+          true
+        ],
+        "components": {
+          "plan": {
+            "calls": 1,
+            "gpu_interval_total_ms": 0.4687359929084778,
+            "gpu_interval_mean_ms": 0.4687359929084778,
+            "cpu_wall_total_ms": 0.440875010099262,
+            "cpu_wall_mean_ms": 0.440875010099262,
+            "wrapper_wall_total_ms": 0.5271060508675873,
+            "failures": 0
+          },
+          "encoder_FWHT": {
+            "calls": 28,
+            "gpu_interval_total_ms": 2.6119679883122444,
+            "gpu_interval_mean_ms": 0.09328457101115159,
+            "cpu_wall_total_ms": 1.921354967635125,
+            "cpu_wall_mean_ms": 0.06861982027268303,
+            "wrapper_wall_total_ms": 3.518714918754995,
+            "failures": 0
+          },
+          "PQ_and_gain": {
+            "calls": 28,
+            "gpu_interval_total_ms": 39.290048003196716,
+            "gpu_interval_mean_ms": 1.4032160001141685,
+            "cpu_wall_total_ms": 38.42973295832053,
+            "cpu_wall_mean_ms": 1.3724904627971617,
+            "wrapper_wall_total_ms": 40.04355409415439,
+            "failures": 0
+          },
+          "V_Lloyd": {
+            "calls": 28,
+            "gpu_interval_total_ms": 32.30796790122986,
+            "gpu_interval_mean_ms": 1.153855996472495,
+            "cpu_wall_total_ms": 31.481564976274967,
+            "cpu_wall_mean_ms": 1.1243416062955345,
+            "wrapper_wall_total_ms": 33.15587900578976,
+            "failures": 0
+          },
+          "residual_sign_depth": {
+            "calls": 44,
+            "gpu_interval_total_ms": 29.844287991523743,
+            "gpu_interval_mean_ms": 0.6782792725346305,
+            "cpu_wall_total_ms": 28.572961047757417,
+            "cpu_wall_mean_ms": 0.6493854783581231,
+            "wrapper_wall_total_ms": 31.293865060433745,
+            "failures": 0
+          },
+          "reader_FWHT": {
+            "calls": 280,
+            "gpu_interval_total_ms": 26.31491196900606,
+            "gpu_interval_mean_ms": 0.09398182846073594,
+            "cpu_wall_total_ms": 18.970752542372793,
+            "cpu_wall_mean_ms": 0.0677526876513314,
+            "wrapper_wall_total_ms": 36.4627021481283,
+            "failures": 0
+          }
+        }
+      },
+      {
+        "variant": "r7_k1_fixedK2",
+        "visual_tokens": 1792,
+        "encoding_wall_ms": 155.20759497303516,
+        "instrumented_session_ms": 1263.4615679853596,
+        "generated_tokens": 8,
+        "reader_calls": 280,
+        "forced_canonical_chat_closure": [
+          true
+        ],
+        "components": {
+          "plan": {
+            "calls": 1,
+            "gpu_interval_total_ms": 0.48287999629974365,
+            "gpu_interval_mean_ms": 0.48287999629974365,
+            "cpu_wall_total_ms": 0.4540760419331491,
+            "cpu_wall_mean_ms": 0.4540760419331491,
+            "wrapper_wall_total_ms": 0.5413070321083069,
+            "failures": 0
+          },
+          "encoder_FWHT": {
+            "calls": 28,
+            "gpu_interval_total_ms": 2.651263989508152,
+            "gpu_interval_mean_ms": 0.09468799962529115,
+            "cpu_wall_total_ms": 1.9451429834589362,
+            "cpu_wall_mean_ms": 0.06946939226639058,
+            "wrapper_wall_total_ms": 3.561616176739335,
+            "failures": 0
+          },
+          "PQ_and_gain": {
+            "calls": 28,
+            "gpu_interval_total_ms": 36.203776359558105,
+            "gpu_interval_mean_ms": 1.292992012841361,
+            "cpu_wall_total_ms": 35.34210397629067,
+            "cpu_wall_mean_ms": 1.2622179991532383,
+            "wrapper_wall_total_ms": 36.95844707544893,
+            "failures": 0
+          },
+          "V_Lloyd": {
+            "calls": 28,
+            "gpu_interval_total_ms": 32.44326388835907,
+            "gpu_interval_mean_ms": 1.158687996012824,
+            "cpu_wall_total_ms": 31.60690882941708,
+            "cpu_wall_mean_ms": 1.1288181724791815,
+            "wrapper_wall_total_ms": 33.28604775015265,
+            "failures": 0
+          },
+          "residual_sign_depth": {
+            "calls": 44,
+            "gpu_interval_total_ms": 29.762720048427582,
+            "gpu_interval_mean_ms": 0.6764254556460814,
+            "cpu_wall_total_ms": 28.489836084190756,
+            "cpu_wall_mean_ms": 0.647496274640699,
+            "wrapper_wall_total_ms": 31.205095001496375,
+            "failures": 0
+          },
+          "reader_FWHT": {
+            "calls": 280,
+            "gpu_interval_total_ms": 25.244608029723167,
+            "gpu_interval_mean_ms": 0.09015931439186846,
+            "cpu_wall_total_ms": 18.226713116746396,
+            "cpu_wall_mean_ms": 0.06509540398837999,
+            "wrapper_wall_total_ms": 34.88981514237821,
+            "failures": 0
+          }
+        }
+      }
+    ],
+    "largest_encoder_FWHT_call": {
+      "session_id": "docvqa_next_14211",
+      "variant": "r7_k2_norm",
+      "component": "encoder_FWHT",
+      "target": "round7_key_bank.wht",
+      "call_index": 1,
+      "failed": false,
+      "cpu_wall_ms": 411.8823769968003,
+      "wrapper_wall_ms": 412.02532895840704,
+      "gpu_interval_ms": 411.9792785644531
+    },
+    "interpretation": "First-call ~412ms event and nearly equal CPU wall are an isolated cold-start/host-gap outlier; compilation is plausible, not proven. Neither it nor these unquiet free-running instrumented sessions establish steady-state speedup.",
+    "reader_component_scope": "reader_FWHT measures query transform only, not the packed attention/read kernel or whole read cost",
+    "event_scope": "current-stream intervals include host launch gaps; they are not kernel-active time",
+    "quiet_E2E_speed_eligible": false,
+    "same_output_timing_eligible": false,
+    "task_accuracy_eligible": false
+  },
+  "secondary_axis_development": {
+    "source_images": 16,
+    "role": "observed secondary-backbone first-question development; no blind confirmation",
+    "score_percent": {
+      "full16": 75.11530136530136,
+      "r7_llava16_k2_Vfirst": 62.903924506865685,
+      "r7_llava16_k1_Vfirst": 62.66337828837829,
+      "r7_llava16_k1_Kfirst": 49.6482683982684
+    },
+    "actual_stage_counts": {
+      "r7_llava16_k1_Kfirst": [
+        {
+          "N": 2144,
+          "K_stages": 1024,
+          "V_stages": 296
+        },
+        {
+          "N": 2256,
+          "K_stages": 1024,
+          "V_stages": 291
+        },
+        {
+          "N": 2352,
+          "K_stages": 1024,
+          "V_stages": 292
+        },
+        {
+          "N": 2438,
+          "K_stages": 1024,
+          "V_stages": 289
+        },
+        {
+          "N": 2448,
+          "K_stages": 1024,
+          "V_stages": 293
+        },
+        {
+          "N": 2536,
+          "K_stages": 1024,
+          "V_stages": 291
+        }
+      ],
+      "r7_llava16_k1_Vfirst": [
+        {
+          "N": 2144,
+          "K_stages": 297,
+          "V_stages": 1023
+        },
+        {
+          "N": 2256,
+          "K_stages": 291,
+          "V_stages": 1024
+        },
+        {
+          "N": 2352,
+          "K_stages": 292,
+          "V_stages": 1024
+        },
+        {
+          "N": 2438,
+          "K_stages": 289,
+          "V_stages": 1024
+        },
+        {
+          "N": 2448,
+          "K_stages": 293,
+          "V_stages": 1024
+        },
+        {
+          "N": 2536,
+          "K_stages": 291,
+          "V_stages": 1024
+        }
+      ],
+      "r7_llava16_k2_Vfirst": [
+        {
+          "N": 2144,
+          "K_stages": 0,
+          "V_stages": 410
+        },
+        {
+          "N": 2256,
+          "K_stages": 0,
+          "V_stages": 405
+        },
+        {
+          "N": 2352,
+          "K_stages": 0,
+          "V_stages": 406
+        },
+        {
+          "N": 2438,
+          "K_stages": 0,
+          "V_stages": 403
+        },
+        {
+          "N": 2448,
+          "K_stages": 0,
+          "V_stages": 407
+        },
+        {
+          "N": 2536,
+          "K_stages": 0,
+          "V_stages": 405
+        }
+      ]
+    },
+    "execution_semantics": "Named incumbent preserves the old affordable-prefix K subset, then fills V. K2 Vfirst is pure V repair; K1 Vfirst is near-all-V plus K, not pure V. At N2144 it keeps K297/V1023 rather than strict-priority K296/V1024.",
+    "inference": "V priority is a useful exploratory direction on this backbone; Full remains about 12pp higher. This does not establish universal uncalibrated quality preservation.",
+    "new_independent_source_count": 0
+  },
+  "source_sha256": {
+    "results\\round7_v1\\metric8\\manifest.json": "78b3ce318b96e82fdd564683775a633b2d7c0331faf0404f79f2514a8c7e0381",
+    "results\\round7_v1\\metric8\\complete.json": "23e2c827225350acf78f1d81ddc49e311ab8fe930da64a75f08a2ec60b38c644",
+    "results\\round7_v1\\metric8\\cases.jsonl": "cfc55cc46ef99cf007f86e17700b395fb971fe6acd8263b457a936aae54da5e2",
+    "results\\round7_v1\\metric8\\stats.json": "ef307166ac28fc9fcde63f45e2fdc271e102ee8d55513a2b55f3e210e6e1445e",
+    "results\\round7_v1\\projection_dev64\\profile2\\manifest.json": "71ba4febad9cd8d2235803fc152588983eeafa863d3eb295279f380915275597",
+    "results\\round7_v1\\projection_dev64\\profile2\\complete.json": "e714db9371895afe4006516b8a602a9a6f6f70f526829e354d887cdef2844820",
+    "results\\round7_v1\\projection_dev64\\profile2\\records.jsonl": "ed810bcd73eb847af937e62a88f858582420c6bbe541c282654dfa0bb7a1b428",
+    "results\\round7_v1\\projection_dev64\\profile2\\calls.jsonl": "0c481a76be496e3045c74be8e171edad5d662321e004afed9bdc4ac2f1e1abc7",
+    "results\\round7_v1\\second_axis16_v3\\manifest.json": "3217e051c4d42521fc8d330064171ece76333f99ea2c8971a0baca600bda06ad",
+    "results\\round7_v1\\second_axis16_v3\\complete.json": "368156ec44b20018e69ada8269d8fc9285de33193255cef6f1f4963f694842b3",
+    "results\\round7_v1\\second_axis16_v3\\records.jsonl": "c819492e7e1e59f906cd432c2d08b6816c250073dbda1de24131e274367ce8da",
+    "results\\round7_v1\\second_axis16_v3_analysis\\table.csv": "569a865f3f336711e1751d5137c2f1fc1618860f7487417012749848276ef027"
+  },
+  "summarizer_sha256": "2b4b868e96fc79c0c07ecdf8963062e4c08f98a9c6abcb6e3b9f39562f5d7ea1"
+}

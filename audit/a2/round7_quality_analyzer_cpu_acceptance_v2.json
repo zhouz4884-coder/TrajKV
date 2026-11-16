@@ -1,0 +1,61 @@
+{
+  "schema": "trajkv.round7.quality-analyzer-cpu-acceptance.v1",
+  "status": "PASS",
+  "controls": [
+    {
+      "control": "index bytes mislabeled as nibble without physical representation change",
+      "expected": "reject",
+      "status": "PASS",
+      "reason": "Nibble-vs-byte index physical representation mismatch"
+    },
+    {
+      "control": "encoder constant duplicated",
+      "expected": "reject",
+      "status": "PASS",
+      "reason": "Embedded encoder owner differs from declared parameter payload"
+    },
+    {
+      "control": "one visual position byte omitted",
+      "expected": "reject",
+      "status": "PASS",
+      "reason": "Visual position owner does not use actual real N"
+    },
+    {
+      "control": "residual mask changed despite same reference configuration",
+      "expected": "reject",
+      "status": "PASS",
+      "reason": "Actual residual mask differs from independent legal-prefix plan"
+    },
+    {
+      "control": "semantic visual padding hidden as storage",
+      "expected": "reject",
+      "status": "PASS",
+      "reason": "Semantic visual token/position padding is not allowed"
+    },
+    {
+      "control": "CPU/global total_unique is not added to visual cache",
+      "expected": "same complete owner",
+      "status": "PASS"
+    },
+    {
+      "control": "rank-one FP16 u plus FP32 gamma payload",
+      "expected": 29120,
+      "actual": 29120,
+      "status": "PASS"
+    },
+    {
+      "control": "K1 fixed K2 mask preserves stages while charging smaller real key payload",
+      "expected": "same mask and exact physical key/book byte saving",
+      "status": "PASS",
+      "byte_saving": 3213184
+    }
+  ],
+  "GPU_used": false,
+  "inference_executed": false,
+  "synthetic_task_scores_created": false,
+  "scope": "malformed-evidence rejection and scalar byte algebra controls; not GPU reader validation or empirical accuracy",
+  "real_record_source": "/path/to/TrajKV\\results\\round7_v1\\key_smoke2",
+  "real_records_sha256": "97d636cdeb17008bf073a33010382c44c74c0955ae182109a469bfa9dc1071f3",
+  "metric_source_sha256": "5f5429f4bf0a73ab11b8498ac827c082822200cc4f9b7651e45c06b08249f735",
+  "analyzer_sha256": "c0712da5a39536b31814d6350a24a1cd96728fe2d370182788048a0a700d08c6"
+}

@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "scope": "CPU preparation and input-typing checks only; no new GPU timing/model run",
+  "plan": {
+    "sources": 3,
+    "variants": 6,
+    "warmup_trials": 18,
+    "measurement_trials": 54,
+    "scheduled_trials": 72,
+    "additional_Full_canonical_runs": 3,
+    "forced_tokens_per_turn": 8,
+    "turns": 1,
+    "model_loads": 1,
+    "common_cap": 8,
+    "task_accuracy_eligible": false
+  },
+  "schedule_exact_unique_coverage": true,
+  "six_variants_exactly_equal_frozen_config": true,
+  "Hadamard_and_encoder_charged_once": true,
+  "actual_nonquiet_or_free_inputs_rejected": [
+    {
+      "input": "results/round7_v1/projection_dev64/profile2",
+      "actual_schema": "trajkv_round7_instrumented_profile_manifest_v1",
+      "rejected": true,
+      "reason": "Not a Round7 quiet same-output cost manifest"
+    },
+    {
+      "input": "results/round7_v1/second_tail16",
+      "actual_schema": "trajkv.round7.second-backbone-tail-packed.v1",
+      "rejected": true,
+      "reason": "Not a Round7 quiet same-output cost manifest"
+    }
+  ],
+  "source_sha256": {
+    "code\\a2\\round7_timing.py": "0905dad3e02765256743a02612439cc3b22ab4eb51fbdbbfe96dafe7cbe5f62c",
+    "code\\a2\\analyze_round7_timing.py": "2fca2d94ff8f94a0735184baa2ea0e050f86af6cc206cf6fa18881d0fe08d0de",
+    "configs\\a2\\round7_v1\\quiet3_frozen6_v1.json": "9a7c9dca4c7e2de7793a13960e66c5e4f7547f4e62c329fdc9290f9891de417a"
+  },
+  "existing_profile_read_only": {
+    "manifest_sha256": "71ba4febad9cd8d2235803fc152588983eeafa863d3eb295279f380915275597",
+    "largest_encoder_FWHT_event_ms": 411.9792785644531,
+    "corresponding_CPU_wall_ms": 411.8823769968003,
+    "variant": "r7_k2_norm",
+    "session_id": "docvqa_next_14211",
+    "interpretation": "isolated first-call interval and CPU outlier; compilation/host-launch cold start is a plausible contributor, not proven kernel-active runtime; exclude as evidence of stable method speedup"
+  }
+}

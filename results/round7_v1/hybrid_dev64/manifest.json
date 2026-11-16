@@ -1,0 +1,22 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/round7_v1/projection_dev64/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/round7_projection_dev64_v1.launch.json",
+  "tasks": [
+    {
+      "name": "doc64",
+      "entrypoint": "round7_runner.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round7_v1/hybrid_dev64_doc.json"
+      ]
+    },
+    {
+      "name": "text64",
+      "entrypoint": "round7_runner.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round7_v1/hybrid_dev64_text.json"
+      ]
+    }
+  ]
+}

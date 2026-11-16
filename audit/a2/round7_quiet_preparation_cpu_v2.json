@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "scope": "CPU input typing only; no GPU launched",
+  "actual_free_quality_tail_and_profile_inputs_rejected": [
+    {
+      "run": "key_smoke2",
+      "rejected": true,
+      "reason": "Not a Round7 quiet same-output cost manifest"
+    },
+    {
+      "run": "key_dev16/doc16",
+      "rejected": true,
+      "reason": "Not a Round7 quiet same-output cost manifest"
+    },
+    {
+      "run": "second_tail16",
+      "rejected": true,
+      "reason": "Not a Round7 quiet same-output cost manifest"
+    },
+    {
+      "run": "second_axis16_v3",
+      "rejected": true,
+      "reason": "Not a Round7 quiet same-output cost manifest"
+    },
+    {
+      "run": "projection_dev64/profile2",
+      "rejected": true,
+      "reason": "Not a Round7 quiet same-output cost manifest"
+    }
+  ],
+  "both_confirm_dependencies": [
+    {
+      "complete": "/path/to/TrajKV/results/round7_v1/confirm_s0/complete.json",
+      "launch": "/path/to/TrajKV/jobs/round7_confirm_s0_v1.launch.json"
+    },
+    {
+      "complete": "/path/to/TrajKV/results/round7_v1/confirm_s1/complete.json",
+      "launch": "/path/to/TrajKV/jobs/round7_confirm_s1_v1.launch.json"
+    }
+  ],
+  "runner_checks_no_foreign_compute_on_any_GPU_at_boundaries": true,
+  "sources": {
+    "code\\a2\\round7_timing.py": "0905dad3e02765256743a02612439cc3b22ab4eb51fbdbbfe96dafe7cbe5f62c",
+    "code\\a2\\analyze_round7_timing.py": "2fca2d94ff8f94a0735184baa2ea0e050f86af6cc206cf6fa18881d0fe08d0de",
+    "configs\\a2\\round7_v1\\quiet3_frozen6_v1.json": "9a7c9dca4c7e2de7793a13960e66c5e4f7547f4e62c329fdc9290f9891de417a",
+    "configs\\a2\\round7_v1\\quiet_after_both_confirm_v1.json": "9d05b91a8025a9c07233198cf13e3d362d50603184bf0e9c92bfed56d14bd831",
+    "configs\\a2\\round7_v1\\job_quiet_after_both_confirm_v1.json": "eb1e1e03631e27ab86d45bf693c370fd905621d6bf53128b52d2545989518d46"
+  }
+}

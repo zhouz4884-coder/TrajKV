@@ -1,0 +1,74 @@
+{
+  "schema": "trajkv.round7.llava-next-native-full-smoke.v1",
+  "config": {
+    "schema": "trajkv.round7.second-backbone-native-full-config.v1",
+    "arguments": {
+      "model": "/path/to/storage/models/llava-v1.6-vicuna-7b-hf",
+      "samples": "/path/to/TrajKV/configs/a2/round7_v1/doc_select16_first_questions.json",
+      "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+      "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+      "turns": 1,
+      "max_tokens": 32
+    },
+    "start": 0,
+    "count": 4,
+    "variants": [
+      {
+        "name": "r7_llava16_native_hf",
+        "method": "native_hf"
+      },
+      {
+        "name": "r7_llava16_full_boundary",
+        "method": "full",
+        "cap": 8,
+        "selector": "none",
+        "store_selector_meta": false
+      }
+    ],
+    "official_chat_template_path": "/path/to/TrajKV/configs/a2/round7_v1/llava16_official_chat_template.json",
+    "official_chat_template_sha256": "2eabebdd61f13f04c29ce6c6ebf70e76ea49b7503fa7f0ac36ccbb4d1023ed6e",
+    "official_chat_template_source": {
+      "repo": "llava-hf/llava-v1.6-vicuna-7b-hf",
+      "revision": "c916e6cdcd760b4cecd1dd4907f84ac649f93b23",
+      "url": "https://huggingface.co/llava-hf/llava-v1.6-vicuna-7b-hf/raw/c916e6cdcd760b4cecd1dd4907f84ac649f93b23/chat_template.json",
+      "sha256": "2eabebdd61f13f04c29ce6c6ebf70e76ea49b7503fa7f0ac36ccbb4d1023ed6e"
+    },
+    "expected_model_config_sha256": "3ea1ed765b0b79834892d8060cb46162121ef01596e56ca6e168a48a8da08336"
+  },
+  "config_sha256": "0bdf2014f2c894a7b42551e201e32b43e1f219c4085c62f64515b066672dc94a",
+  "samples_sha256": "7a7a375eeab16fab1d6fd79e4ef8ba601c937c5f64321ebcb75debdf467712cf",
+  "geometry": {
+    "decoder_layer_path": "model.language_model.layers",
+    "layers": 32,
+    "query_heads": 32,
+    "kv_heads": 32,
+    "head_dim": 128,
+    "hidden_size": 4096,
+    "image_token_id": 32000,
+    "model_type": "llava_next"
+  },
+  "selected_ids": [
+    "docvqa_next_8411_cal_q1",
+    "docvqa_next_13650_cal_q1",
+    "docvqa_next_1361_cal_q1",
+    "docvqa_next_6540_cal_q1"
+  ],
+  "official_template_injected_if_missing": false,
+  "template_provenance": {
+    "repo": "llava-hf/llava-v1.6-vicuna-7b-hf",
+    "revision": "c916e6cdcd760b4cecd1dd4907f84ac649f93b23",
+    "url": "https://huggingface.co/llava-hf/llava-v1.6-vicuna-7b-hf/raw/c916e6cdcd760b4cecd1dd4907f84ac649f93b23/chat_template.json",
+    "sha256": "2eabebdd61f13f04c29ce6c6ebf70e76ea49b7503fa7f0ac36ccbb4d1023ed6e"
+  },
+  "original_session_adapter_sha256": "58a8cc57e410b5b1955bac05e52662b3a6f03a97f859d2c710475b08a3bb78aa",
+  "source_sha256": "ce98066ae2926457d68078c22d5ad6d64abd92307533f625003948af5020b065",
+  "answers_visible_to_runner": false,
+  "model_weights_frozen": true,
+  "weight_quantization": false,
+  "weight_dtype": "torch.float16",
+  "text_KV": "FP16",
+  "visual_padding_allowed": false,
+  "torch": "2.4.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "scope": "4 development source images, real variable Nv, first-question free-running identity; no packed or task-generalization claim"
+}

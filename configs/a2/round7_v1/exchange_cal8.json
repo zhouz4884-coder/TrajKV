@@ -1,0 +1,38 @@
+{
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 8,
+    "compress_before_question": true,
+    "turns": 1
+  },
+  "incumbent_config": "/path/to/TrajKV/configs/a2/round6_v1/depth_doc64.json",
+  "incumbent_variant_index": 0,
+  "gradient_ranking_path": "/path/to/TrajKV/results/round5_v1/gradient_queue/calibration16/ranking_scores.json",
+  "calibration_sets": [
+    {
+      "dataset": "doc",
+      "samples": "/path/to/TrajKV/configs/a2/round7_v1/doc_train16_independent.json",
+      "references": "/path/to/TrajKV/configs/data/round7_doc_train16_independent_references.jsonl",
+      "source_count": 4,
+      "questions_per_source": 2
+    },
+    {
+      "dataset": "text",
+      "samples": "/path/to/TrajKV/configs/a2/round7_v1/text_train16_independent.json",
+      "references": "/path/to/TrajKV/configs/data/round7_text_train16_independent_references.json",
+      "source_count": 4,
+      "questions_per_source": 2
+    }
+  ],
+  "candidate_count": 4,
+  "batches": 2,
+  "target_kinds": [
+    "gt",
+    "self"
+  ],
+  "self_target_tokens": 4,
+  "max_gt_tokens": 32,
+  "selection_objective": "gt"
+}

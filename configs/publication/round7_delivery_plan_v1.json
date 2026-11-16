@@ -1,0 +1,55 @@
+{
+  "schema": "trajkv.round7.publication-plan.v1",
+  "stage": "Round7",
+  "tag_name": "research-round7-20261116",
+  "archive_name": "round7_increment_20261116.zip",
+  "release_title": "TrajKV Round7: 1.295-bit visual KV, new-source confirmation and static-policy equivalence",
+  "release_body": "Two RTX3090 workers completed real packed E2E experiments. Primary frozen confirmation: 128 project-fresh Doc sources / 412 questions and 128 Text sources / 128 questions, nine methods. The ~1.295-bit visual-KV point saves ~28% versus the ~1.8-bit incumbent with Doc/Text score losses of 0.464/1.406 pp; the Native4 0.5pp quality target is not established. The conditional policy has an exact initial-static-batch alias, so feedback re-estimation has no independent demonstrated gain. Includes second-backbone first-question evidence, quiet fixed-output costs, all safe results, failed runs and immutable source identities. Exact archive bytes and LF Git bodies are indexed separately. Read the report for complete scope.",
+  "execution_receipt": "audit/a2/ROUND7_EXECUTION_RECEIPT.json",
+  "evidence_verification": "audit/publication/round7_final_numeric_verification.json",
+  "final_report": "docs/RESEARCH_PROGRESS_2026-11-16_round7.zh.md",
+  "readme_entry_file": "docs/PUBLIC_ROUND7_ENTRY_2026-11-16.md",
+  "method_freeze": "audit/a2/round7_method_freeze_v1.json",
+  "required_quality_domains": [
+    "doc",
+    "text"
+  ],
+  "include_completed_development_analyses": true,
+  "additional_checks": [
+    {
+      "path": "results/round7_v1/quiet_timing_analysis/summary.json",
+      "accepted_statuses": [
+        "PASS"
+      ]
+    },
+    {
+      "path": "audit/a2/round7_secondary_freeze_verification_v1.json",
+      "accepted_statuses": [
+        "PASS"
+      ]
+    },
+    {
+      "path": "audit/a2/round7_doc_confirmation_alignment_v1.json",
+      "accepted_statuses": [
+        "PASS"
+      ]
+    },
+    {
+      "path": "audit/a2/round7_matched_static_batch_equivalence_v1.json",
+      "accepted_statuses": [
+        "PASS"
+      ]
+    },
+    {
+      "path": "audit/a2/round7_completed_run_inventory_v1.json",
+      "accepted_statuses": [
+        "COMPLETE"
+      ]
+    }
+  ],
+  "failed_evidence_roots": [
+    "audit/a2/round7_failed_logs_v1"
+  ],
+  "extra_roots": [],
+  "prerelease": true
+}

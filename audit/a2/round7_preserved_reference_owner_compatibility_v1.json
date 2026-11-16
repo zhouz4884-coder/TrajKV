@@ -1,0 +1,154 @@
+{
+  "schema": "trajkv.round7.preserved-reference-owner-compatibility.v1",
+  "status": "PASS",
+  "runs": [
+    {
+      "run": "results\\mechanism_confirm64_s0_v1\\quality",
+      "manifest_sha256": "d9c5cd44cff9b97b695ace8ddb05aba798d294bb2511d690dd7985910fbc9485",
+      "records_sha256": "e9ef432f1c841613dea68719bd82e16be961278f946c8dada725a05b0b117b92",
+      "complete_sha256": "25d891fa241ccfc0276fd4d9db5a8fdcfc91542f0d61b34d3530795380221405",
+      "checked_records": 192
+    },
+    {
+      "run": "results\\mechanism_confirm64_s1_v1\\quality",
+      "manifest_sha256": "8ae27da3c21e4c9b34b2f45dc652cf99e0a44d62ed2282bbbf449a66a5df62d8",
+      "records_sha256": "27ef2c334fd59bd058bc003bdf2afb3af83db24d67065e83e3279bf0d17d4ec0",
+      "complete_sha256": "25d891fa241ccfc0276fd4d9db5a8fdcfc91542f0d61b34d3530795380221405",
+      "checked_records": 192
+    },
+    {
+      "run": "results\\textvqa_controls128_s0_v1\\quality",
+      "manifest_sha256": "e2508cac65f812b537798026f2a0df6e16f0f2b873e1dec562f6dbf12d318065",
+      "records_sha256": "fc3de583c6b0be8af511c9037da81e17466d15777a06b30a41f3288ba2cfd139",
+      "complete_sha256": "cc88afd7e5e5c24ff295b179167f983939a173b1f7646e3d7bd13b0298237536",
+      "checked_records": 64
+    },
+    {
+      "run": "results\\textvqa_controls128_s1_v1\\quality",
+      "manifest_sha256": "ae643312c5a999d8ad6c90e66a5e7b2e117f93670d8d7b625c4d2bb30e994244",
+      "records_sha256": "9d147e7c7571d7c465627e254e8236bb6483ef4354d7200b4996ed44ca58411d",
+      "complete_sha256": "cc88afd7e5e5c24ff295b179167f983939a173b1f7646e3d7bd13b0298237536",
+      "checked_records": 64
+    }
+  ],
+  "table": [
+    {
+      "variant": "base2_16",
+      "method": "base2",
+      "checked_records": 64,
+      "complete_bits": 2.252232142857143,
+      "minimum_bits": 2.252232142857143,
+      "maximum_bits": 2.252232142857143,
+      "auxiliary_bytes_observed": [
+        0
+      ],
+      "role": "actual packed runtime",
+      "reconstructed_from_shapes": true
+    },
+    {
+      "variant": "base2_8",
+      "method": "base2",
+      "checked_records": 64,
+      "complete_bits": 2.252232142857143,
+      "minimum_bits": 2.252232142857143,
+      "maximum_bits": 2.252232142857143,
+      "auxiliary_bytes_observed": [
+        0
+      ],
+      "role": "actual packed runtime",
+      "reconstructed_from_shapes": true
+    },
+    {
+      "variant": "full16",
+      "method": "full",
+      "checked_records": 64,
+      "complete_bits": 16.002232142857142,
+      "minimum_bits": 16.002232142857142,
+      "maximum_bits": 16.002232142857142,
+      "auxiliary_bytes_observed": [
+        0
+      ],
+      "role": "FP16 runtime",
+      "reconstructed_from_shapes": null
+    },
+    {
+      "variant": "full8",
+      "method": "full",
+      "checked_records": 64,
+      "complete_bits": 16.002232142857142,
+      "minimum_bits": 16.002232142857142,
+      "maximum_bits": 16.002232142857142,
+      "auxiliary_bytes_observed": [
+        0
+      ],
+      "role": "FP16 runtime",
+      "reconstructed_from_shapes": null
+    },
+    {
+      "variant": "kvarn2_k_clipped_v1",
+      "method": "hybrid_packed",
+      "checked_records": 192,
+      "complete_bits": 1.7102379528366372,
+      "minimum_bits": 1.7046130952380953,
+      "maximum_bits": 1.734375,
+      "auxiliary_bytes_observed": [
+        65536
+      ],
+      "role": "actual packed runtime",
+      "reconstructed_from_shapes": true
+    },
+    {
+      "variant": "native4_8",
+      "method": "native4",
+      "checked_records": 64,
+      "complete_bits": 4.252232142857143,
+      "minimum_bits": 4.252232142857143,
+      "maximum_bits": 4.252232142857143,
+      "auxiliary_bytes_observed": [
+        0
+      ],
+      "role": "actual packed runtime",
+      "reconstructed_from_shapes": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "control": "missing Hadamard",
+      "status": "PASS",
+      "rejected": "Hybrid Hadamard must be charged exactly once as FP32[128,128]"
+    },
+    {
+      "control": "double Hadamard",
+      "status": "PASS",
+      "rejected": "Hybrid Hadamard must be charged exactly once as FP32[128,128]"
+    },
+    {
+      "control": "retained source FP16",
+      "status": "PASS",
+      "rejected": "Packed reference retains source visual FP16 or executes materialized quality"
+    },
+    {
+      "control": "materialized quality execution",
+      "status": "PASS",
+      "rejected": "Packed reference retains source visual FP16 or executes materialized quality"
+    },
+    {
+      "control": "configuration clipping mismatch",
+      "status": "PASS",
+      "rejected": "Hybrid V clipping differs from producer configuration"
+    },
+    {
+      "control": "wrong reader fingerprint",
+      "status": "PASS",
+      "rejected": "Hybrid fused reader source differs from record fingerprint"
+    }
+  ],
+  "total_unique_not_added": true,
+  "GT_reference_files_opened": false,
+  "task_scores_computed": false,
+  "GPU_used": false,
+  "original_records_modified": false,
+  "scope": "CPU byte/configuration/provenance compatibility on already-completed GPU evidence; no new model measurement",
+  "analyzer_sha256": "a0bea8335e874ac78b60e6080d1c919275acfdd0cf23056d8fe9acc546bb41d1",
+  "source_sha256": "1c106df8eb9e05c65e000c9e0ca2334b3ec6368ebd7b740d5a8d8ba1ff7a17e0"
+}

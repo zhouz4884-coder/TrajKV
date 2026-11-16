@@ -1,0 +1,22 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/round7_v1/exchange_key_smoke2/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/round7_exchange_key_smoke2_v1.launch.json",
+  "tasks": [
+    {
+      "name": "gt",
+      "entrypoint": "round7_exchange_key.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round7_v1/exchange_key_cal8_gt.json"
+      ]
+    },
+    {
+      "name": "self",
+      "entrypoint": "round7_exchange_key.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round7_v1/exchange_key_cal8_self.json"
+      ]
+    }
+  ]
+}

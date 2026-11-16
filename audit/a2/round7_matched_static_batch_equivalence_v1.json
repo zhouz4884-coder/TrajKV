@@ -1,0 +1,707 @@
+{
+  "schema": "trajkv.round7.matched-static-batch-equivalence.v1",
+  "status": "PASS",
+  "scope": "CPU audit of completed calibration only; no confirmation predictions accessed",
+  "algorithmic_confound": "Existing global-top-B static controls differ from conditional in per-batch selection constraint; updated-state scoring is not needed to reproduce any of these final policies",
+  "alias_semantics": "Same deployed policy and same real answers, not an independent replication",
+  "runs": {
+    "k2_gt": {
+      "run": "results/round7_v1/exchange_cal8_pairs8",
+      "selection_objective": "gt",
+      "question_count": 14,
+      "independent_sources": 8,
+      "frozen_candidate_count": 8,
+      "frozen_partitions": [
+        [
+          "swap_00",
+          "swap_01"
+        ],
+        [
+          "swap_02",
+          "swap_03"
+        ],
+        [
+          "swap_04",
+          "swap_05"
+        ],
+        [
+          "swap_06",
+          "swap_07"
+        ]
+      ],
+      "no_candidate_reordering": true,
+      "no_current_state_score_used_by_aliases": true,
+      "global_endpoint_disjointness_verified": true,
+      "original_controller_logical_allocation_cap_per_method": 33,
+      "original_controller_logical_packed_target_forward_cap_per_method": 924,
+      "original_controller_physical_packed_target_forwards_for_shared_campaign": 1372,
+      "original_controller_unique_allocations": 49,
+      "teacher_generation_and_Full_native_controls_excluded_from_these_counts": true,
+      "checks": [
+        {
+          "alias": "matched_static_batch_additive",
+          "alias_of_frozen_policy": "results/round7_v1/exchange_cal8_pairs8/policy_conditional_batches.json",
+          "alias_of_frozen_policy_sha256": "e8a58e602c047adbd4ca6ae253f6ba2eb3961158d7c75444d3e27a41ec47ed6e",
+          "existing_free_generation_variant": "r7_budget_k2_cond",
+          "selected_pair_ids": [
+            "swap_00",
+            "swap_03",
+            "swap_04"
+          ],
+          "decisions": [
+            {
+              "batch": 0,
+              "frozen_candidate_ids": [
+                "swap_00",
+                "swap_01"
+              ],
+              "initial_state_scores": {
+                "swap_00": 0.013996842701089918,
+                "swap_01": 0.0026552543095021974
+              },
+              "selected_pair_id": "swap_00",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 1,
+              "frozen_candidate_ids": [
+                "swap_02",
+                "swap_03"
+              ],
+              "initial_state_scores": {
+                "swap_03": 0.007386012157439836,
+                "swap_02": 0.0028503015819296706
+              },
+              "selected_pair_id": "swap_03",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 2,
+              "frozen_candidate_ids": [
+                "swap_04",
+                "swap_05"
+              ],
+              "initial_state_scores": {
+                "swap_04": 0.001809456158298417,
+                "swap_05": -0.004936974912197911
+              },
+              "selected_pair_id": "swap_04",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 3,
+              "frozen_candidate_ids": [
+                "swap_06",
+                "swap_07"
+              ],
+              "initial_state_scores": {
+                "swap_06": -0.006475673955719685,
+                "swap_07": -0.0069364019836939406
+              },
+              "selected_pair_id": null,
+              "state_after_acceptance_was_not_used_for_scoring": true
+            }
+          ],
+          "full_224_unit_ranking_identical": true,
+          "full_selected_stages_order_identical": true,
+          "all_deployment_parameters_except_display_name_identical": true,
+          "complete_owner_recomputed_from_actual_codec_assets": true,
+          "owner_by_visual_tokens": {
+            "1792": {
+              "selected_stages": 44,
+              "complete_bytes": 11560453,
+              "bits_per_scalar": 1.799984834632095,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            },
+            "1280": {
+              "selected_stages": 42,
+              "complete_bytes": 8237573,
+              "bits_per_scalar": 1.7956484113420759,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            }
+          },
+          "initial_intervention_allocations_needed": 16,
+          "initial_plus_one_baseline_allocations_needed": 17,
+          "packed_target_forwards_to_form_policy_using_both_targets": 476,
+          "packed_target_forwards_to_form_policy_using_only_selection_objective": 238,
+          "optional_final_validation_adds_allocations": 1,
+          "reuse_existing_actual_free_answers": true,
+          "new_independent_generation_records_created": 0
+        },
+        {
+          "alias": "matched_static_batch_joint",
+          "alias_of_frozen_policy": "results/round7_v1/exchange_cal8_pairs8/policy_conditional_batches.json",
+          "alias_of_frozen_policy_sha256": "e8a58e602c047adbd4ca6ae253f6ba2eb3961158d7c75444d3e27a41ec47ed6e",
+          "existing_free_generation_variant": "r7_budget_k2_cond",
+          "selected_pair_ids": [
+            "swap_00",
+            "swap_03",
+            "swap_04"
+          ],
+          "decisions": [
+            {
+              "batch": 0,
+              "frozen_candidate_ids": [
+                "swap_00",
+                "swap_01"
+              ],
+              "initial_state_scores": {
+                "swap_00": 0.013378737763559911,
+                "swap_01": 0.002096051994158188
+              },
+              "selected_pair_id": "swap_00",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 1,
+              "frozen_candidate_ids": [
+                "swap_02",
+                "swap_03"
+              ],
+              "initial_state_scores": {
+                "swap_03": 0.007132634489607881,
+                "swap_02": 0.0020000881813757587
+              },
+              "selected_pair_id": "swap_03",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 2,
+              "frozen_candidate_ids": [
+                "swap_04",
+                "swap_05"
+              ],
+              "initial_state_scores": {
+                "swap_04": 0.001586090273121954,
+                "swap_05": -0.004904148196146707
+              },
+              "selected_pair_id": "swap_04",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 3,
+              "frozen_candidate_ids": [
+                "swap_06",
+                "swap_07"
+              ],
+              "initial_state_scores": {
+                "swap_06": -0.006657741530943895,
+                "swap_07": -0.009693388659798075
+              },
+              "selected_pair_id": null,
+              "state_after_acceptance_was_not_used_for_scoring": true
+            }
+          ],
+          "full_224_unit_ranking_identical": true,
+          "full_selected_stages_order_identical": true,
+          "all_deployment_parameters_except_display_name_identical": true,
+          "complete_owner_recomputed_from_actual_codec_assets": true,
+          "owner_by_visual_tokens": {
+            "1792": {
+              "selected_stages": 44,
+              "complete_bytes": 11560453,
+              "bits_per_scalar": 1.799984834632095,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            },
+            "1280": {
+              "selected_stages": 42,
+              "complete_bytes": 8237573,
+              "bits_per_scalar": 1.7956484113420759,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            }
+          },
+          "initial_intervention_allocations_needed": 8,
+          "initial_plus_one_baseline_allocations_needed": 9,
+          "packed_target_forwards_to_form_policy_using_both_targets": 252,
+          "packed_target_forwards_to_form_policy_using_only_selection_objective": 126,
+          "optional_final_validation_adds_allocations": 1,
+          "reuse_existing_actual_free_answers": true,
+          "new_independent_generation_records_created": 0
+        }
+      ],
+      "frozen_input_sha256": {
+        "results/round7_v1/exchange_cal8_pairs8/summary.json": "3ee82d26f9419a59e5166e42942f07cb70d103ddbe2894f69d6506cf9ce90263",
+        "results/round7_v1/exchange_cal8_pairs8/frozen_candidates.json": "5208c4699921a7e855e70221373f996fcd8fe52aa24b20846ffca27a13a4b855",
+        "results/round7_v1/exchange_cal8_pairs8/policy_incumbent.json": "eb28df263038d8c32df5c0cd0185774fbc9b6461e1280d7cd53c429fcf867348",
+        "results/round7_v1/exchange_cal8_pairs8/policy_conditional_batches.json": "e8a58e602c047adbd4ca6ae253f6ba2eb3961158d7c75444d3e27a41ec47ed6e",
+        "results/round7_v1/exchange_cal8_pairs8/packed_scores.jsonl": "6467ebeb8a93780d540798f5de53b71137d53672b90b2850e5e28004bf203989"
+      },
+      "frozen_inputs_unchanged": true
+    },
+    "k1_gt": {
+      "run": "results/round7_v1/exchange_key_cal8/gt",
+      "selection_objective": "gt",
+      "question_count": 14,
+      "independent_sources": 8,
+      "frozen_candidate_count": 8,
+      "frozen_partitions": [
+        [
+          "swap_00",
+          "swap_01"
+        ],
+        [
+          "swap_02",
+          "swap_03"
+        ],
+        [
+          "swap_04",
+          "swap_05"
+        ],
+        [
+          "swap_06",
+          "swap_07"
+        ]
+      ],
+      "no_candidate_reordering": true,
+      "no_current_state_score_used_by_aliases": true,
+      "global_endpoint_disjointness_verified": true,
+      "original_controller_logical_allocation_cap_per_method": 33,
+      "original_controller_logical_packed_target_forward_cap_per_method": 924,
+      "original_controller_physical_packed_target_forwards_for_shared_campaign": 1400,
+      "original_controller_unique_allocations": 50,
+      "teacher_generation_and_Full_native_controls_excluded_from_these_counts": true,
+      "checks": [
+        {
+          "alias": "matched_static_batch_additive",
+          "alias_of_frozen_policy": "results/round7_v1/exchange_key_cal8/gt/policy_conditional_batches.json",
+          "alias_of_frozen_policy_sha256": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+          "existing_free_generation_variant": "r7_joint_k1_gt_cond",
+          "selected_pair_ids": [
+            "swap_01",
+            "swap_03",
+            "swap_04",
+            "swap_07"
+          ],
+          "decisions": [
+            {
+              "batch": 0,
+              "frozen_candidate_ids": [
+                "swap_00",
+                "swap_01"
+              ],
+              "initial_state_scores": {
+                "swap_01": 0.022636814536781458,
+                "swap_00": -0.03358534722701734
+              },
+              "selected_pair_id": "swap_01",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 1,
+              "frozen_candidate_ids": [
+                "swap_02",
+                "swap_03"
+              ],
+              "initial_state_scores": {
+                "swap_03": 0.0874786046324516,
+                "swap_02": 0.06821219278572244
+              },
+              "selected_pair_id": "swap_03",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 2,
+              "frozen_candidate_ids": [
+                "swap_04",
+                "swap_05"
+              ],
+              "initial_state_scores": {
+                "swap_04": 0.04752886669757572,
+                "swap_05": 0.005001587410333741
+              },
+              "selected_pair_id": "swap_04",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 3,
+              "frozen_candidate_ids": [
+                "swap_06",
+                "swap_07"
+              ],
+              "initial_state_scores": {
+                "swap_07": 0.08163934247113502,
+                "swap_06": -0.027668473346238898
+              },
+              "selected_pair_id": "swap_07",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            }
+          ],
+          "full_224_unit_ranking_identical": true,
+          "full_selected_stages_order_identical": true,
+          "all_deployment_parameters_except_display_name_identical": true,
+          "complete_owner_recomputed_from_actual_codec_assets": true,
+          "owner_by_visual_tokens": {
+            "1792": {
+              "selected_stages": 43,
+              "complete_bytes": 8315013,
+              "bits_per_scalar": 1.294663565499442,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            },
+            "1280": {
+              "selected_stages": 43,
+              "complete_bytes": 5964933,
+              "bits_per_scalar": 1.300252205984933,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            }
+          },
+          "initial_intervention_allocations_needed": 16,
+          "initial_plus_one_baseline_allocations_needed": 17,
+          "packed_target_forwards_to_form_policy_using_both_targets": 476,
+          "packed_target_forwards_to_form_policy_using_only_selection_objective": 238,
+          "optional_final_validation_adds_allocations": 1,
+          "reuse_existing_actual_free_answers": true,
+          "new_independent_generation_records_created": 0
+        },
+        {
+          "alias": "matched_static_batch_joint",
+          "alias_of_frozen_policy": "results/round7_v1/exchange_key_cal8/gt/policy_conditional_batches.json",
+          "alias_of_frozen_policy_sha256": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+          "existing_free_generation_variant": "r7_joint_k1_gt_cond",
+          "selected_pair_ids": [
+            "swap_01",
+            "swap_03",
+            "swap_04",
+            "swap_07"
+          ],
+          "decisions": [
+            {
+              "batch": 0,
+              "frozen_candidate_ids": [
+                "swap_00",
+                "swap_01"
+              ],
+              "initial_state_scores": {
+                "swap_01": 0.02177213445156667,
+                "swap_00": -0.03520189063692669
+              },
+              "selected_pair_id": "swap_01",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 1,
+              "frozen_candidate_ids": [
+                "swap_02",
+                "swap_03"
+              ],
+              "initial_state_scores": {
+                "swap_03": 0.09828236996236228,
+                "swap_02": 0.06759762868568941
+              },
+              "selected_pair_id": "swap_03",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 2,
+              "frozen_candidate_ids": [
+                "swap_04",
+                "swap_05"
+              ],
+              "initial_state_scores": {
+                "swap_04": 0.04935450352513726,
+                "swap_05": 0.0049398094224670785
+              },
+              "selected_pair_id": "swap_04",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 3,
+              "frozen_candidate_ids": [
+                "swap_06",
+                "swap_07"
+              ],
+              "initial_state_scores": {
+                "swap_07": 0.08484313923781883,
+                "swap_06": -0.023416587750034523
+              },
+              "selected_pair_id": "swap_07",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            }
+          ],
+          "full_224_unit_ranking_identical": true,
+          "full_selected_stages_order_identical": true,
+          "all_deployment_parameters_except_display_name_identical": true,
+          "complete_owner_recomputed_from_actual_codec_assets": true,
+          "owner_by_visual_tokens": {
+            "1792": {
+              "selected_stages": 43,
+              "complete_bytes": 8315013,
+              "bits_per_scalar": 1.294663565499442,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            },
+            "1280": {
+              "selected_stages": 43,
+              "complete_bytes": 5964933,
+              "bits_per_scalar": 1.300252205984933,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            }
+          },
+          "initial_intervention_allocations_needed": 8,
+          "initial_plus_one_baseline_allocations_needed": 9,
+          "packed_target_forwards_to_form_policy_using_both_targets": 252,
+          "packed_target_forwards_to_form_policy_using_only_selection_objective": 126,
+          "optional_final_validation_adds_allocations": 1,
+          "reuse_existing_actual_free_answers": true,
+          "new_independent_generation_records_created": 0
+        }
+      ],
+      "frozen_input_sha256": {
+        "results/round7_v1/exchange_key_cal8/gt/summary.json": "4b7a7bd3930fb76a02c05e12c8edf2df5ba2161abac0d7791ace36113d30aa3c",
+        "results/round7_v1/exchange_key_cal8/gt/frozen_candidates.json": "5585dafabfd11a1bfbb836e2db67cd319f0f30726cd684c421a7ba92f72999aa",
+        "results/round7_v1/exchange_key_cal8/gt/policy_incumbent.json": "9781e51c1ed9ef84cceeb23df87ca93f919183c94f7ea20a9238442d53b9e512",
+        "results/round7_v1/exchange_key_cal8/gt/policy_conditional_batches.json": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+        "results/round7_v1/exchange_key_cal8/gt/packed_scores.jsonl": "3c22e6716435037095ec0f5e1d4b4109d4ad4ace90d410623f8038fd0d2a4429"
+      },
+      "frozen_inputs_unchanged": true
+    },
+    "k1_self": {
+      "run": "results/round7_v1/exchange_key_cal8/self",
+      "selection_objective": "self",
+      "question_count": 14,
+      "independent_sources": 8,
+      "frozen_candidate_count": 8,
+      "frozen_partitions": [
+        [
+          "swap_00",
+          "swap_01"
+        ],
+        [
+          "swap_02",
+          "swap_03"
+        ],
+        [
+          "swap_04",
+          "swap_05"
+        ],
+        [
+          "swap_06",
+          "swap_07"
+        ]
+      ],
+      "no_candidate_reordering": true,
+      "no_current_state_score_used_by_aliases": true,
+      "global_endpoint_disjointness_verified": true,
+      "original_controller_logical_allocation_cap_per_method": 33,
+      "original_controller_logical_packed_target_forward_cap_per_method": 924,
+      "original_controller_physical_packed_target_forwards_for_shared_campaign": 1400,
+      "original_controller_unique_allocations": 50,
+      "teacher_generation_and_Full_native_controls_excluded_from_these_counts": true,
+      "checks": [
+        {
+          "alias": "matched_static_batch_additive",
+          "alias_of_frozen_policy": "results/round7_v1/exchange_key_cal8/self/policy_conditional_batches.json",
+          "alias_of_frozen_policy_sha256": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+          "existing_free_generation_variant": "r7_joint_k1_gt_cond",
+          "selected_pair_ids": [
+            "swap_01",
+            "swap_03",
+            "swap_04",
+            "swap_07"
+          ],
+          "decisions": [
+            {
+              "batch": 0,
+              "frozen_candidate_ids": [
+                "swap_00",
+                "swap_01"
+              ],
+              "initial_state_scores": {
+                "swap_01": 0.016136860248479934,
+                "swap_00": -0.028906401969834405
+              },
+              "selected_pair_id": "swap_01",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 1,
+              "frozen_candidate_ids": [
+                "swap_02",
+                "swap_03"
+              ],
+              "initial_state_scores": {
+                "swap_03": 0.10243409485610755,
+                "swap_02": 0.07243691039184341
+              },
+              "selected_pair_id": "swap_03",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 2,
+              "frozen_candidate_ids": [
+                "swap_04",
+                "swap_05"
+              ],
+              "initial_state_scores": {
+                "swap_04": 0.04201029190244299,
+                "swap_05": 0.008105941021312901
+              },
+              "selected_pair_id": "swap_04",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 3,
+              "frozen_candidate_ids": [
+                "swap_06",
+                "swap_07"
+              ],
+              "initial_state_scores": {
+                "swap_07": 0.06626287016024435,
+                "swap_06": -0.027469363055388385
+              },
+              "selected_pair_id": "swap_07",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            }
+          ],
+          "full_224_unit_ranking_identical": true,
+          "full_selected_stages_order_identical": true,
+          "all_deployment_parameters_except_display_name_identical": true,
+          "complete_owner_recomputed_from_actual_codec_assets": true,
+          "owner_by_visual_tokens": {
+            "1792": {
+              "selected_stages": 43,
+              "complete_bytes": 8315013,
+              "bits_per_scalar": 1.294663565499442,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            },
+            "1280": {
+              "selected_stages": 43,
+              "complete_bytes": 5964933,
+              "bits_per_scalar": 1.300252205984933,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            }
+          },
+          "initial_intervention_allocations_needed": 16,
+          "initial_plus_one_baseline_allocations_needed": 17,
+          "packed_target_forwards_to_form_policy_using_both_targets": 476,
+          "packed_target_forwards_to_form_policy_using_only_selection_objective": 238,
+          "optional_final_validation_adds_allocations": 1,
+          "reuse_existing_actual_free_answers": true,
+          "new_independent_generation_records_created": 0
+        },
+        {
+          "alias": "matched_static_batch_joint",
+          "alias_of_frozen_policy": "results/round7_v1/exchange_key_cal8/self/policy_conditional_batches.json",
+          "alias_of_frozen_policy_sha256": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+          "existing_free_generation_variant": "r7_joint_k1_gt_cond",
+          "selected_pair_ids": [
+            "swap_01",
+            "swap_03",
+            "swap_04",
+            "swap_07"
+          ],
+          "decisions": [
+            {
+              "batch": 0,
+              "frozen_candidate_ids": [
+                "swap_00",
+                "swap_01"
+              ],
+              "initial_state_scores": {
+                "swap_01": 0.015914698949018202,
+                "swap_00": -0.031073143610228726
+              },
+              "selected_pair_id": "swap_01",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 1,
+              "frozen_candidate_ids": [
+                "swap_02",
+                "swap_03"
+              ],
+              "initial_state_scores": {
+                "swap_03": 0.11312452546098939,
+                "swap_02": 0.07193673586698424
+              },
+              "selected_pair_id": "swap_03",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 2,
+              "frozen_candidate_ids": [
+                "swap_04",
+                "swap_05"
+              ],
+              "initial_state_scores": {
+                "swap_04": 0.042738394779917144,
+                "swap_05": 0.008181550819244876
+              },
+              "selected_pair_id": "swap_04",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            },
+            {
+              "batch": 3,
+              "frozen_candidate_ids": [
+                "swap_06",
+                "swap_07"
+              ],
+              "initial_state_scores": {
+                "swap_07": 0.06942447153141984,
+                "swap_06": -0.022428872625823715
+              },
+              "selected_pair_id": "swap_07",
+              "state_after_acceptance_was_not_used_for_scoring": true
+            }
+          ],
+          "full_224_unit_ranking_identical": true,
+          "full_selected_stages_order_identical": true,
+          "all_deployment_parameters_except_display_name_identical": true,
+          "complete_owner_recomputed_from_actual_codec_assets": true,
+          "owner_by_visual_tokens": {
+            "1792": {
+              "selected_stages": 43,
+              "complete_bytes": 8315013,
+              "bits_per_scalar": 1.294663565499442,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            },
+            "1280": {
+              "selected_stages": 43,
+              "complete_bytes": 5964933,
+              "bits_per_scalar": 1.300252205984933,
+              "ranking_bytes": 448,
+              "policy_bytes": 5,
+              "lookup_bytes": 1792
+            }
+          },
+          "initial_intervention_allocations_needed": 8,
+          "initial_plus_one_baseline_allocations_needed": 9,
+          "packed_target_forwards_to_form_policy_using_both_targets": 252,
+          "packed_target_forwards_to_form_policy_using_only_selection_objective": 126,
+          "optional_final_validation_adds_allocations": 1,
+          "reuse_existing_actual_free_answers": true,
+          "new_independent_generation_records_created": 0
+        }
+      ],
+      "frozen_input_sha256": {
+        "results/round7_v1/exchange_key_cal8/self/summary.json": "ddf926b76f3b6ffe896404aaf544fb7c3d457c46819dddf7987c4840ad51c737",
+        "results/round7_v1/exchange_key_cal8/self/frozen_candidates.json": "5585dafabfd11a1bfbb836e2db67cd319f0f30726cd684c421a7ba92f72999aa",
+        "results/round7_v1/exchange_key_cal8/self/policy_incumbent.json": "9781e51c1ed9ef84cceeb23df87ca93f919183c94f7ea20a9238442d53b9e512",
+        "results/round7_v1/exchange_key_cal8/self/policy_conditional_batches.json": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+        "results/round7_v1/exchange_key_cal8/self/packed_scores.jsonl": "73e5c8103f5a91861acf4f04bfb0ac122302ece5de87e9ff22b349e7eed38416"
+      },
+      "frozen_inputs_unchanged": true
+    }
+  },
+  "check_source_sha256": "620e81655802b19195dd51402f2cd7b47491d5e6bfb5a28ca24cbab895ad181e"
+}

@@ -1,0 +1,1387 @@
+{
+  "schema": "trajkv.round7.conditional-diagnostics-summary.v1",
+  "status": "COMPLETE",
+  "scope": "Completed calibration and policy-select only; no running new-source confirmation records read",
+  "sample_unit": "independent source; 14 questions over 8 calibration sources are not multiplied by interventions",
+  "aggregation": "question means within source, equal sources within dataset, equal datasets",
+  "runs": {
+    "k2_gt": {
+      "folder": "results/round7_v1/exchange_cal8_pairs8",
+      "selection_objective": "gt",
+      "questions": 14,
+      "independent_sources": 8,
+      "candidate_count": 8,
+      "batches": 4,
+      "scores_source_macro_mean_token_nll": {
+        "incumbent": {
+          "gt": 0.9252459499039105,
+          "self": 0.21110815942665795
+        },
+        "one_shot_additive": {
+          "gt": 0.9041836122123641,
+          "self": 0.21065563016600208
+        },
+        "static_whole_pair": {
+          "gt": 0.9041836122123641,
+          "self": 0.21065563016600208
+        },
+        "conditional_batches": {
+          "gt": 0.902486575570947,
+          "self": 0.20081567535089562
+        }
+      },
+      "Full_native_reference_macro_nll": {
+        "gt": 0.9282134840486833,
+        "self": 0.08167699187106336
+      },
+      "source_concentration": {
+        "one_shot_additive": {
+          "gt": {
+            "improving_sources": 7,
+            "worsening_sources": 1,
+            "largest_positive_share": 0.24432997105242435,
+            "top_two_positive_share": 0.4678648986940609,
+            "top_two_net_share": 0.46810209660946744,
+            "minimum_LOSO_improvement": 0.017961956439345762,
+            "excluding_top_two_sources_improvement": 0.014937351011515904,
+            "LOSO_scope": "Evaluation of the already selected fixed policy after dropping a source; not leave-source-out refitting or unbiased validation",
+            "maximum_LOSO_improvement": 0.024397934432878778
+          },
+          "self": {
+            "improving_sources": 4,
+            "worsening_sources": 4,
+            "largest_positive_share": 0.40384050225118284,
+            "top_two_positive_share": 0.7912822137500299,
+            "top_two_net_share": 15.48040242624714,
+            "minimum_LOSO_improvement": -0.0048062152733715875,
+            "excluding_top_two_sources_improvement": -0.008737074405265352,
+            "LOSO_scope": "Evaluation of the already selected fixed policy after dropping a source; not leave-source-out refitting or unbiased validation",
+            "maximum_LOSO_improvement": 0.009245134249795228
+          }
+        },
+        "conditional_batches": {
+          "gt": {
+            "source_rows": [
+              {
+                "dataset": "text",
+                "source_id": "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e",
+                "initial_nll": 5.416041374206543,
+                "final_nll": 5.373411655426025,
+                "improvement": 0.04262971878051758
+              },
+              {
+                "dataset": "doc",
+                "source_id": "rphx0227",
+                "initial_nll": 0.38915999233722687,
+                "final_nll": 0.35296015441417694,
+                "improvement": 0.03619983792304993
+              },
+              {
+                "dataset": "doc",
+                "source_id": "ggmx0225",
+                "initial_nll": 0.8123226463794708,
+                "final_nll": 0.7784350141882896,
+                "improvement": 0.03388763219118118
+              },
+              {
+                "dataset": "doc",
+                "source_id": "hmxn0226",
+                "initial_nll": 0.48154502362012863,
+                "final_nll": 0.44952771067619324,
+                "improvement": 0.032017312943935394
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7",
+                "initial_nll": 0.04189888760447502,
+                "final_nll": 0.02126554772257805,
+                "improvement": 0.020633339881896973
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67",
+                "initial_nll": 0.11591014673467726,
+                "final_nll": 0.09580946841742843,
+                "improvement": 0.02010067831724882
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d",
+                "initial_nll": 0.0006444000755436718,
+                "final_nll": 0.0007436361047439277,
+                "improvement": -9.923602920025587e-05
+              },
+              {
+                "dataset": "doc",
+                "source_id": "fqdg0072",
+                "initial_nll": 0.14444512827321887,
+                "final_nll": 0.14773941761814058,
+                "improvement": -0.003294289344921708
+              }
+            ],
+            "improving_sources": 6,
+            "worsening_sources": 2,
+            "largest_positive_share": 0.2298488108484525,
+            "top_two_positive_share": 0.4250293078711616,
+            "top_two_net_share": 0.43295103124493023,
+            "minimum_LOSO_improvement": 0.01912377540914652,
+            "excluding_top_two_sources_improvement": 0.017207572993356735,
+            "LOSO_scope": "Evaluation of the already selected fixed policy after dropping a source; not leave-source-out refitting or unbiased validation",
+            "maximum_LOSO_improvement": 0.02742552646183564
+          },
+          "self": {
+            "source_rows": [
+              {
+                "dataset": "text",
+                "source_id": "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e",
+                "initial_nll": 0.7420624494552612,
+                "final_nll": 0.6881833076477051,
+                "improvement": 0.05387914180755615
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7",
+                "initial_nll": 0.04189888760447502,
+                "final_nll": 0.02126554772257805,
+                "improvement": 0.020633339881896973
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67",
+                "initial_nll": 0.11591014673467726,
+                "final_nll": 0.09580946841742843,
+                "improvement": 0.02010067831724882
+              },
+              {
+                "dataset": "doc",
+                "source_id": "rphx0227",
+                "initial_nll": 0.37343908846378326,
+                "final_nll": 0.3714741915464401,
+                "improvement": 0.0019648969173431396
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d",
+                "initial_nll": 0.00043688848381862044,
+                "final_nll": 0.0005689404788427055,
+                "improvement": -0.00013205199502408504
+              },
+              {
+                "dataset": "doc",
+                "source_id": "ggmx0225",
+                "initial_nll": 0.19742413610219955,
+                "final_nll": 0.19909822940826416,
+                "improvement": -0.0016740933060646057
+              },
+              {
+                "dataset": "doc",
+                "source_id": "fqdg0072",
+                "initial_nll": 0.030424206983298063,
+                "final_nll": 0.035810470348224044,
+                "improvement": -0.005386263364925981
+              },
+              {
+                "dataset": "doc",
+                "source_id": "hmxn0226",
+                "initial_nll": 0.18726947158575058,
+                "final_nll": 0.19431524723768234,
+                "improvement": -0.007045775651931763
+              }
+            ],
+            "improving_sources": 4,
+            "worsening_sources": 4,
+            "largest_positive_share": 0.5578818162590495,
+            "top_two_positive_share": 0.7715259973396889,
+            "top_two_net_share": 0.9049380249336726,
+            "minimum_LOSO_improvement": 0.005249339941656217,
+            "excluding_top_two_sources_improvement": 0.003474502154858783,
+            "LOSO_scope": "Evaluation of the already selected fixed policy after dropping a source; not leave-source-out refitting or unbiased validation",
+            "maximum_LOSO_improvement": 0.01425120557541959
+          }
+        }
+      },
+      "continuous_diagnostics": {
+        "gt": {
+          "initial": {
+            "first_reference_margin_target_minus_strongest_other": 2.1572265625,
+            "first_top1_top2_margin": 4.947265625,
+            "first_entropy_nats": 0.49624405115265224,
+            "first_reference_margin_negative_questions": 4,
+            "first_argmax_matches_target_questions": 10,
+            "all_teacher_forced_argmax_matches_target_questions": 7
+          },
+          "conditional": {
+            "first_reference_margin_target_minus_strongest_other": 2.30908203125,
+            "first_top1_top2_margin": 5.009765625,
+            "first_entropy_nats": 0.48088618980456355,
+            "first_reference_margin_negative_questions": 4,
+            "first_argmax_matches_target_questions": 10,
+            "all_teacher_forced_argmax_matches_target_questions": 8
+          },
+          "first_argmax_changed_questions": 2,
+          "teacher_forced_sequence_changed_questions": 3,
+          "scope": "Teacher-forced logits conditioned on fixed target history; not free-running answers"
+        },
+        "self": {
+          "initial": {
+            "first_reference_margin_target_minus_strongest_other": 4.912109375,
+            "first_top1_top2_margin": 4.947265625,
+            "first_entropy_nats": 0.49624406605381344,
+            "first_reference_margin_negative_questions": 1,
+            "first_argmax_matches_target_questions": 13,
+            "all_teacher_forced_argmax_matches_target_questions": 11
+          },
+          "conditional": {
+            "first_reference_margin_target_minus_strongest_other": 4.974609375,
+            "first_top1_top2_margin": 5.009765625,
+            "first_entropy_nats": 0.48088617490340235,
+            "first_reference_margin_negative_questions": 2,
+            "first_argmax_matches_target_questions": 12,
+            "all_teacher_forced_argmax_matches_target_questions": 11
+          },
+          "first_argmax_changed_questions": 2,
+          "teacher_forced_sequence_changed_questions": 3,
+          "scope": "Teacher-forced logits conditioned on fixed target history; not free-running answers"
+        }
+      },
+      "target_agreement": {
+        "doc": {
+          "questions": 8,
+          "same_first_gt_and_self_target_questions": 4,
+          "same_complete_gt_and_self_target_questions": 2
+        },
+        "text": {
+          "questions": 6,
+          "same_first_gt_and_self_target_questions": 5,
+          "same_complete_gt_and_self_target_questions": 4
+        }
+      },
+      "pair_interactions": {
+        "initial_static": {
+          "definition": "actual joint improvement - sum of standalone add/remove improvements at the same anchor",
+          "mean": -0.0006763114677141857,
+          "mean_absolute": 0.0006845181467269867,
+          "max_absolute": 0.002756986676104134,
+          "positive_sign_disagreements": 0,
+          "pairs": [
+            {
+              "id": "swap_00",
+              "predicted_additive": 0.013996842701089918,
+              "actual_joint": 0.013378737763559911,
+              "interaction": -0.0006181049375300063
+            },
+            {
+              "id": "swap_01",
+              "predicted_additive": 0.0026552543095021974,
+              "actual_joint": 0.002096051994158188,
+              "interaction": -0.0005592023153440095
+            },
+            {
+              "id": "swap_02",
+              "predicted_additive": 0.0028503015819296706,
+              "actual_joint": 0.0020000881813757587,
+              "interaction": -0.0008502134005539119
+            },
+            {
+              "id": "swap_03",
+              "predicted_additive": 0.007386012157439836,
+              "actual_joint": 0.007132634489607881,
+              "interaction": -0.0002533776678319555
+            },
+            {
+              "id": "swap_04",
+              "predicted_additive": 0.001809456158298417,
+              "actual_joint": 0.001586090273121954,
+              "interaction": -0.00022336588517646305
+            },
+            {
+              "id": "swap_05",
+              "predicted_additive": -0.004936974912197911,
+              "actual_joint": -0.004904148196146707,
+              "interaction": 3.282671605120413e-05
+            },
+            {
+              "id": "swap_06",
+              "predicted_additive": -0.006475673955719685,
+              "actual_joint": -0.006657741530943895,
+              "interaction": -0.00018206757522420958
+            },
+            {
+              "id": "swap_07",
+              "predicted_additive": -0.0069364019836939406,
+              "actual_joint": -0.009693388659798075,
+              "interaction": -0.002756986676104134
+            }
+          ]
+        },
+        "current_conditional": {
+          "definition": "actual joint improvement - sum of standalone add/remove improvements at the same anchor",
+          "mean": -0.00023910291793072247,
+          "mean_absolute": 0.0007420315428134927,
+          "max_absolute": 0.0014297090292529901,
+          "positive_sign_disagreements": 1,
+          "pairs": [
+            {
+              "id": "swap_00",
+              "predicted_additive": 0.013996842701089918,
+              "actual_joint": 0.013378737763559911,
+              "interaction": -0.0006181049375300063
+            },
+            {
+              "id": "swap_01",
+              "predicted_additive": 0.0026552543095021974,
+              "actual_joint": 0.002096051994158188,
+              "interaction": -0.0005592023153440095
+            },
+            {
+              "id": "swap_02",
+              "predicted_additive": -0.00018826294763130136,
+              "actual_joint": 0.0005425122471933719,
+              "interaction": 0.0007307751948246732
+            },
+            {
+              "id": "swap_03",
+              "predicted_additive": 0.007601915667692083,
+              "actual_joint": 0.00888285497239849,
+              "interaction": 0.0012809393047064077
+            },
+            {
+              "id": "swap_04",
+              "predicted_additive": 0.0010370700219937135,
+              "actual_joint": 0.000497781597005087,
+              "interaction": -0.0005392884249886265
+            },
+            {
+              "id": "swap_05",
+              "predicted_additive": -0.003998655407485785,
+              "actual_joint": -0.004151147653828957,
+              "interaction": -0.00015249224634317216
+            },
+            {
+              "id": "swap_06",
+              "predicted_additive": -0.0061801158717571525,
+              "actual_joint": -0.007609824901010143,
+              "interaction": -0.0014297090292529901
+            },
+            {
+              "id": "swap_07",
+              "predicted_additive": -0.007548656751168892,
+              "actual_joint": -0.008174397640686948,
+              "interaction": -0.0006257408895180561
+            }
+          ]
+        }
+      },
+      "accepted_pair_ids": {
+        "one_shot_additive": [
+          "swap_00",
+          "swap_03",
+          "swap_02",
+          "swap_01"
+        ],
+        "static_whole_pair": [
+          "swap_00",
+          "swap_03",
+          "swap_01",
+          "swap_02"
+        ],
+        "conditional_batches": [
+          "swap_00",
+          "swap_03",
+          "swap_04"
+        ]
+      },
+      "budget": {
+        "logical_allocation_evaluations_per_method": 33,
+        "logical_target_forwards_per_method": 924,
+        "physical_target_forwards": 1372,
+        "physical_allocation_case_evaluations": 686,
+        "unique_allocations": 49,
+        "scope": "Equal logical upper bound across methods, with exact-input sharing across all arms; physical count is pooled packed suffix forwards and excludes Full native teacher/control preparation"
+      },
+      "baseline_bits_min": 1.7956484113420759,
+      "baseline_bits_max": 1.799984834632095,
+      "calibration_refs": [
+        {
+          "dataset": "doc",
+          "samples": "/path/to/TrajKV/configs/a2/round7_v1/doc_train16_independent.json",
+          "references": "/path/to/TrajKV/configs/data/round7_doc_train16_independent_references.jsonl",
+          "source_count": 4,
+          "questions_per_source": 2
+        },
+        {
+          "dataset": "text",
+          "samples": "/path/to/TrajKV/configs/a2/round7_v1/text_train16_independent.json",
+          "references": "/path/to/TrajKV/configs/data/round7_text_train16_independent_references.json",
+          "source_count": 4,
+          "questions_per_source": 2
+        }
+      ]
+    },
+    "k1_gt": {
+      "folder": "results/round7_v1/exchange_key_cal8/gt",
+      "selection_objective": "gt",
+      "questions": 14,
+      "independent_sources": 8,
+      "candidate_count": 8,
+      "batches": 4,
+      "scores_source_macro_mean_token_nll": {
+        "incumbent": {
+          "gt": 0.4531081514296602,
+          "self": 0.4104397714663719
+        },
+        "one_shot_additive": {
+          "gt": 0.25004160607340964,
+          "self": 0.21466037119307657
+        },
+        "static_whole_pair": {
+          "gt": 0.25004160607340964,
+          "self": 0.21466037119307657
+        },
+        "conditional_batches": {
+          "gt": 0.24263525355127058,
+          "self": 0.2101705599707202
+        }
+      },
+      "Full_native_reference_macro_nll": {
+        "gt": 0.21644223066869017,
+        "self": 0.08167699187106336
+      },
+      "source_concentration": {
+        "one_shot_additive": {
+          "gt": {
+            "improving_sources": 8,
+            "worsening_sources": 0,
+            "largest_positive_share": 0.6089950327344641,
+            "top_two_positive_share": 0.8757915002795169,
+            "top_two_net_share": 0.8757915002795169,
+            "minimum_LOSO_improvement": 0.09796589369883198,
+            "excluding_top_two_sources_improvement": 0.026742751301753742,
+            "LOSO_scope": "Evaluation of the already selected fixed policy after dropping a source; not leave-source-out refitting or unbiased validation",
+            "maximum_LOSO_improvement": 0.2628354488642799
+          },
+          "self": {
+            "improving_sources": 7,
+            "worsening_sources": 1,
+            "largest_positive_share": 0.6316284541347058,
+            "top_two_positive_share": 0.9083404654091211,
+            "top_two_net_share": 0.9083895147593192,
+            "minimum_LOSO_improvement": 0.09067700426324639,
+            "excluding_top_two_sources_improvement": 0.019450373160907475,
+            "LOSO_scope": "Evaluation of the already selected fixed policy after dropping a source; not leave-source-out refitting or unbiased validation",
+            "maximum_LOSO_improvement": 0.25555353683921567
+          }
+        },
+        "conditional_batches": {
+          "gt": {
+            "source_rows": [
+              {
+                "dataset": "text",
+                "source_id": "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e",
+                "initial_nll": 1.264605164527893,
+                "final_nll": 0.3459094762802124,
+                "improvement": 0.9186956882476807
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7",
+                "initial_nll": 0.7956945896148682,
+                "final_nll": 0.21039102971553802,
+                "improvement": 0.5853035598993301
+              },
+              {
+                "dataset": "doc",
+                "source_id": "ggmx0225",
+                "initial_nll": 0.5008907914161682,
+                "final_nll": 0.38416849076747894,
+                "improvement": 0.11672230064868927
+              },
+              {
+                "dataset": "doc",
+                "source_id": "hmxn0226",
+                "initial_nll": 0.48819422721862793,
+                "final_nll": 0.44576507806777954,
+                "improvement": 0.04242914915084839
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67",
+                "initial_nll": 0.07063970081071602,
+                "final_nll": 0.05466866001370363,
+                "improvement": 0.015971040797012392
+              },
+              {
+                "dataset": "doc",
+                "source_id": "rphx0227",
+                "initial_nll": 0.3350193575024605,
+                "final_nll": 0.3304031193256378,
+                "improvement": 0.004616238176822662
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d",
+                "initial_nll": 0.0006128928507678211,
+                "final_nll": 0.0005566190229728818,
+                "improvement": 5.627382779493928e-05
+              },
+              {
+                "dataset": "doc",
+                "source_id": "fqdg0072",
+                "initial_nll": 0.16920848749578,
+                "final_nll": 0.1692195552168414,
+                "improvement": -1.106772106140852e-05
+              }
+            ],
+            "improving_sources": 7,
+            "worsening_sources": 1,
+            "largest_positive_share": 0.5456104199426187,
+            "top_two_positive_share": 0.8932203251547643,
+            "top_two_net_share": 0.893226196405591,
+            "minimum_LOSO_improvement": 0.12069138995260194,
+            "excluding_top_two_sources_improvement": 0.024476406188114197,
+            "LOSO_scope": "Evaluation of the already selected fixed policy after dropping a source; not leave-source-out refitting or unbiased validation",
+            "maximum_LOSO_improvement": 0.2737979590225829
+          },
+          "self": {
+            "source_rows": [
+              {
+                "dataset": "text",
+                "source_id": "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e",
+                "initial_nll": 1.264605164527893,
+                "final_nll": 0.3459094762802124,
+                "improvement": 0.9186956882476807
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7",
+                "initial_nll": 0.7956945896148682,
+                "final_nll": 0.21039102971553802,
+                "improvement": 0.5853035598993301
+              },
+              {
+                "dataset": "doc",
+                "source_id": "rphx0227",
+                "initial_nll": 0.5247435495257378,
+                "final_nll": 0.4893220365047455,
+                "improvement": 0.03542151302099228
+              },
+              {
+                "dataset": "doc",
+                "source_id": "hmxn0226",
+                "initial_nll": 0.23819240927696228,
+                "final_nll": 0.20878395438194275,
+                "improvement": 0.02940845489501953
+              },
+              {
+                "dataset": "doc",
+                "source_id": "ggmx0225",
+                "initial_nll": 0.34978730976581573,
+                "final_nll": 0.32958270609378815,
+                "improvement": 0.020204603672027588
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67",
+                "initial_nll": 0.07063970081071602,
+                "final_nll": 0.05466866001370363,
+                "improvement": 0.015971040797012392
+              },
+              {
+                "dataset": "text",
+                "source_id": "sha256:0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d",
+                "initial_nll": 0.0003376786189619452,
+                "final_nll": 0.0004091474402230233,
+                "improvement": -7.146882126107812e-05
+              },
+              {
+                "dataset": "doc",
+                "source_id": "fqdg0072",
+                "initial_nll": 0.03951776959002018,
+                "final_nll": 0.042297469335608184,
+                "improvement": -0.0027796997455880046
+              }
+            ],
+            "improving_sources": 6,
+            "worsening_sources": 2,
+            "largest_positive_share": 0.5723943340228459,
+            "top_two_positive_share": 0.9370683448574927,
+            "top_two_net_share": 0.9387359375630151,
+            "minimum_LOSO_improvement": 0.11048238095948666,
+            "excluding_top_two_sources_improvement": 0.014256751974244253,
+            "LOSO_scope": "Evaluation of the already selected fixed policy after dropping a source; not leave-source-out refitting or unbiased validation",
+            "maximum_LOSO_improvement": 0.263610240470977
+          }
+        }
+      },
+      "continuous_diagnostics": {
+        "gt": {
+          "initial": {
+            "first_reference_margin_target_minus_strongest_other": 4.263671875,
+            "first_top1_top2_margin": 5.10546875,
+            "first_entropy_nats": 0.5662287016066987,
+            "first_reference_margin_negative_questions": 4,
+            "first_argmax_matches_target_questions": 10,
+            "all_teacher_forced_argmax_matches_target_questions": 7
+          },
+          "conditional": {
+            "first_reference_margin_target_minus_strongest_other": 4.6669921875,
+            "first_top1_top2_margin": 4.908203125,
+            "first_entropy_nats": 0.5708668418309948,
+            "first_reference_margin_negative_questions": 2,
+            "first_argmax_matches_target_questions": 12,
+            "all_teacher_forced_argmax_matches_target_questions": 9
+          },
+          "first_argmax_changed_questions": 2,
+          "teacher_forced_sequence_changed_questions": 3,
+          "scope": "Teacher-forced logits conditioned on fixed target history; not free-running answers"
+        },
+        "self": {
+          "initial": {
+            "first_reference_margin_target_minus_strongest_other": 4.302734375,
+            "first_top1_top2_margin": 5.10546875,
+            "first_entropy_nats": 0.5662286867055375,
+            "first_reference_margin_negative_questions": 4,
+            "first_argmax_matches_target_questions": 10,
+            "all_teacher_forced_argmax_matches_target_questions": 9
+          },
+          "conditional": {
+            "first_reference_margin_target_minus_strongest_other": 4.6728515625,
+            "first_top1_top2_margin": 4.908203125,
+            "first_entropy_nats": 0.5708668269298336,
+            "first_reference_margin_negative_questions": 3,
+            "first_argmax_matches_target_questions": 11,
+            "all_teacher_forced_argmax_matches_target_questions": 10
+          },
+          "first_argmax_changed_questions": 2,
+          "teacher_forced_sequence_changed_questions": 3,
+          "scope": "Teacher-forced logits conditioned on fixed target history; not free-running answers"
+        }
+      },
+      "target_agreement": {
+        "doc": {
+          "questions": 8,
+          "same_first_gt_and_self_target_questions": 4,
+          "same_complete_gt_and_self_target_questions": 2
+        },
+        "text": {
+          "questions": 6,
+          "same_first_gt_and_self_target_questions": 6,
+          "same_complete_gt_and_self_target_questions": 5
+        }
+      },
+      "pair_interactions": {
+        "initial_static": {
+          "definition": "actual joint improvement - sum of standalone add/remove improvements at the same anchor",
+          "mean": 0.0021159398671670715,
+          "mean_absolute": 0.0029053312629230277,
+          "max_absolute": 0.010803765329910675,
+          "positive_sign_disagreements": 0,
+          "pairs": [
+            {
+              "id": "swap_00",
+              "predicted_additive": -0.03358534722701734,
+              "actual_joint": -0.03520189063692669,
+              "interaction": -0.0016165434099093545
+            },
+            {
+              "id": "swap_01",
+              "predicted_additive": 0.022636814536781458,
+              "actual_joint": 0.02177213445156667,
+              "interaction": -0.0008646800852147862
+            },
+            {
+              "id": "swap_02",
+              "predicted_additive": 0.06821219278572244,
+              "actual_joint": 0.06759762868568941,
+              "interaction": -0.0006145641000330215
+            },
+            {
+              "id": "swap_03",
+              "predicted_additive": 0.0874786046324516,
+              "actual_joint": 0.09828236996236228,
+              "interaction": 0.010803765329910675
+            },
+            {
+              "id": "swap_04",
+              "predicted_additive": 0.04752886669757572,
+              "actual_joint": 0.04935450352513726,
+              "interaction": 0.0018256368275615387
+            },
+            {
+              "id": "swap_05",
+              "predicted_additive": 0.005001587410333741,
+              "actual_joint": 0.0049398094224670785,
+              "interaction": -6.177798786666244e-05
+            },
+            {
+              "id": "swap_06",
+              "predicted_additive": -0.027668473346238898,
+              "actual_joint": -0.023416587750034523,
+              "interaction": 0.0042518855962043745
+            },
+            {
+              "id": "swap_07",
+              "predicted_additive": 0.08163934247113502,
+              "actual_joint": 0.08484313923781883,
+              "interaction": 0.0032037967666838085
+            }
+          ]
+        },
+        "current_conditional": {
+          "definition": "actual joint improvement - sum of standalone add/remove improvements at the same anchor",
+          "mean": 0.001970797764101917,
+          "mean_absolute": 0.003559865854981581,
+          "max_absolute": 0.012703112411145412,
+          "positive_sign_disagreements": 0,
+          "pairs": [
+            {
+              "id": "swap_00",
+              "predicted_additive": -0.03358534722701734,
+              "actual_joint": -0.03520189063692669,
+              "interaction": -0.0016165434099093545
+            },
+            {
+              "id": "swap_01",
+              "predicted_additive": 0.022636814536781458,
+              "actual_joint": 0.02177213445156667,
+              "interaction": -0.0008646800852147862
+            },
+            {
+              "id": "swap_02",
+              "predicted_additive": 0.06766535224596737,
+              "actual_joint": 0.06810367547768692,
+              "interaction": 0.0004383232317195507
+            },
+            {
+              "id": "swap_03",
+              "predicted_additive": 0.08980325076481677,
+              "actual_joint": 0.09804176116449526,
+              "interaction": 0.00823851039967849
+            },
+            {
+              "id": "swap_04",
+              "predicted_additive": 0.05036996898252255,
+              "actual_joint": 0.04722855268391868,
+              "interaction": -0.003141416298603872
+            },
+            {
+              "id": "swap_05",
+              "predicted_additive": 0.0041228797954318,
+              "actual_joint": 0.0033892472256411565,
+              "interaction": -0.0007336325697906432
+            },
+            {
+              "id": "swap_06",
+              "predicted_additive": -0.04004594813068252,
+              "actual_joint": -0.027342835719537106,
+              "interaction": 0.012703112411145412
+            },
+            {
+              "id": "swap_07",
+              "predicted_additive": 0.042687741144618485,
+              "actual_joint": 0.043430449578409025,
+              "interaction": 0.0007427084337905399
+            }
+          ]
+        }
+      },
+      "accepted_pair_ids": {
+        "one_shot_additive": [
+          "swap_03",
+          "swap_07",
+          "swap_02",
+          "swap_04"
+        ],
+        "static_whole_pair": [
+          "swap_03",
+          "swap_07",
+          "swap_02",
+          "swap_04"
+        ],
+        "conditional_batches": [
+          "swap_01",
+          "swap_03",
+          "swap_04",
+          "swap_07"
+        ]
+      },
+      "budget": {
+        "logical_allocation_evaluations_per_method": 33,
+        "logical_target_forwards_per_method": 924,
+        "physical_target_forwards": 1400,
+        "physical_allocation_case_evaluations": 700,
+        "unique_allocations": 50,
+        "scope": "Equal logical upper bound across methods, with exact-input sharing across all arms; physical count is pooled packed suffix forwards and excludes Full native teacher/control preparation"
+      },
+      "baseline_bits_min": 1.294663565499442,
+      "baseline_bits_max": 1.300252205984933,
+      "calibration_refs": [
+        {
+          "dataset": "doc",
+          "samples": "/path/to/TrajKV/configs/a2/round7_v1/doc_train16_independent.json",
+          "references": "/path/to/TrajKV/configs/data/round7_doc_train16_independent_references.jsonl",
+          "source_count": 4,
+          "questions_per_source": 2
+        },
+        {
+          "dataset": "text",
+          "samples": "/path/to/TrajKV/configs/a2/round7_v1/text_train16_independent.json",
+          "references": "/path/to/TrajKV/configs/data/round7_text_train16_plurality_calibration_v1.json",
+          "source_count": 4,
+          "questions_per_source": 2
+        }
+      ],
+      "first_token_stress_limitation_example": {
+        "id": "r7_text_train32_38548",
+        "source_id": "sha256:5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e",
+        "initial_gt_token_nll": [
+          2.455681169521995e-05,
+          2.486013412475586,
+          5.101593017578125
+        ],
+        "final_gt_token_nll": [
+          3.111314072157256e-05,
+          1.9809672832489014,
+          0.09445846825838089
+        ],
+        "initial_gt_token_reference_margin": [
+          10.875,
+          -2.390625,
+          -5.09375
+        ],
+        "final_gt_token_reference_margin": [
+          10.671875,
+          -1.8125,
+          2.640625
+        ],
+        "first_entropy_initial": 0.00030336203053593636,
+        "first_entropy_final": 0.0003766283916775137
+      }
+    },
+    "k1_self": {
+      "folder": "results/round7_v1/exchange_key_cal8/self",
+      "selection_objective": "self",
+      "questions": 14,
+      "independent_sources": 8,
+      "candidate_count": 8,
+      "batches": 4,
+      "scores_source_macro_mean_token_nll": {
+        "same_as_run": "k1_gt",
+        "equality_checked": true
+      },
+      "Full_native_reference_macro_nll": {
+        "same_as_run": "k1_gt",
+        "equality_checked": true
+      },
+      "source_concentration": {
+        "same_as_run": "k1_gt",
+        "equality_checked": true
+      },
+      "continuous_diagnostics": {
+        "same_as_run": "k1_gt",
+        "equality_checked": true
+      },
+      "target_agreement": {
+        "same_as_run": "k1_gt",
+        "equality_checked": true
+      },
+      "pair_interactions": {
+        "initial_static": {
+          "definition": "actual joint improvement - sum of standalone add/remove improvements at the same anchor",
+          "mean": 0.0021008947020391133,
+          "mean_absolute": 0.0028231640682179204,
+          "max_absolute": 0.01069043060488184,
+          "positive_sign_disagreements": 0,
+          "pairs": [
+            {
+              "id": "swap_00",
+              "predicted_additive": -0.028906401969834405,
+              "actual_joint": -0.031073143610228726,
+              "interaction": -0.0021667416403943207
+            },
+            {
+              "id": "swap_01",
+              "predicted_additive": 0.016136860248479934,
+              "actual_joint": 0.015914698949018202,
+              "interaction": -0.0002221612994617317
+            },
+            {
+              "id": "swap_02",
+              "predicted_additive": 0.07243691039184341,
+              "actual_joint": 0.07193673586698424,
+              "interaction": -0.000500174524859176
+            },
+            {
+              "id": "swap_03",
+              "predicted_additive": 0.10243409485610755,
+              "actual_joint": 0.11312452546098939,
+              "interaction": 0.01069043060488184
+            },
+            {
+              "id": "swap_04",
+              "predicted_additive": 0.04201029190244299,
+              "actual_joint": 0.042738394779917144,
+              "interaction": 0.0007281028774741571
+            },
+            {
+              "id": "swap_05",
+              "predicted_additive": 0.008105941021312901,
+              "actual_joint": 0.008181550819244876,
+              "interaction": 7.560979793197475e-05
+            },
+            {
+              "id": "swap_06",
+              "predicted_additive": -0.027469363055388385,
+              "actual_joint": -0.022428872625823715,
+              "interaction": 0.00504049042956467
+            },
+            {
+              "id": "swap_07",
+              "predicted_additive": 0.06626287016024435,
+              "actual_joint": 0.06942447153141984,
+              "interaction": 0.003161601371175493
+            }
+          ]
+        },
+        "current_conditional": {
+          "definition": "actual joint improvement - sum of standalone add/remove improvements at the same anchor",
+          "mean": 0.0024635101550529726,
+          "mean_absolute": 0.004092098390060528,
+          "max_absolute": 0.013324193017069774,
+          "positive_sign_disagreements": 0,
+          "pairs": [
+            {
+              "id": "swap_00",
+              "predicted_additive": -0.028906401969834405,
+              "actual_joint": -0.031073143610228726,
+              "interaction": -0.0021667416403943207
+            },
+            {
+              "id": "swap_01",
+              "predicted_additive": 0.016136860248479934,
+              "actual_joint": 0.015914698949018202,
+              "interaction": -0.0002221612994617317
+            },
+            {
+              "id": "swap_02",
+              "predicted_additive": 0.07150674787044409,
+              "actual_joint": 0.07293166826457309,
+              "interaction": 0.0014249203941290034
+            },
+            {
+              "id": "swap_03",
+              "predicted_additive": 0.10339960181954666,
+              "actual_joint": 0.11342949918252998,
+              "interaction": 0.01002989736298332
+            },
+            {
+              "id": "swap_04",
+              "predicted_additive": 0.04455212447919621,
+              "actual_joint": 0.04102386428985483,
+              "interaction": -0.003528260189341381
+            },
+            {
+              "id": "swap_05",
+              "predicted_additive": 0.0019240258834543056,
+              "actual_joint": 0.0013268360726215178,
+              "interaction": -0.0005971898108327878
+            },
+            {
+              "id": "swap_06",
+              "predicted_additive": -0.040981543915222574,
+              "actual_joint": -0.0276573508981528,
+              "interaction": 0.013324193017069774
+            },
+            {
+              "id": "swap_07",
+              "predicted_additive": 0.028457725667976774,
+              "actual_joint": 0.02990114907424868,
+              "interaction": 0.0014434234062719042
+            }
+          ]
+        }
+      },
+      "accepted_pair_ids": {
+        "one_shot_additive": [
+          "swap_03",
+          "swap_02",
+          "swap_07",
+          "swap_04"
+        ],
+        "static_whole_pair": [
+          "swap_03",
+          "swap_02",
+          "swap_07",
+          "swap_04"
+        ],
+        "conditional_batches": [
+          "swap_01",
+          "swap_03",
+          "swap_04",
+          "swap_07"
+        ]
+      },
+      "budget": {
+        "logical_allocation_evaluations_per_method": 33,
+        "logical_target_forwards_per_method": 924,
+        "physical_target_forwards": 1400,
+        "physical_allocation_case_evaluations": 700,
+        "unique_allocations": 50,
+        "scope": "Equal logical upper bound across methods, with exact-input sharing across all arms; physical count is pooled packed suffix forwards and excludes Full native teacher/control preparation"
+      },
+      "baseline_bits_min": 1.294663565499442,
+      "baseline_bits_max": 1.300252205984933,
+      "calibration_refs": [
+        {
+          "dataset": "doc",
+          "samples": "/path/to/TrajKV/configs/a2/round7_v1/doc_train16_independent.json",
+          "references": "/path/to/TrajKV/configs/data/round7_doc_train16_independent_references.jsonl",
+          "source_count": 4,
+          "questions_per_source": 2
+        },
+        {
+          "dataset": "text",
+          "samples": "/path/to/TrajKV/configs/a2/round7_v1/text_train16_independent.json",
+          "references": "/path/to/TrajKV/configs/data/round7_text_train16_plurality_calibration_v1.json",
+          "source_count": 4,
+          "questions_per_source": 2
+        }
+      ]
+    }
+  },
+  "gt_vs_self_frozen_policy_equal": {
+    "incumbent": {
+      "full_priority_equal": true,
+      "variant_parameters_equal": true,
+      "file_bytes_equal": true
+    },
+    "one_shot_additive": {
+      "full_priority_equal": true,
+      "variant_parameters_equal": true,
+      "file_bytes_equal": true
+    },
+    "static_whole_pair": {
+      "full_priority_equal": true,
+      "variant_parameters_equal": true,
+      "file_bytes_equal": true
+    },
+    "conditional_batches": {
+      "full_priority_equal": true,
+      "variant_parameters_equal": true,
+      "file_bytes_equal": true
+    }
+  },
+  "policy_select": {
+    "doc": {
+      "role": "new-fit-select-not-pristine",
+      "questions": 38,
+      "sources": 16,
+      "table": [
+        {
+          "variant": "r7_budget_k2_inc",
+          "score_percent": 93.76261574647069,
+          "complete_bits": 1.7998193222927814,
+          "maximum_per_session_bits": 1.799984834632095
+        },
+        {
+          "variant": "r7_budget_k2_static",
+          "score_percent": 88.85033504471632,
+          "complete_bits": 1.7998193222927814,
+          "maximum_per_session_bits": 1.799984834632095
+        },
+        {
+          "variant": "r7_budget_k2_cond",
+          "score_percent": 93.8002097314331,
+          "complete_bits": 1.7998193222927814,
+          "maximum_per_session_bits": 1.799984834632095
+        },
+        {
+          "variant": "r7_joint_k1_inc43",
+          "score_percent": 89.59736390719509,
+          "complete_bits": 1.2948768723882011,
+          "maximum_per_session_bits": 1.300252205984933
+        },
+        {
+          "variant": "r7_joint_k1_static",
+          "score_percent": 89.59736390719509,
+          "complete_bits": 1.2948768723882011,
+          "maximum_per_session_bits": 1.300252205984933
+        },
+        {
+          "variant": "r7_joint_k1_gt_cond",
+          "score_percent": 92.2289428545635,
+          "complete_bits": 1.2948768723882011,
+          "maximum_per_session_bits": 1.300252205984933
+        }
+      ],
+      "comparisons": {
+        "k2_cond_vs_inc": {
+          "candidate": "r7_budget_k2_cond",
+          "comparator": "r7_budget_k2_inc",
+          "delta_pp": 0.03759398496240588,
+          "ci_low_pp": -0.0,
+          "ci_high_pp": 0.12605042016806678,
+          "raw_source_signflip_p": 1.0,
+          "holm_all_reported_pairs": 1.0,
+          "winning_questions": 1,
+          "losing_questions": 0,
+          "changed_score_sources": 1,
+          "changed_questions": [
+            {
+              "id": "docvqa_next_10147_cal_q2",
+              "source_cluster": "fmjm0223",
+              "score_delta": 0.014285714285714235
+            }
+          ]
+        },
+        "k2_cond_vs_static": {
+          "candidate": "r7_budget_k2_cond",
+          "comparator": "r7_budget_k2_static",
+          "delta_pp": 4.949874686716791,
+          "ci_low_pp": -0.0,
+          "ci_high_pp": 12.5,
+          "raw_source_signflip_p": 0.5,
+          "holm_all_reported_pairs": 1.0,
+          "winning_questions": 2,
+          "losing_questions": 0,
+          "changed_score_sources": 2,
+          "changed_questions": [
+            {
+              "id": "docvqa_next_10147_cal_q2",
+              "source_cluster": "fmjm0223",
+              "score_delta": 0.8809523809523809
+            },
+            {
+              "id": "docvqa_next_9398_cal_q1",
+              "source_cluster": "fxxh0227",
+              "score_delta": 1.0
+            }
+          ]
+        },
+        "k1_cond_vs_inc": {
+          "candidate": "r7_joint_k1_gt_cond",
+          "comparator": "r7_joint_k1_inc43",
+          "delta_pp": 2.631578947368421,
+          "ci_low_pp": -0.0,
+          "ci_high_pp": 8.333333333333332,
+          "raw_source_signflip_p": 1.0,
+          "holm_all_reported_pairs": 1.0,
+          "winning_questions": 1,
+          "losing_questions": 0,
+          "changed_score_sources": 1,
+          "changed_questions": [
+            {
+              "id": "docvqa_next_9398_cal_q1",
+              "source_cluster": "fxxh0227",
+              "score_delta": 1.0
+            }
+          ]
+        },
+        "k1_static_vs_inc": {
+          "candidate": "r7_joint_k1_static",
+          "comparator": "r7_joint_k1_inc43",
+          "delta_pp": -0.0,
+          "ci_low_pp": -0.0,
+          "ci_high_pp": -0.0,
+          "raw_source_signflip_p": 1.0,
+          "holm_all_reported_pairs": 1.0,
+          "winning_questions": 0,
+          "losing_questions": 0,
+          "changed_score_sources": 0,
+          "changed_questions": []
+        }
+      },
+      "statistics_scope": "question-weighted source-cluster bootstrap; paired cluster sign flips; Holm over reported comparisons; source-macro descriptive mean also reported"
+    },
+    "text": {
+      "role": "new-fit-select-not-pristine",
+      "questions": 22,
+      "sources": 16,
+      "table": [
+        {
+          "variant": "r7_budget_k2_inc",
+          "score_percent": 90.9090909090909,
+          "complete_bits": 1.7998421891291339,
+          "maximum_per_session_bits": 1.799984834632095
+        },
+        {
+          "variant": "r7_budget_k2_static",
+          "score_percent": 90.45454545454544,
+          "complete_bits": 1.7998421891291339,
+          "maximum_per_session_bits": 1.799984834632095
+        },
+        {
+          "variant": "r7_budget_k2_cond",
+          "score_percent": 95.0,
+          "complete_bits": 1.7998421891291339,
+          "maximum_per_session_bits": 1.799984834632095
+        },
+        {
+          "variant": "r7_joint_k1_inc43",
+          "score_percent": 86.36363636363636,
+          "complete_bits": 1.2948474023575174,
+          "maximum_per_session_bits": 1.300252205984933
+        },
+        {
+          "variant": "r7_joint_k1_static",
+          "score_percent": 86.36363636363636,
+          "complete_bits": 1.2948474023575174,
+          "maximum_per_session_bits": 1.300252205984933
+        },
+        {
+          "variant": "r7_joint_k1_gt_cond",
+          "score_percent": 90.45454545454544,
+          "complete_bits": 1.2948474023575174,
+          "maximum_per_session_bits": 1.300252205984933
+        }
+      ],
+      "comparisons": {
+        "k2_cond_vs_inc": {
+          "candidate": "r7_budget_k2_cond",
+          "comparator": "r7_budget_k2_inc",
+          "delta_pp": 4.090909090909091,
+          "ci_low_pp": -0.0,
+          "ci_high_pp": 14.210526315789473,
+          "raw_source_signflip_p": 1.0,
+          "holm_all_reported_pairs": 1.0,
+          "winning_questions": 1,
+          "losing_questions": 0,
+          "changed_score_sources": 1,
+          "changed_questions": [
+            {
+              "id": "r7_text_select16_39014",
+              "source_cluster": "09ee0248306a8342",
+              "score_delta": 0.9
+            }
+          ]
+        },
+        "k2_cond_vs_static": {
+          "candidate": "r7_budget_k2_cond",
+          "comparator": "r7_budget_k2_static",
+          "delta_pp": 4.545454545454546,
+          "ci_low_pp": -0.0,
+          "ci_high_pp": 15.789473684210526,
+          "raw_source_signflip_p": 1.0,
+          "holm_all_reported_pairs": 1.0,
+          "winning_questions": 1,
+          "losing_questions": 0,
+          "changed_score_sources": 1,
+          "changed_questions": [
+            {
+              "id": "r7_text_select16_39313",
+              "source_cluster": "349cc6da2159ce84",
+              "score_delta": 1.0
+            }
+          ]
+        },
+        "k1_cond_vs_inc": {
+          "candidate": "r7_joint_k1_gt_cond",
+          "comparator": "r7_joint_k1_inc43",
+          "delta_pp": 4.090909090909091,
+          "ci_low_pp": -0.0,
+          "ci_high_pp": 14.210526315789473,
+          "raw_source_signflip_p": 1.0,
+          "holm_all_reported_pairs": 1.0,
+          "winning_questions": 1,
+          "losing_questions": 0,
+          "changed_score_sources": 1,
+          "changed_questions": [
+            {
+              "id": "r7_text_select16_39014",
+              "source_cluster": "09ee0248306a8342",
+              "score_delta": 0.9
+            }
+          ]
+        },
+        "k1_static_vs_inc": {
+          "candidate": "r7_joint_k1_static",
+          "comparator": "r7_joint_k1_inc43",
+          "delta_pp": -0.0,
+          "ci_low_pp": -0.0,
+          "ci_high_pp": -0.0,
+          "raw_source_signflip_p": 1.0,
+          "holm_all_reported_pairs": 1.0,
+          "winning_questions": 0,
+          "losing_questions": 0,
+          "changed_score_sources": 0,
+          "changed_questions": []
+        }
+      },
+      "statistics_scope": "question-weighted source-cluster bootstrap; paired cluster sign flips; Holm over reported comparisons; source-macro descriptive mean also reported"
+    }
+  },
+  "matched_static_batch_equivalence_audit": "audit/a2/round7_matched_static_batch_equivalence_v1.json",
+  "feedback_mechanism_independent_contribution_identified": false,
+  "key_limitations": [
+    "Initial static additive and initial static joint scores with matched per-batch maximum-one rule reproduce every conditional policy exactly",
+    "K2 and K1 GT levels are not directly comparable: K1 uses a normalized-plurality Text first reference; K2 uses the original first annotation",
+    "K1 GT improvement is concentrated in two Text sources; fixed-policy LOSO is descriptive, not unbiased refitting",
+    "Select is new-fit-select-not-pristine and has sparse source-level outcome changes; no confirmed statistical superiority",
+    "GT/self agreement on the same images and largely overlapping target tokens is an ablation, not independent replication"
+  ],
+  "input_sha256": {
+    "results/round7_v1/exchange_cal8_pairs8/summary.json": "3ee82d26f9419a59e5166e42942f07cb70d103ddbe2894f69d6506cf9ce90263",
+    "results/round7_v1/exchange_cal8_pairs8/manifest.json": "5488e1384aaf6336bfb24ae3f658efa0f3acfe650dad280fa67b9bbef95e2acf",
+    "results/round7_v1/exchange_cal8_pairs8/cases.jsonl": "b7a44718dd7845d53e6b5f9e5b44233eaa781f31207aa24d342988e81b9fa2a9",
+    "results/round7_v1/exchange_cal8_pairs8/packed_scores.jsonl": "6467ebeb8a93780d540798f5de53b71137d53672b90b2850e5e28004bf203989",
+    "results/round7_v1/exchange_key_cal8/gt/summary.json": "4b7a7bd3930fb76a02c05e12c8edf2df5ba2161abac0d7791ace36113d30aa3c",
+    "results/round7_v1/exchange_key_cal8/gt/manifest.json": "3293e1a4496882921fc3498511da50c1c4ffa6f4657841b03eb304be0fc7b5e9",
+    "results/round7_v1/exchange_key_cal8/gt/cases.jsonl": "0a8b753903695fd6d745e4ae2becd5f265312ee860fa42a2b55a50a0681c495c",
+    "results/round7_v1/exchange_key_cal8/gt/packed_scores.jsonl": "3c22e6716435037095ec0f5e1d4b4109d4ad4ace90d410623f8038fd0d2a4429",
+    "results/round7_v1/exchange_key_cal8/self/summary.json": "ddf926b76f3b6ffe896404aaf544fb7c3d457c46819dddf7987c4840ad51c737",
+    "results/round7_v1/exchange_key_cal8/self/manifest.json": "68de8fd1318f17074b257312d5cbf8205ecbdf928ee8f9278371fa547f1c9000",
+    "results/round7_v1/exchange_key_cal8/self/cases.jsonl": "0a8b753903695fd6d745e4ae2becd5f265312ee860fa42a2b55a50a0681c495c",
+    "results/round7_v1/exchange_key_cal8/self/packed_scores.jsonl": "73e5c8103f5a91861acf4f04bfb0ac122302ece5de87e9ff22b349e7eed38416",
+    "results/round7_v1/policy_select_doc_analysis/summary.json": "4c23c545848cc49522b6f51c0a7335fb4e83d7a8c920ccedc5c2eddaab0c4671",
+    "results/round7_v1/policy_select_doc_analysis/scores.csv": "78602e13ccbf079930e68562b0b2ddcc3cb13babbaab6b5bcd2ea1846515c7dc",
+    "results/round7_v1/policy_select_text_analysis/summary.json": "1bc01d0f8567ed0eb7ad2520367260b7f18c7242caf1753deed91cb24c5188c8",
+    "results/round7_v1/policy_select_text_analysis/scores.csv": "b24b5c81694d0669229512925764e4cfb32f7e3d3a099bbbb6d5f90fa54a4d39",
+    "results/round7_v1/exchange_key_cal8/gt/policy_incumbent.json": "9781e51c1ed9ef84cceeb23df87ca93f919183c94f7ea20a9238442d53b9e512",
+    "results/round7_v1/exchange_key_cal8/self/policy_incumbent.json": "9781e51c1ed9ef84cceeb23df87ca93f919183c94f7ea20a9238442d53b9e512",
+    "results/round7_v1/exchange_key_cal8/gt/policy_one_shot_additive.json": "24cc54219b2d3ef17c006b67a0eac774a91b866b8225380beb642144f17745ca",
+    "results/round7_v1/exchange_key_cal8/self/policy_one_shot_additive.json": "24cc54219b2d3ef17c006b67a0eac774a91b866b8225380beb642144f17745ca",
+    "results/round7_v1/exchange_key_cal8/gt/policy_static_whole_pair.json": "3c551cd20c6a47772612cb1125a44837dbb7529cb89ee5d76e2affee57a7cb13",
+    "results/round7_v1/exchange_key_cal8/self/policy_static_whole_pair.json": "3c551cd20c6a47772612cb1125a44837dbb7529cb89ee5d76e2affee57a7cb13",
+    "results/round7_v1/exchange_key_cal8/gt/policy_conditional_batches.json": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+    "results/round7_v1/exchange_key_cal8/self/policy_conditional_batches.json": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+    "audit/a2/round7_matched_static_batch_equivalence_v1.json": "957b84a21d15b3be3c0fc698bab0341016e71fb2904e262435de14d3a409ea79"
+  },
+  "codec_asset_sha256_recheck": {
+    "k2_gt": [
+      {
+        "asset": "results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+        "sha256": "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae",
+        "matches_run_manifest": true
+      },
+      {
+        "asset": "results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+        "sha256": "d60fe4ffcf31e36306ed2c5a4069634627c83b3af2f0b86fdb5c37e456113671",
+        "matches_run_manifest": true
+      }
+    ],
+    "k1_gt": [
+      {
+        "asset": "results/round7_v1/codec_assets/gaussian_vq_g4_16.json",
+        "sha256": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+        "matches_run_manifest": true
+      },
+      {
+        "asset": "results/round7_v1/codec_assets/factors_for_book16_inherited.json",
+        "sha256": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+        "matches_run_manifest": true
+      }
+    ],
+    "k1_self": [
+      {
+        "asset": "results/round7_v1/codec_assets/gaussian_vq_g4_16.json",
+        "sha256": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+        "matches_run_manifest": true
+      },
+      {
+        "asset": "results/round7_v1/codec_assets/factors_for_book16_inherited.json",
+        "sha256": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+        "matches_run_manifest": true
+      }
+    ]
+  }
+}
