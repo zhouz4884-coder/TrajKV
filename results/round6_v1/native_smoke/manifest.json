@@ -1,0 +1,62 @@
+{
+  "config": {
+    "arguments": {
+      "model": "/path/to/InternVL3-8B-hf",
+      "samples": "/path/to/TrajKV/configs/a2/next_cal32_independent_questions.json",
+      "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+      "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+      "max_patches": 8,
+      "compress_before_question": true,
+      "turns": 1
+    },
+    "images": 83,
+    "target_tokens": 8,
+    "steps": 80,
+    "learning_rate": 0.003,
+    "regularization": 0.01,
+    "encoder_book_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json",
+    "mode": "compressed_question",
+    "train_value": true,
+    "packed_forward": true,
+    "assert_forward_identity": true,
+    "headwise_if_budget": true,
+    "book_budget_bits": 1.8,
+    "key_gain_mode": "centered",
+    "value_group_size": "all",
+    "fixed_metadata_factor_path": "/path/to/TrajKV/results/metadata_followup_v1/calibration_s0/all_kv/factors.json",
+    "calibration_image_count": 1,
+    "max_cases": 1,
+    "channel_groups": 1,
+    "learn_visual_bias": false,
+    "summary_kl_cases": 4,
+    "first_question_per_image": true
+  },
+  "config_sha256": "e3ec0f4c33da56af4c0eb2fad6c91bc3fe55eccc56db4edbbb29c4e2cde7214e",
+  "samples_sha256": "b615cd5eff5a4fc3d039a3db98f5f76e2eaec8e9c8020942885096691af36a48",
+  "encoder_book_sha256": "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae",
+  "fixed_metadata_sha256": "d60fe4ffcf31e36306ed2c5a4069634627c83b3af2f0b86fdb5c37e456113671",
+  "selected_case_ids": [
+    "docvqa_next_2126_cal_q1"
+  ],
+  "selected_image_ids": [
+    "sha256:2b5e8afdfded287d5e83c9c72a52775b49c2804e018e1d04af2ffa866c419d0e"
+  ],
+  "first_question_per_image": true,
+  "model_weights_frozen": true,
+  "gold_answers_loaded": false,
+  "labels_used": false,
+  "self_generated_teacher_targets_used": true,
+  "task_loss": "mean CE over at most 8 Full argmax self-generated answer tokens, including generated stop token",
+  "gradient_scope": "one pooled answer-CE backward per independent question; native SDPA and detached prefix KV leaves",
+  "reference_method": "RateQuant gradient-sensitivity x distortion allocation strategy",
+  "reference_url": "https://arxiv.org/html/2605.06675v2#S3.SS2",
+  "official_reproduction": false,
+  "differences_from_official": "Doc image/questions and Full self-targets; pooled answer CE gradient squared, not WikiText2 next-token/per-target gradient energies; fixed TrajKV sign-residual format",
+  "sources": {
+    "calibrate_gradient_rank_round5.py": "dd7676bf5230e6a7dd4f19b8825649359de6df8f82863860261b6f86b66c774a",
+    "quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "sparse_v_residual_bank.py": "98021ba90bcf1a7e6810e5f1f05544d3bf81fba668a0d520b54293c39be0a8bd"
+  }
+}

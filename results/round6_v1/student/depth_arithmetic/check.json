@@ -1,0 +1,1859 @@
+{
+  "status": "PASS",
+  "cpu_controls": {
+    "passed": true,
+    "scope": "CPU math/format controls; GPU Triton reader remains a separate required check",
+    "codec_cases": [
+      {
+        "magnitude": 1.0,
+        "depth": 0,
+        "payload_bytes": 0,
+        "squared_error_by_depth": [
+          1409.71826171875
+        ]
+      },
+      {
+        "magnitude": 1.0,
+        "depth": 1,
+        "payload_bytes": 6912,
+        "squared_error_by_depth": [
+          1409.71826171875,
+          506.0888977050781
+        ]
+      },
+      {
+        "magnitude": 1.0,
+        "depth": 2,
+        "payload_bytes": 13824,
+        "squared_error_by_depth": [
+          1409.71826171875,
+          506.0888977050781,
+          178.74993896484375
+        ]
+      },
+      {
+        "magnitude": 128.0,
+        "depth": 0,
+        "payload_bytes": 0,
+        "squared_error_by_depth": [
+          23159024.0
+        ]
+      },
+      {
+        "magnitude": 128.0,
+        "depth": 1,
+        "payload_bytes": 6912,
+        "squared_error_by_depth": [
+          23159024.0,
+          8279474.0
+        ]
+      },
+      {
+        "magnitude": 128.0,
+        "depth": 2,
+        "payload_bytes": 13824,
+        "squared_error_by_depth": [
+          23159024.0,
+          8279474.0,
+          2924798.25
+        ]
+      },
+      {
+        "magnitude": 1024.0,
+        "depth": 0,
+        "payload_bytes": 0,
+        "squared_error_by_depth": [
+          1496299520.0
+        ]
+      },
+      {
+        "magnitude": 1024.0,
+        "depth": 1,
+        "payload_bytes": 6912,
+        "squared_error_by_depth": [
+          1496299520.0,
+          539752960.0
+        ]
+      },
+      {
+        "magnitude": 1024.0,
+        "depth": 2,
+        "payload_bytes": 13824,
+        "squared_error_by_depth": [
+          1496299520.0,
+          539752960.0,
+          191873184.0
+        ]
+      }
+    ],
+    "rounding_sensitive_second_stage_tokens": 88,
+    "budget_cases": [
+      {
+        "nv": 128,
+        "policy": "incumbent",
+        "stages": 7,
+        "K_stages": 7,
+        "V_stages": 0,
+        "V_units": 0,
+        "complete_bytes": 825605,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7996760777064733
+      },
+      {
+        "nv": 128,
+        "policy": "v_pair",
+        "stages": 7,
+        "K_stages": 7,
+        "V_stages": 0,
+        "V_units": 0,
+        "complete_bytes": 825605,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7996760777064733
+      },
+      {
+        "nv": 128,
+        "policy": "v_mixed",
+        "stages": 7,
+        "K_stages": 7,
+        "V_stages": 0,
+        "V_units": 0,
+        "complete_bytes": 825605,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7996760777064733
+      },
+      {
+        "nv": 256,
+        "policy": "incumbent",
+        "stages": 26,
+        "K_stages": 24,
+        "V_stages": 2,
+        "V_units": 2,
+        "complete_bytes": 1647109,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7952063424246651
+      },
+      {
+        "nv": 256,
+        "policy": "v_pair",
+        "stages": 26,
+        "K_stages": 24,
+        "V_stages": 2,
+        "V_units": 1,
+        "complete_bytes": 1647109,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7952063424246651
+      },
+      {
+        "nv": 256,
+        "policy": "v_mixed",
+        "stages": 26,
+        "K_stages": 24,
+        "V_stages": 2,
+        "V_units": 2,
+        "complete_bytes": 1647109,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7952063424246651
+      },
+      {
+        "nv": 768,
+        "policy": "incumbent",
+        "stages": 40,
+        "K_stages": 24,
+        "V_stages": 16,
+        "V_units": 16,
+        "complete_bytes": 4951557,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7989229474748885
+      },
+      {
+        "nv": 768,
+        "policy": "v_pair",
+        "stages": 40,
+        "K_stages": 24,
+        "V_stages": 16,
+        "V_units": 8,
+        "complete_bytes": 4951557,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7989229474748885
+      },
+      {
+        "nv": 768,
+        "policy": "v_mixed",
+        "stages": 40,
+        "K_stages": 24,
+        "V_stages": 16,
+        "V_units": 12,
+        "complete_bytes": 4951557,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7989229474748885
+      },
+      {
+        "nv": 1792,
+        "policy": "incumbent",
+        "stages": 44,
+        "K_stages": 24,
+        "V_stages": 20,
+        "V_units": 20,
+        "complete_bytes": 11560453,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.799984834632095
+      },
+      {
+        "nv": 1792,
+        "policy": "v_pair",
+        "stages": 44,
+        "K_stages": 24,
+        "V_stages": 20,
+        "V_units": 10,
+        "complete_bytes": 11560453,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.799984834632095
+      },
+      {
+        "nv": 1792,
+        "policy": "v_mixed",
+        "stages": 44,
+        "K_stages": 24,
+        "V_stages": 20,
+        "V_units": 15,
+        "complete_bytes": 11560453,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.799984834632095
+      },
+      {
+        "nv": 2048,
+        "policy": "incumbent",
+        "stages": 44,
+        "K_stages": 24,
+        "V_stages": 20,
+        "V_units": 20,
+        "complete_bytes": 13198853,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.798201016017369
+      },
+      {
+        "nv": 2048,
+        "policy": "v_pair",
+        "stages": 44,
+        "K_stages": 24,
+        "V_stages": 20,
+        "V_units": 10,
+        "complete_bytes": 13198853,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.798201016017369
+      },
+      {
+        "nv": 2048,
+        "policy": "v_mixed",
+        "stages": 44,
+        "K_stages": 24,
+        "V_stages": 20,
+        "V_units": 15,
+        "complete_bytes": 13198853,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.798201016017369
+      },
+      {
+        "nv": 4096,
+        "policy": "incumbent",
+        "stages": 45,
+        "K_stages": 25,
+        "V_stages": 20,
+        "V_units": 20,
+        "complete_bytes": 26379781,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7969799722943987
+      },
+      {
+        "nv": 4096,
+        "policy": "v_pair",
+        "stages": 45,
+        "K_stages": 25,
+        "V_stages": 20,
+        "V_units": 10,
+        "complete_bytes": 26379781,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7969799722943987
+      },
+      {
+        "nv": 4096,
+        "policy": "v_mixed",
+        "stages": 45,
+        "K_stages": 25,
+        "V_stages": 20,
+        "V_units": 15,
+        "complete_bytes": 26379781,
+        "lookup_bytes": 1792,
+        "actual_budget_bits": 1.7969799722943987
+      }
+    ],
+    "invalid_inputs_rejected": 4,
+    "explicit_prefix_limits_checked": 5,
+    "sources_ast_parsed": 4
+  },
+  "gpu_executed": true,
+  "cases": 54,
+  "results": [
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [],
+      "compact_residual_bytes": 0,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00019495699962135404
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00021251788712106645
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00019361014710739255
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00020973636128474027
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 18432,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0002080734120681882
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.000198448178707622
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001990235032280907
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 18432,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00020701067114714533
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ],
+        [
+          "k",
+          3,
+          1
+        ],
+        [
+          "v",
+          0,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 32256,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0002085902524413541
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [],
+      "compact_residual_bytes": 0,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001933425955940038
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0002330807183170691
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00019197521032765508
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00020565622253343463
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 18432,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0002174447145080194
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00021284993272274733
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 9216,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00019791166414506733
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 18432,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00021065915643703192
+      },
+      "passed": true
+    },
+    {
+      "nv": 256,
+      "nq": 1,
+      "value_window": 256,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ],
+        [
+          "k",
+          3,
+          1
+        ],
+        [
+          "v",
+          0,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 32256,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.000218654255149886
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [],
+      "compact_residual_bytes": 0,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001629434700589627
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00016673996287863702
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001598515809746459
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00016573691391386092
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 55296,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00018065498443320394
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.00048828125,
+        "relative_l2": 0.0001649540790822357
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.000160415715072304
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 55296,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00016486812091898173
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ],
+        [
+          "k",
+          3,
+          1
+        ],
+        [
+          "v",
+          0,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 96768,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00018153527344111353
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [],
+      "compact_residual_bytes": 0,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.00048828125,
+        "relative_l2": 0.00016426522051915526
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00019119941862300038
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00016028329264372587
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00017407964332960546
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 55296,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00017445893900003284
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.00048828125,
+        "relative_l2": 0.00017186417244374752
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 27648,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001604387944098562
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 55296,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001737097918521613
+      },
+      "passed": true
+    },
+    {
+      "nv": 768,
+      "nq": 11,
+      "value_window": 768,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ],
+        [
+          "k",
+          3,
+          1
+        ],
+        [
+          "v",
+          0,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 96768,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00017454549379181117
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [],
+      "compact_residual_bytes": 0,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001373503910144791
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001429360272595659
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00012683864042628556
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00014509996981360018
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 129024,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00015511321544181556
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00013119057985022664
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00013670283078681678
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 129024,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00014542187273036689
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 128,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ],
+        [
+          "k",
+          3,
+          1
+        ],
+        [
+          "v",
+          0,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 225792,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00015589020040351897
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [],
+      "compact_residual_bytes": 0,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00014168467896524817
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00017977984680328518
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00014642454334534705
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00015184259973466396
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ]
+      ],
+      "compact_residual_bytes": 129024,
+      "old_mixed_depth0_or_1_bitwise_equal": true,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00014375048340298235
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00015841702406760305
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 64512,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00014550283958669752
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1
+        ],
+        [
+          "k",
+          1,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 129024,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.0001521985832368955
+      },
+      "passed": true
+    },
+    {
+      "nv": 1792,
+      "nq": 1,
+      "value_window": 1792,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1
+        ],
+        [
+          "k",
+          3,
+          1
+        ],
+        [
+          "v",
+          0,
+          1
+        ]
+      ],
+      "compact_residual_bytes": 225792,
+      "old_mixed_depth0_or_1_bitwise_equal": null,
+      "stage_lookup_bytes": 64,
+      "error": {
+        "max_abs": 0.000244140625,
+        "relative_l2": 0.00014860658848192543
+      },
+      "passed": true
+    }
+  ],
+  "scope": "CPU controls and same-representation actual GPU reader arithmetic; no task accuracy/efficiency claim",
+  "sources": {
+    "round6_depth_bank.py": "0de1898062408a18e49b5a14a3c4112966eb41a9a089a26169af451294dd078e",
+    "round6_depth_attention.py": "f96277c726c39f2880e8618525b4bdcbac0049e68e7c4d3e2eb699fa24dfd945",
+    "round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "round6_depth_check.py": "79b44cf24a4d8c76950df4189934da6bb8d7e422643eb293429f4d22bec74472"
+  }
+}

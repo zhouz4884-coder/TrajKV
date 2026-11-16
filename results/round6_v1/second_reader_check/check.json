@@ -1,0 +1,693 @@
+{
+  "status": "PASS",
+  "actual_cuda": true,
+  "gpu_executed": true,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "torch_version": "2.4.1+cu121",
+  "triton_version": "3.0.0",
+  "cases": 18,
+  "max_abs": 0.00048828125,
+  "max_relative_l2": 0.00017678643052931875,
+  "results": [
+    {
+      "case": 0,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [],
+      "residual_stages": 0,
+      "compact_residual_bytes": 0,
+      "expected_compact_bytes": 0,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": true,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.000244140625,
+      "relative_l2": 0.0001665793388383463,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 1,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          31,
+          0
+        ]
+      ],
+      "residual_stages": 1,
+      "compact_residual_bytes": 10368,
+      "expected_compact_bytes": 10368,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": true,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.000244140625,
+      "relative_l2": 0.00016490896814502776,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 2,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          31,
+          0
+        ]
+      ],
+      "residual_stages": 1,
+      "compact_residual_bytes": 10368,
+      "expected_compact_bytes": 10368,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": true,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.000244140625,
+      "relative_l2": 0.0001642395363887772,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 3,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          31,
+          0
+        ],
+        [
+          "v",
+          31,
+          1
+        ]
+      ],
+      "residual_stages": 2,
+      "compact_residual_bytes": 20736,
+      "expected_compact_bytes": 20736,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.000244140625,
+      "relative_l2": 0.00016681646229699254,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 4,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          31,
+          0
+        ],
+        [
+          "k",
+          31,
+          1
+        ]
+      ],
+      "residual_stages": 2,
+      "compact_residual_bytes": 20736,
+      "expected_compact_bytes": 20736,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.000244140625,
+      "relative_l2": 0.00016756629338487983,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 5,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          31,
+          0
+        ],
+        [
+          "v",
+          31,
+          0
+        ]
+      ],
+      "residual_stages": 2,
+      "compact_residual_bytes": 20736,
+      "expected_compact_bytes": 20736,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": true,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.000244140625,
+      "relative_l2": 0.00016604166012257338,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 6,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          31,
+          0
+        ],
+        [
+          "k",
+          31,
+          0
+        ],
+        [
+          "k",
+          31,
+          1
+        ],
+        [
+          "v",
+          31,
+          1
+        ]
+      ],
+      "residual_stages": 4,
+      "compact_residual_bytes": 41472,
+      "expected_compact_bytes": 41472,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.000244140625,
+      "relative_l2": 0.00016654629143886268,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 7,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          31,
+          0
+        ],
+        [
+          "k",
+          17,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          31,
+          0
+        ],
+        [
+          "v",
+          31,
+          1
+        ],
+        [
+          "k",
+          31,
+          1
+        ],
+        [
+          "k",
+          17,
+          1
+        ]
+      ],
+      "residual_stages": 7,
+      "compact_residual_bytes": 72576,
+      "expected_compact_bytes": 72576,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.000244140625,
+      "relative_l2": 0.0001728860952425748,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 8,
+      "visual_tokens": 576,
+      "query_tokens": 1,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          0,
+          0
+        ],
+        [
+          "v",
+          17,
+          0
+        ],
+        [
+          "k",
+          0,
+          1
+        ],
+        [
+          "v",
+          17,
+          1
+        ],
+        [
+          "v",
+          31,
+          0
+        ],
+        [
+          "k",
+          30,
+          0
+        ],
+        [
+          "k",
+          30,
+          1
+        ]
+      ],
+      "residual_stages": 7,
+      "compact_residual_bytes": 72576,
+      "expected_compact_bytes": 72576,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.00017678643052931875,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 0,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [],
+      "residual_stages": 0,
+      "compact_residual_bytes": 0,
+      "expected_compact_bytes": 0,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": true,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.00016437134763691574,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 1,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          31,
+          0
+        ]
+      ],
+      "residual_stages": 1,
+      "compact_residual_bytes": 10368,
+      "expected_compact_bytes": 10368,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": true,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.00016459691687487066,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 2,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          31,
+          0
+        ]
+      ],
+      "residual_stages": 1,
+      "compact_residual_bytes": 10368,
+      "expected_compact_bytes": 10368,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": true,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.00016437223530374467,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 3,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          31,
+          0
+        ],
+        [
+          "v",
+          31,
+          1
+        ]
+      ],
+      "residual_stages": 2,
+      "compact_residual_bytes": 20736,
+      "expected_compact_bytes": 20736,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.00016457341553177685,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 4,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          31,
+          0
+        ],
+        [
+          "k",
+          31,
+          1
+        ]
+      ],
+      "residual_stages": 2,
+      "compact_residual_bytes": 20736,
+      "expected_compact_bytes": 20736,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.000164401440997608,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 5,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          31,
+          0
+        ],
+        [
+          "v",
+          31,
+          0
+        ]
+      ],
+      "residual_stages": 2,
+      "compact_residual_bytes": 20736,
+      "expected_compact_bytes": 20736,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": true,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.0001648182951612398,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 6,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          31,
+          0
+        ],
+        [
+          "k",
+          31,
+          0
+        ],
+        [
+          "k",
+          31,
+          1
+        ],
+        [
+          "v",
+          31,
+          1
+        ]
+      ],
+      "residual_stages": 4,
+      "compact_residual_bytes": 41472,
+      "expected_compact_bytes": 41472,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.00016455439617857337,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 7,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "v",
+          31,
+          0
+        ],
+        [
+          "k",
+          17,
+          0
+        ],
+        [
+          "v",
+          0,
+          0
+        ],
+        [
+          "k",
+          31,
+          0
+        ],
+        [
+          "v",
+          31,
+          1
+        ],
+        [
+          "k",
+          31,
+          1
+        ],
+        [
+          "k",
+          17,
+          1
+        ]
+      ],
+      "residual_stages": 7,
+      "compact_residual_bytes": 72576,
+      "expected_compact_bytes": 72576,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.00016567982675042003,
+      "finite": true,
+      "passed": true
+    },
+    {
+      "case": 8,
+      "visual_tokens": 576,
+      "query_tokens": 11,
+      "Hq": 32,
+      "Hkv": 32,
+      "GQA": 1,
+      "value_window": 576,
+      "selected_axis_head_stages": [
+        [
+          "k",
+          0,
+          0
+        ],
+        [
+          "v",
+          17,
+          0
+        ],
+        [
+          "k",
+          0,
+          1
+        ],
+        [
+          "v",
+          17,
+          1
+        ],
+        [
+          "v",
+          31,
+          0
+        ],
+        [
+          "k",
+          30,
+          0
+        ],
+        [
+          "k",
+          30,
+          1
+        ]
+      ],
+      "residual_stages": 7,
+      "compact_residual_bytes": 72576,
+      "expected_compact_bytes": 72576,
+      "stage_lookup_bytes": 512,
+      "no_padding": true,
+      "zero_or_one_stage_old_mixed_bitwise_equal": null,
+      "position_gaps": true,
+      "suffix_causal_mask": true,
+      "max_abs": 0.00048828125,
+      "relative_l2": 0.0001653296931181103,
+      "finite": true,
+      "passed": true
+    }
+  ],
+  "scope": "Actual Triton versus dense same packed representation, LLaVA-shaped arithmetic only; no model/task quality or transfer-gain claim",
+  "dense_reference": "FP16 sequential stage reconstruction, FP16 WHT(q), visual mean bias, full visual/text softmax with original gapped positions and suffix causal mask",
+  "sources": {
+    "round6_second_reader_check.py": "e570a81784e313ed228a505cfd2ccabcb02b97467f65f0b599399d0b53ffb7ba",
+    "round6_depth_attention.py": "f96277c726c39f2880e8618525b4bdcbac0049e68e7c4d3e2eb699fa24dfd945",
+    "round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "mixed_residual_attention.py": "6af907d12a9d3db8ffefedfd7f4be231b0cd503a461f88f6b3a0baac946a22a0"
+  }
+}

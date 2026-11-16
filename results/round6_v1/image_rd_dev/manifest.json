@@ -1,0 +1,22 @@
+{
+  "wait_complete": "/path/to/TrajKV/results/round6_v1/image_rd_smoke2/complete.json",
+  "wait_launch": "/path/to/TrajKV/jobs/round6_image_rd_smoke2_v1.launch.json",
+  "tasks": [
+    {
+      "name": "development16",
+      "entrypoint": "round6_image_rd_runner.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round6_v1/image_rd_dev16.json"
+      ]
+    },
+    {
+      "name": "text_seen16",
+      "entrypoint": "round6_image_rd_runner.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round6_v1/image_rd_text16_seen.json"
+      ]
+    }
+  ]
+}

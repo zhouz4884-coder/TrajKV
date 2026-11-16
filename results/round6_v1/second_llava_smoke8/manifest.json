@@ -1,0 +1,63 @@
+{
+  "schema": "trajkv.round6.second-backbone-first-question.v1",
+  "config": {
+    "schema": "trajkv.round6.second-backbone-first-question-config.v1",
+    "arguments": {
+      "model": "/path/to/storage/models/LLaVA-1.5-7B-HF",
+      "samples": "/path/to/TrajKV/configs/a2/docvqa_next_dev64.json",
+      "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+      "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+      "turns": 1,
+      "max_tokens": 32
+    },
+    "start": 0,
+    "count": 8,
+    "variants": [
+      {
+        "name": "r6_llava15_native_hf",
+        "method": "native_hf"
+      },
+      {
+        "name": "r6_llava15_full_boundary",
+        "method": "full",
+        "cap": 8,
+        "selector": "none",
+        "store_selector_meta": false
+      }
+    ]
+  },
+  "config_sha256": "b0776b92dffb418cd55623d418fa52459491eee5e63f1173228c747a99473027",
+  "samples_sha256": "69b6ee23e9cd00a8d42e22b5c16e68747e3acb8df87decca0e474a908d42510e",
+  "selected_ids": [
+    "docvqa_next_14211",
+    "docvqa_next_7822",
+    "docvqa_next_10307",
+    "docvqa_next_7302",
+    "docvqa_next_14918",
+    "docvqa_next_6870",
+    "docvqa_next_7484",
+    "docvqa_next_6751"
+  ],
+  "geometry": {
+    "decoder_layer_path": "model.language_model.layers",
+    "layers": 32,
+    "query_heads": 32,
+    "kv_heads": 32,
+    "head_dim": 128,
+    "hidden_size": 4096,
+    "image_token_id": 32000,
+    "model_type": "llava"
+  },
+  "answers_visible_to_runner": false,
+  "model_weights_frozen": true,
+  "text_KV": "FP16",
+  "model_config_sha256": "0bde54495c54bcc346064a0d314b010d1c4d3ca7f7e583b6f711949a35352c0f",
+  "external_codec_inputs": {},
+  "sources": {
+    "code/a2/round6_second_session.py": "58a8cc57e410b5b1955bac05e52662b3a6f03a97f859d2c710475b08a3bb78aa",
+    "code/a2/round6_second_smoke.py": "e1e898a2833609a2edd1d01cad40d93928acdd65854d781fb40bd96f62f7a207"
+  },
+  "torch": "2.4.1+cu121",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "scope": "second-model first-question smoke; development sources; not a new blind confirmation"
+}

@@ -1,0 +1,58 @@
+{
+  "status": "COMPLETE",
+  "analysis_role": "development",
+  "scope": "reused development documents; complete matched coverage; materialized ports are mechanism references, not lowbit deployment claims",
+  "images": 16,
+  "source_documents": 16,
+  "sessions": 16,
+  "variants": 1,
+  "scored_answers": 62,
+  "questions_per_variant": 62,
+  "samples_sha256": "af0e1be070feeb62026cbadcd5bc5d058db1a468211a8c14db4a3384ebd2e826",
+  "references_sha256": "f00190e1ae4e05ee4f8aa1a9da834782eb0322424842956c4ece5cf98c1b1300",
+  "analyzer_sha256": "320dba0fcb849bd350b76214e3e7c8cd8dab3005daabede1b3afc23e96f37f29",
+  "runs": [
+    {
+      "run": "/path/to/TrajKV\\results\\round6_v1\\image_rd_dev\\development16",
+      "manifest_sha256": "8631e6f57af9e116fcdce03fa153e7cca6a6116af1f0e270cddae6eec529c8e9",
+      "records_sha256": "df71cfd44f6d6bf86c5c584c4c558dfbd1ae733a16deede533c9ecf5915bfd5a",
+      "sample_source_check": "verified_subset_of_original_input"
+    }
+  ],
+  "table": [
+    {
+      "variant": "r6_image_RD_actual",
+      "analysis_role": "development",
+      "images": 16,
+      "source_documents": 16,
+      "questions": 62,
+      "anls": 0.9257872503840247,
+      "ci_low": 0.8192358600372877,
+      "ci_high": 0.9946900287892934,
+      "exact": 0.8709677419354839,
+      "effective_visual_bits": 1.7948620854591837,
+      "budget_bits_including_encoder_constants": 1.7953511452188298,
+      "visual_bytes_total": 184440832,
+      "encoder_constants_bytes_per_session": 3141.0,
+      "spectrum_experiment_reference_bytes_total": 0,
+      "materialized_quality_port": false,
+      "role": "actual packed runtime",
+      "eligible_lowbit_frontier": true,
+      "extra_reads_total": 3521403904,
+      "logical_cache_reads_total": 11089827424,
+      "free_session_seconds_median": 2.5298156030185055,
+      "peak_allocated_max": 16393935872,
+      "spectrum_transform": null,
+      "spectrum_rank": null,
+      "spectrum_encoding": null,
+      "spectrum_artifact_sha256": null,
+      "functional_v_channel_groups": null,
+      "visual_bias_bytes": 0
+    }
+  ],
+  "comparisons": [],
+  "spectrum_score_statistics": [],
+  "cost_scope": "actual visual owner plus spectrum_experiment_reference; folded encoder constants charged once; visual bias already in runtime owner",
+  "uncertainty_scope": "question-weighted source-document cluster bootstrap and document-paired sign flip; exploratory comparisons",
+  "time_scope": "descriptive free-session medians with differing output lengths, no fixed-output speed or HBM claim"
+}

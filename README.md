@@ -1,3 +1,15 @@
+## Latest: Round 6 — 2026-11-16
+
+[Full research report](docs/RESEARCH_PROGRESS_2026-11-15_round6.zh.md) · [Goal and outcome](docs/GOAL_2026-11-15_v7_DEPTH_AND_COVERAGE.md) · [Evidence navigation](docs/START_HERE_ROUND6_2026-11-15.zh.md) · [Raw execution archive](https://github.com/zhouz4884-coder/TrajKV/releases/tag/research-round6-20261116)
+
+The two-RTX3090 end-to-end stage is complete: new-source Doc54 / 205 questions and Text256 / 256 questions, eight frozen configurations, **3,688 scored answers**; a LLaVA64 first-question test and 63 matched-output timing measurements are also complete. Model weights and text KV remain FP16; the approximately 1.8-bit budget applies to visual KV and the specified codec metadata/constants.
+
+The new fixed two-stage V candidate reached **88.102 ANLS / 80.469% TextVQA accuracy**, versus **89.429 / 81.094%** for the incumbent and **86.982 / 81.719%** for Native4. Its development gain did not reproduce on new sources. Native4 noninferiority was not established; matched-output latency was about **12.5% higher** than Native4. Gradient/gamma and per-image distortion prototypes retain their negative findings. Next work targets coverage-aware conditional equal-byte exchanges.
+
+Earlier results, commits and releases remain available below. This is a research evidence update, not a claim that the paper's performance objectives are achieved.
+
+---
+
 ## Latest: Round 5 — 2026-11-14
 
 [Research report](docs/RESEARCH_PROGRESS_2026-11-14_round5.zh.md) · [Current goal and outcome](docs/GOAL_2026-11-14_v6_REPRESENTATION_AND_REFINEMENT.md) · [Figures and source data](figures/round5_final/figure_manifest.json) · [Incremental raw evidence](https://github.com/zhouz4884-coder/TrajKV/releases/tag/research-round5-20261114)
