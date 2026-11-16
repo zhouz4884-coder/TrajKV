@@ -6,6 +6,8 @@ The two-RTX3090 end-to-end stage is complete: new-source Doc54 / 205 questions a
 
 The new fixed two-stage V candidate reached **88.102 ANLS / 80.469% TextVQA accuracy**, versus **89.429 / 81.094%** for the incumbent and **86.982 / 81.719%** for Native4. Its development gain did not reproduce on new sources. Native4 noninferiority was not established; matched-output latency was about **12.5% higher** than Native4. Gradient/gamma and per-image distortion prototypes retain their negative findings. Next work targets coverage-aware conditional equal-byte exchanges.
 
+[Hash verification notes](evidence/ROUND6_HASH_SCOPE.md) distinguish exact archived bytes from LF-normalized Git content.
+
 Earlier results, commits and releases remain available below. This is a research evidence update, not a claim that the paper's performance objectives are achieved.
 
 ---
