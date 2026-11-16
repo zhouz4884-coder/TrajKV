@@ -1,0 +1,1730 @@
+{
+  "schema": "trajkv.round6.axis-matched-controls.v1",
+  "created_at_utc": "2026-11-15T11:08:07.351922+00:00",
+  "incumbent": "mixed_gradient_max",
+  "variants": [
+    "r6_incumbent_mixed_gradient",
+    "r6_axis_matched_spread",
+    "r6_axis_matched_random1212"
+  ],
+  "capacity": 224,
+  "ranking_constant_bytes": 448,
+  "dual_lookup_bytes": 896,
+  "base_factor_bytes": 1344,
+  "decoder_book_bytes": 2048,
+  "random_seed": 1212,
+  "axis_order_reused_for_both_axes": true,
+  "spread_rule": "same round5 7-bit reversal of flat layer*4+head indices; discard >=112",
+  "random_rule": "same round5 Python Random(1212).shuffle of flat layer-major 112 units; identical within-axis sequence for K and V",
+  "every_prefix_axis_counts_verified": true,
+  "all_units_unique_and_complete": true,
+  "every_prefix_shape_owner_costs_equal": true,
+  "prefix_checks": 225,
+  "tested_visual_token_counts": [
+    128,
+    256,
+    384,
+    512,
+    640,
+    768,
+    896,
+    1024,
+    1152,
+    1280,
+    1408,
+    1536,
+    1664,
+    1792,
+    1920,
+    2048,
+    2176,
+    2304,
+    2432,
+    2560,
+    2688,
+    2816,
+    2944,
+    3072,
+    3200,
+    3328,
+    3456,
+    3584,
+    3712,
+    3840,
+    3968,
+    4096
+  ],
+  "shape_owner_checks": 21600,
+  "owner_verification_scope": "exact allocated tensor shape arithmetic from frozen MixedResidualBank; runtime bank additionally verifies owned bytes; this audit is not a GPU measurement",
+  "arbitrary_N_cost_match": "symbolic: all orders have identical fixed owners and 18*N bytes per selected unit; preserved axis sequence therefore matches every affordable prefix for any legal N",
+  "model_outcomes_read": false,
+  "reference_answers_read": false,
+  "SSH_used": false,
+  "GPU_used": false,
+  "protocol": "known development/seen-cohort same-format ablation; no new blind-confirmation claim",
+  "prefixes": [
+    {
+      "prefix": 0,
+      "K_units": 0,
+      "V_units": 0
+    },
+    {
+      "prefix": 1,
+      "K_units": 1,
+      "V_units": 0
+    },
+    {
+      "prefix": 2,
+      "K_units": 1,
+      "V_units": 1
+    },
+    {
+      "prefix": 3,
+      "K_units": 2,
+      "V_units": 1
+    },
+    {
+      "prefix": 4,
+      "K_units": 3,
+      "V_units": 1
+    },
+    {
+      "prefix": 5,
+      "K_units": 4,
+      "V_units": 1
+    },
+    {
+      "prefix": 6,
+      "K_units": 4,
+      "V_units": 2
+    },
+    {
+      "prefix": 7,
+      "K_units": 5,
+      "V_units": 2
+    },
+    {
+      "prefix": 8,
+      "K_units": 6,
+      "V_units": 2
+    },
+    {
+      "prefix": 9,
+      "K_units": 7,
+      "V_units": 2
+    },
+    {
+      "prefix": 10,
+      "K_units": 8,
+      "V_units": 2
+    },
+    {
+      "prefix": 11,
+      "K_units": 9,
+      "V_units": 2
+    },
+    {
+      "prefix": 12,
+      "K_units": 9,
+      "V_units": 3
+    },
+    {
+      "prefix": 13,
+      "K_units": 10,
+      "V_units": 3
+    },
+    {
+      "prefix": 14,
+      "K_units": 10,
+      "V_units": 4
+    },
+    {
+      "prefix": 15,
+      "K_units": 11,
+      "V_units": 4
+    },
+    {
+      "prefix": 16,
+      "K_units": 12,
+      "V_units": 4
+    },
+    {
+      "prefix": 17,
+      "K_units": 12,
+      "V_units": 5
+    },
+    {
+      "prefix": 18,
+      "K_units": 12,
+      "V_units": 6
+    },
+    {
+      "prefix": 19,
+      "K_units": 13,
+      "V_units": 6
+    },
+    {
+      "prefix": 20,
+      "K_units": 13,
+      "V_units": 7
+    },
+    {
+      "prefix": 21,
+      "K_units": 14,
+      "V_units": 7
+    },
+    {
+      "prefix": 22,
+      "K_units": 14,
+      "V_units": 8
+    },
+    {
+      "prefix": 23,
+      "K_units": 15,
+      "V_units": 8
+    },
+    {
+      "prefix": 24,
+      "K_units": 15,
+      "V_units": 9
+    },
+    {
+      "prefix": 25,
+      "K_units": 16,
+      "V_units": 9
+    },
+    {
+      "prefix": 26,
+      "K_units": 17,
+      "V_units": 9
+    },
+    {
+      "prefix": 27,
+      "K_units": 17,
+      "V_units": 10
+    },
+    {
+      "prefix": 28,
+      "K_units": 18,
+      "V_units": 10
+    },
+    {
+      "prefix": 29,
+      "K_units": 18,
+      "V_units": 11
+    },
+    {
+      "prefix": 30,
+      "K_units": 18,
+      "V_units": 12
+    },
+    {
+      "prefix": 31,
+      "K_units": 19,
+      "V_units": 12
+    },
+    {
+      "prefix": 32,
+      "K_units": 19,
+      "V_units": 13
+    },
+    {
+      "prefix": 33,
+      "K_units": 19,
+      "V_units": 14
+    },
+    {
+      "prefix": 34,
+      "K_units": 20,
+      "V_units": 14
+    },
+    {
+      "prefix": 35,
+      "K_units": 20,
+      "V_units": 15
+    },
+    {
+      "prefix": 36,
+      "K_units": 21,
+      "V_units": 15
+    },
+    {
+      "prefix": 37,
+      "K_units": 21,
+      "V_units": 16
+    },
+    {
+      "prefix": 38,
+      "K_units": 22,
+      "V_units": 16
+    },
+    {
+      "prefix": 39,
+      "K_units": 22,
+      "V_units": 17
+    },
+    {
+      "prefix": 40,
+      "K_units": 23,
+      "V_units": 17
+    },
+    {
+      "prefix": 41,
+      "K_units": 24,
+      "V_units": 17
+    },
+    {
+      "prefix": 42,
+      "K_units": 24,
+      "V_units": 18
+    },
+    {
+      "prefix": 43,
+      "K_units": 24,
+      "V_units": 19
+    },
+    {
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20
+    },
+    {
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21
+    },
+    {
+      "prefix": 46,
+      "K_units": 24,
+      "V_units": 22
+    },
+    {
+      "prefix": 47,
+      "K_units": 24,
+      "V_units": 23
+    },
+    {
+      "prefix": 48,
+      "K_units": 25,
+      "V_units": 23
+    },
+    {
+      "prefix": 49,
+      "K_units": 26,
+      "V_units": 23
+    },
+    {
+      "prefix": 50,
+      "K_units": 26,
+      "V_units": 24
+    },
+    {
+      "prefix": 51,
+      "K_units": 26,
+      "V_units": 25
+    },
+    {
+      "prefix": 52,
+      "K_units": 26,
+      "V_units": 26
+    },
+    {
+      "prefix": 53,
+      "K_units": 27,
+      "V_units": 26
+    },
+    {
+      "prefix": 54,
+      "K_units": 28,
+      "V_units": 26
+    },
+    {
+      "prefix": 55,
+      "K_units": 29,
+      "V_units": 26
+    },
+    {
+      "prefix": 56,
+      "K_units": 30,
+      "V_units": 26
+    },
+    {
+      "prefix": 57,
+      "K_units": 30,
+      "V_units": 27
+    },
+    {
+      "prefix": 58,
+      "K_units": 30,
+      "V_units": 28
+    },
+    {
+      "prefix": 59,
+      "K_units": 31,
+      "V_units": 28
+    },
+    {
+      "prefix": 60,
+      "K_units": 32,
+      "V_units": 28
+    },
+    {
+      "prefix": 61,
+      "K_units": 32,
+      "V_units": 29
+    },
+    {
+      "prefix": 62,
+      "K_units": 32,
+      "V_units": 30
+    },
+    {
+      "prefix": 63,
+      "K_units": 33,
+      "V_units": 30
+    },
+    {
+      "prefix": 64,
+      "K_units": 34,
+      "V_units": 30
+    },
+    {
+      "prefix": 65,
+      "K_units": 35,
+      "V_units": 30
+    },
+    {
+      "prefix": 66,
+      "K_units": 35,
+      "V_units": 31
+    },
+    {
+      "prefix": 67,
+      "K_units": 35,
+      "V_units": 32
+    },
+    {
+      "prefix": 68,
+      "K_units": 35,
+      "V_units": 33
+    },
+    {
+      "prefix": 69,
+      "K_units": 36,
+      "V_units": 33
+    },
+    {
+      "prefix": 70,
+      "K_units": 37,
+      "V_units": 33
+    },
+    {
+      "prefix": 71,
+      "K_units": 37,
+      "V_units": 34
+    },
+    {
+      "prefix": 72,
+      "K_units": 37,
+      "V_units": 35
+    },
+    {
+      "prefix": 73,
+      "K_units": 38,
+      "V_units": 35
+    },
+    {
+      "prefix": 74,
+      "K_units": 39,
+      "V_units": 35
+    },
+    {
+      "prefix": 75,
+      "K_units": 40,
+      "V_units": 35
+    },
+    {
+      "prefix": 76,
+      "K_units": 41,
+      "V_units": 35
+    },
+    {
+      "prefix": 77,
+      "K_units": 42,
+      "V_units": 35
+    },
+    {
+      "prefix": 78,
+      "K_units": 42,
+      "V_units": 36
+    },
+    {
+      "prefix": 79,
+      "K_units": 42,
+      "V_units": 37
+    },
+    {
+      "prefix": 80,
+      "K_units": 42,
+      "V_units": 38
+    },
+    {
+      "prefix": 81,
+      "K_units": 42,
+      "V_units": 39
+    },
+    {
+      "prefix": 82,
+      "K_units": 42,
+      "V_units": 40
+    },
+    {
+      "prefix": 83,
+      "K_units": 43,
+      "V_units": 40
+    },
+    {
+      "prefix": 84,
+      "K_units": 44,
+      "V_units": 40
+    },
+    {
+      "prefix": 85,
+      "K_units": 44,
+      "V_units": 41
+    },
+    {
+      "prefix": 86,
+      "K_units": 45,
+      "V_units": 41
+    },
+    {
+      "prefix": 87,
+      "K_units": 46,
+      "V_units": 41
+    },
+    {
+      "prefix": 88,
+      "K_units": 46,
+      "V_units": 42
+    },
+    {
+      "prefix": 89,
+      "K_units": 47,
+      "V_units": 42
+    },
+    {
+      "prefix": 90,
+      "K_units": 47,
+      "V_units": 43
+    },
+    {
+      "prefix": 91,
+      "K_units": 48,
+      "V_units": 43
+    },
+    {
+      "prefix": 92,
+      "K_units": 49,
+      "V_units": 43
+    },
+    {
+      "prefix": 93,
+      "K_units": 49,
+      "V_units": 44
+    },
+    {
+      "prefix": 94,
+      "K_units": 49,
+      "V_units": 45
+    },
+    {
+      "prefix": 95,
+      "K_units": 49,
+      "V_units": 46
+    },
+    {
+      "prefix": 96,
+      "K_units": 50,
+      "V_units": 46
+    },
+    {
+      "prefix": 97,
+      "K_units": 51,
+      "V_units": 46
+    },
+    {
+      "prefix": 98,
+      "K_units": 52,
+      "V_units": 46
+    },
+    {
+      "prefix": 99,
+      "K_units": 52,
+      "V_units": 47
+    },
+    {
+      "prefix": 100,
+      "K_units": 52,
+      "V_units": 48
+    },
+    {
+      "prefix": 101,
+      "K_units": 52,
+      "V_units": 49
+    },
+    {
+      "prefix": 102,
+      "K_units": 53,
+      "V_units": 49
+    },
+    {
+      "prefix": 103,
+      "K_units": 54,
+      "V_units": 49
+    },
+    {
+      "prefix": 104,
+      "K_units": 55,
+      "V_units": 49
+    },
+    {
+      "prefix": 105,
+      "K_units": 55,
+      "V_units": 50
+    },
+    {
+      "prefix": 106,
+      "K_units": 55,
+      "V_units": 51
+    },
+    {
+      "prefix": 107,
+      "K_units": 55,
+      "V_units": 52
+    },
+    {
+      "prefix": 108,
+      "K_units": 55,
+      "V_units": 53
+    },
+    {
+      "prefix": 109,
+      "K_units": 55,
+      "V_units": 54
+    },
+    {
+      "prefix": 110,
+      "K_units": 56,
+      "V_units": 54
+    },
+    {
+      "prefix": 111,
+      "K_units": 56,
+      "V_units": 55
+    },
+    {
+      "prefix": 112,
+      "K_units": 56,
+      "V_units": 56
+    },
+    {
+      "prefix": 113,
+      "K_units": 57,
+      "V_units": 56
+    },
+    {
+      "prefix": 114,
+      "K_units": 58,
+      "V_units": 56
+    },
+    {
+      "prefix": 115,
+      "K_units": 58,
+      "V_units": 57
+    },
+    {
+      "prefix": 116,
+      "K_units": 59,
+      "V_units": 57
+    },
+    {
+      "prefix": 117,
+      "K_units": 60,
+      "V_units": 57
+    },
+    {
+      "prefix": 118,
+      "K_units": 61,
+      "V_units": 57
+    },
+    {
+      "prefix": 119,
+      "K_units": 62,
+      "V_units": 57
+    },
+    {
+      "prefix": 120,
+      "K_units": 62,
+      "V_units": 58
+    },
+    {
+      "prefix": 121,
+      "K_units": 63,
+      "V_units": 58
+    },
+    {
+      "prefix": 122,
+      "K_units": 64,
+      "V_units": 58
+    },
+    {
+      "prefix": 123,
+      "K_units": 64,
+      "V_units": 59
+    },
+    {
+      "prefix": 124,
+      "K_units": 64,
+      "V_units": 60
+    },
+    {
+      "prefix": 125,
+      "K_units": 64,
+      "V_units": 61
+    },
+    {
+      "prefix": 126,
+      "K_units": 65,
+      "V_units": 61
+    },
+    {
+      "prefix": 127,
+      "K_units": 65,
+      "V_units": 62
+    },
+    {
+      "prefix": 128,
+      "K_units": 66,
+      "V_units": 62
+    },
+    {
+      "prefix": 129,
+      "K_units": 66,
+      "V_units": 63
+    },
+    {
+      "prefix": 130,
+      "K_units": 66,
+      "V_units": 64
+    },
+    {
+      "prefix": 131,
+      "K_units": 67,
+      "V_units": 64
+    },
+    {
+      "prefix": 132,
+      "K_units": 68,
+      "V_units": 64
+    },
+    {
+      "prefix": 133,
+      "K_units": 69,
+      "V_units": 64
+    },
+    {
+      "prefix": 134,
+      "K_units": 69,
+      "V_units": 65
+    },
+    {
+      "prefix": 135,
+      "K_units": 70,
+      "V_units": 65
+    },
+    {
+      "prefix": 136,
+      "K_units": 70,
+      "V_units": 66
+    },
+    {
+      "prefix": 137,
+      "K_units": 71,
+      "V_units": 66
+    },
+    {
+      "prefix": 138,
+      "K_units": 71,
+      "V_units": 67
+    },
+    {
+      "prefix": 139,
+      "K_units": 71,
+      "V_units": 68
+    },
+    {
+      "prefix": 140,
+      "K_units": 72,
+      "V_units": 68
+    },
+    {
+      "prefix": 141,
+      "K_units": 73,
+      "V_units": 68
+    },
+    {
+      "prefix": 142,
+      "K_units": 73,
+      "V_units": 69
+    },
+    {
+      "prefix": 143,
+      "K_units": 74,
+      "V_units": 69
+    },
+    {
+      "prefix": 144,
+      "K_units": 74,
+      "V_units": 70
+    },
+    {
+      "prefix": 145,
+      "K_units": 74,
+      "V_units": 71
+    },
+    {
+      "prefix": 146,
+      "K_units": 74,
+      "V_units": 72
+    },
+    {
+      "prefix": 147,
+      "K_units": 75,
+      "V_units": 72
+    },
+    {
+      "prefix": 148,
+      "K_units": 76,
+      "V_units": 72
+    },
+    {
+      "prefix": 149,
+      "K_units": 76,
+      "V_units": 73
+    },
+    {
+      "prefix": 150,
+      "K_units": 77,
+      "V_units": 73
+    },
+    {
+      "prefix": 151,
+      "K_units": 77,
+      "V_units": 74
+    },
+    {
+      "prefix": 152,
+      "K_units": 77,
+      "V_units": 75
+    },
+    {
+      "prefix": 153,
+      "K_units": 77,
+      "V_units": 76
+    },
+    {
+      "prefix": 154,
+      "K_units": 78,
+      "V_units": 76
+    },
+    {
+      "prefix": 155,
+      "K_units": 78,
+      "V_units": 77
+    },
+    {
+      "prefix": 156,
+      "K_units": 78,
+      "V_units": 78
+    },
+    {
+      "prefix": 157,
+      "K_units": 78,
+      "V_units": 79
+    },
+    {
+      "prefix": 158,
+      "K_units": 78,
+      "V_units": 80
+    },
+    {
+      "prefix": 159,
+      "K_units": 79,
+      "V_units": 80
+    },
+    {
+      "prefix": 160,
+      "K_units": 80,
+      "V_units": 80
+    },
+    {
+      "prefix": 161,
+      "K_units": 81,
+      "V_units": 80
+    },
+    {
+      "prefix": 162,
+      "K_units": 81,
+      "V_units": 81
+    },
+    {
+      "prefix": 163,
+      "K_units": 82,
+      "V_units": 81
+    },
+    {
+      "prefix": 164,
+      "K_units": 82,
+      "V_units": 82
+    },
+    {
+      "prefix": 165,
+      "K_units": 83,
+      "V_units": 82
+    },
+    {
+      "prefix": 166,
+      "K_units": 83,
+      "V_units": 83
+    },
+    {
+      "prefix": 167,
+      "K_units": 83,
+      "V_units": 84
+    },
+    {
+      "prefix": 168,
+      "K_units": 83,
+      "V_units": 85
+    },
+    {
+      "prefix": 169,
+      "K_units": 84,
+      "V_units": 85
+    },
+    {
+      "prefix": 170,
+      "K_units": 84,
+      "V_units": 86
+    },
+    {
+      "prefix": 171,
+      "K_units": 85,
+      "V_units": 86
+    },
+    {
+      "prefix": 172,
+      "K_units": 86,
+      "V_units": 86
+    },
+    {
+      "prefix": 173,
+      "K_units": 87,
+      "V_units": 86
+    },
+    {
+      "prefix": 174,
+      "K_units": 87,
+      "V_units": 87
+    },
+    {
+      "prefix": 175,
+      "K_units": 87,
+      "V_units": 88
+    },
+    {
+      "prefix": 176,
+      "K_units": 87,
+      "V_units": 89
+    },
+    {
+      "prefix": 177,
+      "K_units": 87,
+      "V_units": 90
+    },
+    {
+      "prefix": 178,
+      "K_units": 88,
+      "V_units": 90
+    },
+    {
+      "prefix": 179,
+      "K_units": 89,
+      "V_units": 90
+    },
+    {
+      "prefix": 180,
+      "K_units": 90,
+      "V_units": 90
+    },
+    {
+      "prefix": 181,
+      "K_units": 91,
+      "V_units": 90
+    },
+    {
+      "prefix": 182,
+      "K_units": 91,
+      "V_units": 91
+    },
+    {
+      "prefix": 183,
+      "K_units": 91,
+      "V_units": 92
+    },
+    {
+      "prefix": 184,
+      "K_units": 92,
+      "V_units": 92
+    },
+    {
+      "prefix": 185,
+      "K_units": 93,
+      "V_units": 92
+    },
+    {
+      "prefix": 186,
+      "K_units": 94,
+      "V_units": 92
+    },
+    {
+      "prefix": 187,
+      "K_units": 95,
+      "V_units": 92
+    },
+    {
+      "prefix": 188,
+      "K_units": 96,
+      "V_units": 92
+    },
+    {
+      "prefix": 189,
+      "K_units": 97,
+      "V_units": 92
+    },
+    {
+      "prefix": 190,
+      "K_units": 98,
+      "V_units": 92
+    },
+    {
+      "prefix": 191,
+      "K_units": 98,
+      "V_units": 93
+    },
+    {
+      "prefix": 192,
+      "K_units": 98,
+      "V_units": 94
+    },
+    {
+      "prefix": 193,
+      "K_units": 98,
+      "V_units": 95
+    },
+    {
+      "prefix": 194,
+      "K_units": 99,
+      "V_units": 95
+    },
+    {
+      "prefix": 195,
+      "K_units": 100,
+      "V_units": 95
+    },
+    {
+      "prefix": 196,
+      "K_units": 100,
+      "V_units": 96
+    },
+    {
+      "prefix": 197,
+      "K_units": 100,
+      "V_units": 97
+    },
+    {
+      "prefix": 198,
+      "K_units": 100,
+      "V_units": 98
+    },
+    {
+      "prefix": 199,
+      "K_units": 101,
+      "V_units": 98
+    },
+    {
+      "prefix": 200,
+      "K_units": 101,
+      "V_units": 99
+    },
+    {
+      "prefix": 201,
+      "K_units": 102,
+      "V_units": 99
+    },
+    {
+      "prefix": 202,
+      "K_units": 103,
+      "V_units": 99
+    },
+    {
+      "prefix": 203,
+      "K_units": 104,
+      "V_units": 99
+    },
+    {
+      "prefix": 204,
+      "K_units": 105,
+      "V_units": 99
+    },
+    {
+      "prefix": 205,
+      "K_units": 105,
+      "V_units": 100
+    },
+    {
+      "prefix": 206,
+      "K_units": 106,
+      "V_units": 100
+    },
+    {
+      "prefix": 207,
+      "K_units": 106,
+      "V_units": 101
+    },
+    {
+      "prefix": 208,
+      "K_units": 106,
+      "V_units": 102
+    },
+    {
+      "prefix": 209,
+      "K_units": 106,
+      "V_units": 103
+    },
+    {
+      "prefix": 210,
+      "K_units": 107,
+      "V_units": 103
+    },
+    {
+      "prefix": 211,
+      "K_units": 108,
+      "V_units": 103
+    },
+    {
+      "prefix": 212,
+      "K_units": 108,
+      "V_units": 104
+    },
+    {
+      "prefix": 213,
+      "K_units": 108,
+      "V_units": 105
+    },
+    {
+      "prefix": 214,
+      "K_units": 108,
+      "V_units": 106
+    },
+    {
+      "prefix": 215,
+      "K_units": 109,
+      "V_units": 106
+    },
+    {
+      "prefix": 216,
+      "K_units": 109,
+      "V_units": 107
+    },
+    {
+      "prefix": 217,
+      "K_units": 110,
+      "V_units": 107
+    },
+    {
+      "prefix": 218,
+      "K_units": 110,
+      "V_units": 108
+    },
+    {
+      "prefix": 219,
+      "K_units": 110,
+      "V_units": 109
+    },
+    {
+      "prefix": 220,
+      "K_units": 110,
+      "V_units": 110
+    },
+    {
+      "prefix": 221,
+      "K_units": 110,
+      "V_units": 111
+    },
+    {
+      "prefix": 222,
+      "K_units": 111,
+      "V_units": 111
+    },
+    {
+      "prefix": 223,
+      "K_units": 112,
+      "V_units": 111
+    },
+    {
+      "prefix": 224,
+      "K_units": 112,
+      "V_units": 112
+    }
+  ],
+  "budget_costs": [
+    {
+      "visual_tokens": 128,
+      "base_fits_budget": true,
+      "affordable_units": 7,
+      "prefix": 7,
+      "K_units": 5,
+      "V_units": 2,
+      "visual_base": 804864,
+      "visual_residual": 16128,
+      "dual_lookup": 896,
+      "visual_position": 1024,
+      "encoder_constants": 1792,
+      "total_including_encoder": 824704,
+      "visual_fp16_denominator": 7340032,
+      "actual_bits_including_encoder": 1.7977120535714286
+    },
+    {
+      "visual_tokens": 256,
+      "base_fits_budget": true,
+      "affordable_units": 27,
+      "prefix": 27,
+      "K_units": 17,
+      "V_units": 10,
+      "visual_base": 1521664,
+      "visual_residual": 124416,
+      "dual_lookup": 896,
+      "visual_position": 2048,
+      "encoder_constants": 1792,
+      "total_including_encoder": 1650816,
+      "visual_fp16_denominator": 14680064,
+      "actual_bits_including_encoder": 1.7992466517857142
+    },
+    {
+      "visual_tokens": 384,
+      "base_fits_budget": true,
+      "affordable_units": 33,
+      "prefix": 33,
+      "K_units": 19,
+      "V_units": 14,
+      "visual_base": 2238464,
+      "visual_residual": 228096,
+      "dual_lookup": 896,
+      "visual_position": 3072,
+      "encoder_constants": 1792,
+      "total_including_encoder": 2472320,
+      "visual_fp16_denominator": 22020096,
+      "actual_bits_including_encoder": 1.7964099702380953
+    },
+    {
+      "visual_tokens": 512,
+      "base_fits_budget": true,
+      "affordable_units": 36,
+      "prefix": 36,
+      "K_units": 21,
+      "V_units": 15,
+      "visual_base": 2955264,
+      "visual_residual": 331776,
+      "dual_lookup": 896,
+      "visual_position": 4096,
+      "encoder_constants": 1792,
+      "total_including_encoder": 3293824,
+      "visual_fp16_denominator": 29360128,
+      "actual_bits_including_encoder": 1.7949916294642858
+    },
+    {
+      "visual_tokens": 640,
+      "base_fits_budget": true,
+      "affordable_units": 38,
+      "prefix": 38,
+      "K_units": 22,
+      "V_units": 16,
+      "visual_base": 3672064,
+      "visual_residual": 437760,
+      "dual_lookup": 896,
+      "visual_position": 5120,
+      "encoder_constants": 1792,
+      "total_including_encoder": 4117632,
+      "visual_fp16_denominator": 36700160,
+      "actual_bits_including_encoder": 1.7951450892857144
+    },
+    {
+      "visual_tokens": 768,
+      "base_fits_budget": true,
+      "affordable_units": 40,
+      "prefix": 40,
+      "K_units": 23,
+      "V_units": 17,
+      "visual_base": 4388864,
+      "visual_residual": 552960,
+      "dual_lookup": 896,
+      "visual_position": 6144,
+      "encoder_constants": 1792,
+      "total_including_encoder": 4950656,
+      "visual_fp16_denominator": 44040192,
+      "actual_bits_including_encoder": 1.7985956101190477
+    },
+    {
+      "visual_tokens": 896,
+      "base_fits_budget": true,
+      "affordable_units": 41,
+      "prefix": 41,
+      "K_units": 24,
+      "V_units": 17,
+      "visual_base": 5105664,
+      "visual_residual": 661248,
+      "dual_lookup": 896,
+      "visual_position": 7168,
+      "encoder_constants": 1792,
+      "total_including_encoder": 5776768,
+      "visual_fp16_denominator": 51380224,
+      "actual_bits_including_encoder": 1.798907844387755
+    },
+    {
+      "visual_tokens": 1024,
+      "base_fits_budget": true,
+      "affordable_units": 41,
+      "prefix": 41,
+      "K_units": 24,
+      "V_units": 17,
+      "visual_base": 5822464,
+      "visual_residual": 755712,
+      "dual_lookup": 896,
+      "visual_position": 8192,
+      "encoder_constants": 1792,
+      "total_including_encoder": 6589056,
+      "visual_fp16_denominator": 58720256,
+      "actual_bits_including_encoder": 1.7953752790178572
+    },
+    {
+      "visual_tokens": 1152,
+      "base_fits_budget": true,
+      "affordable_units": 42,
+      "prefix": 42,
+      "K_units": 24,
+      "V_units": 18,
+      "visual_base": 6539264,
+      "visual_residual": 870912,
+      "dual_lookup": 896,
+      "visual_position": 9216,
+      "encoder_constants": 1792,
+      "total_including_encoder": 7422080,
+      "visual_fp16_denominator": 66060288,
+      "actual_bits_including_encoder": 1.7976500496031746
+    },
+    {
+      "visual_tokens": 1280,
+      "base_fits_budget": true,
+      "affordable_units": 42,
+      "prefix": 42,
+      "K_units": 24,
+      "V_units": 18,
+      "visual_base": 7256064,
+      "visual_residual": 967680,
+      "dual_lookup": 896,
+      "visual_position": 10240,
+      "encoder_constants": 1792,
+      "total_including_encoder": 8236672,
+      "visual_fp16_denominator": 73400320,
+      "actual_bits_including_encoder": 1.7954520089285715
+    },
+    {
+      "visual_tokens": 1408,
+      "base_fits_budget": true,
+      "affordable_units": 43,
+      "prefix": 43,
+      "K_units": 24,
+      "V_units": 19,
+      "visual_base": 7972864,
+      "visual_residual": 1089792,
+      "dual_lookup": 896,
+      "visual_position": 11264,
+      "encoder_constants": 1792,
+      "total_including_encoder": 9076608,
+      "visual_fp16_denominator": 80740352,
+      "actual_bits_including_encoder": 1.7986759334415585
+    },
+    {
+      "visual_tokens": 1536,
+      "base_fits_budget": true,
+      "affordable_units": 43,
+      "prefix": 43,
+      "K_units": 24,
+      "V_units": 19,
+      "visual_base": 8689664,
+      "visual_residual": 1188864,
+      "dual_lookup": 896,
+      "visual_position": 12288,
+      "encoder_constants": 1792,
+      "total_including_encoder": 9893504,
+      "visual_fp16_denominator": 88080384,
+      "actual_bits_including_encoder": 1.7971772693452381
+    },
+    {
+      "visual_tokens": 1664,
+      "base_fits_budget": true,
+      "affordable_units": 43,
+      "prefix": 43,
+      "K_units": 24,
+      "V_units": 19,
+      "visual_base": 9406464,
+      "visual_residual": 1287936,
+      "dual_lookup": 896,
+      "visual_position": 13312,
+      "encoder_constants": 1792,
+      "total_including_encoder": 10710400,
+      "visual_fp16_denominator": 95420416,
+      "actual_bits_including_encoder": 1.795909168956044
+    },
+    {
+      "visual_tokens": 1792,
+      "base_fits_budget": true,
+      "affordable_units": 44,
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20,
+      "visual_base": 10123264,
+      "visual_residual": 1419264,
+      "dual_lookup": 896,
+      "visual_position": 14336,
+      "encoder_constants": 1792,
+      "total_including_encoder": 11559552,
+      "visual_fp16_denominator": 102760448,
+      "actual_bits_including_encoder": 1.7998445471938775
+    },
+    {
+      "visual_tokens": 1920,
+      "base_fits_budget": true,
+      "affordable_units": 44,
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20,
+      "visual_base": 10840064,
+      "visual_residual": 1520640,
+      "dual_lookup": 896,
+      "visual_position": 15360,
+      "encoder_constants": 1792,
+      "total_including_encoder": 12378752,
+      "visual_fp16_denominator": 110100480,
+      "actual_bits_including_encoder": 1.7989025297619048
+    },
+    {
+      "visual_tokens": 2048,
+      "base_fits_budget": true,
+      "affordable_units": 44,
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20,
+      "visual_base": 11556864,
+      "visual_residual": 1622016,
+      "dual_lookup": 896,
+      "visual_position": 16384,
+      "encoder_constants": 1792,
+      "total_including_encoder": 13197952,
+      "visual_fp16_denominator": 117440512,
+      "actual_bits_including_encoder": 1.7980782645089286
+    },
+    {
+      "visual_tokens": 2176,
+      "base_fits_budget": true,
+      "affordable_units": 44,
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20,
+      "visual_base": 12273664,
+      "visual_residual": 1723392,
+      "dual_lookup": 896,
+      "visual_position": 17408,
+      "encoder_constants": 1792,
+      "total_including_encoder": 14017152,
+      "visual_fp16_denominator": 124780544,
+      "actual_bits_including_encoder": 1.7973509716386555
+    },
+    {
+      "visual_tokens": 2304,
+      "base_fits_budget": true,
+      "affordable_units": 44,
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20,
+      "visual_base": 12990464,
+      "visual_residual": 1824768,
+      "dual_lookup": 896,
+      "visual_position": 18432,
+      "encoder_constants": 1792,
+      "total_including_encoder": 14836352,
+      "visual_fp16_denominator": 132120576,
+      "actual_bits_including_encoder": 1.7967044890873016
+    },
+    {
+      "visual_tokens": 2432,
+      "base_fits_budget": true,
+      "affordable_units": 44,
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20,
+      "visual_base": 13707264,
+      "visual_residual": 1926144,
+      "dual_lookup": 896,
+      "visual_position": 19456,
+      "encoder_constants": 1792,
+      "total_including_encoder": 15655552,
+      "visual_fp16_denominator": 139460608,
+      "actual_bits_including_encoder": 1.796126057330827
+    },
+    {
+      "visual_tokens": 2560,
+      "base_fits_budget": true,
+      "affordable_units": 44,
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20,
+      "visual_base": 14424064,
+      "visual_residual": 2027520,
+      "dual_lookup": 896,
+      "visual_position": 20480,
+      "encoder_constants": 1792,
+      "total_including_encoder": 16474752,
+      "visual_fp16_denominator": 146800640,
+      "actual_bits_including_encoder": 1.79560546875
+    },
+    {
+      "visual_tokens": 2688,
+      "base_fits_budget": true,
+      "affordable_units": 44,
+      "prefix": 44,
+      "K_units": 24,
+      "V_units": 20,
+      "visual_base": 15140864,
+      "visual_residual": 2128896,
+      "dual_lookup": 896,
+      "visual_position": 21504,
+      "encoder_constants": 1792,
+      "total_including_encoder": 17293952,
+      "visual_fp16_denominator": 154140672,
+      "actual_bits_including_encoder": 1.7951344600340136
+    },
+    {
+      "visual_tokens": 2816,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 15857664,
+      "visual_residual": 2280960,
+      "dual_lookup": 896,
+      "visual_position": 22528,
+      "encoder_constants": 1792,
+      "total_including_encoder": 18163840,
+      "visual_fp16_denominator": 161480704,
+      "actual_bits_including_encoder": 1.7997285917207793
+    },
+    {
+      "visual_tokens": 2944,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 16574464,
+      "visual_residual": 2384640,
+      "dual_lookup": 896,
+      "visual_position": 23552,
+      "encoder_constants": 1792,
+      "total_including_encoder": 18985344,
+      "visual_fp16_denominator": 168820736,
+      "actual_bits_including_encoder": 1.7993376358695652
+    },
+    {
+      "visual_tokens": 3072,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 17291264,
+      "visual_residual": 2488320,
+      "dual_lookup": 896,
+      "visual_position": 24576,
+      "encoder_constants": 1792,
+      "total_including_encoder": 19806848,
+      "visual_fp16_denominator": 176160768,
+      "actual_bits_including_encoder": 1.798979259672619
+    },
+    {
+      "visual_tokens": 3200,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 18008064,
+      "visual_residual": 2592000,
+      "dual_lookup": 896,
+      "visual_position": 25600,
+      "encoder_constants": 1792,
+      "total_including_encoder": 20628352,
+      "visual_fp16_denominator": 183500800,
+      "actual_bits_including_encoder": 1.7986495535714286
+    },
+    {
+      "visual_tokens": 3328,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 18724864,
+      "visual_residual": 2695680,
+      "dual_lookup": 896,
+      "visual_position": 26624,
+      "encoder_constants": 1792,
+      "total_including_encoder": 21449856,
+      "visual_fp16_denominator": 190840832,
+      "actual_bits_including_encoder": 1.798345209478022
+    },
+    {
+      "visual_tokens": 3456,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 19441664,
+      "visual_residual": 2799360,
+      "dual_lookup": 896,
+      "visual_position": 27648,
+      "encoder_constants": 1792,
+      "total_including_encoder": 22271360,
+      "visual_fp16_denominator": 198180864,
+      "actual_bits_including_encoder": 1.7980634093915344
+    },
+    {
+      "visual_tokens": 3584,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 20158464,
+      "visual_residual": 2903040,
+      "dual_lookup": 896,
+      "visual_position": 28672,
+      "encoder_constants": 1792,
+      "total_including_encoder": 23092864,
+      "visual_fp16_denominator": 205520896,
+      "actual_bits_including_encoder": 1.797801737882653
+    },
+    {
+      "visual_tokens": 3712,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 20875264,
+      "visual_residual": 3006720,
+      "dual_lookup": 896,
+      "visual_position": 29696,
+      "encoder_constants": 1792,
+      "total_including_encoder": 23914368,
+      "visual_fp16_denominator": 212860928,
+      "actual_bits_including_encoder": 1.797558112684729
+    },
+    {
+      "visual_tokens": 3840,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 21592064,
+      "visual_residual": 3110400,
+      "dual_lookup": 896,
+      "visual_position": 30720,
+      "encoder_constants": 1792,
+      "total_including_encoder": 24735872,
+      "visual_fp16_denominator": 220200960,
+      "actual_bits_including_encoder": 1.7973307291666667
+    },
+    {
+      "visual_tokens": 3968,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 22308864,
+      "visual_residual": 3214080,
+      "dual_lookup": 896,
+      "visual_position": 31744,
+      "encoder_constants": 1792,
+      "total_including_encoder": 25557376,
+      "visual_fp16_denominator": 227540992,
+      "actual_bits_including_encoder": 1.7971180155529953
+    },
+    {
+      "visual_tokens": 4096,
+      "base_fits_budget": true,
+      "affordable_units": 45,
+      "prefix": 45,
+      "K_units": 24,
+      "V_units": 21,
+      "visual_base": 23025664,
+      "visual_residual": 3317760,
+      "dual_lookup": 896,
+      "visual_position": 32768,
+      "encoder_constants": 1792,
+      "total_including_encoder": 26378880,
+      "visual_fp16_denominator": 234881024,
+      "actual_bits_including_encoder": 1.7969185965401786
+    }
+  ],
+  "ranking_sha256": {
+    "r6_incumbent_mixed_gradient": "377347c2f363377f2587a305e15dcfb4ae0e6078e8bfc29b5e9ceaa6e46a6216",
+    "r6_axis_matched_spread": "6dae811e80b1f064a4c45e8af67aa4a0a895b67788529d81ac58c339f7b25183",
+    "r6_axis_matched_random1212": "9b4d0d3ed413315d64b24108de63490e4c90ed936739b26a7bd7e98a1fba9c6e"
+  },
+  "input_sha256": {
+    "configs/a2/round5_v1/mixed_dev64.json": "6e559864ae9aec44ea2424b89e34076d1bffdda887fa2e06b48400bbd4ef180f",
+    "audit/a2/round5_confirmation_v1.json": "821eb2247f201787422bd1fe51a9896b4668f6cd035c20f2415b0e1ee208003b",
+    "code/a2/mixed_residual_bank.py": "2fbc7c5d22c8c2381abdc555dad4a0f49cb6a1a949cf6295cd8c75f686518781",
+    "code/a2/configure_sparse_round5.py": "9016611f0a07f5f761dd20052b8b0cacbed33b181e3cb82e68c576329c9a9a73",
+    "code/a2/round5_runner.py": "134cb3d5782f0255c971baba888612dc477cdb8917abb4c98ab4e67fc092a364",
+    "configs/a2/docvqa_next_dev64.json": "69b6ee23e9cd00a8d42e22b5c16e68747e3acb8df87decca0e474a908d42510e",
+    "configs/a2/round5_v1/text_transfer64.json": "b0fcda03779891feb151d80f7bd136e67f7fe885318e0d26e6fc9c8035598514",
+    "configs/a2/round5_v1/doc_confirm64.json": "8815a15f4e810a8ce60d702cd66bf38bafa385cee3b49fca33e273489ae38214",
+    "results/metadata_followup_v1/calibration_s0/all_kv/factors.json": "d60fe4ffcf31e36306ed2c5a4069634627c83b3af2f0b86fdb5c37e456113671",
+    "results/direction_books_gpu1_v1/books/gaussian_vq_g4_256.json": "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae"
+  },
+  "source_sha256": "3d251d8c4d6825de72067511c1caa62bf51135029eccacb0b68378ff700f28d3",
+  "configuration_sha256": {
+    "configs/a2/round6_v1/controls_doc16.json": "7d1587e38e6996ba4f9b161ff914949045a9c898010cc1cff32bfe5e280969e8",
+    "configs/a2/round6_v1/controls_doc64.json": "8b270f57c2364dc2a0b977b98bdf390fddfdbf1e2c2b77cc1d7955fa3b723387",
+    "configs/a2/round6_v1/controls_text64.json": "0ed9292a29cbdd1bb1e5bd715dc3cdf421aa1a260b61f9c274d1f64d7deaff89",
+    "configs/a2/round6_v1/controls_seen_doc64.json": "9b09d011c4c48d9a081e6940c8123d01be3cc82c31c6fa21a90b3f9e6c0c8830"
+  }
+}

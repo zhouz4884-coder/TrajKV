@@ -1,0 +1,294 @@
+{
+  "status": "COMPLETE",
+  "created_at_utc": "2026-11-15T12:59:36.814619+00:00",
+  "execution_goal_completed": true,
+  "performance_hypotheses_all_met": false,
+  "scope": "chat.md section16 complete true-GPU campaign plus bounded post-Doc54 per-image RD development prototype",
+  "hardware": "2 x RTX3090 24GB; separate full-model CUDA workers; frozen InternVL3-8B FP16 backbone and LLaVA1.5 FP16 secondary",
+  "runtime_cache_scope": "all newly launched remote TRITON/TMPDIR/TorchInductor/CUDA caches and data/results on project data disk",
+  "frozen_confirmation": {
+    "source_images": 310,
+    "Doc": {
+      "images": 54,
+      "questions": 205
+    },
+    "Text": {
+      "images": 256,
+      "questions": 256
+    },
+    "variants": 8,
+    "real_scored_answers": 3688,
+    "method_reselection": false
+  },
+  "validation": [
+    {
+      "path": "results/round6_v1/doc_confirmation_analysis/summary.json",
+      "status": "COMPLETE",
+      "sha256": "91803af1fa2e632313e68f8abf5e119502e493b6801f0e559e4bae1b139a14c7"
+    },
+    {
+      "path": "results/round6_v1/text_confirmation_analysis/summary.json",
+      "status": "COMPLETE",
+      "sha256": "46c33b931a0267b030adf01e5bc888946f15ad9888fd7899a6f8a729d0681350"
+    },
+    {
+      "path": "results/round6_v1/frozen_primary_summary/summary.json",
+      "status": "COMPLETE",
+      "sha256": "891b8e5dc3d4b4284d7933ba5d590a11eff3ea4804c57b05baf0c9949f11310b"
+    },
+    {
+      "path": "results/round6_v1/second_packed64_analysis/summary.json",
+      "status": "COMPLETE",
+      "sha256": "faad76df7520e8f55b55c7c3d324ed4ee65d0d940b6f368fff4bb208103bb00b"
+    },
+    {
+      "path": "results/round6_v1/quiet_timing_analysis/summary.json",
+      "status": "PASS",
+      "sha256": "7f5f8e93ecd823f5e15db0f04d20523d9d87e86f618684dbbf0fb8a77795d348"
+    },
+    {
+      "path": "results/round6_v1/second_reader_check/complete.json",
+      "status": "PASS",
+      "sha256": "223b49942d63964f1f728de52aec732f5d064834beb8085ec85505a607409e55"
+    },
+    {
+      "path": "results/round6_v1/student/depth_arithmetic/complete.json",
+      "status": "PASS",
+      "sha256": "97ec8d300fb294161c5899173992a952c238a77219b5bbf58d16206e5495247f"
+    },
+    {
+      "path": "results/round6_v1/student/calibration16/complete.json",
+      "status": "COMPLETE",
+      "sha256": "e2956c9a1da602f8327280eccef501d7b5b89022d031eebcdbac850fc0aed401"
+    },
+    {
+      "path": "results/round6_v1/gamma_fit/complete.json",
+      "status": "COMPLETE",
+      "sha256": "f24f6ba0d1fade5a54951b9d3bed214c4cb7cb03d8aba1372c737aa409fb3991"
+    },
+    {
+      "path": "results/round6_v1/image_rd_dev/complete.json",
+      "status": "COMPLETE",
+      "sha256": "6812164bba73fc576864f6c664e460ec5ca6ba5ffc1d0ee6dfe31f0d6aebe08c"
+    },
+    {
+      "path": "results/round6_v1/image_rd_small_development_summary/summary.json",
+      "status": "COMPLETE",
+      "sha256": "cebfd3a8bdc41078e49a60e1810c0ead7162a7e0084891daa6cfb416323454a7"
+    }
+  ],
+  "audit": {
+    "path": "audit/a2/round6_confirmation_and_timing_check_v1.json",
+    "sha256": "94472242a66fb109fb1ee197774cba337bac732e5b3cd853173691e5366640df"
+  },
+  "quality_runs": [
+    {
+      "path": "results/round6_v1/confirm_doc54_s0/records.jsonl",
+      "sha256": "3ab001b125d06baf367d90238fbbb8384238748225132f0cb75679c6055613a4",
+      "sessions": 216,
+      "generated_answers": 832,
+      "images": 27,
+      "variants": 8,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/confirm_doc54_s1/records.jsonl",
+      "sha256": "1f810cb9fbcfcdb60794c3d4aacd927d77b56266dbe16b013954236fa1007fd0",
+      "sessions": 216,
+      "generated_answers": 808,
+      "images": 27,
+      "variants": 8,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/confirm_text256_s0/records.jsonl",
+      "sha256": "1151391b5779fdfd52b7a8f112d61489b2d816b03e4d5805774b83d4844ce25e",
+      "sessions": 1024,
+      "generated_answers": 1024,
+      "images": 128,
+      "variants": 8,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/confirm_text256_s1/records.jsonl",
+      "sha256": "bd782f37d19b2883d18c9b834fa197b2ca560c897e404f8b15e41601f3995808",
+      "sessions": 1024,
+      "generated_answers": 1024,
+      "images": 128,
+      "variants": 8,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/controls/doc16/records.jsonl",
+      "sha256": "d4339c3297303383fe4c08074715d67d520c2ce77b8a7ab2f32e7eeee4689a58",
+      "sessions": 48,
+      "generated_answers": 186,
+      "images": 16,
+      "variants": 3,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/controls/doc48/records.jsonl",
+      "sha256": "bf5f19d98c58474bb4d76b360fab732e81d5bfe4b6441aeab8248290ad501b20",
+      "sessions": 144,
+      "generated_answers": 579,
+      "images": 48,
+      "variants": 3,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/controls/text64/records.jsonl",
+      "sha256": "17b6ed12edbc0ff5a2ad471cb663e64542d15e512d82eb0574a0bae01dd7e2b7",
+      "sessions": 192,
+      "generated_answers": 192,
+      "images": 64,
+      "variants": 3,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/depth_curve_dev16/records.jsonl",
+      "sha256": "600eba5751d359866bc2bba2e898c41aa26603b80c3d2f678fd7f3291136b04d",
+      "sessions": 96,
+      "generated_answers": 372,
+      "images": 16,
+      "variants": 6,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/depth_doc64/records.jsonl",
+      "sha256": "17745586b589d0e366252719b56fcb7064c875bd6271111fd649cef7680c2749",
+      "sessions": 192,
+      "generated_answers": 765,
+      "images": 64,
+      "variants": 3,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/depth_rd_dev64/records.jsonl",
+      "sha256": "55f639c234b949b62765f7ba9bf05a24c26a55292b450a3c93a66cb095025444",
+      "sessions": 128,
+      "generated_answers": 510,
+      "images": 64,
+      "variants": 2,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/depth_text64_seen/records.jsonl",
+      "sha256": "c5b90d672a2779a074791801038c50b8544b54c167cee3aa264092c4e8d8bdd5",
+      "sessions": 192,
+      "generated_answers": 192,
+      "images": 64,
+      "variants": 3,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/directional_eval_s0/records.jsonl",
+      "sha256": "5c156ca025d325df8c11a94f66d97119d226eb6bc3cdb4a0f7980bc6535a3c50",
+      "sessions": 128,
+      "generated_answers": 508,
+      "images": 32,
+      "variants": 4,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/directional_eval_s1/records.jsonl",
+      "sha256": "0e4d61853f1979e3a2cfa0270aa6a5ad5b7ed9c8ee78bb007b90108531573b18",
+      "sessions": 128,
+      "generated_answers": 512,
+      "images": 32,
+      "variants": 4,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/gamma_eval_s0/records.jsonl",
+      "sha256": "38d5c85f9a9bbf98c5baae211faa9f7b04db7ebea9c1559ab3fd01d0bc3a3ffc",
+      "sessions": 160,
+      "generated_answers": 635,
+      "images": 32,
+      "variants": 5,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/gamma_eval_s1/records.jsonl",
+      "sha256": "214aab60329110b044b65754d903e4250ff5db73039d3f866d350d7158647a27",
+      "sessions": 160,
+      "generated_answers": 640,
+      "images": 32,
+      "variants": 5,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/image_rd_dev/development16/records.jsonl",
+      "sha256": "df71cfd44f6d6bf86c5c584c4c558dfbd1ae733a16deede533c9ecf5915bfd5a",
+      "sessions": 16,
+      "generated_answers": 62,
+      "images": 16,
+      "variants": 1,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/image_rd_dev/text_seen16/records.jsonl",
+      "sha256": "aeb2c4c9c3ddc5aed9523754f7a43839241855e025cca413c3c52d9887ce0f32",
+      "sessions": 16,
+      "generated_answers": 16,
+      "images": 16,
+      "variants": 1,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/image_rd_smoke2/records.jsonl",
+      "sha256": "94bb9f0cc5b5478f2ee8f53712fccd8bbddf2aa13dd8cda5b01b1c72accb18dc",
+      "sessions": 2,
+      "generated_answers": 8,
+      "images": 2,
+      "variants": 1,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/second_llava_smoke8/records.jsonl",
+      "sha256": "5896431ef83d0b7549b7574461d2fec553ff23c157d9ecc78261ae465f945109",
+      "sessions": 16,
+      "generated_answers": 16,
+      "images": 8,
+      "variants": 2,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/second_packed64/records.jsonl",
+      "sha256": "f8baaca359d94c9cd14186531830561aa8e9cb814ac772d05996f35d306aff3a",
+      "sessions": 320,
+      "generated_answers": 320,
+      "images": 64,
+      "variants": 5,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    },
+    {
+      "path": "results/round6_v1/second_packed8/records.jsonl",
+      "sha256": "769a1e07fd275e4824460c5bb1dff9d8890bbfd1562f3e11c809d5f67285b646",
+      "sessions": 24,
+      "generated_answers": 24,
+      "images": 8,
+      "variants": 3,
+      "scope": "includes reused development, repeated smoke and frozen confirmation; counts are not independent samples"
+    }
+  ],
+  "totals": {
+    "free_generation_sessions": 4442,
+    "generated_answers": 9225,
+    "independent_sample_warning": "method/repeated-development/smoke rows are not extra independent questions; use cohort-specific source-image counts"
+  },
+  "timing": {
+    "measurements": 63,
+    "warmups": 21,
+    "quality_scored": false
+  },
+  "gpu_final_observation": "both3090 24MiB/0percent after all jobs finished",
+  "reports": {
+    "README.md": "8c6336df35c5b6350f298e439ddd06994cec805347a07821388e04bf6251b173",
+    "docs/RESEARCH_PROGRESS_2026-11-15_round6.zh.md": "2c5b6781e3213d0c92be7548bf7e8971cb4adafe96a4a44dbf9a524ca861f8cb",
+    "docs/GOAL_2026-11-15_v7_DEPTH_AND_COVERAGE.md": "3227482506197ef49a596e5bb0f7e90b232f8948f98fd3cb16f26ea3a3f5d9fa",
+    "docs/START_HERE_ROUND6_2026-11-15.zh.md": "07dce83081472b345fb1e5d31c565ab316631c6d650a86ef5e77fd809af5c1d4"
+  },
+  "local_report_links_checked": 34,
+  "outcome": "new fixed depth concentration did not establish stable gain over old allocation; native4 noninferiority not established in both domains; next optimize coverage-aware conditional exchanges"
+}

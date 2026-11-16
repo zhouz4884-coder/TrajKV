@@ -1,0 +1,242 @@
+{
+  "read_only": true,
+  "GPU_used": false,
+  "downloads": false,
+  "weight_payload_read": false,
+  "search_scope": "explicit data-disk cache roots and VLAtest one-level models/checkpoints; no home/system scan",
+  "roots": [
+    {
+      "path": "/path/to/storage/datasets/hf_cache/hub",
+      "kind": "HF Hub direct model repositories",
+      "exists": true,
+      "direct_entries": 0,
+      "matching_names": []
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache",
+      "kind": "ModelScope bounded root",
+      "exists": true,
+      "direct_entries": 2,
+      "matching_names": []
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache/models",
+      "kind": "known ModelScope Qwen namespace",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache/hub",
+      "kind": "known ModelScope Qwen namespace",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache/Qwen",
+      "kind": "known ModelScope Qwen namespace",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache/qwen",
+      "kind": "known ModelScope Qwen namespace",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache/models/Qwen",
+      "kind": "known ModelScope Qwen namespace",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache/models/qwen",
+      "kind": "known ModelScope Qwen namespace",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache/hub/Qwen",
+      "kind": "known ModelScope Qwen namespace",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/datasets/modelscope-cache/hub/qwen",
+      "kind": "known ModelScope Qwen namespace",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/VLAtest",
+      "kind": "VLAtest direct children; only models/checkpoints descendants examined",
+      "exists": true,
+      "direct_entries": 13,
+      "matching_names": []
+    },
+    {
+      "path": "/path/to/storage/models",
+      "kind": "nearby explicit models/checkpoints root",
+      "exists": true,
+      "direct_entries": 43,
+      "matching_names": [
+        "Qwen2.5-VL-7B-Instruct-AWQ",
+        "Qwen2.5-VL-7B-Instruct-GPTQ-Int4"
+      ]
+    },
+    {
+      "path": "/path/to/storage/checkpoints",
+      "kind": "nearby explicit models/checkpoints root",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/VLAtest/models",
+      "kind": "nearby explicit models/checkpoints root",
+      "exists": false
+    },
+    {
+      "path": "/path/to/storage/VLAtest/checkpoints",
+      "kind": "nearby explicit models/checkpoints root",
+      "exists": false
+    }
+  ],
+  "candidates": [
+    {
+      "path": "/path/to/storage/models/Qwen2.5-VL-7B-Instruct-AWQ",
+      "config_exists": true,
+      "config_sha256": "0ccd6378c18544511f59a2ffedb2a616974cd17b24f33ce9caaa40fdb53e187c",
+      "model_type": "qwen2_5_vl",
+      "architectures": [
+        "Qwen2_5_VLForConditionalGeneration"
+      ],
+      "dtype": "bfloat16",
+      "quantization_config": {
+        "bits": 4,
+        "group_size": 128,
+        "modules_to_not_convert": [
+          "visual"
+        ],
+        "quant_method": "awq",
+        "version": "gemm",
+        "zero_point": true
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "tensor_count": 1121,
+          "sha256": "9bbb7f66770d7f0f3c2f880f257f991d0e6c756e0b2a86eedc37c7ad37d5581d"
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "exists": true,
+          "bytes": 3982163944,
+          "tensor_count": 724,
+          "header_bytes": 79840,
+          "dtypes": [
+            "BF16",
+            "F16",
+            "I32"
+          ],
+          "header_offsets_cover_payload": true,
+          "missing_index_tensors": 0
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "exists": true,
+          "bytes": 2941808440,
+          "tensor_count": 397,
+          "header_bytes": 44848,
+          "dtypes": [
+            "BF16",
+            "F16",
+            "I32"
+          ],
+          "header_offsets_cover_payload": true,
+          "missing_index_tensors": 0
+        }
+      ],
+      "total_weight_file_bytes": 6923972384,
+      "all_shards_present_and_headers_valid": true,
+      "header_dtypes": [
+        "BF16",
+        "F16",
+        "I32"
+      ],
+      "quantized_tensors_detected": true,
+      "full_precision_candidate": false
+    },
+    {
+      "path": "/path/to/storage/models/Qwen2.5-VL-7B-Instruct-GPTQ-Int4",
+      "config_exists": true,
+      "config_sha256": "62f4922a6bac2face657f7baaaba8949e56f42db720c95085b49eb2e33749a73",
+      "model_type": "qwen2_5_vl",
+      "architectures": [
+        "Qwen2_5_VLForConditionalGeneration"
+      ],
+      "dtype": "bfloat16",
+      "quantization_config": {
+        "bits": 4,
+        "checkpoint_format": "gptq",
+        "desc_act": false,
+        "group_size": 128,
+        "lm_head": false,
+        "meta": {
+          "damp_auto_increment": 0.0025,
+          "damp_percent": 0.1,
+          "mse": 0.0,
+          "quantizer": [
+            "gptqmodel:2.0.0-dev"
+          ],
+          "static_groups": false,
+          "true_sequential": true,
+          "uri": "https://github.com/modelcloud/gptqmodel"
+        },
+        "pack_dtype": "int32",
+        "quant_method": "gptq",
+        "sym": true
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "tensor_count": 1317,
+          "sha256": "3b44710961a551374c264b82799550b178fb17e94a4e79f78040b19ac509dc2d"
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "exists": true,
+          "bytes": 3984201128,
+          "tensor_count": 814,
+          "header_bytes": 89504,
+          "dtypes": [
+            "BF16",
+            "F16",
+            "I32"
+          ],
+          "header_offsets_cover_payload": true,
+          "missing_index_tensors": 0
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "exists": true,
+          "bytes": 2944322576,
+          "tensor_count": 503,
+          "header_bytes": 56328,
+          "dtypes": [
+            "BF16",
+            "F16",
+            "I32"
+          ],
+          "header_offsets_cover_payload": true,
+          "missing_index_tensors": 0
+        }
+      ],
+      "total_weight_file_bytes": 6928523704,
+      "all_shards_present_and_headers_valid": true,
+      "header_dtypes": [
+        "BF16",
+        "F16",
+        "I32"
+      ],
+      "quantized_tensors_detected": true,
+      "full_precision_candidate": false
+    }
+  ],
+  "complete_full_precision_candidates": [],
+  "integrity_scope": "index+shard inventory and safetensors header offsets/file lengths; weight payload bytes not hashed"
+}

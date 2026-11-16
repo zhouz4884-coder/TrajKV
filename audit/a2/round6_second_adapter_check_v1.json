@@ -1,0 +1,16 @@
+{
+  "status": "PASS_CPU_STRUCTURAL_ONLY",
+  "GPU_used": false,
+  "model_loaded": false,
+  "checks": [
+    "layer/geometry/proxy: model.language_model.layers",
+    "layer/geometry/proxy: language_model.model.layers",
+    "image_token_index alias without model mutation",
+    "conflicting image token aliases rejected",
+    "official template; exactly 576 real tokens; no padding/InternVL kwargs",
+    "LLaVA1.5 first-turn serialization fallback",
+    "LLaVA-next without official template rejected"
+  ],
+  "adapter_sha256": "58a8cc57e410b5b1955bac05e52662b3a6f03a97f859d2c710475b08a3bb78aa",
+  "scope": "mock decoder/processor plus actual old development image; no evidence of GPU identity or model task quality"
+}

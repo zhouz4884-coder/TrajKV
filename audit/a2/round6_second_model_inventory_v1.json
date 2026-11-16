@@ -1,0 +1,3034 @@
+{
+  "read_only": true,
+  "GPU_used": false,
+  "weight_payload_read": false,
+  "models_root": "/path/to/storage/models",
+  "python": "/home/RESEARCHER/miniconda3/envs/p72_modern_vlm/bin/python",
+  "packages": {
+    "transformers": "5.12.0",
+    "torch": "2.4.1",
+    "safetensors": "0.8.0",
+    "accelerate": "1.14.0"
+  },
+  "models": [
+    {
+      "name": "._____temp",
+      "path": "/path/to/storage/models/._____temp",
+      "config_exists": false,
+      "direct_entries": [
+        "examples",
+        "runs"
+      ]
+    },
+    {
+      "name": "DeepSeek-Coder-V2-Lite-Instruct",
+      "path": "/path/to/storage/models/DeepSeek-Coder-V2-Lite-Instruct",
+      "config_exists": true,
+      "config_sha256": "5f2f880516f5cb5d17bbb0b0b78623dee45d84855de9c5a0e637eaf828267d2b",
+      "model_type": "deepseek_v2",
+      "architectures": [
+        "DeepseekV2ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "deepseek_v2",
+        "num_hidden_layers": 27,
+        "num_attention_heads": 16,
+        "num_key_value_heads": 16,
+        "hidden_size": 2048,
+        "intermediate_size": 10944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 1279,
+        "sha256": "31181eaf79394ea26728d95ecb54fe7c8413e6f56085dbabc8b0818134380ec8",
+        "tokenizer_class": "LlamaTokenizerFast",
+        "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{{ bos_token }}{% for message in messages %}{% if message['role'] == 'user' %}{{ 'User: ' + message['content'] + '\n\n' }}{% elif message['role'] == 'assistant' %}{{ 'Assistant: ' + message['content'] + eos_token }}{% elif message['role'] == 'system' %}{{ message['content'] + '\n\n' }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ 'Assistant:' }}{% endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "d2cdb2f325f6682cf3ad1ad2526a9f979d857390b579380c0331d975136e0acf",
+          "tensor_count": 5291,
+          "total_size_metadata": 31412968448
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-000004.safetensors",
+          "exists": true,
+          "bytes": 8594887410,
+          "header_bytes": 164586,
+          "header_sha256": "79200fc739d49331407dc9d314656d35130ce41f1bc24993a9aa12c279c5560b",
+          "tensor_count": 1329,
+          "index_expected_tensors": 1329,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 8594722816
+        },
+        {
+          "file": "model-00002-of-000004.safetensors",
+          "exists": true,
+          "bytes": 8591757456,
+          "header_bytes": 185480,
+          "header_sha256": "738e86ccc2ab29bd07b92731dd5e47df4982ff80afb88c565f6ee6ee92b99574",
+          "tensor_count": 1491,
+          "index_expected_tensors": 1491,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 8591571968
+        },
+        {
+          "file": "model-00003-of-000004.safetensors",
+          "exists": true,
+          "bytes": 8590718535,
+          "header_bytes": 185919,
+          "header_sha256": "be6b442939087ef0ebaa56f93b4b3cf9d6bb87badaa835e63d50221cb38ad18e",
+          "tensor_count": 1491,
+          "index_expected_tensors": 1491,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 8590532608
+        },
+        {
+          "file": "model-00004-of-000004.safetensors",
+          "exists": true,
+          "bytes": 5636263208,
+          "header_bytes": 122144,
+          "header_sha256": "79dd41ed077a524953d68bc202e89021293ec09d369456ff40b09c64e655e1e1",
+          "tensor_count": 980,
+          "index_expected_tensors": 980,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 5636141056
+        }
+      ],
+      "shard_count": 4,
+      "total_weight_file_bytes": 31413626609,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "DeepSeek-R1-Distill-Llama-8B",
+      "path": "/path/to/storage/models/DeepSeek-R1-Distill-Llama-8B",
+      "config_exists": true,
+      "config_sha256": "54acfad3cffe057640904ca8a1e83525e6551c70c7a04c641f5a9eda0bbf64bd",
+      "model_type": "llama",
+      "architectures": [
+        "LlamaForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "llama",
+        "num_hidden_layers": 32,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 4096,
+        "intermediate_size": 14336,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 3071,
+        "sha256": "8ac8c85fb242563c2260baec0909debd69d718af6a0b3d90e6cab62b4d341cd5",
+        "tokenizer_class": "LlamaTokenizerFast",
+        "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{% set ns = namespace(is_first=false, is_tool=false, is_output_first=true, system_prompt='') %}{%- for message in messages %}{%- if message['role'] == 'system' %}{% set ns.system_prompt = message['content'] %}{%- endif %}{%- endfor %}{{bos_token}}{{ns.system_prompt}}{%- for message in messages %}{%- if message['role'] == 'user' %}{%- set ns.is_tool = false -%}{{'<｜User｜>' + message['content']}}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is none %}{%- set ns.is_tool = false -%}{%- for tool in message['tool_calls']%}{%- if not ns.is_first %}{{'<｜Assistant｜><｜tool▁calls▁begin｜><｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{%- set ns.is_first = true -%}{%- else %}{{'\\n' + '<｜tool▁call▁begin｜>' + tool['type'] + '<｜tool▁sep｜>' + tool['function']['name'] + '\\n' + '```json' + '\\n' + tool['function']['arguments'] + '\\n' + '```' + '<｜tool▁call▁end｜>'}}{{'<｜tool▁calls▁end｜><｜end▁of▁sentence｜>'}}{%- endif %}{%- endfor %}{%- endif %}{%- if message['role'] == 'assistant' and message['content'] is not none %}{%- if ns.is_tool %}{{'<｜tool▁outputs▁end｜>' + message['content'] + '<｜end▁of▁sentence｜>'}}{%- set ns.is_tool = false -%}{%- else %}{% set content = message['content'] %}{% if '</think>' in content %}{% set content = content.split('</think>')[-1] %}{% endif %}{{'<｜Assistant｜>' + content + '<｜end▁of▁sentence｜>'}}{%- endif %}{%- endif %}{%- if message['role'] == 'tool' %}{%- set ns.is_tool = true -%}{%- if ns.is_output_first %}{{'<｜tool▁outputs▁begin｜><｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- set ns.is_output_first = false %}{%- else %}{{'\\n<｜tool▁output▁begin｜>' + message['content'] + '<｜tool▁output▁end｜>'}}{%- endif %}{%- endif %}{%- endfor -%}{% if ns.is_tool %}{{'<｜tool▁outputs▁end｜>'}}{% endif %}{% if add_generation_prompt and not ns.is_tool %}{{'<｜Assistant｜><think>\\n'}}{% endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "83bdf4be4bb1a054ff315cd804554c48a88036226fdfbc65bee84ff562fea32a",
+          "tensor_count": 291,
+          "total_size_metadata": 16060522496
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-000002.safetensors",
+          "exists": true,
+          "bytes": 8667826246,
+          "header_bytes": 18494,
+          "header_sha256": "f9d90f0ac7c9558ba0cf4cebed74275391dd888b7d22234cff2c056ea39ddd2b",
+          "tensor_count": 159,
+          "index_expected_tensors": 159,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 8667807744
+        },
+        {
+          "file": "model-00002-of-000002.safetensors",
+          "exists": true,
+          "bytes": 7392730108,
+          "header_bytes": 15348,
+          "header_sha256": "ec9f603cdae8bd94180fdf33b08e69b21161c54e6d4b2556c9bf347bc8f1bc00",
+          "tensor_count": 132,
+          "index_expected_tensors": 132,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 7392714752
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 16060556354,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "DeepSeek-V2-Lite-Chat",
+      "path": "/path/to/storage/models/DeepSeek-V2-Lite-Chat",
+      "config_exists": true,
+      "config_sha256": "f346286b0f1c8b044252fd54cb4fa78b9fab6472a6e8bebb9edfe03d414ea03d",
+      "model_type": "deepseek_v2",
+      "architectures": [
+        "DeepseekV2ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "deepseek_v2",
+        "num_hidden_layers": 27,
+        "num_attention_heads": 16,
+        "num_key_value_heads": 16,
+        "hidden_size": 2048,
+        "intermediate_size": 10944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 1279,
+        "sha256": "31181eaf79394ea26728d95ecb54fe7c8413e6f56085dbabc8b0818134380ec8",
+        "tokenizer_class": "LlamaTokenizerFast",
+        "chat_template": "{% if not add_generation_prompt is defined %}{% set add_generation_prompt = false %}{% endif %}{{ bos_token }}{% for message in messages %}{% if message['role'] == 'user' %}{{ 'User: ' + message['content'] + '\n\n' }}{% elif message['role'] == 'assistant' %}{{ 'Assistant: ' + message['content'] + eos_token }}{% elif message['role'] == 'system' %}{{ message['content'] + '\n\n' }}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ 'Assistant:' }}{% endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "d2cdb2f325f6682cf3ad1ad2526a9f979d857390b579380c0331d975136e0acf",
+          "tensor_count": 5291,
+          "total_size_metadata": 31412968448
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-000004.safetensors",
+          "exists": true,
+          "bytes": 8594887408,
+          "header_bytes": 164584,
+          "header_sha256": "b624f1a90c0899935c664b65225064d321113e16f00a0b6ee7e2032a77744892",
+          "tensor_count": 1329,
+          "index_expected_tensors": 1329,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 8594722816
+        },
+        {
+          "file": "model-00002-of-000004.safetensors",
+          "exists": true,
+          "bytes": 8591757448,
+          "header_bytes": 185472,
+          "header_sha256": "0355b5635d34d05507370386597cca840f2faec36d06e8ccf9cb8741bd4868ee",
+          "tensor_count": 1491,
+          "index_expected_tensors": 1491,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 8591571968
+        },
+        {
+          "file": "model-00003-of-000004.safetensors",
+          "exists": true,
+          "bytes": 8590718520,
+          "header_bytes": 185904,
+          "header_sha256": "3610c668abe31df9c5ae7717f425218644f87889f2c73f60127bf5ca502b250a",
+          "tensor_count": 1491,
+          "index_expected_tensors": 1491,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 8590532608
+        },
+        {
+          "file": "model-00004-of-000004.safetensors",
+          "exists": true,
+          "bytes": 5636263200,
+          "header_bytes": 122136,
+          "header_sha256": "f581e1284754f915ab4cbb2c4aeeb65bdb1782b47b6eb8ff121f2ef4adb825a0",
+          "tensor_count": 980,
+          "index_expected_tensors": 980,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 5636141056
+        }
+      ],
+      "shard_count": 4,
+      "total_weight_file_bytes": 31413626576,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "DeepSeek-V2-Lite-Instruct",
+      "path": "/path/to/storage/models/DeepSeek-V2-Lite-Instruct",
+      "config_exists": false,
+      "direct_entries": [
+        "._____temp"
+      ]
+    },
+    {
+      "name": "Dream-v0-Instruct-7B",
+      "path": "/path/to/storage/models/Dream-v0-Instruct-7B",
+      "config_exists": true,
+      "config_sha256": "11afc7fe7a1881e73dcd70cca6868aaaf8eb89ad45ea5fc6426c3fb82dec9340",
+      "model_type": "Dream",
+      "architectures": [
+        "DreamModel"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "Dream",
+        "num_hidden_layers": 28,
+        "num_attention_heads": 28,
+        "num_key_value_heads": 4,
+        "hidden_size": 3584,
+        "intermediate_size": 18944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 7486,
+        "sha256": "b0e9c1a6299d8832a1362d6b24f007de8a2acfe0243d8a3a1d1b57aa8250f7ee",
+        "tokenizer_class": "DreamTokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+          "tensor_count": 339,
+          "total_size_metadata": 15231233024
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4877660776,
+          "header_bytes": 11872,
+          "header_sha256": "acfd164fbbc5745819f8dbe4cf17d1ad6039f475cce40e0e0685b36c008d2dfe",
+          "tensor_count": 104,
+          "index_expected_tensors": 104,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4877648896
+        },
+        {
+          "file": "model-00002-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4932751008,
+          "header_bytes": 13976,
+          "header_sha256": "065608f1e8f927074092341fab078f49aae6388782e2ced1498eac83d4fcb1f0",
+          "tensor_count": 122,
+          "index_expected_tensors": 122,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4932737024
+        },
+        {
+          "file": "model-00003-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4330865200,
+          "header_bytes": 12840,
+          "header_sha256": "429df364750184eb4d54583928dbe8f46ca12904f8f1b873516318a1a2642f67",
+          "tensor_count": 112,
+          "index_expected_tensors": 112,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4330852352
+        },
+        {
+          "file": "model-00004-of-00004.safetensors",
+          "exists": true,
+          "bytes": 1089994880,
+          "header_bytes": 120,
+          "header_sha256": "9cec5a21d8510f673bd3fe6d5ffa62ce3c9ee422def4e61a7f76c20c10993cbf",
+          "tensor_count": 1,
+          "index_expected_tensors": 1,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1089994752
+        }
+      ],
+      "shard_count": 4,
+      "total_weight_file_bytes": 15231271864,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "EAGLE-Qwen2.5-7B-Instruct",
+      "path": "/path/to/storage/models/EAGLE-Qwen2.5-7B-Instruct",
+      "config_exists": true,
+      "config_sha256": "f8fa7e1afed1f86418cf408902735a659b56a50b21e5bf69d57cb32717a17622",
+      "model_type": "qwen2",
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen2",
+        "num_hidden_layers": 1,
+        "num_attention_heads": 28,
+        "num_key_value_heads": 28,
+        "hidden_size": 3584,
+        "intermediate_size": 18944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "pytorch_model.bin",
+          "exists": true,
+          "bytes": 1651546428,
+          "integrity_scope": "existence/size only; pickle weights not deserialized"
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 1651546428,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "InternVL2-4B",
+      "path": "/path/to/storage/models/InternVL2-4B",
+      "config_exists": true,
+      "config_sha256": "0f5b07a3114ae1500eee82b05f7cc059e225e18e2a6c23c69b3b75bcb574d5eb",
+      "model_type": "internvl_chat",
+      "architectures": [
+        "InternVLChatModel"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "phi3",
+        "num_hidden_layers": 32,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 32,
+        "hidden_size": 3072,
+        "intermediate_size": 8192,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "intern_vit_6b",
+        "image_size": 448,
+        "patch_size": 14,
+        "hidden_size": 1024,
+        "num_hidden_layers": 24
+      },
+      "preprocessor_config.json": {
+        "bytes": 287,
+        "sha256": "0658115064c561026539aeeead9ed3b1a8e0cc90967df8c142849199f955d2b4"
+      },
+      "tokenizer_config.json": {
+        "bytes": 4887,
+        "sha256": "4c772d1ba4150b17d7a2a66f8b6bb6ff0df484ddeb547a60e5c6aed23f7989d9",
+        "tokenizer_class": "LlamaTokenizer",
+        "chat_template": "{{ bos_token }}{% for message in messages %}{% if (message['role'] == 'user') %}{{'<|user|>' + '\n' + message['content'] + '<|end|>' + '\n' + '<|assistant|>' + '\n'}}{% elif (message['role'] == 'assistant') %}{{message['content'] + '<|end|>' + '\n'}}{% endif %}{% endfor %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "8d6b962de4a7d496ae79de35b471af79f40cb7e7b41cb5a0c157548f771f2d8c",
+          "tensor_count": 541,
+          "total_size_metadata": 8293711872
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "exists": true,
+          "bytes": 4957392176,
+          "header_bytes": 54568,
+          "header_sha256": "130b9414022bada8fb648463de96c1e47c667abeb51c0bbe8c22e1fcec284db3",
+          "tensor_count": 451,
+          "index_expected_tensors": 451,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4957337600
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "exists": true,
+          "bytes": 3336385864,
+          "header_bytes": 11584,
+          "header_sha256": "0b945cb193a8d1315c1e153a87e831bb19ea4e72dffeab9e97f2243b972a885d",
+          "tensor_count": 90,
+          "index_expected_tensors": 90,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3336374272
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 8293778040,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "InternVL2_5-8B",
+      "path": "/path/to/storage/models/InternVL2_5-8B",
+      "config_exists": true,
+      "config_sha256": "923cb73535303a6c439c3c139dc12f1b7bddd6643dee8ddf63d0d56368d5e8d5",
+      "model_type": "internvl_chat",
+      "architectures": [
+        "InternVLChatModel"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "internlm2",
+        "num_hidden_layers": 32,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 4096,
+        "intermediate_size": 14336,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "intern_vit_6b",
+        "image_size": 448,
+        "patch_size": 14,
+        "hidden_size": 1024,
+        "num_hidden_layers": 24
+      },
+      "preprocessor_config.json": {
+        "bytes": 287,
+        "sha256": "0658115064c561026539aeeead9ed3b1a8e0cc90967df8c142849199f955d2b4"
+      },
+      "tokenizer_config.json": {
+        "bytes": 4006,
+        "sha256": "a3c739bcdfbb942f972160124327121b8d11c609c1355e05ed9b5ce8d1b5b67a",
+        "tokenizer_class": "InternLM2Tokenizer",
+        "chat_template": "{{ bos_token }}{% for message in messages %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "9110700a238c972daba84e094fa2c79c1a7ab7595df7912f30bd5f08120e226b",
+          "tensor_count": 573,
+          "total_size_metadata": 16150730752
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4939944336,
+          "header_bytes": 47496,
+          "header_sha256": "f49eab39ad3c9e2ef7a933fcb23b399c2f3943a452b7e7e49e6c26bc3eaf9aa0",
+          "tensor_count": 399,
+          "index_expected_tensors": 399,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4939896832
+        },
+        {
+          "file": "model-00002-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4915914584,
+          "header_bytes": 10064,
+          "header_sha256": "ad4a031bb2bb867a15ad01c07cdd93fd6b2a94adb76fa986d3c1f606fb7091e0",
+          "tensor_count": 78,
+          "index_expected_tensors": 78,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4915904512
+        },
+        {
+          "file": "model-00003-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4915914592,
+          "header_bytes": 10072,
+          "header_sha256": "809a0f93333cd7de886162f8739f1587b8f34e107c78ab8c7b1c0aac7af6dc4a",
+          "tensor_count": 78,
+          "index_expected_tensors": 78,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4915904512
+        },
+        {
+          "file": "model-00004-of-00004.safetensors",
+          "exists": true,
+          "bytes": 1379026920,
+          "header_bytes": 2016,
+          "header_sha256": "45d7e471ed69944c8f476680594bf3b237a5045748397bbc1ec636162da115c7",
+          "tensor_count": 18,
+          "index_expected_tensors": 18,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1379024896
+        }
+      ],
+      "shard_count": 4,
+      "total_weight_file_bytes": 16150800432,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "InternVL3-8B-hf",
+      "path": "/path/to/InternVL3-8B-hf",
+      "config_exists": true,
+      "config_sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+      "model_type": "internvl",
+      "architectures": [
+        "InternVLForConditionalGeneration"
+      ],
+      "image_token_id": 151667,
+      "image_token_index": null,
+      "vision_feature_select_strategy": "default",
+      "text": {
+        "model_type": "qwen2",
+        "num_hidden_layers": 28,
+        "num_attention_heads": 28,
+        "num_key_value_heads": 4,
+        "hidden_size": 3584,
+        "intermediate_size": 18944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "internvl_vision",
+        "image_size": [
+          448,
+          448
+        ],
+        "patch_size": [
+          14,
+          14
+        ],
+        "hidden_size": 1024,
+        "num_hidden_layers": 24
+      },
+      "processor_config.json": {
+        "bytes": 72,
+        "sha256": "3511f4ae65c2fa5c1ab6a0fb2bb2fe767d6f0ee53ba412953b33acc892327c2a",
+        "processor_class": "InternVLProcessor"
+      },
+      "preprocessor_config.json": {
+        "bytes": 666,
+        "sha256": "af09ffbe57900d5ae07f93f4c20693559a272e32fa6c5f816132cb71985aac98",
+        "processor_class": "InternVLProcessor",
+        "image_processor_type": "GotOcr2ImageProcessorFast"
+      },
+      "tokenizer_config.json": {
+        "bytes": 6861,
+        "sha256": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+        "tokenizer_class": "Qwen2Tokenizer"
+      },
+      "chat_template.jinja": {
+        "bytes": 481,
+        "sha256": "b3e3fa7cdeceec1d3dfe0d17b77724baf3857714e688f3a700261567e96140eb",
+        "chat_template": "{% for message in messages %}{{'<|im_start|>' + message['role'] + '\n'}}{% if message['content'] is string %}{{ message['content'] }}{% else %}{% for content in message['content'] %}{% if content['type'] == 'image' %}{{ '<IMG_CONTEXT>\n' }}{% elif content['type'] == 'video' %}{{ '<video>\n' }}{% elif content['type'] == 'text' %}{{ content['text'] }}{% endif %}{% endfor %}{% endif %}{{'<|im_end|>\n'}}{% endfor %}{% if add_generation_prompt %}{{'<|im_start|>assistant\n' }}{% endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+          "tensor_count": 781,
+          "total_size_metadata": 15888747520
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4877374576,
+          "header_bytes": 65640,
+          "header_sha256": "d5de33cb581fd34458db5e378949d865d693ca03395c4e9cf9dbe869179e8e03",
+          "tensor_count": 524,
+          "index_expected_tensors": 524,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4877308928
+        },
+        {
+          "file": "model-00002-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4991497800,
+          "header_bytes": 16960,
+          "header_sha256": "dc298fb35af2f03ac86505bc816fb2a011c50dd0fe5d1ac313b5072d37d16613",
+          "tensor_count": 131,
+          "index_expected_tensors": 131,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4991480832
+        },
+        {
+          "file": "model-00003-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4932774744,
+          "header_bytes": 16208,
+          "header_sha256": "02122133949a1603997f638d0bfd3b312453572f0d8c480f3fb9f2b871456447",
+          "tensor_count": 125,
+          "index_expected_tensors": 125,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4932758528
+        },
+        {
+          "file": "model-00004-of-00004.safetensors",
+          "exists": true,
+          "bytes": 1087199376,
+          "header_bytes": 136,
+          "header_sha256": "6ecb80d2e083181f9c722ed2ebf880844b904e64e03e1e554c0c6fe3fd2da1b3",
+          "tensor_count": 1,
+          "index_expected_tensors": 1,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1087199232
+        }
+      ],
+      "shard_count": 4,
+      "total_weight_file_bytes": 15888846496,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "LLaDA-8B-Instruct",
+      "path": "/path/to/storage/models/LLaDA-8B-Instruct",
+      "config_exists": true,
+      "config_sha256": "5f99fefe855fdb5100bb6cadb57bdb09fae723ad54811f95c00ecacf29d58a6a",
+      "model_type": "llada",
+      "architectures": [
+        "LLaDAModelLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "llada",
+        "num_hidden_layers": null,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": null,
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 51692,
+        "sha256": "b9a6102c39a4f42f47f0d63fc6cee58a2381199d90f2a4f39b3f6871f32b4119",
+        "tokenizer_class": "PreTrainedTokenizerFast",
+        "chat_template": "{% set loop_messages = messages %}{% for message in loop_messages %}{% set content = '<|start_header_id|>' + message['role'] + '<|end_header_id|>\n\n'+ message['content'] | trim + '<|eot_id|>' %}{% if loop.index0 == 0 %}{% set content = bos_token + content %}{% endif %}{{ content }}{% endfor %}{{ '<|start_header_id|>assistant<|end_header_id|>\n\n' }}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "28b4ec27206e42e7ade630450e6ce618bd197acf34d35120e8e86d2bb910a408",
+          "tensor_count": 291,
+          "total_size_metadata": 16031162368
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00006.safetensors",
+          "exists": true,
+          "bytes": 2109747184,
+          "header_bytes": 4072,
+          "header_sha256": "367d6cfa8e28fc969747709504754f5d65c0ce1a54b00b94264e11a473e3d003",
+          "tensor_count": 34,
+          "index_expected_tensors": 34,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2109743104
+        },
+        {
+          "file": "model-00002-of-00006.safetensors",
+          "exists": true,
+          "bytes": 2948598128,
+          "header_bytes": 2408,
+          "header_sha256": "c9fcad5347199bf1322206cf9f92069835ec0a04c9de919b2fa32710ac36281b",
+          "tensor_count": 20,
+          "index_expected_tensors": 20,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2948595712
+        },
+        {
+          "file": "model-00003-of-00006.safetensors",
+          "exists": true,
+          "bytes": 2986883656,
+          "header_bytes": 14912,
+          "header_sha256": "e6ee94155d58bcc1c456f6acc301e05d788237315f8ace906195d05510ca1e63",
+          "tensor_count": 127,
+          "index_expected_tensors": 127,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2986868736
+        },
+        {
+          "file": "model-00004-of-00006.safetensors",
+          "exists": true,
+          "bytes": 2952797224,
+          "header_bytes": 7200,
+          "header_sha256": "fc6eec156f4b1862b7f561c9aeed710c601babd9e60198808fad636377f80492",
+          "tensor_count": 60,
+          "index_expected_tensors": 60,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2952790016
+        },
+        {
+          "file": "model-00005-of-00006.safetensors",
+          "exists": true,
+          "bytes": 2919239128,
+          "header_bytes": 3536,
+          "header_sha256": "25530652fa9984733adc396ad63db8d3fd0a9d9c8eda9b81ac1bf8e1b3daea48",
+          "tensor_count": 29,
+          "index_expected_tensors": 29,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2919235584
+        },
+        {
+          "file": "model-00006-of-00006.safetensors",
+          "exists": true,
+          "bytes": 2113931792,
+          "header_bytes": 2568,
+          "header_sha256": "a823a4169e00386d3b293a0ae83d39f5b930564c283e1a18f75c9cf65e7dbf8e",
+          "tensor_count": 21,
+          "index_expected_tensors": 21,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2113929216
+        }
+      ],
+      "shard_count": 6,
+      "total_weight_file_bytes": 16031197112,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "LLaVA-1.5-7B-HF",
+      "path": "/path/to/storage/models/LLaVA-1.5-7B-HF",
+      "config_exists": true,
+      "config_sha256": "0bde54495c54bcc346064a0d314b010d1c4d3ca7f7e583b6f711949a35352c0f",
+      "model_type": "llava",
+      "architectures": [
+        "LlavaForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": 32000,
+      "vision_feature_select_strategy": "default",
+      "text": {
+        "model_type": "llama",
+        "num_hidden_layers": null,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": "float16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "clip_vision_model",
+        "image_size": 336,
+        "patch_size": 14,
+        "hidden_size": 1024,
+        "num_hidden_layers": 24
+      },
+      "processor_config.json": {
+        "bytes": 173,
+        "sha256": "fef918d6ba333f72a066877965bc4a162308568ba62aa90c806caedf7b45d64e",
+        "processor_class": "LlavaProcessor",
+        "patch_size": 14,
+        "vision_feature_select_strategy": "default",
+        "num_additional_image_tokens": 1
+      },
+      "preprocessor_config.json": {
+        "bytes": 505,
+        "sha256": "a8d5e64ee5c07ff6d70142856d178ac39d0563da3612e32110fa824f5337b7a1",
+        "processor_class": "LlavaProcessor",
+        "image_processor_type": "CLIPImageProcessor"
+      },
+      "tokenizer_config.json": {
+        "bytes": 1451,
+        "sha256": "79b7f1ebceddf7235f3791c387d781818b0c7e7cf868d0e4f71896a55b949833",
+        "processor_class": "LlavaProcessor",
+        "tokenizer_class": "LlamaTokenizer"
+      },
+      "chat_template.jinja": {
+        "bytes": 674,
+        "sha256": "6fef09c05345e88b9f85e80bcb3491003332050750586568bdf91cfa81965d0c",
+        "chat_template": "{% for message in messages %}{% if message['role'] != 'system' %}{{ message['role'].upper() + ': '}}{% endif %}{# Render all images first #}{% for content in message['content'] | selectattr('type', 'equalto', 'image') %}{{ '<image>\n' }}{% endfor %}{# Render all text next #}{% if message['role'] != 'assistant' %}{% for content in message['content'] | selectattr('type', 'equalto', 'text') %}{{ content['text'] + ' '}}{% endfor %}{% else %}{% for content in message['content'] | selectattr('type', 'equalto', 'text') %}{% generation %}{{ content['text'] + ' '}}{% endgeneration %}{% endfor %}{% endif %}{% endfor %}{% if add_generation_prompt %}{{ 'ASSISTANT:' }}{% endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "73af906b5ac12aea6eddf104d482d2a50bca30b20d61ee9f6c5269d3427a6991",
+          "tensor_count": 686,
+          "total_size_metadata": 14126854144
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4992930200,
+          "header_bytes": 65936,
+          "header_sha256": "1d3834f5d4d8c8fe0ac20cb58fa3af621841fc3559bcefb95d3c336f1fcd9781",
+          "tensor_count": 487,
+          "index_expected_tensors": 487,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4992864256
+        },
+        {
+          "file": "model-00002-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4957878440,
+          "header_bytes": 14496,
+          "header_sha256": "2823c3492e0a387e523fe89a010a3bfb720966fcc59b7d6ba698f112b7dfbe61",
+          "tensor_count": 111,
+          "index_expected_tensors": 111,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4957863936
+        },
+        {
+          "file": "model-00003-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4176137408,
+          "header_bytes": 11448,
+          "header_sha256": "b981d8ca13c128464213f919ae465fef953d108e66861fccc857e9af01f0c97e",
+          "tensor_count": 88,
+          "index_expected_tensors": 88,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4176125952
+        }
+      ],
+      "shard_count": 3,
+      "total_weight_file_bytes": 14126946048,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Llama-3.1-8B-Instruct",
+      "path": "/path/to/storage/models/Llama-3.1-8B-Instruct",
+      "config_exists": true,
+      "config_sha256": "29e4c210b0d6ac178b16b2a255a568bdb23b581e50ca1ef6a6d071dd85704e6e",
+      "model_type": "llama",
+      "architectures": [
+        "LlamaForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "llama",
+        "num_hidden_layers": 32,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 4096,
+        "intermediate_size": 14336,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 55351,
+        "sha256": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424",
+        "tokenizer_class": "PreTrainedTokenizerFast",
+        "chat_template": "{{- bos_token }}\n{%- if custom_tools is defined %}\n    {%- set tools = custom_tools %}\n{%- endif %}\n{%- if not tools_in_user_message is defined %}\n    {%- set tools_in_user_message = true %}\n{%- endif %}\n{%- if not date_string is defined %}\n    {%- set date_string = \"26 Jul 2024\" %}\n{%- endif %}\n{%- if not tools is defined %}\n    {%- set tools = none %}\n{%- endif %}\n\n{#- This block extracts the system message, so we can slot it into the right place. #}\n{%- if messages[0]['role'] == 'system' %}\n    {%- set system_message = messages[0]['content']|trim %}\n    {%- set messages = messages[1:] %}\n{%- else %}\n    {%- set system_message = \"\" %}\n{%- endif %}\n\n{#- System message + builtin tools #}\n{{- \"<|start_header_id|>system<|end_header_id|>\\n\\n\" }}\n{%- if builtin_tools is defined or tools is not none %}\n    {{- \"Environment: ipython\\n\" }}\n{%- endif %}\n{%- if builtin_tools is defined %}\n    {{- \"Tools: \" + builtin_tools | reject('equalto', 'code_interpreter') | join(\", \") + \"\\n\\n\"}}\n{%- endif %}\n{{- \"Cutting Knowledge Date: December 2023\\n\" }}\n{{- \"Today Date: \" + date_string + \"\\n\\n\" }}\n{%- if tools is not none and not tools_in_user_message %}\n    {{- \"You have access to the following functions. To call a function, please respond with JSON for a function call.\" }}\n    {{- 'Respond in the format {\"name\": function name, \"parameters\": dictionary of argument name and its value}.' }}\n    {{- \"Do not use variables.\\n\\n\" }}\n    {%- for t in tools %}\n        {{- t | tojson(indent=4) }}\n        {{- \"\\n\\n\" }}\n    {%- endfor %}\n{%- endif %}\n{{- system_message }}\n{{- \"<|eot_id|>\" }}\n\n{#- Custom tools are passed in a user message with some extra guidance #}\n{%- if tools_in_user_message and not tools is none %}\n    {#- Extract the first user message so we can plug it in here #}\n    {%- if messages | length != 0 %}\n        {%- set first_user_message = messages[0]['content']|trim %}\n        {%- set messages = messages[1:] %}\n    {%- else %}\n        {{- raise_exception(\"Cannot put tools in the first user message when there's no first user message!\") }}\n{%- endif %}\n    {{- '<|start_header_id|>user<|end_header_id|>\\n\\n' -}}\n    {{- \"Given the following functions, please respond with a JSON for a function call \" }}\n    {{- \"with its proper arguments that best answers the given prompt.\\n\\n\" }}\n    {{- 'Respond in the format {\"name\": function name, \"parameters\": dictionary of argument name and its value}.' }}\n    {{- \"Do not use variables.\\n\\n\" }}\n    {%- for t in tools %}\n        {{- t | tojson(indent=4) }}\n        {{- \"\\n\\n\" }}\n    {%- endfor %}\n    {{- first_user_message + \"<|eot_id|>\"}}\n{%- endif %}\n\n{%- for message in messages %}\n    {%- if not (message.role == 'ipython' or message.role == 'tool' or 'tool_calls' in message) %}\n        {{- '<|start_header_id|>' + message['role'] + '<|end_header_id|>\\n\\n'+ message['content'] | trim + '<|eot_id|>' }}\n    {%- elif 'tool_calls' in message %}\n        {%- if not message.tool_calls|length == 1 %}\n            {{- raise_exception(\"This model only supports single tool-calls at once!\") }}\n        {%- endif %}\n        {%- set tool_call = message.tool_calls[0].function %}\n        {%- if builtin_tools is defined and tool_call.name in builtin_tools %}\n            {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}\n            {{- \"<|python_tag|>\" + tool_call.name + \".call(\" }}\n            {%- for arg_name, arg_val in tool_call.arguments | items %}\n                {{- arg_name + '=\"' + arg_val + '\"' }}\n                {%- if not loop.last %}\n                    {{- \", \" }}\n                {%- endif %}\n                {%- endfor %}\n            {{- \")\" }}\n        {%- else  %}\n            {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' -}}\n            {{- '{\"name\": \"' + tool_call.name + '\", ' }}\n            {{- '\"parameters\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- \"}\" }}\n        {%- endif %}\n        {%- if builtin_tools is defined %}\n            {#- This means we're in ipython mode #}\n            {{- \"<|eom_id|>\" }}\n        {%- else %}\n            {{- \"<|eot_id|>\" }}\n        {%- endif %}\n    {%- elif message.role == \"tool\" or message.role == \"ipython\" %}\n        {{- \"<|start_header_id|>ipython<|end_header_id|>\\n\\n\" }}\n        {%- if message.content is mapping or message.content is iterable %}\n            {{- message.content | tojson }}\n        {%- else %}\n            {{- message.content }}\n        {%- endif %}\n        {{- \"<|eot_id|>\" }}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|start_header_id|>assistant<|end_header_id|>\\n\\n' }}\n{%- endif %}\n"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+          "tensor_count": 291,
+          "total_size_metadata": 16060522496
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4976698672,
+          "header_bytes": 9512,
+          "header_sha256": "540b64f06f977864398c3150895cf7cc8ff38752834dfdc5c5dc5b75bfcd4472",
+          "tensor_count": 82,
+          "index_expected_tensors": 82,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4976689152
+        },
+        {
+          "file": "model-00002-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4999802720,
+          "header_bytes": 12120,
+          "header_sha256": "196c8640279893aeba0f43780600bf2982253f30422e6143d6c139bbc6c83637",
+          "tensor_count": 104,
+          "index_expected_tensors": 104,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4999790592
+        },
+        {
+          "file": "model-00003-of-00004.safetensors",
+          "exists": true,
+          "bytes": 4915916176,
+          "header_bytes": 11656,
+          "header_sha256": "c6fce37a4287dfb3b174d63189c7ac3c9bd22f3d3872ea679e1c4698e3b65e18",
+          "tensor_count": 100,
+          "index_expected_tensors": 100,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4915904512
+        },
+        {
+          "file": "model-00004-of-00004.safetensors",
+          "exists": true,
+          "bytes": 1168138808,
+          "header_bytes": 560,
+          "header_sha256": "114c7b044fce01f5dbd9738429cf041c91897cf5d20cb073c08805f886e36442",
+          "tensor_count": 5,
+          "index_expected_tensors": 5,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1168138240
+        }
+      ],
+      "shard_count": 4,
+      "total_weight_file_bytes": 16060556376,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "MiniCPM-V-2_6-int4",
+      "path": "/path/to/storage/models/MiniCPM-V-2_6-int4",
+      "config_exists": true,
+      "config_sha256": "a073a1be2a16bc38f1ca043ff9d70b47230c89afe84fd394313538202c0c499a",
+      "model_type": "minicpmv",
+      "architectures": [
+        "MiniCPMV"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "minicpmv",
+        "num_hidden_layers": 28,
+        "num_attention_heads": 28,
+        "num_key_value_heads": 4,
+        "hidden_size": 3584,
+        "intermediate_size": 18944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "siglip_vision_model",
+        "image_size": 980,
+        "patch_size": 14,
+        "hidden_size": 1152,
+        "num_hidden_layers": 27
+      },
+      "preprocessor_config.json": {
+        "bytes": 714,
+        "sha256": "5c0dbc92920ded2304e2ed6ad4251da56029aa1f3f69427117ac6df9bc68496e",
+        "processor_class": "MiniCPMVProcessor",
+        "image_processor_type": "MiniCPMVImageProcessor",
+        "patch_size": 14
+      },
+      "tokenizer_config.json": {
+        "bytes": 5636,
+        "sha256": "d812665de21026393b5ec5cfa4fc4bb97c43c7a43ff8b91266b1ce35291db862",
+        "tokenizer_class": "MiniCPMVTokenizerFast",
+        "chat_template": "{% for message in messages %}{% if loop.first and messages[0]['role'] != 'system' %}{{ '<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n' }}{% endif %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "6a699dd8e60ac2d1a2b9398ea68fd4d0a90a9ae43ad30fd8cbb234cd296c191e",
+          "tensor_count": 2444,
+          "total_size_metadata": 5957482278
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "exists": true,
+          "bytes": 4454412188,
+          "header_bytes": 161696,
+          "header_sha256": "5ad5de08f378478809bdb5b11c014796277151b3c62101615899163d8b1daf42",
+          "tensor_count": 1318,
+          "index_expected_tensors": 1318,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4454250484
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "exists": true,
+          "bytes": 1503366626,
+          "header_bytes": 134824,
+          "header_sha256": "8d828fc6d2cad52f4775afb9c3500476011ee3ba4c8b1b85a012cae530bd2ad6",
+          "tensor_count": 1126,
+          "index_expected_tensors": 1126,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1503231794
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 5957778814,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "MiniCPM-V-4_5-int4",
+      "path": "/path/to/storage/models/MiniCPM-V-4_5-int4",
+      "config_exists": true,
+      "config_sha256": "d6ce6abb70fe38a373d1f379177fdcd5f098d57148216ab860ba9f378e45b394",
+      "model_type": "minicpmv",
+      "architectures": [
+        "MiniCPMV"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "minicpmv",
+        "num_hidden_layers": 36,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 4096,
+        "intermediate_size": 12288,
+        "head_dim": 128,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "siglip",
+        "image_size": 980,
+        "patch_size": 14,
+        "hidden_size": 1152,
+        "num_hidden_layers": 27
+      },
+      "preprocessor_config.json": {
+        "bytes": 714,
+        "sha256": "5c0dbc92920ded2304e2ed6ad4251da56029aa1f3f69427117ac6df9bc68496e",
+        "processor_class": "MiniCPMVProcessor",
+        "image_processor_type": "MiniCPMVImageProcessor",
+        "patch_size": 14
+      },
+      "tokenizer_config.json": {
+        "bytes": 25786,
+        "sha256": "8cbacbea273108831f02441518bbbc73627c15e34ddaa3fec6369e7bd07b720c",
+        "tokenizer_class": "MiniCPMVTokenizerFast",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set content = message.content %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is defined and message.reasoning_content is not none %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in message.content %}\n                {%- set content = message.content.split('</think>')[-1].lstrip('\\n') %}\n                {%- set reasoning_content = message.content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n    {%- if enable_thinking is defined and enable_thinking is true %}\n        {{- '<think>\\n' }}\n    {%- endif %}\n{%- endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "2d43232805e044e9646cf03b67e20daf0b6484ee379a29b5e4632b6f95998f05",
+          "tensor_count": 2784,
+          "total_size_metadata": 6526946902
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "exists": true,
+          "bytes": 4827364414,
+          "header_bytes": 203928,
+          "header_sha256": "3214e3c003b188bf2b5ac55826fae3c4aa0bc79cc02837bb605790341bd4a920",
+          "tensor_count": 1658,
+          "index_expected_tensors": 1658,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4827160478
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "exists": true,
+          "bytes": 1699920944,
+          "header_bytes": 134512,
+          "header_sha256": "de790565ad2a9cf813069660e82509817e9c4ea45c2331e32af518f105824518",
+          "tensor_count": 1126,
+          "index_expected_tensors": 1126,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1699786424
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 6527285358,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Mistral-7B-Instruct-v0.3",
+      "path": "/path/to/storage/models/Mistral-7B-Instruct-v0.3",
+      "config_exists": true,
+      "config_sha256": "9262d15f830e511429ccd175a71680e51c656ef3a4aa7460f3e9596508d32487",
+      "model_type": "mistral",
+      "architectures": [
+        "MistralForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "mistral",
+        "num_hidden_layers": 32,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 4096,
+        "intermediate_size": 14336,
+        "head_dim": 128,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 140911,
+        "sha256": "b0c776216a54c6d031866d1dff0b31715bd73f5ba87f8a30eb35e8c603dff95d",
+        "tokenizer_class": "LlamaTokenizer",
+        "chat_template": "{%- if messages[0][\"role\"] == \"system\" %}\n    {%- set system_message = messages[0][\"content\"] %}\n    {%- set loop_messages = messages[1:] %}\n{%- else %}\n    {%- set loop_messages = messages %}\n{%- endif %}\n{%- if not tools is defined %}\n    {%- set tools = none %}\n{%- endif %}\n{%- set user_messages = loop_messages | selectattr(\"role\", \"equalto\", \"user\") | list %}\n\n{#- This block checks for alternating user/assistant messages, skipping tool calling messages #}\n{%- set ns = namespace() %}\n{%- set ns.index = 0 %}\n{%- for message in loop_messages %}\n    {%- if not (message.role == \"tool\" or message.role == \"tool_results\" or (message.tool_calls is defined and message.tool_calls is not none)) %}\n        {%- if (message[\"role\"] == \"user\") != (ns.index % 2 == 0) %}\n            {{- raise_exception(\"After the optional system message, conversation roles must alternate user/assistant/user/assistant/...\") }}\n        {%- endif %}\n        {%- set ns.index = ns.index + 1 %}\n    {%- endif %}\n{%- endfor %}\n\n{{- bos_token }}\n{%- for message in loop_messages %}\n    {%- if message[\"role\"] == \"user\" %}\n        {%- if tools is not none and (message == user_messages[-1]) %}\n            {{- \"[AVAILABLE_TOOLS] [\" }}\n            {%- for tool in tools %}\n                {%- set tool = tool.function %}\n                {{- '{\"type\": \"function\", \"function\": {' }}\n                {%- for key, val in tool.items() if key != \"return\" %}\n                    {%- if val is string %}\n                        {{- '\"' + key + '\": \"' + val + '\"' }}\n                    {%- else %}\n                        {{- '\"' + key + '\": ' + val|tojson }}\n                    {%- endif %}\n                    {%- if not loop.last %}\n                        {{- \", \" }}\n                    {%- endif %}\n                {%- endfor %}\n                {{- \"}}\" }}\n                {%- if not loop.last %}\n                    {{- \", \" }}\n                {%- else %}\n                    {{- \"]\" }}\n                {%- endif %}\n            {%- endfor %}\n            {{- \"[/AVAILABLE_TOOLS]\" }}\n            {%- endif %}\n        {%- if loop.last and system_message is defined %}\n            {{- \"[INST] \" + system_message + \"\\n\\n\" + message[\"content\"] + \"[/INST]\" }}\n        {%- else %}\n            {{- \"[INST] \" + message[\"content\"] + \"[/INST]\" }}\n        {%- endif %}\n    {%- elif message.tool_calls is defined and message.tool_calls is not none %}\n        {{- \"[TOOL_CALLS] [\" }}\n        {%- for tool_call in message.tool_calls %}\n            {%- set out = tool_call.function|tojson %}\n            {{- out[:-1] }}\n            {%- if not tool_call.id is defined or tool_call.id|length != 9 %}\n                {{- raise_exception(\"Tool call IDs should be alphanumeric strings with length 9!\") }}\n            {%- endif %}\n            {{- ', \"id\": \"' + tool_call.id + '\"}' }}\n            {%- if not loop.last %}\n                {{- \", \" }}\n            {%- else %}\n                {{- \"]\" + eos_token }}\n            {%- endif %}\n        {%- endfor %}\n    {%- elif message[\"role\"] == \"assistant\" %}\n        {{- \" \" + message[\"content\"]|trim + eos_token}}\n    {%- elif message[\"role\"] == \"tool_results\" or message[\"role\"] == \"tool\" %}\n        {%- if message.content is defined and message.content.content is defined %}\n            {%- set content = message.content.content %}\n        {%- else %}\n            {%- set content = message.content %}\n        {%- endif %}\n        {{- '[TOOL_RESULTS] {\"content\": ' + content|string + \", \" }}\n        {%- if not message.tool_call_id is defined or message.tool_call_id|length != 9 %}\n            {{- raise_exception(\"Tool call IDs should be alphanumeric strings with length 9!\") }}\n        {%- endif %}\n        {{- '\"call_id\": \"' + message.tool_call_id + '\"}[/TOOL_RESULTS]' }}\n    {%- else %}\n        {{- raise_exception(\"Only user and assistant roles are supported, with the exception of an initial optional system message!\") }}\n    {%- endif %}\n{%- endfor %}\n"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "e489ba553b87cde188d921b1a8283c2e0b9d33d635b88147d96ff0fcd6250016",
+          "tensor_count": 291,
+          "total_size_metadata": 14496047104
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4949453792,
+          "header_bytes": 11224,
+          "header_sha256": "e21e9dd3a696fcb40fac37ec0401a659227a1739058e26bf9eba1af3d27acee2",
+          "tensor_count": 97,
+          "index_expected_tensors": 97,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4949442560
+        },
+        {
+          "file": "model-00002-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4999819336,
+          "header_bytes": 12352,
+          "header_sha256": "9ed141684213260d9cc084e1a6027386cb1377052ff1d843ce48e0084e45b67a",
+          "tensor_count": 106,
+          "index_expected_tensors": 106,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4999806976
+        },
+        {
+          "file": "model-00003-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4546807800,
+          "header_bytes": 10224,
+          "header_sha256": "c4de03abf257a00e035eac600c6718c2fb4b1ff520656afecde8f9e836131345",
+          "tensor_count": 88,
+          "index_expected_tensors": 88,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4546797568
+        }
+      ],
+      "shard_count": 3,
+      "total_weight_file_bytes": 14496080928,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen2.5-0.5B-Instruct",
+      "path": "/path/to/storage/models/Qwen2.5-0.5B-Instruct",
+      "config_exists": true,
+      "config_sha256": "18e18afcaccafade98daf13a54092927904649e1dd4eba8299ab717d5d94ff45",
+      "model_type": "qwen2",
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen2",
+        "num_hidden_layers": 24,
+        "num_attention_heads": 14,
+        "num_key_value_heads": 2,
+        "hidden_size": 896,
+        "intermediate_size": 4864,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 988097824,
+          "header_bytes": 32280,
+          "header_sha256": "65d3f3bf8256224d5ecc7dc63e12c2211717a116cb98428648e5f1fe952a14d5",
+          "tensor_count": 290,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 988065536
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 988097824,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen2.5-0.5B-Instruct-vocab152064",
+      "path": "/path/to/storage/models/Qwen2.5-0.5B-Instruct-vocab152064",
+      "config_exists": true,
+      "config_sha256": "97d5fb509b467afa82081042e9cd2895279c30bc24e16122dc00a04c1332fa9d",
+      "model_type": "qwen2",
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen2",
+        "num_hidden_layers": 24,
+        "num_attention_heads": 14,
+        "num_key_value_heads": 2,
+        "hidden_size": 896,
+        "intermediate_size": 4864,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 988327200,
+          "header_bytes": 32280,
+          "header_sha256": "e36ef0ef81f54cbf7e6f8f7b1faafa4c1bb8c4543e1a8437ce869b88c49d3da1",
+          "tensor_count": 290,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 988294912
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 988327200,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen2.5-1.5B-Instruct",
+      "path": "/path/to/storage/models/Qwen2.5-1.5B-Instruct",
+      "config_exists": true,
+      "config_sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+      "model_type": "qwen2",
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen2",
+        "num_hidden_layers": 28,
+        "num_attention_heads": 12,
+        "num_key_value_heads": 2,
+        "hidden_size": 1536,
+        "intermediate_size": 8960,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 3087467144,
+          "header_bytes": 38528,
+          "header_sha256": "b7affd1e49712d65848890fc3e8cb6d9d27f454aa9bdee1d3f19063aa6ce9a57",
+          "tensor_count": 338,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3087428608
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 3087467144,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen2.5-1.5B-Instruct-vocab152064",
+      "path": "/path/to/storage/models/Qwen2.5-1.5B-Instruct-vocab152064",
+      "config_exists": true,
+      "config_sha256": "bcd2a53e8f29adcda59f2335310d4fe4e859dc6e23ec19fec244305e8361d03f",
+      "model_type": "qwen2",
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen2",
+        "num_hidden_layers": 28,
+        "num_attention_heads": 12,
+        "num_key_value_heads": 2,
+        "hidden_size": 1536,
+        "intermediate_size": 8960,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 3087860360,
+          "header_bytes": 38528,
+          "header_sha256": "3c09cad912a5414f6fefa8c4e5b71e731f6a631c8748fe95d6c8869bc0f69830",
+          "tensor_count": 338,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3087821824
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 3087860360,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen2.5-7B-Instruct",
+      "path": "/path/to/storage/models/Qwen2.5-7B-Instruct",
+      "config_exists": true,
+      "config_sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+      "model_type": "qwen2",
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen2",
+        "num_hidden_layers": 28,
+        "num_attention_heads": 28,
+        "num_key_value_heads": 4,
+        "hidden_size": 3584,
+        "intermediate_size": 18944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 7305,
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+          "tensor_count": 339,
+          "total_size_metadata": 15231233024
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00004.safetensors",
+          "exists": true,
+          "bytes": 3945441440,
+          "header_bytes": 9368,
+          "header_sha256": "3f53ee3c3605516b98c286431a27dcef89b6a1dd68a718366d195a48330a82fe",
+          "tensor_count": 82,
+          "index_expected_tensors": 82,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3945432064
+        },
+        {
+          "file": "model-00002-of-00004.safetensors",
+          "exists": true,
+          "bytes": 3864726352,
+          "header_bytes": 11080,
+          "header_sha256": "6b9b0d97d951a681f31c1f9217744c5f79434b5ebe2eaf31071ae24c6105d11c",
+          "tensor_count": 97,
+          "index_expected_tensors": 97,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3864715264
+        },
+        {
+          "file": "model-00003-of-00004.safetensors",
+          "exists": true,
+          "bytes": 3864726424,
+          "header_bytes": 11152,
+          "header_sha256": "d9efa10908903bd4b598c34aac91bc3acbfd2aeb34971aad3b373227d12d6613",
+          "tensor_count": 97,
+          "index_expected_tensors": 97,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3864715264
+        },
+        {
+          "file": "model-00004-of-00004.safetensors",
+          "exists": true,
+          "bytes": 3556377672,
+          "header_bytes": 7232,
+          "header_sha256": "16ea4c37b914f157e01246c648a88647d6174e5ce6c4d010890e1b31ea44e5fd",
+          "tensor_count": 63,
+          "index_expected_tensors": 63,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3556370432
+        }
+      ],
+      "shard_count": 4,
+      "total_weight_file_bytes": 15231271888,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen2.5-VL-7B-Instruct-AWQ",
+      "path": "/path/to/storage/models/Qwen2.5-VL-7B-Instruct-AWQ",
+      "config_exists": true,
+      "config_sha256": "0ccd6378c18544511f59a2ffedb2a616974cd17b24f33ce9caaa40fdb53e187c",
+      "model_type": "qwen2_5_vl",
+      "architectures": [
+        "Qwen2_5_VLForConditionalGeneration"
+      ],
+      "image_token_id": 151655,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen2_5_vl",
+        "num_hidden_layers": 28,
+        "num_attention_heads": 28,
+        "num_key_value_heads": 4,
+        "hidden_size": 3584,
+        "intermediate_size": 18944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "qwen2_5_vl",
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": 1280,
+        "num_hidden_layers": null
+      },
+      "preprocessor_config.json": {
+        "bytes": 575,
+        "sha256": "549c158011407dfb750d9ec578047cf76f5bfe365cd0aa069a50137d3f98d9dd",
+        "processor_class": "Qwen2_5_VLProcessor",
+        "image_processor_type": "Qwen2VLImageProcessor",
+        "patch_size": 14
+      },
+      "tokenizer_config.json": {
+        "bytes": 5776,
+        "sha256": "0a6be425d5d62ec1904deb45e569c809d0973bd39a411452388f268a855e3183",
+        "processor_class": "Qwen2_5_VLProcessor",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{% set image_count = namespace(value=0) %}{% set video_count = namespace(value=0) %}{% for message in messages %}{% if loop.first and message['role'] != 'system' %}<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n{% endif %}<|im_start|>{{ message['role'] }}\n{% if message['content'] is string %}{{ message['content'] }}<|im_end|>\n{% else %}{% for content in message['content'] %}{% if content['type'] == 'image' or 'image' in content or 'image_url' in content %}{% set image_count.value = image_count.value + 1 %}{% if add_vision_id %}Picture {{ image_count.value }}: {% endif %}<|vision_start|><|image_pad|><|vision_end|>{% elif content['type'] == 'video' or 'video' in content %}{% set video_count.value = video_count.value + 1 %}{% if add_vision_id %}Video {{ video_count.value }}: {% endif %}<|vision_start|><|video_pad|><|vision_end|>{% elif 'text' in content %}{{ content['text'] }}{% endif %}{% endfor %}<|im_end|>\n{% endif %}{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "9bbb7f66770d7f0f3c2f880f257f991d0e6c756e0b2a86eedc37c7ad37d5581d",
+          "tensor_count": 1121,
+          "total_size_metadata": 6923847680
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "exists": true,
+          "bytes": 3982163944,
+          "header_bytes": 79840,
+          "header_sha256": "9b3063c85b06eb47b7f57899471019aca11271d73b63cb77a3a0e3478f02208e",
+          "tensor_count": 724,
+          "index_expected_tensors": 724,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3982084096
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "exists": true,
+          "bytes": 2941808440,
+          "header_bytes": 44848,
+          "header_sha256": "42a2d46a8532305f6b0c831514c6ce37338193cf0f94098f997e07f152dcaad6",
+          "tensor_count": 397,
+          "index_expected_tensors": 397,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2941763584
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 6923972384,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen2.5-VL-7B-Instruct-GPTQ-Int4",
+      "path": "/path/to/storage/models/Qwen2.5-VL-7B-Instruct-GPTQ-Int4",
+      "config_exists": true,
+      "config_sha256": "62f4922a6bac2face657f7baaaba8949e56f42db720c95085b49eb2e33749a73",
+      "model_type": "qwen2_5_vl",
+      "architectures": [
+        "Qwen2_5_VLForConditionalGeneration"
+      ],
+      "image_token_id": 151655,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen2_5_vl",
+        "num_hidden_layers": 28,
+        "num_attention_heads": 28,
+        "num_key_value_heads": 4,
+        "hidden_size": 3584,
+        "intermediate_size": 18944,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "qwen2_5_vl",
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": 1280,
+        "num_hidden_layers": null
+      },
+      "preprocessor_config.json": {
+        "bytes": 350,
+        "sha256": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+        "processor_class": "Qwen2_5_VLProcessor",
+        "image_processor_type": "Qwen2VLImageProcessor",
+        "patch_size": 14
+      },
+      "tokenizer_config.json": {
+        "bytes": 7284,
+        "sha256": "effa484aea1a222d296996443a281d44591570327a63ed4a98c0079781b1ca9d",
+        "tokenizer_class": "Qwen2TokenizerFast",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "3b44710961a551374c264b82799550b178fb17e94a4e79f78040b19ac509dc2d",
+          "tensor_count": 1317,
+          "total_size_metadata": 6928377856
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "exists": true,
+          "bytes": 3984201128,
+          "header_bytes": 89504,
+          "header_sha256": "188575eccde086071ed96bc9730b405d9a94e63d6725982c3f1fb03084d8762c",
+          "tensor_count": 814,
+          "index_expected_tensors": 814,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3984111616
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "exists": true,
+          "bytes": 2944322576,
+          "header_bytes": 56328,
+          "header_sha256": "f881143166b9116604065c5965ac5fc6eb6e465d475c1ae842ef5c9f629ece84",
+          "tensor_count": 503,
+          "index_expected_tensors": 503,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2944266240
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 6928523704,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen3-14B",
+      "path": "/path/to/storage/models/Qwen3-14B",
+      "config_exists": true,
+      "config_sha256": "e73c3664ca09b10a673fef0c22e8a6b456201d49bd4713c9691f775720e8857a",
+      "model_type": "qwen3",
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen3",
+        "num_hidden_layers": 40,
+        "num_attention_heads": 40,
+        "num_key_value_heads": 8,
+        "hidden_size": 5120,
+        "intermediate_size": 17408,
+        "head_dim": 128,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and message.content is string and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if message.content is string %}\n        {%- set content = message.content %}\n    {%- else %}\n        {%- set content = '' %}\n    {%- endif %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n{%- endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "62d7ad35757bae5e7baa452cb1483178b7daa50e869e923226b8da10871f7ebc",
+          "tensor_count": 443,
+          "total_size_metadata": 29536614400
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00008.safetensors",
+          "exists": true,
+          "bytes": 3841788544,
+          "header_bytes": 4728,
+          "header_sha256": "10675c516062aa130741ace094eaee1e6aea145935f0ee1ac2ede55d45f023db",
+          "tensor_count": 41,
+          "index_expected_tensors": 41,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3841783808
+        },
+        {
+          "file": "model-00002-of-00008.safetensors",
+          "exists": true,
+          "bytes": 3963750816,
+          "header_bytes": 7576,
+          "header_sha256": "ebaf6f492fcc17e1945de9c3f51bee0e6dc415d71d195b8608e0767c17337ba8",
+          "tensor_count": 66,
+          "index_expected_tensors": 66,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3963743232
+        },
+        {
+          "file": "model-00003-of-00008.safetensors",
+          "exists": true,
+          "bytes": 3963750880,
+          "header_bytes": 7640,
+          "header_sha256": "dfc2daabd70326d76aef1d4c0920fc3afd93e06cad21707e590d68849bc787a2",
+          "tensor_count": 66,
+          "index_expected_tensors": 66,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3963743232
+        },
+        {
+          "file": "model-00004-of-00008.safetensors",
+          "exists": true,
+          "bytes": 3963750880,
+          "header_bytes": 7640,
+          "header_sha256": "a25c573e63dbac3d5e628e43b37dd55853b2a9d4f8491790a019c44fbac41411",
+          "tensor_count": 66,
+          "index_expected_tensors": 66,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3963743232
+        },
+        {
+          "file": "model-00005-of-00008.safetensors",
+          "exists": true,
+          "bytes": 3963750880,
+          "header_bytes": 7640,
+          "header_sha256": "a41122ea56382bee459fa6c66d9464298bbf99d44e0f4c38fbf873decbb31491",
+          "tensor_count": 66,
+          "index_expected_tensors": 66,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3963743232
+        },
+        {
+          "file": "model-00006-of-00008.safetensors",
+          "exists": true,
+          "bytes": 3963750880,
+          "header_bytes": 7640,
+          "header_sha256": "b09f52ef951e4375c827428cb65d711614f29241bcfb5c9dda7112c400379d24",
+          "tensor_count": 66,
+          "index_expected_tensors": 66,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3963743232
+        },
+        {
+          "file": "model-00007-of-00008.safetensors",
+          "exists": true,
+          "bytes": 3963750880,
+          "header_bytes": 7640,
+          "header_sha256": "e29b9aaa1b1c582d0d6c56f7e4e4315033977a86519958223f4f64a7a6771248",
+          "tensor_count": 66,
+          "index_expected_tensors": 66,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3963743232
+        },
+        {
+          "file": "model-00008-of-00008.safetensors",
+          "exists": true,
+          "bytes": 1912371880,
+          "header_bytes": 672,
+          "header_sha256": "79c47130d81fa8ebc6ae3415d2b11a2e1e1b0d4a753565348596ffb31a62fd86",
+          "tensor_count": 6,
+          "index_expected_tensors": 6,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1912371200
+        }
+      ],
+      "shard_count": 8,
+      "total_weight_file_bytes": 29536665640,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen3-14B-speculator.eagle3",
+      "path": "/path/to/storage/models/Qwen3-14B-speculator.eagle3",
+      "config_exists": true,
+      "config_sha256": "3b0e2906a1189d11f10284695c0f4d72c87405793c9b101274516e8059164152",
+      "model_type": "llama",
+      "architectures": [
+        "LlamaForCausalLMEagle3"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "llama",
+        "num_hidden_layers": 1,
+        "num_attention_heads": 40,
+        "num_key_value_heads": 8,
+        "hidden_size": 5120,
+        "intermediate_size": 17408,
+        "head_dim": 128,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "pytorch_model.bin",
+          "exists": true,
+          "bytes": 1219459838,
+          "integrity_scope": "existence/size only; pickle weights not deserialized"
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 1219459838,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen3-4B",
+      "path": "/path/to/storage/models/Qwen3-4B",
+      "config_exists": true,
+      "config_sha256": "8ba006f74fecfaaeb392872a60f4a480e7ec9860153d2e1b769ec81f9a147f8a",
+      "model_type": "qwen3",
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen3",
+        "num_hidden_layers": 36,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 2560,
+        "intermediate_size": 9728,
+        "head_dim": 128,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and message.content is string and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if message.content is string %}\n        {%- set content = message.content %}\n    {%- else %}\n        {%- set content = '' %}\n    {%- endif %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n{%- endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "6dc0981b8829fead746441f68f38f24c5ca4a3a66351f652c26c6df0efc43ab2",
+          "tensor_count": 398,
+          "total_size_metadata": 8044936192
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00003.safetensors",
+          "exists": true,
+          "bytes": 3957900840,
+          "header_bytes": 20000,
+          "header_sha256": "86352b375b4aa14f94961b076187f1c42f06156f6b7043150244cca5f2d63454",
+          "tensor_count": 174,
+          "index_expected_tensors": 174,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3957880832
+        },
+        {
+          "file": "model-00002-of-00003.safetensors",
+          "exists": true,
+          "bytes": 3987450520,
+          "header_bytes": 25232,
+          "header_sha256": "4bdab316ae3693de70a8955cc659bd525e0d0d40e0ae6eb27f4ddc60d7e4b349",
+          "tensor_count": 219,
+          "index_expected_tensors": 219,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3987425280
+        },
+        {
+          "file": "model-00003-of-00003.safetensors",
+          "exists": true,
+          "bytes": 99630640,
+          "header_bytes": 552,
+          "header_sha256": "66bce54f177b50e9f6efc862d775ed20569367edeca4bedd489815734aa35786",
+          "tensor_count": 5,
+          "index_expected_tensors": 5,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 99630080
+        }
+      ],
+      "shard_count": 3,
+      "total_weight_file_bytes": 8044982000,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen3-4B-Thinking-2507",
+      "path": "/path/to/storage/models/Qwen3-4B-Thinking-2507",
+      "config_exists": true,
+      "config_sha256": "5beea1a4a34c62782bfb2f911c606741a3bab8f92d80a118fa053c28af12e8ba",
+      "model_type": "qwen3",
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen3",
+        "num_hidden_layers": 36,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 2560,
+        "intermediate_size": 9728,
+        "head_dim": 128,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 10834,
+        "sha256": "60adcfc35f5f251e19a196ec977b4ca0fcfb534852911b3196d68d5e3b146aa0",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and message.content is string and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if message.content is string %}\n        {%- set content = message.content %}\n    {%- else %}\n        {%- set content = '' %}\n    {%- endif %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n<think>\\n' }}\n{%- endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "d6c42883a895dfef5b0080ed2116a1bcd764f558406b98923d675978a1abf29c",
+          "tensor_count": 398,
+          "total_size_metadata": 8045591552
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00003.safetensors",
+          "exists": true,
+          "bytes": 3957900840,
+          "header_bytes": 20000,
+          "header_sha256": "86352b375b4aa14f94961b076187f1c42f06156f6b7043150244cca5f2d63454",
+          "tensor_count": 174,
+          "index_expected_tensors": 174,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3957880832
+        },
+        {
+          "file": "model-00002-of-00003.safetensors",
+          "exists": true,
+          "bytes": 3987450520,
+          "header_bytes": 25232,
+          "header_sha256": "4bdab316ae3693de70a8955cc659bd525e0d0d40e0ae6eb27f4ddc60d7e4b349",
+          "tensor_count": 219,
+          "index_expected_tensors": 219,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3987425280
+        },
+        {
+          "file": "model-00003-of-00003.safetensors",
+          "exists": true,
+          "bytes": 99630640,
+          "header_bytes": 552,
+          "header_sha256": "66bce54f177b50e9f6efc862d775ed20569367edeca4bedd489815734aa35786",
+          "tensor_count": 5,
+          "index_expected_tensors": 5,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 99630080
+        }
+      ],
+      "shard_count": 3,
+      "total_weight_file_bytes": 8044982000,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen3-8B",
+      "path": "/path/to/storage/models/Qwen3-8B",
+      "config_exists": true,
+      "config_sha256": "f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30",
+      "model_type": "qwen3",
+      "architectures": [
+        "Qwen3ForCausalLM"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen3",
+        "num_hidden_layers": 36,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 4096,
+        "intermediate_size": 12288,
+        "head_dim": 128,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "tokenizer_class": "Qwen2Tokenizer",
+        "chat_template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0].role == 'system' %}\n        {{- messages[0].content + '\\n\\n' }}\n    {%- endif %}\n    {{- \"# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0].role == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0].content + '<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- set ns = namespace(multi_step_tool=true, last_query_index=messages|length - 1) %}\n{%- for message in messages[::-1] %}\n    {%- set index = (messages|length - 1) - loop.index0 %}\n    {%- if ns.multi_step_tool and message.role == \"user\" and message.content is string and not(message.content.startswith('<tool_response>') and message.content.endswith('</tool_response>')) %}\n        {%- set ns.multi_step_tool = false %}\n        {%- set ns.last_query_index = index %}\n    {%- endif %}\n{%- endfor %}\n{%- for message in messages %}\n    {%- if message.content is string %}\n        {%- set content = message.content %}\n    {%- else %}\n        {%- set content = '' %}\n    {%- endif %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) %}\n        {{- '<|im_start|>' + message.role + '\\n' + content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {%- set reasoning_content = '' %}\n        {%- if message.reasoning_content is string %}\n            {%- set reasoning_content = message.reasoning_content %}\n        {%- else %}\n            {%- if '</think>' in content %}\n                {%- set reasoning_content = content.split('</think>')[0].rstrip('\\n').split('<think>')[-1].lstrip('\\n') %}\n                {%- set content = content.split('</think>')[-1].lstrip('\\n') %}\n            {%- endif %}\n        {%- endif %}\n        {%- if loop.index0 > ns.last_query_index %}\n            {%- if loop.last or (not loop.last and reasoning_content) %}\n                {{- '<|im_start|>' + message.role + '\\n<think>\\n' + reasoning_content.strip('\\n') + '\\n</think>\\n\\n' + content.lstrip('\\n') }}\n            {%- else %}\n                {{- '<|im_start|>' + message.role + '\\n' + content }}\n            {%- endif %}\n        {%- else %}\n            {{- '<|im_start|>' + message.role + '\\n' + content }}\n        {%- endif %}\n        {%- if message.tool_calls %}\n            {%- for tool_call in message.tool_calls %}\n                {%- if (loop.first and content) or (not loop.first) %}\n                    {{- '\\n' }}\n                {%- endif %}\n                {%- if tool_call.function %}\n                    {%- set tool_call = tool_call.function %}\n                {%- endif %}\n                {{- '<tool_call>\\n{\"name\": \"' }}\n                {{- tool_call.name }}\n                {{- '\", \"arguments\": ' }}\n                {%- if tool_call.arguments is string %}\n                    {{- tool_call.arguments }}\n                {%- else %}\n                    {{- tool_call.arguments | tojson }}\n                {%- endif %}\n                {{- '}\\n</tool_call>' }}\n            {%- endfor %}\n        {%- endif %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if loop.first or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n    {%- if enable_thinking is defined and enable_thinking is false %}\n        {{- '<think>\\n\\n</think>\\n\\n' }}\n    {%- endif %}\n{%- endif %}"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "f9fdbcb91c23971c13ec5d5f2573d2349e8f61f2f049371ec699281748fdb1bc",
+          "tensor_count": 399,
+          "total_size_metadata": 16381470720
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00005.safetensors",
+          "exists": true,
+          "bytes": 3996250744,
+          "header_bytes": 9328,
+          "header_sha256": "6bdb68896eda49efd265b0df316ad724323422a7610e58a5edf21f5d623e7793",
+          "tensor_count": 81,
+          "index_expected_tensors": 81,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3996241408
+        },
+        {
+          "file": "model-00002-of-00005.safetensors",
+          "exists": true,
+          "bytes": 3993160032,
+          "header_bytes": 13144,
+          "header_sha256": "8df6151776ca7d2dcec1342abd3fcc1e7aa08d0c9b627a22e7a2519cf416b3ef",
+          "tensor_count": 114,
+          "index_expected_tensors": 114,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3993146880
+        },
+        {
+          "file": "model-00003-of-00005.safetensors",
+          "exists": true,
+          "bytes": 3959604768,
+          "header_bytes": 12824,
+          "header_sha256": "6c4a3683cf3afd075332170fd022d9e4bf27fc6f95758c49b43e2e3ea2c06334",
+          "tensor_count": 111,
+          "index_expected_tensors": 111,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3959591936
+        },
+        {
+          "file": "model-00004-of-00005.safetensors",
+          "exists": true,
+          "bytes": 3187841392,
+          "header_bytes": 10600,
+          "header_sha256": "2a85e6ae9dc47a682b9849476a5ae5093bf8621a9a8d5001bb7c3f3f6407ec4d",
+          "tensor_count": 92,
+          "index_expected_tensors": 92,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 3187830784
+        },
+        {
+          "file": "model-00005-of-00005.safetensors",
+          "exists": true,
+          "bytes": 1244659840,
+          "header_bytes": 120,
+          "header_sha256": "4b8ab67d9f64fe383fe112b841373e3fbe4b3fc37d9491e544067c5978b20134",
+          "tensor_count": 1,
+          "index_expected_tensors": 1,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1244659712
+        }
+      ],
+      "shard_count": 5,
+      "total_weight_file_bytes": 16381516776,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen3-8B-speculator.eagle3",
+      "path": "/path/to/storage/models/Qwen3-8B-speculator.eagle3",
+      "config_exists": true,
+      "config_sha256": "84870e0313ac492b78fd0d96de0f1e2958c230a32ca47d0295158f9d3c21981a",
+      "model_type": null,
+      "architectures": [
+        "Eagle3Speculator"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": null,
+        "num_hidden_layers": null,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": "bfloat16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 2044116968,
+          "header_bytes": 1632,
+          "header_sha256": "6884740316039363fafbdc1d6982992cddee995eb2cc31b00d26617156c09657",
+          "tensor_count": 16,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 2044115328
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 2044116968,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen3-ASR-0.6B",
+      "path": "/path/to/storage/models/Qwen3-ASR-0.6B",
+      "config_exists": true,
+      "config_sha256": "76d3ae4601ce939830b2517f4a6cadb86cc51316c3900af6b020b051c21a478c",
+      "model_type": "qwen3_asr",
+      "architectures": [
+        "Qwen3ASRForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen3_asr",
+        "num_hidden_layers": null,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": null,
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "preprocessor_config.json": {
+        "bytes": 330,
+        "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "processor_class": "Qwen3ASRProcessor"
+      },
+      "tokenizer_config.json": {
+        "bytes": 12487,
+        "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "processor_class": "Qwen3ASRProcessor",
+        "tokenizer_class": "Qwen2Tokenizer"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 1876091704,
+          "header_bytes": 74544,
+          "header_sha256": "348eb08aeb7b3b6f0ddf2e46acb179785bdedec2b22187610dcc20e9dd20c609",
+          "tensor_count": 612,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1876017152
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 1876091704,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Qwen3-ASR-1.7B",
+      "path": "/path/to/storage/models/Qwen3-ASR-1.7B",
+      "config_exists": true,
+      "config_sha256": "2e74a751548b8ad7d7526d29365ad8144c345d8b412b1152d25dc6698452712f",
+      "model_type": "qwen3_asr",
+      "architectures": [
+        "Qwen3ASRForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "qwen3_asr",
+        "num_hidden_layers": null,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": null,
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "preprocessor_config.json": {
+        "bytes": 330,
+        "sha256": "45e120a4eda2c20c5d7f2ea9354e63536bf35e27aa573fb7cdf78017b378770d",
+        "processor_class": "Qwen3ASRProcessor"
+      },
+      "tokenizer_config.json": {
+        "bytes": 12487,
+        "sha256": "4942d005604266809309cabc9f4e9cb89ce855d59b14681fdc0e1cc62ea26c4c",
+        "processor_class": "Qwen3ASRProcessor",
+        "tokenizer_class": "Qwen2Tokenizer"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "f994739fe38e5210b9e3e8ce6c6307315e2ceac3cb630e7b7414d69dce520f60",
+          "tensor_count": 708,
+          "total_size_metadata": null
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00002.safetensors",
+          "exists": true,
+          "bytes": 4220320824,
+          "header_bytes": 80176,
+          "header_sha256": "a2b69ff5e8dd5fa774cd7b857c3946e3513cb3f603824cc3a60d8ed7295cea48",
+          "tensor_count": 654,
+          "index_expected_tensors": 654,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4220240640
+        },
+        {
+          "file": "model-00002-of-00002.safetensors",
+          "exists": true,
+          "bytes": 478200688,
+          "header_bytes": 6504,
+          "header_sha256": "d03dd1de5aba5002844b9937259e1b5564722adba8550594e86f9a0b236eb999",
+          "tensor_count": 54,
+          "index_expected_tensors": 54,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 478194176
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 4698521512,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "Voxtral-Mini-4B-Realtime-2602",
+      "path": "/path/to/storage/models/Voxtral-Mini-4B-Realtime-2602",
+      "config_exists": true,
+      "config_sha256": "96582f5809ad179531d47f9f89d76c696058fbdeff608d6611dcb7e076ea7e93",
+      "model_type": "voxtral_realtime",
+      "architectures": [
+        "VoxtralRealtimeForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "voxtral_realtime_text",
+        "num_hidden_layers": 26,
+        "num_attention_heads": 32,
+        "num_key_value_heads": 8,
+        "hidden_size": 3072,
+        "intermediate_size": 9216,
+        "head_dim": 128,
+        "torch_dtype": null,
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "processor_config.json": {
+        "bytes": 384,
+        "sha256": "5fbc4247e0b3b72c1b501b872c4fd6432b1f0fcc1939dcdf1fa5142c6d2ce070",
+        "processor_class": "VoxtralRealtimeProcessor"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 8859446848,
+          "header_bytes": 88120,
+          "header_sha256": "5418b1899d18bbc4a9df469ac8ecf14f7c9d8d808876eec386d8a8f90f2b0c7e",
+          "tensor_count": 711,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 8859358720
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 8859446848,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "all-MiniLM-L6-v2",
+      "path": "/path/to/storage/models/all-MiniLM-L6-v2",
+      "config_exists": true,
+      "config_sha256": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+      "model_type": "bert",
+      "architectures": [
+        "BertModel"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "bert",
+        "num_hidden_layers": 6,
+        "num_attention_heads": 12,
+        "num_key_value_heads": null,
+        "hidden_size": 384,
+        "intermediate_size": 1536,
+        "head_dim": null,
+        "torch_dtype": null,
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "tokenizer_config.json": {
+        "bytes": 350,
+        "sha256": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b",
+        "tokenizer_class": "BertTokenizer"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 90868376,
+          "header_bytes": 11408,
+          "header_sha256": "66cf975a69b855e86e8abf6d7f9c73e3827b0787cac0e502e35c8e4149b2167e",
+          "tensor_count": 104,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 90856960
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 90868376,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "examples",
+      "path": "/path/to/storage/models/examples",
+      "config_exists": false,
+      "direct_entries": [
+        "image1.jpg",
+        "image2.jpg",
+        "red-panda.mp4"
+      ]
+    },
+    {
+      "name": "llava-v1.6-vicuna-7b-hf",
+      "path": "/path/to/storage/models/llava-v1.6-vicuna-7b-hf",
+      "config_exists": true,
+      "config_sha256": "3ea1ed765b0b79834892d8060cb46162121ef01596e56ca6e168a48a8da08336",
+      "model_type": "llava_next",
+      "architectures": [
+        "LlavaNextForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": 32000,
+      "vision_feature_select_strategy": "default",
+      "text": {
+        "model_type": "llama",
+        "num_hidden_layers": null,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": "float16",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "clip_vision_model",
+        "image_size": 336,
+        "patch_size": 14,
+        "hidden_size": 1024,
+        "num_hidden_layers": 24
+      },
+      "processor_config.json": {
+        "bytes": 176,
+        "sha256": "7cd8bff508772b8b4e6b0678550bf856a7f28abd0f8b237235ac83bfcb9b1c36",
+        "processor_class": "LlavaNextProcessor",
+        "patch_size": 14,
+        "vision_feature_select_strategy": "default",
+        "num_additional_image_tokens": 1
+      },
+      "preprocessor_config.json": {
+        "bytes": 772,
+        "sha256": "ecef425c1d3ee91f5e05144c4d107389f9fefd04a424d5cbfc3fb6e0525b8c55",
+        "processor_class": "LlavaNextProcessor",
+        "image_processor_type": "LlavaNextImageProcessor"
+      },
+      "tokenizer_config.json": {
+        "bytes": 1270,
+        "sha256": "89833b4fed3f4010fb864ae4f70055e7f940cf9b52aba4167d42647219fe097a",
+        "processor_class": "LlavaNextProcessor",
+        "tokenizer_class": "LlamaTokenizer"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "9a47c4d8e2e79c25ff773072e8c3bc89f699a2e0d6556e734f0b19b90397dfc4",
+          "tensor_count": 687,
+          "total_size_metadata": 14126862336
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4992938464,
+          "header_bytes": 66008,
+          "header_sha256": "09f14f22d9790449c28ddb5ec6c86d2a54c2a2574580f326dafa1f5b60a58ad4",
+          "tensor_count": 488,
+          "index_expected_tensors": 488,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4992872448
+        },
+        {
+          "file": "model-00002-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4957878440,
+          "header_bytes": 14496,
+          "header_sha256": "2823c3492e0a387e523fe89a010a3bfb720966fcc59b7d6ba698f112b7dfbe61",
+          "tensor_count": 111,
+          "index_expected_tensors": 111,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4957863936
+        },
+        {
+          "file": "model-00003-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4176137408,
+          "header_bytes": 11448,
+          "header_sha256": "b981d8ca13c128464213f919ae465fef953d108e66861fccc857e9af01f0c97e",
+          "tensor_count": 88,
+          "index_expected_tensors": 88,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4176125952
+        }
+      ],
+      "shard_count": 3,
+      "total_weight_file_bytes": 14126954312,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "openai",
+      "path": "/path/to/storage/models/openai",
+      "config_exists": false,
+      "direct_entries": [
+        "whisper-small.en"
+      ]
+    },
+    {
+      "name": "paligemma-3b-mix-448",
+      "path": "/path/to/storage/models/paligemma-3b-mix-448",
+      "config_exists": true,
+      "config_sha256": "1cbf1b02dd9f98f23c4133cda6c359defc678b7bc6eeba63cff02f4dd7aaae14",
+      "model_type": "paligemma",
+      "architectures": [
+        "PaliGemmaForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": 257152,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "gemma",
+        "num_hidden_layers": 18,
+        "num_attention_heads": 8,
+        "num_key_value_heads": 1,
+        "hidden_size": 2048,
+        "intermediate_size": 16384,
+        "head_dim": null,
+        "torch_dtype": "float32",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": "siglip_vision_model",
+        "image_size": 448,
+        "patch_size": 14,
+        "hidden_size": 1152,
+        "num_hidden_layers": 27
+      },
+      "preprocessor_config.json": {
+        "bytes": 700,
+        "sha256": "5fc342baea95529a5eb9746a0232fb88941d759812d7b616c382f2f87ba6123f",
+        "processor_class": "PaliGemmaProcessor",
+        "image_processor_type": "SiglipImageProcessor"
+      },
+      "tokenizer_config.json": {
+        "bytes": 39968,
+        "sha256": "3259402b1d1802e02417d7bff75a889ec61d359d15be6050a957b307c48edbbe",
+        "processor_class": "PaliGemmaProcessor",
+        "tokenizer_class": "GemmaTokenizer"
+      },
+      "indexes": [
+        {
+          "file": "model.safetensors.index.json",
+          "sha256": "959ecd40745c7b507c54c9049150e8d9f39beb6b52f6b9ea92753337ca14a453",
+          "tensor_count": 603,
+          "total_size_metadata": 11697404864
+        }
+      ],
+      "shards": [
+        {
+          "file": "model-00001-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4956951424,
+          "header_bytes": 63416,
+          "header_sha256": "3da6378a61eeafb8079d722bbad7f60d65bba38b3f377ce41f9fb730cf059bdf",
+          "tensor_count": 464,
+          "index_expected_tensors": 464,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4956888000
+        },
+        {
+          "file": "model-00002-of-00003.safetensors",
+          "exists": true,
+          "bytes": 4999820608,
+          "header_bytes": 13624,
+          "header_sha256": "2c5d333ec3a4a081f6dd066da15bf51505982e4b62deb7c950e991c02c5dd7b9",
+          "tensor_count": 105,
+          "index_expected_tensors": 105,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 4999806976
+        },
+        {
+          "file": "model-00003-of-00003.safetensors",
+          "exists": true,
+          "bytes": 1740714288,
+          "header_bytes": 4392,
+          "header_sha256": "bc17c877960f8e8a516b42bc3e9ba018558400da543cf21ea1f7fdf04237abb3",
+          "tensor_count": 34,
+          "index_expected_tensors": 34,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 1740709888
+        }
+      ],
+      "shard_count": 3,
+      "total_weight_file_bytes": 11697486320,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "revtrace_streamcorrect_20261028",
+      "path": "/path/to/storage/models/revtrace_streamcorrect_20261028",
+      "config_exists": false,
+      "direct_entries": [
+        "adapter",
+        "asr",
+        "llama32_1b_instruct_f8e6b",
+        "ultravox_b95bec8",
+        "whisper_large_v3_turbo_feature_extractor_41f01f3f"
+      ]
+    },
+    {
+      "name": "whisper-base.en",
+      "path": "/path/to/storage/models/whisper-base.en",
+      "config_exists": true,
+      "config_sha256": "160c1df40a60d4ef5a6014d536fd845c33aabfd1f318458ac7f87cfe91ebbe76",
+      "model_type": "whisper",
+      "architectures": [
+        "WhisperForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "whisper",
+        "num_hidden_layers": 6,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": "float32",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "preprocessor_config.json": {
+        "bytes": 184990,
+        "sha256": "9b5cd03a36fbb8a627c64d98a5b5b126ead95a77720723944487311f0110b666",
+        "processor_class": "WhisperProcessor"
+      },
+      "tokenizer_config.json": {
+        "bytes": 805,
+        "sha256": "14f84bdf4b9ecdbd4738ddc81c17a1baedfc02bb93c6e049c951e15a1b40b70d",
+        "processor_class": "WhisperProcessor",
+        "tokenizer_class": "WhisperTokenizer"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 290401888,
+          "header_bytes": 28248,
+          "header_sha256": "df73e8ba6f4a79972f7d6fedb2beffecab5d48e2ca03a479d97142ec971fcd15",
+          "tensor_count": 245,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 290373632
+        },
+        {
+          "file": "pytorch_model.bin",
+          "exists": true,
+          "bytes": 290451159,
+          "integrity_scope": "existence/size only; pickle weights not deserialized"
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 580853047,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "whisper-small.en",
+      "path": "/path/to/storage/models/whisper-small.en",
+      "config_exists": true,
+      "config_sha256": "3441094addfb2a31ef62ea117e95bd6e437bbad8e93d3697fe420a4a6d3603a5",
+      "model_type": "whisper",
+      "architectures": [
+        "WhisperForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "whisper",
+        "num_hidden_layers": 12,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": "float32",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "preprocessor_config.json": {
+        "bytes": 184990,
+        "sha256": "9b5cd03a36fbb8a627c64d98a5b5b126ead95a77720723944487311f0110b666",
+        "processor_class": "WhisperProcessor"
+      },
+      "tokenizer_config.json": {
+        "bytes": 805,
+        "sha256": "14f84bdf4b9ecdbd4738ddc81c17a1baedfc02bb93c6e049c951e15a1b40b70d",
+        "processor_class": "WhisperProcessor",
+        "tokenizer_class": "WhisperTokenizer"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 966992008,
+          "header_bytes": 55424,
+          "header_sha256": "4f34c19ff8e3ea44610c33edb4961a60e14c5eca7efd35d1dc01e06ca040dcfa",
+          "tensor_count": 479,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 966936576
+        }
+      ],
+      "shard_count": 1,
+      "total_weight_file_bytes": 966992008,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    },
+    {
+      "name": "whisper-tiny.en",
+      "path": "/path/to/storage/models/whisper-tiny.en",
+      "config_exists": true,
+      "config_sha256": "b5366317df280f79e6cc366f259f379674f81a8721d458acf2e00680ccb10b1d",
+      "model_type": "whisper",
+      "architectures": [
+        "WhisperForConditionalGeneration"
+      ],
+      "image_token_id": null,
+      "image_token_index": null,
+      "vision_feature_select_strategy": null,
+      "text": {
+        "model_type": "whisper",
+        "num_hidden_layers": 4,
+        "num_attention_heads": null,
+        "num_key_value_heads": null,
+        "hidden_size": null,
+        "intermediate_size": null,
+        "head_dim": null,
+        "torch_dtype": "float32",
+        "dtype": null
+      },
+      "vision": {
+        "model_type": null,
+        "image_size": null,
+        "patch_size": null,
+        "hidden_size": null,
+        "num_hidden_layers": null
+      },
+      "preprocessor_config.json": {
+        "bytes": 184990,
+        "sha256": "9b5cd03a36fbb8a627c64d98a5b5b126ead95a77720723944487311f0110b666",
+        "processor_class": "WhisperProcessor"
+      },
+      "tokenizer_config.json": {
+        "bytes": 805,
+        "sha256": "14f84bdf4b9ecdbd4738ddc81c17a1baedfc02bb93c6e049c951e15a1b40b70d",
+        "processor_class": "WhisperProcessor",
+        "tokenizer_class": "WhisperTokenizer"
+      },
+      "indexes": [],
+      "shards": [
+        {
+          "file": "model.safetensors",
+          "exists": true,
+          "bytes": 151060136,
+          "header_bytes": 19104,
+          "header_sha256": "db9a8b5da05328a99e08beb83c7bf46764e3a00fb1d541d78754fa58264e52bd",
+          "tensor_count": 167,
+          "index_expected_tensors": 0,
+          "missing_index_tensors": 0,
+          "tensor_offsets_cover_payload": true,
+          "weight_payload_bytes": 151041024
+        },
+        {
+          "file": "pytorch_model.bin",
+          "exists": true,
+          "bytes": 151093491,
+          "integrity_scope": "existence/size only; pickle weights not deserialized"
+        }
+      ],
+      "shard_count": 2,
+      "total_weight_file_bytes": 302153627,
+      "all_index_shards_present_and_safetensors_headers_valid": true,
+      "integrity_scope": "index mapping plus full shard inventory, safetensors headers/tensor offsets and exact file lengths; payload bytes not hashed"
+    }
+  ],
+  "legacy_sources": {
+    "p180_multiturn_core.py": {
+      "sha256": "ce14af74525db6066e59c4a7a0c0f8d66fc768c12b00aa9c94b35016f969f4d3",
+      "definitions": {
+        "attention_bridge": "def attention_bridge(model, visual=None, tau=0., capture=None, native=False):\n    from transformers.modeling_utils import ALL_ATTENTION_FUNCTIONS\n    original = ALL_ATTENTION_FUNCTIONS['sdpa']\n    modules = {id(layer.self_attn) for layer in model.model.language_model.layers}\n\n    def apply(module, query, key, value, attention_mask, dropout=0., scaling=None, **kwargs):\n        if id(module) not in modules:\n            return original(module, query, key, value, attention_mask, dropout=dropout, scaling=scaling, **kwargs)\n        if native:\n            result = original(module, query, key, value, attention_mask, dropout=dropout, scaling=scaling, **kwargs)\n            if capture is not None:\n                capture[int(module.layer_idx)] = prefill_scores(query, key, visual)\n            return result\n        # A single decode query sees every cached key. Keep native mask-free\n        # SDPA dispatch instead of introducing an all-zero additive mask.\n        if query.shape[-2] == 1 and not tau:\n            kwargs['is_causal'] = False\n            return original(module, query, key, value, None, dropout=dropout, scaling=scaling, **kwargs)\n        bias = causal_bias(query, key)\n        if tau:\n            if visual is None:\n                raise ValueError('CQ score calibration requires physical visual indices')\n            kv = key.index_select(2, visual).float().repeat_interleave(query.shape[1]//key.shape[1], 1)\n            scores = query.float() @ kv.transpose(-1, -2) * (scaling or query.shape[-1]**-.5)\n            delta = -tau*(scores-scores.amin(-1, keepdim=True))/(scores.amax(-1, keepdim=True)-scores.amin(-1, keepdim=True)+1e-8)\n            bias = bias.expand(1, query.shape[1], -1, -1).clone()\n            bias[..., visual] += delta.to(query.dtype)\n        kwargs['is_causal'] = False\n        return original(module, query, key, value, bias, dropout=dropout, scaling=scaling, **kwargs)\n\n    ALL_ATTENTION_FUNCTIONS.register('sdpa', apply)\n    try:\n        yield\n    finally:\n        ALL_ATTENTION_FUNCTIONS.register('sdpa', original)"
+      }
+    },
+    "p184_working_set.py": {
+      "sha256": "6df5e1836c7a4dd0092a5ed53a8e66de1fff831f4a3db1c692f99223e1e51b69",
+      "definitions": {
+        "attention": "def attention(model, indices=None, initial_length=None, capture=None, counters=None):\n    \"\"\"Full SDPA or the frozen P183 per-token gather, with optional charged observation.\"\"\"\n    from transformers.modeling_utils import ALL_ATTENTION_FUNCTIONS\n    original=ALL_ATTENTION_FUNCTIONS['sdpa']\n    modules={id(layer.self_attn) for layer in model.model.language_model.layers}\n    def apply(module,q,k,v,mask,dropout=0.,scaling=None,**kwargs):\n        if id(module) not in modules:\n            return original(module,q,k,v,mask,dropout=dropout,scaling=scaling,**kwargs)\n        if hasattr(module,'_p185_read'):\n            if capture is not None or dropout:\n                raise RuntimeError('P185 does not support observation or dropout')\n            if scaling is not None and abs(scaling-q.shape[-1]**-.5)>1e-8:\n                raise RuntimeError('P185 requires standard attention scale')\n            return module._p185_read(q).transpose(1,2).contiguous(),None\n        kwargs['is_causal']=False\n        used_k,used_v=k,v\n        bias=None if q.shape[-2]==1 else causal_bias(q,k)\n        if indices is not None:\n            with scope('gather_indices'):\n                tail=torch.arange(initial_length,k.shape[-2],device=k.device)[None,None].expand(k.shape[0],k.shape[1],-1)\n                selected=torch.cat((indices[int(module.layer_idx)],tail),-1)\n                gather=selected[...,None].expand(*selected.shape,k.shape[-1])\n            with scope('kv_gather'):\n                used_k=k.gather(2,gather);used_v=v.gather(2,gather)\n                if counters is not None:\n                    counters['gather_calls']=counters.get('gather_calls',0)+2\n                    counters['gather_payload_bytes']=counters.get('gather_payload_bytes',0)+2*used_k.numel()*used_k.element_size()\n            with scope('gather_causal_layout'):\n                if q.shape[-2]>1:\n                    pos=torch.arange(k.shape[-2]-q.shape[-2],k.shape[-2],device=k.device)\n                    future=(selected[:,:,None,:]>pos[None,None,:,None]).repeat_interleave(q.shape[1]//k.shape[1],1)\n                    bias=torch.zeros(future.shape,device=q.device,dtype=q.dtype).masked_fill_(future,float('-inf'))\n        with scope('attention'):\n            output=original(module,q,used_k,used_v,bias,dropout=dropout,scaling=scaling,**kwargs)\n        if capture is not None:\n            with scope('current_observation'):\n                capture[int(module.layer_idx)]=current_scores(q,k,scaling or q.shape[-1]**-.5)\n        return output\n    ALL_ATTENTION_FUNCTIONS.register('sdpa',apply)\n    try:yield\n    finally:ALL_ATTENTION_FUNCTIONS.register('sdpa',original)"
+      }
+    },
+    "run_p175_modern_replication.py": {
+      "sha256": "599c7cf81251dc093fd6dff1d9350790bbf0e1401f60972bc183b51c5523dd05",
+      "definitions": {
+        "stop_ids": "def stop_ids(model: Any, processor: Any) -> set[int]:\n    result = set()\n    for candidate in (model.generation_config.eos_token_id, processor.tokenizer.eos_token_id):\n        if candidate is not None:\n            result.update(int(i) for i in candidate) if isinstance(candidate, list) else result.add(int(candidate))\n    return result"
+      }
+    }
+  },
+  "transformers_source_root": "/home/RESEARCHER/miniconda3/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers"
+}
