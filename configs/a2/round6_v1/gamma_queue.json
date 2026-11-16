@@ -1,0 +1,36 @@
+{
+  "tasks": [
+    {
+      "name": "smoke",
+      "entrypoint": "round6_fit_gamma.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round6_v1/gamma_smoke.json"
+      ]
+    },
+    {
+      "name": "local_functional",
+      "entrypoint": "round6_fit_gamma.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round6_v1/gamma_local_functional.json"
+      ]
+    },
+    {
+      "name": "full_model_KL",
+      "entrypoint": "round6_fit_gamma.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round6_v1/gamma_full_model_KL.json"
+      ]
+    },
+    {
+      "name": "full_model_CE",
+      "entrypoint": "round6_fit_gamma.py",
+      "arguments": [
+        "--config",
+        "/path/to/TrajKV/configs/a2/round6_v1/gamma_full_model_CE.json"
+      ]
+    }
+  ]
+}

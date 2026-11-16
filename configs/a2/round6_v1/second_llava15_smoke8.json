@@ -1,0 +1,26 @@
+{
+  "schema": "trajkv.round6.second-backbone-first-question-config.v1",
+  "arguments": {
+    "model": "/path/to/storage/models/LLaVA-1.5-7B-HF",
+    "samples": "/path/to/TrajKV/configs/a2/docvqa_next_dev64.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "turns": 1,
+    "max_tokens": 32
+  },
+  "start": 0,
+  "count": 8,
+  "variants": [
+    {
+      "name": "r6_llava15_native_hf",
+      "method": "native_hf"
+    },
+    {
+      "name": "r6_llava15_full_boundary",
+      "method": "full",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false
+    }
+  ]
+}
