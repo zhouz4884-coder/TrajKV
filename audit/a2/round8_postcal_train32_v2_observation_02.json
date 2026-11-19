@@ -1,0 +1,204 @@
+{
+  "pid": 532871,
+  "pid_exists": true,
+  "pid_state": "R",
+  "actual_argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source/code/a2/round8_postcal_train_v2.py",
+    "--config",
+    "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v3.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/postcal_train32_v2"
+  ],
+  "launch_receipt": {
+    "pid": 532871,
+    "name": "round8_postcal_train32_v2",
+    "log": "/path/to/TrajKV/stages/round8_20261118_v1/logs/round8_postcal_train32_v2.log",
+    "job": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.json",
+    "source_snapshot": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source",
+    "immutable_code_execution": true,
+    "argv_executed": [
+      "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+      "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source/code/a2/round8_postcal_train_v2.py",
+      "--config",
+      "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v3.json",
+      "--output",
+      "/path/to/TrajKV/results/round8_v1/postcal_train32_v2"
+    ],
+    "cache_environment": {
+      "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+      "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+      "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+      "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda"
+    }
+  },
+  "files": {
+    "teacher_contexts.json": {
+      "size": 4814158,
+      "sha256": "5e770a70b44602ae5a02082fe305943a985fcf8d5c82c703d168a3947df71f76"
+    },
+    "schedule.json": {
+      "size": 256885,
+      "sha256": "c9c57b7de083ca191e7c0079c83e3b93ee5f0d91f6fdf004d5a7bc08566dbc48"
+    },
+    "manifest.json": {
+      "size": 147918,
+      "sha256": "922ffd4006e154abd3b3940050f69239c416144f8bba99221ffbe178acda69a1"
+    },
+    "first_probe.json": {
+      "size": 540,
+      "sha256": "9e724452ccd095ce7b3fa8358ff2fc1dc6b17cd55c5bf88ee689b305b2c7bc69"
+    },
+    "steps.jsonl": {
+      "size": 58409,
+      "sha256": "d5809279f2493c59a6fd9a0f3e9a8ef6ba8c5ef5b4f6e0179b8625e6ff480b22"
+    },
+    "initial_kl.json": {
+      "size": 3398,
+      "sha256": "7a1c7f13def68594216377320924b9ea7dbf44304a2161b815344bc0516d9d5a"
+    },
+    "gradients.jsonl": {
+      "size": 23994,
+      "sha256": "1978fd0df8cad55961f3703c70b4d6219e881d570a77dd10945c48c286882b7e"
+    }
+  },
+  "first_probe": {
+    "status": "PASS",
+    "id": "r8_cal_doc_8c3e4839dac3340b4635b79bc044199fbbdabf7252023c4cd671600d2f719ac0__indq1",
+    "real_Nv": 1792,
+    "actual_cap": 8,
+    "actual_packed_zero_theta_identity": true,
+    "dense_shadow_tolerance_pass": true,
+    "parameter_gradient_norms": [
+      0.046189382672309875,
+      0.01743975095450878,
+      0.0321364589035511
+    ],
+    "q_gradient_calls": 27,
+    "q_gradient_norm": 0.01667333549441284,
+    "KL": 0.0022058922331780195,
+    "seconds": 0.7631055780075258,
+    "optimizer_updates": 0,
+    "model_weights_frozen": true
+  },
+  "finite_zero_diagnostics": [
+    {
+      "step": 51,
+      "qa_id": "r8_cal_text_a51470bf7e854c2f6a0b532be1d05bf70494e226d9a52ecf398df0a01102e059__indq1",
+      "loss_before_update": -4.2552139589702165e-10,
+      "parameter_gradient_present": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_finite": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_norms": [
+        4.203081288478609e-05,
+        4.0932078281481524e-05,
+        4.3584935606344686e-05
+      ],
+      "q_hook_count": 27,
+      "q_elements_all_finite": true,
+      "q_squared_norm": 0.0
+    }
+  ],
+  "gradient_attempts": 55,
+  "completed_steps": 55,
+  "first_step": {
+    "step": 0,
+    "schedule_item": {
+      "schema": "trajkv.round8.postcal-source-balanced-schedule.v1",
+      "schedule_id": "r8-postcal-sourcebalanced-v1-98e18286d19eab89e1d638e4",
+      "step": 0,
+      "epoch": 0,
+      "epoch_position": 0,
+      "flat_index": 41,
+      "source_index": 14,
+      "source_id": "sha256:436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee",
+      "parent_group_id": "r8_cal_doc_436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee",
+      "dataset": "docvqa_grouped",
+      "domain": "doc",
+      "question_index": 3,
+      "question_index_zero_based": 2,
+      "qa_id": "r8_cal_doc_436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee__indq3",
+      "source_visit_index": 0,
+      "question_visit_index": 0,
+      "per_step_loss_reduction": "mean over this Q teacher target tokens",
+      "per_step_loss_weight": 1.0
+    },
+    "loss_before_update": 0.10808151215314865,
+    "regularized_before_update": 0.10808151215314865,
+    "parameter_gradient_norms": [
+      0.33607528105483697,
+      0.1908737103511464,
+      0.2568027414920844
+    ],
+    "q_gradient_calls": 27,
+    "q_gradient_norm": 0.11302028184710784,
+    "seconds": 0.6292426860018168
+  },
+  "latest_step": {
+    "step": 54,
+    "schedule_item": {
+      "schema": "trajkv.round8.postcal-source-balanced-schedule.v1",
+      "schedule_id": "r8-postcal-sourcebalanced-v1-98e18286d19eab89e1d638e4",
+      "step": 54,
+      "epoch": 1,
+      "epoch_position": 22,
+      "flat_index": 22,
+      "source_index": 8,
+      "source_id": "sha256:b04e8cf0ecfd45d05c37a0ffdc5faf53aa001ea6c434e41c562dd292794d7150",
+      "parent_group_id": "r8_cal_doc_b04e8cf0ecfd45d05c37a0ffdc5faf53aa001ea6c434e41c562dd292794d7150",
+      "dataset": "docvqa_grouped",
+      "domain": "doc",
+      "question_index": 2,
+      "question_index_zero_based": 1,
+      "qa_id": "r8_cal_doc_b04e8cf0ecfd45d05c37a0ffdc5faf53aa001ea6c434e41c562dd292794d7150__indq2",
+      "source_visit_index": 1,
+      "question_visit_index": 0,
+      "per_step_loss_reduction": "mean over this Q teacher target tokens",
+      "per_step_loss_weight": 1.0
+    },
+    "loss_before_update": 0.2722948491573334,
+    "regularized_before_update": 0.27231013774871826,
+    "parameter_gradient_norms": [
+      1.0517282655856466,
+      0.3633725783871915,
+      0.9832480451642
+    ],
+    "q_gradient_calls": 27,
+    "q_gradient_norm": 0.3721119568421295,
+    "seconds": 0.6462433099950431
+  },
+  "progress": [
+    {
+      "phase": "postcal_step",
+      "step": 52,
+      "id": "r8_cal_doc_969aa9b57089f90fe47bbba3bf9a9fdc9c13aad36fe474871cb13109a79df203__indq2",
+      "KL": 0.002737591043114662,
+      "seconds": 0.6077020039956551
+    },
+    {
+      "phase": "postcal_step",
+      "step": 53,
+      "id": "r8_cal_text_a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7__indq1",
+      "KL": 0.007720420137047768,
+      "seconds": 0.6047941610013368
+    },
+    {
+      "phase": "postcal_step",
+      "step": 54,
+      "id": "r8_cal_doc_b04e8cf0ecfd45d05c37a0ffdc5faf53aa001ea6c434e41c562dd292794d7150__indq2",
+      "KL": 0.2722948491573334,
+      "seconds": 0.6462433099950431
+    }
+  ],
+  "complete_train_graph_verified": false,
+  "training": null,
+  "failure": null,
+  "compute_apps": "532871, GPU-ef01d441-985f-50b3-6e64-5d4c3e2def3a, 18544 MiB\n"
+}

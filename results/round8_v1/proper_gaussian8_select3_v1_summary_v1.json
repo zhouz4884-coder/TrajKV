@@ -1,0 +1,794 @@
+{
+  "status": "COMPLETE",
+  "schema": "trajkv.round8.proper-gaussian8-initialization-control.v1",
+  "real_model_answers": 180,
+  "design": "Existing synthetic-prior proper non-Cartesian Gaussian8; original Round8 reader; old43 / proper43 / proper42; one bounded predeclared control batch",
+  "book_origin": {
+    "origin_file": "results/direction_books_gpu1_v1/books/gaussian_vq_g8_256.json",
+    "consumed_remote_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g8_256.json",
+    "source_exact_byte_sha256": "41906a3603e1e620908ab660dedce91bb8d2fccbf035d4d42e9daca9a8892444",
+    "consumed_exact_byte_sha256": "41906a3603e1e620908ab660dedce91bb8d2fccbf035d4d42e9daca9a8892444",
+    "copied_or_retrained": false,
+    "origin_manifest_sha256": "ece5ed3e5abde0ba49c674ef9517c02a03c25331fca6cecb4b567c747b76a548",
+    "origin_parent_complete_sha256": "d8f72bb1694fa8b67f54253064926829498cfb6a0b77a34bcabff2cee4b3acef",
+    "origin_books_complete_sha256": "24b80384c5ac44b9ff71603c2ad71b0c30684e703ae5ac393d854313cc3dc753",
+    "declared_training": {
+      "training_distribution": "standard Gaussian prior after normalized rotation; not model data",
+      "seed": 20261113,
+      "training_vectors": 65536,
+      "validation_vectors": 16384,
+      "iterations": 40,
+      "validation_mse": 0.32716140151023865
+    },
+    "training_provenance_scope": "Existing artifact metadata and completion SHA binding; no new training or model-quality inference",
+    "book_shape": [
+      256,
+      8
+    ],
+    "actual_FP16_book_bytes": 4096,
+    "left4_unique": 256,
+    "right4_unique": 256,
+    "non_Cartesian_witness": "Both 4D half projections contain256 unique rows, excluding the old16x16 Cartesian product"
+  },
+  "preparation_plan_sha256": "7dc63966eaff4ec8053512b0da2eff360e9c5957b296cf32060b4680cd378204",
+  "source_sha256": {
+    "code/a2/round8_runner.py": "ba0cc676dd5b84efa53a916194569bffef25fe7fb04250854d318acc3a6a6935",
+    "code/a2/round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "code/a2/round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "code/a2/round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "code/a2/round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "code/a2/round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "code/a2/run_representation_variants.py": "1cbd345a5c9d838dd9aa88381d6b2456b532bdf584f6414786606c61e0dfab7d",
+    "code/a2/factory.py": "568747a69cc6552bc633552423869bc3f4fb5c71467b84590d944334f5301849",
+    "code/a2/quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "code/a2/fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "code/experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+    "code/remote.py": "e2b0bc77c9c80312f5fed180eb75536501599bd6a7be450ab4cadc25d20669f0",
+    "code/launch_remote.py": "22c1d253b5935b85d6a33cef9d85c02b3ae8642d914a7bbc6a4d40f8e5a38a82",
+    "code/launch_remote_data_disk.py": "1a16c3dbb5e6c39b1fc0e2c6ea69d98de4b54e02d973d357f55e08b892b58a55",
+    "code/launch_round8_data_disk.py": "b718dca5bd4eef6c9120388ecfb462c81bb2d5ebb2fc72c6a95620148268e4a9"
+  },
+  "domains": {
+    "doc": {
+      "answers": 114,
+      "sessions": 38,
+      "sources": 16,
+      "score_table": [
+        {
+          "variant": "r8_k4old_vbinary",
+          "score": 0.922289428545635,
+          "ci_low": 0.847007808686499,
+          "ci_high": 0.9836243952758497,
+          "sessions": 38,
+          "sources": 16,
+          "questions": 38,
+          "budget_bits_including_encoder_constants": 1.2948768723882011,
+          "score_delta_from_old43": 0.0
+        },
+        {
+          "variant": "r8_proper_gaussian8_vbinary43",
+          "score": 0.8885033504471631,
+          "ci_low": 0.7696575117123216,
+          "ci_high": 0.9776477934725043,
+          "sessions": 38,
+          "sources": 16,
+          "questions": 38,
+          "budget_bits_including_encoder_constants": 1.295504130089946,
+          "score_delta_from_old43": -0.033786078098471894
+        },
+        {
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "score": 0.8885033504471631,
+          "ci_low": 0.7696575117123216,
+          "ci_high": 0.9776477934725043,
+          "sessions": 38,
+          "sources": 16,
+          "questions": 38,
+          "budget_bits_including_encoder_constants": 1.2904818086613745,
+          "score_delta_from_old43": -0.033786078098471894
+        }
+      ],
+      "paired_source_cluster_comparisons": [
+        {
+          "candidate": "r8_k4old_vbinary",
+          "comparator": "r8_proper_gaussian8_vbinary43",
+          "delta": 0.033786078098471985,
+          "ci_low": -0.010810810810810808,
+          "ci_high": 0.0966087675765095,
+          "p": 0.5,
+          "sources": 16,
+          "questions": 38,
+          "bootstrap_status": "ok",
+          "signflip_method": "exact source-cluster sign enumeration",
+          "signflip_draws": 65536,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_k4old_vbinary",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.033786078098471985,
+          "ci_low": -0.010810810810810808,
+          "ci_high": 0.0966087675765095,
+          "p": 0.5,
+          "sources": 16,
+          "questions": 38,
+          "bootstrap_status": "ok",
+          "signflip_method": "exact source-cluster sign enumeration",
+          "signflip_draws": 65536,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_proper_gaussian8_vbinary43",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "p": 1.0,
+          "sources": 16,
+          "questions": 38,
+          "bootstrap_status": "ok",
+          "signflip_method": "exact source-cluster sign enumeration",
+          "signflip_draws": 65536,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        }
+      ],
+      "old43_token_answer_initial_logit_control": {
+        "previous_records_sha256": "1bd35dedd0cb4b3f53604e3130ea697e518736bc8844e91eaa158b5473cc24eb",
+        "sessions": 38,
+        "token_exact": 38,
+        "answer_exact": 38,
+        "initial_logit_SHA_exact": 38,
+        "mismatches": {
+          "token_ids": [],
+          "answer": [],
+          "initial_logits_sha256": [],
+          "visual_tokens": []
+        }
+      },
+      "raw_token_differences": {
+        "r8_proper_gaussian8_vbinary43": {
+          "token_changed": 5,
+          "answer_changed": 5,
+          "details": [
+            {
+              "session_id": "docvqa_next_10147_cal_q2",
+              "old_token_ids": [
+                [
+                  21685,
+                  44838,
+                  18637,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  21685,
+                  16231,
+                  2453,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Diabetic Medicine"
+              ],
+              "new_answers": [
+                "Diabetes care"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_14738_cal_q1",
+              "old_token_ids": [
+                [
+                  80136,
+                  609,
+                  8991,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  80136,
+                  323,
+                  8991,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "china & glass"
+              ],
+              "new_answers": [
+                "china and glass"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_1961_cal_q3",
+              "old_token_ids": [
+                [
+                  20,
+                  16,
+                  16,
+                  1615,
+                  34704,
+                  8592,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  20,
+                  16,
+                  16,
+                  49787,
+                  6686,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "511 monroe street"
+              ],
+              "new_answers": [
+                "511 Monroe Street"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_3010_cal_q2",
+              "old_token_ids": [
+                [
+                  3825,
+                  92844,
+                  640,
+                  3981,
+                  82323,
+                  56,
+                  19363,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  3825,
+                  92844,
+                  640,
+                  3981,
+                  82323,
+                  56,
+                  19363,
+                  47104,
+                  77579,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "GLYCERINE/GLYCOL"
+              ],
+              "new_answers": [
+                "GLYCERINE/GLYCOL SPECIFICATIONS"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_9398_cal_q1",
+              "old_token_ids": [
+                [
+                  22,
+                  21,
+                  13,
+                  21,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  20,
+                  22,
+                  13,
+                  20,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "76.6"
+              ],
+              "new_answers": [
+                "57.5"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            }
+          ]
+        },
+        "r8_proper_gaussian8_vbinary42": {
+          "token_changed": 5,
+          "answer_changed": 5,
+          "details": [
+            {
+              "session_id": "docvqa_next_10147_cal_q2",
+              "old_token_ids": [
+                [
+                  21685,
+                  44838,
+                  18637,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  21685,
+                  16231,
+                  2453,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Diabetic Medicine"
+              ],
+              "new_answers": [
+                "Diabetes care"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_14738_cal_q1",
+              "old_token_ids": [
+                [
+                  80136,
+                  609,
+                  8991,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  80136,
+                  323,
+                  8991,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "china & glass"
+              ],
+              "new_answers": [
+                "china and glass"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_1961_cal_q3",
+              "old_token_ids": [
+                [
+                  20,
+                  16,
+                  16,
+                  1615,
+                  34704,
+                  8592,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  20,
+                  16,
+                  16,
+                  49787,
+                  6686,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "511 monroe street"
+              ],
+              "new_answers": [
+                "511 Monroe Street"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_3010_cal_q2",
+              "old_token_ids": [
+                [
+                  3825,
+                  92844,
+                  640,
+                  3981,
+                  82323,
+                  56,
+                  19363,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  3825,
+                  92844,
+                  640,
+                  3981,
+                  82323,
+                  56,
+                  19363,
+                  47104,
+                  77579,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "GLYCERINE/GLYCOL"
+              ],
+              "new_answers": [
+                "GLYCERINE/GLYCOL SPECIFICATIONS"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_9398_cal_q1",
+              "old_token_ids": [
+                [
+                  22,
+                  21,
+                  13,
+                  21,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  20,
+                  22,
+                  13,
+                  20,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "76.6"
+              ],
+              "new_answers": [
+                "57.5"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            }
+          ]
+        }
+      },
+      "actual_visual_tokens": [
+        1280,
+        1792
+      ],
+      "owner_at_every_actual_density": [
+        {
+          "nv": 1280,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 5964933,
+          "actual_bytes": 5945861,
+          "delta": -19072
+        },
+        {
+          "nv": 1280,
+          "variant": "r8_proper_gaussian8_vbinary43",
+          "old43_bytes": 5964933,
+          "actual_bytes": 5968901,
+          "delta": 3968
+        },
+        {
+          "nv": 1792,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 8315013,
+          "actual_bytes": 8286725,
+          "delta": -28288
+        },
+        {
+          "nv": 1792,
+          "variant": "r8_proper_gaussian8_vbinary43",
+          "old43_bytes": 8315013,
+          "actual_bytes": 8318981,
+          "delta": 3968
+        }
+      ],
+      "R42_less_than_old43_all_sessions": true,
+      "R43_same_mask_extra_complete_bytes": 3968,
+      "snapshot_files_rehashed": 407,
+      "source_inputs_unchanged_by_independent_rehash": true,
+      "encoder_inputs_unchanged_by_independent_rehash": true,
+      "canonical_sha256": {
+        "complete.json": "69243627b5144d4432298c2e11b9b03cad74e0c8142348693a39b8428206f3bb",
+        "complete_round8.json": "7e96deeb21ca68bc8d15cbaaf1cabeaaffa7c66c111f65156725746cc6c165f3",
+        "manifest.json": "ad6577b2089e6d01553b58c8501160c1817fe497e1fab58a0d180932d35f2125",
+        "records.jsonl": "1bc3abfdef5ca0dda60ab6c8d47e44b3da51f5cf472954ed7c3dbbf8a54a2f65"
+      },
+      "audit_sha256": "4df8c80f81395c8f88e104acf694b1df27bc1030a237898d1c30d24c859939f4",
+      "remote_snapshot_input_postcheck_sha256": "2fb64911a9725644a8e34c1dc2f1ab6f10f6bfc73d9081f00f244182a346f976",
+      "analysis_summary_sha256": "73264cbc063df185a3e29792c91429af15cb039379bad984201cb0e65d1fe1f1",
+      "runtime_receipts_sha256": {
+        "results/round8_v1/runtime_sources/receipts/round8_proper_gaussian8_select3_v1_doc.json": "ae67a551ada56f211add51ec6025fc3866cdebb52847ab2cfc739f46e3cc2f88",
+        "results/round8_v1/runtime_sources/receipts/round8_proper_gaussian8_select3_v1_doc.launch.json": "210dc801fb7710063fa21ed0b1831a0d11068fd3e3f1eeb7ffc9e0977d35c83a",
+        "results/round8_v1/runtime_sources/snapshots/round8_proper_gaussian8_select3_v1_doc/sha256.json": "87306750b65a5110baba133257deee871e85fc8068586a546b127ba4126f7e30",
+        "results/round8_v1/runtime_sources/logs/round8_proper_gaussian8_select3_v1_doc.log": "c2efab4a5d5985dbf0b7d0b8c1a7baec2647f02709d4eda17e6a2bb2259dd2ff"
+      }
+    },
+    "text": {
+      "answers": 66,
+      "sessions": 22,
+      "sources": 16,
+      "score_table": [
+        {
+          "variant": "r8_k4old_vbinary",
+          "score": 0.9045454545454544,
+          "ci_low": 0.75,
+          "ci_high": 1.0,
+          "sessions": 22,
+          "sources": 16,
+          "questions": 22,
+          "budget_bits_including_encoder_constants": 1.2948474023575174,
+          "score_delta_from_old43": 0.0
+        },
+        {
+          "variant": "r8_proper_gaussian8_vbinary43",
+          "score": 0.9090909090909091,
+          "ci_low": 0.7619047619047619,
+          "ci_high": 1.0,
+          "sessions": 22,
+          "sources": 16,
+          "questions": 22,
+          "budget_bits_including_encoder_constants": 1.2954733568922918,
+          "score_delta_from_old43": 0.00454545454545463
+        },
+        {
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "score": 0.95,
+          "ci_low": 0.8421052631578947,
+          "ci_high": 1.0,
+          "sessions": 22,
+          "sources": 16,
+          "questions": 22,
+          "budget_bits_including_encoder_constants": 1.2904510354637204,
+          "score_delta_from_old43": 0.045454545454545525
+        }
+      ],
+      "paired_source_cluster_comparisons": [
+        {
+          "candidate": "r8_k4old_vbinary",
+          "comparator": "r8_proper_gaussian8_vbinary43",
+          "delta": -0.004545454545454544,
+          "ci_low": -0.1409090909090909,
+          "ci_high": 0.12272727272727274,
+          "p": 1.0,
+          "sources": 16,
+          "questions": 22,
+          "bootstrap_status": "ok",
+          "signflip_method": "exact source-cluster sign enumeration",
+          "signflip_draws": 65536,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_k4old_vbinary",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": -0.045454545454545456,
+          "ci_low": -0.15789473684210525,
+          "ci_high": 0.0,
+          "p": 1.0,
+          "sources": 16,
+          "questions": 22,
+          "bootstrap_status": "ok",
+          "signflip_method": "exact source-cluster sign enumeration",
+          "signflip_draws": 65536,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_proper_gaussian8_vbinary43",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": -0.04090909090909091,
+          "ci_low": -0.14210526315789473,
+          "ci_high": 0.0,
+          "p": 1.0,
+          "sources": 16,
+          "questions": 22,
+          "bootstrap_status": "ok",
+          "signflip_method": "exact source-cluster sign enumeration",
+          "signflip_draws": 65536,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        }
+      ],
+      "old43_token_answer_initial_logit_control": {
+        "previous_records_sha256": "12a513c12caeafb734f1c66f8f6a1b8d746e69dfd1e6980bd0c46b8e0202b2c6",
+        "sessions": 22,
+        "token_exact": 22,
+        "answer_exact": 22,
+        "initial_logit_SHA_exact": 22,
+        "mismatches": {
+          "token_ids": [],
+          "answer": [],
+          "initial_logits_sha256": [],
+          "visual_tokens": []
+        }
+      },
+      "raw_token_differences": {
+        "r8_proper_gaussian8_vbinary43": {
+          "token_changed": 2,
+          "answer_changed": 2,
+          "details": [
+            {
+              "session_id": "r7_text_select16_39014",
+              "old_token_ids": [
+                [
+                  359,
+                  9217,
+                  480,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  40384,
+                  2356,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "unanswerable"
+              ],
+              "new_answers": [
+                "chromium"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r7_text_select16_39313",
+              "old_token_ids": [
+                [
+                  82471,
+                  8821,
+                  4017,
+                  3607,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  92438,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "vegetarian hot food"
+              ],
+              "new_answers": [
+                "pizza"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            }
+          ]
+        },
+        "r8_proper_gaussian8_vbinary42": {
+          "token_changed": 1,
+          "answer_changed": 1,
+          "details": [
+            {
+              "session_id": "r7_text_select16_39313",
+              "old_token_ids": [
+                [
+                  82471,
+                  8821,
+                  4017,
+                  3607,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  92438,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "vegetarian hot food"
+              ],
+              "new_answers": [
+                "pizza"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            }
+          ]
+        }
+      },
+      "actual_visual_tokens": [
+        1280,
+        1792
+      ],
+      "owner_at_every_actual_density": [
+        {
+          "nv": 1280,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 5964933,
+          "actual_bytes": 5945861,
+          "delta": -19072
+        },
+        {
+          "nv": 1280,
+          "variant": "r8_proper_gaussian8_vbinary43",
+          "old43_bytes": 5964933,
+          "actual_bytes": 5968901,
+          "delta": 3968
+        },
+        {
+          "nv": 1792,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 8315013,
+          "actual_bytes": 8286725,
+          "delta": -28288
+        },
+        {
+          "nv": 1792,
+          "variant": "r8_proper_gaussian8_vbinary43",
+          "old43_bytes": 8315013,
+          "actual_bytes": 8318981,
+          "delta": 3968
+        }
+      ],
+      "R42_less_than_old43_all_sessions": true,
+      "R43_same_mask_extra_complete_bytes": 3968,
+      "snapshot_files_rehashed": 407,
+      "source_inputs_unchanged_by_independent_rehash": true,
+      "encoder_inputs_unchanged_by_independent_rehash": true,
+      "canonical_sha256": {
+        "complete.json": "cb0b79d3b95efd053970edb8ab514aad01a01d4d080ca07510a05e0c37c72476",
+        "complete_round8.json": "0ce9e893225897ee5e1dbc46ad4d80e39ebdec55b15094efefe56e214b27c8ad",
+        "manifest.json": "cd63f1464663e3643883e38986fbfadd27a8d0814af8883714594df6b200bc30",
+        "records.jsonl": "30782ff07a4ccd9009addab160ec96d3cd95b5db9547ff98760ab951e85846c6"
+      },
+      "audit_sha256": "f896ac8da0988c36e03b6e2542f24f8fcefc80bf24c28066342824cf9d5b04ab",
+      "remote_snapshot_input_postcheck_sha256": "a9736a0dc770a8cd9958d1957fb00d48a11a7a7d0079ff513c1c6b8ec4a9037d",
+      "analysis_summary_sha256": "f51e66db85498266f8252d1df6806c69ae49edf795880b924aa73d5db4d26998",
+      "runtime_receipts_sha256": {
+        "results/round8_v1/runtime_sources/receipts/round8_proper_gaussian8_select3_v1_text.json": "d26ef866c4dada248b6c141b81616f0def12108e66e045ba50be3001b7e50605",
+        "results/round8_v1/runtime_sources/receipts/round8_proper_gaussian8_select3_v1_text.launch.json": "68dddd89176c607e9d3ced0e6bf77a143b8af186102caf91d2c3e1ae36b99d2b",
+        "results/round8_v1/runtime_sources/snapshots/round8_proper_gaussian8_select3_v1_text/sha256.json": "87306750b65a5110baba133257deee871e85fc8068586a546b127ba4126f7e30",
+        "results/round8_v1/runtime_sources/logs/round8_proper_gaussian8_select3_v1_text.log": "7d570d362b78b261418dab21efa2c682ba07da149e493b0ca7b275d37a4336d4"
+      }
+    }
+  },
+  "conclusions": {
+    "doc": "Proper Gaussian8 R43 and R42 both88.850335% ANLS vs old43 92.228943%, observed -3.378608pp; paired p=.5, Holm1.0",
+    "text": "Proper Gaussian8 R43 90.909091%, R42 95.000000% vs old43 90.454545%; observed +.454545pp / +4.545455pp; paired p1, Holm1",
+    "initialization": "A pre-existing non-Cartesian prior changes outcomes; prior native WLS Cartesian8 endpoint was not this initializer. This one exposed batch establishes mixed-domain behavior, not a general G8 win or impossibility result",
+    "budget": "R42 retains23 K stages and removes only V27h3; actual complete owner is lower than old43 at every actual Nv1280/1792. R43 has exactly3968B extra persistent book bytes"
+  },
+  "scope": "Historically exposed selection, Doc38/Text22 from16 original sources each; synthetic-prior initialization control, not matched native fit; no new books, training, GT, independent source confirmation or controlled timing claim",
+  "GPU_lease_released": true,
+  "large_tensor_image_weight_downloads": false,
+  "original_baseline_token_exact_total": 60,
+  "local_audit_import_incident": {
+    "effect": "Five legacy local A2 files deterministically regenerated; exact content verified unchanged against three frozen remote configs and two frozen public result copies",
+    "no_remote_or_current_producer_change": true,
+    "no_new_confirmation_GT_read": true,
+    "corrected_with_explicit_unique_file_module": true,
+    "evidence_directory": "outputs/round8_proper_gaussian8_prepare_v1/import_side_effect_20261119_v1"
+  }
+}

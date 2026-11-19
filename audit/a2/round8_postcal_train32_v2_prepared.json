@@ -1,0 +1,53 @@
+{
+  "status": "PREPARED_NOT_EXECUTED",
+  "schema": "trajkv.round8.postcal-train-prepared.v1",
+  "config": "configs/a2/round8_v1/postcal_train32_v2.json",
+  "config_sha256": "92e7cd53074a9d2268426fd4728b6192ccbd9a3fcab75c9b6c2f3e41c5ac66ad",
+  "job": "configs/a2/round8_v1/job_postcal_train32_v2.json",
+  "job_sha256": "64518753e541b929b3e91e5a7d7469e8db56bbb8e4c1172a76c721f57be71b35",
+  "source_samples": 32,
+  "questions": 70,
+  "steps": 200,
+  "seed": 1212,
+  "contract": {
+    "stage_count": 42,
+    "K_stages": 23,
+    "V_stages": 19,
+    "full_priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+    "full_priority_bytes": 448,
+    "full_priority_JSON_sha256": "e59bd975e5233d5ca8969aee2e11a26fc9aece938974ce6faae32eadb48ee6f2",
+    "selected42_sha256": "02d27c6d77151c34e2b6eb2993792ed77c1041b9d8cb012c7fffe608cc11eb4c",
+    "selected42_packed_bytes": 84,
+    "selected42_JSON_sha256": "ba5f7bb01a26af6a12ff8baa0e65cda149f0cf36f4fa8872fdf8a23ce0658eaf",
+    "old43_JSON_sha256": "31a5f9ec3d6464139fe040138d045cb1b61872b171fd1f8566f575e7926fbf4a",
+    "new_encoder_bytes": 1344,
+    "added_retained_decoder_tensor_bytes": 0
+  },
+  "schedule_canonical_sha256": "4830e44dcb66448f16dc3357f58c97ddec666cec328e1efeae60966f9b15fb0b",
+  "inputs_sha256": {
+    "configs/a2/round8_v1/mean_select2_v2_doc.json": "a8bdc2c8cc1735917a56b41f225fe7da960301c99911b7b88c41d25e3807c0f0",
+    "configs/a2/round8_v1/job_natural_dev64_mean1_v1_doc.json": "6e44e0a5e4f34fd172c88cfa4e04c7c2f7d0f2bf53960ea0d39d19546fe6c97e",
+    "configs/a2/round8_v1/calibration_train32.json": "5b3f97ea175103903d988480ee6977d07e17f688a21126545d3fa4b2be39466d"
+  },
+  "codec_inputs_sha256": {
+    "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "/path/to/TrajKV/results/round7_v1/codec_assets/factors_for_book16_inherited.json": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "/path/to/TrajKV/results/round7_v1/exchange_key_cal8/gt/policy_conditional_batches.json": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f"
+  },
+  "code_sha256": "13dd1d17d7082e9c805816960010e2fb47329c58cf0c2d8a29c0d6148e617fe6",
+  "output": "/path/to/TrajKV/results/round8_v1/postcal_train32_v1",
+  "factors": "/path/to/TrajKV/results/round8_v1/postcal_train32_v1/factors.json",
+  "final_marker": "/path/to/TrajKV/results/round8_v1/postcal_train32_v1/complete_postcal_train.json",
+  "source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "global_root": "/path/to/TrajKV",
+  "model_weights_frozen": true,
+  "new_post_FP32_bytes": 1344,
+  "old_f0_still_billed": true,
+  "GT_references_opened": false,
+  "select_opened": false,
+  "GPU_used": false,
+  "SSH_used": false,
+  "launch_command": "python code/launch_round8_data_disk.py configs/a2/round8_v1/job_postcal_train32_v2.json",
+  "actual_GPU_first_probe_pending": true,
+  "actual_trainKL_decrease_pending": true
+}

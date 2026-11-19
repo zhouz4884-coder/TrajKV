@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "GPU_executed": false,
+  "controls": {
+    "cases": [
+      {
+        "residual": false,
+        "identity_all_fields_bitwise": true,
+        "signed_zero_identity": true,
+        "input_unchanged": true,
+        "unchanged_J_sign_mean_Vcode": true,
+        "interleaved_axis_and_second_stage": true,
+        "physical_decode_bitwise": true,
+        "identity_autograd_block_l1": [
+          151.34158325195312,
+          56.31029510498047,
+          234.85760498046875
+        ],
+        "gradient_scope": "Torch cast/autograd surrogate; not a derivative certificate for discrete FP16 loss"
+      },
+      {
+        "residual": true,
+        "identity_all_fields_bitwise": true,
+        "signed_zero_identity": true,
+        "input_unchanged": true,
+        "unchanged_J_sign_mean_Vcode": true,
+        "interleaved_axis_and_second_stage": true,
+        "physical_decode_bitwise": true,
+        "identity_autograd_block_l1": [
+          198.29989624023438,
+          61.20758819580078,
+          234.85760498046875
+        ],
+        "gradient_scope": "Torch cast/autograd surrogate; not a derivative certificate for discrete FP16 loss"
+      }
+    ],
+    "rejected_invalid_cases": [
+      "negative_gain",
+      "nonfinite_shift",
+      "overflow",
+      "duplicate_slot",
+      "stage1_without_stage0"
+    ]
+  },
+  "reader_cases": [],
+  "owner_controls": [
+    {
+      "nv": 256,
+      "old43": 1264773,
+      "postcal42": 1261509,
+      "delta": -3264
+    },
+    {
+      "nv": 768,
+      "old43": 3614853,
+      "postcal42": 3602373,
+      "delta": -12480
+    },
+    {
+      "nv": 1280,
+      "old43": 5964933,
+      "postcal42": 5943237,
+      "delta": -21696
+    },
+    {
+      "nv": 1792,
+      "old43": 8315013,
+      "postcal42": 8284101,
+      "delta": -30912
+    },
+    {
+      "nv": 2304,
+      "old43": 10665093,
+      "postcal42": 10624965,
+      "delta": -40128
+    }
+  ],
+  "source_sha256": {
+    "round8_postcal_runner.py": "52789bfa3bb213f7fe47f8330ad6e49cbc250c97c292f5c2dea4eded80c9429c",
+    "round8_postcal_fields.py": "a7dcb3ee400eaec2aab1eabe33ab6877c44b8f206c9ef737e205a8fb8427fe54",
+    "round8_postcal_owner.py": "4980f85d391f03c819db67d378c972fdea3e79bd263d6e58cb38313ea4906eb6",
+    "round8_runner.py": "ba0cc676dd5b84efa53a916194569bffef25fe7fb04250854d318acc3a6a6935",
+    "round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "round8_joint_gain.py": "30f75b6f7ca3fd8406f0ee5eec134ca6220f0f2f3d0b232f8c1fd4f04b0aec4f",
+    "round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "run_representation_variants.py": "1cbd345a5c9d838dd9aa88381d6b2456b532bdf584f6414786606c61e0dfab7d",
+    "factory.py": "568747a69cc6552bc633552423869bc3f4fb5c71467b84590d944334f5301849",
+    "experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+    "round8_postcal_check.py": "a7cff5fd5763ba4640122ce5dc031bec5ca0f6758b422929d8ca3f309d8a8eef"
+  },
+  "scope": "Synthetic physical fields/autograd surrogate and optional actualCUDA reader only; no HF training/task/timing measurement"
+}

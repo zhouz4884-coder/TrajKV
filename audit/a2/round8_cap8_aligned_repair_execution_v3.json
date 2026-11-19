@@ -1,0 +1,185 @@
+{
+  "schema": "trajkv.round8.cap8-aligned-bounded-repair-execution.v3",
+  "status": "BOUNDED_CAP8_REPAIR_COMPLETE",
+  "bounded_execution_completed": true,
+  "research_stage_complete": false,
+  "publication_performed": false,
+  "future_confirmation_GT_materialized": false,
+  "new_QA_records": 660,
+  "domains": {
+    "doc": {
+      "answers": 418,
+      "sources": 16,
+      "questions": 38,
+      "summary_sha256": "71d8d0f2f9d962cf7b288f74684c18eed2d22b92497c15a8a0b53258b5aa4a88",
+      "manifest_sha256": "afb8dd1ba657b0a61d5776ec1fb8a3d2e1237914543408508f61d6eb3e485c37",
+      "records_sha256": "1bd35dedd0cb4b3f53604e3130ea697e518736bc8844e91eaa158b5473cc24eb",
+      "analysis_role": "cap8_aligned_historically_exposed_select",
+      "independent_per_answer_metric_and_owner_reaudit": "PASS"
+    },
+    "text": {
+      "answers": 242,
+      "sources": 16,
+      "questions": 22,
+      "summary_sha256": "ba751069ad7a0c0c17594f370ea6ceeeaff7b4331175234217b3102af3e297cc",
+      "manifest_sha256": "a86caa378f478837007d2f86edbb50f363d463508005852312744bcdd8d27ce1",
+      "records_sha256": "12a513c12caeafb734f1c66f8f6a1b8d746e69dfd1e6980bd0c46b8e0202b2c6",
+      "analysis_role": "cap8_aligned_historically_exposed_select",
+      "independent_per_answer_metric_and_owner_reaudit": "PASS"
+    }
+  },
+  "collector_config_sha256": "b2d86edfd544eaf2b8f34911e26b521133f09198a19a66a490bb54a94cd4006c",
+  "dump_manifest_sha256": "22ef0e2082955084fca54d77eaa688197e8a258164bec92f2b479f8b05bde754",
+  "fit_receipts": {
+    "k": "e8d0c5be96fb0d955655bbd7e31d2b10f57e1987e0819e17d7d707570a4bbcbb",
+    "v": "9a216e401b0bdf6e85d7cb5f299dad55b348a7c12ec28e4be7059a78703d25c5"
+  },
+  "book_endpoints": 8,
+  "maximum_fit_iterations": 8,
+  "all_QA_max_patches_and_variant_caps": 8,
+  "actual_QA_source_Nv_mismatches": 0,
+  "selected_source_Nv_matches": 32,
+  "old_cap16_selected_source_Nv_mismatches": 23,
+  "within_run_R7_R8_control_answer_token_identity": {
+    "doc": "38/38",
+    "text": "22/22"
+  },
+  "cross_run_repeated_controls": {
+    "doc": {
+      "full8": {
+        "questions": 38,
+        "answer_and_token_matches": 38
+      },
+      "r7_frozen_joint43_control": {
+        "questions": 38,
+        "answer_and_token_matches": 38
+      },
+      "r8_k4old_vbinary": {
+        "questions": 38,
+        "answer_and_token_matches": 38
+      },
+      "r8_k4old_vbinary_jointgain": {
+        "questions": 38,
+        "answer_and_token_matches": 38
+      }
+    },
+    "text": {
+      "full8": {
+        "questions": 22,
+        "answer_and_token_matches": 22
+      },
+      "r7_frozen_joint43_control": {
+        "questions": 22,
+        "answer_and_token_matches": 22
+      },
+      "r8_k4old_vbinary": {
+        "questions": 22,
+        "answer_and_token_matches": 22
+      },
+      "r8_k4old_vbinary_jointgain": {
+        "questions": 22,
+        "answer_and_token_matches": 22
+      }
+    }
+  },
+  "GPU_leases": {
+    "GPU0": "RELEASED_TO_ROOT",
+    "GPU1": "RELEASED_TO_ROOT"
+  },
+  "worker_PIDs": {
+    "collector": 67744,
+    "Kfit": 72716,
+    "Vfit": 72717,
+    "CPU_geometry": 72718,
+    "Doc_QA": 74532,
+    "Text_QA": 74531
+  },
+  "GPU_worker_execution_failures": 0,
+  "prelaunch_transport_errors": [
+    {
+      "type": "Paramiko exclusive xb file not writable",
+      "scope": "before QA start; one0B config temp preserved, no final target overwritten",
+      "resolved": "new r2 temp with exclusive wx write;21 guarded files PASS"
+    }
+  ],
+  "model_or_frozen_old_sources_modified": false,
+  "native_pt_images_or_weights_downloaded": false,
+  "geometry_select_protected23": {
+    "source_balanced_means": {
+      "sse_mean_before": 29.56749285765759,
+      "source_norm_mean_before": 14.900016791851765,
+      "reconstruction_norm_mean_before": 14.753899547411418,
+      "cosine_mean_before": 0.9352536994499618,
+      "radial_mean_before": 0.3334956768352383,
+      "angular_mean_before": 29.23399718082235,
+      "mse_per_scalar_before": 0.23099603795044993,
+      "sse_mean_after": 28.5456124792292,
+      "source_norm_mean_after": 14.900016791851765,
+      "reconstruction_norm_mean_after": 13.9372704804355,
+      "cosine_mean_after": 0.9353298380906911,
+      "radial_mean_after": 0.9703588488642675,
+      "angular_mean_after": 27.57525363036493,
+      "mse_per_scalar_after": 0.22301259749397812,
+      "sse_mean_delta": -1.0218803784283916,
+      "source_norm_mean_delta": 0.0,
+      "reconstruction_norm_mean_delta": -0.8166290669759223,
+      "radial_mean_delta": 0.6368631720290292,
+      "angular_mean_delta": -1.6587435504574213,
+      "cosine_mean_delta": 7.613864072971571e-05
+    },
+    "row_statistics": {
+      "rows": 94208,
+      "sse_improved_rows": 92653,
+      "fields_changed_rows": 92653,
+      "cosine_improved_rows": 82265,
+      "cosine_worsened_rows": 10388,
+      "radial_component_improved_rows": 8036,
+      "angular_component_improved_rows": 87009,
+      "both_components_improved_rows": 2392,
+      "sse_improved_but_cosine_worsened_rows": 10388,
+      "sse_improved_but_angular_component_worsened_rows": 5644,
+      "maximum_float64_identity_abs_error": 2.984279490192421e-13,
+      "cosine_defined_rows_before": 94208,
+      "sse_mean_before": 29.567492857657577,
+      "source_norm_mean_before": 14.900016791851764,
+      "reconstruction_norm_mean_before": 14.753899547411416,
+      "cosine_mean_before": 0.9352536994499608,
+      "radial_mean_before": 0.33349567683523845,
+      "angular_mean_before": 29.233997180822332,
+      "mse_per_scalar_before": 0.23099603795044982,
+      "cosine_defined_rows_after": 94208,
+      "sse_mean_after": 28.545612479229185,
+      "source_norm_mean_after": 14.900016791851764,
+      "reconstruction_norm_mean_after": 13.937270480435515,
+      "cosine_mean_after": 0.9353298380906906,
+      "radial_mean_after": 0.9703588488642678,
+      "angular_mean_after": 27.57525363036492,
+      "mse_per_scalar_after": 0.223012597493978,
+      "sse_mean_delta": -1.021880378428392,
+      "source_norm_mean_delta": 0.0,
+      "reconstruction_norm_mean_delta": -0.8166290669759011,
+      "radial_mean_delta": 0.6368631720290294,
+      "angular_mean_delta": -1.6587435504574124,
+      "cosine_mean_delta": 7.61386407297504e-05,
+      "row_sse_delta_min": -12.281029522980134,
+      "row_sse_delta_q05": -3.198543273756104,
+      "row_sse_delta_q25": -1.4627831902321304,
+      "row_sse_delta_median": -0.6767507017873129,
+      "row_sse_delta_q75": -0.20806595822381269,
+      "row_sse_delta_q95": -0.011380742020594428,
+      "row_sse_delta_max": 0.0
+    },
+    "scope": "sampled coordinates; angular SSE depends on radius and cosine, not a causal task decomposition"
+  },
+  "files": {
+    "aligned_results.csv": "e407197ea5fb8a807813d4866adaf947df890b287c080b6721117b91ce7be48a",
+    "paired_vs_baseline.csv": "1a5da70b94fda55bc9eecbcb8baafd936c0757cd85f098a2a14f97e63a000ff0",
+    "density_scope_comparison.csv": "502c9db91d9ee72e27e809eac6f21c8c73487d394241926d65b123a2efdfa818"
+  },
+  "interpretation": [
+    "Cap8 collection, fitted books and actual QA source Nv are now matched. Old cap16 book runs remain valid cross-density development.",
+    "Doc V8 and jointgain point gains are3.1579pp, paired source CI includes0 and Holm55=1; no stable positive claim.",
+    "Text learned K8/V8 point losses remain; K4fit/K4pos/jointgain/K8decoder-only match the baseline mean.",
+    "All results are historically exposed selection evidence, not independent confirmation, causal attribution or quiet serving speed."
+  ]
+}

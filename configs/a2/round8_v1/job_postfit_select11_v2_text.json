@@ -1,0 +1,44 @@
+{
+  "schema": "trajkv.round8.job.v2",
+  "name": "round8_postfit_select11_v2_text",
+  "cwd": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "round8_source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "OMP_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "TOKENIZERS_PARALLELISM": "false",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/triton",
+    "TMPDIR": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/inductor",
+    "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/cuda",
+    "PYTHONPYCACHEPREFIX": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/pycache",
+    "HF_HOME": "/path/to/TrajKV/cache/round8_v1/huggingface",
+    "HUGGINGFACE_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/huggingface/hub",
+    "TORCH_HOME": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/torch",
+    "PIP_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/pip",
+    "UV_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/uv",
+    "TMP": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/tmp",
+    "TEMP": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/tmp",
+    "TORCH_EXTENSIONS_DIR": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/torch_extensions",
+    "XDG_CACHE_HOME": "/path/to/TrajKV/cache/round8_v1/round8_postfit_select11_v2_text/xdg",
+    "HF_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/huggingface/hub",
+    "HF_MODULES_CACHE": "/path/to/TrajKV/cache/round8_v1/huggingface/modules"
+  },
+  "argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_runner.py",
+    "--config",
+    "/path/to/TrajKV/configs/a2/round8_v1/postfit_select11_v2_text.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/postfit_select11_v2_text"
+  ],
+  "runtime_policy": "Validated data-volume P72 worker; sourceRoot is code only, configs/samples/assets/results stay under explicit globalR",
+  "prerequisites": [
+    "Root verifies final source snapshot, uploaded config/sample/asset SHA and idle GPU before launch",
+    "Both final-book completion receipts and all endpoint hashes were verified locally by this preparer"
+  ]
+}

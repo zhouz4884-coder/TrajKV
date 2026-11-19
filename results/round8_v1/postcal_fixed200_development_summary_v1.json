@@ -1,0 +1,1612 @@
+{
+  "status": "COMPLETE",
+  "schema": "trajkv.round8.postcal-fixed200-development.v1",
+  "new_real_model_answer_records": 496,
+  "new_select_records": 240,
+  "new_natural_records": 256,
+  "reused_old_natural_records": 384,
+  "merged_scored_records": 880,
+  "training": {
+    "independent_acceptance_sha256": "7338761d5bbd6e410a7a076e32d1a08711722b662568df1a25e6a89ef2e69e87",
+    "factors_sha256": "f68dfe87199ff0215ee4aed85a203744577a76e70c97b03ba7079aaa04c8b090",
+    "train_complete_sha256": "9646c6c396deeb365d48fbdbb4eaef4e397d82d1716be63a7b04c4e436fcb7a5",
+    "table_values_sha256": "142879fdb6f6afe599d867aee2bc8e49f9ff0a7cdbe3a5c3816a267d227f28c9",
+    "initial_KL": 0.09217983595703966,
+    "final_KL": 0.023018175669220813,
+    "steps": 200,
+    "questions": 70,
+    "sources": 32,
+    "scope": "Source-balanced frozen Fullteacher KL on calibration only; not serving task quality"
+  },
+  "source_sha256": {
+    "round8_postcal_runner.py": "52789bfa3bb213f7fe47f8330ad6e49cbc250c97c292f5c2dea4eded80c9429c",
+    "round8_postcal_fields.py": "a7dcb3ee400eaec2aab1eabe33ab6877c44b8f206c9ef737e205a8fb8427fe54",
+    "round8_postcal_owner.py": "4980f85d391f03c819db67d378c972fdea3e79bd263d6e58cb38313ea4906eb6",
+    "round8_runner.py": "ba0cc676dd5b84efa53a916194569bffef25fe7fb04250854d318acc3a6a6935",
+    "round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "round8_joint_gain.py": "30f75b6f7ca3fd8406f0ee5eec134ca6220f0f2f3d0b232f8c1fd4f04b0aec4f",
+    "round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "run_representation_variants.py": "1cbd345a5c9d838dd9aa88381d6b2456b532bdf584f6414786606c61e0dfab7d",
+    "factory.py": "568747a69cc6552bc633552423869bc3f4fb5c71467b84590d944334f5301849",
+    "experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c"
+  },
+  "endpoints": {
+    "postcal_select_control3_v1_doc": {
+      "records": 114,
+      "sessions": 38,
+      "sources": 16,
+      "canonical_sha256": {
+        "complete.json": "69243627b5144d4432298c2e11b9b03cad74e0c8142348693a39b8428206f3bb",
+        "complete_round8.json": "91ea53e2cb86f2250b22fc0aad012e75d9fb3efe9cc91592100acf8d9c5778e3",
+        "complete_postcal.json": "86dcaace1babdc2cb9f7bde4d55b74589490e1192f8e2c36d057524f001c55e7",
+        "manifest.json": "db39bac975bcaa9004fd0a79ff5797d528eb6548bbf47631f33f9dfd0798fd65",
+        "records.jsonl": "2b5c96c9ba8e0e6f58aa8fe2be39a310dad0135c15aa626a3092b16408e0c772"
+      },
+      "independent_execution_audit_sha256": "bedddf9d441cb5a1ee9b729584f89348d03f430efb403f8d73ffb0dc111a9e8b",
+      "remote_snapshot_input_postcheck_sha256": "437b8ebb03691df52373609196c9b17059a5489015ff78820dc163542c642bfa",
+      "same_target_controls": [
+        {
+          "variant": "full8",
+          "sessions": 38,
+          "token_answer_initial_logit_exact": 38,
+          "mismatch_ids": []
+        },
+        {
+          "variant": "r7_frozen_joint43_control",
+          "sessions": 38,
+          "token_answer_initial_logit_exact": 38,
+          "mismatch_ids": []
+        }
+      ],
+      "actual_snapshot_argv_evidence": [
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_134626_680398.json",
+          "sha256": "b55c99d928126fe05a9b077c78cadce3761b6df39285e85793f9570aca4fe9ff",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_select_control3_v1_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_select_control3_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_select_control3_v1_doc"
+          ],
+          "pid": 531304
+        },
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_134704_776721.json",
+          "sha256": "52b8aa121e5f9bd1320157910a50a10082ad5a582fbb8299ddf84418f9b9b619",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_select_control3_v1_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_select_control3_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_select_control3_v1_doc"
+          ],
+          "pid": 531304
+        },
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_134839_521245.json",
+          "sha256": "16f1865b0d35416235fa5a9927446f86f3c1c23347ff9677be3d9ce6845d8fea",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_select_control3_v1_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_select_control3_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_select_control3_v1_doc"
+          ],
+          "pid": 531304
+        }
+      ],
+      "snapshot_files_rehashed": 413
+    },
+    "postcal_select_learned1_v2_doc": {
+      "records": 38,
+      "sessions": 38,
+      "sources": 16,
+      "canonical_sha256": {
+        "complete.json": "e41d86ea35a41d23e92dce552b678271d43935beea88692027f2cfbd0ce2ca6a",
+        "complete_round8.json": "b685ba2c68d660021050f99ddf7058427c15fdac99c0983b2ba70649d1c344f5",
+        "complete_postcal.json": "bf0cfb90d63c9ad440ac788d51acaf999b92e195a905e3156c9a5f06a3a93a4b",
+        "manifest.json": "5147a4045dc08456c8fc9bba9bc71e9414f5860bbbb425b99670108bb35ac83b",
+        "records.jsonl": "a27976f0a306f35f75c6e8db4c8751483f00015bde6ef0932bd232e4ee7fb193"
+      },
+      "independent_execution_audit_sha256": "5effcafaf135f64d83f6500c0bf2a813260f9fdb98e281f509a54124bc6aa989",
+      "remote_snapshot_input_postcheck_sha256": "3c69ed82fdf5eaa4d4a1be275d204b197f8b06a9193ceff73e3805f78feff8ba",
+      "same_target_controls": [],
+      "actual_snapshot_argv_evidence": [
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_135651_019093.json",
+          "sha256": "d2e4ceeb6b76eb74bbb1f27ac3877b4df57cc090f50008b4c832a84549cc7c98",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_select_learned1_v2_gpu0_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_select_learned1_v2_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_select_learned1_v2_doc"
+          ],
+          "pid": 536822
+        },
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_135736_155049.json",
+          "sha256": "b06ee499b1f90cb826d55fc8632e5878d55c5327eca94f121a3d790aee7d5a68",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_select_learned1_v2_gpu0_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_select_learned1_v2_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_select_learned1_v2_doc"
+          ],
+          "pid": 536822
+        }
+      ],
+      "snapshot_files_rehashed": 414
+    },
+    "postcal_natural64_identity1_v1_doc": {
+      "records": 64,
+      "sessions": 64,
+      "sources": 64,
+      "canonical_sha256": {
+        "complete.json": "19aabb8c9f2ef6a073af2a2685d967b16e635b17711342e7fa1ce24b22858eb8",
+        "complete_round8.json": "e32ca2f7062bc723d738aedb0f93fa163071c368fec82e4bd050760e4eb8a3fa",
+        "complete_postcal.json": "d384fad98065436f7b94dbc371509058dd993c8a8b3a0312dffbdc2fed1db6dc",
+        "manifest.json": "ad0bfab67e091749ba5fad31f34d7196fd125af6f0ace8fa6acc770196aae921",
+        "records.jsonl": "7f0f850b4c1d5d87bffb0e902b71725fa8caf988791aa47e3598262c13a2daa1"
+      },
+      "independent_execution_audit_sha256": "afeabe3e7df18e39f7b2a8e3f12369895613337c694c23703be0bfe4823341f1",
+      "remote_snapshot_input_postcheck_sha256": "30c7cd6f37165bd9045451d8c0d59dbc98d30dcdbcb8c9e256b2c6a249dd5af8",
+      "same_target_controls": [
+        {
+          "variant": "postcal_identity_R42",
+          "comparator": "old_original_R42",
+          "sessions": 64,
+          "token_answer_initial_logit_exact": 64,
+          "previous_records_sha256": "f0db0d627ca17c551448fca8eb175874a9bb415d4a1e7c621fa512af8e34bad9",
+          "mismatch_ids": []
+        }
+      ],
+      "actual_snapshot_argv_evidence": [
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_135232_026849.json",
+          "sha256": "e6b45a86a3441f8615fbe1ff5ecc2fa12eed89e8a5087b564c52b2115474c20b",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_natural64_identity1_v1_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_natural64_identity1_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_natural64_identity1_v1_doc"
+          ],
+          "pid": 534578
+        },
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_135402_007799.json",
+          "sha256": "ba4112bf0b9e3b272648d1ea062a265609dab9b35bc535545a5ecfde1ed89828",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_natural64_identity1_v1_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_natural64_identity1_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_natural64_identity1_v1_doc"
+          ],
+          "pid": 534578
+        }
+      ],
+      "snapshot_files_rehashed": 414
+    },
+    "postcal_natural64_learned1_v2_doc": {
+      "records": 64,
+      "sessions": 64,
+      "sources": 64,
+      "canonical_sha256": {
+        "complete.json": "19aabb8c9f2ef6a073af2a2685d967b16e635b17711342e7fa1ce24b22858eb8",
+        "complete_round8.json": "7f0d5f54356d970147077b366ec116cffd55b0db7fa8d7d1a573fc06ddf2f134",
+        "complete_postcal.json": "3142808d1257a750777bb9873e8159a5a2815d50d4d06036f3829c143389ceec",
+        "manifest.json": "da12093983788bda43a496e7088c6b75a690efe2fcaa6e207b93e6e156722027",
+        "records.jsonl": "3c1cf534cfd85ef52b01b6d21ee63cce77ab67964d090e31552e8996861a7588"
+      },
+      "independent_execution_audit_sha256": "a483fe216abfc09073b3d9926bc8475576238a4cb55b13fe727e994dec20782a",
+      "remote_snapshot_input_postcheck_sha256": "2b7740f58664c570b4c0da84c4c135fabd6aa583360a1e7ad2a6c9d286356e7a",
+      "same_target_controls": [],
+      "actual_snapshot_argv_evidence": [
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_140141_688722.json",
+          "sha256": "0c242b94969ea8cda306f2173162a4143d3975630dead12f6c746fe8dc28143e",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_natural64_learned1_v2_gpu0_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_natural64_learned1_v2_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_natural64_learned1_v2_doc"
+          ],
+          "pid": 539557
+        },
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_140253_077630.json",
+          "sha256": "0a84a7ac86e6c824677199fc0f7b26f5a84a1f34cac173a6c9e1c12210292050",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_natural64_learned1_v2_gpu0_doc.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_natural64_learned1_v2_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_natural64_learned1_v2_doc"
+          ],
+          "pid": 539557
+        }
+      ],
+      "snapshot_files_rehashed": 418
+    },
+    "postcal_select_control3_v1_text": {
+      "records": 66,
+      "sessions": 22,
+      "sources": 16,
+      "canonical_sha256": {
+        "complete.json": "cb0b79d3b95efd053970edb8ab514aad01a01d4d080ca07510a05e0c37c72476",
+        "complete_round8.json": "6be857a6158fdb6f92989df76b7a1be7ca542ee7363a69b1e0c189c474c5f6e0",
+        "complete_postcal.json": "7f0e8c9fdcef1726bc97a021862f501e9a071723aab0e64aee15151f1404f4ff",
+        "manifest.json": "12368cce83657c6e7237808406daee96ec0bceb56440e2439b0850d7f502e855",
+        "records.jsonl": "1b226bc0b6a2f8072ecf6c0b83494406354d854d9e7714ca52c0c08baa540655"
+      },
+      "independent_execution_audit_sha256": "034f43c43e573a4603e1f00a40a5b1d4e20fc331d174c75e30163be74ad30007",
+      "remote_snapshot_input_postcheck_sha256": "a45644327022fe4c85b8d4c808d57136aacfce218506f23226910905adc96855",
+      "same_target_controls": [
+        {
+          "variant": "full8",
+          "sessions": 22,
+          "token_answer_initial_logit_exact": 22,
+          "mismatch_ids": []
+        },
+        {
+          "variant": "r7_frozen_joint43_control",
+          "sessions": 22,
+          "token_answer_initial_logit_exact": 22,
+          "mismatch_ids": []
+        }
+      ],
+      "actual_snapshot_argv_evidence": [
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_135119_749464.json",
+          "sha256": "11c9a66086cd380832e9322449eab31a30a532044417289dc78ea866625485f6",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_select_control3_v1_text.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_select_control3_v1_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_select_control3_v1_text"
+          ],
+          "pid": 533395
+        }
+      ],
+      "snapshot_files_rehashed": 414
+    },
+    "postcal_select_learned1_v2_text": {
+      "records": 22,
+      "sessions": 22,
+      "sources": 16,
+      "canonical_sha256": {
+        "complete.json": "0221d5fbc1285c2823508db63489e81b31e5c7521e2867377bb7933b1ab1b751",
+        "complete_round8.json": "73f11010051c0b3bdefdb5212807ef59a1e86b0275f14be8e48eb57407832fc1",
+        "complete_postcal.json": "35aadaa4158ea4a3f74f67968b01bf4f3417585fde36cf686b93763b3978d59b",
+        "manifest.json": "00c598c289a92e9de93ba7e0c305be8c9edb330f6fb4009002d354df36dbb076",
+        "records.jsonl": "649ce115ee13a1c027a9e464a1bfdc91f9c3c31161fe95d21133661e7774426f"
+      },
+      "independent_execution_audit_sha256": "1598121c18b3f1bf05055a6dcf73c6077b1b00ece0068a0d416e9b789f6f0564",
+      "remote_snapshot_input_postcheck_sha256": "5046e07e51806eb93372a6aba66b8e4982650ec4a0ed126a4d01c3df42fa9b92",
+      "same_target_controls": [],
+      "actual_snapshot_argv_evidence": [
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_135924_010074.json",
+          "sha256": "f162660ffd8edac410f996a910cc88abc7e57cca3ea6008a7cf8a9e6dd8c35e5",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_select_learned1_v2_gpu0_text.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_select_learned1_v2_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_select_learned1_v2_text"
+          ],
+          "pid": 538158
+        }
+      ],
+      "snapshot_files_rehashed": 418
+    },
+    "postcal_natural64_identity1_v1_text": {
+      "records": 64,
+      "sessions": 64,
+      "sources": 64,
+      "canonical_sha256": {
+        "complete.json": "19aabb8c9f2ef6a073af2a2685d967b16e635b17711342e7fa1ce24b22858eb8",
+        "complete_round8.json": "db2e47688c6452015a59abfa69b35f5282801d5a1b7e9ecb59b6f4ddced237a4",
+        "complete_postcal.json": "dcf335a2f30197f8a68ffca817804422f19f6e09eca5fbf243cfbd7ca36cbec5",
+        "manifest.json": "e26d427e52fcd7a23838c91e79841d776c233e44edd912d415808c7048cc2bb6",
+        "records.jsonl": "1cedf39f110fc0cd4be82c25b804fddb9f4585248a28923c24d66df470a4f402"
+      },
+      "independent_execution_audit_sha256": "b996fcbf4c9bdae8c22d3cd2d25130b7d5fbcb67b128afecd88ba6adb6f7e408",
+      "remote_snapshot_input_postcheck_sha256": "c94159113d0c2bd1909bd4878d2182ac2be2a21fc36a1160f44e254fe8f1aec1",
+      "same_target_controls": [
+        {
+          "variant": "postcal_identity_R42",
+          "comparator": "old_original_R42",
+          "sessions": 64,
+          "token_answer_initial_logit_exact": 64,
+          "previous_records_sha256": "4ce9d355d47049655b02d5520cbc0366299434ba621af0f46b02afbfbf6ce016",
+          "mismatch_ids": []
+        }
+      ],
+      "actual_snapshot_argv_evidence": [
+        {
+          "file": "results/round8_v1/runtime_sources/receipts/round8_postcal_natural64_identity1_v1_text.launch.json",
+          "sha256": "65dfc5fa25b226a31106220280ca3a1f5ee1c8fe9efff5727f0ec6c7e9b53bc3",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_natural64_identity1_v1_text.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_natural64_identity1_v1_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_natural64_identity1_v1_text"
+          ],
+          "pid": 536134,
+          "live_proc_cmdline_observed": false,
+          "verification_route": "Exact Popen argv receipt plus frozen launcher and independently rehashed snapshot graph",
+          "launcher_sha256": "1a16c3dbb5e6c39b1fc0e2c6ea69d98de4b54e02d973d357f55e08b892b58a55",
+          "immutable_boolean_only": false
+        }
+      ],
+      "snapshot_files_rehashed": 414
+    },
+    "postcal_natural64_learned1_v2_text": {
+      "records": 64,
+      "sessions": 64,
+      "sources": 64,
+      "canonical_sha256": {
+        "complete.json": "19aabb8c9f2ef6a073af2a2685d967b16e635b17711342e7fa1ce24b22858eb8",
+        "complete_round8.json": "38ab527c4da45da77f9f339970b7620e91a580055289fb117dfb732989184a89",
+        "complete_postcal.json": "467aec5036de854c39961989a988e28e3f38312ad29e7ead776742244c119c7c",
+        "manifest.json": "368d8ead75c0262ad4225f14b65b3a5e1594266fbac6e1306e42494b5f228dd9",
+        "records.jsonl": "97b28e0353b84ea6aaa02e72a527e0d4ddef7ad424517a05c760c396c126f52e"
+      },
+      "independent_execution_audit_sha256": "2c63e6b837731e6e506a24b12b7d43ded8378587ab09dbb277abbc3dc6e98549",
+      "remote_snapshot_input_postcheck_sha256": "12e1f4d0b75e6bc710fd4580ee2fba8afc0d57119ea425dfc7b925157db2d7af",
+      "same_target_controls": [],
+      "actual_snapshot_argv_evidence": [
+        {
+          "file": "outputs/round8_postcal_execution_v1/status_20261119_140506_196669.json",
+          "sha256": "0573d4813f5779e977c9ca9a1b3860a5989d06827dc055329c410a172662d598",
+          "argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_natural64_learned1_v2_gpu0_text.source/code/a2/round8_postcal_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/postcal_natural64_learned1_v2_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/postcal_natural64_learned1_v2_text"
+          ],
+          "pid": 541069
+        }
+      ],
+      "snapshot_files_rehashed": 418
+    }
+  },
+  "domains": {
+    "doc": {
+      "select4": {
+        "table": [
+          {
+            "variant": "full8",
+            "score": 0.9014850591315339,
+            "ci_low": 0.782051282051282,
+            "ci_high": 0.9894472862043616,
+            "sources": 16,
+            "questions": 38,
+            "budget_bits_including_encoder_constants": 16.002232142857142
+          },
+          {
+            "variant": "r7_frozen_joint43_control",
+            "score": 0.922289428545635,
+            "ci_low": 0.847007808686499,
+            "ci_high": 0.9836243952758497,
+            "sources": 16,
+            "questions": 38,
+            "budget_bits_including_encoder_constants": 1.2948768723882011
+          },
+          {
+            "variant": "postcal_identity_R42",
+            "score": 0.922289428545635,
+            "ci_low": 0.847007808686499,
+            "ci_high": 0.9836243952758497,
+            "sources": 16,
+            "questions": 38,
+            "budget_bits_including_encoder_constants": 1.2900670092134465
+          },
+          {
+            "variant": "postcal_learned_R42",
+            "score": 0.8935406698564593,
+            "ci_low": 0.775,
+            "ci_high": 0.9844155844155844,
+            "sources": 16,
+            "questions": 38,
+            "budget_bits_including_encoder_constants": 1.2900670092134465
+          }
+        ],
+        "comparisons": [
+          {
+            "candidate": "full8",
+            "comparator": "r7_frozen_joint43_control",
+            "delta": -0.020804369414101295,
+            "ci_low": -0.07822199151394782,
+            "ci_high": 0.015094339622641501,
+            "p": 1.0,
+            "sources": 16,
+            "questions": 38,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "postcal_identity_R42",
+            "delta": -0.020804369414101295,
+            "ci_low": -0.07822199151394782,
+            "ci_high": 0.015094339622641501,
+            "p": 1.0,
+            "sources": 16,
+            "questions": 38,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.007944389275074477,
+            "ci_low": 0.0,
+            "ci_high": 0.02515723270440251,
+            "p": 1.0,
+            "sources": 16,
+            "questions": 38,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "postcal_identity_R42",
+            "delta": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "p": 1.0,
+            "sources": 16,
+            "questions": 38,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.02874875868917577,
+            "ci_low": -0.011428571428571427,
+            "ci_high": 0.08756237262507388,
+            "p": 0.5,
+            "sources": 16,
+            "questions": 38,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "postcal_identity_R42",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.02874875868917577,
+            "ci_low": -0.011428571428571427,
+            "ci_high": 0.08756237262507388,
+            "p": 0.5,
+            "sources": 16,
+            "questions": 38,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          }
+        ],
+        "learned_delta_vs_old43": -0.028748758689175702,
+        "learned_delta_vs_identity42": -0.028748758689175702,
+        "identity_and_learned_same_complete_price": true,
+        "analysis_summary_sha256": "9af462b88e0946532b12e824fc578355229a246da9b94d7f4b0df16aa66ce379",
+        "postcal_completion_audit_sha256": "33789b4e5584ac340829e78c8e6f2b6ce696d70b2aa5cf898d2218d581a4cf34",
+        "records": 152,
+        "role": "historically_exposed_select_postcal_fixedfinal200_v2",
+        "learned_vs_identity_raw_token_differences": {
+          "token_changed": 4,
+          "answer_changed": 4,
+          "details": [
+            {
+              "session_id": "docvqa_next_9214_cal_q1",
+              "old_token_ids": [
+                [
+                  603,
+                  52066,
+                  1103,
+                  11,
+                  825,
+                  19023,
+                  28098,
+                  448,
+                  52066,
+                  3139,
+                  323,
+                  825,
+                  8593,
+                  63922,
+                  13,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  603,
+                  9990,
+                  6457,
+                  9452,
+                  11,
+                  825,
+                  19023,
+                  28098,
+                  323,
+                  825,
+                  8593,
+                  63922,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "one pediatrician, one graduate nurse with pediatric experience and one male attendant."
+              ],
+              "new_answers": [
+                "one senior medical officer, one graduate nurse and one male attendant"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_9214_cal_q2",
+              "old_token_ids": [
+                [
+                  41,
+                  4276,
+                  1093,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  70424,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "JORDAN"
+              ],
+              "new_answers": [
+                "Jordan"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_9398_cal_q1",
+              "old_token_ids": [
+                [
+                  22,
+                  21,
+                  13,
+                  21,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  16,
+                  24,
+                  13,
+                  16,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "76.6"
+              ],
+              "new_answers": [
+                "19.1"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "docvqa_next_14738_cal_q1",
+              "old_token_ids": [
+                [
+                  80136,
+                  609,
+                  8991,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  80136,
+                  323,
+                  8991,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "china & glass"
+              ],
+              "new_answers": [
+                "china and glass"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            }
+          ]
+        }
+      },
+      "natural5": {
+        "table": [
+          {
+            "variant": "full8",
+            "score": 0.9207231570512822,
+            "ci_low": 0.8537914234203298,
+            "ci_high": 0.9744457202953297,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 16.002232142857142
+          },
+          {
+            "variant": "r7_frozen_joint43_control",
+            "score": 0.9239929250208856,
+            "ci_low": 0.8574603011434837,
+            "ci_high": 0.9771571670060567,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 1.2946014694940475
+          },
+          {
+            "variant": "r8_oldbook_binaryV_jointgain",
+            "score": 0.9232116750208855,
+            "ci_low": 0.8566455200501254,
+            "ci_high": 0.9769841269841271,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 1.2946014694940475
+          },
+          {
+            "variant": "postcal_identity_R42",
+            "score": 0.9239929250208856,
+            "ci_low": 0.8574603011434837,
+            "ci_high": 0.9771571670060567,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 1.2897874813988095
+          },
+          {
+            "variant": "postcal_learned_R42",
+            "score": 0.9239929250208856,
+            "ci_low": 0.8574603011434837,
+            "ci_high": 0.9771571670060567,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 1.2897874813988095
+          }
+        ],
+        "comparisons": [
+          {
+            "candidate": "full8",
+            "comparator": "r7_frozen_joint43_control",
+            "delta": -0.0032697679696034963,
+            "ci_low": -0.008814102564102562,
+            "ci_high": 0.0005384555137844596,
+            "p": 0.4979750202497975,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "r8_oldbook_binaryV_jointgain",
+            "delta": -0.0024885179696034956,
+            "ci_low": -0.01530733760482938,
+            "ci_high": 0.011206727756892233,
+            "p": 0.7493025069749303,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "postcal_identity_R42",
+            "delta": -0.0032697679696034963,
+            "ci_low": -0.008814102564102562,
+            "ci_high": 0.0005384555137844596,
+            "p": 0.4979750202497975,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "postcal_learned_R42",
+            "delta": -0.0032697679696034963,
+            "ci_low": -0.008814102564102562,
+            "ci_high": 0.0005384555137844596,
+            "p": 0.4979750202497975,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "r8_oldbook_binaryV_jointgain",
+            "delta": 0.0007812500000000007,
+            "ci_low": -0.01171875,
+            "ci_high": 0.014062500000000002,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "postcal_identity_R42",
+            "delta": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r8_oldbook_binaryV_jointgain",
+            "comparator": "postcal_identity_R42",
+            "delta": -0.0007812500000000007,
+            "ci_low": -0.014062500000000002,
+            "ci_high": 0.01171875,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r8_oldbook_binaryV_jointgain",
+            "comparator": "postcal_learned_R42",
+            "delta": -0.0007812500000000007,
+            "ci_low": -0.014062500000000002,
+            "ci_high": 0.01171875,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "postcal_identity_R42",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          }
+        ],
+        "learned_delta_vs_old43": 0.0,
+        "learned_delta_vs_identity42": 0.0,
+        "identity_and_learned_same_complete_price": true,
+        "analysis_summary_sha256": "1d2a95d16c3ae2694367710d611da41c5da7b7aeedfa8f4c48610bff8f498331",
+        "postcal_completion_audit_sha256": "29648e4618b4b172087b794cf5e31c22eb136f4fc880557f849ed6e7e2060429",
+        "records": 320,
+        "role": "historically_exposed_natural64_postcal_fixedfinal200_v2",
+        "learned_vs_identity_raw_token_differences": {
+          "token_changed": 1,
+          "answer_changed": 1,
+          "details": [
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_93af707b8c91461fb86cd3e70076f7ecc319e92c52ba400595700a8e05e2b6c0",
+              "old_token_ids": [
+                [
+                  34,
+                  68759,
+                  67021,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  34,
+                  68759,
+                  67021,
+                  320,
+                  58015,
+                  9589,
+                  8,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Cumberland Farms"
+              ],
+              "new_answers": [
+                "Cumberland Farms (Except Florida)"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            }
+          ]
+        }
+      }
+    },
+    "text": {
+      "select4": {
+        "table": [
+          {
+            "variant": "full8",
+            "score": 0.8772727272727273,
+            "ci_low": 0.7142857142857143,
+            "ci_high": 1.0,
+            "sources": 16,
+            "questions": 22,
+            "budget_bits_including_encoder_constants": 16.002232142857142
+          },
+          {
+            "variant": "r7_frozen_joint43_control",
+            "score": 0.9045454545454544,
+            "ci_low": 0.75,
+            "ci_high": 1.0,
+            "sources": 16,
+            "questions": 22,
+            "budget_bits_including_encoder_constants": 1.2948474023575174
+          },
+          {
+            "variant": "postcal_identity_R42",
+            "score": 0.9045454545454544,
+            "ci_low": 0.75,
+            "ci_high": 1.0,
+            "sources": 16,
+            "questions": 22,
+            "budget_bits_including_encoder_constants": 1.2900370977874984
+          },
+          {
+            "variant": "postcal_learned_R42",
+            "score": 0.8181818181818182,
+            "ci_low": 0.631578947368421,
+            "ci_high": 0.9583333333333334,
+            "sources": 16,
+            "questions": 22,
+            "budget_bits_including_encoder_constants": 1.2900370977874984
+          }
+        ],
+        "comparisons": [
+          {
+            "candidate": "full8",
+            "comparator": "r7_frozen_joint43_control",
+            "delta": -0.02727272727272727,
+            "ci_low": -0.1001249999999999,
+            "ci_high": 0.013636363636363634,
+            "p": 1.0,
+            "sources": 16,
+            "questions": 22,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "postcal_identity_R42",
+            "delta": -0.02727272727272727,
+            "ci_low": -0.1001249999999999,
+            "ci_high": 0.013636363636363634,
+            "p": 1.0,
+            "sources": 16,
+            "questions": 22,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.05909090909090909,
+            "ci_low": -0.06674999999999992,
+            "ci_high": 0.20476190476190476,
+            "p": 0.5,
+            "sources": 16,
+            "questions": 22,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "postcal_identity_R42",
+            "delta": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "p": 1.0,
+            "sources": 16,
+            "questions": 22,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.08636363636363636,
+            "ci_low": 0.0,
+            "ci_high": 0.21363636363636365,
+            "p": 0.5,
+            "sources": 16,
+            "questions": 22,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "postcal_identity_R42",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.08636363636363636,
+            "ci_low": 0.0,
+            "ci_high": 0.21363636363636365,
+            "p": 0.5,
+            "sources": 16,
+            "questions": 22,
+            "bootstrap_status": "ok",
+            "signflip_method": "exact source-cluster sign enumeration",
+            "signflip_draws": 65536,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          }
+        ],
+        "learned_delta_vs_old43": -0.0863636363636362,
+        "learned_delta_vs_identity42": -0.0863636363636362,
+        "identity_and_learned_same_complete_price": true,
+        "analysis_summary_sha256": "cb1c43bb383e4ddc6d067382ee4300b37b583518ff11fd4c909b34bb88fe3c7b",
+        "postcal_completion_audit_sha256": "e51319a86363eb806f07dfa39634172252d9f74bd9343deafc61695ea9d1d19d",
+        "records": 88,
+        "role": "historically_exposed_select_postcal_fixedfinal200_v2",
+        "learned_vs_identity_raw_token_differences": {
+          "token_changed": 2,
+          "answer_changed": 2,
+          "details": [
+            {
+              "session_id": "r7_text_select16_39014",
+              "old_token_ids": [
+                [
+                  359,
+                  9217,
+                  480,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  40384,
+                  2356,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "unanswerable"
+              ],
+              "new_answers": [
+                "chromium"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r7_text_select16_38067",
+              "old_token_ids": [
+                [
+                  2152,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  9693,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "no"
+              ],
+              "new_answers": [
+                "yes"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            }
+          ]
+        }
+      },
+      "natural5": {
+        "table": [
+          {
+            "variant": "full8",
+            "score": 0.7859375,
+            "ci_low": 0.6890234375,
+            "ci_high": 0.878125,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 16.002232142857142
+          },
+          {
+            "variant": "r7_frozen_joint43_control",
+            "score": 0.709375,
+            "ci_low": 0.6046874999999999,
+            "ci_high": 0.8140625,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 1.2958109916860765
+          },
+          {
+            "variant": "r8_oldbook_binaryV_jointgain",
+            "score": 0.684375,
+            "ci_low": 0.575,
+            "ci_high": 0.7921875,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 1.2958109916860765
+          },
+          {
+            "variant": "postcal_identity_R42",
+            "score": 0.69375,
+            "ci_low": 0.5859375,
+            "ci_high": 0.7984375,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 1.2910151195328674
+          },
+          {
+            "variant": "postcal_learned_R42",
+            "score": 0.7203125,
+            "ci_low": 0.6171875,
+            "ci_high": 0.8203515624999994,
+            "sources": 64,
+            "questions": 64,
+            "budget_bits_including_encoder_constants": 1.2910151195328674
+          }
+        ],
+        "comparisons": [
+          {
+            "candidate": "full8",
+            "comparator": "r7_frozen_joint43_control",
+            "delta": 0.0765625,
+            "ci_low": -0.006250000000000002,
+            "ci_high": 0.1609375,
+            "p": 0.11363886361136388,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 0.9091109088909111,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "r8_oldbook_binaryV_jointgain",
+            "delta": 0.1015625,
+            "ci_low": 0.0125,
+            "ci_high": 0.19066406249999945,
+            "p": 0.04480955190448096,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 0.4480955190448096,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "postcal_identity_R42",
+            "delta": 0.0921875,
+            "ci_low": 0.004687500000000001,
+            "ci_high": 0.1828125,
+            "p": 0.06785932140678594,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 0.6107338926610735,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "full8",
+            "comparator": "postcal_learned_R42",
+            "delta": 0.06562499999999999,
+            "ci_low": -0.0015625000000000014,
+            "ci_high": 0.13906249999999998,
+            "p": 0.12451875481245188,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 0.9091109088909111,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "r8_oldbook_binaryV_jointgain",
+            "delta": 0.025,
+            "ci_low": 0.0,
+            "ci_high": 0.065625,
+            "p": 0.5006849931500685,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "postcal_identity_R42",
+            "delta": 0.015625,
+            "ci_low": 0.0,
+            "ci_high": 0.046875,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r7_frozen_joint43_control",
+            "comparator": "postcal_learned_R42",
+            "delta": -0.0109375,
+            "ci_low": -0.0625,
+            "ci_high": 0.0359375,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r8_oldbook_binaryV_jointgain",
+            "comparator": "postcal_identity_R42",
+            "delta": -0.009375,
+            "ci_low": -0.028124999999999997,
+            "ci_high": 0.0,
+            "p": 1.0,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "r8_oldbook_binaryV_jointgain",
+            "comparator": "postcal_learned_R42",
+            "delta": -0.035937500000000004,
+            "ci_low": -0.0984375,
+            "ci_high": 0.021875,
+            "p": 0.3776862231377686,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          },
+          {
+            "candidate": "postcal_identity_R42",
+            "comparator": "postcal_learned_R42",
+            "delta": -0.026562500000000003,
+            "ci_low": -0.084375,
+            "ci_high": 0.03125,
+            "p": 0.6266437335626643,
+            "sources": 64,
+            "questions": 64,
+            "bootstrap_status": "ok",
+            "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+            "signflip_draws": 100000,
+            "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+            "holm_reported_comparisons": 1.0,
+            "comparison_family": "exploratory all pairs"
+          }
+        ],
+        "learned_delta_vs_old43": 0.010937500000000044,
+        "learned_delta_vs_identity42": 0.026562500000000044,
+        "identity_and_learned_same_complete_price": true,
+        "analysis_summary_sha256": "dbf2e8bb45b415685bc2b4426e66ceebc5fe02b86258ef9379bb39040e0d8521",
+        "postcal_completion_audit_sha256": "35e2ab748ba0af0d00bee9d3b89970816cc3d2614f10401720f3045cb1427663",
+        "records": 320,
+        "role": "historically_exposed_natural64_postcal_fixedfinal200_v2",
+        "learned_vs_identity_raw_token_differences": {
+          "token_changed": 8,
+          "answer_changed": 8,
+          "details": [
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_3d6159f892b7df43670fa80f48f7c06237f76eb4825144edf810166e6921a408",
+              "old_token_ids": [
+                [
+                  2359,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  88192,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "left"
+              ],
+              "new_answers": [
+                "straight"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_2f61bc637c559e16d0a9800e3089b79999b1d81c7a699a1c56d7c90cd57d09aa",
+              "old_token_ids": [
+                [
+                  16557,
+                  466,
+                  66432,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  76,
+                  1517,
+                  66432,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "mountain dew"
+              ],
+              "new_answers": [
+                "mtn dew"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_2c960fd65ab645baf2e6d99bd0a52f71e1f1aea6b65f1b10d47bf61c20cfbd52",
+              "old_token_ids": [
+                [
+                  16,
+                  25,
+                  15,
+                  22,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  16,
+                  25,
+                  15,
+                  21,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "1:07"
+              ],
+              "new_answers": [
+                "1:06"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_65f77997fcd32117836fa71f16a1cba9cbc307199c10f87c198aa7f9931a797c",
+              "old_token_ids": [
+                [
+                  65,
+                  1118,
+                  580,
+                  8053,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  901,
+                  46283,
+                  3619,
+                  956,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "barracuda"
+              ],
+              "new_answers": [
+                "gracie barra"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_5b432bd81484b7af6aca783a707258b62c70a20c6913bac9e4c553113fe417ed",
+              "old_token_ids": [
+                [
+                  39803,
+                  8172,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  82,
+                  1754,
+                  276,
+                  266,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "smart balance"
+              ],
+              "new_answers": [
+                "sucanat"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_51931ed77eba90eac33caf854113b726515a5e508e6f9a65478a389440251315",
+              "old_token_ids": [
+                [
+                  339,
+                  17366,
+                  940,
+                  9096,
+                  1782,
+                  65,
+                  15360,
+                  746,
+                  44489,
+                  905,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  339,
+                  17366,
+                  940,
+                  9096,
+                  1782,
+                  17808,
+                  746,
+                  44489,
+                  905,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "thetruthaboutthebpdsettlement.com"
+              ],
+              "new_answers": [
+                "thetruthaboutthebpsettlement.com"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_ec2a4d91754ffb461f56447c430c21f9d493d82b010628bf391603f87a8b4706",
+              "old_token_ids": [
+                [
+                  8503,
+                  16223,
+                  6241,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  8503,
+                  81,
+                  6241,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "hybridilla"
+              ],
+              "new_answers": [
+                "hyrilla"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_49f97a572bd6ef37c6bbee2bb7abda63d245d92dd731a442d93131add4a63147",
+              "old_token_ids": [
+                [
+                  6192,
+                  2372,
+                  281,
+                  1121,
+                  5170,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  6192,
+                  2372,
+                  10854,
+                  281,
+                  1121,
+                  5170,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "tabique pampango"
+              ],
+              "new_answers": [
+                "tabique pal pampango"
+              ],
+              "token_changed": true,
+              "answer_changed": true
+            }
+          ]
+        }
+      }
+    }
+  },
+  "fixed_final_table_chosen_before_learned_task_scoring": true,
+  "hyperparameters_or_numerical_sources_changed_after_development": false,
+  "identity_natural128_token_answer_initial_logit_exact": true,
+  "select_Full_and_R7_each60_token_answer_initial_logit_exact": true,
+  "original_f0_rank_lookup_policy_and_new1344_table_all_charged": true,
+  "postcal_R42_complete_owner_le_old43_all_actual_densities": true,
+  "evidence_scope": "Exposed select38/22 from16sources per domain and existing natural64 first-questions per domain; no new development sources, no new GT/confirmation/controlled speed evidence in this summary",
+  "live_argv_limit": "NaturalText identity used exact Popen argv+frozen launcher+snapshot graph after process exit; no live /proc observation claimed for that one run",
+  "GPU1_released": true,
+  "GPU0_released": true,
+  "independent_final_method_freeze_sha256": "af1c0c06090522ca92efa57b0d0d85b1ae4445606510cc0bc3e1f1a11f1ff4be"
+}

@@ -1,0 +1,160 @@
+{
+  "status": "COMPLETE_TRAIN_OBJECTIVE_ONLY",
+  "schema": "trajkv.round8.postcal-training-summary.v1",
+  "run": "results/round8_v1/postcal_train32_v2",
+  "source_balanced_initial_KL": 0.09217983595703967,
+  "source_balanced_final_KL": 0.023018175669220813,
+  "relative_KL_reduction": 0.7502905550846455,
+  "per_domain_calibration_KL": {
+    "doc": {
+      "questions": 45,
+      "weight_mass": 0.5,
+      "initial_KL": 0.07433912217796508,
+      "final_KL": 0.030618775927753934
+    },
+    "text": {
+      "questions": 25,
+      "weight_mass": 0.5,
+      "initial_KL": 0.11002054973611425,
+      "final_KL": 0.015417575410687688
+    }
+  },
+  "sources": 32,
+  "questions": 70,
+  "steps": 200,
+  "seed": 1212,
+  "source_domain_step_counts": {
+    "doc": 100,
+    "text": 100
+  },
+  "new_FP32_parameters": 336,
+  "new_encoder_bytes": 1344,
+  "old_f0_preserved_and_billed": true,
+  "physical_helper_sha256": "a7dcb3ee400eaec2aab1eabe33ab6877c44b8f206c9ef737e205a8fb8427fe54",
+  "trainer_source_sha256": "e94c189a8b6e56784056d25626b96d11063916b895f6294a4479686a7fdb606c",
+  "full224_packed448B_priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+  "selected42_packed84B_sha256": "02d27c6d77151c34e2b6eb2993792ed77c1041b9d8cb012c7fffe608cc11eb4c",
+  "factors_sha256": "f68dfe87199ff0215ee4aed85a203744577a76e70c97b03ba7079aaa04c8b090",
+  "marker_sha256": "9646c6c396deeb365d48fbdbb4eaef4e397d82d1716be63a7b04c4e436fcb7a5",
+  "canonical_sha256": {
+    "manifest.json": "922ffd4006e154abd3b3940050f69239c416144f8bba99221ffbe178acda69a1",
+    "schedule.json": "c9c57b7de083ca191e7c0079c83e3b93ee5f0d91f6fdf004d5a7bc08566dbc48",
+    "teacher_contexts.json": "5e770a70b44602ae5a02082fe305943a985fcf8d5c82c703d168a3947df71f76",
+    "first_probe.json": "9e724452ccd095ce7b3fa8358ff2fc1dc6b17cd55c5bf88ee689b305b2c7bc69",
+    "steps.jsonl": "1ead13a3324e20521949ea4983cfd435e7652b539c2c8b32ddd58cb57aa340b0",
+    "gradients.jsonl": "42bd7ed35376bcf024ffae5ebb00a8d2c66417b485f9bc8b8080ba1738436d0a",
+    "initial_kl.json": "7a1c7f13def68594216377320924b9ea7dbf44304a2161b815344bc0516d9d5a",
+    "final_kl.json": "88349b837b236015ffac8ded41c81dd0e12013a609d0eb48aec6eff2b78a00a1",
+    "factors.json": "f68dfe87199ff0215ee4aed85a203744577a76e70c97b03ba7079aaa04c8b090",
+    "complete.json": "6ac84598bc74c50370ef23f88653fea2f15766586fbff1f420d784f39ad06d5a"
+  },
+  "forward_controls": {
+    "packed_calls": 9548,
+    "bridge_bitwise_equal": 9548,
+    "identity_reader_calls": 1988,
+    "identity_reader_equal": 1988,
+    "identity_field_layers": 1988,
+    "shadow_max_abs": 0.0078125,
+    "shadow_max_relative_l2": 0.00019500298367347568,
+    "q_gradient_calls": 5427,
+    "q_gradient_squared_norm": 20.092083907844483,
+    "q_gradient_finite": true,
+    "finite_zero_gradient_steps": [
+      51,
+      59,
+      87,
+      101,
+      137,
+      165
+    ],
+    "finite_zero_query_steps": [
+      51,
+      59,
+      87,
+      101,
+      137,
+      165
+    ],
+    "finite_zero_parameter_family_counts": [
+      0,
+      0,
+      0
+    ],
+    "gradient_policy": {
+      "probe_nonzero": true,
+      "optimizer_nonzero_steps": [
+        0
+      ],
+      "later_finite_zero_allowed": true,
+      "missing_or_nonfinite_fatal": true
+    }
+  },
+  "gradient_records": 200,
+  "all_parameter_gradient_present": true,
+  "all_parameter_gradient_finite": true,
+  "all_student_q_hook_present": true,
+  "all_student_q_gradient_finite": true,
+  "finite_zero_q_steps": [
+    51,
+    59,
+    87,
+    101,
+    137,
+    165
+  ],
+  "first_probe_seconds": 0.7631055780075258,
+  "step_seconds_sum": 122.63836668086878,
+  "step_seconds_median": 0.5991386519963271,
+  "v1_failure": {
+    "run": "results/round8_v1/postcal_train32_v1",
+    "updates_completed": 51,
+    "failed_gate_step": 51,
+    "reason": "New v1 harness incorrectly required nonzero q gradient on every question; v2 same-input replay showed present27 hooks/finite q gradient with norm0, finite nonzero post gradients and KL near numerical zero",
+    "zero_case_step51": {
+      "step": 51,
+      "qa_id": "r8_cal_text_a51470bf7e854c2f6a0b532be1d05bf70494e226d9a52ecf398df0a01102e059__indq1",
+      "loss_before_update": -4.2552139589702165e-10,
+      "parameter_gradient_present": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_finite": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_norms": [
+        4.203081288478609e-05,
+        4.0932078281481524e-05,
+        4.3584935606344686e-05
+      ],
+      "q_hook_count": 27,
+      "q_elements_all_finite": true,
+      "q_squared_norm": 0.0
+    },
+    "same_input_prefix_audit_sha256": "626c5dcbbfd7f1d6898b422f7200b3b68c20c7904c4c10097684a3d16b032280",
+    "old_source_run_preserved": true,
+    "resumed": false
+  },
+  "operational_receipt_collision": {
+    "local_old_receipt_preserved": true,
+    "launch_dependency_error_disclosed": true,
+    "successful_full_snapshot_source_config_reconciliation": "audit/a2/round8_postcal_train32_v2_stage_reconciled_v1.json",
+    "receipt_sha256": "be8281e4c496d66e37775feda6f5128d44a49218662a00e9b3170cf5bdd4e99e"
+  },
+  "v1_failure_and_runtime_capture_sha256": "11fbc41c8dbac4444754d3099dae85e5407a668b1040f25e16deed03af279d3d",
+  "release_observation_sha256": "44146acbb9e2bbee0cb3f8e3f50f8e41fdbb5e6f0755ae425a059e2a8fea2d7b",
+  "GPU0_PID": 532871,
+  "GPU0_PID_gone": true,
+  "GPU0_released": true,
+  "actual_dedicated_snapshot_verified": true,
+  "checkpoint": "fixed final200 before any new quality feedback; not chosen by select or GT",
+  "labels_used": false,
+  "select_used_for_updates": false,
+  "new_GT_opened": false,
+  "gradient_scope": "Actual packed forward; dense surrogate derivative through student q/text. No exact hard-quantized/full-model gradient guarantee.",
+  "primary_quality_eligible": false,
+  "task_accuracy_claim": false,
+  "published": false
+}

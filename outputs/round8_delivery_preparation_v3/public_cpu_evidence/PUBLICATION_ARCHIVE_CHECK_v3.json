@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "created_at_utc": "2026-11-19T06:23:37.863130+00:00",
+  "tests": [
+    {
+      "case": "preserved_mean_select2_v2_doc_archive_gate",
+      "result": "PASS"
+    },
+    {
+      "case": "preserved_final_ray_select5_v1_doc_archive_gate",
+      "result": "PASS"
+    },
+    {
+      "case": "preserved_real_R42_record_archive_owner",
+      "result": "PASS"
+    },
+    {
+      "case": "synthetic_identity_table_exact_archive_owner",
+      "result": "PASS",
+      "task_quality_evidence": false
+    },
+    {
+      "case": "synthetic_learned_table_with_redacted_bytes_original_SHA_graph",
+      "result": "PASS",
+      "task_quality_evidence": false
+    },
+    {
+      "case": "missing_training_ledger_in_archive",
+      "result": "REJECTED"
+    },
+    {
+      "case": "changed_archive_factor_values",
+      "result": "REJECTED"
+    },
+    {
+      "case": "missing_postcal_final_marker_before_raw_answers",
+      "result": "REJECTED_NO_SCORING"
+    }
+  ],
+  "CPU_only": true,
+  "GPU_used": false,
+  "model_used": false,
+  "confirmation_GT_opened": false,
+  "references_opened": false,
+  "task_quality_evidence": false,
+  "Git_operations": 0,
+  "network_operations": 0,
+  "synthetic_fixture_bodies_written": false,
+  "source_sha256": {
+    "/path/to/TrajKV\\code\\publication\\prepare_round8_delivery.py": "8d5b3ce3e17505848c93c50074f908d6dd0d2c829940bab912b01c0670e14a5d",
+    "/path/to/TrajKV\\code\\publication\\verify_round8_increment.py": "b76f96253b9a6a41ec3e133785bb606a732b7a9915b348ce77d20e2e95e2afb6",
+    "/path/to/TrajKV\\code\\a2\\analyze_round8_postcal_quality.py": "535de2b1fd5799e648317836438a3f6aacfbf4eb1990aa9fe775ec280a883644",
+    "/path/to/TrajKV\\code\\a2\\round8_postcal_owner.py": "4980f85d391f03c819db67d378c972fdea3e79bd263d6e58cb38313ea4906eb6"
+  },
+  "scope": "Compatibility of preserved completion gates, new owner, source/public identities and archive-only learned training dependencies; synthetic declarations never count as executed training or QA"
+}

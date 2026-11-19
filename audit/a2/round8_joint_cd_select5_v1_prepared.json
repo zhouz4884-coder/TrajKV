@@ -1,0 +1,106 @@
+{
+  "schema": "trajkv.round8.select-CD-joint-factorial-preparation.v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "created_at_utc": "2026-11-18T11:37:28.129084+00:00",
+  "code_sha256": "749410504ccaf6368acdf0039359425b6bdada287b30f18d25d578a3c0c15e43",
+  "outputs": [
+    {
+      "dataset": "doc",
+      "gpu": 0,
+      "config": "configs/a2/round8_v1/joint_cd_select5_v1_doc.json",
+      "job": "configs/a2/round8_v1/job_joint_cd_select5_v1_doc.json",
+      "output": "/path/to/TrajKV/results/round8_v1/joint_cd_select5_v1_doc",
+      "samples": "configs/a2/round8_v1/doc_select16_independent_qa.json",
+      "samples_sha256": "146ae3bb795a25433902f60dad4e7b0bc055de0ca8eae6f6485d05b1fb27b62b",
+      "references_local_only": "configs/data/round7_doc_select16_independent_references.jsonl",
+      "references_sha256": "5987275e2fb5701baaae0430e9ce30e6dd0d4bff112321cae13b251eb4faec6c",
+      "sources": 16,
+      "independent_questions": 38,
+      "variants": 5,
+      "expected_records": 190,
+      "expected_answers": 190,
+      "launch_command": "python code/launch_round8_data_disk.py configs/a2/round8_v1/job_joint_cd_select5_v1_doc.json",
+      "config_sha256": "a9afbfc60132046e0c20dc90c6b2c659515d15d87a670b05cfaab6404a3402b5",
+      "job_sha256": "4ab4109a2529e4a82c2221787946dbcde9890f7c1a72df23989d68f6e7e49712"
+    },
+    {
+      "dataset": "text",
+      "gpu": 1,
+      "config": "configs/a2/round8_v1/joint_cd_select5_v1_text.json",
+      "job": "configs/a2/round8_v1/job_joint_cd_select5_v1_text.json",
+      "output": "/path/to/TrajKV/results/round8_v1/joint_cd_select5_v1_text",
+      "samples": "configs/a2/round8_v1/text_select16_independent_qa.json",
+      "samples_sha256": "5c73bb4d82b96a518c31f62e9836a30e5e1665e366eadb3e1e360932729f2342",
+      "references_local_only": "configs/data/round7_text_select16_independent_references.json",
+      "references_sha256": "bdc656adda936141e3b98d7e608da83ad2085db8e7a17d529e8ba5edc1a0c793",
+      "sources": 16,
+      "independent_questions": 22,
+      "variants": 5,
+      "expected_records": 110,
+      "expected_answers": 110,
+      "launch_command": "python code/launch_round8_data_disk.py configs/a2/round8_v1/job_joint_cd_select5_v1_text.json",
+      "config_sha256": "6594ff2f6b71d608d7bd701f5e4437352f4db46c8d8679d718beb1454d0e602b",
+      "job_sha256": "729fc5c8ffbc6a82e87bec9dee05e043ffbf20331e4e1a11107b74c075cefeaf"
+    }
+  ],
+  "cells": [
+    {
+      "variant": "r8_l2_joint0",
+      "cd": false,
+      "joint": false
+    },
+    {
+      "variant": "r8_l2_joint1",
+      "cd": false,
+      "joint": true
+    },
+    {
+      "variant": "r8_cd1_joint0",
+      "cd": true,
+      "joint": false
+    },
+    {
+      "variant": "r8_cd1_joint1",
+      "cd": true,
+      "joint": true
+    }
+  ],
+  "runner_contract_validated": true,
+  "runner_source_sha256_at_preparation": {
+    "round8_spherical_joint_runner.py": "73efb19aedf2f6699774fda7cbbfea0d0dac978e83db219f6f9dc77b904ef885",
+    "round8_spherical_codec.py": "bbd478fcf075a303e3b669eaed1905f2c716ff192cd71142c3fd76389f22f4dd",
+    "round8_spherical_runner.py": "f7a67aa1bcf1321a8e3a00940cae748791bae2e49e1abd0644f19ff5456e3dfe",
+    "round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "round8_joint_gain.py": "30f75b6f7ca3fd8406f0ee5eec134ca6220f0f2f3d0b232f8c1fd4f04b0aec4f",
+    "round8_runner.py": "ba0cc676dd5b84efa53a916194569bffef25fe7fb04250854d318acc3a6a6935"
+  },
+  "independent_questions": 60,
+  "total_generated_answers_expected": 300,
+  "existing_source_images": 32,
+  "consumed_codec_inputs_sha256": {
+    "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "/path/to/TrajKV/results/round7_v1/codec_assets/factors_for_book16_inherited.json": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "/path/to/TrajKV/results/round7_v1/exchange_key_cal8/gt/policy_conditional_batches.json": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f"
+  },
+  "parent_config_sha256": {
+    "configs\\a2\\round8_v1\\postfit_select11_v2_doc.json": "4fb2ba7d8e7579a3bd8bb7b875f48aaad14e08ad49cebe4eb35ff84a5c4e629a",
+    "configs\\a2\\round8_v1\\postfit_select11_v2_text.json": "05baa52dc2d100c37b931cb1b61c3b477963e33f7ab4ffc984274c977c4f1ffa"
+  },
+  "parent_runtime_job_sha256": "c1f5dbcd7cd9450d585a77e6080402dd254cd52161bf7c16381dac534a7b8061",
+  "views_sha256": "6e6a2d23d02814f2c437c3577c54de02465ee6fd2bcae78b8d34ffcc8221fcbd",
+  "source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "global_config_sample_asset_result_root": "/path/to/TrajKV",
+  "worker_python": "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+  "shared_cache": "/path/to/TrajKV/cache/round8_v1/shared",
+  "Full_and_four_factorial_cells": true,
+  "expected_retained_extra_tensor_bytes": 0,
+  "old_full224_priority_limit43_preserved": true,
+  "new_fit_performed": false,
+  "new_source_count_claimed": 0,
+  "scope": "Exposed selection development already used to inform this design. Same38/22 independent QA; 300 answers do not mean300 independent sources. No quality or E2E result yet.",
+  "future_confirmation_answers_opened": false,
+  "GPU_used": false,
+  "SSH_used": false,
+  "uploaded": false
+}

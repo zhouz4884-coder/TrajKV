@@ -1,0 +1,61 @@
+{
+  "schema": "trajkv.round8.job.v2",
+  "name": "round8_postcal_train32_v1",
+  "round8_source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "cwd": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "OMP_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "TOKENIZERS_PARALLELISM": "false",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+    "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+    "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda",
+    "PYTHONPYCACHEPREFIX": "/path/to/TrajKV/cache/round8_v1/shared/pycache",
+    "HF_HOME": "/path/to/TrajKV/cache/round8_v1/shared/huggingface",
+    "HUGGINGFACE_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/hub",
+    "TORCH_HOME": "/path/to/TrajKV/cache/round8_v1/shared/torch",
+    "PIP_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/pip",
+    "UV_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/uv",
+    "TMP": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TEMP": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TORCH_EXTENSIONS_DIR": "/path/to/TrajKV/cache/round8_v1/shared/torch_extensions",
+    "XDG_CACHE_HOME": "/path/to/TrajKV/cache/round8_v1/shared/xdg",
+    "HF_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/hub",
+    "HF_MODULES_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/modules"
+  },
+  "argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_postcal_train.py",
+    "--config",
+    "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v2.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/postcal_train32_v1"
+  ],
+  "runtime_policy": "DedicatedSR snapshot; globalR model/samples/results and explicit8TB P72/sharedcache; all future artifacts new immutable paths",
+  "prerequisites": [
+    "Root GPU0 lease; exclusive new sources/config/output and actual snapshot argv verified",
+    "Shared field helper CPU and actual CUDA reader controls pass; theta0 identity and actual q/post gradient gate enforced within trainer before remaining collection/updates",
+    "Calibration-only no select/GT;200steps fixed1212; full336FP32 charged; R42=23K19V; original224ranking/f0/J/sign fixed"
+  ],
+  "required_launcher": "code/launch_round8_data_disk.py",
+  "expected_launch_receipt": {
+    "job": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v1.json",
+    "launch_json": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v1.launch.json",
+    "log": "/path/to/TrajKV/stages/round8_20261118_v1/logs/round8_postcal_train32_v1.log",
+    "source_snapshot": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v1.source",
+    "argv_executed": [
+      "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+      "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v1.source/code/a2/round8_postcal_train.py",
+      "--config",
+      "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v2.json",
+      "--output",
+      "/path/to/TrajKV/results/round8_v1/postcal_train32_v1"
+    ]
+  },
+  "dependency_enforcement": "Root/agent manual source+GPU gate; trainer itself enforces actual first-Q and final train gates"
+}

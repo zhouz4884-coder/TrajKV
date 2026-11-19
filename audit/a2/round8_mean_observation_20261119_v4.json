@@ -1,0 +1,121 @@
+{
+  "jobs": [
+    {
+      "name": "round8_mean_select2_v1_doc",
+      "pid": 507861,
+      "pid_exists": false,
+      "pid_state": null,
+      "output": "/path/to/TrajKV/results/round8_v1/mean_select2_v1_doc",
+      "record_count": 76,
+      "files": {
+        "complete.json": {
+          "size": 53,
+          "sha256": "491a7c2f9908fd9970f43c7f93bbb2c8327e6853387ffe202cccde92324e0ec1"
+        },
+        "manifest.json": {
+          "size": 85071,
+          "sha256": "dd66eade22bf94f75c7fe6491f1217df46b533b6992cf78057a40c5b94dfba64"
+        },
+        "records.jsonl": {
+          "size": 17574330,
+          "sha256": "882d7c31ecbbaa7f1258be98a41a57c35d2a97b21602b48d8ab0b3c4d4f085a9"
+        }
+      },
+      "markers": {
+        "complete.json": {
+          "status": "COMPLETE",
+          "records": 76,
+          "expected": 76
+        }
+      },
+      "complete_graph_verified": false,
+      "progress": [
+        "{\"done\": 75, \"id\": \"docvqa_next_14738_cal_q2\", \"variant\": \"r8_visual_mean_off\", \"nv\": 1280, \"seconds\": 1.17}",
+        "{\"done\": 76, \"id\": \"docvqa_next_14738_cal_q2\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1280, \"seconds\": 1.34}"
+      ],
+      "failure_tail": "230_cal_q1\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 7, \"answer\": \"Dr. Robert V. Russell\", \"ms\": 1348.2275999995181}\n{\"done\": 72, \"id\": \"docvqa_next_14230_cal_q1\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1792, \"seconds\": 1.63}\n{\"session\": \"docvqa_next_14738_cal_q1\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 4, \"answer\": \"china & glass\", \"ms\": 865.9367689979263}\n{\"done\": 73, \"id\": \"docvqa_next_14738_cal_q1\", \"variant\": \"r8_visual_mean_off\", \"nv\": 1280, \"seconds\": 1.12}\n{\"session\": \"docvqa_next_14738_cal_q1\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 4, \"answer\": \"china and glass\", \"ms\": 1038.0656140041538}\n{\"done\": 74, \"id\": \"docvqa_next_14738_cal_q1\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1280, \"seconds\": 1.29}\n{\"session\": \"docvqa_next_14738_cal_q2\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 5, \"answer\": \"QUEEN MARY\", \"ms\": 915.1026829931652}\n{\"done\": 75, \"id\": \"docvqa_next_14738_cal_q2\", \"variant\": \"r8_visual_mean_off\", \"nv\": 1280, \"seconds\": 1.17}\n{\"session\": \"docvqa_next_14738_cal_q2\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 5, \"answer\": \"QUEEN MARY\", \"ms\": 1080.3236409992678}\n{\"done\": 76, \"id\": \"docvqa_next_14738_cal_q2\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1280, \"seconds\": 1.34}\nTraceback (most recent call last):\n  File \"/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py\", line 255, in <module>\n    if __name__=='__main__':main()\n  File \"/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py\", line 252, in main\n    finalize_run(args.output,external,sources,config_sha,declarations)\n  File \"/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py\", line 198, in finalize_run\n    actual=[(row['id'],row['variant']) for row in rows]\n  File \"/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py\", line 198, in <listcomp>\n    actual=[(row['id'],row['variant']) for row in rows]\nKeyError: 'id'\n",
+      "launch": {
+        "pid": 507861,
+        "name": "round8_mean_select2_v1_doc",
+        "log": "/path/to/TrajKV/logs/round8_mean_select2_v1_doc.log",
+        "job": "/path/to/TrajKV/jobs/round8_mean_select2_v1_doc.json",
+        "source_snapshot": "/path/to/TrajKV/jobs/round8_mean_select2_v1_doc.source",
+        "immutable_code_execution": true,
+        "argv_executed": [
+          "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+          "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py",
+          "--config",
+          "/path/to/TrajKV/configs/a2/round8_v1/mean_select2_v1_doc.json",
+          "--output",
+          "/path/to/TrajKV/results/round8_v1/mean_select2_v1_doc"
+        ],
+        "cache_environment": {
+          "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+          "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+          "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+          "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda"
+        }
+      }
+    },
+    {
+      "name": "round8_mean_select2_v1_text",
+      "pid": 507862,
+      "pid_exists": false,
+      "pid_state": null,
+      "output": "/path/to/TrajKV/results/round8_v1/mean_select2_v1_text",
+      "record_count": 44,
+      "files": {
+        "complete.json": {
+          "size": 53,
+          "sha256": "fbbdc0a653d602f4bbeda86743b857aeae1b2628e7ea3949e36f53dd2ec27897"
+        },
+        "manifest.json": {
+          "size": 84538,
+          "sha256": "faa4fafed961277f84dc357c0d68f6ee77a4886849bd41479040947043d7b98d"
+        },
+        "records.jsonl": {
+          "size": 10170610,
+          "sha256": "4dc94e1ab1f5a8fbfe284fc901887d00bb93b1f1a241b850b6c7857ac55e37d2"
+        }
+      },
+      "markers": {
+        "complete.json": {
+          "status": "COMPLETE",
+          "records": 44,
+          "expected": 44
+        }
+      },
+      "complete_graph_verified": false,
+      "progress": [
+        "{\"done\": 43, \"id\": \"r7_text_select16_39313\", \"variant\": \"r8_visual_mean_off\", \"nv\": 1792, \"seconds\": 1.43}",
+        "{\"done\": 44, \"id\": \"r7_text_select16_39313\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1792, \"seconds\": 1.58}"
+      ],
+      "failure_tail": "\"session\": \"r7_text_select16_36414\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 4, \"answer\": \"80%\", \"ms\": 1264.3721569911577}\n{\"done\": 40, \"id\": \"r7_text_select16_36414\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1792, \"seconds\": 1.54}\n{\"session\": \"r7_text_select16_38213\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 3, \"answer\": \"copenhagen\", \"ms\": 1009.2043640033808}\n{\"done\": 41, \"id\": \"r7_text_select16_38213\", \"variant\": \"r8_visual_mean_off\", \"nv\": 1792, \"seconds\": 1.32}\n{\"session\": \"r7_text_select16_38213\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 3, \"answer\": \"copenhagen\", \"ms\": 1176.4629499957664}\n{\"done\": 42, \"id\": \"r7_text_select16_38213\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1792, \"seconds\": 1.44}\n{\"session\": \"r7_text_select16_39313\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 5, \"answer\": \"vegetarian hot food\", \"ms\": 1138.1244199874345}\n{\"done\": 43, \"id\": \"r7_text_select16_39313\", \"variant\": \"r8_visual_mean_off\", \"nv\": 1792, \"seconds\": 1.43}\n{\"session\": \"r7_text_select16_39313\", \"method\": \"round8_joint\", \"policy\": \"base\", \"turn\": 1, \"tokens\": 5, \"answer\": \"vegetarian hot food\", \"ms\": 1298.4462689928478}\n{\"done\": 44, \"id\": \"r7_text_select16_39313\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1792, \"seconds\": 1.58}\nTraceback (most recent call last):\n  File \"/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py\", line 255, in <module>\n    if __name__=='__main__':main()\n  File \"/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py\", line 252, in main\n    finalize_run(args.output,external,sources,config_sha,declarations)\n  File \"/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py\", line 198, in finalize_run\n    actual=[(row['id'],row['variant']) for row in rows]\n  File \"/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py\", line 198, in <listcomp>\n    actual=[(row['id'],row['variant']) for row in rows]\nKeyError: 'id'\n",
+      "launch": {
+        "pid": 507862,
+        "name": "round8_mean_select2_v1_text",
+        "log": "/path/to/TrajKV/logs/round8_mean_select2_v1_text.log",
+        "job": "/path/to/TrajKV/jobs/round8_mean_select2_v1_text.json",
+        "source_snapshot": "/path/to/TrajKV/jobs/round8_mean_select2_v1_text.source",
+        "immutable_code_execution": true,
+        "argv_executed": [
+          "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+          "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py",
+          "--config",
+          "/path/to/TrajKV/configs/a2/round8_v1/mean_select2_v1_text.json",
+          "--output",
+          "/path/to/TrajKV/results/round8_v1/mean_select2_v1_text"
+        ],
+        "cache_environment": {
+          "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+          "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+          "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+          "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda"
+        }
+      }
+    }
+  ],
+  "gpu": "0, GPU-ef01d441-985f-50b3-6e64-5d4c3e2def3a, 24 MiB, 0 %\n1, GPU-a696ce9a-7137-cf6f-b4d3-deb992a72f28, 24 MiB, 0 %\n",
+  "compute_apps": "",
+  "collected": []
+}

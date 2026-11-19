@@ -1,0 +1,48 @@
+{
+  "schema": "trajkv.round8.job.v2",
+  "name": "round8_natural_dev64_g8budget2_v1_text",
+  "round8_source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "cwd": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "OMP_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "TOKENIZERS_PARALLELISM": "false",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+    "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+    "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda",
+    "PYTHONPYCACHEPREFIX": "/path/to/TrajKV/cache/round8_v1/shared/pycache",
+    "HF_HOME": "/path/to/TrajKV/cache/round8_v1/shared/huggingface",
+    "HUGGINGFACE_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/hub",
+    "TORCH_HOME": "/path/to/TrajKV/cache/round8_v1/shared/torch",
+    "PIP_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/pip",
+    "UV_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/uv",
+    "TMP": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TEMP": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TORCH_EXTENSIONS_DIR": "/path/to/TrajKV/cache/round8_v1/shared/torch_extensions",
+    "XDG_CACHE_HOME": "/path/to/TrajKV/cache/round8_v1/shared/xdg",
+    "HF_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/hub",
+    "HF_MODULES_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/modules"
+  },
+  "argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_runner.py",
+    "--config",
+    "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_text.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_text"
+  ],
+  "runtime_policy": "Validated data-volume P72; sourceRoot code only; globalR configs/samples/output; shared project data-disk caches",
+  "prerequisites": [
+    "Authorized bounded existing-natural64 two R42 controls only; actual-reader priorGPU pass applies",
+    "Guard all source/book/config/sample identities and unused job/output/snapshot before launch",
+    "Verify actual proc cmdline executes snapshot runner, not just immutable_code_execution field",
+    "Complete_round8 plus canonical/source/input/snapshot/coverage/physical owner audit before references; no new GT/source confirmation"
+  ],
+  "dependency_enforcement": "Root-assigned bounded GPU execution; launcher does not enforce preflight or completion audits",
+  "prepared_control": "existing exposed64-source development; oldG4/R42 ablation plus synthetic-prior properG8/R42; no newbook/grid"
+}

@@ -1,0 +1,2113 @@
+{
+  "status": "COMPLETE",
+  "schema": "trajkv.round8.natural64-g8budget2-development.v1",
+  "new_real_model_answers": 256,
+  "reused_old_model_answers": 384,
+  "merged_scored_answers": 640,
+  "role": "historically_exposed_natural64_development_synthetic_prior_initialization_control",
+  "new_source_count": 0,
+  "book_origin": {
+    "origin_file": "results/direction_books_gpu1_v1/books/gaussian_vq_g8_256.json",
+    "consumed_remote_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g8_256.json",
+    "source_exact_byte_sha256": "41906a3603e1e620908ab660dedce91bb8d2fccbf035d4d42e9daca9a8892444",
+    "consumed_exact_byte_sha256": "41906a3603e1e620908ab660dedce91bb8d2fccbf035d4d42e9daca9a8892444",
+    "copied_or_retrained": false,
+    "origin_manifest_sha256": "ece5ed3e5abde0ba49c674ef9517c02a03c25331fca6cecb4b567c747b76a548",
+    "origin_parent_complete_sha256": "d8f72bb1694fa8b67f54253064926829498cfb6a0b77a34bcabff2cee4b3acef",
+    "origin_books_complete_sha256": "24b80384c5ac44b9ff71603c2ad71b0c30684e703ae5ac393d854313cc3dc753",
+    "declared_training": {
+      "training_distribution": "standard Gaussian prior after normalized rotation; not model data",
+      "seed": 20261113,
+      "training_vectors": 65536,
+      "validation_vectors": 16384,
+      "iterations": 40,
+      "validation_mse": 0.32716140151023865
+    },
+    "training_provenance_scope": "Existing artifact metadata and completion SHA binding; no new training or model-quality inference",
+    "book_shape": [
+      256,
+      8
+    ],
+    "actual_FP16_book_bytes": 4096,
+    "left4_unique": 256,
+    "right4_unique": 256,
+    "non_Cartesian_witness": "Both 4D half projections contain256 unique rows, excluding the old16x16 Cartesian product"
+  },
+  "source_sha256": {
+    "code/a2/round8_runner.py": "ba0cc676dd5b84efa53a916194569bffef25fe7fb04250854d318acc3a6a6935",
+    "code/a2/round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "code/a2/round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "code/a2/round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "code/a2/round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "code/a2/round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "code/a2/run_representation_variants.py": "1cbd345a5c9d838dd9aa88381d6b2456b532bdf584f6414786606c61e0dfab7d",
+    "code/a2/factory.py": "568747a69cc6552bc633552423869bc3f4fb5c71467b84590d944334f5301849",
+    "code/a2/quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "code/a2/fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "code/experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+    "code/remote.py": "e2b0bc77c9c80312f5fed180eb75536501599bd6a7be450ab4cadc25d20669f0",
+    "code/launch_remote.py": "22c1d253b5935b85d6a33cef9d85c02b3ae8642d914a7bbc6a4d40f8e5a38a82",
+    "code/launch_remote_data_disk.py": "1a16c3dbb5e6c39b1fc0e2c6ea69d98de4b54e02d973d357f55e08b892b58a55",
+    "code/launch_round8_data_disk.py": "b718dca5bd4eef6c9120388ecfb462c81bb2d5ebb2fc72c6a95620148268e4a9"
+  },
+  "preparation_plan_sha256": "44ae52815d13a102c01880f62a2d09153c3c7ed904b792fed02f628fc36afd26",
+  "domains": {
+    "doc": {
+      "new_answer_records": 128,
+      "reused_old_answer_records": 192,
+      "merged_scored_answers": 320,
+      "original_exposed_sources": 64,
+      "new_sources": 0,
+      "score_table": [
+        {
+          "variant": "full8",
+          "score": 0.9207231570512822,
+          "ci_low": 0.8537914234203298,
+          "ci_high": 0.9744457202953297,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 16.002232142857142,
+          "delta_from_old43": -0.003269767969603432
+        },
+        {
+          "variant": "r7_frozen_joint43_control",
+          "score": 0.9239929250208856,
+          "ci_low": 0.8574603011434837,
+          "ci_high": 0.9771571670060567,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 1.2946014694940475,
+          "delta_from_old43": 0.0
+        },
+        {
+          "variant": "r8_oldbook_binaryV_jointgain",
+          "score": 0.9232116750208855,
+          "ci_low": 0.8566455200501254,
+          "ci_high": 0.9769841269841271,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 1.2946014694940475,
+          "delta_from_old43": -0.0007812500000000666
+        },
+        {
+          "variant": "r8_k4old_vbinary42",
+          "score": 0.9239929250208856,
+          "ci_low": 0.8574603011434837,
+          "ci_high": 0.9771571670060567,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 1.2895791480654761,
+          "delta_from_old43": 0.0
+        },
+        {
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "score": 0.8771179250208856,
+          "ci_low": 0.7963143535923142,
+          "ci_high": 0.9453204952485379,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 1.2901942274305556,
+          "delta_from_old43": -0.046875
+        }
+      ],
+      "paired_source_cluster_comparisons": [
+        {
+          "candidate": "full8",
+          "comparator": "r7_frozen_joint43_control",
+          "delta": -0.0032697679696034963,
+          "ci_low": -0.008814102564102562,
+          "ci_high": 0.0005384555137844596,
+          "p": 0.4979750202497975,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "full8",
+          "comparator": "r8_oldbook_binaryV_jointgain",
+          "delta": -0.0024885179696034956,
+          "ci_low": -0.01530733760482938,
+          "ci_high": 0.011206727756892233,
+          "p": 0.7493025069749303,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "full8",
+          "comparator": "r8_k4old_vbinary42",
+          "delta": -0.0032697679696034963,
+          "ci_low": -0.008814102564102562,
+          "ci_high": 0.0005384555137844596,
+          "p": 0.4979750202497975,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "full8",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.043605232030396505,
+          "ci_low": 0.002871725085952063,
+          "ci_high": 0.0965582902568922,
+          "p": 0.1106388936110639,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 0.9957500424995751,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r7_frozen_joint43_control",
+          "comparator": "r8_oldbook_binaryV_jointgain",
+          "delta": 0.0007812500000000007,
+          "ci_low": -0.01171875,
+          "ci_high": 0.014062500000000002,
+          "p": 1.0,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r7_frozen_joint43_control",
+          "comparator": "r8_k4old_vbinary42",
+          "delta": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "p": 1.0,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r7_frozen_joint43_control",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.046875,
+          "ci_low": 0.0078125,
+          "ci_high": 0.1015625,
+          "p": 0.12625873741262586,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_oldbook_binaryV_jointgain",
+          "comparator": "r8_k4old_vbinary42",
+          "delta": -0.0007812500000000007,
+          "ci_low": -0.014062500000000002,
+          "ci_high": 0.01171875,
+          "p": 1.0,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_oldbook_binaryV_jointgain",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.04609375,
+          "ci_low": 0.0031249999999999993,
+          "ci_high": 0.10001953124999972,
+          "p": 0.09537904620953791,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 0.9537904620953791,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_k4old_vbinary42",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.046875,
+          "ci_low": 0.0078125,
+          "ci_high": 0.1015625,
+          "p": 0.12625873741262586,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        }
+      ],
+      "actual_visual_tokens": [
+        1280,
+        1792,
+        2304
+      ],
+      "R42_complete_owner_strictly_less_than_old43_all_sessions": true,
+      "owner_at_all_actual_densities": [
+        {
+          "nv": 1280,
+          "variant": "r8_k4old_vbinary42",
+          "old43_bytes": 5964933,
+          "actual_bytes": 5941893,
+          "delta": -23040
+        },
+        {
+          "nv": 1280,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 5964933,
+          "actual_bytes": 5945861,
+          "delta": -19072
+        },
+        {
+          "nv": 1792,
+          "variant": "r8_k4old_vbinary42",
+          "old43_bytes": 8315013,
+          "actual_bytes": 8282757,
+          "delta": -32256
+        },
+        {
+          "nv": 1792,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 8315013,
+          "actual_bytes": 8286725,
+          "delta": -28288
+        },
+        {
+          "nv": 2304,
+          "variant": "r8_k4old_vbinary42",
+          "old43_bytes": 10665093,
+          "actual_bytes": 10623621,
+          "delta": -41472
+        },
+        {
+          "nv": 2304,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 10665093,
+          "actual_bytes": 10627589,
+          "delta": -37504
+        }
+      ],
+      "raw_token_differences": {
+        "old42_vs_old43": {
+          "token_changed": 1,
+          "answer_changed": 1,
+          "details": [
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_47aff42e6237e3990a3d95c25c78ffcb45130eb4b78d3ab765fcf2922b01d574",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  2378,
+                  8093,
+                  2749,
+                  13460,
+                  6367,
+                  647,
+                  93480,
+                  640,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  40248,
+                  67531,
+                  647,
+                  23937,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "TRAVEL EXPENSE VOUCHER"
+              ],
+              "new_answers": [
+                "Travel Expense Voucher"
+              ]
+            }
+          ]
+        },
+        "proper42_vs_old43": {
+          "token_changed": 9,
+          "answer_changed": 9,
+          "details": [
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_0f58cb0e83d5a46b08801693d800388b7451f8a7d1c54d2a4a7f48753181b538",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  20722,
+                  220,
+                  17,
+                  15,
+                  220,
+                  16,
+                  24,
+                  23,
+                  16,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  24,
+                  339,
+                  5813,
+                  220,
+                  16,
+                  24,
+                  23,
+                  16,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Apr 20 1981"
+              ],
+              "new_answers": [
+                "9th April 1981"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_25eb53d2e3962fcd0baf08254bb73326d28a7c849f42c902d2f287a32ef3c0c8",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  24732,
+                  294,
+                  661,
+                  3179,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  24732,
+                  86902,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Tom dudley"
+              ],
+              "new_answers": [
+                "Tom Dudley"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_2cc92319d59646b6dd51537cada3e84962fd5c80f3539fe1d9cca1b739ba3d52",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  19,
+                  19,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  17,
+                  19,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "44"
+              ],
+              "new_answers": [
+                "24"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_3bcceb8ebb2fb023b073efc57bb7e9f2be4478b04bba6a00ba4dc8943eac6347",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  35312,
+                  38117,
+                  956,
+                  43607,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  44,
+                  11451,
+                  13,
+                  89565,
+                  687,
+                  350,
+                  28814,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Miss Kendra Ellis"
+              ],
+              "new_answers": [
+                "MRS. MARTIN TADO"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_47aff42e6237e3990a3d95c25c78ffcb45130eb4b78d3ab765fcf2922b01d574",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  2378,
+                  8093,
+                  2749,
+                  13460,
+                  6367,
+                  647,
+                  93480,
+                  640,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  40248,
+                  67531,
+                  647,
+                  23937,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "TRAVEL EXPENSE VOUCHER"
+              ],
+              "new_answers": [
+                "Travel Expense Voucher"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_67e5d14ee2b9094f5158d897d14c0aace064866a180cf86c76ddeed6472d3977",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  35907,
+                  354,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  16,
+                  24,
+                  21,
+                  22,
+                  75989,
+                  362,
+                  13,
+                  3984,
+                  15200,
+                  62903,
+                  17318,
+                  11,
+                  362,
+                  687,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Ballot"
+              ],
+              "new_answers": [
+                "1967 Conrad A. Elvehjem Award, AIN"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_9ca68ced9a82329b65aaf4201e4694d8bce731324eea10e8a38d2170a0cba407",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  19,
+                  13,
+                  20,
+                  13,
+                  20,
+                  20,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  19,
+                  13,
+                  17,
+                  13,
+                  19,
+                  17,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "4.5.55"
+              ],
+              "new_answers": [
+                "4.2.42"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_9d0bbbf8b69fb807046d253987a5e1a1d318c397586fb9e155c47518b3265ce5",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  693,
+                  318,
+                  51073,
+                  369,
+                  37664,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  693,
+                  318,
+                  51073,
+                  369,
+                  19716,
+                  18513,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Reimbursement for fixtures"
+              ],
+              "new_answers": [
+                "Reimbursement for Fixtures"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_c3f3eb0cce2ab99e06ec8a022ef66d9d5705269e9c3538d880b2752fdc1257aa",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  17,
+                  21,
+                  5555,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  17,
+                  21,
+                  57429,
+                  50,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "26 weeks"
+              ],
+              "new_answers": [
+                "26 WEEKS"
+              ]
+            }
+          ]
+        },
+        "proper42_vs_old42": {
+          "token_changed": 8,
+          "answer_changed": 8,
+          "details": [
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_0f58cb0e83d5a46b08801693d800388b7451f8a7d1c54d2a4a7f48753181b538",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  20722,
+                  220,
+                  17,
+                  15,
+                  220,
+                  16,
+                  24,
+                  23,
+                  16,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  24,
+                  339,
+                  5813,
+                  220,
+                  16,
+                  24,
+                  23,
+                  16,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Apr 20 1981"
+              ],
+              "new_answers": [
+                "9th April 1981"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_25eb53d2e3962fcd0baf08254bb73326d28a7c849f42c902d2f287a32ef3c0c8",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  24732,
+                  294,
+                  661,
+                  3179,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  24732,
+                  86902,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Tom dudley"
+              ],
+              "new_answers": [
+                "Tom Dudley"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_2cc92319d59646b6dd51537cada3e84962fd5c80f3539fe1d9cca1b739ba3d52",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  19,
+                  19,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  17,
+                  19,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "44"
+              ],
+              "new_answers": [
+                "24"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_3bcceb8ebb2fb023b073efc57bb7e9f2be4478b04bba6a00ba4dc8943eac6347",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  35312,
+                  38117,
+                  956,
+                  43607,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  44,
+                  11451,
+                  13,
+                  89565,
+                  687,
+                  350,
+                  28814,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Miss Kendra Ellis"
+              ],
+              "new_answers": [
+                "MRS. MARTIN TADO"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_67e5d14ee2b9094f5158d897d14c0aace064866a180cf86c76ddeed6472d3977",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  35907,
+                  354,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  16,
+                  24,
+                  21,
+                  22,
+                  75989,
+                  362,
+                  13,
+                  3984,
+                  15200,
+                  62903,
+                  17318,
+                  11,
+                  362,
+                  687,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Ballot"
+              ],
+              "new_answers": [
+                "1967 Conrad A. Elvehjem Award, AIN"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_9ca68ced9a82329b65aaf4201e4694d8bce731324eea10e8a38d2170a0cba407",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  19,
+                  13,
+                  20,
+                  13,
+                  20,
+                  20,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  19,
+                  13,
+                  17,
+                  13,
+                  19,
+                  17,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "4.5.55"
+              ],
+              "new_answers": [
+                "4.2.42"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_9d0bbbf8b69fb807046d253987a5e1a1d318c397586fb9e155c47518b3265ce5",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  693,
+                  318,
+                  51073,
+                  369,
+                  37664,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  693,
+                  318,
+                  51073,
+                  369,
+                  19716,
+                  18513,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "Reimbursement for fixtures"
+              ],
+              "new_answers": [
+                "Reimbursement for Fixtures"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_doc_c3f3eb0cce2ab99e06ec8a022ef66d9d5705269e9c3538d880b2752fdc1257aa",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  17,
+                  21,
+                  5555,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  17,
+                  21,
+                  57429,
+                  50,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "26 weeks"
+              ],
+              "new_answers": [
+                "26 WEEKS"
+              ]
+            }
+          ]
+        }
+      },
+      "actual_proc_snapshot_argv_evidence": [
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131022_027246.json",
+          "sha256": "f071b76a332b00e32fa59e9097e8743a4460ed88262135be2a6da113100f3e1e",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_doc.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_doc"
+          ],
+          "CUDA_VISIBLE_DEVICES": "0"
+        },
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131119_684882.json",
+          "sha256": "7a7bf006bd5d2a28bbccd8aed40fd6ea99f35c2cdd7047fde3fffdc8f5cf1a1f",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_doc.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_doc"
+          ],
+          "CUDA_VISIBLE_DEVICES": "0"
+        },
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131223_018657.json",
+          "sha256": "53fb87a914e9a3c627b3f4ead55ad166d9c821ce535656cbfa804d5e494faeb3",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_doc.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_doc"
+          ],
+          "CUDA_VISIBLE_DEVICES": "0"
+        },
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131257_210530.json",
+          "sha256": "7600c41c0b3345371394f9d0de79fc5aa00ff1af4ca86d5ce793f37ffda8aa8a",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_doc.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_doc"
+          ],
+          "CUDA_VISIBLE_DEVICES": "0"
+        },
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131341_963072.json",
+          "sha256": "9e97fdc6bf8d9932f3a64ac1434d526a55e44252ee9a85032d7c8c5a3b5b2418",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_doc.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_doc.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_doc"
+          ],
+          "CUDA_VISIBLE_DEVICES": "0"
+        }
+      ],
+      "snapshot_files_rehashed": 407,
+      "source_inputs_unchanged_by_independent_rehash": true,
+      "encoder_inputs_unchanged_by_independent_rehash": true,
+      "canonical_sha256": {
+        "complete.json": "cc88afd7e5e5c24ff295b179167f983939a173b1f7646e3d7bd13b0298237536",
+        "complete_round8.json": "9f7397718cf77853db5aea79e23ed37406875dd8b495a34a3a97ece615c51e8f",
+        "manifest.json": "94428071187a78ccfae42b28946887cc173d353d04693ed84b0050d1e54127a1",
+        "records.jsonl": "f0db0d627ca17c551448fca8eb175874a9bb415d4a1e7c621fa512af8e34bad9"
+      },
+      "old_records_sha256": "07154ae20e795191a0e8f62bb241c9685eaa30644dd1f53858e84c53b09bc2da",
+      "old_manifest_sha256": "4a0abc88c138e26f3753520e4c0322e0ae5314a54e417a60346d0561c69ac1c9",
+      "independent_execution_audit_sha256": "ef340c51a925bdf43e7970636f29179b2e6335db5f908c66bd7b1215aff2bfcc",
+      "postcheck_sha256": "01155e547ba1f1db7843a7326a48659075c6d52e38f2c25088336e69daabcecb",
+      "merged_analysis_summary_sha256": "3776a567d68f0054d2539f684d81c6d574b88661d366d243e34be0cc9f8e639f",
+      "runtime_receipts_sha256": {
+        "results/round8_v1/runtime_sources/receipts/round8_natural_dev64_g8budget2_v1_doc.json": "fda017dbd308066b868dbe92a8e57b2b5e10c0f5f09907be789ed8e2abc25bd3",
+        "results/round8_v1/runtime_sources/receipts/round8_natural_dev64_g8budget2_v1_doc.launch.json": "7e5dfeb2288fe0a040ee799c9b29de4776d71b8faae82b5fe822d375f921263e",
+        "results/round8_v1/runtime_sources/snapshots/round8_natural_dev64_g8budget2_v1_doc/sha256.json": "87306750b65a5110baba133257deee871e85fc8068586a546b127ba4126f7e30",
+        "results/round8_v1/runtime_sources/logs/round8_natural_dev64_g8budget2_v1_doc.log": "c49eecfca919593403df1243cc229aa0d22a4e22d1d96aa3eb7b7b8625940d77"
+      }
+    },
+    "text": {
+      "new_answer_records": 128,
+      "reused_old_answer_records": 192,
+      "merged_scored_answers": 320,
+      "original_exposed_sources": 64,
+      "new_sources": 0,
+      "score_table": [
+        {
+          "variant": "full8",
+          "score": 0.7859375,
+          "ci_low": 0.6890234375,
+          "ci_high": 0.878125,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 16.002232142857142,
+          "delta_from_old43": 0.07656249999999998
+        },
+        {
+          "variant": "r7_frozen_joint43_control",
+          "score": 0.709375,
+          "ci_low": 0.6046874999999999,
+          "ci_high": 0.8140625,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 1.2958109916860765,
+          "delta_from_old43": 0.0
+        },
+        {
+          "variant": "r8_oldbook_binaryV_jointgain",
+          "score": 0.684375,
+          "ci_low": 0.575,
+          "ci_high": 0.7921875,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 1.2958109916860765,
+          "delta_from_old43": -0.025000000000000022
+        },
+        {
+          "variant": "r8_k4old_vbinary42",
+          "score": 0.69375,
+          "ci_low": 0.5859375,
+          "ci_high": 0.7984375,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 1.290788670257505,
+          "delta_from_old43": -0.015625
+        },
+        {
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "score": 0.678125,
+          "ci_low": 0.571875,
+          "ci_high": 0.7828125,
+          "sources": 64,
+          "questions": 64,
+          "budget_bits_including_encoder_constants": 1.2914572347847653,
+          "delta_from_old43": -0.03125
+        }
+      ],
+      "paired_source_cluster_comparisons": [
+        {
+          "candidate": "full8",
+          "comparator": "r7_frozen_joint43_control",
+          "delta": 0.0765625,
+          "ci_low": -0.006250000000000002,
+          "ci_high": 0.1609375,
+          "p": 0.11363886361136388,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 0.7954720452795472,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "full8",
+          "comparator": "r8_oldbook_binaryV_jointgain",
+          "delta": 0.1015625,
+          "ci_low": 0.0125,
+          "ci_high": 0.19066406249999945,
+          "p": 0.04480955190448096,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 0.4032859671403286,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "full8",
+          "comparator": "r8_k4old_vbinary42",
+          "delta": 0.0921875,
+          "ci_low": 0.004687500000000001,
+          "ci_high": 0.1828125,
+          "p": 0.06785932140678594,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 0.5428745712542875,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "full8",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.1078125,
+          "ci_low": 0.0375,
+          "ci_high": 0.1875,
+          "p": 0.007319926800731993,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 0.07319926800731993,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r7_frozen_joint43_control",
+          "comparator": "r8_oldbook_binaryV_jointgain",
+          "delta": 0.025,
+          "ci_low": 0.0,
+          "ci_high": 0.065625,
+          "p": 0.5006849931500685,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r7_frozen_joint43_control",
+          "comparator": "r8_k4old_vbinary42",
+          "delta": 0.015625,
+          "ci_low": 0.0,
+          "ci_high": 0.046875,
+          "p": 1.0,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r7_frozen_joint43_control",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.03125,
+          "ci_low": -0.028124999999999997,
+          "ci_high": 0.0953125,
+          "p": 0.37504624953750465,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_oldbook_binaryV_jointgain",
+          "comparator": "r8_k4old_vbinary42",
+          "delta": -0.009375,
+          "ci_low": -0.028124999999999997,
+          "ci_high": 0.0,
+          "p": 1.0,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_oldbook_binaryV_jointgain",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.006249999999999999,
+          "ci_low": -0.05,
+          "ci_high": 0.0625,
+          "p": 0.8752112478875211,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        },
+        {
+          "candidate": "r8_k4old_vbinary42",
+          "comparator": "r8_proper_gaussian8_vbinary42",
+          "delta": 0.015624999999999998,
+          "ci_low": -0.0375,
+          "ci_high": 0.0703125,
+          "p": 0.6406435935640643,
+          "sources": 64,
+          "questions": 64,
+          "bootstrap_status": "ok",
+          "signflip_method": "Monte Carlo source-cluster sign flip, plus-one correction",
+          "signflip_draws": 100000,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "exploratory all pairs"
+        }
+      ],
+      "actual_visual_tokens": [
+        768,
+        1280,
+        1792
+      ],
+      "R42_complete_owner_strictly_less_than_old43_all_sessions": true,
+      "owner_at_all_actual_densities": [
+        {
+          "nv": 768,
+          "variant": "r8_k4old_vbinary42",
+          "old43_bytes": 3614853,
+          "actual_bytes": 3601029,
+          "delta": -13824
+        },
+        {
+          "nv": 768,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 3614853,
+          "actual_bytes": 3604997,
+          "delta": -9856
+        },
+        {
+          "nv": 1280,
+          "variant": "r8_k4old_vbinary42",
+          "old43_bytes": 5964933,
+          "actual_bytes": 5941893,
+          "delta": -23040
+        },
+        {
+          "nv": 1280,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 5964933,
+          "actual_bytes": 5945861,
+          "delta": -19072
+        },
+        {
+          "nv": 1792,
+          "variant": "r8_k4old_vbinary42",
+          "old43_bytes": 8315013,
+          "actual_bytes": 8282757,
+          "delta": -32256
+        },
+        {
+          "nv": 1792,
+          "variant": "r8_proper_gaussian8_vbinary42",
+          "old43_bytes": 8315013,
+          "actual_bytes": 8286725,
+          "delta": -28288
+        }
+      ],
+      "raw_token_differences": {
+        "old42_vs_old43": {
+          "token_changed": 2,
+          "answer_changed": 2,
+          "details": [
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_18b7b46112d50db6110847ce0605d2c89988568cd9fa36c93148a024167644f9",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  2136,
+                  45842,
+                  295,
+                  7974,
+                  325,
+                  905,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  2136,
+                  45842,
+                  295,
+                  301,
+                  27332,
+                  905,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "www.planetclipse.com"
+              ],
+              "new_answers": [
+                "www.planetelipse.com"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_65f77997fcd32117836fa71f16a1cba9cbc307199c10f87c198aa7f9931a797c",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  901,
+                  46283,
+                  3619,
+                  956,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  65,
+                  1118,
+                  580,
+                  8053,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "gracie barra"
+              ],
+              "new_answers": [
+                "barracuda"
+              ]
+            }
+          ]
+        },
+        "proper42_vs_old43": {
+          "token_changed": 11,
+          "answer_changed": 11,
+          "details": [
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_2c960fd65ab645baf2e6d99bd0a52f71e1f1aea6b65f1b10d47bf61c20cfbd52",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  16,
+                  25,
+                  15,
+                  22,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  18,
+                  25,
+                  15,
+                  18,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "1:07"
+              ],
+              "new_answers": [
+                "3:03"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_3ab1410ea7cd03c070f4b68f4a6b3b9ac77d53dde87603d61b441acf53df9933",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  1782,
+                  64,
+                  20226,
+                  404,
+                  36391,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  1782,
+                  78,
+                  20226,
+                  404,
+                  36391,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "thea klirnos"
+              ],
+              "new_answers": [
+                "theo klirnos"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_4543133f8c52cd0eb8842f2246b54c37c8b132fbff17165aa86296ec9573258f",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  82,
+                  1073,
+                  58747,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  359,
+                  2977,
+                  315,
+                  274,
+                  1073,
+                  58747,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "saskatchewan"
+              ],
+              "new_answers": [
+                "university of saskatchewan"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_49f97a572bd6ef37c6bbee2bb7abda63d245d92dd731a442d93131add4a63147",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  6192,
+                  2372,
+                  281,
+                  1121,
+                  5170,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  6192,
+                  2372,
+                  10854,
+                  281,
+                  13561,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "tabique pampango"
+              ],
+              "new_answers": [
+                "tabique pal panto"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_5b432bd81484b7af6aca783a707258b62c70a20c6913bac9e4c553113fe417ed",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  39803,
+                  8172,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  66,
+                  437,
+                  8294,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "smart balance"
+              ],
+              "new_answers": [
+                "candela"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_61e3192e50089c959e154b0d5c5303fa251a978c10ba8fc8ffded4b47c38e853",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  437,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  359,
+                  9217,
+                  480,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "and"
+              ],
+              "new_answers": [
+                "unanswerable"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_659ceeb6728b85ea23ab35a6d11f65fd7df08ea7b80196e1de1e065c49bb58d4",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  67367,
+                  6968,
+                  21463,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  67367,
+                  6968,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "wedding ale"
+              ],
+              "new_answers": [
+                "wedding"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_65f77997fcd32117836fa71f16a1cba9cbc307199c10f87c198aa7f9931a797c",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  901,
+                  46283,
+                  3619,
+                  956,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  65,
+                  1118,
+                  580,
+                  8053,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "gracie barra"
+              ],
+              "new_answers": [
+                "barracuda"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_9a637e86e4a00ec71e8152bbdd99ec519248ba7b61cb586eee9bfe7ca620928b",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  12248,
+                  4883,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  6308,
+                  278,
+                  4883,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "installando"
+              ],
+              "new_answers": [
+                "instalando"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_ae9fcab72608e0263abd1478fe475d3492e3a50cca3eae018ba3275623c3aecc",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  17,
+                  24,
+                  24,
+                  19,
+                  13692,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  17,
+                  24,
+                  24,
+                  24,
+                  13692,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "2994 yards"
+              ],
+              "new_answers": [
+                "2999 yards"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_fbd68f22dc362aac922d92d3175716679ee166d413de40d73a5c3937d6d65020",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  40585,
+                  315,
+                  9442,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  53987,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "dept of traffic"
+              ],
+              "new_answers": [
+                "traffic"
+              ]
+            }
+          ]
+        },
+        "proper42_vs_old42": {
+          "token_changed": 11,
+          "answer_changed": 11,
+          "details": [
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_18b7b46112d50db6110847ce0605d2c89988568cd9fa36c93148a024167644f9",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  2136,
+                  45842,
+                  295,
+                  301,
+                  27332,
+                  905,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  2136,
+                  45842,
+                  295,
+                  7974,
+                  325,
+                  905,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "www.planetelipse.com"
+              ],
+              "new_answers": [
+                "www.planetclipse.com"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_2c960fd65ab645baf2e6d99bd0a52f71e1f1aea6b65f1b10d47bf61c20cfbd52",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  16,
+                  25,
+                  15,
+                  22,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  18,
+                  25,
+                  15,
+                  18,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "1:07"
+              ],
+              "new_answers": [
+                "3:03"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_3ab1410ea7cd03c070f4b68f4a6b3b9ac77d53dde87603d61b441acf53df9933",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  1782,
+                  64,
+                  20226,
+                  404,
+                  36391,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  1782,
+                  78,
+                  20226,
+                  404,
+                  36391,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "thea klirnos"
+              ],
+              "new_answers": [
+                "theo klirnos"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_4543133f8c52cd0eb8842f2246b54c37c8b132fbff17165aa86296ec9573258f",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  82,
+                  1073,
+                  58747,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  359,
+                  2977,
+                  315,
+                  274,
+                  1073,
+                  58747,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "saskatchewan"
+              ],
+              "new_answers": [
+                "university of saskatchewan"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_49f97a572bd6ef37c6bbee2bb7abda63d245d92dd731a442d93131add4a63147",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  6192,
+                  2372,
+                  281,
+                  1121,
+                  5170,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  6192,
+                  2372,
+                  10854,
+                  281,
+                  13561,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "tabique pampango"
+              ],
+              "new_answers": [
+                "tabique pal panto"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_5b432bd81484b7af6aca783a707258b62c70a20c6913bac9e4c553113fe417ed",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  39803,
+                  8172,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  66,
+                  437,
+                  8294,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "smart balance"
+              ],
+              "new_answers": [
+                "candela"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_61e3192e50089c959e154b0d5c5303fa251a978c10ba8fc8ffded4b47c38e853",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  437,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  359,
+                  9217,
+                  480,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "and"
+              ],
+              "new_answers": [
+                "unanswerable"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_659ceeb6728b85ea23ab35a6d11f65fd7df08ea7b80196e1de1e065c49bb58d4",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  67367,
+                  6968,
+                  21463,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  67367,
+                  6968,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "wedding ale"
+              ],
+              "new_answers": [
+                "wedding"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_9a637e86e4a00ec71e8152bbdd99ec519248ba7b61cb586eee9bfe7ca620928b",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  12248,
+                  4883,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  6308,
+                  278,
+                  4883,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "installando"
+              ],
+              "new_answers": [
+                "instalando"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_ae9fcab72608e0263abd1478fe475d3492e3a50cca3eae018ba3275623c3aecc",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  17,
+                  24,
+                  24,
+                  19,
+                  13692,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  17,
+                  24,
+                  24,
+                  24,
+                  13692,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "2994 yards"
+              ],
+              "new_answers": [
+                "2999 yards"
+              ]
+            },
+            {
+              "session_id": "r8_natural_dev64_firstq3_v1_text_fbd68f22dc362aac922d92d3175716679ee166d413de40d73a5c3937d6d65020",
+              "token_changed": true,
+              "answer_changed": true,
+              "initial_logits_changed": true,
+              "old_token_ids": [
+                [
+                  40585,
+                  315,
+                  9442,
+                  151645
+                ]
+              ],
+              "new_token_ids": [
+                [
+                  53987,
+                  151645
+                ]
+              ],
+              "old_answers": [
+                "dept of traffic"
+              ],
+              "new_answers": [
+                "traffic"
+              ]
+            }
+          ]
+        }
+      },
+      "actual_proc_snapshot_argv_evidence": [
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131022_027246.json",
+          "sha256": "f071b76a332b00e32fa59e9097e8743a4460ed88262135be2a6da113100f3e1e",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_text.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_text"
+          ],
+          "CUDA_VISIBLE_DEVICES": "1"
+        },
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131119_684882.json",
+          "sha256": "7a7bf006bd5d2a28bbccd8aed40fd6ea99f35c2cdd7047fde3fffdc8f5cf1a1f",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_text.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_text"
+          ],
+          "CUDA_VISIBLE_DEVICES": "1"
+        },
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131223_018657.json",
+          "sha256": "53fb87a914e9a3c627b3f4ead55ad166d9c821ce535656cbfa804d5e494faeb3",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_text.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_text"
+          ],
+          "CUDA_VISIBLE_DEVICES": "1"
+        },
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131257_210530.json",
+          "sha256": "7600c41c0b3345371394f9d0de79fc5aa00ff1af4ca86d5ce793f37ffda8aa8a",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_text.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_text"
+          ],
+          "CUDA_VISIBLE_DEVICES": "1"
+        },
+        {
+          "receipt": "outputs/round8_natural_g8budget2_prepare_v1/remote_20261119_131341_963072.json",
+          "sha256": "9e97fdc6bf8d9932f3a64ac1434d526a55e44252ee9a85032d7c8c5a3b5b2418",
+          "actual_proc_argv": [
+            "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+            "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_natural_dev64_g8budget2_v1_text.source/code/a2/round8_runner.py",
+            "--config",
+            "/path/to/TrajKV/configs/a2/round8_v1/natural_dev64_g8budget2_v1_text.json",
+            "--output",
+            "/path/to/TrajKV/results/round8_v1/natural_dev64_g8budget2_v1_text"
+          ],
+          "CUDA_VISIBLE_DEVICES": "1"
+        }
+      ],
+      "snapshot_files_rehashed": 407,
+      "source_inputs_unchanged_by_independent_rehash": true,
+      "encoder_inputs_unchanged_by_independent_rehash": true,
+      "canonical_sha256": {
+        "complete.json": "cc88afd7e5e5c24ff295b179167f983939a173b1f7646e3d7bd13b0298237536",
+        "complete_round8.json": "5a04267f81917d8c803561873958368ec0df8c16195e576ee9cf84b02b1b5122",
+        "manifest.json": "c3d18c37b6c14bd7bde2754704c0aa7c96878873d6cba8d42cf38528bee67aae",
+        "records.jsonl": "4ce9d355d47049655b02d5520cbc0366299434ba621af0f46b02afbfbf6ce016"
+      },
+      "old_records_sha256": "0f7afdab6100c5354bc1995de930039106a0ccedc51e246e209aab4ce1bce61a",
+      "old_manifest_sha256": "71851e971e8aa5e6f6c8e91541251dcab5a460ab0c4fb929fc5360e9d3ba9eaf",
+      "independent_execution_audit_sha256": "1bb14cdf7cc5a247d5ec9c0c4913cb9d13e1d49695d0336f6beef2b17b5705d0",
+      "postcheck_sha256": "6e95d845a88051226a73c07989187a404c09a2536e28c2c971b6634cbf9af08e",
+      "merged_analysis_summary_sha256": "c9392cf59be2c9ea377418a30bd4ac0ffefa6a68ba5b4aa7ec7566baba77675c",
+      "runtime_receipts_sha256": {
+        "results/round8_v1/runtime_sources/receipts/round8_natural_dev64_g8budget2_v1_text.json": "62a3f69a21ad978958b7b6f36cbb8b1dcbc4d9e75a4756437da066249c8a819b",
+        "results/round8_v1/runtime_sources/receipts/round8_natural_dev64_g8budget2_v1_text.launch.json": "6bd81861e16385226962f30bed7d9ea0b7c7da35e46026576cb2369fa9a32bfc",
+        "results/round8_v1/runtime_sources/snapshots/round8_natural_dev64_g8budget2_v1_text/sha256.json": "87306750b65a5110baba133257deee871e85fc8068586a546b127ba4126f7e30",
+        "results/round8_v1/runtime_sources/logs/round8_natural_dev64_g8budget2_v1_text.log": "2e140dd6a948ae1bf70f8e984b376acf2fbb2c82cf4802486af6235f1eef7834"
+      }
+    }
+  },
+  "design": "Original packed Round8 runner; oldG4/R42 and existing proper non-Cartesian synthetic-priorG8/R42; full224ranking and23K19V identical; old natural3 Full/base43/Kjoint retained",
+  "owner_scope": "Both R42 complete owners are strictly below old43 at every actual Nv; proper42 costs3968B more than old42, so do not call the two R42 owners exactly equal bytes",
+  "evidence_scope": "Each domain reuses the already exposed64 original first-question development sources; no new GT, book, metadata fit, independent-source confirmation or serving-speed claim",
+  "GPU_lease_released": true,
+  "no_large_tensor_image_weight_downloads": true
+}

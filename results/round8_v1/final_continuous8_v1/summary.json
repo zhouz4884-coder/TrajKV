@@ -1,0 +1,139 @@
+{
+  "status": "COMPLETE",
+  "source_macro": [
+    {
+      "target_kind": "Full_self",
+      "variant": "postcal_identity_R42",
+      "sources": 8,
+      "source_macro": {
+        "KL_teacher_to_student_mean": 0.4612411410303258,
+        "target_NLL_delta_mean": 0.5434718715506967,
+        "teacher_winner_signed_margin_delta_mean": -1.6916341145833333,
+        "fixed_teacher_top2_delta_mean": -1.2054361979166666,
+        "fixed_teacher_top2_delta_RMS": 2.8169860367001758,
+        "teacher_winner_flip_rate": 0.125
+      }
+    },
+    {
+      "target_kind": "Full_self",
+      "variant": "postcal_learned_R42",
+      "sources": 8,
+      "source_macro": {
+        "KL_teacher_to_student_mean": 0.3009624190858943,
+        "target_NLL_delta_mean": 0.35275566674850056,
+        "teacher_winner_signed_margin_delta_mean": -1.8322916666666667,
+        "fixed_teacher_top2_delta_mean": -1.316259765625,
+        "fixed_teacher_top2_delta_RMS": 2.524091918637974,
+        "teacher_winner_flip_rate": 0.125
+      }
+    },
+    {
+      "target_kind": "Full_self",
+      "variant": "r7_budget_k2_inc",
+      "sources": 8,
+      "source_macro": {
+        "KL_teacher_to_student_mean": 0.12238137676393725,
+        "target_NLL_delta_mean": 0.1651431141141864,
+        "teacher_winner_signed_margin_delta_mean": -0.8310546875,
+        "fixed_teacher_top2_delta_mean": -0.2050455729166667,
+        "fixed_teacher_top2_delta_RMS": 1.9508031559491088,
+        "teacher_winner_flip_rate": 0.08333333333333333
+      }
+    },
+    {
+      "target_kind": "Full_self",
+      "variant": "r7_frozen_joint43_control",
+      "sources": 8,
+      "source_macro": {
+        "KL_teacher_to_student_mean": 0.4506472695044368,
+        "target_NLL_delta_mean": 0.5401950171041334,
+        "teacher_winner_signed_margin_delta_mean": -1.7032552083333332,
+        "fixed_teacher_top2_delta_mean": -1.2358072916666667,
+        "fixed_teacher_top2_delta_RMS": 2.7386167273844646,
+        "teacher_winner_flip_rate": 0.125
+      }
+    },
+    {
+      "target_kind": "canonical_GT",
+      "variant": "postcal_identity_R42",
+      "sources": 8,
+      "source_macro": {
+        "KL_teacher_to_student_mean": 0.2162555418320733,
+        "target_NLL_delta_mean": -0.46584189703188683,
+        "teacher_winner_signed_margin_delta_mean": -1.1828450520833333,
+        "fixed_teacher_top2_delta_mean": -0.5014973958333333,
+        "fixed_teacher_top2_delta_RMS": 1.9165470142247787,
+        "teacher_winner_flip_rate": 0.08854166666666666
+      }
+    },
+    {
+      "target_kind": "canonical_GT",
+      "variant": "postcal_learned_R42",
+      "sources": 8,
+      "source_macro": {
+        "KL_teacher_to_student_mean": 0.14687040355583267,
+        "target_NLL_delta_mean": -0.504331385972928,
+        "teacher_winner_signed_margin_delta_mean": -1.42294921875,
+        "fixed_teacher_top2_delta_mean": -0.7661295572916667,
+        "fixed_teacher_top2_delta_RMS": 1.684742716179816,
+        "teacher_winner_flip_rate": 0.08854166666666666
+      }
+    },
+    {
+      "target_kind": "canonical_GT",
+      "variant": "r7_budget_k2_inc",
+      "sources": 8,
+      "source_macro": {
+        "KL_teacher_to_student_mean": 0.0991339067139948,
+        "target_NLL_delta_mean": -0.2439206279808488,
+        "teacher_winner_signed_margin_delta_mean": -0.5289713541666666,
+        "fixed_teacher_top2_delta_mean": 0.14790039062500002,
+        "fixed_teacher_top2_delta_RMS": 1.4280362352770073,
+        "teacher_winner_flip_rate": 0.07291666666666666
+      }
+    },
+    {
+      "target_kind": "canonical_GT",
+      "variant": "r7_frozen_joint43_control",
+      "sources": 8,
+      "source_macro": {
+        "KL_teacher_to_student_mean": 0.2175788834985614,
+        "target_NLL_delta_mean": -0.43503654004203995,
+        "teacher_winner_signed_margin_delta_mean": -1.1697265625,
+        "fixed_teacher_top2_delta_mean": -0.5024088541666667,
+        "fixed_teacher_top2_delta_RMS": 1.9093463152885737,
+        "teacher_winner_flip_rate": 0.08854166666666666
+      }
+    }
+  ],
+  "weighting": "equal target positions within QA, equal QAs within original source, equal original sources; target kinds remain separate",
+  "source_count": 8,
+  "independent_QAs": 8,
+  "physical_model_forwards": 654,
+  "physical_passes_by_role": {
+    "Full_free_teacher_target": {
+      "passes": 8,
+      "model_forwards": 59
+    },
+    "Full_self_forced_candidate": {
+      "passes": 32,
+      "model_forwards": 236
+    },
+    "Full_self_forced_reference": {
+      "passes": 8,
+      "model_forwards": 59
+    },
+    "canonical_GT_forced_candidate": {
+      "passes": 32,
+      "model_forwards": 240
+    },
+    "canonical_GT_forced_reference": {
+      "passes": 8,
+      "model_forwards": 60
+    }
+  },
+  "primary_quality_eligible": false,
+  "task_accuracy_eligible": false,
+  "end_to_end_timing": false,
+  "no_task_metric": true
+}

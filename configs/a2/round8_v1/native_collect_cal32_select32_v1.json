@@ -1,0 +1,299 @@
+{
+  "schema": "trajkv.round8.native-collect-config.v1",
+  "arguments": {
+    "model": "/path/to/InternVL3-8B-hf",
+    "samples": "/path/to/TrajKV/configs/a2/round8_v1/calibration_train32.json",
+    "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+    "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "max_patches": 16
+  },
+  "sample_paths": [
+    "/path/to/TrajKV/configs/a2/round8_v1/calibration_train32.json",
+    "/path/to/TrajKV/configs/a2/round8_v1/calibration_select32.json"
+  ],
+  "old_book": "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json",
+  "frozen_factors": "/path/to/TrajKV/results/round7_v1/codec_assets/factors_for_book16_inherited.json",
+  "selected_stages": [
+    [
+      "k",
+      24,
+      3,
+      0
+    ],
+    [
+      "v",
+      19,
+      2,
+      0
+    ],
+    [
+      "k",
+      23,
+      2,
+      0
+    ],
+    [
+      "k",
+      22,
+      1,
+      0
+    ],
+    [
+      "k",
+      19,
+      2,
+      0
+    ],
+    [
+      "v",
+      19,
+      3,
+      0
+    ],
+    [
+      "k",
+      23,
+      1,
+      0
+    ],
+    [
+      "k",
+      22,
+      3,
+      0
+    ],
+    [
+      "k",
+      20,
+      3,
+      0
+    ],
+    [
+      "k",
+      14,
+      0,
+      0
+    ],
+    [
+      "k",
+      19,
+      3,
+      0
+    ],
+    [
+      "v",
+      22,
+      3,
+      0
+    ],
+    [
+      "k",
+      25,
+      1,
+      0
+    ],
+    [
+      "v",
+      22,
+      0,
+      0
+    ],
+    [
+      "k",
+      22,
+      0,
+      0
+    ],
+    [
+      "k",
+      15,
+      2,
+      0
+    ],
+    [
+      "v",
+      15,
+      2,
+      0
+    ],
+    [
+      "v",
+      24,
+      3,
+      0
+    ],
+    [
+      "k",
+      16,
+      1,
+      0
+    ],
+    [
+      "v",
+      20,
+      3,
+      0
+    ],
+    [
+      "k",
+      27,
+      2,
+      0
+    ],
+    [
+      "v",
+      23,
+      1,
+      0
+    ],
+    [
+      "k",
+      27,
+      3,
+      0
+    ],
+    [
+      "v",
+      16,
+      0,
+      0
+    ],
+    [
+      "k",
+      23,
+      0,
+      0
+    ],
+    [
+      "k",
+      21,
+      2,
+      0
+    ],
+    [
+      "v",
+      14,
+      0,
+      0
+    ],
+    [
+      "k",
+      16,
+      0,
+      0
+    ],
+    [
+      "v",
+      22,
+      1,
+      0
+    ],
+    [
+      "v",
+      23,
+      2,
+      0
+    ],
+    [
+      "k",
+      26,
+      2,
+      0
+    ],
+    [
+      "v",
+      21,
+      2,
+      0
+    ],
+    [
+      "v",
+      26,
+      2,
+      0
+    ],
+    [
+      "k",
+      21,
+      0,
+      0
+    ],
+    [
+      "v",
+      14,
+      1,
+      0
+    ],
+    [
+      "v",
+      20,
+      2,
+      0
+    ],
+    [
+      "v",
+      17,
+      2,
+      0
+    ],
+    [
+      "k",
+      21,
+      1,
+      0
+    ],
+    [
+      "k",
+      25,
+      3,
+      0
+    ],
+    [
+      "v",
+      18,
+      2,
+      0
+    ],
+    [
+      "k",
+      17,
+      2,
+      0
+    ],
+    [
+      "v",
+      21,
+      3,
+      0
+    ],
+    [
+      "v",
+      27,
+      3,
+      0
+    ]
+  ],
+  "max_tokens_per_source": 128,
+  "seed": 8,
+  "threads": 8,
+  "provenance": {
+    "baseline_variant": "r7_joint_k1_gt_cond",
+    "frozen_config": "configs/a2/round7_v1/policy_select_doc.json",
+    "frozen_config_sha256": "c24dc9dbef06b8652629bd9d5212be6db8c6536d9d9f7c00a2194ec990dbd80f",
+    "selected_stages_rule": "first res_stages_limit=43 entries of the frozen 224-entry priority; exact order retained",
+    "frozen_priority_entries": 224,
+    "frozen_retained_ranking_bytes": 448,
+    "selected_stages_sha256_canonical_json": "31a5f9ec3d6464139fe040138d045cb1b61872b171fd1f8566f575e7926fbf4a",
+    "K_stages": 23,
+    "V_stages": 20,
+    "source_split_sha256": "c0bfa131462a78a9d5455d784206f8a97f3a9a268631239b15381740526bc305",
+    "old_book_sha256": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "frozen_factors_sha256": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "source_roots": {
+      "isolated_code": "/path/to/TrajKV/stages/round8_20261118_v1",
+      "model_data_results": "/path/to/TrajKV"
+    },
+    "execution_policy": "local preparation only; launch by root after maintenance and source/upload identity checks"
+  },
+  "scope": "64-source bounded diagnostic native-coordinate collection at the true image boundary; no GT labels, model quality or efficiency measurement"
+}

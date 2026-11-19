@@ -1,0 +1,61 @@
+{
+  "schema": "trajkv.round8.confirmation-source-preflight.v1",
+  "status": "PASS",
+  "created_at_utc": "2026-11-19T05:09:26.326158+00:00",
+  "pools": [
+    {
+      "pool": "text_validation128",
+      "images": 128,
+      "questions": 128,
+      "membership_sha256": "1c278bafc04839109e51a58a949b50e868bc221950cbcf37f7e7c680e0ca24bc",
+      "image_bytes": 39429295,
+      "fresh_scope": "project source/content disjoint against enumerated exposure plus reservations; backbone pretraining exposure not established",
+      "current_registered_source_intersection": 128,
+      "current_registered_content_intersection": 128,
+      "reservation_claimed_overlap": 0,
+      "registry_scope": "Current registry may include this cohort after staging; original immutable exclusion inputs are SHA checked"
+    },
+    {
+      "pool": "infovqa_validation64",
+      "images": 64,
+      "questions": 64,
+      "membership_sha256": "d963361febf4eaf372e49c46409ed214472d3a9b3eab1538fe89c831c64a53f2",
+      "image_bytes": 29181610,
+      "fresh_scope": "project-fresh official InfoVQA validation external cohort",
+      "current_registered_source_intersection": 0,
+      "current_registered_content_intersection": 0,
+      "reservation_claimed_overlap": 0,
+      "registry_scope": "Current registry may include this cohort after staging; original immutable exclusion inputs are SHA checked"
+    },
+    {
+      "pool": "doc_train64",
+      "images": 64,
+      "questions": 210,
+      "membership_sha256": "93db7c47ba55c33139b837f7b9a6d8811ca19966e0dfc59e80ef6497da03264b",
+      "image_bytes": 5762262,
+      "fresh_scope": "project-fresh TRAIN source holdout, not validation/test",
+      "current_registered_source_intersection": 0,
+      "current_registered_content_intersection": 0,
+      "reservation_claimed_overlap": 0,
+      "registry_scope": "Current registry may include this cohort after staging; original immutable exclusion inputs are SHA checked"
+    }
+  ],
+  "pairwise_raw_content_overlaps": {
+    "text_validation128__infovqa_validation64": 0,
+    "text_validation128__doc_train64": 0,
+    "infovqa_validation64__doc_train64": 0,
+    "text_validation128__cal_train": 0,
+    "infovqa_validation64__cal_train": 0,
+    "doc_train64__cal_train": 0,
+    "text_validation128__cal_select": 0,
+    "infovqa_validation64__cal_select": 0,
+    "doc_train64__cal_select": 0
+  },
+  "new_confirmation_answer_values_decoded": false,
+  "new_parquet_question_columns_decoded": false,
+  "existing_runner_question_text_loaded_by_identity_registry": true,
+  "registry_input_count": 333,
+  "code_sha256": "47520e6ff0fb3794c78b5994e91caf133b718b87dfa07ad16693756f6c6d2802",
+  "GPU_used": false,
+  "uploaded": false
+}

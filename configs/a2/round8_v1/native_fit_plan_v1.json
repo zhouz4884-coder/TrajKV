@@ -1,0 +1,62 @@
+{
+  "schema": "trajkv.round8.native-fit-plan.v1",
+  "dump": "/path/to/TrajKV/results/round8_v1/native_cal32_select32_v1",
+  "splits": "/path/to/TrajKV/configs/a2/round8_v1/calibration_source_splits_v1.json",
+  "old_book": "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json",
+  "device": "cuda",
+  "iterations": 8,
+  "chunk": 2048,
+  "modes": [
+    "decoder-only",
+    "reencode"
+  ],
+  "jobs": {
+    "K": {
+      "gpu": 0,
+      "assets": [
+        "k_global4_16",
+        "k_global8_256",
+        "k_position4_16"
+      ],
+      "output": "/path/to/TrajKV/results/round8_v1/native_books_k_v1"
+    },
+    "V": {
+      "gpu": 1,
+      "assets": [
+        "v_global8_256"
+      ],
+      "output": "/path/to/TrajKV/results/round8_v1/native_books_v_v1"
+    }
+  },
+  "source_balanced_training": true,
+  "select_used_for_updates": false,
+  "select_policy": "endpoint scoring only; parent may use select scores to choose methods after endpoints are frozen",
+  "provenance": {
+    "baseline_variant": "r7_joint_k1_gt_cond",
+    "frozen_config": "configs/a2/round7_v1/policy_select_doc.json",
+    "frozen_config_sha256": "c24dc9dbef06b8652629bd9d5212be6db8c6536d9d9f7c00a2194ec990dbd80f",
+    "selected_stages_rule": "first res_stages_limit=43 entries of the frozen 224-entry priority; exact order retained",
+    "frozen_priority_entries": 224,
+    "frozen_retained_ranking_bytes": 448,
+    "selected_stages_sha256_canonical_json": "31a5f9ec3d6464139fe040138d045cb1b61872b171fd1f8566f575e7926fbf4a",
+    "K_stages": 23,
+    "V_stages": 20,
+    "source_split_sha256": "c0bfa131462a78a9d5455d784206f8a97f3a9a268631239b15381740526bc305",
+    "old_book_sha256": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "frozen_factors_sha256": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "source_roots": {
+      "isolated_code": "/path/to/TrajKV/stages/round8_20261118_v1",
+      "model_data_results": "/path/to/TrajKV"
+    },
+    "execution_policy": "local preparation only; launch by root after maintenance and source/upload identity checks"
+  },
+  "prerequisites": [
+    "/path/to/TrajKV/results/round8_v1/native_cal32_select32_v1/complete.json status=COMPLETE, sources=64",
+    "/path/to/TrajKV/results/round8_v1/reader_control_gpu1_v1/complete.json status=PASS, gpu_executed=true"
+  ],
+  "deployment_field_policy": {
+    "decoder-only": "old encoder J/g/frame/all R codes and alphas fixed; decoder books only",
+    "reencode": "own J/K norm gain with original factor/own R recomputed; frozen frame and 43-stage mask"
+  },
+  "decoder_only_K_extra_old_encoder_book_bytes": 128
+}

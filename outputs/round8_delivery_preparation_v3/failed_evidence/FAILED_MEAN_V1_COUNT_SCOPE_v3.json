@@ -1,0 +1,30 @@
+{
+  "schema": "trajkv.round8.failed-mean-v1-count-scope.v1",
+  "status": "PASS_EXCLUDED_QUALITY",
+  "source_collection_receipt_sha256": "0150ff65e6f2fbf6ebc286ef98fd32e140d83f1b29aace054c4f40ee005ca7a9",
+  "runs": [
+    {
+      "run": "results/round8_v1/mean_select2_v1_doc",
+      "records": 76,
+      "selected_sessions": 38,
+      "original_image_sources": 16,
+      "answer_emissions": 76,
+      "final_quality_gate": "REJECTED_MISSING_COMPLETE_MEAN",
+      "valid_quality_answers": 0
+    },
+    {
+      "run": "results/round8_v1/mean_select2_v1_text",
+      "records": 44,
+      "selected_sessions": 22,
+      "original_image_sources": 16,
+      "answer_emissions": 44,
+      "final_quality_gate": "REJECTED_MISSING_COMPLETE_MEAN",
+      "valid_quality_answers": 0
+    }
+  ],
+  "correction": "The original pull receipt field original_sources counts selected sessions (38/22), not distinct images. This addendum provides exact original_image_sources (16 per domain). Raw producer bytes and all fingerprints remain unchanged.",
+  "valid_quality_answers": 0,
+  "references_opened": false,
+  "GPU_used": false,
+  "runtime_scope": "Original broad and narrow source fingerprints are preserved in manifests/records and collection receipt. Final runtime source capture must also contain their corresponding immutable source objects and original launch inventories."
+}

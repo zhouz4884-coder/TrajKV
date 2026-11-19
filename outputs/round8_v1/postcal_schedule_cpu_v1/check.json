@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "schema": "trajkv.round8.postcal-schedule-CPU-check.v1",
+  "samples_path": "configs/a2/round8_v1/calibration_train32.json",
+  "samples_raw_file_sha256": "5b3f97ea175103903d988480ee6977d07e17f688a21126545d3fa4b2be39466d",
+  "source_sha256": {
+    "round8_postcal_schedule.py": "4aff4148b00a1d2be9f6f3239d01284ff4a393552b9b56a1b212493a19708ad7",
+    "round8_postcal_schedule_check.py": "c25c4c50b508f0de4066ba3bbcc76bfcc0ee4c1964d58aa814a65e7625afc5e7",
+    "round8_continuous.py": "2fdd47cea4c45ff5d26531188ed1faa14b2de7b162f5f8e39cfc46a8ee3ffdf5"
+  },
+  "seed": 1212,
+  "steps": 200,
+  "grouped_sources": 32,
+  "Doc_sources": 16,
+  "Text_sources": 16,
+  "Doc_questions": 45,
+  "Text_questions": 25,
+  "independent_Q": 70,
+  "domain_steps": {
+    "doc": 100,
+    "text": 100
+  },
+  "source_visit_histogram": {
+    "6": 24,
+    "7": 8
+  },
+  "full_source_epochs": 6,
+  "balanced_tail_steps": 8,
+  "all70Q_covered": true,
+  "within_source_Q_visit_difference_at_most1": true,
+  "frozen_independent_QA_serialization_exact": true,
+  "input_and_global_RNG_unchanged": true,
+  "repeated_seed_full_identity": true,
+  "extended_schedule_choice_prefix_preserved": true,
+  "alternative_seed_20261119_balanced": true,
+  "exhaustive_source_objective_weights_each1over32": true,
+  "per_step_token_mean_loss_weight1": true,
+  "rejected_invalid_inputs": [
+    "label_payload",
+    "duplicate_source",
+    "select_split",
+    "wrong_Q_membership",
+    "turns_mismatch"
+  ],
+  "schedule_sha256": "4830e44dcb66448f16dc3357f58c97ddec666cec328e1efeae60966f9b15fb0b",
+  "schedule_id": "r8-postcal-sourcebalanced-v1-98e18286d19eab89e1d638e4",
+  "GT_references_opened": false,
+  "select_data_opened": false,
+  "GPU_used": false,
+  "SSH_used": false,
+  "model_forward_executed": false
+}

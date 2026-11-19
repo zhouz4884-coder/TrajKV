@@ -1,0 +1,29 @@
+{
+  "status": "LOCAL_READY_GPU_PENDING",
+  "schema": "trajkv.round8.mean-local-ready.v1",
+  "files_sha256": {
+    "code/a2/round8_mean_runner.py": "604a8d99459de448adde63ca4ba43bca4024f0a4fbc404314b36184b81c4abad",
+    "code/a2/round8_mean_gpu_check.py": "7f0720761aa0395b4cd0a230f6ff76b0c95fcacca50707df2cbc508dcdc104f4",
+    "code/a2/round8_mean_runner_check.py": "dbb80ff01a69cf0cbe6d1f12e241dd0f9382cd2a3519e459e605eea1894d3347",
+    "code/a2/prepare_round8_mean_select.py": "f22b7aa8e300718c7684c4b891d6c4768e636549aa3c3b6e948ee8c7f88a0cdf",
+    "configs/jobs/r8_mean_gpu_check_v1.json": "72a665c8391078f8daec2f6b8aa58fcd18bb150602353a2f78f1e138c6c6e7bb",
+    "configs/a2/round8_v1/mean_select2_v1_doc.json": "42c0748e711b581ebc3b6a2ebaa3b562984ea2fbb4f2faaf36a0f74baf373acc",
+    "configs/a2/round8_v1/mean_select2_v1_text.json": "86c89dbf4eb941353d165f652a07a6ef9be5977bcc53ca939f9c58eb28078a15",
+    "configs/a2/round8_v1/job_mean_select2_v1_doc.json": "6ea933f6d3398cc23e3366032bd5af9b23984315531b472a77ca2d7dc3a214ac",
+    "configs/a2/round8_v1/job_mean_select2_v1_text.json": "e169de3461d6918d540dda8d3305ab9ff67f59a7ffc136fe8b53b410e9bb9f84",
+    "audit/a2/round8_mean_select2_v1_prepared.json": "af31522d3893c4d7391f433ccf3e8c7287649fe13e92c6de5f798b78ea87ddf4",
+    "outputs/round8_v1/mean_runner_cpu_v1/check.json": "96b1465166915489d9cc761a93859103c03434f7de0593292506a230ea7142a7",
+    "outputs/round8_v1/mean_runner_cpu_v1/complete.json": "3d537562746870a7a716be55e94c4fdbe58d2093d61de1fc1ffd724078feebf1",
+    "outputs/round8_v1/mean_runner_cpu_v1/math_check.json": "8897017efbbcd18a132c0a10e64c1c779a6d18f223cbffdc38a0b76160f3a276"
+  },
+  "GPU_used": false,
+  "SSH_used": false,
+  "uploaded": false,
+  "expected_select_records": 120,
+  "actual_mean_decode_chunk": 4096,
+  "mean_apply_count_each_enabled_layer": 1,
+  "added_persistent_tensor_bytes": 0,
+  "required_quality_marker": "complete_mean.json",
+  "quality_analyzer": "code/a2/analyze_round8_final_quality.py",
+  "scope": "CPU actual helper and stub integration only; root must run actual CUDA gate then model QA"
+}

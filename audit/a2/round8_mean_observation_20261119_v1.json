@@ -1,0 +1,101 @@
+{
+  "jobs": [
+    {
+      "name": "round8_mean_select2_v1_doc",
+      "pid": 507861,
+      "pid_exists": true,
+      "pid_state": "R",
+      "output": "/path/to/TrajKV/results/round8_v1/mean_select2_v1_doc",
+      "record_count": 26,
+      "files": {
+        "manifest.json": {
+          "size": 85071,
+          "sha256": "dd66eade22bf94f75c7fe6491f1217df46b533b6992cf78057a40c5b94dfba64"
+        },
+        "records.jsonl": {
+          "size": 6013510,
+          "sha256": "8534a5e7574039f7393a339623745e1ddf99478514e075c1c6f6cecec63ca6d6"
+        }
+      },
+      "markers": {},
+      "complete_graph_verified": false,
+      "progress": [
+        "{\"done\": 25, \"id\": \"docvqa_next_4701_cal_q3\", \"variant\": \"r8_visual_mean_off\", \"nv\": 1792, \"seconds\": 1.7}",
+        "{\"done\": 26, \"id\": \"docvqa_next_4701_cal_q3\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1792, \"seconds\": 1.96}"
+      ],
+      "failure_tail": null,
+      "launch": {
+        "pid": 507861,
+        "name": "round8_mean_select2_v1_doc",
+        "log": "/path/to/TrajKV/logs/round8_mean_select2_v1_doc.log",
+        "job": "/path/to/TrajKV/jobs/round8_mean_select2_v1_doc.json",
+        "source_snapshot": "/path/to/TrajKV/jobs/round8_mean_select2_v1_doc.source",
+        "immutable_code_execution": true,
+        "argv_executed": [
+          "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+          "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py",
+          "--config",
+          "/path/to/TrajKV/configs/a2/round8_v1/mean_select2_v1_doc.json",
+          "--output",
+          "/path/to/TrajKV/results/round8_v1/mean_select2_v1_doc"
+        ],
+        "cache_environment": {
+          "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+          "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+          "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+          "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda"
+        }
+      }
+    },
+    {
+      "name": "round8_mean_select2_v1_text",
+      "pid": 507862,
+      "pid_exists": true,
+      "pid_state": "R",
+      "output": "/path/to/TrajKV/results/round8_v1/mean_select2_v1_text",
+      "record_count": 31,
+      "files": {
+        "manifest.json": {
+          "size": 84538,
+          "sha256": "faa4fafed961277f84dc357c0d68f6ee77a4886849bd41479040947043d7b98d"
+        },
+        "records.jsonl": {
+          "size": 7129677,
+          "sha256": "12a0d28073dd6be0b6fd5d4499774b79f4bee764b833b682372baae11f9fb508"
+        }
+      },
+      "markers": {},
+      "complete_graph_verified": false,
+      "progress": [
+        "{\"done\": 30, \"id\": \"r7_text_select16_39376\", \"variant\": \"r8_visual_mean_on\", \"nv\": 1792, \"seconds\": 1.51}",
+        "{\"done\": 31, \"id\": \"r7_text_select16_38066\", \"variant\": \"r8_visual_mean_off\", \"nv\": 1792, \"seconds\": 1.39}"
+      ],
+      "failure_tail": null,
+      "launch": {
+        "pid": 507862,
+        "name": "round8_mean_select2_v1_text",
+        "log": "/path/to/TrajKV/logs/round8_mean_select2_v1_text.log",
+        "job": "/path/to/TrajKV/jobs/round8_mean_select2_v1_text.json",
+        "source_snapshot": "/path/to/TrajKV/jobs/round8_mean_select2_v1_text.source",
+        "immutable_code_execution": true,
+        "argv_executed": [
+          "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+          "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_mean_runner.py",
+          "--config",
+          "/path/to/TrajKV/configs/a2/round8_v1/mean_select2_v1_text.json",
+          "--output",
+          "/path/to/TrajKV/results/round8_v1/mean_select2_v1_text"
+        ],
+        "cache_environment": {
+          "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+          "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+          "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+          "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda"
+        }
+      }
+    }
+  ],
+  "gpu": "0, GPU-ef01d441-985f-50b3-6e64-5d4c3e2def3a, 15538 MiB, 0 %\n1, GPU-a696ce9a-7137-cf6f-b4d3-deb992a72f28, 16004 MiB, 99 %\n",
+  "compute_apps": "507861, GPU-ef01d441-985f-50b3-6e64-5d4c3e2def3a, 15506 MiB\n507862, GPU-a696ce9a-7137-cf6f-b4d3-deb992a72f28, 15972 MiB\n",
+  "collected": []
+}

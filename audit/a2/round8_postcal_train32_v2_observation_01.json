@@ -1,0 +1,96 @@
+{
+  "pid": 532871,
+  "pid_exists": true,
+  "pid_state": "R",
+  "actual_argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source/code/a2/round8_postcal_train_v2.py",
+    "--config",
+    "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v3.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/postcal_train32_v2"
+  ],
+  "launch_receipt": {
+    "pid": 532871,
+    "name": "round8_postcal_train32_v2",
+    "log": "/path/to/TrajKV/stages/round8_20261118_v1/logs/round8_postcal_train32_v2.log",
+    "job": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.json",
+    "source_snapshot": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source",
+    "immutable_code_execution": true,
+    "argv_executed": [
+      "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+      "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source/code/a2/round8_postcal_train_v2.py",
+      "--config",
+      "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v3.json",
+      "--output",
+      "/path/to/TrajKV/results/round8_v1/postcal_train32_v2"
+    ],
+    "cache_environment": {
+      "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+      "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+      "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+      "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda"
+    }
+  },
+  "files": {
+    "schedule.json": {
+      "size": 256885,
+      "sha256": "c9c57b7de083ca191e7c0079c83e3b93ee5f0d91f6fdf004d5a7bc08566dbc48"
+    },
+    "first_probe.json": {
+      "size": 540,
+      "sha256": "9e724452ccd095ce7b3fa8358ff2fc1dc6b17cd55c5bf88ee689b305b2c7bc69"
+    }
+  },
+  "first_probe": {
+    "status": "PASS",
+    "id": "r8_cal_doc_8c3e4839dac3340b4635b79bc044199fbbdabf7252023c4cd671600d2f719ac0__indq1",
+    "real_Nv": 1792,
+    "actual_cap": 8,
+    "actual_packed_zero_theta_identity": true,
+    "dense_shadow_tolerance_pass": true,
+    "parameter_gradient_norms": [
+      0.046189382672309875,
+      0.01743975095450878,
+      0.0321364589035511
+    ],
+    "q_gradient_calls": 27,
+    "q_gradient_norm": 0.01667333549441284,
+    "KL": 0.0022058922331780195,
+    "seconds": 0.7631055780075258,
+    "optimizer_updates": 0,
+    "model_weights_frozen": true
+  },
+  "finite_zero_diagnostics": [],
+  "gradient_attempts": 0,
+  "completed_steps": 0,
+  "first_step": null,
+  "latest_step": null,
+  "progress": [
+    {
+      "phase": "teacher_and_R42_collection",
+      "case": 42,
+      "cases": 70,
+      "id": "r8_cal_doc_436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee__indq3",
+      "Nv": 1792
+    },
+    {
+      "phase": "teacher_and_R42_collection",
+      "case": 43,
+      "cases": 70,
+      "id": "r8_cal_doc_a40530564f3c45779baabca5b5e063685a1dbc1a554c4ad9a40ef7d83776df70__indq1",
+      "Nv": 1792
+    },
+    {
+      "phase": "teacher_and_R42_collection",
+      "case": 44,
+      "cases": 70,
+      "id": "r8_cal_doc_a40530564f3c45779baabca5b5e063685a1dbc1a554c4ad9a40ef7d83776df70__indq2",
+      "Nv": 1792
+    }
+  ],
+  "complete_train_graph_verified": false,
+  "training": null,
+  "failure": null,
+  "compute_apps": "532871, GPU-ef01d441-985f-50b3-6e64-5d4c3e2def3a, 18302 MiB\n533395, GPU-a696ce9a-7137-cf6f-b4d3-deb992a72f28, 16012 MiB\n"
+}

@@ -1,0 +1,90 @@
+{
+  "schema": "trajkv.round8.postfit-selection-plan.v1",
+  "status": "PLAN_ONLY_NOT_EXECUTED",
+  "expected_fits": {
+    "k": {
+      "local": "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2",
+      "remote": "/path/to/TrajKV/results/round8_v1/native_books_cap8_k_v2",
+      "complete": "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2\\complete_books.json",
+      "files": [
+        "k_global4_16_decoder_only.json",
+        "k_global4_16_reencode.json",
+        "k_global8_256_decoder_only.json",
+        "k_global8_256_reencode.json",
+        "k_position4_16_decoder_only.json",
+        "k_position4_16_reencode.json"
+      ]
+    },
+    "v": {
+      "local": "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_v_v2",
+      "remote": "/path/to/TrajKV/results/round8_v1/native_books_cap8_v_v2",
+      "complete": "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_v_v2\\complete_books.json",
+      "files": [
+        "v_global8_256_decoder_only.json",
+        "v_global8_256_reencode.json"
+      ]
+    }
+  },
+  "missing_files": [
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2\\complete_books.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2\\k_global4_16_decoder_only.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2\\k_global4_16_reencode.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2\\k_global8_256_decoder_only.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2\\k_global8_256_reencode.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2\\k_position4_16_decoder_only.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_k_v2\\k_position4_16_reencode.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_v_v2\\complete_books.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_v_v2\\v_global8_256_decoder_only.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_cap8_v_v2\\v_global8_256_reencode.json"
+  ],
+  "source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "model_data_results_root": "/path/to/TrajKV",
+  "output_prefix": "postfit_cap8_aligned11_v3",
+  "path_contract": {
+    "code_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+    "config_sample_asset_result_root": "/path/to/TrajKV",
+    "worker_python": "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "runtime_reference_job": "configs\\jobs\\r8_native_collect_cal32_select32_cap8_gpu0_v2.json",
+    "runtime_reference_job_sha256": "439d8dcc15c5a53a634b42bba76707af20fd96397ef8d7bc026f1fd1bad87a86",
+    "round8_source_root_required": true,
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "new_caches_under": "/path/to/TrajKV/cache/round8_v1/"
+  },
+  "required_native_manifest": "/path/to/TrajKV\\results\\round8_v1\\native_cal32_select32_cap8_v2\\manifest.json",
+  "variants": 11,
+  "doc_questions": 38,
+  "text_questions": 22,
+  "doc_sources": 16,
+  "text_sources": 16,
+  "expected_records_doc": 418,
+  "expected_records_text": 242,
+  "expected_answers_total": 660,
+  "decoder_controls": [
+    "k",
+    "v"
+  ],
+  "decoder_book_policy": "matched-reencode",
+  "expected_full_ranking": 224,
+  "actual_residual_stages": 43,
+  "ranking_bytes": 448,
+  "no_evaluation_files_generated": true,
+  "no_fitted_book_selected_by_score": true,
+  "exposure_scope": "Previously exposed selection sources; developmental QA, not blind confirmation",
+  "future_confirmation_answers_opened": false,
+  "GPU_used": false,
+  "uploaded": false,
+  "code_sha256": "5d10d6b7f921bf56345a8a373ba18c7c60867457f54d7ba9872e98a29b735455",
+  "cap_alignment_contract": {
+    "calibration_max_patches": 8,
+    "quality_arguments_max_patches": 8,
+    "quality_variant_cap": 8,
+    "collector_config": "configs\\a2\\round8_v1\\native_collect_cal32_select32_cap8_v2.json",
+    "collector_config_sha256": "b2d86edfd544eaf2b8f34911e26b521133f09198a19a66a490bb54a94cd4006c",
+    "native_dump_manifest": "/path/to/TrajKV\\results\\round8_v1\\native_cal32_select32_cap8_v2\\manifest.json",
+    "native_dump_manifest_sha256": null,
+    "source_density_alignment_verified": false,
+    "previous_run_scope": "old cap16 calibration to cap8 quality is valid cross-density development, not matched-cap calibration evidence",
+    "status": "CAP8_DECLARED_COLLECTION_AND_FITS_PENDING"
+  },
+  "cap8_preparer_source_sha256": "db029a89534b47f4daa4de06f4590dc3d67eeda43dd5894dcb4129e0b7507c04"
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "trajkv.round8.job.v2",
+  "name": "round8_postcal_trajectory_diag_instrument_v2",
+  "round8_source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "cwd": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "OMP_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "TOKENIZERS_PARALLELISM": "false",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+    "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+    "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda",
+    "PYTHONPYCACHEPREFIX": "/path/to/TrajKV/cache/round8_v1/shared/pycache",
+    "HF_HOME": "/path/to/TrajKV/cache/round8_v1/shared/huggingface",
+    "HUGGINGFACE_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/hub",
+    "TORCH_HOME": "/path/to/TrajKV/cache/round8_v1/shared/torch",
+    "PIP_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/pip",
+    "UV_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/uv",
+    "TMP": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TEMP": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TORCH_EXTENSIONS_DIR": "/path/to/TrajKV/cache/round8_v1/shared/torch_extensions",
+    "XDG_CACHE_HOME": "/path/to/TrajKV/cache/round8_v1/shared/xdg",
+    "HF_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/hub",
+    "HF_MODULES_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/modules"
+  },
+  "argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_postcal_trajectory_diagnostic_instrument_v2.py",
+    "--freeze",
+    "/path/to/TrajKV/configs/a2/round8_v1/method_freeze_v1.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/postcal_trajectory_diag_instrument_v2"
+  ],
+  "runtime_policy": "Required dedicated code/launch_round8_data_disk.py; actual code argv rewritten to SR/jobs/name.source; code/cwdSR, model/config/samples/resultsglobalR,8TBP72/sharedcache",
+  "prerequisites": [
+    "Root grants short GPU0 lease after Text128 confirmation and before quiet; do not launch while Text active",
+    "Frozen40 files exact; code entries resolved inside actual snapshot and metadata under globalR",
+    "Only two old train firstQAs identity/learned4pairs; no GT, no optimizer, no parameter/model changes"
+  ],
+  "required_launcher": "code/launch_round8_data_disk.py",
+  "dependency_enforcement": "Manual root GPU0 lease; local preparation only"
+}

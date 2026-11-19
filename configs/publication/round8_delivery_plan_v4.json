@@ -1,0 +1,68 @@
+{
+  "schema": "trajkv.round8.publication-plan.v1",
+  "readiness": "RESEARCH_COMPLETE_READY_FOR_PUBLICATION",
+  "tag_name": "research-round8-20261118",
+  "release_title": "Round8: frozen postcal candidate, independent source confirmation and measured costs",
+  "release_body": "Incremental frozen research evidence. Calibration KL, exposed development quality, post-freeze source confirmation and bounded cost measurements have distinct roles. Execution completion does not imply a quality or speed advantage. Exact archive bytes, original source SHA and normalized LF Git identities are recorded separately. Earlier history, releases and assets are retained.",
+  "prerelease": true,
+  "archive_name": "round8_increment_20261118.zip",
+  "execution_receipt": "audit/a2/round8_stage_execution_complete_v1.json",
+  "final_report": "docs/REPORT_ROUND8_2026-11-18.md",
+  "readme_entry_file": "docs/ROUND8_README_ENTRY_v1.md",
+  "method_freeze": "configs/a2/round8_v1/method_freeze_v1.json",
+  "method_freeze_sha256": "af1c0c06090522ca92efa57b0d0d85b1ae4445606510cc0bc3e1f1a11f1ff4be",
+  "required_quality_domains": [
+    "doc",
+    "text",
+    "infovqa"
+  ],
+  "quality_analyses": [
+    {
+      "summary": "results/round8_v1/confirm_firstq4_v1_doc_train64_analysis_v1/summary.json",
+      "summary_sha256": "cd7bc3525d06697ce954e10c6853604cb908f544fff9dde9dd4840692a9c1fb1"
+    },
+    {
+      "summary": "results/round8_v1/confirm_firstq4_v1_text_validation128_analysis_v1/summary.json",
+      "summary_sha256": "77b0130c474a0d815172895a1060ef2cb133c0dcf9a94da34cdb5cdbc3793725"
+    },
+    {
+      "summary": "results/round8_v1/confirm_firstq4_v1_infovqa_validation64_analysis_v1/summary.json",
+      "summary_sha256": "22c868d1708c1ed7170b68f356e3c9038ad07961e2ff5345b2dbc25c40804ef3"
+    }
+  ],
+  "include_completed_development_analyses": true,
+  "book_manifests": [
+    "results/round8_v1/native_books_cap8_k_v2/complete_books.json",
+    "results/round8_v1/native_books_cap8_v_v2/complete_books.json"
+  ],
+  "extra_roots": [
+    "outputs/round8_v1/calibration_cpu_math_v1",
+    "outputs/round8_v1/final_quality_gate_cpu_v6",
+    "outputs/round8_v1/postcal_schedule_cpu_v1",
+    "outputs/round8_v1/postcal_trainer_cpu_v2",
+    "outputs/round8_postcal_cpu_v1",
+    "outputs/round8_postcal_deployment_cpu_v1",
+    "outputs/round8_v1/postcal_trajectory_plan_cpu_v3",
+    "outputs/round8_delivery_preparation_v3/public_cpu_evidence",
+    "outputs/round8_delivery_preparation_v3/failed_evidence"
+  ],
+  "failed_evidence_roots": [
+    "results/round8_v1/postcal_train32_v1",
+    "results/round8_v1/mean_select2_v1_doc",
+    "results/round8_v1/mean_select2_v1_text"
+  ],
+  "maintenance_public_summary": null,
+  "domain_scope": "Doc is a fresh source holdout drawn from the official training split. Text and InfoVQA are fresh official-validation source pools. InfoVQA remains separate from DocVQA despite sharing ANLS. No result pools are combined into a single quality score.",
+  "cpu_scope": "CPU fixtures validate contracts only and do not count as model task-quality answers. Failed trainer v1 is preserved and excluded from accepted calibration/quality.",
+  "scope": "Completed research inputs: matched cap8 development, one frozen fixed200 postcal candidate, three separate post-freeze source-confirmation domains, training/deployment first-target diagnostic, continuous8 and quiet6. No robust quality-cost frontier improvement was established. Exact archive/source/LF-Git identities and remote publication/history remain for root verification. Failed training/Mean traces and CPU fixtures are excluded from task quality; original images, weights, tensors, credentials, private chats and raw maintenance remain private.",
+  "runtime_source_index": "results/round8_v1/runtime_sources/runtime_index_final_20261119_v3.json",
+  "runtime_source_index_sha256": "674952a1659d631553991440dc0d621a4ae53c62fa95a044035d0ed61e42ca5a",
+  "research_execution_completed": true,
+  "performance_goal_achieved": false,
+  "github_sync_pending": true,
+  "quality_inventory": "audit/a2/round8_completed_quality_inventory_v1.json",
+  "measurement_independent_check": "audit/a2/round8_final_measurement_independent_v1.json",
+  "artifact_map": "configs/publication/round8_publication_artifact_map_v1.json",
+  "artifact_map_sha256": "eda8b6dbdb64d08a65f669c26aba4c7b991217c95b34d51d33015440c53c4868",
+  "model_config_metadata_scope": "Exact original model config JSON only, pinned to producer SHA; no model weights or images"
+}

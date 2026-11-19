@@ -1,0 +1,74 @@
+{
+  "pid": 548438,
+  "pid_exists": false,
+  "live_observed": false,
+  "actual_argv": [],
+  "receipt_argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_trajectory_diag_instrument_v2.source/code/a2/round8_postcal_trajectory_diagnostic_instrument_v2.py",
+    "--freeze",
+    "/path/to/TrajKV/configs/a2/round8_v1/method_freeze_v1.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/postcal_trajectory_diag_instrument_v2"
+  ],
+  "files": {
+    "complete.json": {
+      "size": 358,
+      "sha256": "3af9cc1e69bfb561a6af127755f2b3260d330ef67832cd31aec2d963f437a38e"
+    },
+    "plan.json": {
+      "size": 7892,
+      "sha256": "b8a8722a1c2ffd979731ea860b5932470aee72d1276e48f40a30e6a0cbd1f1b9"
+    },
+    "diagnostic.json": {
+      "size": 566954,
+      "sha256": "0e3fd466d94ca70fa17c33cf3b492ff93c89b79d38ce18120bae892a1a1aba27"
+    }
+  },
+  "complete": {
+    "status": "COMPLETE_DIAGNOSTIC_ONLY",
+    "pairs": 4,
+    "GPU_executed": true,
+    "task_accuracy_eligible": false,
+    "diagnostic_sha256": "0e3fd466d94ca70fa17c33cf3b492ff93c89b79d38ce18120bae892a1a1aba27",
+    "plan_sha256": "b8a8722a1c2ffd979731ea860b5932470aee72d1276e48f40a30e6a0cbd1f1b9",
+    "frozen40_unchanged": true,
+    "instrumentation_restored": true
+  },
+  "pairs": [
+    {
+      "pair": 0,
+      "domain": "doc",
+      "mode": "identity",
+      "max_abs": 0.015625,
+      "relative_L2": 5.928987593506463e-05,
+      "top1_equal": true
+    },
+    {
+      "pair": 1,
+      "domain": "doc",
+      "mode": "learned",
+      "max_abs": 0.0078125,
+      "relative_L2": 5.870670793228783e-05,
+      "top1_equal": true
+    },
+    {
+      "pair": 2,
+      "domain": "text",
+      "mode": "identity",
+      "max_abs": 0.0078125,
+      "relative_L2": 5.932733984082006e-05,
+      "top1_equal": true
+    },
+    {
+      "pair": 3,
+      "domain": "text",
+      "mode": "learned",
+      "max_abs": 0.0078125,
+      "relative_L2": 6.275338819250464e-05,
+      "top1_equal": true
+    }
+  ],
+  "failure": null,
+  "compute_apps": ""
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "trajkv.round8.job.v2",
+  "name": "round8_postcal_natural64_learned1_v1_text",
+  "round8_source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "cwd": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "OMP_NUM_THREADS": "8",
+    "MKL_NUM_THREADS": "8",
+    "TOKENIZERS_PARALLELISM": "false",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+    "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+    "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda",
+    "PYTHONPYCACHEPREFIX": "/path/to/TrajKV/cache/round8_v1/shared/pycache",
+    "HF_HOME": "/path/to/TrajKV/cache/round8_v1/shared/huggingface",
+    "HUGGINGFACE_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/hub",
+    "TORCH_HOME": "/path/to/TrajKV/cache/round8_v1/shared/torch",
+    "PIP_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/pip",
+    "UV_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/uv",
+    "TMP": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TEMP": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+    "TORCH_EXTENSIONS_DIR": "/path/to/TrajKV/cache/round8_v1/shared/torch_extensions",
+    "XDG_CACHE_HOME": "/path/to/TrajKV/cache/round8_v1/shared/xdg",
+    "HF_HUB_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/hub",
+    "HF_MODULES_CACHE": "/path/to/TrajKV/cache/round8_v1/shared/huggingface/modules"
+  },
+  "argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_postcal_runner.py",
+    "--config",
+    "/path/to/TrajKV/configs/a2/round8_v1/postcal_natural64_learned1_v1_text.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/postcal_natural64_learned1_v1_text"
+  ],
+  "runtime_policy": "Validated data-volume P72; sourceRoot code only; globalR configs/samples/output; shared project data-disk caches",
+  "prerequisites": [
+    "Root GPU1 bounded postcal split scheduling; actual source snapshot argv must be verified",
+    "CPU physical/deployment stub and actual CUDA8reader checks PASS; no newkernel",
+    "For learned: final200-step complete_postcal_train hash graph and frozen336FP32 factors must pass before launch",
+    "No reused output/job/snapshot; complete_postcal final marker and independent full owner/source/coverage before references"
+  ],
+  "dependency_enforcement": "Root-assigned bounded GPU execution; launcher does not enforce preflight or completion audits",
+  "prepared_control": "Authorized postcal select4/natural2 split only; no new method grid or GT"
+}

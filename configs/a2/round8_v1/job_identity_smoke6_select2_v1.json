@@ -1,0 +1,23 @@
+{
+  "name": "round8_identity_smoke6_select2_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "HF_HOME": "/path/to/TrajKV/cache/runtime/huggingface",
+    "HF_HUB_CACHE": "/path/to/TrajKV/cache/runtime/huggingface/hub",
+    "HF_MODULES_CACHE": "/path/to/TrajKV/cache/runtime/huggingface/modules",
+    "HF_HUB_OFFLINE": "1",
+    "TRITON_CACHE_DIR": "/path/to/TrajKV/stages/round8_20261118_v1/cache/runtime/triton",
+    "TMPDIR": "/path/to/TrajKV/stages/round8_20261118_v1/cache/runtime/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/stages/round8_20261118_v1/cache/runtime/inductor",
+    "CUDA_CACHE_PATH": "/path/to/TrajKV/stages/round8_20261118_v1/cache/runtime/cuda"
+  },
+  "argv": [
+    "/home/RESEARCHER/miniconda3/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_runner.py",
+    "--config",
+    "/path/to/TrajKV/stages/round8_20261118_v1/configs/a2/round8_v1/identity_smoke6.json",
+    "--output",
+    "/path/to/TrajKV/stages/round8_20261118_v1/results/round8_v1/identity_smoke6_select2_v1"
+  ],
+  "cwd": "/path/to/TrajKV/stages/round8_20261118_v1"
+}

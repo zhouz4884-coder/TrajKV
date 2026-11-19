@@ -1,0 +1,223 @@
+{
+  "status": "STAGED_NOT_LAUNCHED",
+  "preflight": {
+    "status": "GPU0_IDLE_NEW_OUTPUTS_ABSENT",
+    "gpu": "0, GPU-ef01d441-985f-50b3-6e64-5d4c3e2def3a, 24 MiB, 0 %\n1, GPU-a696ce9a-7137-cf6f-b4d3-deb992a72f28, 362 MiB, 0 %\n",
+    "compute_apps": "529230, GPU-a696ce9a-7137-cf6f-b4d3-deb992a72f28, 330 MiB\n",
+    "worker_exists": true
+  },
+  "files": [
+    {
+      "remote_path": "/path/to/TrajKV/configs/a2/round8_v1/calibration_train32.json",
+      "sha256": "5b3f97ea175103903d988480ee6977d07e17f688a21126545d3fa4b2be39466d",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "frozen-input"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/configs/a2/round8_v1/job_postcal_train32_v2.json",
+      "sha256": "64518753e541b929b3e91e5a7d7469e8db56bbb8e4c1172a76c721f57be71b35",
+      "action": "EXCLUSIVE_WX_UPLOAD",
+      "role": "new-config"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v2.json",
+      "sha256": "92e7cd53074a9d2268426fd4728b6192ccbd9a3fcab75c9b6c2f3e41c5ac66ad",
+      "action": "EXCLUSIVE_WX_UPLOAD",
+      "role": "new-config"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/results/round7_v1/codec_assets/factors_for_book16_inherited.json",
+      "sha256": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "frozen-input"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json",
+      "sha256": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "frozen-input"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/affine_rate_bank.py",
+      "sha256": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/calibrate_gradient_rank_round5.py",
+      "sha256": "dd7676bf5230e6a7dd4f19b8825649359de6df8f82863860261b6f86b66c774a",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/fast_wht.py",
+      "sha256": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/learned_direction_bank.py",
+      "sha256": "0ee57d34ba74dd426aecb51e985efe3df50852a5e67b624122789719b7547c40",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/masked_bank.py",
+      "sha256": "7c313fddfdadc81939235b0a4fd843540961f8841c69d7400101b33a66737d9d",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/metadata_direction_bank.py",
+      "sha256": "bea958a75c8df84702b20ba32836ae6f4f7ffaae8f6a1024ea6de3c18659ff61",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/quantizers.py",
+      "sha256": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round6_depth_codec.py",
+      "sha256": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round6_fit_gamma.py",
+      "sha256": "6aa7d72135e50e8eeca1559e3014102a518c42be0306c2d0ef35a22920a36ada",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round6_student_codec.py",
+      "sha256": "df794ef136895887513179e736b14fef2779ee20c016d374caa59e41e8d77e78",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round7_key_artifacts.py",
+      "sha256": "f429aa502dae27b7616e8dfca63ac6d498d16f18d8bf2db4ad674b5039760485",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round7_key_layout.py",
+      "sha256": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_attention.py",
+      "sha256": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_bank.py",
+      "sha256": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_codec.py",
+      "sha256": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_continuous.py",
+      "sha256": "2fdd47cea4c45ff5d26531188ed1faa14b2de7b162f5f8e39cfc46a8ee3ffdf5",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_joint_gain.py",
+      "sha256": "30f75b6f7ca3fd8406f0ee5eec134ca6220f0f2f3d0b232f8c1fd4f04b0aec4f",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_postcal_fields.py",
+      "sha256": "a7dcb3ee400eaec2aab1eabe33ab6877c44b8f206c9ef737e205a8fb8427fe54",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_postcal_schedule.py",
+      "sha256": "4aff4148b00a1d2be9f6f3239d01284ff4a393552b9b56a1b212493a19708ad7",
+      "action": "EXCLUSIVE_WX_UPLOAD",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/round8_postcal_train.py",
+      "sha256": "df5dd392ba44465dad50ff2006016eb114be3c52fd0071e53a00a2c2fa7d6e60",
+      "action": "EXCLUSIVE_WX_UPLOAD",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/a2/session_boundary.py",
+      "sha256": "cfcfc2c4263cada8672b1084da77b7670990d23c3dd2af2f490e00304f799419",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/experiments/bank.py",
+      "sha256": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    },
+    {
+      "remote_path": "/path/to/TrajKV/stages/round8_20261118_v1/code/experiments/fused_progressive.py",
+      "sha256": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+      "action": "EXACT_EXISTING_SKIP",
+      "role": "source"
+    }
+  ],
+  "source_sha256": {
+    "round8_postcal_train.py": "df5dd392ba44465dad50ff2006016eb114be3c52fd0071e53a00a2c2fa7d6e60",
+    "round8_postcal_fields.py": "a7dcb3ee400eaec2aab1eabe33ab6877c44b8f206c9ef737e205a8fb8427fe54",
+    "round8_postcal_schedule.py": "4aff4148b00a1d2be9f6f3239d01284ff4a393552b9b56a1b212493a19708ad7",
+    "round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "round8_joint_gain.py": "30f75b6f7ca3fd8406f0ee5eec134ca6220f0f2f3d0b232f8c1fd4f04b0aec4f",
+    "round6_fit_gamma.py": "6aa7d72135e50e8eeca1559e3014102a518c42be0306c2d0ef35a22920a36ada",
+    "round6_student_codec.py": "df794ef136895887513179e736b14fef2779ee20c016d374caa59e41e8d77e78",
+    "calibrate_gradient_rank_round5.py": "dd7676bf5230e6a7dd4f19b8825649359de6df8f82863860261b6f86b66c774a",
+    "round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "round7_key_artifacts.py": "f429aa502dae27b7616e8dfca63ac6d498d16f18d8bf2db4ad674b5039760485",
+    "masked_bank.py": "7c313fddfdadc81939235b0a4fd843540961f8841c69d7400101b33a66737d9d",
+    "metadata_direction_bank.py": "bea958a75c8df84702b20ba32836ae6f4f7ffaae8f6a1024ea6de3c18659ff61",
+    "learned_direction_bank.py": "0ee57d34ba74dd426aecb51e985efe3df50852a5e67b624122789719b7547c40",
+    "quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "session_boundary.py": "cfcfc2c4263cada8672b1084da77b7670990d23c3dd2af2f490e00304f799419",
+    "round8_continuous.py": "2fdd47cea4c45ff5d26531188ed1faa14b2de7b162f5f8e39cfc46a8ee3ffdf5",
+    "experiments/bank.py": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+    "experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c"
+  },
+  "config_sha256": "92e7cd53074a9d2268426fd4728b6192ccbd9a3fcab75c9b6c2f3e41c5ac66ad",
+  "job_sha256": "64518753e541b929b3e91e5a7d7469e8db56bbb8e4c1172a76c721f57be71b35",
+  "contract": {
+    "stage_count": 42,
+    "K_stages": 23,
+    "V_stages": 19,
+    "full_priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+    "full_priority_bytes": 448,
+    "full_priority_JSON_sha256": "e59bd975e5233d5ca8969aee2e11a26fc9aece938974ce6faae32eadb48ee6f2",
+    "selected42_sha256": "02d27c6d77151c34e2b6eb2993792ed77c1041b9d8cb012c7fffe608cc11eb4c",
+    "selected42_packed_bytes": 84,
+    "selected42_JSON_sha256": "ba5f7bb01a26af6a12ff8baa0e65cda149f0cf36f4fa8872fdf8a23ce0658eaf",
+    "old43_JSON_sha256": "31a5f9ec3d6464139fe040138d045cb1b61872b171fd1f8566f575e7926fbf4a",
+    "new_encoder_bytes": 1344,
+    "added_retained_decoder_tensor_bytes": 0
+  },
+  "actual_CPU_check_sha256": "9b824432221e45c0861a71c40541468344411009e7f9d795675c458d3f77d1b3",
+  "GPU0_lease": true,
+  "old_sources_modified": false
+}

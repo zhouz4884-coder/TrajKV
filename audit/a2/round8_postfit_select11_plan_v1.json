@@ -1,0 +1,67 @@
+{
+  "schema": "trajkv.round8.postfit-selection-plan.v1",
+  "status": "PLAN_ONLY_NOT_EXECUTED",
+  "expected_fits": {
+    "k": {
+      "local": "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1",
+      "remote": "/path/to/TrajKV/results/round8_v1/native_books_k_v1",
+      "complete": "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1\\complete_books.json",
+      "files": [
+        "k_global4_16_decoder_only.json",
+        "k_global4_16_reencode.json",
+        "k_global8_256_decoder_only.json",
+        "k_global8_256_reencode.json",
+        "k_position4_16_decoder_only.json",
+        "k_position4_16_reencode.json"
+      ]
+    },
+    "v": {
+      "local": "/path/to/TrajKV\\results\\round8_v1\\native_books_v_v1",
+      "remote": "/path/to/TrajKV/results/round8_v1/native_books_v_v1",
+      "complete": "/path/to/TrajKV\\results\\round8_v1\\native_books_v_v1\\complete_books.json",
+      "files": [
+        "v_global8_256_decoder_only.json",
+        "v_global8_256_reencode.json"
+      ]
+    }
+  },
+  "missing_files": [
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1\\complete_books.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1\\k_global4_16_decoder_only.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1\\k_global4_16_reencode.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1\\k_global8_256_decoder_only.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1\\k_global8_256_reencode.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1\\k_position4_16_decoder_only.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_k_v1\\k_position4_16_reencode.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_v_v1\\complete_books.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_v_v1\\v_global8_256_decoder_only.json",
+    "/path/to/TrajKV\\results\\round8_v1\\native_books_v_v1\\v_global8_256_reencode.json"
+  ],
+  "source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "model_data_results_root": "/path/to/TrajKV",
+  "output_prefix": "postfit_select11_v1",
+  "required_native_manifest": "/path/to/TrajKV\\results\\round8_v1\\native_cal32_select32_v1\\manifest.json",
+  "variants": 11,
+  "doc_questions": 38,
+  "text_questions": 22,
+  "doc_sources": 16,
+  "text_sources": 16,
+  "expected_records_doc": 418,
+  "expected_records_text": 242,
+  "expected_answers_total": 660,
+  "decoder_controls": [
+    "k",
+    "v"
+  ],
+  "decoder_book_policy": "matched-reencode",
+  "expected_full_ranking": 224,
+  "actual_residual_stages": 43,
+  "ranking_bytes": 448,
+  "no_evaluation_files_generated": true,
+  "no_fitted_book_selected_by_score": true,
+  "exposure_scope": "Previously exposed selection sources; developmental QA, not blind confirmation",
+  "future_confirmation_answers_opened": false,
+  "GPU_used": false,
+  "uploaded": false,
+  "code_sha256": "a4b675568fb0653f722013d64ba48513e2420e791659621dc67300eca8732e0c"
+}

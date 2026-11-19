@@ -1,0 +1,331 @@
+{
+  "status": "PASS",
+  "schema": "trajkv.round8.joint-gain-cpu-check.v1",
+  "scope": "CPU algebra and exact FP16 toy decode only; no model/GPU/LBG execution",
+  "cases": [
+    {
+      "name": "orthogonal_exact_0.75_1.25",
+      "old_gain": [
+        [
+          1.0
+        ]
+      ],
+      "old_alpha": [
+        1.0
+      ],
+      "new_gain": [
+        [
+          0.75
+        ]
+      ],
+      "new_alpha": [
+        1.25
+      ],
+      "stats": {
+        "schema": "trajkv.round8.joint-gain-fixed-fields.v1",
+        "rows": 1,
+        "improved_rows": 1,
+        "unchanged_rows": 0,
+        "nonfinite_input_rows": 0,
+        "old_nonfinite_decode_rows": 0,
+        "new_nonfinite_decode_rows": 0,
+        "source_sse_before": 16.0,
+        "source_sse_after": 0.0,
+        "max_finite_row_sse_increase": -16.0,
+        "real_interior_feasible_rows": 1,
+        "singular_or_nonpositive_det_rows": 0,
+        "chosen_candidate_counts": {
+          "old_physical_pair": 0,
+          "nonnegative_interior": 1,
+          "gain_axis": 0,
+          "alpha_axis": 0,
+          "zero": 0
+        },
+        "objective": "sum native FP32 source SSE against Q16(Q16(final_effective_gain*template)+alpha*fixed_sign)",
+        "acceptance": "strict per-row improvement after both stored fields and both decode stages are rounded to FP16; old pair wins ties",
+        "fixed_fields": "J, packed sign bytes, dictionary, mean/frame and first-stage selection mask; only existing gain and alpha slots change",
+        "factor_policy": "input gain is the final already-folded physical gain; no factor applied again",
+        "added_retained_parameters": 0,
+        "scope": "coordinate NNLS candidates with hard-FP16 acceptance; not a full-model quality claim"
+      }
+    },
+    {
+      "name": "det0_collinear_improves",
+      "old_gain": [
+        [
+          1.0
+        ]
+      ],
+      "old_alpha": [
+        0.5
+      ],
+      "new_gain": [
+        [
+          3.0
+        ]
+      ],
+      "new_alpha": [
+        0.0
+      ],
+      "stats": {
+        "schema": "trajkv.round8.joint-gain-fixed-fields.v1",
+        "rows": 1,
+        "improved_rows": 1,
+        "unchanged_rows": 0,
+        "nonfinite_input_rows": 0,
+        "old_nonfinite_decode_rows": 0,
+        "new_nonfinite_decode_rows": 0,
+        "source_sse_before": 288.0,
+        "source_sse_after": 0.0,
+        "max_finite_row_sse_increase": -288.0,
+        "real_interior_feasible_rows": 0,
+        "singular_or_nonpositive_det_rows": 1,
+        "chosen_candidate_counts": {
+          "old_physical_pair": 0,
+          "nonnegative_interior": 0,
+          "gain_axis": 1,
+          "alpha_axis": 0,
+          "zero": 0
+        },
+        "objective": "sum native FP32 source SSE against Q16(Q16(final_effective_gain*template)+alpha*fixed_sign)",
+        "acceptance": "strict per-row improvement after both stored fields and both decode stages are rounded to FP16; old pair wins ties",
+        "fixed_fields": "J, packed sign bytes, dictionary, mean/frame and first-stage selection mask; only existing gain and alpha slots change",
+        "factor_policy": "input gain is the final already-folded physical gain; no factor applied again",
+        "added_retained_parameters": 0,
+        "scope": "coordinate NNLS candidates with hard-FP16 acceptance; not a full-model quality claim"
+      }
+    },
+    {
+      "name": "zero_template",
+      "old_gain": [
+        [
+          3.0
+        ]
+      ],
+      "old_alpha": [
+        0.5
+      ],
+      "new_gain": [
+        [
+          0.0
+        ]
+      ],
+      "new_alpha": [
+        2.0
+      ],
+      "stats": {
+        "schema": "trajkv.round8.joint-gain-fixed-fields.v1",
+        "rows": 1,
+        "improved_rows": 1,
+        "unchanged_rows": 0,
+        "nonfinite_input_rows": 0,
+        "old_nonfinite_decode_rows": 0,
+        "new_nonfinite_decode_rows": 0,
+        "source_sse_before": 288.0,
+        "source_sse_after": 0.0,
+        "max_finite_row_sse_increase": -288.0,
+        "real_interior_feasible_rows": 0,
+        "singular_or_nonpositive_det_rows": 1,
+        "chosen_candidate_counts": {
+          "old_physical_pair": 0,
+          "nonnegative_interior": 0,
+          "gain_axis": 0,
+          "alpha_axis": 1,
+          "zero": 0
+        },
+        "objective": "sum native FP32 source SSE against Q16(Q16(final_effective_gain*template)+alpha*fixed_sign)",
+        "acceptance": "strict per-row improvement after both stored fields and both decode stages are rounded to FP16; old pair wins ties",
+        "fixed_fields": "J, packed sign bytes, dictionary, mean/frame and first-stage selection mask; only existing gain and alpha slots change",
+        "factor_policy": "input gain is the final already-folded physical gain; no factor applied again",
+        "added_retained_parameters": 0,
+        "scope": "coordinate NNLS candidates with hard-FP16 acceptance; not a full-model quality claim"
+      }
+    },
+    {
+      "name": "boundary_nonnegative_constraint",
+      "old_gain": [
+        [
+          1.0
+        ]
+      ],
+      "old_alpha": [
+        1.0
+      ],
+      "new_gain": [
+        [
+          0.0
+        ]
+      ],
+      "new_alpha": [
+        1.0
+      ],
+      "stats": {
+        "schema": "trajkv.round8.joint-gain-fixed-fields.v1",
+        "rows": 1,
+        "improved_rows": 1,
+        "unchanged_rows": 0,
+        "nonfinite_input_rows": 0,
+        "old_nonfinite_decode_rows": 0,
+        "new_nonfinite_decode_rows": 0,
+        "source_sse_before": 512.0,
+        "source_sse_after": 128.0,
+        "max_finite_row_sse_increase": -384.0,
+        "real_interior_feasible_rows": 0,
+        "singular_or_nonpositive_det_rows": 0,
+        "chosen_candidate_counts": {
+          "old_physical_pair": 0,
+          "nonnegative_interior": 0,
+          "gain_axis": 0,
+          "alpha_axis": 1,
+          "zero": 0
+        },
+        "objective": "sum native FP32 source SSE against Q16(Q16(final_effective_gain*template)+alpha*fixed_sign)",
+        "acceptance": "strict per-row improvement after both stored fields and both decode stages are rounded to FP16; old pair wins ties",
+        "fixed_fields": "J, packed sign bytes, dictionary, mean/frame and first-stage selection mask; only existing gain and alpha slots change",
+        "factor_policy": "input gain is the final already-folded physical gain; no factor applied again",
+        "added_retained_parameters": 0,
+        "scope": "coordinate NNLS candidates with hard-FP16 acceptance; not a full-model quality claim"
+      }
+    },
+    {
+      "name": "zero_optimum",
+      "old_gain": [
+        [
+          1.0
+        ]
+      ],
+      "old_alpha": [
+        1.0
+      ],
+      "new_gain": [
+        [
+          0.0
+        ]
+      ],
+      "new_alpha": [
+        0.0
+      ],
+      "stats": {
+        "schema": "trajkv.round8.joint-gain-fixed-fields.v1",
+        "rows": 1,
+        "improved_rows": 1,
+        "unchanged_rows": 0,
+        "nonfinite_input_rows": 0,
+        "old_nonfinite_decode_rows": 0,
+        "new_nonfinite_decode_rows": 0,
+        "source_sse_before": 1024.0,
+        "source_sse_after": 256.0,
+        "max_finite_row_sse_increase": -768.0,
+        "real_interior_feasible_rows": 0,
+        "singular_or_nonpositive_det_rows": 0,
+        "chosen_candidate_counts": {
+          "old_physical_pair": 0,
+          "nonnegative_interior": 0,
+          "gain_axis": 1,
+          "alpha_axis": 0,
+          "zero": 0
+        },
+        "objective": "sum native FP32 source SSE against Q16(Q16(final_effective_gain*template)+alpha*fixed_sign)",
+        "acceptance": "strict per-row improvement after both stored fields and both decode stages are rounded to FP16; old pair wins ties",
+        "fixed_fields": "J, packed sign bytes, dictionary, mean/frame and first-stage selection mask; only existing gain and alpha slots change",
+        "factor_policy": "input gain is the final already-folded physical gain; no factor applied again",
+        "added_retained_parameters": 0,
+        "scope": "coordinate NNLS candidates with hard-FP16 acceptance; not a full-model quality claim"
+      }
+    },
+    {
+      "name": "old_physical_pair_tie_is_preserved",
+      "old_gain": [
+        [
+          0.75
+        ]
+      ],
+      "old_alpha": [
+        1.25
+      ],
+      "new_gain": [
+        [
+          0.75
+        ]
+      ],
+      "new_alpha": [
+        1.25
+      ],
+      "stats": {
+        "schema": "trajkv.round8.joint-gain-fixed-fields.v1",
+        "rows": 1,
+        "improved_rows": 0,
+        "unchanged_rows": 1,
+        "nonfinite_input_rows": 0,
+        "old_nonfinite_decode_rows": 0,
+        "new_nonfinite_decode_rows": 0,
+        "source_sse_before": 0.0,
+        "source_sse_after": 0.0,
+        "max_finite_row_sse_increase": 0.0,
+        "real_interior_feasible_rows": 0,
+        "singular_or_nonpositive_det_rows": 1,
+        "chosen_candidate_counts": {
+          "old_physical_pair": 1,
+          "nonnegative_interior": 0,
+          "gain_axis": 0,
+          "alpha_axis": 0,
+          "zero": 0
+        },
+        "objective": "sum native FP32 source SSE against Q16(Q16(final_effective_gain*template)+alpha*fixed_sign)",
+        "acceptance": "strict per-row improvement after both stored fields and both decode stages are rounded to FP16; old pair wins ties",
+        "fixed_fields": "J, packed sign bytes, dictionary, mean/frame and first-stage selection mask; only existing gain and alpha slots change",
+        "factor_policy": "input gain is the final already-folded physical gain; no factor applied again",
+        "added_retained_parameters": 0,
+        "scope": "coordinate NNLS candidates with hard-FP16 acceptance; not a full-model quality claim"
+      }
+    },
+    {
+      "name": "nonfinite_source_is_preserved",
+      "old_gain": [
+        [
+          0.75
+        ]
+      ],
+      "old_alpha": [
+        1.25
+      ],
+      "new_gain": [
+        [
+          0.75
+        ]
+      ],
+      "new_alpha": [
+        1.25
+      ],
+      "stats": {
+        "schema": "trajkv.round8.joint-gain-fixed-fields.v1",
+        "rows": 1,
+        "improved_rows": 0,
+        "unchanged_rows": 1,
+        "nonfinite_input_rows": 1,
+        "old_nonfinite_decode_rows": 1,
+        "new_nonfinite_decode_rows": 1,
+        "source_sse_before": null,
+        "source_sse_after": null,
+        "max_finite_row_sse_increase": 0.0,
+        "real_interior_feasible_rows": 0,
+        "singular_or_nonpositive_det_rows": 0,
+        "chosen_candidate_counts": {
+          "old_physical_pair": 1,
+          "nonnegative_interior": 0,
+          "gain_axis": 0,
+          "alpha_axis": 0,
+          "zero": 0
+        },
+        "objective": "sum native FP32 source SSE against Q16(Q16(final_effective_gain*template)+alpha*fixed_sign)",
+        "acceptance": "strict per-row improvement after both stored fields and both decode stages are rounded to FP16; old pair wins ties",
+        "fixed_fields": "J, packed sign bytes, dictionary, mean/frame and first-stage selection mask; only existing gain and alpha slots change",
+        "factor_policy": "input gain is the final already-folded physical gain; no factor applied again",
+        "added_retained_parameters": 0,
+        "scope": "coordinate NNLS candidates with hard-FP16 acceptance; not a full-model quality claim"
+      }
+    }
+  ],
+  "no_sign_mutation": true,
+  "no_extra_retained_fields": true
+}

@@ -1,0 +1,434 @@
+{
+  "status": "COMPLETE",
+  "schema": "trajkv.round8.mean-select2-summary.v1",
+  "actual_model_records": 120,
+  "exposed_QA": 60,
+  "independent_sources": 32,
+  "domains": [
+    {
+      "dataset": "doc",
+      "status": "COMPLETE_FINAL_AND_INDEPENDENT_GATED",
+      "records": 76,
+      "questions": 38,
+      "sources": 16,
+      "table": [
+        {
+          "variant": "r8_visual_mean_off",
+          "method": "round8_joint",
+          "role": "actual packed runtime",
+          "sessions": 38,
+          "sources": 16,
+          "questions": 38,
+          "score": 0.922289428545635,
+          "ci_low": 0.847007808686499,
+          "ci_high": 0.9836243952758497,
+          "source_macro_mean": 0.9240851915380217,
+          "exact": 0.8421052631578947,
+          "anls": 0.922289428545635,
+          "accuracy": null,
+          "budget_bits_including_encoder_constants": 1.2948768723882011,
+          "maximum_per_session_complete_bits": 1.300252205984933,
+          "complete_visual_bytes_total": 311270334,
+          "encoder_constants_bytes_per_session": 1797.0,
+          "key_metric_bytes_per_session": 0,
+          "physical_tail_storage_bytes_total": 0,
+          "eligible_lowbit_frontier": true,
+          "visual_tokens_min": 1280,
+          "visual_tokens_max": 1792,
+          "first_question_only": false,
+          "session_seconds_median": 1.2167350105009973,
+          "analysis_role": "historically_exposed_select_cap8_mean_off_on"
+        },
+        {
+          "variant": "r8_visual_mean_on",
+          "method": "round8_joint",
+          "role": "actual packed runtime",
+          "sessions": 38,
+          "sources": 16,
+          "questions": 38,
+          "score": 0.9275525864403719,
+          "ci_low": 0.8529381635444343,
+          "ci_high": 0.9890764647467726,
+          "source_macro_mean": 0.9303351915380218,
+          "exact": 0.868421052631579,
+          "anls": 0.9275525864403719,
+          "accuracy": null,
+          "budget_bits_including_encoder_constants": 1.2948768723882011,
+          "maximum_per_session_complete_bits": 1.300252205984933,
+          "complete_visual_bytes_total": 311270334,
+          "encoder_constants_bytes_per_session": 1797.0,
+          "key_metric_bytes_per_session": 0,
+          "physical_tail_storage_bytes_total": 0,
+          "eligible_lowbit_frontier": true,
+          "visual_tokens_min": 1280,
+          "visual_tokens_max": 1792,
+          "first_question_only": false,
+          "session_seconds_median": 1.405201630499505,
+          "analysis_role": "historically_exposed_select_cap8_mean_off_on"
+        }
+      ],
+      "comparisons": [
+        {
+          "candidate": "r8_visual_mean_on",
+          "comparator": "r8_visual_mean_off",
+          "delta": 0.005263157894736841,
+          "ci_low": 0.0,
+          "ci_high": 0.017647058823529408,
+          "p": 1.0,
+          "sources": 16,
+          "questions": 38,
+          "bootstrap_status": "ok",
+          "signflip_method": "exact source-cluster sign enumeration",
+          "signflip_draws": 65536,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "requested candidate versus others"
+        }
+      ],
+      "identity": {
+        "dataset": "doc",
+        "status": "PASS",
+        "questions": 38,
+        "sources": 16,
+        "records": 76,
+        "baseline_identity_checks": [
+          {
+            "run": "results/round8_v1/postres_select2_v1_doc",
+            "variant": "r8_postres_direction_off",
+            "questions": 38,
+            "exact_matches": {
+              "answer": 38,
+              "token_ids": 38,
+              "initial_logits_sha256": 38,
+              "owned_initial": 38
+            },
+            "records_sha256": "aa0171ac7416fc9853f63d7c330b333288ff9b07e96221c0ae721f6a258aa415"
+          },
+          {
+            "run": "results/round8_v1/joint_cd_select5_v1_doc",
+            "variant": "r8_l2_joint0",
+            "questions": 38,
+            "exact_matches": {
+              "answer": 38,
+              "token_ids": 38,
+              "initial_logits_sha256": 38,
+              "owned_initial": 38
+            },
+            "records_sha256": "01dff7b1db85c865570443b01485a877f7bb96b3f481446a2c05a8d66025c6a3"
+          },
+          {
+            "run": "results/round8_v1/postfit_cap8_aligned11_v3_doc",
+            "variant": "r7_frozen_joint43_control",
+            "questions": 38,
+            "exact_matches": {
+              "answer": 38,
+              "token_ids": 38,
+              "initial_logits_sha256": 38,
+              "owned_initial": 38
+            },
+            "records_sha256": "1bd35dedd0cb4b3f53604e3130ea697e518736bc8844e91eaa158b5473cc24eb"
+          },
+          {
+            "run": "results/round8_v1/postfit_cap8_aligned11_v3_doc",
+            "variant": "r8_k4old_vbinary",
+            "questions": 38,
+            "exact_matches": {
+              "answer": 38,
+              "token_ids": 38,
+              "initial_logits_sha256": 38,
+              "owned_initial": 38
+            },
+            "records_sha256": "1bd35dedd0cb4b3f53604e3130ea697e518736bc8844e91eaa158b5473cc24eb"
+          }
+        ],
+        "owner_bytes_off_on_equal": true,
+        "owner_byte_range": [
+          5964933,
+          8315013
+        ],
+        "added_persistent_tensor_bytes": 0,
+        "on_off_changed_questions": {
+          "answer": 1,
+          "token_ids": 1,
+          "initial_logits_sha256": 38
+        },
+        "header_heads": 4256,
+        "header_stored_target_residual_l2_before_mean": 0.32967037504484586,
+        "header_stored_target_residual_l2_after_mean": 0.006756631656162743,
+        "header_stored_target_residual_l2_before_max": 1.9194078521774223,
+        "header_stored_target_residual_l2_after_max": 0.22602252694055042,
+        "header_shift_l2_mean": 0.32980679583212574,
+        "header_component_bound_max": 0.20352918423992605,
+        "header_residual_reduced_heads": 4256,
+        "records_sha256": "219cb9a92ce042c489a30e8ca74d616869ab6894714b87758c9b33baf008efbe",
+        "final_marker_sha256": "5948d0a6c8364bb6218d9de416b94f57b7fcdfbad663da4f598b3d1eb69a481e",
+        "target": "Stored FP16 source mean only; not exact original mean or task guarantee",
+        "primary_quality_scored_here": false,
+        "checker_sha256": "69fd1a7604c76097531d79d496ca8f8d8d356d316c1d429c47e7e67bf63e2914"
+      },
+      "producer_path": "results/round8_v1/mean_select2_v2_doc",
+      "analysis_path": "results/round8_v1/mean_select2_v2_doc_analysis_v2",
+      "producer_sha256": {
+        "complete_mean.json": "5948d0a6c8364bb6218d9de416b94f57b7fcdfbad663da4f598b3d1eb69a481e",
+        "complete_round8.json": "b25e11ae2d385d4d901f28eac949f2f612954947d5b088d07706fded5e1e970e",
+        "complete.json": "491a7c2f9908fd9970f43c7f93bbb2c8327e6853387ffe202cccde92324e0ec1",
+        "manifest.json": "c1dbee01086fb8e4b4e08679bb673251a7c13c84c52024cae229ba0a2c578928",
+        "records.jsonl": "219cb9a92ce042c489a30e8ca74d616869ab6894714b87758c9b33baf008efbe"
+      },
+      "analysis_sha256": {
+        "summary.json": "0455112ea35060b2e93281068630adac76616b43d8d0dd7210499d06bac7ab9d",
+        "complete.json": "d14df61c7449707add299361da3db84ba1e25b6f6cb2b5c6bb4b997704d77c66",
+        "final_completion_audit.json": "ecc93068d125900e25e5b088e3d4237317f42417bff3bf88c5b3eaf8b7ab8f88",
+        "scores.csv": "6173571e1df53b2bba72ca7f4e64f9edf5114ab4789ceab602d32d7d602b7477",
+        "table.csv": "34134a3d9af366c8bd613a9fe4a12f7280db71c4b0443ea5476c41c3bcd366df",
+        "comparisons.csv": "05000369c663230e40691b2b527b2b7c860ffcfdcbc85526adaffef8186d878f",
+        "owner_audit.csv": "3fe7a26e918a10160e9754365c214adb102c293c8ed788a903139366d93162e8"
+      },
+      "identity_sha256": "672649cc68c8efcee7b8721a351e4c68296f7bae9d3301b74dce4d98df732ce9",
+      "actual_runner_source_name": "round8_mean_runner_v2.py",
+      "actual_runner_sha256": "5990c847ec88f38560ad32288423bef71bd4a5b20ff94ec2d2fa2d1af99a1a32"
+    },
+    {
+      "dataset": "text",
+      "status": "COMPLETE_FINAL_AND_INDEPENDENT_GATED",
+      "records": 44,
+      "questions": 22,
+      "sources": 16,
+      "table": [
+        {
+          "variant": "r8_visual_mean_off",
+          "method": "round8_joint",
+          "role": "actual packed runtime",
+          "sessions": 22,
+          "sources": 16,
+          "questions": 22,
+          "score": 0.9045454545454544,
+          "ci_low": 0.75,
+          "ci_high": 1.0,
+          "source_macro_mean": 0.86875,
+          "exact": 0.9090909090909091,
+          "anls": null,
+          "accuracy": 0.9045454545454544,
+          "budget_bits_including_encoder_constants": 1.2948474023575174,
+          "maximum_per_session_complete_bits": 1.300252205984933,
+          "complete_visual_bytes_total": 180580206,
+          "encoder_constants_bytes_per_session": 1797.0,
+          "key_metric_bytes_per_session": 0,
+          "physical_tail_storage_bytes_total": 0,
+          "eligible_lowbit_frontier": true,
+          "visual_tokens_min": 1280,
+          "visual_tokens_max": 1792,
+          "first_question_only": false,
+          "session_seconds_median": 1.058642107003834,
+          "analysis_role": "historically_exposed_select_cap8_mean_off_on"
+        },
+        {
+          "variant": "r8_visual_mean_on",
+          "method": "round8_joint",
+          "role": "actual packed runtime",
+          "sessions": 22,
+          "sources": 16,
+          "questions": 22,
+          "score": 0.9045454545454544,
+          "ci_low": 0.75,
+          "ci_high": 1.0,
+          "source_macro_mean": 0.86875,
+          "exact": 0.9090909090909091,
+          "anls": null,
+          "accuracy": 0.9045454545454544,
+          "budget_bits_including_encoder_constants": 1.2948474023575174,
+          "maximum_per_session_complete_bits": 1.300252205984933,
+          "complete_visual_bytes_total": 180580206,
+          "encoder_constants_bytes_per_session": 1797.0,
+          "key_metric_bytes_per_session": 0,
+          "physical_tail_storage_bytes_total": 0,
+          "eligible_lowbit_frontier": true,
+          "visual_tokens_min": 1280,
+          "visual_tokens_max": 1792,
+          "first_question_only": false,
+          "session_seconds_median": 1.2449077554992982,
+          "analysis_role": "historically_exposed_select_cap8_mean_off_on"
+        }
+      ],
+      "comparisons": [
+        {
+          "candidate": "r8_visual_mean_on",
+          "comparator": "r8_visual_mean_off",
+          "delta": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "p": 1.0,
+          "sources": 16,
+          "questions": 22,
+          "bootstrap_status": "ok",
+          "signflip_method": "exact source-cluster sign enumeration",
+          "signflip_draws": 65536,
+          "scope": "question-weighted paired effect; complete original-source clusters are resampled/flipped together",
+          "holm_reported_comparisons": 1.0,
+          "comparison_family": "requested candidate versus others"
+        }
+      ],
+      "identity": {
+        "dataset": "text",
+        "status": "PASS",
+        "questions": 22,
+        "sources": 16,
+        "records": 44,
+        "baseline_identity_checks": [
+          {
+            "run": "results/round8_v1/postres_select2_v1_text",
+            "variant": "r8_postres_direction_off",
+            "questions": 22,
+            "exact_matches": {
+              "answer": 22,
+              "token_ids": 22,
+              "initial_logits_sha256": 22,
+              "owned_initial": 22
+            },
+            "records_sha256": "3ecb546a67d7b9caa72e52ec5c33d66e897fb1cb42d9b42ca44117334036db64"
+          },
+          {
+            "run": "results/round8_v1/joint_cd_select5_v1_text",
+            "variant": "r8_l2_joint0",
+            "questions": 22,
+            "exact_matches": {
+              "answer": 22,
+              "token_ids": 22,
+              "initial_logits_sha256": 22,
+              "owned_initial": 22
+            },
+            "records_sha256": "343e1a58fcc218d87a4eed9fc4ab5efd5d1e19b310e9dbdc66825daece2d43f7"
+          },
+          {
+            "run": "results/round8_v1/postfit_cap8_aligned11_v3_text",
+            "variant": "r7_frozen_joint43_control",
+            "questions": 22,
+            "exact_matches": {
+              "answer": 22,
+              "token_ids": 22,
+              "initial_logits_sha256": 22,
+              "owned_initial": 22
+            },
+            "records_sha256": "12a513c12caeafb734f1c66f8f6a1b8d746e69dfd1e6980bd0c46b8e0202b2c6"
+          },
+          {
+            "run": "results/round8_v1/postfit_cap8_aligned11_v3_text",
+            "variant": "r8_k4old_vbinary",
+            "questions": 22,
+            "exact_matches": {
+              "answer": 22,
+              "token_ids": 22,
+              "initial_logits_sha256": 22,
+              "owned_initial": 22
+            },
+            "records_sha256": "12a513c12caeafb734f1c66f8f6a1b8d746e69dfd1e6980bd0c46b8e0202b2c6"
+          }
+        ],
+        "owner_bytes_off_on_equal": true,
+        "owner_byte_range": [
+          5964933,
+          8315013
+        ],
+        "added_persistent_tensor_bytes": 0,
+        "on_off_changed_questions": {
+          "answer": 0,
+          "token_ids": 0,
+          "initial_logits_sha256": 22
+        },
+        "header_heads": 2464,
+        "header_stored_target_residual_l2_before_mean": 0.32509088338046516,
+        "header_stored_target_residual_l2_after_mean": 0.006877801411022997,
+        "header_stored_target_residual_l2_before_max": 1.8839084395702859,
+        "header_stored_target_residual_l2_after_max": 0.22729770848561948,
+        "header_shift_l2_mean": 0.32513057034243037,
+        "header_component_bound_max": 0.20345541580218196,
+        "header_residual_reduced_heads": 2464,
+        "records_sha256": "a357e464e7f84dcb803b496906046d60d0df8d4967c7fec174f57786165b45f8",
+        "final_marker_sha256": "d7ffec44b1b89d3125a251c324af84c56f59f9025d1e8229beb02e069d20101e",
+        "target": "Stored FP16 source mean only; not exact original mean or task guarantee",
+        "primary_quality_scored_here": false,
+        "checker_sha256": "69fd1a7604c76097531d79d496ca8f8d8d356d316c1d429c47e7e67bf63e2914"
+      },
+      "producer_path": "results/round8_v1/mean_select2_v2_text",
+      "analysis_path": "results/round8_v1/mean_select2_v2_text_analysis_v2",
+      "producer_sha256": {
+        "complete_mean.json": "d7ffec44b1b89d3125a251c324af84c56f59f9025d1e8229beb02e069d20101e",
+        "complete_round8.json": "7b6a5f6833b99181ebef33537485a355b44065023c613c7397deb3ad8f11a025",
+        "complete.json": "fbbdc0a653d602f4bbeda86743b857aeae1b2628e7ea3949e36f53dd2ec27897",
+        "manifest.json": "c92177e2eec6c587144ee20539823a454d15ac71fbd96502f6500a3ff4f65406",
+        "records.jsonl": "a357e464e7f84dcb803b496906046d60d0df8d4967c7fec174f57786165b45f8"
+      },
+      "analysis_sha256": {
+        "summary.json": "7155b33c8d545f3a4551d27d298e5c34f1ff648696bbba82bb9cab9d9233da7b",
+        "complete.json": "b4e408088f21dd83d984629acabe10f3748f459c16f118ad9cb7ba35481b953c",
+        "final_completion_audit.json": "783a5d2cd20e9d2a796f9ee94cd86c169ff9ca6099842d7f5802d485f99346a9",
+        "scores.csv": "ed69b1c3b989aaf4169a2f34202854390dba3c5120aea021077f3a9d7f9b9f04",
+        "table.csv": "5cb7768482c950e7e3fc1df50e6b23958a7cdcf5a2714d849bf15c7a00cc77f0",
+        "comparisons.csv": "cdad7c63be2f70d2bc43d6603536c1e11280f71fc76e55ee0847c8e76aa69c6b",
+        "owner_audit.csv": "1b794f973c06212322c3f8e68afa27672324a7e74c576b0213568daacc8fba95"
+      },
+      "identity_sha256": "acec402b8c041762b54073d4332598637197a38c7e68ede6849052660e81908f",
+      "actual_runner_source_name": "round8_mean_runner_v2.py",
+      "actual_runner_sha256": "5990c847ec88f38560ad32288423bef71bd4a5b20ff94ec2d2fa2d1af99a1a32"
+    }
+  ],
+  "method": "One encoder-only final-packed all-real-Nv K mean correction per layer in existing FP16 direction_mean; oldGaussian16/L2/norm/factor/signMAD and all other physical fields untouched",
+  "persistent_tensor_byte_delta": 0,
+  "actual_mean_decode_chunk": 4096,
+  "old_full224_priority_and43_mask_preserved": true,
+  "CUDA": {
+    "status": "PASS",
+    "cases": 8,
+    "report_path": "outputs/round8_v1/mean_gpu_check_v1/check.json",
+    "report_sha256": "58b2fe2cd90999ca61d23c381e31ffc3c688c46932d24f35d306b3ee12bfbae2",
+    "complete_sha256": "0b991e306337fe839288508ce5cfff4afc284bd2a12bc8a63f1b97a7683e4708",
+    "max_dense_abs": 0.00048828125,
+    "max_dense_relative_l2": 0.00028780734282918274,
+    "max_common_logit_error": 3.322454814047582e-07,
+    "max_logodds_error": 8.718198471480143e-08,
+    "max_visual_conditional_error": 5.960464477539063e-08,
+    "max_no_text_output_change": 0.000244140625,
+    "all_old_reader_bitwise": true,
+    "chunk37_4096_bitwise": true,
+    "scope": "actual CUDA synthetic helper/packed-reader numerical evidence; no model quality or timing claim"
+  },
+  "controls": "Mean off vs postres off, joint_cd L2 off, main R7 frozen43, main R8 oldK4/Vbinary: each60/60 answer/token/initial-logit SHA/full owned_initial exact",
+  "GPU_release": {
+    "gpu0": {
+      "pid": 509810,
+      "pid_gone": true,
+      "compute_app_absent": true,
+      "released": true
+    },
+    "gpu1": {
+      "pid": 509811,
+      "pid_gone": true,
+      "compute_app_absent": true,
+      "released": true
+    },
+    "observation_path": "audit/a2/round8_mean_v2_observation_20261119_v4.json",
+    "observation_sha256": "9b8e2b8f5409848a3bed3993d7fb141ff90656d43f1cab13b1e6f7391eb99c3a"
+  },
+  "failures": {
+    "v1_status": "FAILED_POSTCHECK_PRESERVED_EXCLUDED_FROM_SCORING",
+    "v1_engine_records": 120,
+    "cause": "finalizer used id; real record schema is session_id-only",
+    "failure_summary_sha256": "7839c7acd864006cd0e8246b21936218a69818a59ef712eb4d4d526e392f6772",
+    "v1_sources_and_runs_not_rewritten": true,
+    "independent_gate_owner_schema_repair": "new gate mapping type; actual v2 producer and final files not changed"
+  },
+  "provenance": {
+    "v2_numerical_AST_parity_sha256": "18f50bdbd43cb54e9fe03893db91ff8b35af0c0a4530b9979106177bf77b3e86",
+    "source_stage_v2_sha256": "79e600faa74fa99257a7035cf21093eda8b2d4ecd34cb97c1c4215b58edaca4e",
+    "CPU_v2_check_sha256": "15c23b8c9c346535d6f003dcbbf6d6599283f66bd9d4ce4ceb7d43d884d911d8",
+    "real_v1_schema_only_sha256": "d432436cdb584dfc3d447a2df5d3953367acfee38d1e293ce08f2158f1272356",
+    "runtime_capture_receipt_sha256": "f219872039e493f99d8e5ec5fe4d1bcdc66f2d9e4a0b6f111c7664e7ae2af07d",
+    "analysis_artifact_map_sha256": "a9fc6a5ac257bfe6fdcf395c17ceb7eea906004841e0ee7504a7b77297b60a90",
+    "executed_source_pin": "Actual argv uses sourceRoot/stages code. Producer source SHA before/after, staged exact hashes and runner identity pin actual Mean source. Generic launcher global-code snapshots are inventories, not proof those copied files executed."
+  },
+  "conclusion": "Stored-FP16-target mean residual falls at every audited head; standalone task effect is +0.5263pp Doc (1 changed answer, paired p=1/Holm1) and0pp Text. Insufficient select evidence for a robust task advantage; no latency result.",
+  "limitations": "Historically exposed selection,16sources/domain; no independent fresh-source confirmation, no true original-mean equality, no GPU bitwise bias-elimination claim, no task guarantee or serving-speed claim.",
+  "downloaded_weights_images_or_tensors": false,
+  "new_confirmation_GT_opened": false,
+  "published": false
+}

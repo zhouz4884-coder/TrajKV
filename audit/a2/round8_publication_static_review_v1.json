@@ -1,0 +1,58 @@
+{
+  "schema": "trajkv.round8.publication-static-review.v1",
+  "status": "REVIEW_ONLY_PENDING_FINAL_STAGE",
+  "source_sha256": {
+    "code/publication/prepare_round7_delivery.py": "810e98b7662e77fac01f4bdde6ee170415bd4b2f257c120cd766a58c146a584e",
+    "code/publication/publish_round7_update.py": "0a0e7061fda3fb2b239acbc2359a4705c66b096e915c5be656771d8e6dc77794",
+    "code/publication/verify_round7_increment.py": "bbb774bf63d76946829a3ce3af5f6fb8c9482c214d2884527eb7a0a7c7e35380",
+    "code/publication/verify_round7_evidence.py": "3f910ffd246e508736d7476298f50295b8f00f5862f596a16798133d30ed0d06",
+    "code/publication/round7_content_index.py": "0320b7086f1be1b9b3477e40dae4e575ceac9d0d05681c6f393f23bb8f2656c7",
+    "code/a2/analyze_round8_quality.py": "ef2f28eba11761e59713a477e4f90a1c0e4adc5d96abb9294eb6f412fc183536",
+    "code/a2/round8_quality_owner.py": "536db26117cec60f3bdabf27e0d4f1e96dd8b435ab222e96f60860c0bae83cba"
+  },
+  "actual_publication_authorized_for_this_review": false,
+  "Git_operations": 0,
+  "network_operations": 0,
+  "GPU_used": false,
+  "conclusion": "Use new R8 prepare/verify/publish files; preserve frozen R7 tools. Existing R7 pipeline requires explicit R8 schema, coverage and numerical-owner adaptations.",
+  "required_adaptations": [
+    {
+      "area": "prepare",
+      "evidence": "prepare_round7_delivery.py:121,215,231",
+      "change": "New R8 schema/root/whitelist and explicit R8 quality/raw/codec/runtime roots; do not rescan and repackage all old R7 as the new stage."
+    },
+    {
+      "area": "owner verification",
+      "evidence": "verify_round7_evidence.py:67; verify_round7_increment.py:88",
+      "change": "round8_joint currently bypasses strict K/V layout reconstruction. Add independent R8 book geometry, indices, position K, V4096 and retained encoder128 audit without total_unique duplication; preserve fit-mode versus deployment-mode distinction."
+    },
+    {
+      "area": "completion",
+      "evidence": "prepare_round7_delivery.py:145; R8 runner/analyzer completion contract",
+      "change": "Require complete_round8.json in addition to engine complete.json for R8 runs, and verify its manifest/engine SHA and encoder_inputs_unchanged flag."
+    },
+    {
+      "area": "increment identity",
+      "evidence": "publish_round7_update.py:57,65,68",
+      "change": "New R8 receipt/index/content-index/entry/tag keys; preserve old R7 navigation, commits and releases."
+    },
+    {
+      "area": "provenance and metrics",
+      "change": "Keep native-fit and fixed-teacher/cached-prefix diagnostics apart from free QA and E2E timing. Exposed select/dev views are not independent confirmation samples. Preserve failed, invalid-path and unexecuted preparation scopes separately."
+    },
+    {
+      "area": "public bytes",
+      "change": "Retain exact source/public/archive SHA, FP16 book payload SHA and Git LF body/blob identities separately; force-add configs/data, verify actual staged/committed tree, lock content_ref to actual commit, sanitize public delivery receipt."
+    }
+  ],
+  "required_root_inputs": [
+    "Final execution receipt: research complete, global goal incomplete, GitHub sync pending until successful remote verification.",
+    "Final report, navigation and concrete README entry; unique research-round8 tag/release name; preserve R7 entry/history.",
+    "Explicit completed R8 quality analysis list and intended exposed-dev/fresh-source roles, plus canonical samples/references/raw manifests/records/postchecks.",
+    "All final endpoint books/fit logs/complete_books, native dump manifest and source split (native .pt tensors excluded), primary/secondary method freezes if used.",
+    "Per-job immutable runtime source capture/index, launch receipts, failed logs, maintenance/checksum/runtime verification receipts.",
+    "Explicit inclusion of source-only pool memberships, manifests, extra checks and diagnostic summaries; no not-yet-frozen confirmation GT materialization for publication preparation."
+  ],
+  "invariant_exclusions": "Chats/checkpoints/authentication/connection details/original images/model weights/native tensor/checkpoint/moments.pt files",
+  "stage_status": "Research and publication stage unfinished; this audit does not prepare or publish a release."
+}

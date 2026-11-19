@@ -1,0 +1,2154 @@
+{
+  "schema": "trajkv.round8.postcal-train-manifest.v1",
+  "config": {
+    "schema": "trajkv.round8.postcal-train.v1",
+    "arguments": {
+      "model": "/path/to/InternVL3-8B-hf",
+      "samples": "/path/to/TrajKV/configs/a2/round8_v1/calibration_train32.json",
+      "legacy_scripts": "/path/to/VisContract_P14_2/scripts",
+      "kivi_source": "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+      "max_patches": 8,
+      "compress_before_question": true,
+      "turns": 1
+    },
+    "bank_settings": {
+      "method": "round8_joint",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json",
+      "name": "r8_postcal_R42_base_collection",
+      "v_group_size": "all",
+      "metadata_factor_path": "/path/to/TrajKV/results/round7_v1/codec_assets/factors_for_book16_inherited.json",
+      "budget_bits": 1.8,
+      "selection_calibration_sha256": "202f92d618c41769f8344c584e6bd00e29300e171bea7dbf8721191d4a262e18",
+      "key_amplitude": "norm",
+      "selected_stages": [
+        [
+          "k",
+          24,
+          3,
+          0
+        ],
+        [
+          "v",
+          19,
+          2,
+          0
+        ],
+        [
+          "k",
+          23,
+          2,
+          0
+        ],
+        [
+          "k",
+          22,
+          1,
+          0
+        ],
+        [
+          "k",
+          19,
+          2,
+          0
+        ],
+        [
+          "v",
+          19,
+          3,
+          0
+        ],
+        [
+          "k",
+          23,
+          1,
+          0
+        ],
+        [
+          "k",
+          22,
+          3,
+          0
+        ],
+        [
+          "k",
+          20,
+          3,
+          0
+        ],
+        [
+          "k",
+          14,
+          0,
+          0
+        ],
+        [
+          "k",
+          19,
+          3,
+          0
+        ],
+        [
+          "v",
+          22,
+          3,
+          0
+        ],
+        [
+          "k",
+          25,
+          1,
+          0
+        ],
+        [
+          "v",
+          22,
+          0,
+          0
+        ],
+        [
+          "k",
+          22,
+          0,
+          0
+        ],
+        [
+          "k",
+          15,
+          2,
+          0
+        ],
+        [
+          "v",
+          15,
+          2,
+          0
+        ],
+        [
+          "v",
+          24,
+          3,
+          0
+        ],
+        [
+          "k",
+          16,
+          1,
+          0
+        ],
+        [
+          "v",
+          20,
+          3,
+          0
+        ],
+        [
+          "k",
+          27,
+          2,
+          0
+        ],
+        [
+          "v",
+          23,
+          1,
+          0
+        ],
+        [
+          "k",
+          27,
+          3,
+          0
+        ],
+        [
+          "v",
+          16,
+          0,
+          0
+        ],
+        [
+          "k",
+          23,
+          0,
+          0
+        ],
+        [
+          "k",
+          21,
+          2,
+          0
+        ],
+        [
+          "v",
+          14,
+          0,
+          0
+        ],
+        [
+          "k",
+          16,
+          0,
+          0
+        ],
+        [
+          "v",
+          22,
+          1,
+          0
+        ],
+        [
+          "v",
+          23,
+          2,
+          0
+        ],
+        [
+          "k",
+          26,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          2,
+          0
+        ],
+        [
+          "v",
+          26,
+          2,
+          0
+        ],
+        [
+          "k",
+          21,
+          0,
+          0
+        ],
+        [
+          "v",
+          14,
+          1,
+          0
+        ],
+        [
+          "v",
+          20,
+          2,
+          0
+        ],
+        [
+          "v",
+          17,
+          2,
+          0
+        ],
+        [
+          "k",
+          21,
+          1,
+          0
+        ],
+        [
+          "k",
+          25,
+          3,
+          0
+        ],
+        [
+          "v",
+          18,
+          2,
+          0
+        ],
+        [
+          "k",
+          17,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          3,
+          0
+        ],
+        [
+          "v",
+          21,
+          0,
+          0
+        ],
+        [
+          "v",
+          27,
+          2,
+          0
+        ],
+        [
+          "v",
+          8,
+          3,
+          0
+        ],
+        [
+          "k",
+          8,
+          3,
+          0
+        ],
+        [
+          "v",
+          25,
+          1,
+          0
+        ],
+        [
+          "k",
+          26,
+          3,
+          0
+        ],
+        [
+          "v",
+          16,
+          1,
+          0
+        ],
+        [
+          "k",
+          14,
+          1,
+          0
+        ],
+        [
+          "v",
+          17,
+          3,
+          0
+        ],
+        [
+          "k",
+          16,
+          2,
+          0
+        ],
+        [
+          "k",
+          17,
+          3,
+          0
+        ],
+        [
+          "k",
+          20,
+          2,
+          0
+        ],
+        [
+          "k",
+          12,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          0,
+          0
+        ],
+        [
+          "v",
+          26,
+          0,
+          0
+        ],
+        [
+          "k",
+          11,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          2,
+          0
+        ],
+        [
+          "v",
+          18,
+          1,
+          0
+        ],
+        [
+          "v",
+          16,
+          2,
+          0
+        ],
+        [
+          "k",
+          27,
+          0,
+          0
+        ],
+        [
+          "k",
+          26,
+          0,
+          0
+        ],
+        [
+          "k",
+          18,
+          1,
+          0
+        ],
+        [
+          "v",
+          25,
+          3,
+          0
+        ],
+        [
+          "v",
+          17,
+          1,
+          0
+        ],
+        [
+          "v",
+          26,
+          3,
+          0
+        ],
+        [
+          "k",
+          17,
+          1,
+          0
+        ],
+        [
+          "k",
+          22,
+          2,
+          0
+        ],
+        [
+          "v",
+          20,
+          1,
+          0
+        ],
+        [
+          "v",
+          15,
+          0,
+          0
+        ],
+        [
+          "k",
+          20,
+          0,
+          0
+        ],
+        [
+          "k",
+          20,
+          1,
+          0
+        ],
+        [
+          "k",
+          26,
+          1,
+          0
+        ],
+        [
+          "k",
+          15,
+          0,
+          0
+        ],
+        [
+          "k",
+          14,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          1,
+          0
+        ],
+        [
+          "v",
+          12,
+          3,
+          0
+        ],
+        [
+          "v",
+          23,
+          0,
+          0
+        ],
+        [
+          "v",
+          19,
+          0,
+          0
+        ],
+        [
+          "v",
+          11,
+          3,
+          0
+        ],
+        [
+          "k",
+          4,
+          1,
+          0
+        ],
+        [
+          "k",
+          21,
+          3,
+          0
+        ],
+        [
+          "v",
+          12,
+          1,
+          0
+        ],
+        [
+          "k",
+          12,
+          1,
+          0
+        ],
+        [
+          "k",
+          9,
+          0,
+          0
+        ],
+        [
+          "v",
+          22,
+          2,
+          0
+        ],
+        [
+          "k",
+          9,
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1,
+          0
+        ],
+        [
+          "k",
+          19,
+          0,
+          0
+        ],
+        [
+          "k",
+          9,
+          1,
+          0
+        ],
+        [
+          "v",
+          15,
+          3,
+          0
+        ],
+        [
+          "v",
+          26,
+          1,
+          0
+        ],
+        [
+          "v",
+          14,
+          2,
+          0
+        ],
+        [
+          "k",
+          15,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          3,
+          0
+        ],
+        [
+          "k",
+          3,
+          1,
+          0
+        ],
+        [
+          "v",
+          9,
+          3,
+          0
+        ],
+        [
+          "v",
+          9,
+          0,
+          0
+        ],
+        [
+          "v",
+          14,
+          3,
+          0
+        ],
+        [
+          "k",
+          13,
+          2,
+          0
+        ],
+        [
+          "k",
+          24,
+          1,
+          0
+        ],
+        [
+          "k",
+          14,
+          3,
+          0
+        ],
+        [
+          "v",
+          20,
+          0,
+          0
+        ],
+        [
+          "v",
+          9,
+          1,
+          0
+        ],
+        [
+          "v",
+          18,
+          3,
+          0
+        ],
+        [
+          "v",
+          13,
+          2,
+          0
+        ],
+        [
+          "v",
+          24,
+          1,
+          0
+        ],
+        [
+          "k",
+          11,
+          0,
+          0
+        ],
+        [
+          "v",
+          17,
+          0,
+          0
+        ],
+        [
+          "v",
+          9,
+          2,
+          0
+        ],
+        [
+          "k",
+          8,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          2,
+          0
+        ],
+        [
+          "v",
+          13,
+          0,
+          0
+        ],
+        [
+          "k",
+          5,
+          0,
+          0
+        ],
+        [
+          "k",
+          11,
+          1,
+          0
+        ],
+        [
+          "k",
+          10,
+          0,
+          0
+        ],
+        [
+          "k",
+          24,
+          2,
+          0
+        ],
+        [
+          "v",
+          4,
+          1,
+          0
+        ],
+        [
+          "k",
+          13,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          3,
+          0
+        ],
+        [
+          "v",
+          12,
+          2,
+          0
+        ],
+        [
+          "v",
+          16,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          0,
+          0
+        ],
+        [
+          "k",
+          17,
+          0,
+          0
+        ],
+        [
+          "v",
+          5,
+          2,
+          0
+        ],
+        [
+          "k",
+          12,
+          2,
+          0
+        ],
+        [
+          "v",
+          11,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          3,
+          0
+        ],
+        [
+          "k",
+          8,
+          0,
+          0
+        ],
+        [
+          "k",
+          10,
+          2,
+          0
+        ],
+        [
+          "k",
+          9,
+          2,
+          0
+        ],
+        [
+          "v",
+          1,
+          3,
+          0
+        ],
+        [
+          "k",
+          15,
+          1,
+          0
+        ],
+        [
+          "v",
+          8,
+          1,
+          0
+        ],
+        [
+          "k",
+          16,
+          3,
+          0
+        ],
+        [
+          "v",
+          5,
+          0,
+          0
+        ],
+        [
+          "v",
+          24,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          3,
+          0
+        ],
+        [
+          "k",
+          4,
+          0,
+          0
+        ],
+        [
+          "v",
+          2,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          0,
+          0
+        ],
+        [
+          "v",
+          11,
+          1,
+          0
+        ],
+        [
+          "v",
+          4,
+          0,
+          0
+        ],
+        [
+          "k",
+          13,
+          1,
+          0
+        ],
+        [
+          "k",
+          13,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          2,
+          0
+        ],
+        [
+          "k",
+          2,
+          0,
+          0
+        ],
+        [
+          "v",
+          13,
+          3,
+          0
+        ],
+        [
+          "v",
+          8,
+          0,
+          0
+        ],
+        [
+          "v",
+          15,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          3,
+          0
+        ],
+        [
+          "v",
+          6,
+          1,
+          0
+        ],
+        [
+          "v",
+          2,
+          2,
+          0
+        ],
+        [
+          "v",
+          1,
+          0,
+          0
+        ],
+        [
+          "v",
+          3,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          1,
+          0
+        ],
+        [
+          "k",
+          6,
+          1,
+          0
+        ],
+        [
+          "v",
+          13,
+          1,
+          0
+        ],
+        [
+          "k",
+          3,
+          2,
+          0
+        ],
+        [
+          "v",
+          7,
+          2,
+          0
+        ],
+        [
+          "k",
+          7,
+          2,
+          0
+        ],
+        [
+          "v",
+          0,
+          2,
+          0
+        ],
+        [
+          "v",
+          5,
+          1,
+          0
+        ],
+        [
+          "v",
+          12,
+          0,
+          0
+        ],
+        [
+          "k",
+          12,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          1,
+          0
+        ],
+        [
+          "k",
+          2,
+          2,
+          0
+        ],
+        [
+          "k",
+          10,
+          1,
+          0
+        ],
+        [
+          "v",
+          2,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          1,
+          0
+        ],
+        [
+          "v",
+          5,
+          3,
+          0
+        ],
+        [
+          "v",
+          0,
+          0,
+          0
+        ],
+        [
+          "k",
+          4,
+          2,
+          0
+        ],
+        [
+          "k",
+          0,
+          2,
+          0
+        ],
+        [
+          "k",
+          8,
+          2,
+          0
+        ],
+        [
+          "k",
+          6,
+          0,
+          0
+        ],
+        [
+          "v",
+          0,
+          1,
+          0
+        ],
+        [
+          "v",
+          4,
+          2,
+          0
+        ],
+        [
+          "k",
+          25,
+          0,
+          0
+        ],
+        [
+          "k",
+          2,
+          3,
+          0
+        ],
+        [
+          "k",
+          10,
+          3,
+          0
+        ],
+        [
+          "k",
+          0,
+          0,
+          0
+        ],
+        [
+          "k",
+          4,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          0,
+          0
+        ],
+        [
+          "k",
+          23,
+          3,
+          0
+        ],
+        [
+          "v",
+          8,
+          2,
+          0
+        ],
+        [
+          "v",
+          3,
+          0,
+          0
+        ],
+        [
+          "v",
+          25,
+          0,
+          0
+        ],
+        [
+          "k",
+          6,
+          2,
+          0
+        ],
+        [
+          "k",
+          3,
+          0,
+          0
+        ],
+        [
+          "v",
+          18,
+          0,
+          0
+        ],
+        [
+          "v",
+          2,
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          2,
+          0
+        ],
+        [
+          "k",
+          0,
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1,
+          0
+        ],
+        [
+          "k",
+          11,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          2,
+          0
+        ],
+        [
+          "k",
+          6,
+          3,
+          0
+        ],
+        [
+          "k",
+          2,
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          3,
+          0
+        ],
+        [
+          "k",
+          19,
+          1,
+          0
+        ],
+        [
+          "v",
+          10,
+          3,
+          0
+        ],
+        [
+          "v",
+          6,
+          2,
+          0
+        ],
+        [
+          "v",
+          3,
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          1,
+          0
+        ],
+        [
+          "k",
+          25,
+          2,
+          0
+        ],
+        [
+          "v",
+          23,
+          3,
+          0
+        ],
+        [
+          "v",
+          11,
+          2,
+          0
+        ],
+        [
+          "v",
+          6,
+          3,
+          0
+        ],
+        [
+          "k",
+          3,
+          3,
+          0
+        ],
+        [
+          "v",
+          19,
+          1,
+          0
+        ],
+        [
+          "k",
+          24,
+          0,
+          0
+        ],
+        [
+          "v",
+          4,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          1,
+          0
+        ],
+        [
+          "v",
+          6,
+          0,
+          0
+        ],
+        [
+          "v",
+          25,
+          2,
+          0
+        ],
+        [
+          "k",
+          27,
+          1,
+          0
+        ],
+        [
+          "k",
+          0,
+          3,
+          0
+        ],
+        [
+          "v",
+          24,
+          0,
+          0
+        ]
+      ],
+      "residual_layout_reference": "actual",
+      "res_stages_limit": 42,
+      "round7_policy_path": "/path/to/TrajKV/results/round7_v1/exchange_key_cal8/gt/policy_conditional_batches.json",
+      "metadata_reference_book_path": "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json",
+      "round8_factor_policy": "inherit_from_reference_book",
+      "key_assignment": "l2",
+      "key_encoding": "reencode",
+      "value_encoding": "binary",
+      "joint_gain_refit": false,
+      "value_joint_refit": false,
+      "postres_direction": false,
+      "final_ray_mode": "off",
+      "visual_mean_correction": false
+    },
+    "steps": 200,
+    "seed": 1212,
+    "objective": "full_teacher_KL",
+    "checkpoint": "final_step200",
+    "target_tokens": 8,
+    "text_capacity": 512,
+    "parameter_shape": [
+      3,
+      28,
+      4
+    ],
+    "encoder_constant_bytes": 1344,
+    "learning_rate": 0.003,
+    "regularization": 0.01,
+    "shadow_absolute_tolerance": 0.003,
+    "shadow_relative_tolerance": 0.003,
+    "source_balanced_schedule": {
+      "canonical_sha256": "4830e44dcb66448f16dc3357f58c97ddec666cec328e1efeae60966f9b15fb0b",
+      "sources": 32,
+      "questions": 70,
+      "Doc": 16,
+      "Text": 16,
+      "finite_domain_steps": {
+        "doc": 100,
+        "text": 100
+      },
+      "source_visits": "6or7; six full32-source epochs plus8 balanced tail",
+      "per_step_loss": "one scheduled question tokenmean KL, weight1",
+      "summary_loss": "equal domains/sources/Qwithin source/tokenmean"
+    },
+    "old_f0_scope": "Original Doc32/83case G4_256 teacherKL fit inherited unchanged to K1/R43; controls intentionally frozen, not a claim of new-codec joint optimality or an original implementation bug",
+    "method_scope": "New final-state coherent K/V field fold plus mixed-domain Fullteacher-aware calibration; no nativeMSE objective, select iteration choice, GT, Mean, Ray or book update",
+    "acceptance": "Actual first-Q zero-theta field/packed identity, dense shadow tolerance, finite nonzero q/post gradients, then fixed200 updates and strict complete70Q source-balanced trainKL decrease; final marker required",
+    "priority_contract": {
+      "stage_count": 42,
+      "K_stages": 23,
+      "V_stages": 19,
+      "full_priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+      "full_priority_bytes": 448,
+      "full_priority_JSON_sha256": "e59bd975e5233d5ca8969aee2e11a26fc9aece938974ce6faae32eadb48ee6f2",
+      "selected42_sha256": "02d27c6d77151c34e2b6eb2993792ed77c1041b9d8cb012c7fffe608cc11eb4c",
+      "selected42_packed_bytes": 84,
+      "selected42_JSON_sha256": "ba5f7bb01a26af6a12ff8baa0e65cda149f0cf36f4fa8872fdf8a23ce0658eaf",
+      "old43_JSON_sha256": "31a5f9ec3d6464139fe040138d045cb1b61872b171fd1f8566f575e7926fbf4a",
+      "new_encoder_bytes": 1344,
+      "added_retained_decoder_tensor_bytes": 0
+    }
+  },
+  "config_sha256": "92e7cd53074a9d2268426fd4728b6192ccbd9a3fcab75c9b6c2f3e41c5ac66ad",
+  "source_sha256": {
+    "round8_postcal_train.py": "df5dd392ba44465dad50ff2006016eb114be3c52fd0071e53a00a2c2fa7d6e60",
+    "round8_postcal_fields.py": "a7dcb3ee400eaec2aab1eabe33ab6877c44b8f206c9ef737e205a8fb8427fe54",
+    "round8_postcal_schedule.py": "4aff4148b00a1d2be9f6f3239d01284ff4a393552b9b56a1b212493a19708ad7",
+    "round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "round8_joint_gain.py": "30f75b6f7ca3fd8406f0ee5eec134ca6220f0f2f3d0b232f8c1fd4f04b0aec4f",
+    "round6_fit_gamma.py": "6aa7d72135e50e8eeca1559e3014102a518c42be0306c2d0ef35a22920a36ada",
+    "round6_student_codec.py": "df794ef136895887513179e736b14fef2779ee20c016d374caa59e41e8d77e78",
+    "calibrate_gradient_rank_round5.py": "dd7676bf5230e6a7dd4f19b8825649359de6df8f82863860261b6f86b66c774a",
+    "round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "round7_key_artifacts.py": "f429aa502dae27b7616e8dfca63ac6d498d16f18d8bf2db4ad674b5039760485",
+    "masked_bank.py": "7c313fddfdadc81939235b0a4fd843540961f8841c69d7400101b33a66737d9d",
+    "metadata_direction_bank.py": "bea958a75c8df84702b20ba32836ae6f4f7ffaae8f6a1024ea6de3c18659ff61",
+    "learned_direction_bank.py": "0ee57d34ba74dd426aecb51e985efe3df50852a5e67b624122789719b7547c40",
+    "quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "session_boundary.py": "cfcfc2c4263cada8672b1084da77b7670990d23c3dd2af2f490e00304f799419",
+    "round8_continuous.py": "2fdd47cea4c45ff5d26531188ed1faa14b2de7b162f5f8e39cfc46a8ee3ffdf5",
+    "experiments/bank.py": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+    "experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c"
+  },
+  "input_sha256": {
+    "/path/to/TrajKV/configs/a2/round8_v1/calibration_train32.json": "5b3f97ea175103903d988480ee6977d07e17f688a21126545d3fa4b2be39466d",
+    "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v2.json": "92e7cd53074a9d2268426fd4728b6192ccbd9a3fcab75c9b6c2f3e41c5ac66ad",
+    "/path/to/TrajKV/data/docvqa_next/images/05e420133938534e8d8bb85f8fc44a672a3e31ed1a004a5db96d4e947a8d6e2f.png": "05e420133938534e8d8bb85f8fc44a672a3e31ed1a004a5db96d4e947a8d6e2f",
+    "/path/to/TrajKV/data/docvqa_next/images/1ed9d34cc40c64a28e4b68adbe142aa5365dcc844184e0e59007930f7c645861.png": "1ed9d34cc40c64a28e4b68adbe142aa5365dcc844184e0e59007930f7c645861",
+    "/path/to/TrajKV/data/docvqa_next/images/21d340c6e6eccd25328bfcba28ac5400cb2451d1dbc88d80a020043c596e7592.png": "21d340c6e6eccd25328bfcba28ac5400cb2451d1dbc88d80a020043c596e7592",
+    "/path/to/TrajKV/data/docvqa_next/images/2b5e8afdfded287d5e83c9c72a52775b49c2804e018e1d04af2ffa866c419d0e.png": "2b5e8afdfded287d5e83c9c72a52775b49c2804e018e1d04af2ffa866c419d0e",
+    "/path/to/TrajKV/data/docvqa_next/images/2cc99f1ade6a80831a205f8ebacd08b93d3cbb67a94c825cba0c9d455e3d9744.png": "2cc99f1ade6a80831a205f8ebacd08b93d3cbb67a94c825cba0c9d455e3d9744",
+    "/path/to/TrajKV/data/docvqa_next/images/2fe524c97f864071bd8ba31c98872dcc60f24f8436fdb727b4158968bbfaa33e.png": "2fe524c97f864071bd8ba31c98872dcc60f24f8436fdb727b4158968bbfaa33e",
+    "/path/to/TrajKV/data/docvqa_next/images/42a5e20233d459e99162a54ee45a7eff8765b7792835bfeecaa52f834bd10d5e.png": "42a5e20233d459e99162a54ee45a7eff8765b7792835bfeecaa52f834bd10d5e",
+    "/path/to/TrajKV/data/docvqa_next/images/436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee.png": "436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee",
+    "/path/to/TrajKV/data/docvqa_next/images/55a30cfbe0a600e4758091c780fa507729bdbcc7a4177487239a3af85c1ad4d3.png": "55a30cfbe0a600e4758091c780fa507729bdbcc7a4177487239a3af85c1ad4d3",
+    "/path/to/TrajKV/data/docvqa_next/images/8c3e4839dac3340b4635b79bc044199fbbdabf7252023c4cd671600d2f719ac0.png": "8c3e4839dac3340b4635b79bc044199fbbdabf7252023c4cd671600d2f719ac0",
+    "/path/to/TrajKV/data/docvqa_next/images/93199465cbb9d7572a45f8d21a66b410164d56c08b4a099bad0312b430afeac8.png": "93199465cbb9d7572a45f8d21a66b410164d56c08b4a099bad0312b430afeac8",
+    "/path/to/TrajKV/data/docvqa_next/images/969aa9b57089f90fe47bbba3bf9a9fdc9c13aad36fe474871cb13109a79df203.png": "969aa9b57089f90fe47bbba3bf9a9fdc9c13aad36fe474871cb13109a79df203",
+    "/path/to/TrajKV/data/docvqa_next/images/9d3e9309c1eb2c078396faba90890171dce3cad25ca5872f3f83b36668a57f15.png": "9d3e9309c1eb2c078396faba90890171dce3cad25ca5872f3f83b36668a57f15",
+    "/path/to/TrajKV/data/docvqa_next/images/a40530564f3c45779baabca5b5e063685a1dbc1a554c4ad9a40ef7d83776df70.png": "a40530564f3c45779baabca5b5e063685a1dbc1a554c4ad9a40ef7d83776df70",
+    "/path/to/TrajKV/data/docvqa_next/images/b04e8cf0ecfd45d05c37a0ffdc5faf53aa001ea6c434e41c562dd292794d7150.png": "b04e8cf0ecfd45d05c37a0ffdc5faf53aa001ea6c434e41c562dd292794d7150",
+    "/path/to/TrajKV/data/docvqa_next/images/cf94cafceffec68360e7aab192d88cb77fe29708dd3a8af7394254b3390fb1b7.png": "cf94cafceffec68360e7aab192d88cb77fe29708dd3a8af7394254b3390fb1b7",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d.jpg": "0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/532934fd7e162490bc262ee27b681856b060ad43dedd0dc5b67e76ae0536e2c5.jpg": "532934fd7e162490bc262ee27b681856b060ad43dedd0dc5b67e76ae0536e2c5",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e.jpg": "5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/5f59e0d791e4be0a29527f2c63992edbf0c9080faf1c0be7158eb8523cd6e2a1.jpg": "5f59e0d791e4be0a29527f2c63992edbf0c9080faf1c0be7158eb8523cd6e2a1",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/850c3f784922b09e2e051b383040b054f4bb1721ce08142be211690f506a2116.jpg": "850c3f784922b09e2e051b383040b054f4bb1721ce08142be211690f506a2116",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/85331bd6b5daffec8d5a02b9b60e5f4af57f51ae1fb136b77e76f9a520786483.jpg": "85331bd6b5daffec8d5a02b9b60e5f4af57f51ae1fb136b77e76f9a520786483",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/8b9fa6300f496b414897945285e147e7be08af42ce644e62af9210f00a61dda3.jpg": "8b9fa6300f496b414897945285e147e7be08af42ce644e62af9210f00a61dda3",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/a51470bf7e854c2f6a0b532be1d05bf70494e226d9a52ecf398df0a01102e059.jpg": "a51470bf7e854c2f6a0b532be1d05bf70494e226d9a52ecf398df0a01102e059",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7.jpg": "a72aea3ef44ca0e441de64bbeb855e54a023d5f200f67c355dea2e8fc1b3c7c7",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/a75ca2d71000a25e2d55ee3a6310d1a36201cee129ff9b4e36521c38bf57c1a6.jpg": "a75ca2d71000a25e2d55ee3a6310d1a36201cee129ff9b4e36521c38bf57c1a6",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/b227eead39568980257fb36d0c707b35366dc7ed021a8031d05754b2ab95ba8f.jpg": "b227eead39568980257fb36d0c707b35366dc7ed021a8031d05754b2ab95ba8f",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/c1bdb211b23af505bd10d43ee0c104404e28c5df09e152eb2d8bde5258982b73.jpg": "c1bdb211b23af505bd10d43ee0c104404e28c5df09e152eb2d8bde5258982b73",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/c7d3647d2a8b859f332660f5599e42def2ef42d7509a108e8b25f82deec7e84c.jpg": "c7d3647d2a8b859f332660f5599e42def2ef42d7509a108e8b25f82deec7e84c",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/c8bed17ba050fe400297394a73f673b2bc63056431e8e5e97c8fbfc96fdfd4c8.jpg": "c8bed17ba050fe400297394a73f673b2bc63056431e8e5e97c8fbfc96fdfd4c8",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/d0aee04ed80f69bf2eac7438d478c6ef933b951c59e74490a6cc87a3d7ea4709.jpg": "d0aee04ed80f69bf2eac7438d478c6ef933b951c59e74490a6cc87a3d7ea4709",
+    "/path/to/TrajKV/data/textvqa_standard5000/images/ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67.jpg": "ef73f4bc6bd42a81a0494ab93d80329ea8b1f4eeb9d9aab89e3d78cda07a5d67",
+    "/path/to/TrajKV/results/round7_v1/codec_assets/factors_for_book16_inherited.json": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "/path/to/VisContract_P14_2/scripts/00_load_p14_1c_constants.py": "3f558200501156dfc6124155fd88570fc1c3bf05247bbc7c6909c17c8f71aa96",
+    "/path/to/VisContract_P14_2/scripts/01_synthetic_visual_scaling.py": "d578aa131f64f35a187367e9f24661af1238c46fe860cd690029e366dec5fc9f",
+    "/path/to/VisContract_P14_2/scripts/02_unified_mixed_penalty.py": "70bee4e00ebd7824f2f96bf6f6b52786f5afea1f724b0e308081b71104283710",
+    "/path/to/VisContract_P14_2/scripts/03_entropy_precision_sandbox.py": "3724ff6f5f0138ee80ba8273a687b00d1e0fffc73461b27afdd271141781b1f1",
+    "/path/to/VisContract_P14_2/scripts/04_spatial_policy_compiler.py": "37930d3785c76600717c721dbce977b9f5546f8c6fe3c6ba650775e8f9fc322a",
+    "/path/to/VisContract_P14_2/scripts/05_qwen25vl_structure_trace.py": "aab16d7795c3bae0b190bb6254a50f6fd25786c4c228326f132f1be3f9bc3ac3",
+    "/path/to/VisContract_P14_2/scripts/06_build_contract_events.py": "457f616d300acbf8ed3d6c5c1e90cfd89b65cd75012f7b2f3aa57157731fe8e1",
+    "/path/to/VisContract_P14_2/scripts/07_run_contract_pressure_sim.py": "9216c573f71f6671471b8c3c5b88ae7d71af2824e950152dc3619bc645b4618c",
+    "/path/to/VisContract_P14_2/scripts/08_summarize_p14_2_findings.py": "c78ec767259dff05ca8632d371e5cbda9b1be62d62aa04d1468d9ad6a5d707ea",
+    "/path/to/VisContract_P14_2/scripts/09_qwen25vl_autoprocessor_structure_trace.py": "0f567997956861c599392f8dbd547c3ecb6cc1fb02751ee877f1827f7535811d",
+    "/path/to/VisContract_P14_2/scripts/10_build_layerwise_gqa_contract_events.py": "e28c450d2bee575bd19a36bb19e7ba072de3c919b51db90cec940ec7b1f50338",
+    "/path/to/VisContract_P14_2/scripts/11_entropy_sandbox_noisy_threshold.py": "6489a4478bf7e412ca4d53f72e2018c31bbd93550b89616a891835259ab94a1a",
+    "/path/to/VisContract_P14_2/scripts/12_aggregate_p14_2pp_findings.py": "4ba7fcdda8f89de7a05ec015ed42e335d9bc394dc0f8a1448ea1a00bc1daf37e",
+    "/path/to/VisContract_P14_2/scripts/_check_drift_signal.py": "41d379f4a95508f4fd71c5555596049bf33040877f54c158cacb023b107e85eb",
+    "/path/to/VisContract_P14_2/scripts/analyze_p175_modern_replication.py": "b7cc627ba3eec7020d9d21f2b4d62650d093b29cdcb6413b01a79e21071bb8ae",
+    "/path/to/VisContract_P14_2/scripts/analyze_p176_codec_gate.py": "7276fb3d657c99d1f31312e51b24d38de2627b46c36c0c96f7ce78c87045fd9d",
+    "/path/to/VisContract_P14_2/scripts/analyze_p177_coupling_probe.py": "64acb1716b23b7d802cbac1b5286a8a0f0cf27b6a5e3c29e727e6481ad47fbb0",
+    "/path/to/VisContract_P14_2/scripts/analyze_p178_partition.py": "c200a9779e6a9610a9a502d3973f52d0062e3cec099c1be2982dff698fa2258f",
+    "/path/to/VisContract_P14_2/scripts/analyze_p178b_reconstruction.py": "5261cea51beaf76ee2ee739449b4d833cc071e7376baf8b4d602a8308314e58f",
+    "/path/to/VisContract_P14_2/scripts/analyze_p179_baselines.py": "9fef56d39536a817681ee742422a3675268dd149a9828919faca72ab09e7dc1e",
+    "/path/to/VisContract_P14_2/scripts/analyze_p179_training.py": "e71586a2548dcccbabeb7ca7625ea7cd1965f5806581dbd31d11f30edc3111cd",
+    "/path/to/VisContract_P14_2/scripts/analyze_p180_judge.py": "7a5abe9a7d91c5fc2228561f73f60d2ec9a0687f4db9953afdaafdc6a62d1a0b",
+    "/path/to/VisContract_P14_2/scripts/analyze_p183_recovery.py": "44b4734470e48b15994504ecebefa9133de2958aca20383f2c14228805850b67",
+    "/path/to/VisContract_P14_2/scripts/analyze_p184_working_sets.py": "960327b0f7aac51641b7560cb79a6a0365df3ed698528d3de3885f78daa4d872",
+    "/path/to/VisContract_P14_2/scripts/analyze_p186_replay.py": "de0f4792d3a6a03ed750507f4a93de2196e22508f450038036812ad3e8a30d81",
+    "/path/to/VisContract_P14_2/scripts/analyze_p187_scaling.py": "39efb2096e62427d92b8e050df04aa809962cb9b2b9bff686461f389bbc7f227",
+    "/path/to/VisContract_P14_2/scripts/analyze_p189.py": "b8c18342dc560d785d7e3be7ba373f04c329cf8175730a48f64b0562ef92701a",
+    "/path/to/VisContract_P14_2/scripts/analyze_p189_reviews.py": "6fe48256cd3bc262156fed5534fcd9816948cbc5a7e59227c3856a11337830fc",
+    "/path/to/VisContract_P14_2/scripts/analyze_p190.py": "6bfb6019de0e1ab78e65cba3aeea9ba1fd2519937939391c7a808db26f9f9e95",
+    "/path/to/VisContract_P14_2/scripts/analyze_p190_quality.py": "9c07b5e2e5c0c575e99a757e70cdc9da8c98c828cae82b2918c9fa508fca466c",
+    "/path/to/VisContract_P14_2/scripts/analyze_p191.py": "e23cdc8f133322957ec0a8dd9a94b3dc19b280a91ad22ec69f35190df7135961",
+    "/path/to/VisContract_P14_2/scripts/analyze_p191_quality.py": "0779ff0b76baf801c2bf93d6ee0f09ea08ab307521c1d16c4a6bf02035f92ace",
+    "/path/to/VisContract_P14_2/scripts/analyze_p192_quality.py": "45169ae964e97a7f4ea34798c58d31e720a60b4fbd6755a89123423cce3fba9e",
+    "/path/to/VisContract_P14_2/scripts/analyze_p192_runtime.py": "2d5b5e31272ed7e96f945b78840fc1f7550d161522f6fa2cf5e53513389fb149",
+    "/path/to/VisContract_P14_2/scripts/analyze_p193_followup.py": "e6b2b1d84ce6c82f035b8f23e6a434dc69d32ac7551e6743ce9ad6631e5db284",
+    "/path/to/VisContract_P14_2/scripts/analyze_p193_probe.py": "e0484a5e86f558d6614ede32757a28ad7be11b59589b0fe9a6ccd0a86bbf95e9",
+    "/path/to/VisContract_P14_2/scripts/analyze_p193_quality.py": "fea6af75e6525eda17fed6de33aa55bd86065ac4e264c3b4d2fa77f6982abf6a",
+    "/path/to/VisContract_P14_2/scripts/analyze_p193_runtime.py": "f1cb85f24e32c9385b89420578180d1da13f268c91b9945e2df1675f8fdd80c7",
+    "/path/to/VisContract_P14_2/scripts/analyze_p194_quality.py": "e5153523ce406ea3eb8e71aff0b0a923e068392a6d41b10d0c74eeace321484b",
+    "/path/to/VisContract_P14_2/scripts/analyze_p194_runtime.py": "62ff06971b192d4d80e79690e042294d8f518686fe568c05710b6ce282e4103f",
+    "/path/to/VisContract_P14_2/scripts/analyze_p195.py": "8a5add5bfbc6a263c5ff6e8f5b99a11629f604375a339705eca9b58731dadb0c",
+    "/path/to/VisContract_P14_2/scripts/analyze_p196.py": "06c4c19b85b912ccd8d8b093d2f245bccdaff9d1e2d5d922bb582dbe6276c7a2",
+    "/path/to/VisContract_P14_2/scripts/analyze_p196_diagnostics.py": "76ab9e453a053c07893a02e809ac7cf0e0c6d432205eba0e97f10256d99d905d",
+    "/path/to/VisContract_P14_2/scripts/analyze_p196_quality.py": "774e16caeeb0a1aa98921ecb25e48cb394ee0c9c5dd2995d7e43c6156adf3d7c",
+    "/path/to/VisContract_P14_2/scripts/analyze_p197_atoms.py": "6584914f3f292f9aa69c26399c2d2988a6c72560f2c812e70e194fed0250a5d3",
+    "/path/to/VisContract_P14_2/scripts/analyze_p197_events.py": "0fba00137178238bb036c7961ba6db5f9e2f578de210b0c41b50624d1ca29527",
+    "/path/to/VisContract_P14_2/scripts/analyze_p198.py": "6dec8be6e3dc61b8fbda9e66d5e620e8151a343c56ec840e6a9b22f4b1077118",
+    "/path/to/VisContract_P14_2/scripts/analyze_p199.py": "0c9d81d2062c9d98ff5c5233f25d982ee8f4c27f17bf5bfb365de6d7e122ff90",
+    "/path/to/VisContract_P14_2/scripts/analyze_p199_fp16.py": "210f6eb0da956e8ac6fd58bd9ceee3a294189759bb65724024d6becb4bdb75fd",
+    "/path/to/VisContract_P14_2/scripts/analyze_p200_a.py": "aa0e774d1b647dc7a76de1f7f81b32492c485a905b754b32c855fe755229ec25",
+    "/path/to/VisContract_P14_2/scripts/analyze_p200_b.py": "d3287ff1b464d3bf94de573a6bd87781ba9b01ab9a4a205f6bb73b9940205aaa",
+    "/path/to/VisContract_P14_2/scripts/analyze_p200_c.py": "e667f3135813a9be60ae4df08070a8cf3556508a9c2c52777483a8deb5ed6971",
+    "/path/to/VisContract_P14_2/scripts/analyze_p202_margins.py": "812a913ed6985710951235c7818dd0f76dce20fb4e9db626f85790042e11d6e1",
+    "/path/to/VisContract_P14_2/scripts/analyze_p211.py": "62d0e2ecde8d08c4fed797f9bf922d62803b3713586adebdcf97e2829a808a4a",
+    "/path/to/VisContract_P14_2/scripts/analyze_p211_attention.py": "5502353401abe70c37f61d5ef931ec31c6b8c80d791f105188da67da419e5671",
+    "/path/to/VisContract_P14_2/scripts/analyze_p212.py": "c9c2361c20390a396d925c426ab79b64889341eb9f6be0e33f2455769e890c92",
+    "/path/to/VisContract_P14_2/scripts/analyze_p213_readout.py": "0ae0a779ec8048d09f360ff6cc50410a48a4f9ddccf6f72b4f93e4fbaa5dccda",
+    "/path/to/VisContract_P14_2/scripts/apply_p20_hw_calibration_to_p19.py": "d29b6a23a04bb24efb0f30bb3c43c0ac311ce3e05aa846664cb9923a6ecaca64",
+    "/path/to/VisContract_P14_2/scripts/audit_p176_codec.py": "df1588c5cde7d4f10ccb67b19373250bc88fb4ecce1cb891745366877b6bf04a",
+    "/path/to/VisContract_P14_2/scripts/audit_p179_gradients.py": "57d9dc4071cd71d8725f8de5770b30ed65206bb61a5229693c67f5d2b6e4a8e1",
+    "/path/to/VisContract_P14_2/scripts/audit_p179_multiturn_assets.py": "945f99c5d281608efabcd7b6c3dde2276a442bb57d913b92d1491ae8a4fe1bb9",
+    "/path/to/VisContract_P14_2/scripts/audit_p180_inputs.py": "aa19890da77458f8dcca644275264acf9dd6b00f7420c7190b5eaa90a11bf013",
+    "/path/to/VisContract_P14_2/scripts/audit_p180_operators.py": "3bbe0f9db10f9bf478dc17aed679f2279d871f15a79fe9d67df5fc44183624fe",
+    "/path/to/VisContract_P14_2/scripts/audit_p180_runs.py": "e1506e3934229806966e49b9f784d9dcd2d524b6cbdbd17b8d4763af2bc4ccc4",
+    "/path/to/VisContract_P14_2/scripts/audit_p182_vischain.py": "fc3d09fb07a3d40c40266da836a8b5c135cc3ece609e2051041af2e253753a10",
+    "/path/to/VisContract_P14_2/scripts/audit_p191_judges.py": "2bbd351117b001973d3e48d487ce3a4e09e5bbe4c19b747c388ec000b940b616",
+    "/path/to/VisContract_P14_2/scripts/audit_p193_judge_stability.py": "49351b86050e962993755cd1011d84d10c674c3d869e64403a290a50874c53d0",
+    "/path/to/VisContract_P14_2/scripts/audit_p194_code_domain.py": "749695b9f8f8e993261e930a5858cee5dc56294af9d77129526e9c8381b8b5e8",
+    "/path/to/VisContract_P14_2/scripts/audit_p194_judge_stability.py": "34c47df1b5a78c18b9234100c41285a5905791dca9f361ad24c30ca27c9e11bc",
+    "/path/to/VisContract_P14_2/scripts/audit_p196_judge_examples.py": "6a8009798fb20a812f1d5d26f09adc419a58555da69f25378cdbfc987132c125",
+    "/path/to/VisContract_P14_2/scripts/audit_p196_judge_stability.py": "8b454804e5bdb02d78553e2e4abe1f4320c781b3eda06afd8f2b95ddf8f55416",
+    "/path/to/VisContract_P14_2/scripts/audit_p207_runtime.py": "f587cc73df5af0a9cb39e8eb9923a8e9941de3b87f33a23c97eda5c10671173a",
+    "/path/to/VisContract_P14_2/scripts/audit_p208_runtime.py": "125672acba91b1b747e0931d638f882db1f4dbfd6d2febceace57af1aef0afe6",
+    "/path/to/VisContract_P14_2/scripts/audit_p209_runtime.py": "4a8b1cbcfbaf7973cc08527d79c8e78068816cc141add7e2a5b62145a9951627",
+    "/path/to/VisContract_P14_2/scripts/audit_p210_inputs.py": "ac0ac34d0d8c9b9b2d3f086632113072e82e3443f242ab45ac57c7a77e0a358f",
+    "/path/to/VisContract_P14_2/scripts/audit_p210_runtime.py": "f136a218c8e096f2dbb62961bab751e561aca33415c00dbe4bafc11dc8757243",
+    "/path/to/VisContract_P14_2/scripts/audit_p211_runtime.py": "e729a3acb81526ac8797ac7f2a907814b79eaa06c1a6e4d48a34329e84a51093",
+    "/path/to/VisContract_P14_2/scripts/audit_p212_runtime.py": "4ce1edf332aa0ce47359fe92fd2cffeebbf859be6cd9594bb929b0d8dc67bc0d",
+    "/path/to/VisContract_P14_2/scripts/audit_p213_inputs.py": "c4155b96269e0912a27b816c2e4fdce99d8f4d7d1189828dbc9a95108b2171b7",
+    "/path/to/VisContract_P14_2/scripts/audit_p33_3_kivi_qwen_port_readiness.py": "455303d7721013d625b716437aee739115ab64ff83615812860e0e060d1d4819",
+    "/path/to/VisContract_P14_2/scripts/benchmark_p181_real_answers.py": "b278c0297892794bc594d382ec54d91cecedc13ed938b896297df38a17590c82",
+    "/path/to/VisContract_P14_2/scripts/benchmark_p181_runtime.py": "34ff1aef40496111137bbe34296527fb05ef3532971e528d5b22b5d03d4c596d",
+    "/path/to/VisContract_P14_2/scripts/build_convbench_samples.py": "f67ab7a8de04d8e007e46852cebedf223e1b01177efc2a86322af2b62c5466b0",
+    "/path/to/VisContract_P14_2/scripts/build_hiberkv_admission_map.py": "868f7fc7f9dc88dc2860ba1398b3015c72be78f7ad6af5d5faa39f36837f247c",
+    "/path/to/VisContract_P14_2/scripts/build_hiberkv_memory_pareto.py": "9830507bb2bca45f22968a630f11c43ab63f668eda59fd141a37b1bedf35c9e4",
+    "/path/to/VisContract_P14_2/scripts/build_hiberkv_phase1_recoverability_curve.py": "22af84dcf3819a6c3a6f5cb747affae98235a7e8c39bf3b7d58798794ffe93d6",
+    "/path/to/VisContract_P14_2/scripts/build_hiberkv_recovery_ci.py": "e5d12ece6649a8307e65440680d49691eeb6fb8b0fd4abed26c4f937f07edbf7",
+    "/path/to/VisContract_P14_2/scripts/build_p108_model_integrated_packed_cache.py": "f0ca34d85b7fcc8c9d97c6c1240b136200be0298a8800265005d5be31ee1347e",
+    "/path/to/VisContract_P14_2/scripts/build_p118_decisive_aggressive_lift.py": "1dd738ccd59ebc9ce36799c5e465cba1bf0dfd4ac0d3ece76c6d7c89603728e9",
+    "/path/to/VisContract_P14_2/scripts/build_p119_system_frontier_report.py": "bc5a5dd2b8dccd027efda3eb87264de4f8c4be86cdd1dbf5e713b57aeabd5df9",
+    "/path/to/VisContract_P14_2/scripts/build_p126_multisession_capacity_trace.py": "66b2a51720e593c1758216bf0ff5a85e94cf4d95d36cad5b06920b013e9ac371",
+    "/path/to/VisContract_P14_2/scripts/build_p127_cpu_offload_wake_microbench.py": "db403121acb6dbb4dc765d4eb0e85041c20aa920240f0a4b15e2e6663aa19245",
+    "/path/to/VisContract_P14_2/scripts/build_p128_wake_optimization.py": "2c85f045c8401352c8cef093cd5653c65be61a54a8b1ca287e99ace9e8f35c84",
+    "/path/to/VisContract_P14_2/scripts/build_p133_double_buffer_wake_microbench.py": "5cadad8fc54ce91df7ef1b2a0d82e1346d6b6590a6ed6fbe385ab7d9c289faff",
+    "/path/to/VisContract_P14_2/scripts/build_p134_live_multisession_trace.py": "eddbf8f607122609ed1bc4dd83514574d7e7dba2310411522fbb7934e9673f60",
+    "/path/to/VisContract_P14_2/scripts/build_p138_packed_streaming_attention.py": "54b599bb831b0faf41e25702f466180425b8e33443f4402a9e0137dc3540cf3e",
+    "/path/to/VisContract_P14_2/scripts/build_p140_gpu_streaming_wake_microbench.py": "f2093495aefe0f243821c73aefe90e89fa830d17ef0ed4b8a74571d3fa6abcb5",
+    "/path/to/VisContract_P14_2/scripts/build_p141_chunked_streaming_wake_microbench.py": "04fd8d2618cdc9167e583b7bc72f14d9b0469a4b524c613905c37661044e6498",
+    "/path/to/VisContract_P14_2/scripts/build_p142_double_buffered_wake_microbench.py": "8e9fc5c14db1eea1068029f65c0101ba759878e92e030bfd05c917685fefbf32",
+    "/path/to/VisContract_P14_2/scripts/build_p143_evidence_paging_serving_frontier.py": "0a0576e4f22eac8f680c4b6719dd91ebb345f4090f730d6dcd94fcce3917e9f1",
+    "/path/to/VisContract_P14_2/scripts/build_p144_live_evidence_paging_trace.py": "a1f33b129e0832bbd989b4339933939ae872c922e23fd4d2640efd27719124f3",
+    "/path/to/VisContract_P14_2/scripts/build_p145_slo_admission.py": "921db011edb83428a72af563975addfa8deb27d9ed97aacd09aabf24f6f6ca44",
+    "/path/to/VisContract_P14_2/scripts/build_p148_external_validity_frontier.py": "43b4a27f81f5037577b1611df87b511db771f2f269262a752425f04e21d4b952",
+    "/path/to/VisContract_P14_2/scripts/build_p149_convbench_second_dataset_replay.py": "758bddacee2d323eac70001474400c261ef6ad69669be06fc1012748fb7a0193",
+    "/path/to/VisContract_P14_2/scripts/build_p14_3tc_salience_concentration.py": "a1483a3da20ece8d7291de60c421a748b7c4f1d96853de1e2a4b5c8d5df2fbd0",
+    "/path/to/VisContract_P14_2/scripts/build_p152_axis_minimality_ablation.py": "f5182cc4868f58ee5a388908ae34f4c7fc1b4d621ef6866f114467ad21407ffa",
+    "/path/to/VisContract_P14_2/scripts/build_p153_heldout_admission.py": "cd61540844a5353bc12848140e9f014efe0e369ec437e300b5b72611955e9311",
+    "/path/to/VisContract_P14_2/scripts/build_p154_relift_sota_matrix_summary.py": "9e17ee1280641f779b9e9ad5dd5cea200daff6352f6b150b896c88d309fbff86",
+    "/path/to/VisContract_P14_2/scripts/build_p154_sota_policy_adapter_pack.py": "8969828faa3115a477ad1878207c968958b1cf2781cb67282bf984707f5b77ba",
+    "/path/to/VisContract_P14_2/scripts/build_p155_second_model_admission_sanity.py": "5479e83033b47b47edbcbfe47a4022a71e2edc62973d574c8970d4a3b91e9240",
+    "/path/to/VisContract_P14_2/scripts/build_p156_system_case_studies.py": "93be5605c9c05d6493b68f35fc432224ab1b14abfffa1ddbf6fc1dfa5faba128",
+    "/path/to/VisContract_P14_2/scripts/build_p15_1_tkv_hot_state_contracts.py": "8cdcc1f4c06ed09a3715cde8198d569d43031e300a9d997494f969e2467611af",
+    "/path/to/VisContract_P14_2/scripts/build_p15_2_multi_object_registry.py": "98b037dc98011161171276abafb910dc75d9903be23a1c36dd9d2024e518b9c0",
+    "/path/to/VisContract_P14_2/scripts/build_p15_3_service_pressure_model.py": "0f18d170c4c29141cea33993679d2c665fb2c43e612461b5017b5ac46234f801",
+    "/path/to/VisContract_P14_2/scripts/build_p15_3b_tkv_hot_state_policy_envelope.py": "31d768f73ef475a164584ed66260991d862b51cab1b41f2192ee3fa7c2e6d8cd",
+    "/path/to/VisContract_P14_2/scripts/build_p15_3d_calibrated_service_model.py": "51eb65393ab17eae1ae33c84fd6046e266fd067f5521f8d9ea5e921707b1bc36",
+    "/path/to/VisContract_P14_2/scripts/build_p15_3g_quality_gated_service_envelope.py": "54a242b181fe7e7994dd8b61ffff348e59643fa61f5344fc483704be7e3b9f00",
+    "/path/to/VisContract_P14_2/scripts/build_p15_contract_ir_from_p14.py": "353514df1174fd080eca5bfe05b20774cc93806fdfe32868b863eafd27fa747c",
+    "/path/to/VisContract_P14_2/scripts/build_p163_theory_derived_wake_gate.py": "21839e323d73320faf3bde6c26d428a2f2aa0c8b51c30189b4bb21935359b7f6",
+    "/path/to/VisContract_P14_2/scripts/build_p164_failure_diagnosis.py": "f75abd888825cf82b88cc7949c3d3b49ca281313b1d55593cd280a059fa7654e",
+    "/path/to/VisContract_P14_2/scripts/build_p164_fresh_heldout_inputs.py": "5c42ca4759659d97276d0374d3961bd6f0884cccb53bb550b6aff1e24ddd8cad",
+    "/path/to/VisContract_P14_2/scripts/build_p164_fresh_query_gate_analysis.py": "2f4e2299d38087a2f7755f5de68e5c6e2907c7ddb282daf58e43511099a6946c",
+    "/path/to/VisContract_P14_2/scripts/build_p165_page_bound_feasibility.py": "43747b9943021826483015644e2bcd452ff09751ca18eb596bfd454b695012aa",
+    "/path/to/VisContract_P14_2/scripts/build_p165b_signal_viability.py": "c14b7b49ede7600de0246767c9c48bc0adc961b340c2aafd4ae58f9c407d3732",
+    "/path/to/VisContract_P14_2/scripts/build_p166_docvqa_hash_grouped_inputs.py": "c2a100c3a512f36a26ad9a0c4b9e6fce656a6bbee201576c0b1b8a3fdfde039b",
+    "/path/to/VisContract_P14_2/scripts/build_p166_docvqa_signal_validation.py": "df3799e4db37ae1edb694a035f46923ac428c6b452749f8a5b610f7c7948cc24",
+    "/path/to/VisContract_P14_2/scripts/build_p167_full_crr_ceiling.py": "1a6831d079623cf0670725e33e7777424b3b51626361af4aa84dc781fa3813c3",
+    "/path/to/VisContract_P14_2/scripts/build_p168_moment_isolation.py": "0ce4c275ddc8b51d962258721525d8415d7416de0ff50609fa3b39b0fd0c833c",
+    "/path/to/VisContract_P14_2/scripts/build_p169_searchable_key_crr.py": "c46b922141ee5b656dcbfbd454340f45997dab75ba8683d53623200c38ac5470",
+    "/path/to/VisContract_P14_2/scripts/build_p169b_calibrated_layer_aggregation.py": "b8ca10a49a572c98c0ccfce43ef53d236ae500b82fe5ff6df2a0cbcd5678eb9d",
+    "/path/to/VisContract_P14_2/scripts/build_p169c_uniform_sentinel_crr.py": "59ae2a618f11505d0d817b8c7e0250701f13445b4fe39e54c1576d27de8f650e",
+    "/path/to/VisContract_P14_2/scripts/build_p16_1ge_d3_internvl_boundary_audit.py": "135aa050bd1ebcb2ec09ec7e9a8ca04ff178b42bad29ea49c532fe7ca60ac2ce",
+    "/path/to/VisContract_P14_2/scripts/build_p16_1ge_d_final_scorecard.py": "ae3f63d1190cc66f2dc473e92cd5fae2b890b3b7b70477935bce68ca92440270",
+    "/path/to/VisContract_P14_2/scripts/build_p16_1ge_generalization_effect_scorecard.py": "7e12477cff676142af3d72645a889cf5211c492834acbb864305f6bca581db6a",
+    "/path/to/VisContract_P14_2/scripts/build_p16_2_joint_mpc_allocator.py": "5abf6bae807c25c60e4a772da675b6a400b4be2af67d426a2a646313892fbaf1",
+    "/path/to/VisContract_P14_2/scripts/build_p16_2sp_budget_stress_granularity_tax.py": "86db2112d3a79f0992e94a190208ad7fdc2ac8011a03fe5f75447b72cb878f50",
+    "/path/to/VisContract_P14_2/scripts/build_p16_3_task_aware_typed_envelope.py": "24049540daaa639cb4e9a05a2115fc279a7eee566fc3d91c2679b686898d5709",
+    "/path/to/VisContract_P14_2/scripts/build_p16_4_serving_macro_envelope.py": "d2ea3fc521f39ff94e39584052199e1c8e1f4328a6655cdea8bea992d86cad49",
+    "/path/to/VisContract_P14_2/scripts/build_p170_active_first_conformal.py": "e34a51c2cce0db5f3981c3a920c408fe3b00c2f4457dfc4be2dd11010958c7aa",
+    "/path/to/VisContract_P14_2/scripts/build_p170_active_first_development.py": "d47d41f66f0c4063860988d821139ba7562f888cde579168661b395c24518385",
+    "/path/to/VisContract_P14_2/scripts/build_p170_sealed_partition.py": "596ad17b6d97dab4af43a9dc80a9ad867b9e295daab2b9b04bb78cda25d41ff3",
+    "/path/to/VisContract_P14_2/scripts/build_p171_lowbit_shadow_analysis.py": "b8c03daaf109b400bc17a9db9c81744018a263db4b38948c9416e70534dccc68",
+    "/path/to/VisContract_P14_2/scripts/build_p171b_precision_replay_analysis.py": "b91e71580675d490f17c7a1985e2ec9cc8ff72bebbebf735826a9016196b3830",
+    "/path/to/VisContract_P14_2/scripts/build_p171c_confidence_replay_confirmation.py": "d707271b1f19b25188d4b12033cb22bfcb2b23407aeeed9093039677a757f8b3",
+    "/path/to/VisContract_P14_2/scripts/build_p172_repair_targets.py": "a6edb1731bc8ca9a1d11989717be43e246c35441827b31e5c0c601132710fa36",
+    "/path/to/VisContract_P14_2/scripts/build_p172_repairability_analysis.py": "13a417a1aa2401e16731dd542191a591ac3b0dfce6f674cf3ed8c7d29781e80f",
+    "/path/to/VisContract_P14_2/scripts/build_p173_anls_audit.py": "6c11e3f34646e15cb1be80076720a869a03d78154fcb91db20113d5cd7043af3",
+    "/path/to/VisContract_P14_2/scripts/build_p179_training_data.py": "84a4ef08cce87e9bdc7b5829c5aa07075514d7bbffa1e03594e9a0773b810571",
+    "/path/to/VisContract_P14_2/scripts/build_p17_0_contract_aware_memory_sim.py": "00b4c64c1f566d49cf7b6f80557f08e892969105ce1f67f38c107b22281dba26",
+    "/path/to/VisContract_P14_2/scripts/build_p17_2_1_metric_polish.py": "6de562ff80d44830322bf825690dbe16654156a1727fe47cb82354dc848be093",
+    "/path/to/VisContract_P14_2/scripts/build_p17_2_full_residency_eviction_replay.py": "4c328bf0a06b6c6fea71c16c233d98e5ffdd935759390285586e5b551571e889",
+    "/path/to/VisContract_P14_2/scripts/build_p17_2d_controlled_multiturn_recoverability.py": "5f5e627ccdc220f54f6c505b78ad235627aefa8c5621d835498f34cbb2546e57",
+    "/path/to/VisContract_P14_2/scripts/build_p187_inventory.py": "8d91ac91d9e8e93b0cf8ec3a7e25c3dc368891da75d1a6be7828efb3638c5587",
+    "/path/to/VisContract_P14_2/scripts/build_p188_review.py": "7d057d925ea11ee4229b4d9accd2c82eba9aa1c99256a2f58b6605e6ffcbb6ed",
+    "/path/to/VisContract_P14_2/scripts/build_p189_review.py": "4d49877e87428b40438c507c19c6ad4140649b72c2f62c607e22d85975604dc9",
+    "/path/to/VisContract_P14_2/scripts/build_p189_sessions.py": "7132bac8a2ad2793c6bf862e9de9f06116b316253ebad30655b192eb2f2475f6",
+    "/path/to/VisContract_P14_2/scripts/build_p18_5_recent_sota_source_audit.py": "6b5a11bd0ead73243b272ae72c5b824cb2106c9bf34753e0bb77a15e0e673d22",
+    "/path/to/VisContract_P14_2/scripts/build_p190_blind.py": "9c1411080286538240da98a0be7bc905fbc5533edb21dae01b81cb8bd8159330",
+    "/path/to/VisContract_P14_2/scripts/build_p191_blind.py": "871ff63a9a165633f0365c687601b5e5b1950f046b5e93e73637eed698e1ddbd",
+    "/path/to/VisContract_P14_2/scripts/build_p192_blind.py": "1d1f5f92ecb699b290c0c6798a44941aee4cabfc1dba1b53345538af05310e1d",
+    "/path/to/VisContract_P14_2/scripts/build_p193_blind.py": "2071689d93553527e6f5fa09e7685cfdc9c3b53d40bbeee362be18465a54ea20",
+    "/path/to/VisContract_P14_2/scripts/build_p193_priority_review.py": "3221f2d0fda1d5fc9ca563e036c83d474a3c52f16502efaf76a1e934d8d1cffe",
+    "/path/to/VisContract_P14_2/scripts/build_p194_blind.py": "4aa787267949e41d1ae2e625eb6fcb4f9f995ed83ec599aaaea93d5fa02b7626",
+    "/path/to/VisContract_P14_2/scripts/build_p194_priority_review.py": "59118f00cb45caeea16a95109a6c6fc89fd103a2cbc64891c46486bf8b138651",
+    "/path/to/VisContract_P14_2/scripts/build_p196_blind.py": "84e33c4906ea888bea3321d4ec0a791431b25847ae0c6bd022ec9f62656f0552",
+    "/path/to/VisContract_P14_2/scripts/build_p196_priority_review.py": "c3494dfd929bce49d85db1b1c05ab4c0e9b1f7f2a2cb15302aec0eaaad4bc7cd",
+    "/path/to/VisContract_P14_2/scripts/build_p197_human_packet.py": "b8e08b404bcbbb2aa38d6e555c447d2791bd04e4f9e492bb628122f8f5f295a1",
+    "/path/to/VisContract_P14_2/scripts/build_p197_review.py": "5d23ea24371ddfefd5043d2d41bdee220c6e0948a02c32fb5d2c08f06401603d",
+    "/path/to/VisContract_P14_2/scripts/build_p198_review.py": "f5b20ce6932d67a94f1aafc59dde6a8599c4aa3b657d77068faa482b7b83585b",
+    "/path/to/VisContract_P14_2/scripts/build_p199_review.py": "eb39ffeef2f63ce3200e3eb42f1608426f58425741de048825193c4ad62214f7",
+    "/path/to/VisContract_P14_2/scripts/build_p207_aligned.py": "a472554802ace8dcc74cae119b9388daa17061b06f1518901e0e63776defa4ac",
+    "/path/to/VisContract_P14_2/scripts/build_p207_confirm.py": "f774e7092a2c3c78f7a53e269081ea223a201733cd60990c6081877f17845340",
+    "/path/to/VisContract_P14_2/scripts/build_p207_fixed.py": "3c5ea5d9204e3880e7de24fc25846060ac0ccd1b37f90a5fcdd08ef77c829b04",
+    "/path/to/VisContract_P14_2/scripts/build_p20_0_hw_calibration_suite.py": "1bd5a869caa5ee1571cb45b442c61b30ecaa8482133a2b28db45d2dfb662e805",
+    "/path/to/VisContract_P14_2/scripts/build_p213_review.py": "150cfe42c90d594cfc0d26d315eeac2a6d0bc846ea6695f78fe59d3ebd0a28fa",
+    "/path/to/VisContract_P14_2/scripts/build_p21_attention_ranked_retention_proxy.py": "08e1709371d7fb97bd9b6978b642e97334e729f61317eba41d540f444d31ea8b",
+    "/path/to/VisContract_P14_2/scripts/build_p22_visual_tile_granularity_sensitivity.py": "05785ff10d82668b5c32f540821eb9c49dbadd166f984015b278b0bf5b98451a",
+    "/path/to/VisContract_P14_2/scripts/build_p23_dynamic_lite_predictor.py": "979fde64fca8b424dd00705f02b50c23fd8ecf638bda8887227a59a8066ba076",
+    "/path/to/VisContract_P14_2/scripts/build_p24_extreme_sensitivity_robustness.py": "fb0394fdd7a062cd46f2bd06bdbd4c08bf42bf653e6e18926af965d8fbbb0960",
+    "/path/to/VisContract_P14_2/scripts/build_p25_batch_capacity_boundary.py": "c3ffa6093561e112018bf6aff50c5d95b6c1fef00d88817b063c237504b36f42",
+    "/path/to/VisContract_P14_2/scripts/build_p26_prefix_fetch_proof.py": "cfdadbe5ec61f17c0f688de82fcc77df1b27c686d330ae436e701b13a899e1e0",
+    "/path/to/VisContract_P14_2/scripts/build_p27_control_plane_overhead_bound.py": "5f633f33db08dc056b673e0a7fcb75aff3f19b6fbe6d89b4c5420268f34af0e9",
+    "/path/to/VisContract_P14_2/scripts/build_p28_real_decode_bandwidth_anchor.py": "9c75bbcbeceae3c47a8bcb91b6ac6a25f21e98a7ef4f712d5d860982840f81f8",
+    "/path/to/VisContract_P14_2/scripts/build_p30_e2e_quality_anchor.py": "e835d852d8d7426f80bf39fd8cd9d064a2037c63fdeeba8805a0d0e18eef2313",
+    "/path/to/VisContract_P14_2/scripts/build_p31_visual_share_break_even.py": "c6b54c065524362d8758c4ad91e8a2ae4c44b1229091f028ebf784d8673dc927",
+    "/path/to/VisContract_P14_2/scripts/build_p32_salience_stratified_precision_ablation.py": "840ca3c96d4f26e7d18c42205605f8a1d42fd7f8cc4d664497a443f4aec156e8",
+    "/path/to/VisContract_P14_2/scripts/build_p33_2_kivi_baseline.py": "fe39e0a4c1ea3c6ee1d05833d39507c6fcfafedba2c53a7959d7becbe0623109",
+    "/path/to/VisContract_P14_2/scripts/build_p33_uniform_precision_foil.py": "5de251ab9e0bc48cd57916d38401a73ac94e9acae01c55d0c7d2a33f5caedf3e",
+    "/path/to/VisContract_P14_2/scripts/build_p34_recoverability_foil.py": "77af7bd4f39211fe7d60cac29cd1a4a47f61da2dfc8919e39352dc6f719a604d",
+    "/path/to/VisContract_P14_2/scripts/build_p35_capacity_oom_boundary.py": "bcb865df363f15394c0e82ed4665569fd532bb1f04c82351b53e812b88a47e4e",
+    "/path/to/VisContract_P14_2/scripts/build_p35_real_int8_packed_storage.py": "2cb58d1d61d7b3d7a4708954f00f3f1930435218dc8c1363848c0a29d5f107d7",
+    "/path/to/VisContract_P14_2/scripts/build_p36_1_measured_key_cells.py": "0576b5d557c6be9811deeb14bcebec2caccf12fecca85e86ccf83a0e831e6829",
+    "/path/to/VisContract_P14_2/scripts/build_p36_2_integrated_compressed_residency.py": "5bd219ab7d4826461ec9333b4f40f11dcd9c6cfa789f3f0b042c9336fbd349b1",
+    "/path/to/VisContract_P14_2/scripts/build_p38_real_multiturn_recoverability_anchor.py": "64e15d7e55733061ca207ce5eb6e6ab3c6c9bac1d13d55b12ad4cc1a6390fd4d",
+    "/path/to/VisContract_P14_2/scripts/build_p39_retention_future_overlap_diagnostic.py": "d144376bd6e1b3ba61ec4858f59ed21276eaeb8c26deae0ee2503dbc45d37950",
+    "/path/to/VisContract_P14_2/scripts/build_p40_measured_service_anchor.py": "e6ff20f53fe7011b6d9c3233efdcbc3d0c44566eb82ea8d297e5f204a9b93de0",
+    "/path/to/VisContract_P14_2/scripts/build_p41_1_entropy_gap_mechanism.py": "3ac9cc87982e65e653b1a7af31495dcccd59678635bc0dbb48658e4edefb4818",
+    "/path/to/VisContract_P14_2/scripts/build_p41_2_localized_acquisition.py": "35ee47f2ac482e87df69648ceb4c97b045418362c0400179818f62d61e4c8702",
+    "/path/to/VisContract_P14_2/scripts/build_p41_3_oracle_coverage_mechanism.py": "f3f09a3f3599d759f38a16a69159f279853246d173853c8ce97fc24df74d3bfb",
+    "/path/to/VisContract_P14_2/scripts/build_p41_budget_bound_recoverability_audit.py": "ec0dcb4f255e84f7238ab35eefbd33c4b3ef944d88e44a01cd22fb88dce52516",
+    "/path/to/VisContract_P14_2/scripts/build_p41_tgv_kv_recoverability_audit.py": "28ca429ab83cec4b800c9a068ce710064b621d1ab67c51e91593caa8e28ec4df",
+    "/path/to/VisContract_P14_2/scripts/build_p43_1_llava_recoverability_mini.py": "c449839560dd9a215e16703fecf9c2cc6cf998464dfd3f21ccbbc04af19f8e1f",
+    "/path/to/VisContract_P14_2/scripts/build_p43_cross_model_kv_carry_smoke.py": "cae577a95c7430dc5374f321fafd508d63c3cd30331be56a1e0e5c2c6aac86d7",
+    "/path/to/VisContract_P14_2/scripts/build_p44_modest_e2e_service_anchor.py": "ce531ee55077686dcc3a85480564a3f903c7be54d6d2666a505e2c551151f8af",
+    "/path/to/VisContract_P14_2/scripts/build_p45_1_workflow_bcd_readiness.py": "d70a9c48bb5028fb8f43bd1ef034be44494ca4fdaf339377862624746fbbaa97",
+    "/path/to/VisContract_P14_2/scripts/build_p45_benchmark_breadth_recoverability.py": "87d33a52e4b045bc66581331d8e2ebe9116c4a62db34907652e83e2d6e73c576",
+    "/path/to/VisContract_P14_2/scripts/build_p46_internvl_recoverability_mini.py": "32b89c90315ddefd6a3a08a34b42d660b1a790c2af5189a3367f426c17ec859d",
+    "/path/to/VisContract_P14_2/scripts/build_p52_theory_terms_probe.py": "7fe2edbff4433a9275c9a57306eca7a7918b7771b3758d29cf4e6c86aab3ec4e",
+    "/path/to/VisContract_P14_2/scripts/build_p52b_llava_neff_probe.py": "f6592f401192d4288db7b68493b14d406850f88ccb89c08e475d95ed0591c75e",
+    "/path/to/VisContract_P14_2/scripts/build_p52c_internvl_neff.py": "85abe1121e37deb36e98208c929dc9c33e25efd57bb1ab75563e73e81156d485",
+    "/path/to/VisContract_P14_2/scripts/build_p52c_multimodel_neff.py": "12eea4aedf9904142bb8b3637430b6b56bb08cdf46cd7ad581b2b510e2e14880",
+    "/path/to/VisContract_P14_2/scripts/build_p52d_minicpm_neff.py": "4c095b2fbe90e9b7e9e234d524af310213328133c476def2fa90d0c4ecf4a53d",
+    "/path/to/VisContract_P14_2/scripts/build_p72_xmodel_semantic_probe.py": "2b5a94515da1e15a32f732b660b1675c66a8d049fab40b1e74d1b46da99e96cd",
+    "/path/to/VisContract_P14_2/scripts/build_p79_hiberkv_probe_signal_discrimination.py": "a842050d5571da432f36dd1d4e06f8dd9d7f5cd509a113f7288a50bef77e59dd",
+    "/path/to/VisContract_P14_2/scripts/build_relift_admission_protocol.py": "2f90c4ff4051488e7a8036c40fa6fa6074d279fb5906906a1b170f0bca67d2f5",
+    "/path/to/VisContract_P14_2/scripts/build_relift_dequant_microbench.py": "6904c933805c2de964dff870c6938ee7d4c3f510bd0a00a0f4eae463d2341911",
+    "/path/to/VisContract_P14_2/scripts/build_relift_drift_rate_sweep.py": "03a1af1e8810bfff2f3f8b59f95199ff32ae3409a675d492fb38a808fde71efd",
+    "/path/to/VisContract_P14_2/scripts/build_relift_economics_contrast.py": "1770c3e4f0bc4a410ffe5b1ded283c077a5c3a4e41a79ed54c095169325d9065",
+    "/path/to/VisContract_P14_2/scripts/build_relift_gate_ablation.py": "c77919e099db3c76f1551a738330370aa8d3187b93b193fc4ce6b6c24eaa8a11",
+    "/path/to/VisContract_P14_2/scripts/build_relift_head_sensitivity.py": "3d900adb0fc54ed2604bf93cec9363f47862be1c88d441153de103e63e4a9dfc",
+    "/path/to/VisContract_P14_2/scripts/build_relift_model_dependence_probe.py": "1e758fd5b73ceea23ea2199cc0b60007ecb4e70124442d22e10a5e9014b386d8",
+    "/path/to/VisContract_P14_2/scripts/build_relift_neff_prunability.py": "3f9c560ee1f3ee982e0ffe1d4c78202c02942f5d4596123e8827d2c3c5327d05",
+    "/path/to/VisContract_P14_2/scripts/build_relift_output_probe.py": "e91a7c7d2b1e5e1cd60d89136eae919df819d4317444572243b79e578b0a5c4d",
+    "/path/to/VisContract_P14_2/scripts/build_relift_packed_dormant_cpu.py": "a950d67754bd2b01e78100dbc8891462c305310e35fa2cda92baf24ac60ebe50",
+    "/path/to/VisContract_P14_2/scripts/build_relift_packed_dormant_gpu.py": "b9b78569dd48662ef0f27a50661629d586636f13a308a6a81f54a307bfc22091",
+    "/path/to/VisContract_P14_2/scripts/build_relift_probe_samples.py": "3e820f58479cf286f5afed8627841fe177cbbfa43d15f75f70e2ddb2bfc18219",
+    "/path/to/VisContract_P14_2/scripts/build_relift_recovery_need_calibration.py": "540e153fc61fb0ac8391530693756ebbc1752ea7a7d79092dc00842c17ac202e",
+    "/path/to/VisContract_P14_2/scripts/build_textvqa_grouped_samples.py": "880049276010ee80f45144ce5a3d965a0657a2a68f992b52f4a9730d68199e09",
+    "/path/to/VisContract_P14_2/scripts/build_viscontract_frontier_admission.py": "4d45ff2fa41e081cb8205b09e6401410a35492739f999ce1570a713ff6449df9",
+    "/path/to/VisContract_P14_2/scripts/build_wake_materialization_gpu_calibration.py": "b06218e536c10c5d79045679319df6b2007655783b2ee51425d394c29c39fc97",
+    "/path/to/VisContract_P14_2/scripts/calibrate_p202.py": "8f2279e69e8394882e34a03fc93ffb1e574f928fcf96e0aa8ad999dfa401bad3",
+    "/path/to/VisContract_P14_2/scripts/check_p195_parity.py": "ba20bb82f842d5ec3c5f7d85a4f56986e4e2ff16d58d670bf692bbdf8292d9d0",
+    "/path/to/VisContract_P14_2/scripts/check_p196_live.py": "7b01080b9a619e8859b53cb05dd9d187f931070d1b4ecbf41ab568f0d3ddba8c",
+    "/path/to/VisContract_P14_2/scripts/check_p213_crossover.py": "7511fe365678a66e2c2f5bc774f93d8db5ac1a58207b4e21303e93011d044ebe",
+    "/path/to/VisContract_P14_2/scripts/check_p213_local.py": "2ca0b3f739a250e391f674d5d1c69869e13680171266a228a5bb606b29f4c42b",
+    "/path/to/VisContract_P14_2/scripts/collect_p197_outputs.py": "b92df1a48437f95e7fa29480058d7160de5e0e2673007fc95046e31a45e7e37a",
+    "/path/to/VisContract_P14_2/scripts/complete_p178_mask_audit.py": "46ce4be51da254c86e46dfce8c2d754572f8e3e5c3555fff561ae0e0958849fe",
+    "/path/to/VisContract_P14_2/scripts/cost_screen_p197.py": "121bedf16e598a6482c5e6814b26559a40e90aa4e4ab50119fba992b5421b56a",
+    "/path/to/VisContract_P14_2/scripts/export_p179_audit_metadata.py": "689683b60e04daf2bef47edf10169f1a8bab25f6ca4da95117700c0a1d7572c1",
+    "/path/to/VisContract_P14_2/scripts/export_p181_review_images.py": "7d8a749677382b6cc185beb89f9f2f31876cbfc8ca657ffd27195eaed20c7556",
+    "/path/to/VisContract_P14_2/scripts/export_p193_review_records.py": "09e416357386c990889f75ba56ef70e26ba125ef960f8fd4b06a56c9ceb0d4a9",
+    "/path/to/VisContract_P14_2/scripts/export_p199_progress.py": "65e28f41fca2b28b16f8117151064d68e5b6f8a39972a3ee37ec0850ab69e9f1",
+    "/path/to/VisContract_P14_2/scripts/fetch_p182_vischain.py": "f224d671782a5b821c016bb6cf3263f0d53a2b43951decde6884cad68ee9c18f",
+    "/path/to/VisContract_P14_2/scripts/freeze_p190.py": "fd441f51eec360f31c280eb96130464de0b6fd1f82d4106f8170e5fd23f00bed",
+    "/path/to/VisContract_P14_2/scripts/freeze_p192.py": "da3d35a3e31bf23796d4278751fa136f87a6725d30028ca7bb94d09d510f4e4a",
+    "/path/to/VisContract_P14_2/scripts/freeze_p197_atoms.py": "b2ca1532edace1f890beb674031f97685224f02b48d0764ac9568d32b74f6844",
+    "/path/to/VisContract_P14_2/scripts/internvl_custom_adapter.py": "41236387ceff3e4a7a274fc96d48054ea1944bece628f0327482213a0311b2ef",
+    "/path/to/VisContract_P14_2/scripts/map_p197_old_scores.py": "b40a8fb4ec6cda9668b062c4d6ae556c459deeb2a9ddd79ec57cdb2b8abff74b",
+    "/path/to/VisContract_P14_2/scripts/p14_2_models.py": "dab0d0a0983fe469bd2d57c1c61d0c31a4b54c137cc69bfcd3a9ed00e53e574d",
+    "/path/to/VisContract_P14_2/scripts/p14_4_mpc_sweep.py": "d2af88643db94b0237dcd0a79cbb88dd367ea0f24ebaac962a998db392447ca6",
+    "/path/to/VisContract_P14_2/scripts/p14_4_predictive_mpc.py": "548612fb1eb3a2256f269ea5fa2715a68f594dc28514a44220f8a57d7e9fdea9",
+    "/path/to/VisContract_P14_2/scripts/p14_4b2_core.py": "d17597749a76fd62d3cecf0de935834ae6181a58746bc110951d9bd2620e32a5",
+    "/path/to/VisContract_P14_2/scripts/p14_4b2_mpc_sweep.py": "f90271bb6722e789380fea331b81cc6de15c2504bb33ccec47196f84a0f390b6",
+    "/path/to/VisContract_P14_2/scripts/p14_4b_core.py": "7d089b07ef5f2194e985175e8ec5031d2768e0999d978039878fd571fa8794c8",
+    "/path/to/VisContract_P14_2/scripts/p14_4b_mpc_sweep.py": "152d0d368d4075aa94c970542d88f05447fd26c8f9ed85ff33ef524becad2ca6",
+    "/path/to/VisContract_P14_2/scripts/p14_4c2_bml_static_equivalence_diagnostic.py": "7c2bc50f6e3c4fb783bcf2c13f5c9af870696a9d2434006eda178f3f4d0641fa",
+    "/path/to/VisContract_P14_2/scripts/p14_5b1_core.py": "090aa261131aacc64b5cfe9b5f29a53168b29ef7c0a160c9e310dd512c303032",
+    "/path/to/VisContract_P14_2/scripts/p15_3c_power_monitor.py": "9f16b3604be2da3b3c15f107f0732a5d46d298b871038962caaed9babe3f0e36",
+    "/path/to/VisContract_P14_2/scripts/p169_searchable_key_crr.py": "1d5c1529bad68a538b76f6ad4d8d76fd453131aa6e95ba4810ebe665c4bfa3a2",
+    "/path/to/VisContract_P14_2/scripts/p16_0_kv_cache_quantizer.py": "4b4b1ad71618a7efd0b9fed4454ef430d9012d5352847912ec440a5c8d4feb5a",
+    "/path/to/VisContract_P14_2/scripts/p170_active_first_crr.py": "0e6c2d2b3ef45929b235536ebe23f1790872465e7554258f0d192d0b85f0a47d",
+    "/path/to/VisContract_P14_2/scripts/p170_summary_rehearsal.py": "62fd09284032200210dd7f7e9e6a68265d922ed062eb53dfc8d8990a2f33ba4e",
+    "/path/to/VisContract_P14_2/scripts/p171_lowbit_shadow.py": "9959a9bbab444d0559ef8b00e8ece3b04649d5de8242a41a9c87e8df80b53ab8",
+    "/path/to/VisContract_P14_2/scripts/p175_attention_math.py": "36b8b708a147e62fba10756d5b84f6084d653bea5961f7ed9a8c9077ac889da1",
+    "/path/to/VisContract_P14_2/scripts/p176_kivi_codec.py": "1c278ebd1f648170696208ffed89a01e96960c18670610948d742262ad6b7cbb",
+    "/path/to/VisContract_P14_2/scripts/p178_partition_calibration.py": "f4ff58d971b9a56763a3050ab76c6b44eea9490d69b3535ea4b4eb117e50cf82",
+    "/path/to/VisContract_P14_2/scripts/p178b_reconstruction.py": "a71ebe73f6d7c1f705bfffacc4b10d69a2ac2dfdc773ef98033dc18baafb8d49",
+    "/path/to/VisContract_P14_2/scripts/p179_adapter.py": "70d41ea8eb7bfeddf98c810be44f8e2737534cbcf06be5cadb87ee320998a1f8",
+    "/path/to/VisContract_P14_2/scripts/p179_common.py": "6948214eb65af09aef978130140edfb33a30df352750e7358bfc428a3db14fc6",
+    "/path/to/VisContract_P14_2/scripts/p180_multiturn_core.py": "ce14af74525db6066e59c4a7a0c0f8d66fc768c12b00aa9c94b35016f969f4d3",
+    "/path/to/VisContract_P14_2/scripts/p181_stage_adapter.py": "e6bd05479d2b71a3b04f009df84433ca6f524a3b17efa2cffa0e042f0b3ae3b2",
+    "/path/to/VisContract_P14_2/scripts/p182_dialogue_metrics.py": "6be88480ca1c1e9d795148942fc7eb1586911c05f1a40e322bef7b2caf26613e",
+    "/path/to/VisContract_P14_2/scripts/p183_recovery_core.py": "294e0683f069638a7ffd1166b53479be2b758c82e5d51a39e5dc80f28cac97f8",
+    "/path/to/VisContract_P14_2/scripts/p184_working_set.py": "6df5e1836c7a4dd0092a5ed53a8e66de1fff831f4a3db1c692f99223e1e51b69",
+    "/path/to/VisContract_P14_2/scripts/p185_model_state.py": "437dbb5e9bd34e699ddc1f589834d207248074e214dfa821143781cd4fe3c4af",
+    "/path/to/VisContract_P14_2/scripts/p185_segmented_kernel.py": "bf09b996f098aea5027f25de54b50aef78f305225de105d9b8c9343751eb3f64",
+    "/path/to/VisContract_P14_2/scripts/p185_single_state.py": "ca4bce75c1e80c0a99eb18451323f2d0c2a07a8c707a3238f1a4e8d5d9114b3c",
+    "/path/to/VisContract_P14_2/scripts/p186_packed_state.py": "1226e5309e3ccfcc54ba8c16ae063a685ee100a1359e77bb45d8da5392784041",
+    "/path/to/VisContract_P14_2/scripts/p187_tail_observation.py": "626f66901cb827f94b7084f6840e31ff84e5f59503d771163af7a0c615e12a1c",
+    "/path/to/VisContract_P14_2/scripts/p188_compact.py": "2ae0c4b94b44791ebe371c7ce0200fcf3860f6725c82597a21d1c0f9a96a7516",
+    "/path/to/VisContract_P14_2/scripts/p189_runtime.py": "bb1fde77c1c6416639d311d5e7b02c84ce9cc76b3bd31678179272c5abefdc77",
+    "/path/to/VisContract_P14_2/scripts/p190_companion_attention.py": "2d40a887eb8269d8d7b111ecc30b10093b8099217e2334b7baeda918122e609d",
+    "/path/to/VisContract_P14_2/scripts/p190_observer.py": "861f84ce851caccc4e85f95502af6b90bb59d82c63edac7c059d599f590d623d",
+    "/path/to/VisContract_P14_2/scripts/p190_observer_dynamic.py": "e47603c198576e93d948d18cc867355ef4c9258e6df1599701170ab4732653db",
+    "/path/to/VisContract_P14_2/scripts/p191_driver.py": "359fb0b08eaac3ee2dfd792127f3a5a9eacf981ce239d5f1ff329e02145f9ffa",
+    "/path/to/VisContract_P14_2/scripts/p191_selection.py": "4c920b992f620153f215f24c86bc887b10dbafae843fdf8d7dfc3d1b975232ed",
+    "/path/to/VisContract_P14_2/scripts/p192_driver.py": "0167c0b895001e6d87a2e1d90fce36bb878e73a5819759478517bd624074a42c",
+    "/path/to/VisContract_P14_2/scripts/p192_geometry.py": "0d9cd938ce8e2e15a3cd9ec41404f525f8c6287d9492469d3d78a53512e1e533",
+    "/path/to/VisContract_P14_2/scripts/p192_review_materials.py": "6674cba226ff22a368035e5cf9d426553d737584e4ace2a297b2649e1b9b7c20",
+    "/path/to/VisContract_P14_2/scripts/p193_required_audit.py": "811f168f23dab6a853f49d2224358dc1a941fa9670ef473b8bcc54a3ceb787a2",
+    "/path/to/VisContract_P14_2/scripts/p193_state.py": "03480349f0b79d188af5cfb76da2d9a942a76c2878d43890deed62b0fa07cea6",
+    "/path/to/VisContract_P14_2/scripts/p194_required_audit.py": "c56df02e3e0ccfd71fecb10ec91ec9e5dabd12bfefbe6d7b9107689539629a73",
+    "/path/to/VisContract_P14_2/scripts/p195_observer.py": "ea11e631126196218af910c3c0f23e6005daf140059fad56652e3f467a65b06e",
+    "/path/to/VisContract_P14_2/scripts/p195_state.py": "b51b68f8a8f091752f317e2aa38aa4b67db486ccdc5f7b245438bc9ade2d6c3e",
+    "/path/to/VisContract_P14_2/scripts/p196_required_audit.py": "a7f697ba1b33507d653f48b4ff2416d436df01ae2854261c4b42144c253b2100",
+    "/path/to/VisContract_P14_2/scripts/p196_schedule.py": "3021e77ccbbafcc182326bb7a681f8882124a5f8318ba5997078a3b804aedde8",
+    "/path/to/VisContract_P14_2/scripts/p196_state.py": "09b7739f9359302d36a9cc5f2f993db6896ebd9786cf6c371d20b2e8e27b616e",
+    "/path/to/VisContract_P14_2/scripts/p197_event_rule.py": "7e4174fa24869b7130c11375b8383194c5b5a8c6a84e90e321a651993f2f48dc",
+    "/path/to/VisContract_P14_2/scripts/p198_state.py": "10ca054e3083003874cb5c0e995448142be36f430e57d9e1d5d80e21bad90254",
+    "/path/to/VisContract_P14_2/scripts/p199_ragged.py": "0c45368ab35e34106cb531ade713a2e5f54e74efbcfdb9f37fe8293369fe7012",
+    "/path/to/VisContract_P14_2/scripts/p199_readout.py": "e101d662234b3f1d2bf0641b729378abbe725c2a3f934a6d83b88e085c5c3284",
+    "/path/to/VisContract_P14_2/scripts/p199_selection.py": "8c783eb02aee1a98b0a9d3a6500489a851446d8485fe27b220b04c53fc1bc870",
+    "/path/to/VisContract_P14_2/scripts/p199_state.py": "62558010f006e6c5a0d472e8168b348dcbdcfb616c072261f2cd2900afea28f0",
+    "/path/to/VisContract_P14_2/scripts/p200_fused.py": "90b1792db86f78e0ce537fdc140e0f6470a36acb6ab806c76282e332ceba41a7",
+    "/path/to/VisContract_P14_2/scripts/p200_logit_audit.py": "eed7f34acc225b4a9a5359cf1e78d050aa8af105c62195a4257bed2cf082a3d7",
+    "/path/to/VisContract_P14_2/scripts/p200_sidecar.py": "d267407379a87dbb0c70f8e9324b9d49d54300c1136c8424cad9e79faa3ad492",
+    "/path/to/VisContract_P14_2/scripts/p200_state.py": "fcc49e8ecacfafc9e3921bffb9d2319b716456e6c21aa175c35f8305fc174b8d",
+    "/path/to/VisContract_P14_2/scripts/p201_fused.py": "da55ebf7edc5a3c34d4fffffa6cf45cc72d25007b2fc31361e8ce8f7917789ae",
+    "/path/to/VisContract_P14_2/scripts/p201_refinement.py": "a1b8b84b9dbc655c21ead0bffa032be1ae4af97b5da4768112fe2a6106e58afb",
+    "/path/to/VisContract_P14_2/scripts/p202_fused.py": "3389b6689cedee6b50ebba1792f73c1e1bcaa17ceeacf3cb36de4c37002e4bd1",
+    "/path/to/VisContract_P14_2/scripts/p202_observer.py": "292bbe35f9588ac2556ca4e672acadd609e4b10b8a67a4c37e2bd98271327e2b",
+    "/path/to/VisContract_P14_2/scripts/p202_refinement.py": "292aca3d0f793c164b1d4204af21573cd4092597eb3f25055ded6d879afa04aa",
+    "/path/to/VisContract_P14_2/scripts/p202_state.py": "5ea5dcd63f6ca1ca86d53764ea1f38b06d66fbcf267b9c108aebc087e899c39d",
+    "/path/to/VisContract_P14_2/scripts/p202_swap.py": "b2647cdf88e33f70286fed24770c6a47cea6dab681b92669a62e741f2617714e",
+    "/path/to/VisContract_P14_2/scripts/p203_candidate.py": "0a8c8823889a1a1ce94a4f4103c7abec20bfa8131483eb5f9d5f381edf1c0ada",
+    "/path/to/VisContract_P14_2/scripts/p203_fused.py": "a199d1a61cf95b914e9e9de949c31d17d4f94a7d2c9e16fbf34b7a20201b0c34",
+    "/path/to/VisContract_P14_2/scripts/p203_native_state.py": "76988fd0354a0f7ff3e66727bec523323556070213e83ea6990e97c50fcf2c8f",
+    "/path/to/VisContract_P14_2/scripts/p203_state.py": "72088d7b600269e6875c75b00948deb44c811db8e3b494643b3ae62b24d13b24",
+    "/path/to/VisContract_P14_2/scripts/p204_cached_key_scores.py": "2424ae80e29946f4b6cd96bcc09ea24d022396016eb4f5fd0e3429837eae11a6",
+    "/path/to/VisContract_P14_2/scripts/p204_formats.py": "94fe21da5b924a926d12eefa96b7d3f98ff21609221f1330f2a619956d482bff",
+    "/path/to/VisContract_P14_2/scripts/p204_key_cache_attention.py": "c52268588ef9215b98e4f3e5addb8f99445a9e610086966429532bacea35ad42",
+    "/path/to/VisContract_P14_2/scripts/p204_reuse_state.py": "d896843075b55146f10e20f164ae0e861f69751942fb112156fb5bc03f8077b7",
+    "/path/to/VisContract_P14_2/scripts/p204_state.py": "1522cbed8b25cfc7ee8b7d9f602ab6f98b82d0d437949aab4e409cc340de8d04",
+    "/path/to/VisContract_P14_2/scripts/p205_direct_profile.py": "7ffd4c868f77dc3b20df9969b7e507ed53fee86e72349461a8b93dcbb790a96e",
+    "/path/to/VisContract_P14_2/scripts/p205_fused.py": "45a9fec0c377a44d51f75d226df4c1878095a9cec8bf264bfcb20f9ee261d5ff",
+    "/path/to/VisContract_P14_2/scripts/p205_group_state.py": "9aa3375c6956e886557c4ac3b54463fdd0a4b7a0d6cdab59d921ea2a757d1803",
+    "/path/to/VisContract_P14_2/scripts/p205_grouped.py": "467e8777d45fd21ee8951e907f0b4521b4b45fa5b26d585758108db801b753b5",
+    "/path/to/VisContract_P14_2/scripts/p205_inplace_mlp.py": "596825641bdac60c69960be9091515eeef8d62f07e35ae401ad9ecd9f4f3735e",
+    "/path/to/VisContract_P14_2/scripts/p205_layout.py": "caab60f262fda1db391011bab4620e7f585e7d489ad87183c91771ab47714583",
+    "/path/to/VisContract_P14_2/scripts/p205_natural_state.py": "3b1be522574965a5a2ae38fb93888c062d127799057c0e98d7c6c3cd0436c8ad",
+    "/path/to/VisContract_P14_2/scripts/p205_state.py": "3d778da49b1aea746eca1e436333809da9c81ee1bb5380a3235c76cf9725f97b",
+    "/path/to/VisContract_P14_2/scripts/p206_budget_state.py": "dff02863166302c0fd1daa73bb19133f35148f5c297f2bb8ef88f0c10ab7e160",
+    "/path/to/VisContract_P14_2/scripts/p206_compact_budget_state.py": "ee78c185a0715da2c75856e6e4be3e932d6eaacdeaae640544e1ed901e68ace8",
+    "/path/to/VisContract_P14_2/scripts/p206_fast_graph.py": "2da9a67cca55163aace973110a9661cff1aca06e33a6763b62066b48141a3b02",
+    "/path/to/VisContract_P14_2/scripts/p206_fixed_graph.py": "5837ec76aa6540bde513eb93bf249c1f36382052b0efc88a6c87b584b1902f1a",
+    "/path/to/VisContract_P14_2/scripts/p206_fused.py": "5b9264319c462eb5193fa0975c15111ec85d968b4f181c5b0a8eff818e12e33e",
+    "/path/to/VisContract_P14_2/scripts/p206_graph.py": "f4f98557437b25053213c60f8fe14ecb230d22f56bb101bab21da2437c0ebcba",
+    "/path/to/VisContract_P14_2/scripts/p206_layout.py": "d8697b484e0aa151b993f603f7cacc3b6b9ca58feb46d10d42b021bd24ec1bc6",
+    "/path/to/VisContract_P14_2/scripts/p206_shared_graph.py": "0a15b9eabd6e27853ad3ebff7899a64a395f8a71500caf0561d3acb724617db1",
+    "/path/to/VisContract_P14_2/scripts/p206_state.py": "18d869bccca75970ff828a981c5946a55c0e91dac4475f45a17138429f448e39",
+    "/path/to/VisContract_P14_2/scripts/p206_trace_graph.py": "aed6a6af44fb20130d30b5b75eb6cc48a09834746e456317bac2991f76141466",
+    "/path/to/VisContract_P14_2/scripts/p207_aligned_budget_state.py": "adcd8d4bcdd26a7bab2d198a18ffc41c1c2deded140732b2a3fc4bfde9edd81b",
+    "/path/to/VisContract_P14_2/scripts/p207_aligned_fused.py": "6bc25ba7de81e29e826453ec4b85a09dc312e30d73fe7144844ed74ee5bbcfd7",
+    "/path/to/VisContract_P14_2/scripts/p207_aligned_state.py": "60e3c83312fc5c50b42e43943eaaad59456a283a36cd5ee7a996ed5a2d986227",
+    "/path/to/VisContract_P14_2/scripts/p207_boundary.py": "2cc9e1c90bf0f27cd6ef20165987e4b48a42e0e7a520328e0718e80b10ce7353",
+    "/path/to/VisContract_P14_2/scripts/p207_budget_state.py": "fbb595295e30586f753feef3941b3f905aa0f3efb6b608341047f3944348fd81",
+    "/path/to/VisContract_P14_2/scripts/p207_eager_fused.py": "667efccaa68da952b89c962252949198ef0b7cd6637b2653a7baac467fa27b36",
+    "/path/to/VisContract_P14_2/scripts/p207_fused.py": "b80ba4629307963383e79983be237c0958db81610d49d7a83274b96650fe24cb",
+    "/path/to/VisContract_P14_2/scripts/p207_layout.py": "e656e686bacf2a26ae5d341a57554540fb6574171656b42ce684890d0675681e",
+    "/path/to/VisContract_P14_2/scripts/p207_session.py": "03b042b6f46a778b02e1503d9d31533a37be145579244f6531355213c02bac20",
+    "/path/to/VisContract_P14_2/scripts/p207_state.py": "51f8b2fd45f67002704c5007cac9d17a48a38c16771f546f5e6364fcec6f7179",
+    "/path/to/VisContract_P14_2/scripts/p208_state.py": "749709203d9f5225f8449a8caad08e75c6fc0d56226f661265933473270c3bd2",
+    "/path/to/VisContract_P14_2/scripts/p209_layout.py": "0a3fc865749f362d6ef063c74a0a06902d8e41c7e2c9b239828770f7028710a3",
+    "/path/to/VisContract_P14_2/scripts/p209_layout_state.py": "7ac101132dc7ff8e93c665aa83971c060eef1914c15ac213976280c8d0ea476c",
+    "/path/to/VisContract_P14_2/scripts/p209_policy.py": "e531da93d60cbf41ce14ded066afe1847ef969b8267d50b597356a4d96e8a9ea",
+    "/path/to/VisContract_P14_2/scripts/p209_session.py": "03ed3f5bcf8be3f3039abc6f14e1841c2ac34b2f566ae62761df268c68eb789b",
+    "/path/to/VisContract_P14_2/scripts/p210_layout.py": "7363d41ea7b1be483c532caa8e838280d8e21f93de56150d0bcd2827c8d49c1a",
+    "/path/to/VisContract_P14_2/scripts/p210_sources.py": "00cc7ddae82f1c0d6eecd2e24c353aa8c9528bb7dd0e7811dd6e63cff5b96c44",
+    "/path/to/VisContract_P14_2/scripts/p210_state.py": "73769fcb2aac9bec965b69f5be45c336e22727dfc6f991d68026d327ad7bdbe8",
+    "/path/to/VisContract_P14_2/scripts/p211_source_tools.py": "e80af7cb3cd2485c1139b41fd490912093e25d1cedfd435a856a70eb9d2be266",
+    "/path/to/VisContract_P14_2/scripts/p211_state.py": "8dc86b923a1c2784725501b3c1ed31ed2fa06b33d8f78a1b5d94d191b18a4ccd",
+    "/path/to/VisContract_P14_2/scripts/p212_scores.py": "deece446016f2535452579f7a014b9cd6a01d96d67c62aa766b169a75aaab035",
+    "/path/to/VisContract_P14_2/scripts/p212_state.py": "f65ec6105c261f10c4fe058d1eb0658f0999208c72930c309a96d85684b989b1",
+    "/path/to/VisContract_P14_2/scripts/p213_crossover_state.py": "b2434e5e24ead3b630971c58a967fa1627f863fc54034039d120c836f6c30334",
+    "/path/to/VisContract_P14_2/scripts/p213_probe_ids.py": "e2e0dc19c87087bd68544799c7191aba85ffe27b8319e7f1025ab4ac5aa351e7",
+    "/path/to/VisContract_P14_2/scripts/p213_readout_capture.py": "615d880b961ba14e2dccf2adc11e4263b0afb2380ef081777afd6f4ba165cc3d",
+    "/path/to/VisContract_P14_2/scripts/p33_4_qwen_kivi_packed_attention.py": "7f9cbc87e77d3954a94a88bc35c4c4e48e151e317bdecdf138ff1aacf9685e06",
+    "/path/to/VisContract_P14_2/scripts/package_p189_review.py": "0fbd9abe763a93e007a52fa9296c7100564c1a256c0c96f32b77e94f71284941",
+    "/path/to/VisContract_P14_2/scripts/package_p190.py": "504587b3abc8a7662c4ba24a26b41d86bb2af696d4e2b2e79306991859863fd6",
+    "/path/to/VisContract_P14_2/scripts/package_p191.py": "8278274f4a171c6d9fd6baaa0dbbcd6efb399f351a585a7a2d545a7923924f1f",
+    "/path/to/VisContract_P14_2/scripts/package_p192.py": "d0621f25086175043a226712d1b6b776d114c423559dfd87deb62759f5266ba1",
+    "/path/to/VisContract_P14_2/scripts/package_p193.py": "b5b5fa280551866a40bf3074b7712c9ab8e9bdc46e4b525fedf1dc4f05ee4cc0",
+    "/path/to/VisContract_P14_2/scripts/package_p194.py": "92210fdeccc1e218852bb405a3ecd26ac78a0035e9b84a72e985301debd4be33",
+    "/path/to/VisContract_P14_2/scripts/package_p195.py": "db42ecc5852635c14ccf77f3584b1dfca0dd854ed6ee2e755ad0fc516c1e3faf",
+    "/path/to/VisContract_P14_2/scripts/package_p196.py": "941290dd0bcd851ec27849a4a81434edbf1518fa11fd195ad5b2f1e8db4ac82d",
+    "/path/to/VisContract_P14_2/scripts/package_p197.py": "c31bf7fb8ebe984e0548a4e884dc9ae7d4d621881ada4969de201ec756854c7a",
+    "/path/to/VisContract_P14_2/scripts/package_p198.py": "deeb2002a3117c200cb33172f86d5f7b9adcad0cc4ffc0aa61873c1b40067d14",
+    "/path/to/VisContract_P14_2/scripts/package_p199.py": "ad07329c7f9bc0321746b298a726fa236eaaf4d8782708e0ea99e7af0901c9e9",
+    "/path/to/VisContract_P14_2/scripts/package_p200.py": "794e7733f8f8a972079bef8f2c86954919001ab0e1310c7dcc3f7b3ca6877008",
+    "/path/to/VisContract_P14_2/scripts/package_p213.py": "d928cc3df4d7f2830f37c346540622c8bd044ff2169726bb1f6009b7b698a5d0",
+    "/path/to/VisContract_P14_2/scripts/plot_p187_scaling.py": "cd9224d43fb1a72ee130c31b79d5d3fe122183b4e8b5cf36b59fb165a7abd61c",
+    "/path/to/VisContract_P14_2/scripts/preflight_p191.py": "0a8011db00b9e88450ca3815bd4bca11af090149bd5365826d4d4c2b75b9dc3c",
+    "/path/to/VisContract_P14_2/scripts/prepare_p179_teacher.py": "270033fb9b370c01a7a26443892b8d1d97f70f5888c8b639436b9309637f664e",
+    "/path/to/VisContract_P14_2/scripts/prepare_p180_judge.py": "5668d7fd0cf62ebfea3cdc6265a96b4a6b365bb1541adde2356a4e4259e85df4",
+    "/path/to/VisContract_P14_2/scripts/prepare_p182_six_turn_data.py": "e0b43adaacf272c8b3c8f619264c7d1b493a90bb5be21b6fde5c8b4a8d86087b",
+    "/path/to/VisContract_P14_2/scripts/prepare_p182_vischain_eval.py": "1c41754724936797b8030580a64f6457fadab8b9632382ab38c1435a4d814d48",
+    "/path/to/VisContract_P14_2/scripts/prepare_p182_visdial.py": "56e157b415448868c58c14bc10fd128a8bdf635efb991713d0ae4888a4c9eb13",
+    "/path/to/VisContract_P14_2/scripts/prepare_p191.py": "3a893359182263311ed55fed67067ad33f1649fb5bd990a5d0edcea99c47df10",
+    "/path/to/VisContract_P14_2/scripts/prepare_p192.py": "eee6671b409dc33d4abdc0cb733bb844f37c13c63586515d248bebf81eac19fe",
+    "/path/to/VisContract_P14_2/scripts/prepare_p193.py": "ef2e8c30909ad3417eb033f5e7d2e2590c9f7171c8a48a234ce40dc424534f0a",
+    "/path/to/VisContract_P14_2/scripts/prepare_p194.py": "bf9e697a49416a89c387b83b6f76a01e6b17c00a5755c28350cb34622816bba6",
+    "/path/to/VisContract_P14_2/scripts/prepare_p195.py": "a90070f98232b68abc7b3b5088877dbc051618f7f4c64546c4a7e77ae74ed319",
+    "/path/to/VisContract_P14_2/scripts/prepare_p197.py": "07a6d1a94e7206e9746e8237b8bffaeb7ba24d9fb26f9e3cb7b18d2661490f4a",
+    "/path/to/VisContract_P14_2/scripts/prepare_p198.py": "6c43f9f9d134dc1ffabe6efea9e4c6c11af2a99560178b58a57c858146b97f2c",
+    "/path/to/VisContract_P14_2/scripts/prepare_p199.py": "50e715d4b9987dbe0d8549ae559be53f1fa89ec3dac92b03b79ff4e81e5198a3",
+    "/path/to/VisContract_P14_2/scripts/prepare_p200.py": "221be991802565a4acb7f9408a2745bace120786f64b7a69f451ba697f3374a0",
+    "/path/to/VisContract_P14_2/scripts/prepare_p209_new.py": "c7a722d7d2788e0cc592b5705007f0274630632c40be042bbd8d1a3aac5168d9",
+    "/path/to/VisContract_P14_2/scripts/prepare_p211_count.py": "ddda306830fdb4f4aa619c3d9fe3b91919d04f22ac8ea1be61d338a163c94997",
+    "/path/to/VisContract_P14_2/scripts/prepare_p211_ladder.py": "1f7ccc2e5ef92e13500214b68fd00f7e8353fd599e61c9bc01cd8f87bbc8ee1c",
+    "/path/to/VisContract_P14_2/scripts/prepare_p212.py": "6afa98873ff69dbb33c5a3c9323d2c27c08372ef27ed2923b7f9bb21abce06f2",
+    "/path/to/VisContract_P14_2/scripts/prepare_p212_rubric.py": "ffdcc54b96df699fd74ecbb38781d1f403e6e0526dde948f128ce007bf751534",
+    "/path/to/VisContract_P14_2/scripts/preview_p192_geometry.py": "42db966e645966b1614b2cf5988cc3774fadc9b90ea865e29f83b2537542056b",
+    "/path/to/VisContract_P14_2/scripts/probe_p189_branding.py": "2f989da080a90a5b627a8ee17947c7b5851cf357bd2effcf7714900483b5bea2",
+    "/path/to/VisContract_P14_2/scripts/probe_p189_compact_numeric.py": "a48d1d53b966a60b100ebce02f006ed11dfdbb5a0d2cd3618bfaea64a4cbdd65",
+    "/path/to/VisContract_P14_2/scripts/probe_p190_branding.py": "62c5370edfa75d2a03829b93b95c396227714c97ce04d10745a1244b515af4e7",
+    "/path/to/VisContract_P14_2/scripts/probe_p190_roof.py": "272ef0fb8418da3276adc3d8d7e1885f6ff145954d262d2014c8fb0944675a79",
+    "/path/to/VisContract_P14_2/scripts/probe_p191_t4.py": "b3d300faafc4dcb1e8b5774da158f2c52c5f863e18f6c2a5756e51d5aabebb6c",
+    "/path/to/VisContract_P14_2/scripts/probe_p192_exposure.py": "47ac7ecc6b5dd4688144b5f46c3bc94a9f776b567430eb42a548aa5925cb997a",
+    "/path/to/VisContract_P14_2/scripts/probe_p193_actions.py": "1014eaf743a605345e69fa1b89b2692eaa277240def36cef0422702418dd558f",
+    "/path/to/VisContract_P14_2/scripts/probe_p193_followup.py": "c68b7504260ca1d9783985a4aedc0eb15ee6105f195e43dca5e683d4364499b0",
+    "/path/to/VisContract_P14_2/scripts/probe_p196_same_state.py": "ee9603a7923c7dd58c08800ca9fa0f54460f16255f52409e6dc02365d13d6cb1",
+    "/path/to/VisContract_P14_2/scripts/probe_p199_fp16.py": "9332714737bd42ca30eee2ba0cfc3b443e91e6a11db55c25e32462b6fdd2b6b0",
+    "/path/to/VisContract_P14_2/scripts/queue_p210_color.py": "34bb41303b92f058a4e3e344b550634c3a3a2e7800a0f9299423c5c437dbe62e",
+    "/path/to/VisContract_P14_2/scripts/queue_p210_cross.py": "7a0169e90cc17ce82ffa555338829c5a59d19137bf791eefeb7e2c35c87f6378",
+    "/path/to/VisContract_P14_2/scripts/queue_p210_scores.py": "ae46265c8aaf2c8f19f02faabf5e466bb06084b9c49ad6e39d42e189616aadb1",
+    "/path/to/VisContract_P14_2/scripts/queue_p211_count_full.py": "d7579aa3f055391be3db08818fde6e46037a3eca55f4b613b84c5bc6b5bf7b49",
+    "/path/to/VisContract_P14_2/scripts/relift_live_packed_cache.py": "9485d182422683662470df55ebf5b6fad9a0b93bb09f3a8f23291d01124d1cbf",
+    "/path/to/VisContract_P14_2/scripts/relift_packed_dormant.py": "2c74d167a089132e31405a906ae7bd96f8f6471f5913af880ee08a72d97fdd03",
+    "/path/to/VisContract_P14_2/scripts/run_p14_2_all.py": "45e39139a7f5f7450cec771bab55d0e657e852226ec773dc1a534d4b0909bc3d",
+    "/path/to/VisContract_P14_2/scripts/run_p14_2pp_all.py": "ea9e94e2d0befef8ce665b960dc6fb8d6e362d9b10807dd3deda48fcda965a6e",
+    "/path/to/VisContract_P14_2/scripts/run_p14_3t_text_visual_joint_salience_trace.py": "ccf4fa6295f4aacb6ef6a9eb7a30bf619ac4ab7dddc71958f10b320d203ccc65",
+    "/path/to/VisContract_P14_2/scripts/run_p14_4b.py": "44a256e0a776c02f3bae141a1622d9ca70b41a32bc7e495b0b8dea70936e7873",
+    "/path/to/VisContract_P14_2/scripts/run_p14_4b2.py": "1d16bb8deeadc45ead8a40690b465da98ed9ec19af0ffc76645f455b36833aab",
+    "/path/to/VisContract_P14_2/scripts/run_p14_4c.py": "53c794f2dd6b536616c297ae2a607061090dcab3730400266ed978e782b443a5",
+    "/path/to/VisContract_P14_2/scripts/run_p14_4c2.py": "524cef9841c9de6a0e044dd9edd800a814f52be5be7b1cae7e95ad8eb7ccdc8c",
+    "/path/to/VisContract_P14_2/scripts/run_p14_4e.py": "6993611f6ef93909030bc679a2b1bcd267b470ae9285e69b8502b5668abeb01d",
+    "/path/to/VisContract_P14_2/scripts/run_p14_5b1.py": "f0a9ab23fdce0ab9ba14591ef6cbb8f17837c27405fb03c40d101c8a72c65c72",
+    "/path/to/VisContract_P14_2/scripts/run_p14_5b1_clean.py": "8e0d23947096a026ebbe79c97fe111e5d38ad9be6e6fc6f06fe1de27d2822697",
+    "/path/to/VisContract_P14_2/scripts/run_p14_5b1_s.py": "446ef133458fb31a37e4f6ee996687be5bd941e8dd53c34b11a0975ad8ef36db",
+    "/path/to/VisContract_P14_2/scripts/run_p15_3c_3090_decode_profiling.py": "98216e6a8772340d050c5e727680ad291b7b5a977c77dcdf581265449ddaba31",
+    "/path/to/VisContract_P14_2/scripts/run_p15_3e2_visual_mixed_context_scaling.py": "32bd16712b57f67e1d99c30fdb986c3972e8c537935cc35491a2353eb9586bab",
+    "/path/to/VisContract_P14_2/scripts/run_p15_3e_context_scaling_wall.py": "6904fe3c5bdee0540f106e59ae0e456a718521be4d638a01cb344e4adfaf5d0f",
+    "/path/to/VisContract_P14_2/scripts/run_p16_0_b0_visual_text_kv_span_audit.py": "3d8ce8968fac217f393b7a9abd2abbc2ba98ad9ac4fea6be9ca8ba80da047eb4",
+    "/path/to/VisContract_P14_2/scripts/run_p16_0_b1_vkv_only_qf_smoke.py": "311fa7e50aa1958f065cda982e6f5227c48999410ec61bc829c7359d2c0c5f9a",
+    "/path/to/VisContract_P14_2/scripts/run_p16_0_b2_typed_split_qf_smoke.py": "4781bebbd8de79195b098062a4b6f40b1230c3a57999cd95fa1f0435e0ac9a94",
+    "/path/to/VisContract_P14_2/scripts/run_p16_0_tkv_quality_eval.py": "a00c1de09639403a964e3997b17bc419e266ec6ee76b04a9e57ef1b25d6c384f",
+    "/path/to/VisContract_P14_2/scripts/run_p16_1ge_d1_llava_visual_depth.py": "30b6948da62dc8c351ee1d593f483ba316ecce6e9a2dabc04f087bb8a3c393b3",
+    "/path/to/VisContract_P14_2/scripts/run_p16_1ge_d2_weight_kv_orthogonality.py": "1aeda669fd30afd42ba3b6c1eda37ab96201cdcde1157bdc7fd085fc41761c3d",
+    "/path/to/VisContract_P14_2/scripts/run_p16_1ge_internvl_text_generation_smoke.py": "ecf12075ffbf1638109e71727f22a32254980c2a5f6e32104f5069b5e6e4a878",
+    "/path/to/VisContract_P14_2/scripts/run_p16_1ge_llama_generation_smoke.py": "2b24544300e4cee43798fc31db38b11cf4ab5d798062b363f28fabf73a63cf56",
+    "/path/to/VisContract_P14_2/scripts/run_p16_1ge_llava_visual_path_smoke.py": "cfa1d2a2a9e8d6011d4369d91aacccc1ebb2dc584f9d6b67d7f23676b2589c63",
+    "/path/to/VisContract_P14_2/scripts/run_p16_1ge_minicpm_text_generation_smoke.py": "5bd881e97d85d94f95205dae557e4c794a987c1581717ddea45e04e22b75eb20",
+    "/path/to/VisContract_P14_2/scripts/run_p16_1ge_model_effect_smoke.py": "036574354033df6a5f5709a990492904f59d403f4ec8f8f74f8cefcdadfe6101",
+    "/path/to/VisContract_P14_2/scripts/run_p175_modern_replication.py": "599c7cf81251dc093fd6dff1d9350790bbf0e1401f60972bc183b51c5523dd05",
+    "/path/to/VisContract_P14_2/scripts/run_p176_published_codec_gate.py": "4f47640084600e2603490e3041aedcf9cb872594ba25f21f8e939ae2df574053",
+    "/path/to/VisContract_P14_2/scripts/run_p177_checks.py": "05c62ac37f9f442dad7f0b3d38dd5c60bb03458cd86ddaaf18b60956aeb81e68",
+    "/path/to/VisContract_P14_2/scripts/run_p177_coupling_probe.py": "3a3503d9356bab314963ae6464c9d64854b9a6454aa3ceefaacba6c049622dd0",
+    "/path/to/VisContract_P14_2/scripts/run_p178_partition_calibration.py": "1cb3f833851fafad390329c05dc11e9ed8219a2a6a744d0450f371a50301e39a",
+    "/path/to/VisContract_P14_2/scripts/run_p178b_reconstruction.py": "c5f1952a818719b357af35b313f7188bb1a07542dfc0c956efed37017666145e",
+    "/path/to/VisContract_P14_2/scripts/run_p179_baseline_causal.py": "ba3f99fac9b971114249ffe7ef88adc9d162995621c3366e6906f3ea7d8244e7",
+    "/path/to/VisContract_P14_2/scripts/run_p17_2c_generation_smoke.py": "8b63dd439f564cdb12f153fbcc991f6fff4aa832330d62973dc7913800308ded",
+    "/path/to/VisContract_P14_2/scripts/run_p180_judge.py": "298ad49582f859e8fad2e5426ecfd80fc6c0c31d95e28f799fd420502082f9c9",
+    "/path/to/VisContract_P14_2/scripts/run_p180_multiturn.py": "4ca928c91266e09ef6895a07f3aacc2967b7f058b6947c3e716e5b51ae9285ca",
+    "/path/to/VisContract_P14_2/scripts/run_p181_blind_inference.py": "ce790e8a2d3aed56414bfe0bf479ddd74d843a8d4f1f3a782f1620db72761533",
+    "/path/to/VisContract_P14_2/scripts/run_p183_clevr_recovery.py": "715f08f45849e5c19b230bbfbfd8403cf97c7cc22b01e620072af2e29ef9f21a",
+    "/path/to/VisContract_P14_2/scripts/run_p184_working_sets.py": "aa98d075a1c4ec34eca69e619ff645cd7ff1813b0f5bd5ba76438392f7d0572c",
+    "/path/to/VisContract_P14_2/scripts/run_p186_length_replay.py": "eeec8595feb6f39b725d748f10aaa7e8ca05887d62bf7fe82b7c87cbf49e16a3",
+    "/path/to/VisContract_P14_2/scripts/run_p187_scaling.py": "b7f8d1b1548fe2f46c88fe4629260f50683877633f886f83c7e41feaaad141e6",
+    "/path/to/VisContract_P14_2/scripts/run_p188_natural.py": "7ffba74b7650d9e258960c692deb29ad02fcbf972d12221ece89bd3cb817ca66",
+    "/path/to/VisContract_P14_2/scripts/run_p189_joint.py": "3df75f3addb5deaf6c6c9919cedb41d25b71c88052a726d4b32202cb940332ef",
+    "/path/to/VisContract_P14_2/scripts/run_p190_joint.py": "fbf2f39eaac8ac548292ad7caf42205f3906a76c2095536cfefb248ce5c2019f",
+    "/path/to/VisContract_P14_2/scripts/run_p191_joint.py": "842c6c68245cb4bb1fa00fde4562266254960c1747ad0b84690650541407ab39",
+    "/path/to/VisContract_P14_2/scripts/run_p192_joint.py": "90de11679fdfdb681dc88c1aa2a486327fd0cb53bed4382c8ffe4e02dd950925",
+    "/path/to/VisContract_P14_2/scripts/run_p193_joint.py": "e62e4670b681023fe9d14365135a59f6e26741f42b86a6cd3a30468f86885f9c",
+    "/path/to/VisContract_P14_2/scripts/run_p194_joint.py": "df50443435129b7479f9365b7ac74db9f95c9aa99383da50daaa9332f90809e4",
+    "/path/to/VisContract_P14_2/scripts/run_p195_joint.py": "e18ffa449ed47433afbcbee41e1b3f7332e9f49a1606ab8a5cd330870b013681",
+    "/path/to/VisContract_P14_2/scripts/run_p196_joint.py": "8c0a9e068f57ada60fe9fb4248f7dd19630c37a6aa661deac7a81cc28d8beac3",
+    "/path/to/VisContract_P14_2/scripts/run_p198_probe.py": "1b86653b019bc1ac87a6e55a721129c307054c328df4b5df399eec9106cf0b8a",
+    "/path/to/VisContract_P14_2/scripts/run_p199_joint.py": "270d6c66ad3a23c9cb0a27ca07e8b1540150f5bb2de12f2709396dcea7a878fc",
+    "/path/to/VisContract_P14_2/scripts/run_p200_a.py": "568c3cb5c7d2b4566b761674287bc2242b2e826eb939116903afdd49d22961a2",
+    "/path/to/VisContract_P14_2/scripts/run_p200_b.py": "349ee81ccad489734fe3a261fb4978541c444b1cab6240a08dcb40df7f8d0aeb",
+    "/path/to/VisContract_P14_2/scripts/run_p200_c.py": "904010afd4d74e6a100403404c5830e5c478213ce7f0b8aafd5980c5032b0f08",
+    "/path/to/VisContract_P14_2/scripts/run_p201_fused.py": "ef658a8538a46eb346b183500192e6ff73568fd4c0520c71ef5614538568c308",
+    "/path/to/VisContract_P14_2/scripts/run_p201_oracle.py": "8a3c845e5e0652e4087f4e3dfd5c2eff6e0a9920d912a591a837c098772ca790",
+    "/path/to/VisContract_P14_2/scripts/run_p202_causal.py": "f21975fe8bfa014dbd38357c6aa8498483f5357fc42912401eeb71ddd5a5083e",
+    "/path/to/VisContract_P14_2/scripts/run_p202_long.py": "b57c076e2bfbb955df691e6a6c294de25a8526042720cb762a16daf6f2b9b9e8",
+    "/path/to/VisContract_P14_2/scripts/run_p202_matched.py": "3967d99646764e0c3b02b9e2930c9ab673afed2724fccb4bb09128ce326cd492",
+    "/path/to/VisContract_P14_2/scripts/run_p202_oracle.py": "73ed86785b607ee6acfb1c0990eb4a7d09365e0910794baa98b5d1e939ae9a50",
+    "/path/to/VisContract_P14_2/scripts/run_p202_swap.py": "b0b98f612ea004bf17d3402470edd7240ba3ab116b64fe1dc148e4d2ca110fcf",
+    "/path/to/VisContract_P14_2/scripts/run_p203_a.py": "aee0f59694ecfc43e3078472d8a4f00d57947ab2b5ee458aa3af313f47a88a48",
+    "/path/to/VisContract_P14_2/scripts/run_p203_b.py": "a246659626b21da2891682fa51fa0d625057b6566f6e0b975623b2929046a7b7",
+    "/path/to/VisContract_P14_2/scripts/run_p203_c.py": "34cfa895ce96e346193af3d0735aecca71dfbaf42e011b40a9fc90c95ca84827",
+    "/path/to/VisContract_P14_2/scripts/run_p203_cross.py": "d4d9f99ffdb5e5e8064237408c0d00be2c84e197d8d68d11debf30b9f0122959",
+    "/path/to/VisContract_P14_2/scripts/run_p204_a.py": "d7b6eb7ea64bb40b84e440d5972beb86a0b9c7cda47137b04170f996dc63238a",
+    "/path/to/VisContract_P14_2/scripts/run_p204_long.py": "b37db1153f93428a4b0231647f04e66f4b83f3e3edf2953836a035247c55edcb",
+    "/path/to/VisContract_P14_2/scripts/run_p204_perf.py": "25f0fd927cc1976688e7074328eede5a3c05cc739aff59fb3e23356d706fc741",
+    "/path/to/VisContract_P14_2/scripts/run_p204_reuse.py": "bacd1347e9ce6e661a0e9551d98e9d18120a7617b5d07d2f253db96965b738ee",
+    "/path/to/VisContract_P14_2/scripts/run_p205_dispatch.py": "d74199fc271f55ee5b9dcd984d24d3fc435586304bde534a6c70f76c4c3a8b11",
+    "/path/to/VisContract_P14_2/scripts/run_p205_natural.py": "4650f4cf5250b747f0ca50e785a52ac45f4ef2014bc4863a97c6806ef9b16cbb",
+    "/path/to/VisContract_P14_2/scripts/run_p205_natural_inplace.py": "3401f2a7a4c5be1e8b5541f53eb6788e679870debd23459118139e6c9263862f",
+    "/path/to/VisContract_P14_2/scripts/run_p205_operator.py": "d2ac2677d64f5efcca49a9fa1e173f9e5b64f3fcc8945fd91a07b5636cc152c0",
+    "/path/to/VisContract_P14_2/scripts/run_p205_peak.py": "4b060ade8887ba7ecf55a1fa8838c8fbdb72d67564f07890edec35d6335262bb",
+    "/path/to/VisContract_P14_2/scripts/run_p205_peak_inplace.py": "6a4a03301d1ecbe9c38eeb116e00c1d60ed07bf51df7bc9f66c27f46545807ea",
+    "/path/to/VisContract_P14_2/scripts/run_p205_peak_variant.py": "9aecdda2b00ca0e3d7450c9cab9cfab3e05843ab6fd6abe137c01e7d5012e48d",
+    "/path/to/VisContract_P14_2/scripts/run_p205_perf.py": "30633e2b4acee0ed272ae31931d4b42f46f17634e9ebccd97a574f7b941c4223",
+    "/path/to/VisContract_P14_2/scripts/run_p205_short.py": "e6b93199f13c869caf82a9160826720d79616ac0da915090279b48b442cf3845",
+    "/path/to/VisContract_P14_2/scripts/run_p205_unit.py": "261a69760446b27c1ff59a139d5d4798802fd80fedd79ebf39f484d0ff8b9a34",
+    "/path/to/VisContract_P14_2/scripts/run_p206.py": "d03d7757291f997135f9fe9a29da5ad3753a8809c041e5385a59e72593d681ef",
+    "/path/to/VisContract_P14_2/scripts/run_p206_budget.py": "95d5029867b3dfad1c15d5647ee1ea37a31e8f08ece2b151bf2c72f911a794cf",
+    "/path/to/VisContract_P14_2/scripts/run_p206_checkpoint.py": "26b2ca6eab642ab640a9056ef5188d29d16f10cde4d9c5e7a6cf34b87ada4d0b",
+    "/path/to/VisContract_P14_2/scripts/run_p206_diagnostic.py": "09847fbca0bf7f8ea194d426d8ddc8aeed98e46175a53beb669956d734de9fc9",
+    "/path/to/VisContract_P14_2/scripts/run_p206_endings.py": "44d681adba5fbfd473f2218fe8b4ad4d8423a84377d53a56ec9fee27563bacc7",
+    "/path/to/VisContract_P14_2/scripts/run_p206_fast.py": "e4c5be138bbbed5ec87ea808e578f14fa358a2f89a29c005134a26a9a9d111cb",
+    "/path/to/VisContract_P14_2/scripts/run_p206_fixed.py": "b2888bd0f0562059d19b033a8e716b837dffd811ea67dce72a260902a69415b6",
+    "/path/to/VisContract_P14_2/scripts/run_p206_frontier.py": "bea51878ae9c9ffd428a89db7332ef3d52a785b8980b9f741749ac4b6aceaedc",
+    "/path/to/VisContract_P14_2/scripts/run_p206_shared.py": "6b154ff5d0a8d4990a0910d57edc138373054ea92f63d0066c48a289100b4cce",
+    "/path/to/VisContract_P14_2/scripts/run_p206_short.py": "126ee07b301322c4d182bbe6f9e89c3048c0af3ec0e408021e4f98c7801ec412",
+    "/path/to/VisContract_P14_2/scripts/run_p206_unit.py": "f034b3836772c153bc05453a53bb2db4f24d91a0e8dcc18aa3405548c3d53d4b",
+    "/path/to/VisContract_P14_2/scripts/run_p207.py": "cd61b14fe7239f039cf906109eeef689824f1ab7cfc59198b9870409e1e2680c",
+    "/path/to/VisContract_P14_2/scripts/run_p207_aligned.py": "7d1715a5d46f05330cbb35bd9c85986e016b5da76cbd7015d9fe3528a269ad48",
+    "/path/to/VisContract_P14_2/scripts/run_p207_aligned_fixed.py": "abf4d18f0a6253457a31b337c0c525463dff0301ae1d177c06c3da91f25b4d22",
+    "/path/to/VisContract_P14_2/scripts/run_p207_aligned_unit.py": "0d3a5c94d58fa0dd4400e709594e0b0d95285819fe0c5aaa95ee67c0c539c5d9",
+    "/path/to/VisContract_P14_2/scripts/run_p207_alignment_check.py": "26fe483d2525f9133f1c12102b09fb8cc4f031f8db1662de25a0d7c6760156e0",
+    "/path/to/VisContract_P14_2/scripts/run_p207_alignment_natural_check.py": "87d3ec631aea5a9fc822bc81520bf10184389499551b8f56c6a164d6a05100f7",
+    "/path/to/VisContract_P14_2/scripts/run_p207_confirm.py": "fb99abf77b894e85d1c0ca157ff121af0b560c7a261597feebbc4c23f2121e44",
+    "/path/to/VisContract_P14_2/scripts/run_p207_fixed.py": "12dcb058c47c005af69004815c87f81aee76ed3410f54b15fd815ea0ed5a7c49",
+    "/path/to/VisContract_P14_2/scripts/run_p207_followups.py": "b084f0c33b9c95dfd46b12c8e07ab573519513a682a3b705a9a0fa8d0fc5c8c1",
+    "/path/to/VisContract_P14_2/scripts/run_p207_khot_check.py": "a489e117155d01f9fe1b7bc6e53868119a4eae2d7df15155a11061a9028c635e",
+    "/path/to/VisContract_P14_2/scripts/run_p207_unit.py": "f23bc64b298aa8b46ee8684435061eac9c246baaf998d99e405f9d7e06c4450b",
+    "/path/to/VisContract_P14_2/scripts/run_p208.py": "df3a28a86067d81a77c5928d6aaa3cff2b482e10f18bf44efb21b7ead177a831",
+    "/path/to/VisContract_P14_2/scripts/run_p208_attention_unit.py": "23435ec2616a79f49994e9f562fe05221ffb112cb62244e58f80cdb31451dd99",
+    "/path/to/VisContract_P14_2/scripts/run_p208_budget.py": "cc3943ddfd7b0f1f755db0c3c4422899539204dc4030926290d2ca61b599d683",
+    "/path/to/VisContract_P14_2/scripts/run_p208_extra.py": "ebdadac1b1967640a2d1a3bdd609397e93ab2c6e022a6a36ad984e2846604a57",
+    "/path/to/VisContract_P14_2/scripts/run_p208_main.py": "2df45472926ee6e62c1bf8c5d279e56d8e7e5c787f7e4dce53838b5dbdfb85de",
+    "/path/to/VisContract_P14_2/scripts/run_p208_probe.py": "9a1aafa2ae5d79c1bfd25a6056dfb69fab0f40962f34680c6b82d365e7b37fe6",
+    "/path/to/VisContract_P14_2/scripts/run_p208_transfer_queue.py": "540b3b00590e1dd93a9b949399f700d7b3c85f8b2ca31236f5c9ae61e8999e95",
+    "/path/to/VisContract_P14_2/scripts/run_p208_unit.py": "cd1b908f06ba555b336fdeebf52064dd11e9e6949f6e413b386e36d23f5b87f3",
+    "/path/to/VisContract_P14_2/scripts/run_p209.py": "33e71f7dfafae420ec4548fe282b05aa9952fd1184cd57b3bbec2a924c949b47",
+    "/path/to/VisContract_P14_2/scripts/run_p209_base_unit.py": "0a23142a2579a89be3ccca3c2ce16f1d7002825e6242f0bc530922c9c222a530",
+    "/path/to/VisContract_P14_2/scripts/run_p209_controls_queue.py": "6997496d85045ea6cb8e5a3a57e38532aafd977c94a629cd4e588f8e63f84252",
+    "/path/to/VisContract_P14_2/scripts/run_p209_exec.py": "bb5de24f80a10e65099d3fca6708efb1942834dfcd8beea5c1ea8278042f5587",
+    "/path/to/VisContract_P14_2/scripts/run_p209_facts.py": "2b6a070213d498aec6e6852b0afa881588cc21eeb964a2db37bf3bc87e6c49af",
+    "/path/to/VisContract_P14_2/scripts/run_p209_fused_unit.py": "9b1096cee21e3170c1e4372b028c9e5c5c809c5c60660a86f9f5e9a59a228590",
+    "/path/to/VisContract_P14_2/scripts/run_p209_prepare_bench.py": "b7e79a06f9c13468a74a933b5a43dbe05103112e26b9964c9a88b6213486a057",
+    "/path/to/VisContract_P14_2/scripts/run_p209_side_queue.py": "5ff5a4943d8b446c3d290d255796bf654df454c53817b512b6eb4561bc450f56",
+    "/path/to/VisContract_P14_2/scripts/run_p210.py": "f8c4ffb618f26617295260ace76342a9553e305584e512e71c735407b44255f2",
+    "/path/to/VisContract_P14_2/scripts/run_p210_color.py": "a38fa4d9e0f239fb8f029c06c9aa3bcebdd50100aa891ab8c39923e9a82d8146",
+    "/path/to/VisContract_P14_2/scripts/run_p210_queue.py": "b4572702455120e8dbb90234984dec796ef0495354a356d2745a4b2605449351",
+    "/path/to/VisContract_P14_2/scripts/run_p210_scores.py": "f21dfdbbeebf2d91293b953f7263080d56945ceefa87eb97d5feec14cfeb8dae",
+    "/path/to/VisContract_P14_2/scripts/run_p210_unit.py": "20454b1443a0c9919885c0b64d07a1874e0099c5dd36f29bdbd102ac6d278f26",
+    "/path/to/VisContract_P14_2/scripts/run_p211.py": "1499d8ce77610ae3e4b9fbecc32cd5a8ab8aa2bf1573e57019484752f669e653",
+    "/path/to/VisContract_P14_2/scripts/run_p211_attention_audit.py": "80621ed4ce19263e49c25b03eea6098645bfd55d5bcda9b12b4ce466cfe97870",
+    "/path/to/VisContract_P14_2/scripts/run_p211_count_full.py": "4aec26b9ef397bc74c9a135cfc10ed1c90dd8b6199b09cc9d2d0651f8c801f4e",
+    "/path/to/VisContract_P14_2/scripts/run_p211_count_queue.py": "8bd7995282b619d11ad5865e9af56f055ca231c921ae46a240d9c7eba85fff5c",
+    "/path/to/VisContract_P14_2/scripts/run_p211_followup_queue.py": "a24f48468c5c079092bb44870273a6602b1fc680eeecb38737a3da5172dc525a",
+    "/path/to/VisContract_P14_2/scripts/run_p211_full_queue.py": "c602a708a8780c6cb11dd99110ec09b7603b8d9beebcfa2adf55a0cd89d7b8e2",
+    "/path/to/VisContract_P14_2/scripts/run_p211_full_unit.py": "8540ca7b495fbac62b99dc92180f74e3eb98c445eaf80765dbac2a9d5923f558",
+    "/path/to/VisContract_P14_2/scripts/run_p211_intervention_queue.py": "f31980bef01277408a41562e25b3844e96eb37ad7eb69e1057919e9792c3b408",
+    "/path/to/VisContract_P14_2/scripts/run_p211_native_full.py": "fa9d1f4ac419681b8473a87bd2460d294b15f3918eb7c836e53216caea5ff796",
+    "/path/to/VisContract_P14_2/scripts/run_p211_original_queue.py": "7a04abe8579ee4c9352d22e5688f728562dfd814bfdfd5ade45b10b2d7c16ce6",
+    "/path/to/VisContract_P14_2/scripts/run_p211_unit.py": "30423854860a750ce6883d6dbfd523f7b00f8ef12d4d59eba6bf194841ac3830",
+    "/path/to/VisContract_P14_2/scripts/run_p212.py": "9b206260ab0192a2366f4a2cd49ee30217576b4d281edb95a9b32099e1ac06f3",
+    "/path/to/VisContract_P14_2/scripts/run_p212_queue.py": "0c43d7919858ea05c3feb895b90c8ecdac8a77ebd70415b195e27acd88f379bc",
+    "/path/to/VisContract_P14_2/scripts/run_p212_score_unit.py": "13a8f23bc910c6a611758c1159c9476500759ff65233ba8994127d0b0002934a",
+    "/path/to/VisContract_P14_2/scripts/run_p213_capture_queue.py": "ce81cc61818bb2923aec17a75367381f6aa4d3bf2c7fe1e14befe925bd603fd1",
+    "/path/to/VisContract_P14_2/scripts/run_p213_crossover.py": "ef2c9cbb88952d4d1a2ae7f3c804717f3f158ba077ed2756054b58078573a964",
+    "/path/to/VisContract_P14_2/scripts/run_p213_local_queue.py": "dff50a44097e5f4adc7b2d896d04ea1d4cfd42c971124fd6d2ad7e879d1a66ee",
+    "/path/to/VisContract_P14_2/scripts/run_p213_queue.py": "cf83b73a5681a9b6d9c2b4fe957c82c10b9383c1e743e8d4fddab611f01f3907",
+    "/path/to/VisContract_P14_2/scripts/select_p209_extension.py": "73cd376f55e5726a69f404ce1b1f21ca8b79b23f25f0de77b0b31303e3f6c9c8",
+    "/path/to/VisContract_P14_2/scripts/snapshot_p204_runtime.py": "fcedbf6e143eccd0114c150484b10a6fd267b88e9e64900c83234aaed99025b4",
+    "/path/to/VisContract_P14_2/scripts/snapshot_p205_runtime.py": "5a46ea9c1078b7d0309e27d3ebecbf8059782daf25b5dadd0bce2d909c1de2ab",
+    "/path/to/VisContract_P14_2/scripts/snapshot_p206_runtime.py": "b00be2f1b4b3a4e37ef9cd62d7bcf00ce19f48fe5eeccd268557fd501c490c93",
+    "/path/to/VisContract_P14_2/scripts/status_p191.py": "3407d2270feaacc3adf7b7035cf63704c92b8e00fd0fd5df987aa873fd8d63d1",
+    "/path/to/VisContract_P14_2/scripts/stop_p212_invalid66.py": "977c1d15b66bed78ce0a1376823bf9fd639b6a595797a5263baa7bdea7b4c13c",
+    "/path/to/VisContract_P14_2/scripts/summarize_p192.py": "de74206333130d335a276154f2abb43d56065f3bc03934c34aeaa8295bb2a019",
+    "/path/to/VisContract_P14_2/scripts/summarize_p193.py": "2c6bd99b5242602a099922622f73d2e161e4da735ab3b44feb805ce4655ba7da",
+    "/path/to/VisContract_P14_2/scripts/summarize_p194.py": "86b26035332061b8449080827d0f99becea25fc02849e5711c4bdc24a0361263",
+    "/path/to/VisContract_P14_2/scripts/summarize_p195.py": "a197015e5ebca5e2c79585d2d179717371b7da70d312bc0f60c0cf3ea6309996",
+    "/path/to/VisContract_P14_2/scripts/summarize_p196.py": "8c88bd58ab173ea93b0b3147c2d53b84d6f9827c582eedb64aae37045ccca6f3",
+    "/path/to/VisContract_P14_2/scripts/summarize_p198_quality.py": "201819f6f2b88d5c16b62440ac0d45f612a6d72f27d5ceacf33ac4bdbcc0772b",
+    "/path/to/VisContract_P14_2/scripts/summarize_p199_quality.py": "22c6157cfaf7a4f457b4790306c6484e172b88f0c97fa62780e8ccdad04f4c3e",
+    "/path/to/VisContract_P14_2/scripts/summarize_p213.py": "c4f103ac754baf236c434e1f925acfad7f8891854ce3df49926e66b28554fc8f",
+    "/path/to/VisContract_P14_2/scripts/test_p183_gather_math.py": "f52f099164352d47444a980d6d04dbe4c43e5b937dd8c5fadb5cfbe245ef1ccb",
+    "/path/to/VisContract_P14_2/scripts/test_p184_working_set.py": "d0c2a2ef2766ddcea04f71c0826680dfa87ad69cee0067a454bb1ad2073a03a5",
+    "/path/to/VisContract_P14_2/scripts/test_p185_segmented_kernel.py": "2923afc9436dca1fb99adf38a93c26f8f98074bd62202dfcac6d5d7dbe86b686",
+    "/path/to/VisContract_P14_2/scripts/test_p185_single_state.py": "fbd7c64f467fecd223df078349ba891bf84004deaff3c4937205071dda606743",
+    "/path/to/VisContract_P14_2/scripts/test_p186_packed.py": "764433cfc88c76a6702ccb03ad757040e8a8028d413feb3d223342be7f898e4d",
+    "/path/to/VisContract_P14_2/scripts/test_p188_compact.py": "143e73f8974f789ae9962d026894da68de097dde935b9e68628feb230c91f53c",
+    "/path/to/VisContract_P14_2/scripts/test_p190_companion.py": "5bf6732fceb1e66b212597d772b3cdb76f92a69413898f0e0f3a358a4d6a955f",
+    "/path/to/VisContract_P14_2/scripts/test_p190_companion_dynamic.py": "3b6257b9a53009b83274ae018623f13284b29abdd8a9f9142454355323e29796",
+    "/path/to/VisContract_P14_2/scripts/test_p190_observer.py": "768ad74a6399b9f35d59ddc38adb13f69681a20e9af34b4077377cbe03c268ff",
+    "/path/to/VisContract_P14_2/scripts/test_p190_runtime_lengths.py": "27e95d71fffe7a2bd407e8db2263f074b3819171ad9faf00c042cecfd9db0efe",
+    "/path/to/VisContract_P14_2/scripts/test_p191_selection.py": "9302cc1ea93dc00f3cede61675c2e386e31c3476ac96ce8a76f59c215ec41ebc",
+    "/path/to/VisContract_P14_2/scripts/test_p192.py": "37aa0a53c9a155a35c2492f6a36886946b261342dd6a4f211d9bacae9d621fba",
+    "/path/to/VisContract_P14_2/scripts/test_p192_init.py": "d0bdda78482479a2c263cd0b83c4599fe151395015c8d5db75a74f29137e655c",
+    "/path/to/VisContract_P14_2/scripts/test_p193_budgets.py": "08d9f20ec1f760bcc2b32214b1a3b97cdc1d8c53c4163305bf388e03477bd89d",
+    "/path/to/VisContract_P14_2/scripts/test_p193_observer.py": "dc3ff2eeae3302c67c0511904d84a0121c4fd7e005a20acde5923c0a29aef636",
+    "/path/to/VisContract_P14_2/scripts/test_p195_observer.py": "f9585283e403ccdfb80f6008f1b7eb5bb88be229ed773b29cd33cf0b8bddca15",
+    "/path/to/VisContract_P14_2/scripts/test_p199.py": "4f325e67681f82847423adbb5aaa9adfdd81899041f2839d08f3a5ccb8107f9a",
+    "/path/to/VisContract_P14_2/scripts/test_p207_boundary.py": "06095f26b868f73ebfa43dc9017b740f85a409bb4d57e7cf1e322fe9a4c7cded",
+    "/path/to/VisContract_P14_2/scripts/trace_p197_events.py": "b1bb7615d2e9f9b41d06a381c5edc9be0e3712a8165b79c4edccc0dfd0d1b161",
+    "/path/to/VisContract_P14_2/scripts/train_p179_adapter.py": "8d0e413e0aeab00d8d249fa6f0da88886231cf666a09ea2a99c04240b9b8b805",
+    "/path/to/VisContract_P14_2/scripts/train_p181_stages.py": "0b35de2db16f571dab56e2373aafcd3f10ba98e13408a3f8f9ec982dd6f1c914",
+    "/path/to/VisContract_P14_2/scripts/validate_p15_1_tkv_hot_state.py": "be64306c418bc15a96cb7dd385a716d07376e6232c4eafcb076b547199efe8f3",
+    "/path/to/VisContract_P14_2/scripts/validate_p15_2_multi_object_registry.py": "704ada8f9c42f603153a19ebd28286e6da6b087c71a6d87eebf427943145fc8d",
+    "/path/to/VisContract_P14_2/scripts/validate_p15_contract_ir.py": "219ae3da87abc4b9c06e060a83dd97b0997b55f7c64fa8e855229d05d541ccc8",
+    "/path/to/VisContract_P14_2/scripts/validate_p190_release.py": "49e11a0d75ec1ae4ad9029a64243a98f795b9b4a91752b4884a83711dbe06ea2",
+    "/path/to/VisContract_P14_2/scripts/validate_p191.py": "e1eae43a9c226e95c1fe37cd5c623b965f651e2f3f441ad9e5f8690f5a71f5cc",
+    "/path/to/VisContract_P14_2/scripts/validate_p192_release.py": "a6cdab917de149b7956448fce8ad3b719a50ca479a4e3fc3c2cb736e0dd1c351",
+    "/path/to/VisContract_P14_2/scripts/validate_p193.py": "3e3f259d7bdfb4c47637d1a25c87ca6b6ab1dc365901e18db96f2ccd2397877b",
+    "/path/to/VisContract_P14_2/scripts/validate_p194.py": "c121819bd438ceb252200a26ec287e323c6cd30b056cb2dd1d457488ec76138c",
+    "/path/to/VisContract_P14_2/scripts/validate_p195.py": "ae9b9f40f5ec69d97d4063e14ec2cf6c1721573109e4637809f7764c82f413ad",
+    "/path/to/VisContract_P14_2/scripts/validate_p196.py": "e107dfb3e8bfaced68be03cc3adf6514e1a1f031b7e7e5d2d11d2c01f3cfb9c1",
+    "/path/to/VisContract_P14_2/scripts/validate_p197.py": "47c607b68d535c9244ec17399490e04151282e4f509a627a5047aedc11e30700",
+    "/path/to/VisContract_P14_2/scripts/validate_p199.py": "758be8bd7153fdfd1e645ffa46660d415f09bf1ce4e4edf1b51b53946d05e51c",
+    "/path/to/VisContract_P14_2/scripts/validate_p200.py": "c468d07fe2be426130d0dcdf8211c4dce2fbf12da850ae3e624d71a65c6b4ea7",
+    "/path/to/VisContract_P14_2/scripts/verify_p178_artifacts.py": "e29d5350b1031cde3a28f44947ae54c50f38aac468fe47671edd46345846ce63",
+    "/path/to/VisContract_P14_2/scripts/verify_p179_artifacts.py": "27dc6878246274b989d6f03e9675c241d251abfe6280f7d1bd9fb4ef275ad0d9",
+    "/path/to/VisContract_P14_2/scripts/verify_p182_dataset_assets.py": "921375cc35b6625ef2729216fb9287bac3df8ea667f04268e6eca1898c3abbff",
+    "/path/to/VisContract_P14_2/scripts/verify_p182_vischain_prepared.py": "89c1a70313821e31da83f4543a60ac6135c3a4b01aa9c15ba17abeda7713a47d",
+    "/path/to/VisContract_P14_2/scripts/verify_p183_artifacts.py": "4f16824de33f295cac96f6083981058723104c77e55d5229eca40528f77a4619",
+    "/path/to/VisContract_P14_2/scripts/verify_p192_mirror.py": "54c044107e1e3772e285ba4f546da705f03592da7d90ba705fd4f44b0a56c295",
+    "/path/to/VisContract_P14_2/scripts/verify_p193_mirror.py": "fd1040927c5b938c3a9ec215d6eb9023a2420b8c41c0bdbb3265f19369485710",
+    "/path/to/VisContract_P14_2/scripts/verify_p194_mirror.py": "669b9cf4db854fc13e7390e63d87914520d025aba886097441d83065e408900b",
+    "/path/to/VisContract_P14_2/scripts/verify_p195_mirror.py": "8cb93173a525aeb65f669df96ef8a3c31f5944064bc3a422cad9a36416bd299d",
+    "/path/to/VisContract_P14_2/scripts/verify_p196_mirror.py": "126a9a479096bcba41f5bca2f5930da78094d4550885a63179ebe10ab86d732c",
+    "/path/to/VisContract_P14_2/scripts/verify_p197_mirror.py": "e284f5943c642a54806492dcec1c4aedc310c468a902049912c05f1efcc9ce94",
+    "/path/to/VisContract_P14_2/scripts/verify_p198_mirror.py": "740c552ce07a173cce5843df45bbedd76116cd530c069128d9cc4d7802069cea",
+    "/path/to/VisContract_P14_2/scripts/verify_p199_mirror.py": "0b64481a984b680a13c67a872658d07c631a0fb3205caae38ef64b5070d7b4df",
+    "/path/to/VisContract_P14_2/scripts/verify_p200_mirror.py": "d45955a2187b9d48159b925b9457f9e59707bb605f7e9cd2c1885a8f7a2449e8",
+    "/path/to/VisContract_P14_2/third_party/KIVI/quant/new_pack.py": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+    "/path/to/InternVL3-8B-hf/config.json": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637"
+  },
+  "samples_sha256": "5b3f97ea175103903d988480ee6977d07e17f688a21126545d3fa4b2be39466d",
+  "old_f0_sha256": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+  "encoder_book_sha256": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+  "contract": {
+    "stage_count": 42,
+    "K_stages": 23,
+    "V_stages": 19,
+    "full_priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+    "full_priority_bytes": 448,
+    "full_priority_JSON_sha256": "e59bd975e5233d5ca8969aee2e11a26fc9aece938974ce6faae32eadb48ee6f2",
+    "selected42_sha256": "02d27c6d77151c34e2b6eb2993792ed77c1041b9d8cb012c7fffe608cc11eb4c",
+    "selected42_packed_bytes": 84,
+    "selected42_JSON_sha256": "ba5f7bb01a26af6a12ff8baa0e65cda149f0cf36f4fa8872fdf8a23ce0658eaf",
+    "old43_JSON_sha256": "31a5f9ec3d6464139fe040138d045cb1b61872b171fd1f8566f575e7926fbf4a",
+    "new_encoder_bytes": 1344,
+    "added_retained_decoder_tensor_bytes": 0
+  },
+  "schedule_sha256": "c9c57b7de083ca191e7c0079c83e3b93ee5f0d91f6fdf004d5a7bc08566dbc48",
+  "teacher_contexts_sha256": "5e770a70b44602ae5a02082fe305943a985fcf8d5c82c703d168a3947df71f76",
+  "first_actual_probe_sha256": "c85f417d433c776401477f3357af9c18a50e58389cf62c06b6a706a539845f32",
+  "labels_used": false,
+  "model_weights_frozen": true,
+  "optimization_parameter_shape": [
+    3,
+    28,
+    4
+  ],
+  "post_encoder_constant_bytes": 1344,
+  "compressed_question_replay": true,
+  "objective": "Full teacher-to-student KL; tokenmean perQ/sourcebalanced aggregate",
+  "gradient_scope": "actual packed forward and dense STE surrogate derivative through student q/text; not exact quantized or unbiased full-model gradient"
+}

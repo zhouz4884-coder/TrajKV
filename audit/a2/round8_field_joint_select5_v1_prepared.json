@@ -1,0 +1,115 @@
+{
+  "schema": "trajkv.round8.select-field-joint-preparation.v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "created_at_utc": "2026-11-18T11:57:44.217089+00:00",
+  "code_sha256": "7b1c22bac7aba4b2f3a33a02857d9f5710df4e5434bc0f92140637b55d6e64ee",
+  "outputs": [
+    {
+      "dataset": "doc",
+      "gpu": 0,
+      "config": "configs/a2/round8_v1/field_joint_select5_v1_doc.json",
+      "job": "configs/a2/round8_v1/job_field_joint_select5_v1_doc.json",
+      "output": "/path/to/TrajKV/results/round8_v1/field_joint_select5_v1_doc",
+      "samples": "configs/a2/round8_v1/doc_select16_independent_qa.json",
+      "samples_sha256": "146ae3bb795a25433902f60dad4e7b0bc055de0ca8eae6f6485d05b1fb27b62b",
+      "references_local_only": "configs/data/round7_doc_select16_independent_references.jsonl",
+      "references_sha256": "5987275e2fb5701baaae0430e9ce30e6dd0d4bff112321cae13b251eb4faec6c",
+      "sources": 16,
+      "independent_questions": 38,
+      "variants": 5,
+      "expected_records": 190,
+      "expected_answers": 190,
+      "launch_command": "python code/launch_round8_data_disk.py configs/a2/round8_v1/job_field_joint_select5_v1_doc.json",
+      "config_sha256": "abe60d419cf2ab4ea59972d3d639d21d969ea4e28eead38697f56aea9540d4e6",
+      "job_sha256": "6e23d49ad509162a04526b6d7f84ffe6bbdbbe9a55a586f8fc14209e3e5a559e"
+    },
+    {
+      "dataset": "text",
+      "gpu": 1,
+      "config": "configs/a2/round8_v1/field_joint_select5_v1_text.json",
+      "job": "configs/a2/round8_v1/job_field_joint_select5_v1_text.json",
+      "output": "/path/to/TrajKV/results/round8_v1/field_joint_select5_v1_text",
+      "samples": "configs/a2/round8_v1/text_select16_independent_qa.json",
+      "samples_sha256": "5c73bb4d82b96a518c31f62e9836a30e5e1665e366eadb3e1e360932729f2342",
+      "references_local_only": "configs/data/round7_text_select16_independent_references.json",
+      "references_sha256": "bdc656adda936141e3b98d7e608da83ad2085db8e7a17d529e8ba5edc1a0c793",
+      "sources": 16,
+      "independent_questions": 22,
+      "variants": 5,
+      "expected_records": 110,
+      "expected_answers": 110,
+      "launch_command": "python code/launch_round8_data_disk.py configs/a2/round8_v1/job_field_joint_select5_v1_text.json",
+      "config_sha256": "f6f01ee477bb6bf98bbd40fadc1ddcd8b1455940ebeddb5442fc1146332d45ca",
+      "job_sha256": "4b48fc43e3452565965e34d8a8f2c298a59a8cc853cb94e3857d766007bd6d56"
+    }
+  ],
+  "cells": [
+    {
+      "variant": "r8_kjoint0_vjoint0",
+      "key_joint": false,
+      "value_joint": false
+    },
+    {
+      "variant": "r8_kjoint1_vjoint0",
+      "key_joint": true,
+      "value_joint": false
+    },
+    {
+      "variant": "r8_kjoint0_vjoint1",
+      "key_joint": false,
+      "value_joint": true
+    },
+    {
+      "variant": "r8_kjoint1_vjoint1",
+      "key_joint": true,
+      "value_joint": true
+    }
+  ],
+  "runner_contract_validated": true,
+  "runner_source_sha256_at_preparation": {
+    "round8_field_joint_runner.py": "2781cabfedaad35b5db909e6ba0d1dcde5edd53d72dd8c13ca410fd60cb1dd09",
+    "round8_value_joint_refit.py": "7348f2ce83acbb3ab64fb858b45f1d7eb37758076dd02cda68b93fa8616e2c34",
+    "round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "round8_joint_gain.py": "30f75b6f7ca3fd8406f0ee5eec134ca6220f0f2f3d0b232f8c1fd4f04b0aec4f",
+    "round8_runner.py": "ba0cc676dd5b84efa53a916194569bffef25fe7fb04250854d318acc3a6a6935",
+    "round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c"
+  },
+  "consumed_codec_inputs_sha256": {
+    "/path/to/TrajKV/results/round7_v1/codec_assets/gaussian_vq_g4_16.json": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "/path/to/TrajKV/results/round7_v1/codec_assets/factors_for_book16_inherited.json": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "/path/to/TrajKV/results/round7_v1/exchange_key_cal8/gt/policy_conditional_batches.json": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f"
+  },
+  "parent_config_sha256": {
+    "configs/a2/round8_v1/joint_cd_select5_v1_doc.json": "a9afbfc60132046e0c20dc90c6b2c659515d15d87a670b05cfaab6404a3402b5",
+    "configs/a2/round8_v1/postfit_select11_v2_doc.json": "4fb2ba7d8e7579a3bd8bb7b875f48aaad14e08ad49cebe4eb35ff84a5c4e629a",
+    "configs/a2/round8_v1/joint_cd_select5_v1_text.json": "6594ff2f6b71d608d7bd701f5e4437352f4db46c8d8679d718beb1454d0e602b",
+    "configs/a2/round8_v1/postfit_select11_v2_text.json": "05baa52dc2d100c37b931cb1b61c3b477963e33f7ab4ffc984274c977c4f1ffa"
+  },
+  "parent_runtime_job_sha256": "4ab4109a2529e4a82c2221787946dbcde9890f7c1a72df23989d68f6e7e49712",
+  "views_sha256": "6e6a2d23d02814f2c437c3577c54de02465ee6fd2bcae78b8d34ffcc8221fcbd",
+  "independent_questions": 60,
+  "total_answers_expected": 300,
+  "existing_source_images": 32,
+  "source_root": "/path/to/TrajKV/stages/round8_20261118_v1",
+  "global_config_sample_asset_result_root": "/path/to/TrajKV",
+  "worker_python": "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+  "shared_cache": "/path/to/TrajKV/cache/round8_v1/shared",
+  "original224_priority_limit43_preserved": true,
+  "value_joint_rounds": 2,
+  "L2_only": true,
+  "expected_retained_extra_tensor_bytes": 0,
+  "new_book_fit_performed": false,
+  "new_source_count_claimed": 0,
+  "future_confirmation_answers_opened": false,
+  "scope": "Full and four predeclared field-refit cells on reused exposed selection QA; no task results yet and no blind-confirmation claim.",
+  "GPU_used": false,
+  "SSH_used": false,
+  "uploaded": false
+}

@@ -1,0 +1,640 @@
+{
+  "status": "PREPARED_LOCAL_ONLY",
+  "schema": "trajkv.round8.proper-gaussian8-select3-plan.v1",
+  "expected_model_answers": 180,
+  "GPU_started": false,
+  "remote_connected": false,
+  "remote_stage_verified_this_prepare": false,
+  "new_books_trained": 0,
+  "references_opened": false,
+  "book_origin": {
+    "origin_file": "results/direction_books_gpu1_v1/books/gaussian_vq_g8_256.json",
+    "consumed_remote_path": "/path/to/TrajKV/results/direction_books_gpu1_v1/books/gaussian_vq_g8_256.json",
+    "source_exact_byte_sha256": "41906a3603e1e620908ab660dedce91bb8d2fccbf035d4d42e9daca9a8892444",
+    "consumed_exact_byte_sha256": "41906a3603e1e620908ab660dedce91bb8d2fccbf035d4d42e9daca9a8892444",
+    "copied_or_retrained": false,
+    "origin_manifest_sha256": "ece5ed3e5abde0ba49c674ef9517c02a03c25331fca6cecb4b567c747b76a548",
+    "origin_parent_complete_sha256": "d8f72bb1694fa8b67f54253064926829498cfb6a0b77a34bcabff2cee4b3acef",
+    "origin_books_complete_sha256": "24b80384c5ac44b9ff71603c2ad71b0c30684e703ae5ac393d854313cc3dc753",
+    "declared_training": {
+      "training_distribution": "standard Gaussian prior after normalized rotation; not model data",
+      "seed": 20261113,
+      "training_vectors": 65536,
+      "validation_vectors": 16384,
+      "iterations": 40,
+      "validation_mse": 0.32716140151023865
+    },
+    "training_provenance_scope": "Existing artifact metadata and completion SHA binding; no new training or model-quality inference",
+    "book_shape": [
+      256,
+      8
+    ],
+    "actual_FP16_book_bytes": 4096,
+    "left4_unique": 256,
+    "right4_unique": 256,
+    "non_Cartesian_witness": "Both 4D half projections contain256 unique rows, excluding the old16x16 Cartesian product"
+  },
+  "domains": {
+    "doc": {
+      "sessions": 38,
+      "sources": 16,
+      "answers": 114,
+      "config": "configs/a2/round8_v1/proper_gaussian8_select3_v1_doc.json",
+      "config_sha256": "7aaebfd8de38cffe66b0db0cac334f2bad85c6ba0d533a561362bf1748aa17c2",
+      "job": "configs/a2/round8_v1/job_proper_gaussian8_select3_v1_doc.json",
+      "job_sha256": "831f43f92837bafa667aff3b46afe3f0b53164148739aae3a5fc23ca893844ad",
+      "samples_sha256": "146ae3bb795a25433902f60dad4e7b0bc055de0ca8eae6f6485d05b1fb27b62b",
+      "actual_visual_tokens": [
+        1280,
+        1792
+      ],
+      "baseline_unchanged_exact_settings": true,
+      "owner_plans": [
+        {
+          "nv": 256,
+          "is_real_domain_density": false,
+          "variants": {
+            "r8_k4old_vbinary": {
+              "book_bytes": 128,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 1264773,
+              "delta_vs_old43": 0,
+              "allowed_bytes": 1651507,
+              "actual_bits": 1.378493172781808,
+              "fields": {
+                "K_uint8_indices": 458752,
+                "K_FP16_gain": 57344,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 458752,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 128,
+                "position_int64": 2048,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 198144
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary43": {
+              "book_bytes": 4096,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 1268741,
+              "delta_vs_old43": 3968,
+              "allowed_bytes": 1651507,
+              "actual_bits": 1.3828179495675224,
+              "fields": {
+                "K_uint8_indices": 458752,
+                "K_FP16_gain": 57344,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 458752,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 2048,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 198144
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary42": {
+              "book_bytes": 4096,
+              "stages": 42,
+              "K_stages": 23,
+              "V_stages": 19,
+              "complete_owner_bytes": 1264133,
+              "delta_vs_old43": -640,
+              "allowed_bytes": 1651507,
+              "actual_bits": 1.377795628138951,
+              "fields": {
+                "K_uint8_indices": 458752,
+                "K_FP16_gain": 57344,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 458752,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 2048,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 193536
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            }
+          }
+        },
+        {
+          "nv": 1280,
+          "is_real_domain_density": true,
+          "variants": {
+            "r8_k4old_vbinary": {
+              "book_bytes": 128,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 5964933,
+              "delta_vs_old43": 0,
+              "allowed_bytes": 8257536,
+              "actual_bits": 1.300252205984933,
+              "fields": {
+                "K_uint8_indices": 2293760,
+                "K_FP16_gain": 286720,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 2293760,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 128,
+                "position_int64": 10240,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 990720
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary43": {
+              "book_bytes": 4096,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 5968901,
+              "delta_vs_old43": 3968,
+              "allowed_bytes": 8257536,
+              "actual_bits": 1.301117161342076,
+              "fields": {
+                "K_uint8_indices": 2293760,
+                "K_FP16_gain": 286720,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 2293760,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 10240,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 990720
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary42": {
+              "book_bytes": 4096,
+              "stages": 42,
+              "K_stages": 23,
+              "V_stages": 19,
+              "complete_owner_bytes": 5945861,
+              "delta_vs_old43": -19072,
+              "allowed_bytes": 8257536,
+              "actual_bits": 1.2960948399135044,
+              "fields": {
+                "K_uint8_indices": 2293760,
+                "K_FP16_gain": 286720,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 2293760,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 10240,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 967680
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            }
+          }
+        },
+        {
+          "nv": 1792,
+          "is_real_domain_density": true,
+          "variants": {
+            "r8_k4old_vbinary": {
+              "book_bytes": 128,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 8315013,
+              "delta_vs_old43": 0,
+              "allowed_bytes": 11560550,
+              "actual_bits": 1.294663565499442,
+              "fields": {
+                "K_uint8_indices": 3211264,
+                "K_FP16_gain": 401408,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 3211264,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 128,
+                "position_int64": 14336,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 1387008
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary43": {
+              "book_bytes": 4096,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 8318981,
+              "delta_vs_old43": 3968,
+              "allowed_bytes": 11560550,
+              "actual_bits": 1.295281390754544,
+              "fields": {
+                "K_uint8_indices": 3211264,
+                "K_FP16_gain": 401408,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 3211264,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 14336,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 1387008
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary42": {
+              "book_bytes": 4096,
+              "stages": 42,
+              "K_stages": 23,
+              "V_stages": 19,
+              "complete_owner_bytes": 8286725,
+              "delta_vs_old43": -28288,
+              "allowed_bytes": 11560550,
+              "actual_bits": 1.2902590693259726,
+              "fields": {
+                "K_uint8_indices": 3211264,
+                "K_FP16_gain": 401408,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 3211264,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 14336,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 1354752
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            }
+          }
+        }
+      ]
+    },
+    "text": {
+      "sessions": 22,
+      "sources": 16,
+      "answers": 66,
+      "config": "configs/a2/round8_v1/proper_gaussian8_select3_v1_text.json",
+      "config_sha256": "2746a3490f1253d2b42bd67ffee4ba260434d75febec62d343c6a10680f62b6c",
+      "job": "configs/a2/round8_v1/job_proper_gaussian8_select3_v1_text.json",
+      "job_sha256": "efe1dbf4900dc1d79eb2cb8b79858ae2c2018bc18977fa17d85a6fcfa86fcca1",
+      "samples_sha256": "5c73bb4d82b96a518c31f62e9836a30e5e1665e366eadb3e1e360932729f2342",
+      "actual_visual_tokens": [
+        1280,
+        1792
+      ],
+      "baseline_unchanged_exact_settings": true,
+      "owner_plans": [
+        {
+          "nv": 256,
+          "is_real_domain_density": false,
+          "variants": {
+            "r8_k4old_vbinary": {
+              "book_bytes": 128,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 1264773,
+              "delta_vs_old43": 0,
+              "allowed_bytes": 1651507,
+              "actual_bits": 1.378493172781808,
+              "fields": {
+                "K_uint8_indices": 458752,
+                "K_FP16_gain": 57344,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 458752,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 128,
+                "position_int64": 2048,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 198144
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary43": {
+              "book_bytes": 4096,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 1268741,
+              "delta_vs_old43": 3968,
+              "allowed_bytes": 1651507,
+              "actual_bits": 1.3828179495675224,
+              "fields": {
+                "K_uint8_indices": 458752,
+                "K_FP16_gain": 57344,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 458752,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 2048,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 198144
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary42": {
+              "book_bytes": 4096,
+              "stages": 42,
+              "K_stages": 23,
+              "V_stages": 19,
+              "complete_owner_bytes": 1264133,
+              "delta_vs_old43": -640,
+              "allowed_bytes": 1651507,
+              "actual_bits": 1.377795628138951,
+              "fields": {
+                "K_uint8_indices": 458752,
+                "K_FP16_gain": 57344,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 458752,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 2048,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 193536
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            }
+          }
+        },
+        {
+          "nv": 1280,
+          "is_real_domain_density": true,
+          "variants": {
+            "r8_k4old_vbinary": {
+              "book_bytes": 128,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 5964933,
+              "delta_vs_old43": 0,
+              "allowed_bytes": 8257536,
+              "actual_bits": 1.300252205984933,
+              "fields": {
+                "K_uint8_indices": 2293760,
+                "K_FP16_gain": 286720,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 2293760,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 128,
+                "position_int64": 10240,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 990720
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary43": {
+              "book_bytes": 4096,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 5968901,
+              "delta_vs_old43": 3968,
+              "allowed_bytes": 8257536,
+              "actual_bits": 1.301117161342076,
+              "fields": {
+                "K_uint8_indices": 2293760,
+                "K_FP16_gain": 286720,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 2293760,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 10240,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 990720
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary42": {
+              "book_bytes": 4096,
+              "stages": 42,
+              "K_stages": 23,
+              "V_stages": 19,
+              "complete_owner_bytes": 5945861,
+              "delta_vs_old43": -19072,
+              "allowed_bytes": 8257536,
+              "actual_bits": 1.2960948399135044,
+              "fields": {
+                "K_uint8_indices": 2293760,
+                "K_FP16_gain": 286720,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 2293760,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 10240,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 967680
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            }
+          }
+        },
+        {
+          "nv": 1792,
+          "is_real_domain_density": true,
+          "variants": {
+            "r8_k4old_vbinary": {
+              "book_bytes": 128,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 8315013,
+              "delta_vs_old43": 0,
+              "allowed_bytes": 11560550,
+              "actual_bits": 1.294663565499442,
+              "fields": {
+                "K_uint8_indices": 3211264,
+                "K_FP16_gain": 401408,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 3211264,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 128,
+                "position_int64": 14336,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 1387008
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary43": {
+              "book_bytes": 4096,
+              "stages": 43,
+              "K_stages": 23,
+              "V_stages": 20,
+              "complete_owner_bytes": 8318981,
+              "delta_vs_old43": 3968,
+              "allowed_bytes": 11560550,
+              "actual_bits": 1.295281390754544,
+              "fields": {
+                "K_uint8_indices": 3211264,
+                "K_FP16_gain": 401408,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 3211264,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 14336,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 1387008
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            },
+            "r8_proper_gaussian8_vbinary42": {
+              "book_bytes": 4096,
+              "stages": 42,
+              "K_stages": 23,
+              "V_stages": 19,
+              "complete_owner_bytes": 8286725,
+              "delta_vs_old43": -28288,
+              "allowed_bytes": 11560550,
+              "actual_bits": 1.2902590693259726,
+              "fields": {
+                "K_uint8_indices": 3211264,
+                "K_FP16_gain": 401408,
+                "K_FP16_mean": 28672,
+                "V_int32_bits": 3211264,
+                "V_FP16_scale_min": 57344,
+                "K_FP16_book": 4096,
+                "position_int64": 14336,
+                "frozen_FP32_factors": 1344,
+                "int32_stage_lookup": 1792,
+                "full_uint16_ranking": 448,
+                "policy_descriptor": 5,
+                "actual_residual_sign_and_alpha": 1354752
+              },
+              "ranking_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+              "policy_sha256": "a665e6b115dd56fd3e0c89be631e6eda8e9666b822e0bd7026bf0822c4bbc68f"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "code/a2/round8_runner.py": "ba0cc676dd5b84efa53a916194569bffef25fe7fb04250854d318acc3a6a6935",
+    "code/a2/round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "code/a2/round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "code/a2/round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "code/a2/round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "code/a2/round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "code/a2/run_representation_variants.py": "1cbd345a5c9d838dd9aa88381d6b2456b532bdf584f6414786606c61e0dfab7d",
+    "code/a2/factory.py": "568747a69cc6552bc633552423869bc3f4fb5c71467b84590d944334f5301849",
+    "code/a2/quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "code/a2/fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "code/experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+    "code/remote.py": "e2b0bc77c9c80312f5fed180eb75536501599bd6a7be450ab4cadc25d20669f0",
+    "code/launch_remote.py": "22c1d253b5935b85d6a33cef9d85c02b3ae8642d914a7bbc6a4d40f8e5a38a82",
+    "code/launch_remote_data_disk.py": "1a16c3dbb5e6c39b1fc0e2c6ea69d98de4b54e02d973d357f55e08b892b58a55",
+    "code/launch_round8_data_disk.py": "b718dca5bd4eef6c9120388ecfb462c81bb2d5ebb2fc72c6a95620148268e4a9"
+  },
+  "previous_immutable_snapshot_sha256": "7f0017858139b09b351caaafee669bfec89a9a1b7c40c0142e27da9b56f2895d",
+  "local_sources_match_previous_immutable_snapshot": {
+    "code/a2/round8_runner.py": true,
+    "code/a2/round8_bank.py": true,
+    "code/a2/round8_codec.py": true,
+    "code/a2/round8_attention.py": true,
+    "code/a2/round6_depth_codec.py": true,
+    "code/a2/round7_key_layout.py": true,
+    "code/a2/run_representation_variants.py": true,
+    "code/a2/factory.py": true,
+    "code/a2/quantizers.py": true,
+    "code/a2/fast_wht.py": true,
+    "code/experiments/fused_progressive.py": true
+  },
+  "prior_actual_GPU_K8_reader": {
+    "check_sha256": "0a07e9f3ce1dbcb557eaab51aa48a0554001ba400b44b54ede99fe79e5661d88",
+    "cases": 72,
+    "all_pass": true,
+    "scope": "Prior synthetic actual-reader K8 numerical verification; not execution of the new proper-book model control"
+  },
+  "full_ranking_bytes": 448,
+  "all_23_K_stages_preserved": true,
+  "only_removed_stage": [
+    "v",
+    27,
+    3,
+    0
+  ],
+  "owner_proof": {
+    "old43": "4590*Nv+89733",
+    "proper43": "4590*Nv+93701",
+    "proper42": "4572*Nv+93701",
+    "delta43": 3968,
+    "delta42": "3968-18*Nv",
+    "threshold_for_negative_delta": 221,
+    "Nv_at_least256_delta_at_most": -640,
+    "note": "Complete current primary owner including positions, book, metadata, frozen factors, full ranking, lookup, policy and actual residual fields"
+  },
+  "untouched_frozen_inputs": {
+    "results\\direction_books_gpu1_v1\\books\\gaussian_vq_g8_256.json": "41906a3603e1e620908ab660dedce91bb8d2fccbf035d4d42e9daca9a8892444",
+    "results\\direction_books_gpu1_v1\\books\\complete.json": "24b80384c5ac44b9ff71603c2ad71b0c30684e703ae5ac393d854313cc3dc753",
+    "results\\direction_books_gpu1_v1\\manifest.json": "ece5ed3e5abde0ba49c674ef9517c02a03c25331fca6cecb4b567c747b76a548",
+    "results\\direction_books_gpu1_v1\\complete.json": "d8f72bb1694fa8b67f54253064926829498cfb6a0b77a34bcabff2cee4b3acef"
+  },
+  "required_next": "Root assigns GPU explicitly; guard remote source/book/config identity and job/output freshness before data-disk launch",
+  "scope": "Local preparation only; no model quality/result claim; no labels read; no source or old artifacts changed"
+}

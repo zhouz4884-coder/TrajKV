@@ -1,0 +1,131 @@
+{
+  "status": "STATIC_REUSE_FEASIBLE_NEEDS_SMALL_NEW_ADAPTER_NOT_DIRECT_CLI",
+  "schema": "trajkv.round8.postresidual-KL-static-review.v1",
+  "source_sha256": {
+    "code/a2/calibrate_direction_metadata.py": "a10f401071c3124cd2fba24677883f157a04fa032449514bb4272b118ea105db",
+    "code/a2/fit_functional_v.py": "c997226e07ce61674ec59bb8b227d07f7fc01874a31af811be56518269483164",
+    "code/a2/round6_fit_gamma.py": "6aa7d72135e50e8eeca1559e3014102a518c42be0306c2d0ef35a22920a36ada",
+    "code/a2/round6_student_codec.py": "df794ef136895887513179e736b14fef2779ee20c016d374caa59e41e8d77e78",
+    "code/a2/round6_gamma_bank.py": "66b1c4bab389fd7ffb6419c0c3c4ea3fd72460ee25155cb8991fe6dba10dc38d",
+    "code/a2/round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "code/a2/round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "code/a2/round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "code/a2/round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "code/a2/round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "code/a2/round7_key_artifacts.py": "f429aa502dae27b7616e8dfca63ac6d498d16f18d8bf2db4ad674b5039760485",
+    "code/a2/affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "code/a2/round8_continuous.py": "2fdd47cea4c45ff5d26531188ed1faa14b2de7b162f5f8e39cfc46a8ee3ffdf5",
+    "code/a2/fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "configs/a2/round8_v1/calibration_train32.json": "5b3f97ea175103903d988480ee6977d07e17f688a21126545d3fa4b2be39466d",
+    "configs/a2/round8_v1/calibration_source_splits_v1.json": "c0bfa131462a78a9d5455d784206f8a97f3a9a268631239b15381740526bc305",
+    "results/metadata_followup_v1/calibration_s0/all_kv/factors.json": "d60fe4ffcf31e36306ed2c5a4069634627c83b3af2f0b86fdb5c37e456113671",
+    "configs/a2/metadata_followup_v1_s0_all_kv.json": "38f5f028968a674bed35755eda80dc4f8e75eac5e7c498bf491afe1cb9bfec68",
+    "docs/ROUND8_POSTRESIDUAL_KL_REUSE_REVIEW_v1.zh.md": "5a4bf0da52a1b16e97ae8079373eb7f58790531b7d67c4c8c53400703ed037f5"
+  },
+  "GPU_used": false,
+  "SSH_used": false,
+  "model_forward_or_training_executed": false,
+  "GT_references_opened": false,
+  "old_sources_modified": false,
+  "new_platform_or_method_implemented": false,
+  "direct_old_cli_works": false,
+  "new_autograd_or_kernel_required": false,
+  "closest_existing_residual_KL_skeleton": "code/a2/round6_fit_gamma.py",
+  "blockers_for_direct_old_entry": [
+    "old256x4 book/assert and32B K payload",
+    "base-only decode without final RC/RA/lookup",
+    "fit_functional_v has no K trainable factor",
+    "grouped input feeds first question only",
+    "unweighted case cycling violates source/domain equal objective",
+    "old V fold centered offset is not literal native scalar bias"
+  ],
+  "calibration": {
+    "samples": "configs/a2/round8_v1/calibration_train32.json",
+    "sources": 32,
+    "domains": {
+      "docvqa_grouped": {
+        "sources": 16,
+        "questions": 45
+      },
+      "textvqa": {
+        "sources": 16,
+        "questions": 25
+      }
+    },
+    "questions": 70,
+    "answers_in_sample": false,
+    "required_weighting": "equal domains; equal source; equal question within source; token mean within question"
+  },
+  "candidate": {
+    "new_scalar_shape": [
+      3,
+      28,
+      4
+    ],
+    "new_scalar_count": 336,
+    "new_dtype": "FP32",
+    "new_encoder_constant_bytes": 1344,
+    "old_f0_retained_and_billed": true,
+    "model_weights_frozen": true,
+    "old_codes_sign_book_fixed": true,
+    "all_final_selected_K_and_V_alpha_scaled": true,
+    "K_mean_default": "unchanged centered transform",
+    "V_offset_semantics": "must explicitly choose anchored-scale-unit or literal b_c=o*S0; no hidden128 free offsets",
+    "initial_params": "all zero; exp(loggain)=1; offset0; must verify actual FP16 field identity",
+    "actual_forward": "unchanged round8_attention with new physical FP16 fields",
+    "gradient": "dense STE with all sequential FP16 residuals and full compressed question replay",
+    "loss": "Full teacher-to-student KL only; no native MSE objective or GT"
+  },
+  "budget": {
+    "full_ranking_entries": 224,
+    "stage43": [
+      "v",
+      27,
+      3,
+      0
+    ],
+    "prefix42_K": 23,
+    "prefix42_V": 19,
+    "delta_formula": "1344-18*Nv",
+    "min_legal_Nv_for_nonpositive_delta": 96,
+    "cases": [
+      {
+        "Nv": 32,
+        "extra_encoder_bytes": 1344,
+        "removed_V_stage_bytes": 576,
+        "delta_bytes": 768
+      },
+      {
+        "Nv": 64,
+        "extra_encoder_bytes": 1344,
+        "removed_V_stage_bytes": 1152,
+        "delta_bytes": 192
+      },
+      {
+        "Nv": 96,
+        "extra_encoder_bytes": 1344,
+        "removed_V_stage_bytes": 1728,
+        "delta_bytes": -384
+      },
+      {
+        "Nv": 1280,
+        "extra_encoder_bytes": 1344,
+        "removed_V_stage_bytes": 23040,
+        "delta_bytes": -21696
+      },
+      {
+        "Nv": 1792,
+        "extra_encoder_bytes": 1344,
+        "removed_V_stage_bytes": 32256,
+        "delta_bytes": -30912
+      }
+    ],
+    "keep_lookup_ranking_policy_bytes": true
+  },
+  "controls": [
+    "old R43/f0",
+    "R42/f0 + identity post336",
+    "R42/f0 + learned post336"
+  ],
+  "execution_scope": "No run/config/job prepared. Next authorized implementation should add only a small calibration/field-fold adapter, matched owner validator and bounded checks; no serving kernel rewrite."
+}

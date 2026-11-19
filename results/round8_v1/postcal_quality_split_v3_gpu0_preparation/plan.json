@@ -1,0 +1,221 @@
+{
+  "status": "PREPARED_TRAIN_V2_GPU0",
+  "GPU_started": false,
+  "references_opened": false,
+  "source_sha256": {
+    "round8_postcal_runner.py": "52789bfa3bb213f7fe47f8330ad6e49cbc250c97c292f5c2dea4eded80c9429c",
+    "round8_postcal_fields.py": "a7dcb3ee400eaec2aab1eabe33ab6877c44b8f206c9ef737e205a8fb8427fe54",
+    "round8_postcal_owner.py": "4980f85d391f03c819db67d378c972fdea3e79bd263d6e58cb38313ea4906eb6",
+    "round8_runner.py": "ba0cc676dd5b84efa53a916194569bffef25fe7fb04250854d318acc3a6a6935",
+    "round8_bank.py": "4e7ef32410f42223e7df3475c57647599e8db54c737af90ae23e476236a93343",
+    "round8_codec.py": "b30dd4b13745d45b46436b470110ccd5174cf4a26eb88ee9dd00d02cbace5e64",
+    "round8_attention.py": "08a067f52e33c1b2bdf54835184767f8a32fb5e86e6566d398ed8fa02597bb23",
+    "round8_joint_gain.py": "30f75b6f7ca3fd8406f0ee5eec134ca6220f0f2f3d0b232f8c1fd4f04b0aec4f",
+    "round6_depth_codec.py": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+    "round7_key_layout.py": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04",
+    "quantizers.py": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+    "affine_rate_bank.py": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "run_representation_variants.py": "1cbd345a5c9d838dd9aa88381d6b2456b532bdf584f6414786606c61e0dfab7d",
+    "factory.py": "568747a69cc6552bc633552423869bc3f4fb5c71467b84590d944334f5301849",
+    "experiments/fused_progressive.py": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c"
+  },
+  "jobs": [
+    "configs/a2/round8_v1/job_postcal_select_control3_v1_doc.json",
+    "configs/a2/round8_v1/job_postcal_select_learned1_v2_gpu0_doc.json",
+    "configs/a2/round8_v1/job_postcal_natural64_identity1_v1_doc.json",
+    "configs/a2/round8_v1/job_postcal_natural64_learned1_v2_gpu0_doc.json",
+    "configs/a2/round8_v1/job_postcal_select_control3_v1_text.json",
+    "configs/a2/round8_v1/job_postcal_select_learned1_v2_gpu0_text.json",
+    "configs/a2/round8_v1/job_postcal_natural64_identity1_v1_text.json",
+    "configs/a2/round8_v1/job_postcal_natural64_learned1_v2_gpu0_text.json"
+  ],
+  "endpoints": {
+    "configs/a2/round8_v1/postcal_select_control3_v1_doc.json": {
+      "config_sha256": "1d2d34b3bdb5bec277439751b614cc02bcd09fa6e5c754ad879a4309a4404f15",
+      "expected_answers": 114,
+      "declarations": {
+        "full8": null,
+        "r7_frozen_joint43_control": null,
+        "postcal_identity_R42": {
+          "mode": "identity",
+          "extra_bytes": 1344,
+          "priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+          "stages": 42,
+          "K_stages": 23,
+          "V_stages": 19
+        }
+      }
+    },
+    "configs/a2/round8_v1/postcal_select_learned1_v2_doc.json": {
+      "config_sha256": "6ecbb4310c3a0f3795d7aa8d2e610f4125b121a42944db8719b5785f04f268c7",
+      "expected_answers": 38,
+      "declarations": {
+        "postcal_learned_R42": {
+          "mode": "learned",
+          "extra_bytes": 1344,
+          "priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+          "stages": 42,
+          "K_stages": 23,
+          "V_stages": 19
+        }
+      },
+      "job_file": "configs/a2/round8_v1/job_postcal_select_learned1_v2_gpu0_doc.json"
+    },
+    "configs/a2/round8_v1/postcal_natural64_identity1_v1_doc.json": {
+      "config_sha256": "30d3f1119da75ecaa32013e348cf1ee94a034ffa3b93848a211320ada2c4e876",
+      "expected_answers": 64,
+      "declarations": {
+        "postcal_identity_R42": {
+          "mode": "identity",
+          "extra_bytes": 1344,
+          "priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+          "stages": 42,
+          "K_stages": 23,
+          "V_stages": 19
+        }
+      }
+    },
+    "configs/a2/round8_v1/postcal_natural64_learned1_v2_doc.json": {
+      "config_sha256": "de6337bf45b18f3cdefb9ee3b784231fa5afb3bd561a8b0a1f0ecc8c3c83f910",
+      "expected_answers": 64,
+      "declarations": {
+        "postcal_learned_R42": {
+          "mode": "learned",
+          "extra_bytes": 1344,
+          "priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+          "stages": 42,
+          "K_stages": 23,
+          "V_stages": 19
+        }
+      },
+      "job_file": "configs/a2/round8_v1/job_postcal_natural64_learned1_v2_gpu0_doc.json"
+    },
+    "configs/a2/round8_v1/postcal_select_control3_v1_text.json": {
+      "config_sha256": "059eb03d49cf0016a2696674908f80511eef5c92124b6b3caf1542463011c668",
+      "expected_answers": 66,
+      "declarations": {
+        "full8": null,
+        "r7_frozen_joint43_control": null,
+        "postcal_identity_R42": {
+          "mode": "identity",
+          "extra_bytes": 1344,
+          "priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+          "stages": 42,
+          "K_stages": 23,
+          "V_stages": 19
+        }
+      }
+    },
+    "configs/a2/round8_v1/postcal_select_learned1_v2_text.json": {
+      "config_sha256": "bca9c2add0a2e22cef19432a4795bbf50dd974f84bb4b5f47da7c2f31a70d9b3",
+      "expected_answers": 22,
+      "declarations": {
+        "postcal_learned_R42": {
+          "mode": "learned",
+          "extra_bytes": 1344,
+          "priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+          "stages": 42,
+          "K_stages": 23,
+          "V_stages": 19
+        }
+      },
+      "job_file": "configs/a2/round8_v1/job_postcal_select_learned1_v2_gpu0_text.json"
+    },
+    "configs/a2/round8_v1/postcal_natural64_identity1_v1_text.json": {
+      "config_sha256": "4bc14361a9c0fe35af2654d7b53200809a40df4c2cef7e73f5414f7ad9c6bed9",
+      "expected_answers": 64,
+      "declarations": {
+        "postcal_identity_R42": {
+          "mode": "identity",
+          "extra_bytes": 1344,
+          "priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+          "stages": 42,
+          "K_stages": 23,
+          "V_stages": 19
+        }
+      }
+    },
+    "configs/a2/round8_v1/postcal_natural64_learned1_v2_text.json": {
+      "config_sha256": "90e6bf78c210cc02c59e2f55ea3085107eb99126fa0aab83b236a6b3a770e180",
+      "expected_answers": 64,
+      "declarations": {
+        "postcal_learned_R42": {
+          "mode": "learned",
+          "extra_bytes": 1344,
+          "priority_sha256": "38ce38ab2707ed909b553fc63feb276ebb02f49695cdcda9b3d288b912149324",
+          "stages": 42,
+          "K_stages": 23,
+          "V_stages": 19
+        }
+      },
+      "job_file": "configs/a2/round8_v1/job_postcal_natural64_learned1_v2_gpu0_text.json"
+    }
+  },
+  "expected_new_select_answers": 240,
+  "expected_new_natural_answers": 256,
+  "identity_table_values_sha256": "e906a3bc7695a46c352b29fd7226fab9874131eb77123d160d5f50f0e094c06a",
+  "training_paths_frozen": {
+    "factors": "/path/to/TrajKV/results/round8_v1/postcal_train32_v2/factors.json",
+    "complete": "/path/to/TrajKV/results/round8_v1/postcal_train32_v2/complete_postcal_train.json"
+  },
+  "owner_proof": [
+    {
+      "nv": 256,
+      "old43": 1264773,
+      "postcal42": 1261509,
+      "delta": -3264
+    },
+    {
+      "nv": 768,
+      "old43": 3614853,
+      "postcal42": 3602373,
+      "delta": -12480
+    },
+    {
+      "nv": 1280,
+      "old43": 5964933,
+      "postcal42": 5943237,
+      "delta": -21696
+    },
+    {
+      "nv": 1792,
+      "old43": 8315013,
+      "postcal42": 8284101,
+      "delta": -30912
+    },
+    {
+      "nv": 2304,
+      "old43": 10665093,
+      "postcal42": 10624965,
+      "delta": -40128
+    }
+  ],
+  "exact_files_sha256": {
+    "configs/a2/round8_v1/postcal_select_control3_v1_doc.json": "1d2d34b3bdb5bec277439751b614cc02bcd09fa6e5c754ad879a4309a4404f15",
+    "configs/a2/round8_v1/job_postcal_select_control3_v1_doc.json": "0e6cf1a5389431ef7d5f8c4f7e9a095a680a1263e1657b15bca2c1cef637f815",
+    "configs/a2/round8_v1/postcal_select_learned1_v2_doc.json": "6ecbb4310c3a0f3795d7aa8d2e610f4125b121a42944db8719b5785f04f268c7",
+    "configs/a2/round8_v1/postcal_natural64_identity1_v1_doc.json": "30d3f1119da75ecaa32013e348cf1ee94a034ffa3b93848a211320ada2c4e876",
+    "configs/a2/round8_v1/job_postcal_natural64_identity1_v1_doc.json": "321c16870a5ffb98df52392abae98bae45a86dabda1ebf216718beeeb84abf1e",
+    "configs/a2/round8_v1/postcal_natural64_learned1_v2_doc.json": "de6337bf45b18f3cdefb9ee3b784231fa5afb3bd561a8b0a1f0ecc8c3c83f910",
+    "configs/a2/round8_v1/postcal_select_control3_v1_text.json": "059eb03d49cf0016a2696674908f80511eef5c92124b6b3caf1542463011c668",
+    "configs/a2/round8_v1/job_postcal_select_control3_v1_text.json": "73e6144120c6c0cd253e09b097294a1d7f3d8630bfb4f6862bd3204922ff7884",
+    "configs/a2/round8_v1/postcal_select_learned1_v2_text.json": "bca9c2add0a2e22cef19432a4795bbf50dd974f84bb4b5f47da7c2f31a70d9b3",
+    "configs/a2/round8_v1/postcal_natural64_identity1_v1_text.json": "4bc14361a9c0fe35af2654d7b53200809a40df4c2cef7e73f5414f7ad9c6bed9",
+    "configs/a2/round8_v1/job_postcal_natural64_identity1_v1_text.json": "1b2bf4726045a0fd14fc9164e331e65dbfc930f48f70dc7406ed165f130e4c09",
+    "configs/a2/round8_v1/postcal_natural64_learned1_v2_text.json": "90e6bf78c210cc02c59e2f55ea3085107eb99126fa0aab83b236a6b3a770e180",
+    "configs/a2/round8_v1/job_postcal_select_learned1_v2_gpu0_doc.json": "9c267e4ff51616117cbd4e0f522a1753b1698ceb3879d0bc8a7b02c559f8b2ab",
+    "configs/a2/round8_v1/job_postcal_natural64_learned1_v2_gpu0_doc.json": "d93b206399a6ce2ddda62576d0b6fdfdffcd1dab9caca163d4ee844c039f1d58",
+    "configs/a2/round8_v1/job_postcal_select_learned1_v2_gpu0_text.json": "e9f6e423809c9803449e8737aafb2c1bd30a23f54b3c72a7b035b636be75ea79",
+    "configs/a2/round8_v1/job_postcal_natural64_learned1_v2_gpu0_text.json": "29b5f4396d45328ea7494d46279e1ae4dd0fc502363e4716494a10c37dceed6c"
+  },
+  "prior_preparation_sha256": "8cb0f4e128524a7ed0d73320a7d6991f0dbc6603583c92e8b4421427e299cc43",
+  "prior_v1_training_attempt_preserved": true,
+  "prior_v2_plan_sha256": "c6c2f5ff85008682f973ac506c4dd7d34d621805b8a3170d881a9e3cc333ea6c",
+  "superseded_unlaunched_GPU1_learned_jobs": [
+    "configs/a2/round8_v1/job_postcal_select_learned1_v2_doc.json",
+    "configs/a2/round8_v1/job_postcal_natural64_learned1_v2_doc.json",
+    "configs/a2/round8_v1/job_postcal_select_learned1_v2_text.json",
+    "configs/a2/round8_v1/job_postcal_natural64_learned1_v2_text.json"
+  ]
+}

@@ -1,0 +1,1011 @@
+{
+  "schema": "trajkv.round8.identity-smoke-preparation.v1",
+  "status": "PREPARED_NOT_EXECUTED",
+  "created_at_utc": "2026-11-18T10:23:15.398758+00:00",
+  "code_sha256": "ae6f9e341a83b17611a9abb8236fd005880a32cd8c741451e4afa63a740f5f61",
+  "config": "configs\\a2\\round8_v1\\identity_smoke6.json",
+  "config_sha256": "f6fffbc6352547fdb95ce170b36dfc923170a70a0531231371a38c95b1695eed",
+  "job": "configs\\a2\\round8_v1\\job_identity_smoke6_select2_v1.json",
+  "job_sha256": "da05dace86223bb24263de16ab4cb75cc596819f0b8c92cc505eae705b96a296",
+  "samples": "configs\\a2\\round8_v1\\identity_select2_sources_max2q.json",
+  "samples_sha256": "52f5d042b20c204aa69556be061b6d53d8fff2af6598ea3db57ae95dc5005a77",
+  "sources": 2,
+  "questions": 3,
+  "variants": 6,
+  "expected_sessions": 12,
+  "expected_answers": 18,
+  "assets": {
+    "old_gaussian_g4_16_exact.json": {
+      "local": "/path/to/TrajKV\\results\\round8_v1\\initial_assets\\old_gaussian_g4_16_exact.json",
+      "remote": "/path/to/TrajKV/results/round8_v1/initial_assets/old_gaussian_g4_16_exact.json",
+      "sha256": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+      "bytes": 3426
+    },
+    "cartesian_g8_256_from_frozen_g4_16.json": {
+      "local": "/path/to/TrajKV\\results\\round8_v1\\initial_assets\\cartesian_g8_256_from_frozen_g4_16.json",
+      "remote": "/path/to/TrajKV/results/round8_v1/initial_assets/cartesian_g8_256_from_frozen_g4_16.json",
+      "sha256": "776e2bf6e8504c4587552e3144b5ded0f5abc7bb1288103703d448f4ec7e7fd2",
+      "bytes": 46201
+    },
+    "binary_cube_v8_256.json": {
+      "local": "/path/to/TrajKV\\results\\round8_v1\\initial_assets\\binary_cube_v8_256.json",
+      "remote": "/path/to/TrajKV/results/round8_v1/initial_assets/binary_cube_v8_256.json",
+      "sha256": "5ed69e43480f6b2813f52b1362d44a9664072bfe3ec8d34e0e2897b977366ce5",
+      "bytes": 25778
+    }
+  },
+  "frozen_baseline_config_sha256": "aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4",
+  "baseline_variant_exact_except_display_name": true,
+  "requested_ranking_entries": 224,
+  "actual_stage_limit": 43,
+  "requested_priority_sha256": "e59bd975e5233d5ca8969aee2e11a26fc9aece938974ce6faae32eadb48ee6f2",
+  "raw_sample_selects": "first two stored calSelect32 sources, each at most two questions; no result filtering",
+  "fit_or_training_performed": false,
+  "confirmation_answers_opened": false,
+  "GPU_used": false,
+  "uploaded": false,
+  "execution_scope": "Free generation smoke only. Tensor/read equivalence must be checked separately; Cartesian membership alone does not prove FP32 tie/rounding identity.",
+  "root_scheduling": "Root may edit an unfrozen dispatch job GPU id or stage paths; this preparer does not connect or launch",
+  "budgets": [
+    {
+      "visual_tokens": 768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 1376256,
+        "K_row_gain": 172032,
+        "K_mean": 28672,
+        "V_codes": 1376256,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 6144,
+        "selected_sign_alpha_pool": 594432,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 3614853,
+      "visual_FP16_denominator_bytes": 44040192,
+      "complete_bits_per_KV_scalar": 1.3132923671177454,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r7_frozen_joint43_control"
+    },
+    {
+      "visual_tokens": 768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 1376256,
+        "K_row_gain": 172032,
+        "K_mean": 28672,
+        "V_codes": 1376256,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 6144,
+        "selected_sign_alpha_pool": 594432,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 3614853,
+      "visual_FP16_denominator_bytes": 44040192,
+      "complete_bits_per_KV_scalar": 1.3132923671177454,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_binaryV_identity"
+    },
+    {
+      "visual_tokens": 768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 8,
+        "words": 256,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 1376256,
+        "K_row_gain": 172032,
+        "K_mean": 28672,
+        "V_codes": 1376256,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 4096,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 6144,
+        "selected_sign_alpha_pool": 594432,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 3618821,
+      "visual_FP16_denominator_bytes": 44040192,
+      "complete_bits_per_KV_scalar": 1.3147339593796503,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_cartesianK_binaryV_identity"
+    },
+    {
+      "visual_tokens": 768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": 8,
+        "words": 256,
+        "index_layout": "token-block-packed-indices"
+      },
+      "actual_owner_components": {
+        "K_codes": 1376256,
+        "K_row_gain": 172032,
+        "K_mean": 28672,
+        "V_codes": 1376256,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 4096,
+        "shared_visual_positions": 6144,
+        "selected_sign_alpha_pool": 594432,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 3618949,
+      "visual_FP16_denominator_bytes": 44040192,
+      "complete_bits_per_KV_scalar": 1.3147804623558408,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_cubeV_identity"
+    },
+    {
+      "visual_tokens": 768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 8,
+        "words": 256,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": 8,
+        "words": 256,
+        "index_layout": "token-block-packed-indices"
+      },
+      "actual_owner_components": {
+        "K_codes": 1376256,
+        "K_row_gain": 172032,
+        "K_mean": 28672,
+        "V_codes": 1376256,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 4096,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 4096,
+        "shared_visual_positions": 6144,
+        "selected_sign_alpha_pool": 594432,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 3622917,
+      "visual_FP16_denominator_bytes": 44040192,
+      "complete_bits_per_KV_scalar": 1.3162220546177454,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_cartesianK_cubeV_identity"
+    },
+    {
+      "visual_tokens": 768,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 1376256,
+        "K_row_gain": 172032,
+        "K_mean": 28672,
+        "V_codes": 1376256,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 6144,
+        "selected_sign_alpha_pool": 594432,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 3614853,
+      "visual_FP16_denominator_bytes": 44040192,
+      "complete_bits_per_KV_scalar": 1.3132923671177454,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_binaryV_jointgain_control"
+    },
+    {
+      "visual_tokens": 1024,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 1835008,
+        "K_row_gain": 229376,
+        "K_mean": 28672,
+        "V_codes": 1835008,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 8192,
+        "selected_sign_alpha_pool": 792576,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 4789893,
+      "visual_FP16_denominator_bytes": 58720256,
+      "complete_bits_per_KV_scalar": 1.3051422664097376,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r7_frozen_joint43_control"
+    },
+    {
+      "visual_tokens": 1024,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 1835008,
+        "K_row_gain": 229376,
+        "K_mean": 28672,
+        "V_codes": 1835008,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 8192,
+        "selected_sign_alpha_pool": 792576,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 4789893,
+      "visual_FP16_denominator_bytes": 58720256,
+      "complete_bits_per_KV_scalar": 1.3051422664097376,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_binaryV_identity"
+    },
+    {
+      "visual_tokens": 1024,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 8,
+        "words": 256,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 1835008,
+        "K_row_gain": 229376,
+        "K_mean": 28672,
+        "V_codes": 1835008,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 4096,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 8192,
+        "selected_sign_alpha_pool": 792576,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 4793861,
+      "visual_FP16_denominator_bytes": 58720256,
+      "complete_bits_per_KV_scalar": 1.3062234606061662,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_cartesianK_binaryV_identity"
+    },
+    {
+      "visual_tokens": 1024,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": 8,
+        "words": 256,
+        "index_layout": "token-block-packed-indices"
+      },
+      "actual_owner_components": {
+        "K_codes": 1835008,
+        "K_row_gain": 229376,
+        "K_mean": 28672,
+        "V_codes": 1835008,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 4096,
+        "shared_visual_positions": 8192,
+        "selected_sign_alpha_pool": 792576,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 4793989,
+      "visual_FP16_denominator_bytes": 58720256,
+      "complete_bits_per_KV_scalar": 1.3062583378383092,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_cubeV_identity"
+    },
+    {
+      "visual_tokens": 1024,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 8,
+        "words": 256,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": 8,
+        "words": 256,
+        "index_layout": "token-block-packed-indices"
+      },
+      "actual_owner_components": {
+        "K_codes": 1835008,
+        "K_row_gain": 229376,
+        "K_mean": 28672,
+        "V_codes": 1835008,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 4096,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 4096,
+        "shared_visual_positions": 8192,
+        "selected_sign_alpha_pool": 792576,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 4797957,
+      "visual_FP16_denominator_bytes": 58720256,
+      "complete_bits_per_KV_scalar": 1.3073395320347376,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_cartesianK_cubeV_identity"
+    },
+    {
+      "visual_tokens": 1024,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 1835008,
+        "K_row_gain": 229376,
+        "K_mean": 28672,
+        "V_codes": 1835008,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 8192,
+        "selected_sign_alpha_pool": 792576,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 4789893,
+      "visual_FP16_denominator_bytes": 58720256,
+      "complete_bits_per_KV_scalar": 1.3051422664097376,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_binaryV_jointgain_control"
+    },
+    {
+      "visual_tokens": 1280,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 2293760,
+        "K_row_gain": 286720,
+        "K_mean": 28672,
+        "V_codes": 2293760,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 10240,
+        "selected_sign_alpha_pool": 990720,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 5964933,
+      "visual_FP16_denominator_bytes": 73400320,
+      "complete_bits_per_KV_scalar": 1.300252205984933,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r7_frozen_joint43_control"
+    },
+    {
+      "visual_tokens": 1280,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 2293760,
+        "K_row_gain": 286720,
+        "K_mean": 28672,
+        "V_codes": 2293760,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 10240,
+        "selected_sign_alpha_pool": 990720,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 5964933,
+      "visual_FP16_denominator_bytes": 73400320,
+      "complete_bits_per_KV_scalar": 1.300252205984933,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_binaryV_identity"
+    },
+    {
+      "visual_tokens": 1280,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 8,
+        "words": 256,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 2293760,
+        "K_row_gain": 286720,
+        "K_mean": 28672,
+        "V_codes": 2293760,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 4096,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 10240,
+        "selected_sign_alpha_pool": 990720,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 5968901,
+      "visual_FP16_denominator_bytes": 73400320,
+      "complete_bits_per_KV_scalar": 1.301117161342076,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_cartesianK_binaryV_identity"
+    },
+    {
+      "visual_tokens": 1280,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": 8,
+        "words": 256,
+        "index_layout": "token-block-packed-indices"
+      },
+      "actual_owner_components": {
+        "K_codes": 2293760,
+        "K_row_gain": 286720,
+        "K_mean": 28672,
+        "V_codes": 2293760,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 4096,
+        "shared_visual_positions": 10240,
+        "selected_sign_alpha_pool": 990720,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 5969029,
+      "visual_FP16_denominator_bytes": 73400320,
+      "complete_bits_per_KV_scalar": 1.30114506312779,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_cubeV_identity"
+    },
+    {
+      "visual_tokens": 1280,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 8,
+        "words": 256,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": 8,
+        "words": 256,
+        "index_layout": "token-block-packed-indices"
+      },
+      "actual_owner_components": {
+        "K_codes": 2293760,
+        "K_row_gain": 286720,
+        "K_mean": 28672,
+        "V_codes": 2293760,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 4096,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 4096,
+        "shared_visual_positions": 10240,
+        "selected_sign_alpha_pool": 990720,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 5972997,
+      "visual_FP16_denominator_bytes": 73400320,
+      "complete_bits_per_KV_scalar": 1.302010018484933,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_cartesianK_cubeV_identity"
+    },
+    {
+      "visual_tokens": 1280,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 2293760,
+        "K_row_gain": 286720,
+        "K_mean": 28672,
+        "V_codes": 2293760,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 10240,
+        "selected_sign_alpha_pool": 990720,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 5964933,
+      "visual_FP16_denominator_bytes": 73400320,
+      "complete_bits_per_KV_scalar": 1.300252205984933,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_binaryV_jointgain_control"
+    },
+    {
+      "visual_tokens": 1792,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 3211264,
+        "K_row_gain": 401408,
+        "K_mean": 28672,
+        "V_codes": 3211264,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 14336,
+        "selected_sign_alpha_pool": 1387008,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 8315013,
+      "visual_FP16_denominator_bytes": 102760448,
+      "complete_bits_per_KV_scalar": 1.294663565499442,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r7_frozen_joint43_control"
+    },
+    {
+      "visual_tokens": 1792,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 3211264,
+        "K_row_gain": 401408,
+        "K_mean": 28672,
+        "V_codes": 3211264,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 14336,
+        "selected_sign_alpha_pool": 1387008,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 8315013,
+      "visual_FP16_denominator_bytes": 102760448,
+      "complete_bits_per_KV_scalar": 1.294663565499442,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_binaryV_identity"
+    },
+    {
+      "visual_tokens": 1792,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 8,
+        "words": 256,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 3211264,
+        "K_row_gain": 401408,
+        "K_mean": 28672,
+        "V_codes": 3211264,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 4096,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 14336,
+        "selected_sign_alpha_pool": 1387008,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 8318981,
+      "visual_FP16_denominator_bytes": 102760448,
+      "complete_bits_per_KV_scalar": 1.295281390754544,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_cartesianK_binaryV_identity"
+    },
+    {
+      "visual_tokens": 1792,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": 8,
+        "words": 256,
+        "index_layout": "token-block-packed-indices"
+      },
+      "actual_owner_components": {
+        "K_codes": 3211264,
+        "K_row_gain": 401408,
+        "K_mean": 28672,
+        "V_codes": 3211264,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 4096,
+        "shared_visual_positions": 14336,
+        "selected_sign_alpha_pool": 1387008,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 8319109,
+      "visual_FP16_denominator_bytes": 102760448,
+      "complete_bits_per_KV_scalar": 1.2953013206014827,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_cubeV_identity"
+    },
+    {
+      "visual_tokens": 1792,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 8,
+        "words": 256,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": 8,
+        "words": 256,
+        "index_layout": "token-block-packed-indices"
+      },
+      "actual_owner_components": {
+        "K_codes": 3211264,
+        "K_row_gain": 401408,
+        "K_mean": 28672,
+        "V_codes": 3211264,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 4096,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 4096,
+        "shared_visual_positions": 14336,
+        "selected_sign_alpha_pool": 1387008,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 8323077,
+      "visual_FP16_denominator_bytes": 102760448,
+      "complete_bits_per_KV_scalar": 1.2959191458565849,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_cartesianK_cubeV_identity"
+    },
+    {
+      "visual_tokens": 1792,
+      "layers": 28,
+      "kv_heads": 4,
+      "head_dim": 128,
+      "K_format": {
+        "dim": 4,
+        "words": 16,
+        "index_bytes_per_token": 16,
+        "position_books": 1
+      },
+      "V_format": {
+        "dim": null,
+        "words": null,
+        "index_layout": "channel-tail-bitwords"
+      },
+      "actual_owner_components": {
+        "K_codes": 3211264,
+        "K_row_gain": 401408,
+        "K_mean": 28672,
+        "V_codes": 3211264,
+        "V_channel_scale_min": 57344,
+        "K_global_or_position_books": 128,
+        "K_retained_old_encoder_book": 0,
+        "V_book": 0,
+        "shared_visual_positions": 14336,
+        "selected_sign_alpha_pool": 1387008,
+        "full_stage_lookup": 1792,
+        "complete_uint16_ranking": 448,
+        "policy_descriptor": 5,
+        "encoder_factors": 1344
+      },
+      "complete_visual_owner_bytes": 8315013,
+      "visual_FP16_denominator_bytes": 102760448,
+      "complete_bits_per_KV_scalar": 1.294663565499442,
+      "no_semantic_visual_padding": true,
+      "no_V_row_gain": true,
+      "binary_tail_storage_bytes": 0,
+      "variant": "r8_oldK_binaryV_jointgain_control"
+    }
+  ]
+}

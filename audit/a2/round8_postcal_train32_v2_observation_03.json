@@ -1,0 +1,319 @@
+{
+  "pid": 532871,
+  "pid_exists": true,
+  "pid_state": "R",
+  "actual_argv": [
+    "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source/code/a2/round8_postcal_train_v2.py",
+    "--config",
+    "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v3.json",
+    "--output",
+    "/path/to/TrajKV/results/round8_v1/postcal_train32_v2"
+  ],
+  "launch_receipt": {
+    "pid": 532871,
+    "name": "round8_postcal_train32_v2",
+    "log": "/path/to/TrajKV/stages/round8_20261118_v1/logs/round8_postcal_train32_v2.log",
+    "job": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.json",
+    "source_snapshot": "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source",
+    "immutable_code_execution": true,
+    "argv_executed": [
+      "/path/to/storage/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+      "/path/to/TrajKV/stages/round8_20261118_v1/jobs/round8_postcal_train32_v2.source/code/a2/round8_postcal_train_v2.py",
+      "--config",
+      "/path/to/TrajKV/configs/a2/round8_v1/postcal_train32_v3.json",
+      "--output",
+      "/path/to/TrajKV/results/round8_v1/postcal_train32_v2"
+    ],
+    "cache_environment": {
+      "TRITON_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/triton",
+      "TMPDIR": "/path/to/TrajKV/cache/round8_v1/shared/tmp",
+      "TORCHINDUCTOR_CACHE_DIR": "/path/to/TrajKV/cache/round8_v1/shared/inductor",
+      "CUDA_CACHE_PATH": "/path/to/TrajKV/cache/round8_v1/shared/cuda"
+    }
+  },
+  "files": {
+    "teacher_contexts.json": {
+      "size": 4814158,
+      "sha256": "5e770a70b44602ae5a02082fe305943a985fcf8d5c82c703d168a3947df71f76"
+    },
+    "schedule.json": {
+      "size": 256885,
+      "sha256": "c9c57b7de083ca191e7c0079c83e3b93ee5f0d91f6fdf004d5a7bc08566dbc48"
+    },
+    "manifest.json": {
+      "size": 147918,
+      "sha256": "922ffd4006e154abd3b3940050f69239c416144f8bba99221ffbe178acda69a1"
+    },
+    "first_probe.json": {
+      "size": 540,
+      "sha256": "9e724452ccd095ce7b3fa8358ff2fc1dc6b17cd55c5bf88ee689b305b2c7bc69"
+    },
+    "steps.jsonl": {
+      "size": 182940,
+      "sha256": "ecb0153bec39b970947492d262aef96d00df408816cd48e41260a1fe010a083a"
+    },
+    "initial_kl.json": {
+      "size": 3398,
+      "sha256": "7a1c7f13def68594216377320924b9ea7dbf44304a2161b815344bc0516d9d5a"
+    },
+    "gradients.jsonl": {
+      "size": 75201,
+      "sha256": "fe15ba0b5f0ce5925c122c21c2ab8341235ed9e74c62c221a5f5c86e36d2e95e"
+    }
+  },
+  "first_probe": {
+    "status": "PASS",
+    "id": "r8_cal_doc_8c3e4839dac3340b4635b79bc044199fbbdabf7252023c4cd671600d2f719ac0__indq1",
+    "real_Nv": 1792,
+    "actual_cap": 8,
+    "actual_packed_zero_theta_identity": true,
+    "dense_shadow_tolerance_pass": true,
+    "parameter_gradient_norms": [
+      0.046189382672309875,
+      0.01743975095450878,
+      0.0321364589035511
+    ],
+    "q_gradient_calls": 27,
+    "q_gradient_norm": 0.01667333549441284,
+    "KL": 0.0022058922331780195,
+    "seconds": 0.7631055780075258,
+    "optimizer_updates": 0,
+    "model_weights_frozen": true
+  },
+  "finite_zero_diagnostics": [
+    {
+      "step": 51,
+      "qa_id": "r8_cal_text_a51470bf7e854c2f6a0b532be1d05bf70494e226d9a52ecf398df0a01102e059__indq1",
+      "loss_before_update": -4.2552139589702165e-10,
+      "parameter_gradient_present": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_finite": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_norms": [
+        4.203081288478609e-05,
+        4.0932078281481524e-05,
+        4.3584935606344686e-05
+      ],
+      "q_hook_count": 27,
+      "q_elements_all_finite": true,
+      "q_squared_norm": 0.0
+    },
+    {
+      "step": 59,
+      "qa_id": "r8_cal_text_5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e__indq2",
+      "loss_before_update": 3.391945169184396e-09,
+      "parameter_gradient_present": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_finite": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_norms": [
+        4.360016396578552e-05,
+        4.2022981051515875e-05,
+        4.443384917008462e-05
+      ],
+      "q_hook_count": 27,
+      "q_elements_all_finite": true,
+      "q_squared_norm": 0.0
+    },
+    {
+      "step": 87,
+      "qa_id": "r8_cal_text_a51470bf7e854c2f6a0b532be1d05bf70494e226d9a52ecf398df0a01102e059__indq1",
+      "loss_before_update": -4.282850185610698e-10,
+      "parameter_gradient_present": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_finite": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_norms": [
+        4.8302286434955296e-05,
+        4.4921405317587394e-05,
+        4.73632331175622e-05
+      ],
+      "q_hook_count": 27,
+      "q_elements_all_finite": true,
+      "q_squared_norm": 0.0
+    },
+    {
+      "step": 101,
+      "qa_id": "r8_cal_text_5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e__indq2",
+      "loss_before_update": 3.2562417207060435e-09,
+      "parameter_gradient_present": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_finite": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_norms": [
+        5.130937836874167e-05,
+        4.7941406818898996e-05,
+        5.022851329217854e-05
+      ],
+      "q_hook_count": 27,
+      "q_elements_all_finite": true,
+      "q_squared_norm": 0.0
+    },
+    {
+      "step": 137,
+      "qa_id": "r8_cal_text_a51470bf7e854c2f6a0b532be1d05bf70494e226d9a52ecf398df0a01102e059__indq1",
+      "loss_before_update": -4.49176834615983e-10,
+      "parameter_gradient_present": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_finite": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_norms": [
+        6.283979427240945e-05,
+        5.942277382497708e-05,
+        5.810316958670973e-05
+      ],
+      "q_hook_count": 27,
+      "q_elements_all_finite": true,
+      "q_squared_norm": 0.0
+    },
+    {
+      "step": 165,
+      "qa_id": "r8_cal_text_5bed5994d324e9a227ad945d3cb6f1a7877af13dfd6c0dd78da883ac971fbb4e__indq2",
+      "loss_before_update": 2.9898314934939663e-09,
+      "parameter_gradient_present": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_finite": [
+        true,
+        true,
+        true
+      ],
+      "parameter_gradient_norms": [
+        7.39355120060914e-05,
+        6.974554381841961e-05,
+        7.012559189263084e-05
+      ],
+      "q_hook_count": 27,
+      "q_elements_all_finite": true,
+      "q_squared_norm": 0.0
+    }
+  ],
+  "gradient_attempts": 172,
+  "completed_steps": 172,
+  "first_step": {
+    "step": 0,
+    "schedule_item": {
+      "schema": "trajkv.round8.postcal-source-balanced-schedule.v1",
+      "schedule_id": "r8-postcal-sourcebalanced-v1-98e18286d19eab89e1d638e4",
+      "step": 0,
+      "epoch": 0,
+      "epoch_position": 0,
+      "flat_index": 41,
+      "source_index": 14,
+      "source_id": "sha256:436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee",
+      "parent_group_id": "r8_cal_doc_436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee",
+      "dataset": "docvqa_grouped",
+      "domain": "doc",
+      "question_index": 3,
+      "question_index_zero_based": 2,
+      "qa_id": "r8_cal_doc_436ba82842931f9f45b289866957438ebf3c6dfdc92085e40fa96487eda959ee__indq3",
+      "source_visit_index": 0,
+      "question_visit_index": 0,
+      "per_step_loss_reduction": "mean over this Q teacher target tokens",
+      "per_step_loss_weight": 1.0
+    },
+    "loss_before_update": 0.10808151215314865,
+    "regularized_before_update": 0.10808151215314865,
+    "parameter_gradient_norms": [
+      0.33607528105483697,
+      0.1908737103511464,
+      0.2568027414920844
+    ],
+    "q_gradient_calls": 27,
+    "q_gradient_norm": 0.11302028184710784,
+    "seconds": 0.6292426860018168
+  },
+  "latest_step": {
+    "step": 171,
+    "schedule_item": {
+      "schema": "trajkv.round8.postcal-source-balanced-schedule.v1",
+      "schedule_id": "r8-postcal-sourcebalanced-v1-98e18286d19eab89e1d638e4",
+      "step": 171,
+      "epoch": 5,
+      "epoch_position": 11,
+      "flat_index": 65,
+      "source_index": 27,
+      "source_id": "sha256:c8bed17ba050fe400297394a73f673b2bc63056431e8e5e97c8fbfc96fdfd4c8",
+      "parent_group_id": "r8_cal_text_c8bed17ba050fe400297394a73f673b2bc63056431e8e5e97c8fbfc96fdfd4c8",
+      "dataset": "textvqa",
+      "domain": "text",
+      "question_index": 2,
+      "question_index_zero_based": 1,
+      "qa_id": "r8_cal_text_c8bed17ba050fe400297394a73f673b2bc63056431e8e5e97c8fbfc96fdfd4c8__indq2",
+      "source_visit_index": 5,
+      "question_visit_index": 2,
+      "per_step_loss_reduction": "mean over this Q teacher target tokens",
+      "per_step_loss_weight": 1.0
+    },
+    "loss_before_update": 0.0019540011417120695,
+    "regularized_before_update": 0.0019979786593466997,
+    "parameter_gradient_norms": [
+      0.04169371389958239,
+      0.021299911092528715,
+      0.04755642716901038
+    ],
+    "q_gradient_calls": 27,
+    "q_gradient_norm": 0.012583517811858427,
+    "seconds": 0.6049891650036443
+  },
+  "progress": [
+    {
+      "phase": "postcal_step",
+      "step": 169,
+      "id": "r8_cal_text_0c5374e961b613df17ef042ae570ec7c40590ba6bcab8d9f764d7805d0aa088d__indq1",
+      "KL": 0.00011508765601320192,
+      "seconds": 0.5752240850124508
+    },
+    {
+      "phase": "postcal_step",
+      "step": 170,
+      "id": "r8_cal_doc_2cc99f1ade6a80831a205f8ebacd08b93d3cbb67a94c825cba0c9d455e3d9744__indq3",
+      "KL": 0.01998217962682247,
+      "seconds": 0.5867302730039228
+    },
+    {
+      "phase": "postcal_step",
+      "step": 171,
+      "id": "r8_cal_text_c8bed17ba050fe400297394a73f673b2bc63056431e8e5e97c8fbfc96fdfd4c8__indq2",
+      "KL": 0.0019540011417120695,
+      "seconds": 0.6049891650036443
+    }
+  ],
+  "complete_train_graph_verified": false,
+  "training": null,
+  "failure": null,
+  "compute_apps": "532871, GPU-ef01d441-985f-50b3-6e64-5d4c3e2def3a, 19338 MiB\n534578, GPU-a696ce9a-7137-cf6f-b4d3-deb992a72f28, 15508 MiB\n"
+}
