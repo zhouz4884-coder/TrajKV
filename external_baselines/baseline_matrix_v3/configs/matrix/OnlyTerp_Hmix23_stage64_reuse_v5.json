@@ -1,0 +1,66 @@
+{
+  "schema": "baseline_matrix.onlyterp_fixed_pilot_reuse.v2",
+  "status": "ACTUAL_MISSING_JOBS_PREPARED_NOT_LAUNCHED",
+  "phase": "stage64",
+  "GPU_launched": false,
+  "references_read": false,
+  "point": "OnlyTerp-MSE Hmix23 / QJL0 / source Hadamard",
+  "not_paper_prod_or_exact_paper_2p5_or_3p5_table": true,
+  "reader_backend": "torch_materialize_fp32_reference",
+  "source_probe2_verified_QA": 2,
+  "max_new_tokens": 64,
+  "quality_aggregates_across_datasets_forbidden": true,
+  "raw_preservation": "Original raw lines, actual FP32-reference reader peak memory and instrumented latency remain unchanged in composed views",
+  "rows": [
+    {
+      "dataset": "textvqa",
+      "metric": "TextVQA ten-vote soft accuracy",
+      "target_config": "configs/eval/M1_OT_Hmix23_textvqa_stage64_target32_v5.json",
+      "target_QA": 32,
+      "actual_verified_reuse_QA": 4,
+      "new_inference_QA": 28,
+      "job": "configs/jobs/bm_M1_OT_Hmix23_textvqa_stage64_missing28_v5.json",
+      "missing_config": "configs/eval/M1_OT_Hmix23_textvqa_stage64_missing28_v5.json",
+      "remote_new_output": "${DATA_ROOT}/results/onlyterp_pilot_reuse/M1_OT_Hmix23_textvqa_stage64_missing28_v5",
+      "expected_local_new_raw": "${EVIDENCE_ROOT}/results/onlyterp_pilot_reuse/M1_OT_Hmix23_textvqa_stage64_missing28_v5",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2",
+        "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4"
+      ],
+      "plan": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_preparation\\stage64_v5\\textvqa_reuse_plan.json",
+      "plan_sha256": "cc078bdf3de9b51a5cd414037972ae15cc6d3e7674deb7f7e1fe694acfdf4e8f",
+      "effective_contract_sha256": "b0e6f4264491a851317c6419e7f1198b9636b044c20320eb8b62323b1a8a3fb3"
+    },
+    {
+      "dataset": "infovqa",
+      "metric": "fixed vendor ANLS",
+      "target_config": "configs/eval/M1_OT_Hmix23_infovqa_stage64_target32_v5.json",
+      "target_QA": 32,
+      "actual_verified_reuse_QA": 4,
+      "new_inference_QA": 28,
+      "job": "configs/jobs/bm_M1_OT_Hmix23_infovqa_stage64_missing28_v5.json",
+      "missing_config": "configs/eval/M1_OT_Hmix23_infovqa_stage64_missing28_v5.json",
+      "remote_new_output": "${DATA_ROOT}/results/onlyterp_pilot_reuse/M1_OT_Hmix23_infovqa_stage64_missing28_v5",
+      "expected_local_new_raw": "${EVIDENCE_ROOT}/results/onlyterp_pilot_reuse/M1_OT_Hmix23_infovqa_stage64_missing28_v5",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4"
+      ],
+      "plan": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_preparation\\stage64_v5\\infovqa_reuse_plan.json",
+      "plan_sha256": "699d40913bcb67cf508d23552ad2ded52d3e34393ae63e66c49550d502d4c978",
+      "effective_contract_sha256": "b0e6f4264491a851317c6419e7f1198b9636b044c20320eb8b62323b1a8a3fb3"
+    }
+  ],
+  "conditional_stage64": [],
+  "other_declared_points": [
+    {
+      "point": "Hmix12",
+      "status": "COMPLETED64_NOT_REPEATED"
+    },
+    {
+      "point": "Huniform1",
+      "status": "NOT_SCHEDULED_IN_THIS_TASK"
+    }
+  ]
+}

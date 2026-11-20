@@ -1,0 +1,298 @@
+{
+  "status": "SOURCE_OPERATOR_REPLAY_CAPTURED",
+  "scope": "SOURCE_OPERATOR_ONLY_CUDA_REPLAY_NOT_TASK_QUALITY",
+  "model_weights_loaded": false,
+  "references_read": false,
+  "started_unix": 1795143646.3436265,
+  "production_source_replay_bitwise_equal": true,
+  "actual_vs_replay": {
+    "max_abs": 0.0,
+    "relative_l2": 0.0,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_ulp": 0,
+    "elements": 78848,
+    "different_elements": 0,
+    "max_abs_location": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "actual_at_max_abs": 0.9111328125,
+    "reference_at_max_abs": 0.9111328125,
+    "output_ulp_at_max_abs": 0,
+    "reference_spacing_up_at_max_abs": 0.00048828125,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "actual_vs_FP64_instrument": {
+    "max_abs": 0.015625,
+    "relative_l2": 7.716954132774845e-05,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.015625
+    ],
+    "max_ulp": 117,
+    "elements": 78848,
+    "different_elements": 17,
+    "max_abs_location": [
+      0,
+      4,
+      0,
+      36
+    ],
+    "actual_at_max_abs": 0.252685546875,
+    "reference_at_max_abs": 0.237060546875,
+    "output_ulp_at_max_abs": 117,
+    "reference_spacing_up_at_max_abs": 0.0001220703125,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "actual_vs_author_AST": {
+    "max_abs": 0.015625,
+    "relative_l2": 0.00011068677849834785,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.015625
+    ],
+    "max_ulp": 448,
+    "elements": 78848,
+    "different_elements": 16,
+    "max_abs_location": [
+      0,
+      3,
+      2,
+      22
+    ],
+    "actual_at_max_abs": 1.640625,
+    "reference_at_max_abs": 1.625,
+    "output_ulp_at_max_abs": 16,
+    "reference_spacing_up_at_max_abs": 0.0009765625,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "raw_QK_source_vs_FP64": {
+    "max_abs": 0.0625,
+    "relative_l2": 1.8851037566491868e-06,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0625
+    ],
+    "max_ulp": 14,
+    "elements": 1103872,
+    "different_elements": 80,
+    "max_abs_location": [
+      0,
+      0,
+      6,
+      871
+    ],
+    "actual_at_max_abs": 64.1875,
+    "reference_at_max_abs": 64.125,
+    "output_ulp_at_max_abs": 1,
+    "reference_spacing_up_at_max_abs": 0.0625,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "raw_WV_source_vs_FP64_same_actual_probabilities": {
+    "max_abs": 0.0,
+    "relative_l2": 0.0,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_ulp": 0,
+    "elements": 78848,
+    "different_elements": 0,
+    "max_abs_location": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "actual_at_max_abs": 0.8115234375,
+    "reference_at_max_abs": 0.8115234375,
+    "output_ulp_at_max_abs": 0,
+    "reference_spacing_up_at_max_abs": 0.00048828125,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "actual_vs_old_frozen_output": {
+    "max_abs": 0.0,
+    "relative_l2": 0.0,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_ulp": 0,
+    "elements": 78848,
+    "different_elements": 0,
+    "max_abs_location": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "actual_at_max_abs": 0.9111328125,
+    "reference_at_max_abs": 0.9111328125,
+    "output_ulp_at_max_abs": 0,
+    "reference_spacing_up_at_max_abs": 0.00048828125,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "source_AST_diagnostics": {
+    "raw_qk_source_vs_fp64": {
+      "max_abs": 0.0625,
+      "relative_l2": 1.8851037566491868e-06,
+      "abs_quantiles_0_50_90_99_999_100": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0625
+      ],
+      "max_ulp": 14,
+      "elements": 1103872,
+      "different_elements": 80,
+      "max_abs_location": [
+        0,
+        0,
+        6,
+        871
+      ],
+      "actual_at_max_abs": 64.1875,
+      "reference_at_max_abs": 64.125,
+      "output_ulp_at_max_abs": 1,
+      "reference_spacing_up_at_max_abs": 0.0625,
+      "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+    },
+    "raw_wv_source_vs_fp64_same_probabilities": {
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "abs_quantiles_0_50_90_99_999_100": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_ulp": 0,
+      "elements": 78848,
+      "different_elements": 0,
+      "max_abs_location": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "actual_at_max_abs": 0.8115234375,
+      "reference_at_max_abs": 0.8115234375,
+      "output_ulp_at_max_abs": 0,
+      "reference_spacing_up_at_max_abs": 0.00048828125,
+      "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+    }
+  },
+  "ideal_instrument_diagnostics": {
+    "oracle": "independent_FP64_Eq6_two_forms_and_declared_FP16_boundaries_FP32_bias_sum_div",
+    "q_stats": {
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        28,
+        22,
+        128
+      ],
+      "nonfinite": 0,
+      "nan": 0,
+      "inf": 0,
+      "finite_max_abs": 18.015625
+    },
+    "bias_products_stats": {
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        28,
+        22,
+        128
+      ],
+      "nonfinite": 0,
+      "nan": 0,
+      "inf": 0,
+      "finite_max_abs": 323.0
+    },
+    "bias_after_division_stats": {
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        28,
+        22,
+        1
+      ],
+      "nonfinite": 0,
+      "nan": 0,
+      "inf": 0,
+      "finite_max_abs": 47.78125
+    },
+    "ideal_Eq6_two_form_max_abs_error": 0.0,
+    "ported_uncalibrated_vs_ideal_Eq6_max_abs_error": 0.04263167720590921,
+    "ported_uncalibrated_vs_ideal_Eq6_relative_l2": 0.0006667356717627462,
+    "published_FP16_nonfinite_head_queries": 0,
+    "published_FP16_finite_interval_calibrated_max_abs_difference": 0.0625,
+    "minimum_visual_logit_range": 11.3203125,
+    "visual_queries_with_range_below_three": 0,
+    "visual_queries_with_zero_range": 0,
+    "expected_output_stats": {
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        28,
+        22,
+        128
+      ],
+      "nonfinite": 0,
+      "nan": 0,
+      "inf": 0,
+      "finite_max_abs": 13.125
+    }
+  },
+  "evidence": {
+    "file": "${DATA_ROOT}/results/p0/calibquant_C2_roundoff_replay_v1/operator_intermediates.pt",
+    "sha256": "92611e4d781a3a1faf9bbbb8766fbbb454a61909805cb27c06972bf78e8f4737",
+    "bytes": 42386766,
+    "policy": "remote data volume only; no tensor download"
+  },
+  "source_capture_sha256": "4e13182842f97808edc355598ba3c97c806fb658cd7dcf6fbc254c49a1922390",
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "torch_version": "2.4.1+cu121",
+  "fp16_reduced_precision_reduction_allowed": true,
+  "source_sha256": {
+    "code/gates/calibquant_c2_roundoff_capture.py": "b356bf48220dd347050b687b013a6f64cdc990eaae66c4bcd24e2b1e37cada8e",
+    "code/methods/calibquant_fp32_bias_adapter.py": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+    "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "third_party/calibquant/calibquant.py": "b4cca4467a88ba40d784bcc50309fb510a935859fc2cf297d944d1e743f2c194"
+  },
+  "completed_unix": 1795143670.3237927
+}

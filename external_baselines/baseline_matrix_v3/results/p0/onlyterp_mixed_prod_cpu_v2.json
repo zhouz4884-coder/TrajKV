@@ -1,0 +1,311 @@
+{
+  "status": "PASS_ONLYTERP_MIXED_PROD_SOURCE_PACKING_OWNER_GATE",
+  "device": "cpu",
+  "GPU_used": false,
+  "model_or_task_quality_measured": false,
+  "source_runtime": "OnlyTerp primary src/cache.py only",
+  "source_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+  "K_QJL_corrections": 1,
+  "source_V_default": "MSE read with QJL encoded/stored",
+  "explicit_V_variant": "full_prod_decode",
+  "TF32_enabled": false,
+  "no_Rademacher_experimental_or_double_QJL_buffer_paths": true,
+  "cases": [
+    {
+      "n": 17,
+      "kv_heads": 1,
+      "MSE_regular": 2,
+      "MSE_outlier": 3,
+      "zero": false,
+      "source_signs_norms_projection_and_PQ_decode_exact": true,
+      "full_source_vector_K_prod_V_modes_exact": true,
+      "source_Cache_default_output_max_abs": 0.0,
+      "source_Cache_default_checked": true,
+      "single_QJL_GQA_causal_FP64_errors": {
+        "source_cache_mse": {
+          "max_abs": 9.5367431640625e-07,
+          "relative_L2": 1.1119490039845914e-07
+        },
+        "full_prod_decode": {
+          "max_abs": 6.103515625e-05,
+          "relative_L2": 6.819876489316812e-06
+        }
+      },
+      "V_QJL_stored_and_counted": true,
+      "full_original_KV_storage_not_retained": true,
+      "temporary_decode_not_retained": true,
+      "owner": {
+        "method": "OnlyTerp_mixed_prod_single_GaussianQJL_visual_reference",
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "PRIMARY_MIXED_MSE_PLUS_ONE_GLOBAL_GAUSSIAN_QJL_SOURCE_PORT",
+        "K_read": "MSE score plus exactly one Gaussian-QJL correction",
+        "V_read": "source_cache_mse",
+        "V_QJL_encoding_stored_and_charged_even_if_source_default_read_ignores_it": true,
+        "bits_regular_MSE": 2,
+        "bits_outlier_MSE": 3,
+        "actual_padded_MSE_payload_bits": 2.75,
+        "additional_QJL_sign_payload_bits_per_KV_scalar": 1.0,
+        "norm_dtypes": {
+          "MSE_group_norm": "float16 source",
+          "QJL_residual_norm": "float32 source"
+        },
+        "projection_matrix_dtype": "float32 source Gaussian",
+        "persistent_projection_matrix_device": "cpu",
+        "projection_matrix_bytes": 65536,
+        "CPU_Gaussian_generation_scratch_retained": false,
+        "encoder_constants_bytes": 65660,
+        "stored_visual_payload_bytes": 2040,
+        "coder_metadata_bytes": 400,
+        "positions_bytes": 136,
+        "stored_visual_KV_bytes": 68236,
+        "full_kv_byte_denominator": 8704,
+        "actual_effective_visual_bits": 125.43382352941177,
+        "reader_backend": "torch_source_ip_fp32_reference",
+        "temporary_full_FP32_MSE_visual_KV_bytes": 17408,
+        "additional_temporary_dense_signs_query_projection_bit_expansion": true,
+        "reader_repeats_some_reference_materialization": true,
+        "not_paper_optimized_kernel_or_paper_2p5_table": true
+      }
+    },
+    {
+      "n": 65,
+      "kv_heads": 2,
+      "MSE_regular": 2,
+      "MSE_outlier": 3,
+      "zero": false,
+      "source_signs_norms_projection_and_PQ_decode_exact": true,
+      "full_source_vector_K_prod_V_modes_exact": true,
+      "source_Cache_default_output_max_abs": 3.0517578125e-05,
+      "source_Cache_default_checked": true,
+      "single_QJL_GQA_causal_FP64_errors": {
+        "source_cache_mse": {
+          "max_abs": 7.62939453125e-06,
+          "relative_L2": 1.3228745956439525e-06
+        },
+        "full_prod_decode": {
+          "max_abs": 1.9073486328125e-06,
+          "relative_L2": 4.251738801031024e-07
+        }
+      },
+      "V_QJL_stored_and_counted": true,
+      "full_original_KV_storage_not_retained": true,
+      "temporary_decode_not_retained": true,
+      "owner": {
+        "method": "OnlyTerp_mixed_prod_single_GaussianQJL_visual_reference",
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "PRIMARY_MIXED_MSE_PLUS_ONE_GLOBAL_GAUSSIAN_QJL_SOURCE_PORT",
+        "K_read": "MSE score plus exactly one Gaussian-QJL correction",
+        "V_read": "source_cache_mse",
+        "V_QJL_encoding_stored_and_charged_even_if_source_default_read_ignores_it": true,
+        "bits_regular_MSE": 2,
+        "bits_outlier_MSE": 3,
+        "actual_padded_MSE_payload_bits": 2.75,
+        "additional_QJL_sign_payload_bits_per_KV_scalar": 1.0,
+        "norm_dtypes": {
+          "MSE_group_norm": "float16 source",
+          "QJL_residual_norm": "float32 source"
+        },
+        "projection_matrix_dtype": "float32 source Gaussian",
+        "persistent_projection_matrix_device": "cpu",
+        "projection_matrix_bytes": 131072,
+        "CPU_Gaussian_generation_scratch_retained": false,
+        "encoder_constants_bytes": 131216,
+        "stored_visual_payload_bytes": 15600,
+        "coder_metadata_bytes": 2336,
+        "positions_bytes": 520,
+        "stored_visual_KV_bytes": 149672,
+        "full_kv_byte_denominator": 66560,
+        "actual_effective_visual_bits": 35.978846153846156,
+        "reader_backend": "torch_source_ip_fp32_reference",
+        "temporary_full_FP32_MSE_visual_KV_bytes": 133120,
+        "additional_temporary_dense_signs_query_projection_bit_expansion": true,
+        "reader_repeats_some_reference_materialization": true,
+        "not_paper_optimized_kernel_or_paper_2p5_table": true
+      }
+    },
+    {
+      "n": 17,
+      "kv_heads": 1,
+      "MSE_regular": 3,
+      "MSE_outlier": 4,
+      "zero": false,
+      "source_signs_norms_projection_and_PQ_decode_exact": true,
+      "full_source_vector_K_prod_V_modes_exact": true,
+      "source_Cache_default_output_max_abs": 9.5367431640625e-07,
+      "source_Cache_default_checked": true,
+      "single_QJL_GQA_causal_FP64_errors": {
+        "source_cache_mse": {
+          "max_abs": 1.9073486328125e-06,
+          "relative_L2": 2.428007235266705e-07
+        },
+        "full_prod_decode": {
+          "max_abs": 0.0,
+          "relative_L2": 0.0
+        }
+      },
+      "V_QJL_stored_and_counted": true,
+      "full_original_KV_storage_not_retained": true,
+      "temporary_decode_not_retained": true,
+      "owner": {
+        "method": "OnlyTerp_mixed_prod_single_GaussianQJL_visual_reference",
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "PRIMARY_MIXED_MSE_PLUS_ONE_GLOBAL_GAUSSIAN_QJL_SOURCE_PORT",
+        "K_read": "MSE score plus exactly one Gaussian-QJL correction",
+        "V_read": "source_cache_mse",
+        "V_QJL_encoding_stored_and_charged_even_if_source_default_read_ignores_it": true,
+        "bits_regular_MSE": 3,
+        "bits_outlier_MSE": 4,
+        "actual_padded_MSE_payload_bits": 4.0,
+        "additional_QJL_sign_payload_bits_per_KV_scalar": 1.0,
+        "norm_dtypes": {
+          "MSE_group_norm": "float16 source",
+          "QJL_residual_norm": "float32 source"
+        },
+        "projection_matrix_dtype": "float32 source Gaussian",
+        "persistent_projection_matrix_device": "cpu",
+        "projection_matrix_bytes": 65536,
+        "CPU_Gaussian_generation_scratch_retained": false,
+        "encoder_constants_bytes": 65756,
+        "stored_visual_payload_bytes": 2720,
+        "coder_metadata_bytes": 400,
+        "positions_bytes": 136,
+        "stored_visual_KV_bytes": 69012,
+        "full_kv_byte_denominator": 8704,
+        "actual_effective_visual_bits": 126.86029411764706,
+        "reader_backend": "torch_source_ip_fp32_reference",
+        "temporary_full_FP32_MSE_visual_KV_bytes": 17408,
+        "additional_temporary_dense_signs_query_projection_bit_expansion": true,
+        "reader_repeats_some_reference_materialization": true,
+        "not_paper_optimized_kernel_or_paper_2p5_table": true
+      }
+    },
+    {
+      "n": 65,
+      "kv_heads": 2,
+      "MSE_regular": 3,
+      "MSE_outlier": 4,
+      "zero": false,
+      "source_signs_norms_projection_and_PQ_decode_exact": true,
+      "full_source_vector_K_prod_V_modes_exact": true,
+      "source_Cache_default_output_max_abs": 3.814697265625e-06,
+      "source_Cache_default_checked": true,
+      "single_QJL_GQA_causal_FP64_errors": {
+        "source_cache_mse": {
+          "max_abs": 3.0517578125e-05,
+          "relative_L2": 5.320916898199357e-06
+        },
+        "full_prod_decode": {
+          "max_abs": 7.62939453125e-06,
+          "relative_L2": 1.163294427897199e-06
+        }
+      },
+      "V_QJL_stored_and_counted": true,
+      "full_original_KV_storage_not_retained": true,
+      "temporary_decode_not_retained": true,
+      "owner": {
+        "method": "OnlyTerp_mixed_prod_single_GaussianQJL_visual_reference",
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "PRIMARY_MIXED_MSE_PLUS_ONE_GLOBAL_GAUSSIAN_QJL_SOURCE_PORT",
+        "K_read": "MSE score plus exactly one Gaussian-QJL correction",
+        "V_read": "source_cache_mse",
+        "V_QJL_encoding_stored_and_charged_even_if_source_default_read_ignores_it": true,
+        "bits_regular_MSE": 3,
+        "bits_outlier_MSE": 4,
+        "actual_padded_MSE_payload_bits": 4.0,
+        "additional_QJL_sign_payload_bits_per_KV_scalar": 1.0,
+        "norm_dtypes": {
+          "MSE_group_norm": "float16 source",
+          "QJL_residual_norm": "float32 source"
+        },
+        "projection_matrix_dtype": "float32 source Gaussian",
+        "persistent_projection_matrix_device": "cpu",
+        "projection_matrix_bytes": 131072,
+        "CPU_Gaussian_generation_scratch_retained": false,
+        "encoder_constants_bytes": 131312,
+        "stored_visual_payload_bytes": 20800,
+        "coder_metadata_bytes": 2336,
+        "positions_bytes": 520,
+        "stored_visual_KV_bytes": 154968,
+        "full_kv_byte_denominator": 66560,
+        "actual_effective_visual_bits": 37.25192307692308,
+        "reader_backend": "torch_source_ip_fp32_reference",
+        "temporary_full_FP32_MSE_visual_KV_bytes": 133120,
+        "additional_temporary_dense_signs_query_projection_bit_expansion": true,
+        "reader_repeats_some_reference_materialization": true,
+        "not_paper_optimized_kernel_or_paper_2p5_table": true
+      }
+    },
+    {
+      "n": 17,
+      "kv_heads": 1,
+      "MSE_regular": 3,
+      "MSE_outlier": 4,
+      "zero": true,
+      "source_signs_norms_projection_and_PQ_decode_exact": true,
+      "full_source_vector_K_prod_V_modes_exact": true,
+      "source_Cache_default_output_max_abs": 0.0,
+      "source_Cache_default_checked": true,
+      "single_QJL_GQA_causal_FP64_errors": {
+        "source_cache_mse": {
+          "max_abs": 1.52587890625e-05,
+          "relative_L2": 2.4409951038251165e-06
+        },
+        "full_prod_decode": {
+          "max_abs": 1.52587890625e-05,
+          "relative_L2": 2.4409951038251165e-06
+        }
+      },
+      "V_QJL_stored_and_counted": true,
+      "full_original_KV_storage_not_retained": true,
+      "temporary_decode_not_retained": true,
+      "owner": {
+        "method": "OnlyTerp_mixed_prod_single_GaussianQJL_visual_reference",
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "PRIMARY_MIXED_MSE_PLUS_ONE_GLOBAL_GAUSSIAN_QJL_SOURCE_PORT",
+        "K_read": "MSE score plus exactly one Gaussian-QJL correction",
+        "V_read": "source_cache_mse",
+        "V_QJL_encoding_stored_and_charged_even_if_source_default_read_ignores_it": true,
+        "bits_regular_MSE": 3,
+        "bits_outlier_MSE": 4,
+        "actual_padded_MSE_payload_bits": 4.0,
+        "additional_QJL_sign_payload_bits_per_KV_scalar": 1.0,
+        "norm_dtypes": {
+          "MSE_group_norm": "float16 source",
+          "QJL_residual_norm": "float32 source"
+        },
+        "projection_matrix_dtype": "float32 source Gaussian",
+        "persistent_projection_matrix_device": "cpu",
+        "projection_matrix_bytes": 65536,
+        "CPU_Gaussian_generation_scratch_retained": false,
+        "encoder_constants_bytes": 65756,
+        "stored_visual_payload_bytes": 2720,
+        "coder_metadata_bytes": 400,
+        "positions_bytes": 136,
+        "stored_visual_KV_bytes": 69012,
+        "full_kv_byte_denominator": 8704,
+        "actual_effective_visual_bits": 126.86029411764706,
+        "reader_backend": "torch_source_ip_fp32_reference",
+        "temporary_full_FP32_MSE_visual_KV_bytes": 17408,
+        "additional_temporary_dense_signs_query_projection_bit_expansion": true,
+        "reader_repeats_some_reference_materialization": true,
+        "not_paper_optimized_kernel_or_paper_2p5_table": true
+      }
+    }
+  ],
+  "torch_version": "2.11.0+cpu",
+  "source_sha256": {
+    "code\\gates\\onlyterp_mixed_prod_gate.py": "53e512a3db5b4943af8ec1c2d9a70809439016f6a64dbecd7c401cea4d78a9a0",
+    "code\\methods\\turboquant_onlyterp_mixed_prod_adapter.py": "6c9abe9c4eacb6f1d70622d30a71a6fedda6a8cd3227e976d63c08c9d5507792",
+    "configs\\methods\\onlyterp_mixed_prod_source_lock_v1.json": "c689c949e3fa3a7b113f0ca6441552c99d4ce31d27738ae78681d64074427ddc"
+  }
+}

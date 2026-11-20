@@ -10,6 +10,7 @@ from copy import deepcopy
 import ast
 import hashlib
 import json
+import os
 from pathlib import Path, PurePosixPath
 import time
 
@@ -21,7 +22,23 @@ INPUT_FIELDS = ('id', 'dataset', 'dataset_revision', 'split', 'source_id', 'sour
                 'original_image_sha256', 'width', 'height', 'question', 'question_sha256', 'group')
 KNOWN_CONFIG = {'schema', 'model_id', 'model_revision', 'model_path', 'model_source_lock', 'inputs', 'start',
                 'count', 'ids', 'max_new_tokens', 'question_suffix', 'preprocessing', 'method', 'scope',
-                'verify_question_unknown_prefix'}
+                'verify_question_unknown_prefix', 'stage_role'}
+LEGACY_ADAPTER_PAIRS = (
+    ('methods.kivi_style','KIVIStyleAdapter'),
+    ('methods.calibquant_adapter','CalibQuantAdapter'),
+    ('methods.calibquant_fp32_bias_adapter','CalibQuantFP32BiasAdapter'),
+    ('methods.turboquant_adapter','TurboQuantAdapter'),
+    ('methods.eviction_adapter','PyramidKVVisualAdapter'),
+)
+APPENDED_ADAPTER_PAIRS = (
+    ('methods.kivi_example_adapter','KIVIExampleAdapter'),
+    ('methods.turboquant_buffered_adapter','TurboQuantBufferedAdapter'),
+    ('methods.turboquant_onlyterp_mse_adapter','OnlyTerpMSEAdapter'),
+)
+REVIEWED_POLICY_JSON_SHA256 = {
+    'evaluate_identity_equivalence_v1.json':'2316ccdae4082157b5fac7f17fd3f27c2d36d150cb4e4f5435429f0eadaed684',
+    'evaluate_identity_equivalence_v2.json':'c02f69a0c1819db611f9df57814030866cdd544baea1760583eeaeb216c8d112',
+}
 
 
 class CacheIntegrityError(ValueError): pass
@@ -46,38 +63,81 @@ def canonical_sha(value):
 def read(path): return json.loads(Path(path).read_text(encoding='utf-8'))
 
 
-def evaluate_ast_identity(body):
-    """Only the reviewed I/O-only model_identity function may differ."""
-    tree=ast.parse(body.decode('utf-8'))
+def _ast_plain(node):
+    if isinstance(node,ast.AST):
+        return {'node':type(node).__name__,'fields':{key:_ast_plain(value) for key,value in ast.iter_fields(node)
+                if not (key=='type_params' and value==[])}}
+    if isinstance(node,list):return [_ast_plain(value) for value in node]
+    if isinstance(node,bytes):return {'literal_bytes_hex':node.hex()}
+    return node
+
+
+def _evaluate_ast_identity_tree(tree):
     matches=[node for node in tree.body if isinstance(node,(ast.FunctionDef,ast.AsyncFunctionDef)) and node.name=='model_identity']
     require(len(matches)==1,'Expected exactly one model_identity function')
-    def plain(node):
-        if isinstance(node,ast.AST):
-            return {'node':type(node).__name__,'fields':{key:plain(value) for key,value in ast.iter_fields(node)
-                    if not (key=='type_params' and value==[])}}
-        if isinstance(node,list):return [plain(value) for value in node]
-        if isinstance(node,bytes):return {'literal_bytes_hex':node.hex()}
-        return node
     # Empty type_params was added to the Python AST after 3.10. Removing only
     # this empty syntax field makes the lock reproducible on CPU 3.10/3.13.
-    identity_sha=canonical_sha(plain(matches[0]))
+    identity_sha=canonical_sha(_ast_plain(matches[0]))
     index=tree.body.index(matches[0])
     tree.body[index]=ast.Expr(value=ast.Constant(value='REVIEWED_MODEL_IDENTITY_IO_ONLY_EQUIVALENCE_V1'))
-    numerical_sha=canonical_sha(plain(tree))
+    numerical_sha=canonical_sha(_ast_plain(tree))
     return identity_sha,numerical_sha
+
+
+def evaluate_ast_identity(body):
+    """V1 normalization is retained unchanged for archived source checks."""
+    return _evaluate_ast_identity_tree(ast.parse(body.decode('utf-8')))
+
+
+def evaluate_ast_registry_identity(body):
+    """Strip only three fixed registry additions, preserving all legacy AST."""
+    tree=ast.parse(body.decode('utf-8'))
+    matches=[node for node in tree.body if isinstance(node,ast.Assign) and len(node.targets)==1
+             and isinstance(node.targets[0],ast.Name) and node.targets[0].id=='ALLOWLIST']
+    require(len(matches)==1 and isinstance(matches[0].value,ast.Set),'One literal ALLOWLIST set is required')
+    allowed=matches[0].value
+    pairs=[]
+    for item in allowed.elts:
+        require(isinstance(item,ast.Tuple) and len(item.elts)==2 and all(isinstance(v,ast.Constant) and isinstance(v.value,str) for v in item.elts),
+                'ALLOWLIST must contain literal module/class string pairs only')
+        pairs.append(tuple(v.value for v in item.elts))
+    require(len(pairs)==len(set(pairs)),'Duplicate literal registry entries are forbidden')
+    require(set(LEGACY_ADAPTER_PAIRS).issubset(pairs),'Legacy adapter registry entries may not be removed')
+    require(set(pairs).issubset(set(LEGACY_ADAPTER_PAIRS)|set(APPENDED_ADAPTER_PAIRS)),
+            'Only the three specifically approved registry additions are compatible')
+    allowed.elts=[item for item,pair in zip(allowed.elts,pairs) if pair not in APPENDED_ADAPTER_PAIRS]
+    identity,numerical=_evaluate_ast_identity_tree(tree)
+    return identity,numerical,pairs
 
 
 def evaluate_semantics(path, original_sha):
     body=Path(path).read_bytes()
     require(hashlib.sha256(body).hexdigest()==original_sha,'Original evaluate source proof mismatch')
-    policy_path=ROOT/'configs/cache/evaluate_identity_equivalence_v1.json'
-    require(policy_path.is_file(),'Explicit identity I/O-equivalence policy is required')
+    # Immutable inference snapshots copy methods/configs but deliberately not
+    # every project configuration. Resolve a missing policy from the launcher's
+    # data root, with its complete canonical JSON content locked below. This
+    # does not weaken admission or require mutating a running queue's launcher.
+    data_root=Path(os.environ.get('BASELINE_DATA_ROOT',str(ROOT)))
+    candidates=[root/'configs/cache'/name for name in ('evaluate_identity_equivalence_v2.json','evaluate_identity_equivalence_v1.json')
+                for root in (ROOT,data_root)]
+    policy_path=next((p for p in candidates if p.is_file()),None)
+    require(policy_path is not None,'Explicit identity I/O-equivalence policy is required')
     policy=read(policy_path)
+    require(canonical_sha(policy)==REVIEWED_POLICY_JSON_SHA256[policy_path.name],
+            'STALE_PROTOCOL: reviewed policy content changed; LF/JSON formatting alone is allowed')
     allowed=policy['allowed_sources'].get(original_sha)
     require(allowed is not None,'STALE_PROTOCOL: unreviewed evaluate.py source version')
-    identity_sha,numerical_sha=evaluate_ast_identity(body)
+    if policy['schema']=='baseline_matrix.reviewed_identity_registry_equivalence.v2':
+        require(policy['legacy_adapter_pairs']==[list(p) for p in LEGACY_ADAPTER_PAIRS] and
+                policy['approved_appended_pairs']==[list(p) for p in APPENDED_ADAPTER_PAIRS],
+                'Registry compatibility policy differs from the fixed code review')
+        identity_sha,numerical_sha,pairs=evaluate_ast_registry_identity(body)
+        require([list(p) for p in pairs]==allowed['literal_adapter_pairs'],'Whole-source registry declaration mismatch')
+    else:identity_sha,numerical_sha=evaluate_ast_identity(body)
     require(identity_sha==allowed['model_identity_ast_sha256'] and numerical_sha==policy['numerical_program_ast_sha256'],
-            'STALE_PROTOCOL: source changed outside the reviewed identity function')
+            'STALE_PROTOCOL: source changed outside the reviewed I/O function and fixed registry additions')
+    # Keep the original semantic key for existing branches. The wider source
+    # whitelist is an admission proof, not a change to their numerical program.
     return {'equivalence':'model_identity_IO_only_reviewed_v1','numerical_program_ast_sha256':numerical_sha}
 
 
@@ -92,6 +152,8 @@ def resolve_run(path):
 def normalize_behavior(config, spec):
     unknown = set(config) - KNOWN_CONFIG
     require(not unknown, 'Unknown config behavior cannot be safely cached: ' + repr(sorted(unknown)))
+    if 'stage_role' in config:
+        require(isinstance(config['stage_role'],str),'stage_role is declared description metadata and must be a string')
     method = deepcopy(config['method'])
     family = method['family'].lower()
     if method.get('adapter_class') == 'TurboQuantAdapter': method.setdefault('per_layer_seed', {'base':42,'step':6})
@@ -141,16 +203,34 @@ def _dependencies(manifest, inventory, source_evaluate):
     protocol = 'code/m1_protocol.py' if spec['model_id'] == 'M1' else 'code/qwen_protocol.py'
     files = set(CORE) | {protocol}
     pair = cfg['method'].get('adapter_class')
+    declared=(cfg['method'].get('adapter_module'),pair)
+    if pair is not None:
+        require(declared in set(LEGACY_ADAPTER_PAIRS)|set(APPENDED_ADAPTER_PAIRS),
+                'Unsupported module/class dependency pair; class names alone are not enough')
     if pair == 'KIVIStyleAdapter':
         files |= {'code/methods/kivi_style.py','code/methods/kivi_reader.py','third_party/kivi/quant/new_pack.py'}
+    elif pair == 'KIVIExampleAdapter':
+        files |= {'code/methods/kivi_example_adapter.py','code/methods/kivi_example_reader.py',
+                  'third_party/kivi/quant/new_pack.py','third_party/kivi/example.py',
+                  'configs/methods/kivi_example_source_v1.json'}
     elif pair in ('CalibQuantAdapter','CalibQuantFP32BiasAdapter'):
         files |= {'code/methods/calibquant_adapter.py','third_party/calibquant/calibquant.py'}
         if pair == 'CalibQuantFP32BiasAdapter': files.add('code/methods/calibquant_fp32_bias_adapter.py')
-    elif pair == 'TurboQuantAdapter':
+    elif pair in ('TurboQuantAdapter','TurboQuantBufferedAdapter'):
         files |= {'code/methods/turboquant_adapter.py','configs/methods/turboquant_eviction_lock.json'}
         source_files = {p for p in inventory if p.startswith('third_party/turboquant_0xsero/') and p.endswith(('.py','.json'))}
         require(bool(source_files), 'TurboQuant upstream proof absent')
         files |= source_files
+        if pair=='TurboQuantBufferedAdapter':files.add('code/methods/turboquant_buffered_adapter.py')
+    elif pair == 'OnlyTerpMSEAdapter':
+        # P's confirmed v2 production path is self-contained. Unknown adapter
+        # revisions must be reviewed again before assuming this dependency map.
+        require(inventory.get('code/methods/turboquant_onlyterp_mse_adapter.py')==
+                'ef52ac83eaabae8cbc41c46bc976bc6d6fcb696f2897bcb2bda534e2431ee86e',
+                'DEPENDENCY_CONTRACT_PENDING: unreviewed OnlyTerpMSEAdapter production-source revision')
+        files |= {'code/methods/turboquant_onlyterp_mse_adapter.py',
+                  'configs/methods/onlyterp_mse_source_lock_v2.json',
+                  'third_party/turboquant_onlyterp/src/cache.py'}
     elif pair == 'PyramidKVVisualAdapter':
         files |= {'code/methods/eviction_adapter.py','code/methods/turboquant_adapter.py',
                   'third_party/kvpress/kvpress/presses/pyramidkv_press.py',

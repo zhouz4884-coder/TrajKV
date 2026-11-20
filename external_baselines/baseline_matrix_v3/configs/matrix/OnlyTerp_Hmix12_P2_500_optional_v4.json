@@ -1,0 +1,43 @@
+{
+  "schema": "baseline_matrix.optional_onlyterp_500.v1",
+  "status": "ACTUAL32_REUSE_PREPARED468_EACH_NOT_ENQUEUED",
+  "new_GPU_jobs_started": 0,
+  "source": "OnlyTerp-MSE QJL0 Hmix12 practical Hadamard variant; not prod or paper2p5 table",
+  "references_read": false,
+  "rows": [
+    {
+      "dataset": "textvqa",
+      "metric": "TextVQA ten-vote soft",
+      "target_QA": 500,
+      "actual_reused_PASS_QA": 32,
+      "new_QA": 468,
+      "target_config": "configs/eval/M1_OT_Hmix12_textvqa_p2_500_target_v4.json",
+      "missing_config": "configs/eval/M1_OT_Hmix12_textvqa_p2_500_missing468_v4.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix12_textvqa_p2_500_missing468_v4.json",
+      "name": "bm_M1_OT_Hmix12_textvqa_p2_500_missing468_v4",
+      "plan": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_preparation\\p2_500_optional_v4\\textvqa_plan.json",
+      "plan_sha256": "af39d6a0f565342b84e83b1cebcc1297aa72b7a2953d64bad9ed83b9b92c9a1b",
+      "effective_contract_sha256": "03f8abc732efdc595dba930c31b01ba045dd12f3e6250fca31ce8c1f9ec2049b",
+      "status": "PREPARED_ONLY_ROOT_DECISION_NOT_QUEUED",
+      "GPU_launched": false
+    },
+    {
+      "dataset": "infovqa",
+      "metric": "fixed InfoVQA ANLS",
+      "target_QA": 500,
+      "actual_reused_PASS_QA": 32,
+      "new_QA": 468,
+      "target_config": "configs/eval/M1_OT_Hmix12_infovqa_p2_500_target_v4.json",
+      "missing_config": "configs/eval/M1_OT_Hmix12_infovqa_p2_500_missing468_v4.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix12_infovqa_p2_500_missing468_v4.json",
+      "name": "bm_M1_OT_Hmix12_infovqa_p2_500_missing468_v4",
+      "plan": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_preparation\\p2_500_optional_v4\\infovqa_plan.json",
+      "plan_sha256": "e52aa4847ed020d39ca406a450147d3689230907c85a9b0547b82d0181adf1f3",
+      "effective_contract_sha256": "03f8abc732efdc595dba930c31b01ba045dd12f3e6250fca31ce8c1f9ec2049b",
+      "status": "PREPARED_ONLY_ROOT_DECISION_NOT_QUEUED",
+      "GPU_launched": false
+    }
+  ],
+  "no_cross_dataset_quality_mean": true,
+  "current_recommendation": "Do not expand this low-bit point alone as strongest family representative; retain complete evidence and combine source Hmix23/budget coverage under Root review"
+}

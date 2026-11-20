@@ -1,0 +1,88 @@
+{
+  "schema": "baseline_matrix.onlyterp_fixed_pilot_reuse.v2",
+  "status": "ACTUAL_MISSING_JOBS_PREPARED_NOT_LAUNCHED",
+  "phase": "stage8",
+  "GPU_launched": false,
+  "references_read": false,
+  "point": "OnlyTerp-MSE Hmix12 / QJL0 / source Hadamard",
+  "not_paper_prod_or_paper_2p5_table": true,
+  "reader_backend": "torch_materialize_fp32_reference",
+  "source_probe2_verified_QA": 2,
+  "max_new_tokens": 64,
+  "quality_aggregates_across_datasets_forbidden": true,
+  "raw_preservation": "Original raw lines, actual FP32-reference reader peak memory and instrumented latency remain unchanged in composed views",
+  "rows": [
+    {
+      "dataset": "textvqa",
+      "metric": "TextVQA ten-vote soft accuracy",
+      "target_config": "configs/eval/M1_OT_Hmix12_textvqa_stage8_target4_v2.json",
+      "target_QA": 4,
+      "actual_verified_reuse_QA": 2,
+      "new_inference_QA": 2,
+      "job": "configs/jobs/bm_M1_OT_Hmix12_textvqa_stage8_missing2_v2.json",
+      "missing_config": "configs/eval/M1_OT_Hmix12_textvqa_stage8_missing2_v2.json",
+      "remote_new_output": "${DATA_ROOT}/results/onlyterp_pilot_reuse/M1_OT_Hmix12_textvqa_stage8_missing2_v2",
+      "expected_local_new_raw": "${EVIDENCE_ROOT}/results/onlyterp_pilot_reuse/M1_OT_Hmix12_textvqa_stage8_missing2_v2",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_v1\\M1_OT_Hmix12_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_v1\\M1_OT_Hmix12_textvqa_probe2_v1"
+      ],
+      "plan": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_preparation\\stage8_v2\\textvqa_reuse_plan.json",
+      "plan_sha256": "090863aa674244eac8ac250b639f53bec9ae4217f41b361b0e6c2176088fdf51",
+      "effective_contract_sha256": "03f8abc732efdc595dba930c31b01ba045dd12f3e6250fca31ce8c1f9ec2049b"
+    },
+    {
+      "dataset": "infovqa",
+      "metric": "fixed vendor ANLS",
+      "target_config": "configs/eval/M1_OT_Hmix12_infovqa_stage8_target4_v2.json",
+      "target_QA": 4,
+      "actual_verified_reuse_QA": 0,
+      "new_inference_QA": 4,
+      "job": "configs/jobs/bm_M1_OT_Hmix12_infovqa_stage8_missing4_v2.json",
+      "missing_config": "configs/eval/M1_OT_Hmix12_infovqa_stage8_missing4_v2.json",
+      "remote_new_output": "${DATA_ROOT}/results/onlyterp_pilot_reuse/M1_OT_Hmix12_infovqa_stage8_missing4_v2",
+      "expected_local_new_raw": "${EVIDENCE_ROOT}/results/onlyterp_pilot_reuse/M1_OT_Hmix12_infovqa_stage8_missing4_v2",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_v1\\M1_OT_Hmix12_textvqa_probe2_v1",
+      "cached_runs": [],
+      "plan": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_preparation\\stage8_v2\\infovqa_reuse_plan.json",
+      "plan_sha256": "c694a62f29d16281c414ca081eeb963a5dcb2a63d69b721d25d45fc72ae749f5",
+      "effective_contract_sha256": "03f8abc732efdc595dba930c31b01ba045dd12f3e6250fca31ce8c1f9ec2049b"
+    }
+  ],
+  "conditional_stage64": [
+    {
+      "dataset": "textvqa",
+      "fixed_target_QA": 32,
+      "target_config": "configs/eval/M1_OT_Hmix12_textvqa_stage64_target32_conditional_v2.json",
+      "status": "CONDITIONAL_ONLY_NOT_READY_TO_LAUNCH",
+      "observed_reuse_QA": null,
+      "projected_reuse_after_all_four_stage8_PASS": 4,
+      "projected_missing_after_all_four_stage8_PASS": 28,
+      "missing_config": null,
+      "job": null,
+      "required_action": "Fetch and verify actual stage8 raw/source proofs, then rerun this script --phase stage64"
+    },
+    {
+      "dataset": "infovqa",
+      "fixed_target_QA": 32,
+      "target_config": "configs/eval/M1_OT_Hmix12_infovqa_stage64_target32_conditional_v2.json",
+      "status": "CONDITIONAL_ONLY_NOT_READY_TO_LAUNCH",
+      "observed_reuse_QA": null,
+      "projected_reuse_after_all_four_stage8_PASS": 4,
+      "projected_missing_after_all_four_stage8_PASS": 28,
+      "missing_config": null,
+      "job": null,
+      "required_action": "Fetch and verify actual stage8 raw/source proofs, then rerun this script --phase stage64"
+    }
+  ],
+  "other_declared_points": [
+    {
+      "point": "Hmix23",
+      "status": "WAITING_ROOT_DECISION_NOT_SCHEDULED"
+    },
+    {
+      "point": "Huniform1",
+      "status": "WAITING_ROOT_DECISION_NOT_SCHEDULED"
+    }
+  ]
+}

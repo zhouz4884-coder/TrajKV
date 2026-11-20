@@ -1,0 +1,35 @@
+{
+  "status": "CONDITIONAL_PREPARATION_ONLY_AWAITING_REAL_PROBE_AFTER_ACTIVE_F_CHART",
+  "source_point": "OnlyTerp-MSE/QJL0 Hmix23 source Hadamard variant",
+  "old_drafts_unchanged": true,
+  "observed_Hmix23_cache_hits": null,
+  "probe_job": "configs/jobs/bm_M1_OT_Hmix23_textvqa_probe2_v2.json",
+  "actual_probe_output_expected": "${EVIDENCE_ROOT}/results/onlyterp_hmix23_v2/M1_OT_Hmix23_textvqa_probe2_v2",
+  "fixed_after_probe": [
+    {
+      "phase": "stage8",
+      "text_target_QA": 4,
+      "info_target_QA": 4,
+      "projected_Text_hits_if_probe2_PASS": 2,
+      "projected_Text_missing": 2,
+      "projected_Info_missing": 4
+    },
+    {
+      "phase": "stage64",
+      "text_target_QA": 32,
+      "info_target_QA": 32,
+      "projected_hits_each_if_stage8_complete": 4,
+      "projected_missing_each": 28
+    }
+  ],
+  "actual_missing_jobs_not_written_before_source_verification": true,
+  "max_new_tokens": 64,
+  "reader": "torch_materialize_fp32_reference",
+  "metric_types_not_averaged": true,
+  "P_new_Gaussian_QJL_module_not_registered_or_run": true,
+  "controller": "External_baselines_P2_Fbank_OT23_chain_queue_v9",
+  "controller_PID": 1055414,
+  "waiting_active_GPU1_FChart_PID": 1051751,
+  "active_GPU0_FDoc_PID": 1041987,
+  "GPU_workers_signaled": false
+}

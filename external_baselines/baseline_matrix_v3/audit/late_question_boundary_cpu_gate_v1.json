@@ -1,0 +1,23 @@
+{
+  "status": "PASS_CPU_BOUNDARY_CONTROL_FLOW_SCHEMA",
+  "GPU_used": false,
+  "real_model_inference": false,
+  "fake_outputs_are_benchmark_results": false,
+  "checks": [
+    "native_y1_uses_original_total_cap_not_max_new1",
+    "cache_prompt_excludes_unprocessed_y1",
+    "continuation_keeps_complete_P_plus_y1_history",
+    "y1_preserved_once_and_total_cap_respected",
+    "relative_min_new_count_and_begin_suppression_adjusted",
+    "native_generation_config_not_mutated",
+    "EOS_native_y1_stops_without_compressed_read",
+    "cap1_stops_without_compressed_read",
+    "already_processed_y1_cache_rejected",
+    "unsupported_stop_strings_not_silently_changed"
+  ],
+  "source_sha256": {
+    "code/gates/late_question_boundary_cpu_gate.py": "3c331dd7dcf0e2698ffce610e798decb8bc923655130738e1ef144c7d34edd0f",
+    "code/gates/late_question_compression_m1.py": "b415deaa8040d8ccf79943ef2bd00baa1d134b45282bab933bd9d66d876daae5"
+  },
+  "target_runtime_source_audit": "audit/calib_execution_boundary_source_v1.json"
+}

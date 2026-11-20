@@ -1,0 +1,338 @@
+{
+  "status": "PASS_ONLYTERP_MSE_SOURCE_PACKING_OWNER_REFERENCE_GATE",
+  "device": "cuda:0",
+  "GPU_used": true,
+  "CUDA_support_demonstrated": true,
+  "model_or_task_quality_measured": false,
+  "source_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+  "reader_backend": "torch_materialize_fp32_reference",
+  "norm_dtype": "FP16 as original primary source; no additional precision cast",
+  "cases": [
+    {
+      "n": 17,
+      "kv_heads": 1,
+      "bits_regular": 1,
+      "mixed_precision": true,
+      "zero": false,
+      "source_K_decode_max_abs": 0.0,
+      "source_V_decode_max_abs": 0.0,
+      "joint_GQA_causal_FP64_reference": {
+        "max_abs": 3.0517578125e-05,
+        "relative_L2": 2.4770788513706066e-06
+      },
+      "all_source_norm_and_codebook_dtypes_preserved": true,
+      "original_full_KV_storage_not_owned": true,
+      "temporary_decode_not_retained": true,
+      "owner_report": {
+        "method": "TurboQuant-MSE_OnlyTerp_primary_visual_lossless_packed_reference",
+        "qjl_enabled": false,
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "UNMODIFIED_PRIMARY_MSE_ALIASES_LOSSLESS_CATEGORICAL_STORAGE_PORT",
+        "reader": "torch_materialize_fp32_reference",
+        "bits_nominal_MSE_payload_actual_padded_dimensions": 1.5,
+        "source_metadata_dtypes": {
+          "norm": "torch.float16 (upstream)",
+          "codebook": "torch.float32 (upstream)",
+          "map": "int64 values losslessly stored as uint8",
+          "rotation_sign": "float32 +/-1 values losslessly stored as 1bit"
+        },
+        "stored_visual_KV_bytes": 1348,
+        "actual_effective_visual_bits": 2.4779411764705883,
+        "full_kv_byte_denominator": 8704,
+        "positions_bytes": 136,
+        "stored_visual_payload_bytes": 816,
+        "coder_metadata_bytes": 264,
+        "encoder_constants_bytes": 132,
+        "temporary_full_FP32_visual_KV_bytes": 17408,
+        "temporary_bit_expansion_and_exact_text_FP32_additional": true,
+        "source_index_dimensions": {
+          "regular": 128,
+          "outlier": 32
+        },
+        "original_group_dimensions": {
+          "regular": 96,
+          "outlier": 32
+        },
+        "all_required_GPU_and_shared_CPU_codebook_constants_named": true
+      },
+      "actual_unique_tensor_storage_bytes": 1348,
+      "two_layers_actual_unique_shared_bytes": 2448
+    },
+    {
+      "n": 65,
+      "kv_heads": 2,
+      "bits_regular": 1,
+      "mixed_precision": true,
+      "zero": false,
+      "source_K_decode_max_abs": 0.0,
+      "source_V_decode_max_abs": 0.0,
+      "joint_GQA_causal_FP64_reference": {
+        "max_abs": 0.000244140625,
+        "relative_L2": 2.454791683703661e-05
+      },
+      "all_source_norm_and_codebook_dtypes_preserved": true,
+      "original_full_KV_storage_not_owned": true,
+      "temporary_decode_not_retained": true,
+      "owner_report": {
+        "method": "TurboQuant-MSE_OnlyTerp_primary_visual_lossless_packed_reference",
+        "qjl_enabled": false,
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "UNMODIFIED_PRIMARY_MSE_ALIASES_LOSSLESS_CATEGORICAL_STORAGE_PORT",
+        "reader": "torch_materialize_fp32_reference",
+        "bits_nominal_MSE_payload_actual_padded_dimensions": 1.5,
+        "source_metadata_dtypes": {
+          "norm": "torch.float16 (upstream)",
+          "codebook": "torch.float32 (upstream)",
+          "map": "int64 values losslessly stored as uint8",
+          "rotation_sign": "float32 +/-1 values losslessly stored as 1bit"
+        },
+        "stored_visual_KV_bytes": 8208,
+        "actual_effective_visual_bits": 1.9730769230769232,
+        "full_kv_byte_denominator": 66560,
+        "positions_bytes": 520,
+        "stored_visual_payload_bytes": 6240,
+        "coder_metadata_bytes": 1296,
+        "encoder_constants_bytes": 152,
+        "temporary_full_FP32_visual_KV_bytes": 133120,
+        "temporary_bit_expansion_and_exact_text_FP32_additional": true,
+        "source_index_dimensions": {
+          "regular": 128,
+          "outlier": 32
+        },
+        "original_group_dimensions": {
+          "regular": 96,
+          "outlier": 32
+        },
+        "all_required_GPU_and_shared_CPU_codebook_constants_named": true
+      },
+      "actual_unique_tensor_storage_bytes": 8208,
+      "two_layers_actual_unique_shared_bytes": 15784
+    },
+    {
+      "n": 129,
+      "kv_heads": 2,
+      "bits_regular": 2,
+      "mixed_precision": true,
+      "zero": false,
+      "source_K_decode_max_abs": 0.0,
+      "source_V_decode_max_abs": 0.0,
+      "joint_GQA_causal_FP64_reference": {
+        "max_abs": 0.0001220703125,
+        "relative_L2": 1.3537711311073508e-05
+      },
+      "all_source_norm_and_codebook_dtypes_preserved": true,
+      "original_full_KV_storage_not_owned": true,
+      "temporary_decode_not_retained": true,
+      "owner_report": {
+        "method": "TurboQuant-MSE_OnlyTerp_primary_visual_lossless_packed_reference",
+        "qjl_enabled": false,
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "UNMODIFIED_PRIMARY_MSE_ALIASES_LOSSLESS_CATEGORICAL_STORAGE_PORT",
+        "reader": "torch_materialize_fp32_reference",
+        "bits_nominal_MSE_payload_actual_padded_dimensions": 2.75,
+        "source_metadata_dtypes": {
+          "norm": "torch.float16 (upstream)",
+          "codebook": "torch.float32 (upstream)",
+          "map": "int64 values losslessly stored as uint8",
+          "rotation_sign": "float32 +/-1 values losslessly stored as 1bit"
+        },
+        "stored_visual_KV_bytes": 26304,
+        "actual_effective_visual_bits": 3.186046511627907,
+        "full_kv_byte_denominator": 132096,
+        "positions_bytes": 1032,
+        "stored_visual_payload_bytes": 22704,
+        "coder_metadata_bytes": 2320,
+        "encoder_constants_bytes": 248,
+        "temporary_full_FP32_visual_KV_bytes": 264192,
+        "temporary_bit_expansion_and_exact_text_FP32_additional": true,
+        "source_index_dimensions": {
+          "regular": 128,
+          "outlier": 32
+        },
+        "original_group_dimensions": {
+          "regular": 96,
+          "outlier": 32
+        },
+        "all_required_GPU_and_shared_CPU_codebook_constants_named": true
+      },
+      "actual_unique_tensor_storage_bytes": 26304,
+      "two_layers_actual_unique_shared_bytes": 51368
+    },
+    {
+      "n": 17,
+      "kv_heads": 1,
+      "bits_regular": 1,
+      "mixed_precision": false,
+      "zero": false,
+      "source_K_decode_max_abs": 0.0,
+      "source_V_decode_max_abs": 0.0,
+      "joint_GQA_causal_FP64_reference": {
+        "max_abs": 3.0517578125e-05,
+        "relative_L2": 2.3198904273158405e-06
+      },
+      "all_source_norm_and_codebook_dtypes_preserved": true,
+      "original_full_KV_storage_not_owned": true,
+      "temporary_decode_not_retained": true,
+      "owner_report": {
+        "method": "TurboQuant-MSE_OnlyTerp_primary_visual_lossless_packed_reference",
+        "qjl_enabled": false,
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "UNMODIFIED_PRIMARY_MSE_ALIASES_LOSSLESS_CATEGORICAL_STORAGE_PORT",
+        "reader": "torch_materialize_fp32_reference",
+        "bits_nominal_MSE_payload_actual_padded_dimensions": 1.0,
+        "source_metadata_dtypes": {
+          "norm": "torch.float16 (upstream)",
+          "codebook": "torch.float32 (upstream)",
+          "map": "int64 values losslessly stored as uint8",
+          "rotation_sign": "float32 +/-1 values losslessly stored as 1bit"
+        },
+        "stored_visual_KV_bytes": 804,
+        "actual_effective_visual_bits": 1.4779411764705883,
+        "full_kv_byte_denominator": 8704,
+        "positions_bytes": 136,
+        "stored_visual_payload_bytes": 544,
+        "coder_metadata_bytes": 68,
+        "encoder_constants_bytes": 56,
+        "temporary_full_FP32_visual_KV_bytes": 17408,
+        "temporary_bit_expansion_and_exact_text_FP32_additional": true,
+        "source_index_dimensions": {
+          "regular": 128,
+          "outlier": 0
+        },
+        "original_group_dimensions": {
+          "regular": 128,
+          "outlier": 0
+        },
+        "all_required_GPU_and_shared_CPU_codebook_constants_named": true
+      },
+      "actual_unique_tensor_storage_bytes": 804,
+      "two_layers_actual_unique_shared_bytes": 1432
+    },
+    {
+      "n": 17,
+      "kv_heads": 1,
+      "bits_regular": 1,
+      "mixed_precision": true,
+      "zero": true,
+      "source_K_decode_max_abs": 0.0,
+      "source_V_decode_max_abs": 0.0,
+      "joint_GQA_causal_FP64_reference": {
+        "max_abs": 9.5367431640625e-07,
+        "relative_L2": 7.215538033733537e-08
+      },
+      "all_source_norm_and_codebook_dtypes_preserved": true,
+      "original_full_KV_storage_not_owned": true,
+      "temporary_decode_not_retained": true,
+      "owner_report": {
+        "method": "TurboQuant-MSE_OnlyTerp_primary_visual_lossless_packed_reference",
+        "qjl_enabled": false,
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "UNMODIFIED_PRIMARY_MSE_ALIASES_LOSSLESS_CATEGORICAL_STORAGE_PORT",
+        "reader": "torch_materialize_fp32_reference",
+        "bits_nominal_MSE_payload_actual_padded_dimensions": 1.5,
+        "source_metadata_dtypes": {
+          "norm": "torch.float16 (upstream)",
+          "codebook": "torch.float32 (upstream)",
+          "map": "int64 values losslessly stored as uint8",
+          "rotation_sign": "float32 +/-1 values losslessly stored as 1bit"
+        },
+        "stored_visual_KV_bytes": 1348,
+        "actual_effective_visual_bits": 2.4779411764705883,
+        "full_kv_byte_denominator": 8704,
+        "positions_bytes": 136,
+        "stored_visual_payload_bytes": 816,
+        "coder_metadata_bytes": 264,
+        "encoder_constants_bytes": 132,
+        "temporary_full_FP32_visual_KV_bytes": 17408,
+        "temporary_bit_expansion_and_exact_text_FP32_additional": true,
+        "source_index_dimensions": {
+          "regular": 128,
+          "outlier": 32
+        },
+        "original_group_dimensions": {
+          "regular": 96,
+          "outlier": 32
+        },
+        "all_required_GPU_and_shared_CPU_codebook_constants_named": true
+      },
+      "actual_unique_tensor_storage_bytes": 1348,
+      "two_layers_actual_unique_shared_bytes": 2448
+    },
+    {
+      "n": 1,
+      "kv_heads": 1,
+      "bits_regular": 1,
+      "mixed_precision": true,
+      "zero": false,
+      "source_K_decode_max_abs": 0.0,
+      "source_V_decode_max_abs": 0.0,
+      "joint_GQA_causal_FP64_reference": {
+        "max_abs": 6.103515625e-05,
+        "relative_L2": 2.3376951503450982e-06
+      },
+      "all_source_norm_and_codebook_dtypes_preserved": true,
+      "original_full_KV_storage_not_owned": true,
+      "temporary_decode_not_retained": true,
+      "owner_report": {
+        "method": "TurboQuant-MSE_OnlyTerp_primary_visual_lossless_packed_reference",
+        "qjl_enabled": false,
+        "method_paper": "https://arxiv.org/abs/2504.19874v1",
+        "upstream_repo": "https://github.com/OnlyTerp/turboquant",
+        "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+        "faithfulness_status": "UNMODIFIED_PRIMARY_MSE_ALIASES_LOSSLESS_CATEGORICAL_STORAGE_PORT",
+        "reader": "torch_materialize_fp32_reference",
+        "bits_nominal_MSE_payload_actual_padded_dimensions": 1.5,
+        "source_metadata_dtypes": {
+          "norm": "torch.float16 (upstream)",
+          "codebook": "torch.float32 (upstream)",
+          "map": "int64 values losslessly stored as uint8",
+          "rotation_sign": "float32 +/-1 values losslessly stored as 1bit"
+        },
+        "stored_visual_KV_bytes": 324,
+        "actual_effective_visual_bits": 10.125,
+        "full_kv_byte_denominator": 512,
+        "positions_bytes": 8,
+        "stored_visual_payload_bytes": 48,
+        "coder_metadata_bytes": 136,
+        "encoder_constants_bytes": 132,
+        "temporary_full_FP32_visual_KV_bytes": 1024,
+        "temporary_bit_expansion_and_exact_text_FP32_additional": true,
+        "source_index_dimensions": {
+          "regular": 128,
+          "outlier": 32
+        },
+        "original_group_dimensions": {
+          "regular": 96,
+          "outlier": 32
+        },
+        "all_required_GPU_and_shared_CPU_codebook_constants_named": true
+      },
+      "actual_unique_tensor_storage_bytes": 324,
+      "two_layers_actual_unique_shared_bytes": 528
+    }
+  ],
+  "categorical_tail_widths_checked": [
+    1,
+    2,
+    3,
+    4,
+    8
+  ],
+  "codebook_boundaries_and_CPU_GPU_constant_storages_retained_and_counted": true,
+  "code_sha256": {
+    "code/gates/onlyterp_mse_gate.py": "fff90640c8064c9558cbf453012ec9db7e3df627207ed849b72bdea8fc38e032",
+    "code/methods/turboquant_onlyterp_mse_adapter.py": "ef52ac83eaabae8cbc41c46bc976bc6d6fcb696f2897bcb2bda534e2431ee86e",
+    "configs/methods/onlyterp_mse_source_lock_v2.json": "e425980143e4b0bad408ddd910b4dd8682be33f3e4f24a319096eef27e1b7d4b"
+  },
+  "torch_version": "2.4.1+cu121"
+}

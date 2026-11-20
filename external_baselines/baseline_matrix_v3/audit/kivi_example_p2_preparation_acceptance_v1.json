@@ -1,0 +1,109 @@
+{
+  "status": "PASS_CPU_KIVI_EXAMPLE_DEFAULT_PREPARATION",
+  "GPU_launched": false,
+  "reference_answers_read": false,
+  "targets": 12,
+  "target_QA": 6000,
+  "actual_M1_plans": [
+    {
+      "model": "M1",
+      "dataset": "textvqa",
+      "hits": 2,
+      "fresh": 498
+    },
+    {
+      "model": "M1",
+      "dataset": "infovqa",
+      "hits": 0,
+      "fresh": 500
+    },
+    {
+      "model": "M1",
+      "dataset": "docvqa",
+      "hits": 0,
+      "fresh": 500
+    },
+    {
+      "model": "M1",
+      "dataset": "chartqa",
+      "hits": 0,
+      "fresh": 500
+    }
+  ],
+  "conditional_model_cells": [
+    {
+      "model": "M2",
+      "dataset": "textvqa",
+      "status": "BLOCKED_NO_VERIFIED_SAME_MODEL_SOURCE_CONTRACT"
+    },
+    {
+      "model": "M2",
+      "dataset": "infovqa",
+      "status": "BLOCKED_NO_VERIFIED_SAME_MODEL_SOURCE_CONTRACT"
+    },
+    {
+      "model": "M2",
+      "dataset": "docvqa",
+      "status": "BLOCKED_NO_VERIFIED_SAME_MODEL_SOURCE_CONTRACT"
+    },
+    {
+      "model": "M2",
+      "dataset": "chartqa",
+      "status": "BLOCKED_NO_VERIFIED_SAME_MODEL_SOURCE_CONTRACT"
+    },
+    {
+      "model": "M3",
+      "dataset": "textvqa",
+      "status": "BLOCKED_NO_VERIFIED_SAME_MODEL_SOURCE_CONTRACT"
+    },
+    {
+      "model": "M3",
+      "dataset": "infovqa",
+      "status": "BLOCKED_NO_VERIFIED_SAME_MODEL_SOURCE_CONTRACT"
+    },
+    {
+      "model": "M3",
+      "dataset": "docvqa",
+      "status": "BLOCKED_NO_VERIFIED_SAME_MODEL_SOURCE_CONTRACT"
+    },
+    {
+      "model": "M3",
+      "dataset": "chartqa",
+      "status": "BLOCKED_NO_VERIFIED_SAME_MODEL_SOURCE_CONTRACT"
+    }
+  ],
+  "M1_actual_hits": 2,
+  "M1_actual_missing": 1998,
+  "cross_model_reference_rejected": [
+    "M2",
+    "M3"
+  ],
+  "conditional_templates_not_directly_launchable": true,
+  "M2_M3_smokes_required_before_actual_contract_planning": true,
+  "all_native_model_and_input_settings_preserved": true,
+  "source_method_and_backend_changed": false,
+  "port_scope": "source example default visual prefill, not original rolling whole system",
+  "reference_contract_sha256": "6da2cd31f9dc168a6620228d60dbead9b4753b9199be2f3659e1cdab2712cddb",
+  "reference_source": {
+    "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1",
+    "raw_hashes": {
+      "manifest.json": "f42af71cc90674c1632428d41d5dde510b65047361aa8f361d123af9cc6bb642",
+      "records.jsonl": "c522696a16251ccfd5cdbf2006ef3ce1603650884ecd58d3a7932e941a119a62",
+      "complete.json": "d20f62d1103b3f49cb8420ab0eb82682977a3bf71bbaa092718801e469584daf"
+    },
+    "source_proof_hashes": {
+      "source_inventory.json": "3eb5088fea597f533603042fd4124079f7a66bca50a818c6aba437bff3496b2a",
+      "launch_receipt.json": "851ca2327db2f58e1b2c7474da5a83af599f9c89369a380b10d3a61f860adcc3",
+      "source_evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22"
+    },
+    "retrieval_receipt_sha256": "96acb3bfecf49f4f1d835299cfa6ff14ca800110eeb4d8821944cc7876d40a43",
+    "source_retrieval_receipt_sha256": "99634aeb0b68300c929b25664aacce73670512904fac5f49dd6f9d1fdb5c5b20",
+    "effective_contract_sha256": "6da2cd31f9dc168a6620228d60dbead9b4753b9199be2f3659e1cdab2712cddb",
+    "original_inference_run": true,
+    "source_recorded_QA": 2,
+    "source_status_counts": {
+      "PASS": 2
+    }
+  },
+  "preparer_sha256": "ba02d6451fac8a8c4675d49b777c84bb32cdeff2714d2604e393c203f4f08f91"
+}

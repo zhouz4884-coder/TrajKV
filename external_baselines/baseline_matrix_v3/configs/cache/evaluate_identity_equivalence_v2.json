@@ -1,0 +1,145 @@
+{
+  "schema": "baseline_matrix.reviewed_identity_registry_equivalence.v2",
+  "status": "REVIEWED_BOUNDED_IO_AND_FIXED_REGISTRY_ADMISSION_EQUIVALENCE",
+  "numerical_program_ast_sha256": "c96836da3d6a22df0d346deafada31f690015e6e2e227f99641fbe51fe3330cb",
+  "legacy_adapter_pairs": [
+    [
+      "methods.kivi_style",
+      "KIVIStyleAdapter"
+    ],
+    [
+      "methods.calibquant_adapter",
+      "CalibQuantAdapter"
+    ],
+    [
+      "methods.calibquant_fp32_bias_adapter",
+      "CalibQuantFP32BiasAdapter"
+    ],
+    [
+      "methods.turboquant_adapter",
+      "TurboQuantAdapter"
+    ],
+    [
+      "methods.eviction_adapter",
+      "PyramidKVVisualAdapter"
+    ]
+  ],
+  "approved_appended_pairs": [
+    [
+      "methods.kivi_example_adapter",
+      "KIVIExampleAdapter"
+    ],
+    [
+      "methods.turboquant_buffered_adapter",
+      "TurboQuantBufferedAdapter"
+    ],
+    [
+      "methods.turboquant_onlyterp_mse_adapter",
+      "OnlyTerpMSEAdapter"
+    ]
+  ],
+  "allowed_sources": {
+    "da0c80d4bd621a904836427dcd7e9ed46d1538290961fb34e2364f276881d06f": {
+      "model_identity_ast_sha256": "41016791e652059a4ed945cb217dc052cb514b0768bdbe76aef372a8965680e6",
+      "literal_adapter_pairs": [
+        [
+          "methods.kivi_style",
+          "KIVIStyleAdapter"
+        ],
+        [
+          "methods.calibquant_adapter",
+          "CalibQuantAdapter"
+        ],
+        [
+          "methods.calibquant_fp32_bias_adapter",
+          "CalibQuantFP32BiasAdapter"
+        ],
+        [
+          "methods.turboquant_adapter",
+          "TurboQuantAdapter"
+        ],
+        [
+          "methods.eviction_adapter",
+          "PyramidKVVisualAdapter"
+        ]
+      ],
+      "archived_source": "audit/source_snapshots/evaluate_fullhash_v1.py",
+      "role": "original full-weight SHA reader"
+    },
+    "c4d73e61efff308051dd4f5e7c450ae4d38f7dc3406f61456b26e935a1423ed4": {
+      "model_identity_ast_sha256": "07fa203e66809fc67664fa0e53a78d2c83cb3e6a2612bac35e7bbfaa128526ac",
+      "literal_adapter_pairs": [
+        [
+          "methods.kivi_style",
+          "KIVIStyleAdapter"
+        ],
+        [
+          "methods.calibquant_adapter",
+          "CalibQuantAdapter"
+        ],
+        [
+          "methods.calibquant_fp32_bias_adapter",
+          "CalibQuantFP32BiasAdapter"
+        ],
+        [
+          "methods.turboquant_adapter",
+          "TurboQuantAdapter"
+        ],
+        [
+          "methods.eviction_adapter",
+          "PyramidKVVisualAdapter"
+        ]
+      ],
+      "archived_source": "audit/source_snapshots/evaluate_stat_binding_before_registry_v2.py",
+      "role": "verified prior full-SHA/stat identity reader"
+    },
+    "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22": {
+      "model_identity_ast_sha256": "07fa203e66809fc67664fa0e53a78d2c83cb3e6a2612bac35e7bbfaa128526ac",
+      "literal_adapter_pairs": [
+        [
+          "methods.kivi_style",
+          "KIVIStyleAdapter"
+        ],
+        [
+          "methods.calibquant_adapter",
+          "CalibQuantAdapter"
+        ],
+        [
+          "methods.calibquant_fp32_bias_adapter",
+          "CalibQuantFP32BiasAdapter"
+        ],
+        [
+          "methods.turboquant_adapter",
+          "TurboQuantAdapter"
+        ],
+        [
+          "methods.eviction_adapter",
+          "PyramidKVVisualAdapter"
+        ],
+        [
+          "methods.kivi_example_adapter",
+          "KIVIExampleAdapter"
+        ],
+        [
+          "methods.turboquant_buffered_adapter",
+          "TurboQuantBufferedAdapter"
+        ],
+        [
+          "methods.turboquant_onlyterp_mse_adapter",
+          "OnlyTerpMSEAdapter"
+        ]
+      ],
+      "archived_source": "audit/source_snapshots/evaluate_registry_v2.py",
+      "role": "same stat reader and exactly three approved literal adapter additions"
+    }
+  },
+  "prior_policy": "configs/cache/evaluate_identity_equivalence_v1.json",
+  "prior_policy_sha256": "05a456a447c3d9fd7eac14d6cc1d2b0d98abcf5c67dfa3c48ec0268f95673703",
+  "constraint": "Exact whole-source whitelist; legacy literal entries remain; only three fixed literal tuples may be removed for numerical-AST comparison; model_identity admits only the two previously reviewed I/O bodies; every other AST is unchanged",
+  "source_admission_is_not_CUDA_or_main_matrix_approval": true,
+  "new_method_contracts": "module/class, constructor arguments and exact executed dependency fingerprints are independent; no reuse of the unbuffered T0 method",
+  "pending_dependency_maps": [
+    "OnlyTerpMSEAdapter"
+  ],
+  "legacy_contract_key_preserved": "Original semantic tag and numerical AST SHA retained for unchanged legacy branches; full source SHA still preserved in raw proof"
+}

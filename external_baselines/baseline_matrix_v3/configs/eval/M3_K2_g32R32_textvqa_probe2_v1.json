@@ -1,0 +1,32 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M3",
+  "model_revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+  "start": 0,
+  "count": 2,
+  "max_new_tokens": 64,
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "min_pixels": 65536,
+    "max_pixels": 16777216
+  },
+  "method": {
+    "id": "KIVI_source_example_K2V2_g32_R32_visual",
+    "family": "kivi_source_example",
+    "adapter_module": "methods.kivi_example_adapter",
+    "adapter_class": "KIVIExampleAdapter",
+    "constructor_args": {
+      "bits": 2,
+      "group_size": 32,
+      "residual_length": 32,
+      "reader_backend": "triton_packed"
+    },
+    "reader_backend": "triton_packed",
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "scope": "SOURCE_EXAMPLE_G32_R32_SAME_MODEL_FIRST_TWO_TECHNICAL_QA; no benchmark or cross-model reuse claim"
+}

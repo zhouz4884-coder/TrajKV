@@ -27,6 +27,9 @@ ALLOWLIST = {
     ("methods.calibquant_fp32_bias_adapter", "CalibQuantFP32BiasAdapter"),
     ("methods.turboquant_adapter", "TurboQuantAdapter"),
     ("methods.eviction_adapter", "PyramidKVVisualAdapter"),
+    ("methods.kivi_example_adapter", "KIVIExampleAdapter"),
+    ("methods.turboquant_buffered_adapter", "TurboQuantBufferedAdapter"),
+    ("methods.turboquant_onlyterp_mse_adapter", "OnlyTerpMSEAdapter"),
 }
 
 

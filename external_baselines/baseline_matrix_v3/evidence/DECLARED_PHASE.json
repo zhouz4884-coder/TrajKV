@@ -1,0 +1,67 @@
+{
+  "contract": {
+    "schema": "baseline_matrix.public_phase_contract.v2",
+    "phase_label": "M1_FP16_CHARTQA_FULL_REFERENCE_2500",
+    "family": "native_f_chartqa_full_reference",
+    "matrix": "configs/matrix/M1_FP16_ChartQA_full_reference_milestone_v1.json",
+    "coverage_scope": "First completed M1 FP16 ChartQA test full-split reference bank:2500QA/1250human/1250aug; not completion of P2/P3 or the full external SOTA library",
+    "view_root": "${EVIDENCE_ROOT}\\results\\native_F_full_views\\native_F_v1",
+    "score_root": "${EVIDENCE_ROOT}\\results\\scored\\native_F_full_native_F_v1",
+    "completion_policy": "all_expected_QA_pass",
+    "completion_scope": "declared_matrix_only",
+    "whole_library_completion_assessed": false,
+    "fixture_only": false
+  },
+  "phase": {
+    "status": "PASS_DECLARED_MATRIX_COMPLETE",
+    "phase_label": "M1_FP16_CHARTQA_FULL_REFERENCE_2500",
+    "family": "native_f_chartqa_full_reference",
+    "coverage_scope": "First completed M1 FP16 ChartQA test full-split reference bank:2500QA/1250human/1250aug; not completion of P2/P3 or the full external SOTA library",
+    "completion_scope": "declared_matrix_only",
+    "whole_external_library_completion_assessed": false,
+    "declared_matrix_source_sha256": "b9315ff9a2a6a14db4e2f973aa9f86acb0400e60f54385d50caf5177ad230e73",
+    "expected_cells": 1,
+    "verified_scored_cells": 1,
+    "expected_questions": 2500,
+    "verified_scored_questions": 2500,
+    "closed_artifact_cells": 1,
+    "missing": [],
+    "observed": [
+      {
+        "cell": "M1_F_chartqa_full_2500_v1",
+        "questions": 2500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 2000,
+          "reused": 500
+        }
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "cell": "M1_F_chartqa_full_2500_v1",
+      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_chartqa_full_2500_v1",
+      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_chartqa_full_2500_v1",
+      "config": "configs/eval/M1_F_chartqa_full_2500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 2500
+    }
+  ],
+  "closure": [
+    {
+      "raw_dir": "results/p2/M1_F_chartqa_p2_500_v1",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/p3_F_missing/M1_F_chartqa_full_2500_missing_Fbank_v1",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_chartqa_full_2500_v1",
+      "kind": "derived_prediction_view"
+    }
+  ]
+}

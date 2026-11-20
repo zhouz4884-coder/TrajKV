@@ -1,0 +1,455 @@
+{
+  "schema": "baseline_matrix.speed_stage_matrix.v1",
+  "status": "CPU_TEMPLATES_AND_REAL_MODEL_EXPECTATIONS_READY_GPU_NOT_EXECUTED",
+  "expected_originals_on_E": true,
+  "new_GPU_jobs_launched": 0,
+  "reference_answers_read": false,
+  "benchmark_source_sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+  "expected_export_tool_sha256": "e10c540bc62e65ea6643646453023163058e3620a9425fa3f0d019a7f1b1db76",
+  "execution_controller": "Root ops/launch.py under controlled window; speed completion status is distinct from raw inference queue status",
+  "preparation_did_not_establish_GPU_exclusivity_or_host_quiet": true,
+  "ready_cohorts": [
+    {
+      "cohort": "M1_text16",
+      "model": "M1",
+      "dataset": "textvqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "C1_bias32",
+        "E_r0888"
+      ],
+      "formal_QA": 16,
+      "smoke_QA": 2,
+      "repeat": 3,
+      "warmup_per_QA": 1,
+      "expected_model_output_records": 64,
+      "expected_original_E": "${EVIDENCE_ROOT}/cache_validation/speed_expected_M1_text16_v1.json",
+      "expected_sha256": "103086239b8567ba67e25f96cce4cb7e42b78aa6d5d519bfe5f6cdd5a8cccb4f",
+      "expected_remote_target": "${DATA_ROOT}/configs/speed/expected_M1_text16_v1.json",
+      "expected_staging_copy_optional_D": "${PROJECT_ROOT}\\configs\\speed\\expected_M1_text16_v1.json",
+      "source_verification": "PASS_REAL_P1_RAW_SOURCE_SHA_AND_INPUT_CONTRACT_NO_GT",
+      "quality_source_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1\\M1_F_textvqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M1_K2_R0_textvqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M1_C1_bias32_textvqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1"
+      ],
+      "source_effective_contracts": {
+        "F_native_split": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3",
+        "KIVI_style_K2V2_g128_R0": "37f0062802c39b272d121ded81c062f7df6fceb8333cf76c6f6f1e60af822b5f",
+        "CalibQuant_visual_FP32bias_1bit": "e2471a40dee47d81bf7fca7d1c2f7988f3d407d652e3371235bd8af1e00841ae",
+        "PyramidKV_visual_drop0p888_unknown": "ad19df611656d75ef312cb0186415015d63250e62f895d5913ccc10336f86d23"
+      },
+      "smoke": {
+        "config": "configs/speed/M1_text2_smoke_v1.json",
+        "config_sha256": "349a46199febf6dd0f80dc2478f955dc2400001757000adf931fdd90d66c31f4",
+        "job": "configs/jobs/bm_M1_text2_speed_smoke_v1.json",
+        "job_sha256": "d4647e305e6f92f7c8c50e9b7de367945ed896a50ed1f289384f5c583a0188e0",
+        "measured_trials": 24,
+        "warmup_trials": 8,
+        "provisional_selected_physical_GPU": "1",
+        "required_completion_status": "PASS_TIMED_AND_TOKEN_VALIDATED",
+        "status": "NOT_LAUNCHED_BY_THIS_PREPARATION"
+      },
+      "formal": {
+        "config": "configs/speed/M1_text16_interleaved_v1.json",
+        "config_sha256": "59f970f530eef363fd417eb97b7af96387875980ed40d1e54180d2ac2746df22",
+        "job": "configs/jobs/bm_M1_text16_speed_v1.json",
+        "job_sha256": "b5a41b4a78536d34dba5f1b3bf4be50f70d91493e2ef0a171cf43442169dd3a6",
+        "measured_trials": 192,
+        "warmup_trials": 64,
+        "provisional_selected_physical_GPU": "1",
+        "required_prerequisite": "Same-cohort smoke2 status PASS_TIMED_AND_TOKEN_VALIDATED; Root-controlled exclusive GPU window",
+        "status": "NOT_LAUNCHED_BY_THIS_PREPARATION"
+      },
+      "verify_gpu_exclusive": true,
+      "GPU_exclusivity_observed": false,
+      "host_quiet_asserted": false,
+      "quiet_window_instruction": "Root may create a new explicit version with chosen GPU/quiet assertion; do not overwrite v1 or the existing M1Text16 template",
+      "no_hardware_timing_or_latency_claim": true
+    },
+    {
+      "cohort": "M2_text8",
+      "model": "M2",
+      "dataset": "textvqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "E_r0888"
+      ],
+      "formal_QA": 8,
+      "smoke_QA": 2,
+      "repeat": 3,
+      "warmup_per_QA": 1,
+      "expected_model_output_records": 24,
+      "expected_original_E": "${EVIDENCE_ROOT}\\results\\speed_preparation\\stage_v1\\expected_M2_text8_v1.json",
+      "expected_sha256": "605d56d06616370d34795e2c4ba7318ee44db01fdb1d9536c8955862a4733de4",
+      "expected_remote_target": "${DATA_ROOT}/configs/speed/expected_M2_text8_v1.json",
+      "expected_staging_copy_optional_D": "${PROJECT_ROOT}\\configs\\speed\\expected_M2_text8_v1.json",
+      "source_verification": "PASS_REAL_P1_RAW_SOURCE_SHA_AND_INPUT_CONTRACT_NO_GT",
+      "quality_source_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1\\M2_F_textvqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M2_K2_R0_textvqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M2_E_r0888_textvqa_p1_128_v1"
+      ],
+      "source_effective_contracts": {
+        "F_native_split": "3ea9fef56234a54d342ee11857d140a66e37943798db169959d5cf7513f9f960",
+        "KIVI_style_K2V2_g128_R0": "54512335b9b6c6db73feb4649c0755ec74a307209fa9a338313c5c4ef59fec73",
+        "PyramidKV_visual_drop0p888_unknown": "5af983e3fb12a2d4e47d0cb0173314b7217da6a6baaa8080fda0f5f3b01f819d"
+      },
+      "smoke": {
+        "config": "configs/speed/M2_text2_smoke_v1.json",
+        "config_sha256": "942822ce136bad1d24dbdb75eaf4bbaa23c26a69647d56120fc0740ccf9e8fb1",
+        "job": "configs/jobs/bm_M2_text2_speed_smoke_v1.json",
+        "job_sha256": "89d70f127229ca658098f3b6b6d0c24fd28bfbd7d84e8cff0ea85a24830028af",
+        "measured_trials": 18,
+        "warmup_trials": 6,
+        "provisional_selected_physical_GPU": "1",
+        "required_completion_status": "PASS_TIMED_AND_TOKEN_VALIDATED",
+        "status": "NOT_LAUNCHED_BY_THIS_PREPARATION"
+      },
+      "formal": {
+        "config": "configs/speed/M2_text8_interleaved_v1.json",
+        "config_sha256": "1ff70bed2a6f037fc1c94fc65d9de2324b7dce4c17e7770950143074548097e9",
+        "job": "configs/jobs/bm_M2_text8_speed_v1.json",
+        "job_sha256": "e61f2c7934fb62a5f373c4661892f52ba6337cfd33c10b0b861f6117e04037d5",
+        "measured_trials": 72,
+        "warmup_trials": 24,
+        "provisional_selected_physical_GPU": "1",
+        "required_prerequisite": "Same-cohort smoke2 status PASS_TIMED_AND_TOKEN_VALIDATED; Root-controlled exclusive GPU window",
+        "status": "NOT_LAUNCHED_BY_THIS_PREPARATION"
+      },
+      "verify_gpu_exclusive": true,
+      "GPU_exclusivity_observed": false,
+      "host_quiet_asserted": false,
+      "quiet_window_instruction": "Root may create a new explicit version with chosen GPU/quiet assertion; do not overwrite v1 or the existing M1Text16 template",
+      "no_hardware_timing_or_latency_claim": true
+    },
+    {
+      "cohort": "M3_text8",
+      "model": "M3",
+      "dataset": "textvqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "E_r0888"
+      ],
+      "formal_QA": 8,
+      "smoke_QA": 2,
+      "repeat": 3,
+      "warmup_per_QA": 1,
+      "expected_model_output_records": 24,
+      "expected_original_E": "${EVIDENCE_ROOT}\\results\\speed_preparation\\stage_v1\\expected_M3_text8_v1.json",
+      "expected_sha256": "74be777214893726d2793ed709778d7873e087cea1becf9892fcaa31acaa719e",
+      "expected_remote_target": "${DATA_ROOT}/configs/speed/expected_M3_text8_v1.json",
+      "expected_staging_copy_optional_D": "${PROJECT_ROOT}\\configs\\speed\\expected_M3_text8_v1.json",
+      "source_verification": "PASS_REAL_P1_RAW_SOURCE_SHA_AND_INPUT_CONTRACT_NO_GT",
+      "quality_source_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1\\M3_F_textvqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M3_K2_R0_textvqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M3_E_r0888_textvqa_p1_128_v1"
+      ],
+      "source_effective_contracts": {
+        "F_native_split": "7c88747262ad92656dca93cbcd985584e6dc10d57acfe7e37f5eb66459dda104",
+        "KIVI_style_K2V2_g128_R0": "07f350f095d3f6e063cfc10d045bee0221a0b141de1c0f2db6c2ff36b1109abe",
+        "PyramidKV_visual_drop0p888_unknown": "fc67044bd3c7a70e7eaabcc860bfd91047150421a070d235c06bbbed9c9429ae"
+      },
+      "smoke": {
+        "config": "configs/speed/M3_text2_smoke_v1.json",
+        "config_sha256": "5038ecf8e96f4d5605e378eab739d92903860c3c1e152b4526049e36a046219c",
+        "job": "configs/jobs/bm_M3_text2_speed_smoke_v1.json",
+        "job_sha256": "4a5d9b8b554d3677a963942fbefea172d3ce18feae65a7c4fe44edc0cce3a423",
+        "measured_trials": 18,
+        "warmup_trials": 6,
+        "provisional_selected_physical_GPU": "1",
+        "required_completion_status": "PASS_TIMED_AND_TOKEN_VALIDATED",
+        "status": "NOT_LAUNCHED_BY_THIS_PREPARATION"
+      },
+      "formal": {
+        "config": "configs/speed/M3_text8_interleaved_v1.json",
+        "config_sha256": "052ab61c7810a578d4962529973917fc3c52fe6e9ab15cbf8196493de4727418",
+        "job": "configs/jobs/bm_M3_text8_speed_v1.json",
+        "job_sha256": "66f3acd7041b9969fb9302ca485707167b2bfe9a5b2850e8d81f907cd4d6fb33",
+        "measured_trials": 72,
+        "warmup_trials": 24,
+        "provisional_selected_physical_GPU": "1",
+        "required_prerequisite": "Same-cohort smoke2 status PASS_TIMED_AND_TOKEN_VALIDATED; Root-controlled exclusive GPU window",
+        "status": "NOT_LAUNCHED_BY_THIS_PREPARATION"
+      },
+      "verify_gpu_exclusive": true,
+      "GPU_exclusivity_observed": false,
+      "host_quiet_asserted": false,
+      "quiet_window_instruction": "Root may create a new explicit version with chosen GPU/quiet assertion; do not overwrite v1 or the existing M1Text16 template",
+      "no_hardware_timing_or_latency_claim": true
+    },
+    {
+      "cohort": "M1_info8",
+      "model": "M1",
+      "dataset": "infovqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "C1_bias32",
+        "E_r0888"
+      ],
+      "formal_QA": 8,
+      "smoke_QA": 2,
+      "repeat": 3,
+      "warmup_per_QA": 1,
+      "expected_model_output_records": 32,
+      "expected_original_E": "${EVIDENCE_ROOT}\\results\\speed_preparation\\stage_v1\\expected_M1_info8_v1.json",
+      "expected_sha256": "483559a8bbee1b5bffc35b5e451ec9d3a87cdfb738e11c93b9b2e948b78e6d82",
+      "expected_remote_target": "${DATA_ROOT}/configs/speed/expected_M1_info8_v1.json",
+      "expected_staging_copy_optional_D": "${PROJECT_ROOT}\\configs\\speed\\expected_M1_info8_v1.json",
+      "source_verification": "PASS_REAL_P1_RAW_SOURCE_SHA_AND_INPUT_CONTRACT_NO_GT",
+      "quality_source_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1\\M1_F_infovqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M1_K2_R0_infovqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M1_C1_bias32_infovqa_p1_128_v1",
+        "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1"
+      ],
+      "source_effective_contracts": {
+        "F_native_split": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3",
+        "KIVI_style_K2V2_g128_R0": "37f0062802c39b272d121ded81c062f7df6fceb8333cf76c6f6f1e60af822b5f",
+        "CalibQuant_visual_FP32bias_1bit": "e2471a40dee47d81bf7fca7d1c2f7988f3d407d652e3371235bd8af1e00841ae",
+        "PyramidKV_visual_drop0p888_unknown": "ad19df611656d75ef312cb0186415015d63250e62f895d5913ccc10336f86d23"
+      },
+      "smoke": {
+        "config": "configs/speed/M1_info2_smoke_v1.json",
+        "config_sha256": "4c2f4b5b28a930538465b3fc15e58c205b852aa25cfdc11bb8c3e7691a6a2324",
+        "job": "configs/jobs/bm_M1_info2_speed_smoke_v1.json",
+        "job_sha256": "c4524de920572dae1f595a7efc8c476f786e1040b7857b8158cc56ccba0f40d7",
+        "measured_trials": 24,
+        "warmup_trials": 8,
+        "provisional_selected_physical_GPU": "1",
+        "required_completion_status": "PASS_TIMED_AND_TOKEN_VALIDATED",
+        "status": "NOT_LAUNCHED_BY_THIS_PREPARATION"
+      },
+      "formal": {
+        "config": "configs/speed/M1_info8_interleaved_v1.json",
+        "config_sha256": "fc1ad2eabe3f78fb532043930decbc1135b690310fc94e27048718d2fea53730",
+        "job": "configs/jobs/bm_M1_info8_speed_v1.json",
+        "job_sha256": "427740839ef01916514d27f82b1de0cca99929fd407b9116986fe770bf5b0b53",
+        "measured_trials": 96,
+        "warmup_trials": 32,
+        "provisional_selected_physical_GPU": "1",
+        "required_prerequisite": "Same-cohort smoke2 status PASS_TIMED_AND_TOKEN_VALIDATED; Root-controlled exclusive GPU window",
+        "status": "NOT_LAUNCHED_BY_THIS_PREPARATION"
+      },
+      "verify_gpu_exclusive": true,
+      "GPU_exclusivity_observed": false,
+      "host_quiet_asserted": false,
+      "quiet_window_instruction": "Root may create a new explicit version with chosen GPU/quiet assertion; do not overwrite v1 or the existing M1Text16 template",
+      "no_hardware_timing_or_latency_claim": true
+    }
+  ],
+  "pending_cohorts": [
+    {
+      "model": "M1",
+      "dataset": "docvqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "C1_bias32",
+        "E_r0888"
+      ],
+      "speed_expected_status": "PENDING_NOT_EXPORTED",
+      "observed_local_P2_views": [
+        {
+          "method": "F",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        },
+        {
+          "method": "K2_R0",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        },
+        {
+          "method": "C1_bias32",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        },
+        {
+          "method": "E_r0888",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        }
+      ],
+      "reason": "Outside requested P1-backed speed preparation; no expected IDs fabricated for unverified/incomplete quality cohorts",
+      "GPU_launched": false
+    },
+    {
+      "model": "M1",
+      "dataset": "chartqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "C1_bias32",
+        "E_r0888"
+      ],
+      "speed_expected_status": "PENDING_NOT_EXPORTED",
+      "observed_local_P2_views": [
+        {
+          "method": "F",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        },
+        {
+          "method": "K2_R0",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        },
+        {
+          "method": "C1_bias32",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        },
+        {
+          "method": "E_r0888",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        }
+      ],
+      "reason": "Outside requested P1-backed speed preparation; no expected IDs fabricated for unverified/incomplete quality cohorts",
+      "GPU_launched": false
+    },
+    {
+      "model": "M2",
+      "dataset": "infovqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "E_r0888"
+      ],
+      "speed_expected_status": "PENDING_NOT_EXPORTED",
+      "observed_local_P2_views": [],
+      "reason": "Outside requested P1-backed speed preparation; no expected IDs fabricated for unverified/incomplete quality cohorts",
+      "GPU_launched": false
+    },
+    {
+      "model": "M2",
+      "dataset": "docvqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "E_r0888"
+      ],
+      "speed_expected_status": "PENDING_NOT_EXPORTED",
+      "observed_local_P2_views": [
+        {
+          "method": "F",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        },
+        {
+          "method": "K2_R0",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        }
+      ],
+      "reason": "Outside requested P1-backed speed preparation; no expected IDs fabricated for unverified/incomplete quality cohorts",
+      "GPU_launched": false
+    },
+    {
+      "model": "M2",
+      "dataset": "chartqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "E_r0888"
+      ],
+      "speed_expected_status": "PENDING_NOT_EXPORTED",
+      "observed_local_P2_views": [
+        {
+          "method": "F",
+          "status": "PASS_RAW_COMPLETE",
+          "expected_QA": 500,
+          "counts": {
+            "PASS": 500
+          }
+        }
+      ],
+      "reason": "Outside requested P1-backed speed preparation; no expected IDs fabricated for unverified/incomplete quality cohorts",
+      "GPU_launched": false
+    },
+    {
+      "model": "M3",
+      "dataset": "infovqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "E_r0888"
+      ],
+      "speed_expected_status": "PENDING_NOT_EXPORTED",
+      "observed_local_P2_views": [],
+      "reason": "Outside requested P1-backed speed preparation; no expected IDs fabricated for unverified/incomplete quality cohorts",
+      "GPU_launched": false
+    },
+    {
+      "model": "M3",
+      "dataset": "docvqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "E_r0888"
+      ],
+      "speed_expected_status": "PENDING_NOT_EXPORTED",
+      "observed_local_P2_views": [],
+      "reason": "Outside requested P1-backed speed preparation; no expected IDs fabricated for unverified/incomplete quality cohorts",
+      "GPU_launched": false
+    },
+    {
+      "model": "M3",
+      "dataset": "chartqa",
+      "methods": [
+        "F",
+        "K2_R0",
+        "E_r0888"
+      ],
+      "speed_expected_status": "PENDING_NOT_EXPORTED",
+      "observed_local_P2_views": [],
+      "reason": "Outside requested P1-backed speed preparation; no expected IDs fabricated for unverified/incomplete quality cohorts",
+      "GPU_launched": false
+    }
+  ],
+  "total_formal_measured_trials": 432,
+  "total_formal_warmup_trials": 144,
+  "total_smoke_measured_trials": 84,
+  "total_smoke_warmup_trials": 28,
+  "new_expected_model_records_exported": 80,
+  "existing_M1_Text16_expected_records_preserved": 64,
+  "supersedes_preparation_matrix": "configs/matrix/SPEED_stage_v1.json",
+  "metadata_correction": "Optional D staging-copy basename follows the remote expected target; predictions/protocol/job configs unchanged; no copy or GPU launch performed"
+}

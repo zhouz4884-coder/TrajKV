@@ -1,0 +1,164 @@
+{
+  "schema": "baseline_matrix.onlyterp_mse_pilots.v1",
+  "status": "CONFIGURATION_DRAFT_NO_GPU_RUN_STARTED",
+  "source_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+  "gate_job": "configs/jobs/bm_onlyterp_mse_cuda_gate_v1.json",
+  "order": "SM86 math/owner gate ->2QA ->8fixedQA ->64fixedQA",
+  "all_model_inference_uses_existing_evaluate_driver": true,
+  "source_MSE_aliases_only": true,
+  "QJL": 0,
+  "datasets_selected_without_reading_references": true,
+  "variants": [
+    {
+      "variant": "OT_Hmix12",
+      "phase": "probe2",
+      "dataset": "textvqa",
+      "expected_QA": 2,
+      "config": "configs/eval/M1_OT_Hmix12_textvqa_probe2_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix12_textvqa_probe2_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix12",
+      "phase": "pilot8",
+      "dataset": "textvqa",
+      "expected_QA": 4,
+      "config": "configs/eval/M1_OT_Hmix12_textvqa_pilot8_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix12_textvqa_pilot8_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix12",
+      "phase": "pilot8",
+      "dataset": "infovqa",
+      "expected_QA": 4,
+      "config": "configs/eval/M1_OT_Hmix12_infovqa_pilot8_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix12_infovqa_pilot8_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix12",
+      "phase": "pilot64",
+      "dataset": "textvqa",
+      "expected_QA": 32,
+      "config": "configs/eval/M1_OT_Hmix12_textvqa_pilot64_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix12_textvqa_pilot64_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix12",
+      "phase": "pilot64",
+      "dataset": "infovqa",
+      "expected_QA": 32,
+      "config": "configs/eval/M1_OT_Hmix12_infovqa_pilot64_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix12_infovqa_pilot64_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "probe2",
+      "dataset": "textvqa",
+      "expected_QA": 2,
+      "config": "configs/eval/M1_OT_Hmix23_textvqa_probe2_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_textvqa_probe2_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "pilot8",
+      "dataset": "textvqa",
+      "expected_QA": 4,
+      "config": "configs/eval/M1_OT_Hmix23_textvqa_pilot8_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_textvqa_pilot8_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "pilot8",
+      "dataset": "infovqa",
+      "expected_QA": 4,
+      "config": "configs/eval/M1_OT_Hmix23_infovqa_pilot8_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_infovqa_pilot8_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "pilot64",
+      "dataset": "textvqa",
+      "expected_QA": 32,
+      "config": "configs/eval/M1_OT_Hmix23_textvqa_pilot64_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_textvqa_pilot64_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "pilot64",
+      "dataset": "infovqa",
+      "expected_QA": 32,
+      "config": "configs/eval/M1_OT_Hmix23_infovqa_pilot64_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_infovqa_pilot64_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Huniform1",
+      "phase": "probe2",
+      "dataset": "textvqa",
+      "expected_QA": 2,
+      "config": "configs/eval/M1_OT_Huniform1_textvqa_probe2_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Huniform1_textvqa_probe2_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Huniform1",
+      "phase": "pilot8",
+      "dataset": "textvqa",
+      "expected_QA": 4,
+      "config": "configs/eval/M1_OT_Huniform1_textvqa_pilot8_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Huniform1_textvqa_pilot8_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Huniform1",
+      "phase": "pilot8",
+      "dataset": "infovqa",
+      "expected_QA": 4,
+      "config": "configs/eval/M1_OT_Huniform1_infovqa_pilot8_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Huniform1_infovqa_pilot8_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Huniform1",
+      "phase": "pilot64",
+      "dataset": "textvqa",
+      "expected_QA": 32,
+      "config": "configs/eval/M1_OT_Huniform1_textvqa_pilot64_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Huniform1_textvqa_pilot64_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    },
+    {
+      "variant": "OT_Huniform1",
+      "phase": "pilot64",
+      "dataset": "infovqa",
+      "expected_QA": 32,
+      "config": "configs/eval/M1_OT_Huniform1_infovqa_pilot64_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Huniform1_infovqa_pilot64_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection"
+    }
+  ],
+  "quality_and_budget_and_speed_support": "unmeasured; decisions belong to root after actual E2E evidence"
+}

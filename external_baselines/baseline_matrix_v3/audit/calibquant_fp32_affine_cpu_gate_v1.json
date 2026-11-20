@@ -1,0 +1,85 @@
+{
+  "status": "PASS_CPU_FP32_AFFINE_FORMAT_DTYPE_CODED_MATH",
+  "GPU_used": false,
+  "quality_scored": false,
+  "original_CUDA_kernels_validated_by_this_gate": false,
+  "reference_scope": "FP64 affine/calibration conditioned on the identical hard-FP16 raw kernel boundary",
+  "cases": [
+    {
+      "bits": 1,
+      "n": 32,
+      "encoder_and_physical_owner_unchanged": true,
+      "calibrated_FP32_vs_boundary_conditioned_FP64_max_abs": 3.9009358676622696e-07,
+      "weighted_Half_vs_boundary_conditioned_FP64_Half_max_abs": 6.103515625e-05,
+      "zero_query_source_map_finite_without_clamp": true
+    },
+    {
+      "bits": 1,
+      "n": 257,
+      "encoder_and_physical_owner_unchanged": true,
+      "calibrated_FP32_vs_boundary_conditioned_FP64_max_abs": 9.47909877258013e-07,
+      "weighted_Half_vs_boundary_conditioned_FP64_Half_max_abs": 6.103515625e-05,
+      "zero_query_source_map_finite_without_clamp": true
+    },
+    {
+      "bits": 2,
+      "n": 32,
+      "encoder_and_physical_owner_unchanged": true,
+      "calibrated_FP32_vs_boundary_conditioned_FP64_max_abs": 6.83806672618914e-07,
+      "weighted_Half_vs_boundary_conditioned_FP64_Half_max_abs": 0.0001220703125,
+      "zero_query_source_map_finite_without_clamp": true
+    },
+    {
+      "bits": 2,
+      "n": 257,
+      "encoder_and_physical_owner_unchanged": true,
+      "calibrated_FP32_vs_boundary_conditioned_FP64_max_abs": 8.991906583766252e-07,
+      "weighted_Half_vs_boundary_conditioned_FP64_Half_max_abs": 0.0001220703125,
+      "zero_query_source_map_finite_without_clamp": true
+    }
+  ],
+  "manifest": {
+    "method": "calibquant_visual_fp32_affine_v1",
+    "method_paper": "https://arxiv.org/abs/2502.14882v2",
+    "upstream_repo": "https://github.com/insuhan/calibquant",
+    "upstream_commit": "1dcfce862162e4a3888ef137df65b36cdc19efd0",
+    "port_name": "visual_packed_source_kernel_FP32_affine_calibration_common_FP16_v1",
+    "faithfulness_status": "P0_PENDING",
+    "bits_nominal": 1,
+    "reader_backend": "upstream_triton",
+    "k_range_multiplier": 0.5,
+    "v_range_multiplier": 0.3,
+    "norm_offset_max": -3.0,
+    "norm_offset_min": 0.0,
+    "calibration_data": "none: published upstream constants frozen without tuning",
+    "calibration_provenance_gap": "paper describes grid search but released code has no calibration runner or split manifest",
+    "prefill_protocol": "image prefix captured natively, compressed, all question suffix tokens replayed",
+    "upstream_protocol_difference": "released script quantizes after full prompt and only reads compressed visual KV at decode",
+    "runtime_variant": "released packed Triton QK/WV, single-query loop",
+    "rotation": false,
+    "sparse_outlier_owner": false,
+    "text_kv": "unmodified full precision; engine owner",
+    "weight_quantization": false,
+    "numerical_variant": "Explicit FP32 temporary bias products/reduction, raw-QK rescale/subtraction/calibration, raw-WV affine",
+    "original_source_default": "BF16 model plus hard-FP16 kernels promotes visual score/affine to FP32; source V bias subproducts remain BF16",
+    "not_author_BF16_bitwise_reproduction": true,
+    "unchanged": [
+      "source quantizer",
+      "integer codes",
+      "packed format",
+      "metadata dtype FP16",
+      "source QK/WV kernels",
+      "K/V clip multipliers",
+      "norm offsets",
+      "FP16 weights and text KV"
+    ],
+    "extra_temporary_precision_only": true,
+    "adds_persistent_tensors": false,
+    "fitted_parameters": false,
+    "remaining_bridge_boundary": "Visual weighted result cast FP16 before existing exact-text FP16 addition; author defaults cast joint output BF16"
+  },
+  "source_sha256": {
+    "code/gates/calibquant_fp32_affine_cpu_gate.py": "aded0e1ec9e0c0934f7ce632b1f29f416d46071407b4289327efcf9096249064",
+    "code/methods/calibquant_fp32_affine_adapter.py": "9cee1e0022b6631fc59777ee0d60df8b28e5466ad3906b66221c4ac0c8e9dae7"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "status": "CPU_SOURCE_GATE_PASSED_CUDA_AND_MODEL_PENDING",
+  "GPU_launched": false,
+  "adapter": "methods.turboquant_onlyterp_mixed_prod_adapter.OnlyTerpMixedProdAdapter",
+  "source_default_MSE_bits": [
+    3,
+    4
+  ],
+  "Gaussian_QJL_dimension": 128,
+  "QJL_corrections_in_K_read": 1,
+  "V_encoding": "MSE+QJL, all categorical and source norm data kept",
+  "V_default_read": "source_cache_mse",
+  "V_separate_public_decode_variant": "full_prod_decode",
+  "no_source_buffer_manager_or_experimental_kernel": true,
+  "actual_padded_MSE_payload_bits": 4.0,
+  "QJL_sign_payload_bits": 1.0,
+  "source_norm_metadata_bits": 0.5,
+  "payload_plus_norm_core_bits": 5.5,
+  "complete_bits": "unmeasured GPU; add every actual Gaussian matrix and all persistent constants/positions",
+  "gate_job": "configs/jobs/bm_onlyterp_mixed_prod_cuda_gate_v1.json",
+  "M1_probe_job": "configs/jobs/bm_M1_onlyterp_mixed_prod_Hmix34_probe2_v1.json",
+  "M1_probe_is_diagnostic_not_reusable_formal_evaluate_record": true,
+  "old_eval_ALLOWLIST_not_modified": "Diagnostic driver calls native protocol directly; formal admission is a later explicitly reviewed change",
+  "scope": "OnlyTerp primary mixed-MSE plus global singleGaussianIP source port; not paper two-full-independent-prod instantiation or2.5/3.5table reproduction"
+}

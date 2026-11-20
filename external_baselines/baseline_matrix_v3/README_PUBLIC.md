@@ -1,30 +1,11 @@
-# External baseline library: P1 increment
+# External baseline increment: M1_FP16_CHARTQA_FULL_REFERENCE_2500
 
-This increment records the declared external-baseline protocol, pinned source,
-technical gates and the available P1 evidence. It does not claim completion
-of later phases or a full-split score when the manifest selects a subset.
+Declared scope: First completed M1 FP16 ChartQA test full-split reference bank:2500QA/1250human/1250aug; not completion of P2/P3 or the full external SOTA library
 
-The full exact-byte payload is in the accompanying ZIP. Git contains browsable
-source/configuration/tables and small manifests; bulky per-QA evidence remains
-in the ZIP. Original images, model weights, compiler caches, private controller
-code and connection information are excluded. Obtain the pinned public datasets
-and model revisions separately.
+Closed/scored cells: 1/1; questions: 2500/2500.
 
-`PUBLIC_CONTENT_REFS.json` distinguishes original source bytes, sanitized public
-archive bytes, and LF-normalized Git bytes/blob OIDs. Paths are templates such as
-`${DATA_ROOT}`; prediction text, question text, answers, token IDs and numeric
-results retain their meaning. Original SHA fields inside derived evidence still
-refer to the source; resolve them through the content index rather than treating
-them as a hash of the sanitized file. Per-line source/public mappings are included.
+Completion is assessed only against this declared matrix, not the whole external SOTA library or all P2/P3 research. A progress preview cannot be published by the v2 publisher. Derived views retain original predictions and instrumented timing; they are not new GPU inference runs. All original donor runs and source/retrieval proofs are archived, including donors from earlier phases.
 
-Run `python code/verify_public_export.py --root .` from an extracted namespace
-to validate every public file. Add `--recompute-scores` to independently recompute
-the selected offline metrics from all archived scored rows. The scorer requires
-NumPy. The original strict private-source verifier is not a sanitizer-aware API.
+PUBLIC_CONTENT_REFS.json separates original source, sanitized archive and LF-normalized Git identities. Original SHA fields remain source identities. Per-line maps are separate archived JSONL sidecars. Code/configuration/tables/small manifests are browsable in Git; full raw evidence is in the ZIP. Images, weights, tensor dumps, private routes and compiler caches are excluded.
 
-For strict upstream byte guards use the archive: `.gitattributes` normalizes Git
-text to LF, which can differ from the original checkout's CRLF bytes. Runtime
-dependencies and port boundaries are stated in the model/method reports. All
-matrix inference uses original FP16 weights; technical CUDA controls are separate
-from benchmark quality. Prototype instrumented timing is not a controlled speed
-claim. Automatic GitHub publication is a separate step after export verification.
+From the extracted namespace run `python -B code/verify_public_export.py --root . --recompute-scores`. This validates donor closure, exact prediction provenance, fixed-reference metrics, cluster CIs and declared coverage. Use exact archive bytes for source guards that distinguish original CRLF from Git LF. Runtime and method limitations remain explicit in reports.

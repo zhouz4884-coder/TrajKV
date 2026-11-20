@@ -1,0 +1,68 @@
+{
+  "status": "PASS_CPU_SPEED_SCHEMA_AND_SOURCE_REVIEW",
+  "GPU_used": false,
+  "new_model_inference_QA": 0,
+  "timing_numbers_produced": false,
+  "cases": [
+    {
+      "case": "actual_four_method_plan_16QA_64warmup_192measure_no_model_import",
+      "status": "PASS"
+    },
+    {
+      "case": "fixed_seed_interleaved_schedule_reproducible",
+      "status": "PASS"
+    },
+    {
+      "case": "verified_prior_MODEL_outputs_all_methods_and_ids_covered",
+      "status": "PASS"
+    },
+    {
+      "case": "reject_reference_job_fields",
+      "status": "PASS"
+    },
+    {
+      "case": "reject_fewer_than_three_measured_repeats",
+      "status": "PASS"
+    },
+    {
+      "case": "reject_missing_full_warmup",
+      "status": "PASS"
+    },
+    {
+      "case": "reject_duplicate_timing_ids",
+      "status": "PASS"
+    },
+    {
+      "case": "reject_cross_method_visual_input_cap_change",
+      "status": "PASS"
+    },
+    {
+      "case": "reject_missing_expected_model_output",
+      "status": "PASS"
+    },
+    {
+      "case": "quality_token_mismatch_cannot_become_primary_speed",
+      "status": "PASS"
+    },
+    {
+      "case": "failed_warmup_cannot_be_silently_ignored",
+      "status": "PASS"
+    },
+    {
+      "case": "timed_region_excludes_external_audits_GC_hash_JSON_and_only_final_sync",
+      "status": "PASS"
+    },
+    {
+      "case": "frozen_core_evaluator_and_cache_policy_unchanged",
+      "status": "PASS"
+    }
+  ],
+  "case_count": 13,
+  "benchmark_source_sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+  "expected_model_outputs_sha256": "103086239b8567ba67e25f96cce4cb7e42b78aa6d5d519bfe5f6cdd5a8cccb4f",
+  "protected_sources": {
+    "code/evaluate.py": "c4d73e61efff308051dd4f5e7c450ae4d38f7dc3406f61456b26e935a1423ed4",
+    "configs/cache/evaluate_identity_equivalence_v1.json": "05a456a447c3d9fd7eac14d6cc1d2b0d98abcf5c67dfa3c48ec0268f95673703"
+  },
+  "actual_GPU_smoke_and_timing": "NOT_PERFORMED; root must schedule controlled CUDA validation before claiming speed"
+}

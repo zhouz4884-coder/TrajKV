@@ -1,0 +1,61 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M1",
+  "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p1_inputs.jsonl",
+  "start": 0,
+  "count": 28,
+  "max_new_tokens": 64,
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "max_patches": 8
+  },
+  "method": {
+    "id": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+    "family": "onlyterp_mse",
+    "adapter_module": "methods.turboquant_onlyterp_mse_adapter",
+    "adapter_class": "OnlyTerpMSEAdapter",
+    "constructor_args": {
+      "bits_regular": 2,
+      "bits_outlier": 3,
+      "mixed_precision": true,
+      "reader_backend": "torch_materialize_fp32_reference"
+    },
+    "reader_backend": "torch_materialize_fp32_reference",
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "scope": "ONLYTERP_ALG1_MSE_QJL0_HMIX12_VISUAL_FIXED_PILOT_NOT_PROD_OR_PAPER_2P5_TABLE",
+  "ids": [
+    "textvqa:validation:35278",
+    "textvqa:validation:34678",
+    "textvqa:validation:36735",
+    "textvqa:validation:37504",
+    "textvqa:validation:37945",
+    "textvqa:validation:34871",
+    "textvqa:validation:36188",
+    "textvqa:validation:37228",
+    "textvqa:validation:37175",
+    "textvqa:validation:38068",
+    "textvqa:validation:36575",
+    "textvqa:validation:34686",
+    "textvqa:validation:36863",
+    "textvqa:validation:39043",
+    "textvqa:validation:37689",
+    "textvqa:validation:37408",
+    "textvqa:validation:36229",
+    "textvqa:validation:38827",
+    "textvqa:validation:37203",
+    "textvqa:validation:37586",
+    "textvqa:validation:34868",
+    "textvqa:validation:36641",
+    "textvqa:validation:39393",
+    "textvqa:validation:36510",
+    "textvqa:validation:36402",
+    "textvqa:validation:37681",
+    "textvqa:validation:39513",
+    "textvqa:validation:35158"
+  ]
+}

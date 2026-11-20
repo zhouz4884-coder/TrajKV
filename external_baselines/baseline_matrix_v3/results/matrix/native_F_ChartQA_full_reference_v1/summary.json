@@ -1,0 +1,106 @@
+{
+  "status": "FULL_SINGLE_REFERENCE_TARGET_COMPLETE",
+  "model": "M1 InternVL3-8B-hf",
+  "method": "F_native_split",
+  "scope": "First completed M1 FP16 ChartQA test full-split reference bank:2500QA/1250human/1250aug; not completion of P2/P3 or the full external SOTA library",
+  "rows": [
+    {
+      "group": "overall",
+      "questions": 2500,
+      "source_clusters": 1509,
+      "relaxed_correct": 2156,
+      "accuracy_percent": 86.24000000000001,
+      "CI95_low_percent": 84.83738768158223,
+      "CI95_high_percent": 87.65334909637461,
+      "status": "FULL_TEST_SPLIT_REFERENCE_COMPLETE"
+    },
+    {
+      "group": "human",
+      "questions": 1250,
+      "source_clusters": 625,
+      "relaxed_correct": 971,
+      "accuracy_percent": 77.68,
+      "CI95_low_percent": 75.358,
+      "CI95_high_percent": 80.16,
+      "status": "FULL_TEST_SPLIT_REFERENCE_COMPLETE"
+    },
+    {
+      "group": "aug",
+      "questions": 1250,
+      "source_clusters": 987,
+      "relaxed_correct": 1185,
+      "accuracy_percent": 94.8,
+      "CI95_low_percent": 93.49717625957406,
+      "CI95_high_percent": 96.0599197661779,
+      "status": "FULL_TEST_SPLIT_REFERENCE_COMPLETE"
+    }
+  ],
+  "QA_origin_counts": {
+    "fresh": 2000,
+    "reused": 500
+  },
+  "new_GPU_inference_QA_in_full_extension": 2000,
+  "already_generated_same_contract_QA_reused": 500,
+  "metric_id": [
+    "chartqa_pix2struct_relaxed_5pct_v1"
+  ],
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261119,
+    "type": "percentile source-cluster resampling with replacement, question-weighted ratio",
+    "scale": "0..1"
+  },
+  "source_runs": [
+    {
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\p2\\M1_F_chartqa_p2_500_v1",
+      "raw_hashes": {
+        "manifest.json": "d0663566c09b7607bc242a783b8303476b2315f9ac2f7f0c1dbb06c54611b66e",
+        "records.jsonl": "da5da7e954a5367b87fb553078b036a93aa074002d3fedb6a34f1abf47a57e14",
+        "complete.json": "815b66e5ab9e4c00e28719cf5ad6ca93258baab1c4a89ea328a4d870bd16d380"
+      },
+      "source_proof_hashes": {
+        "source_inventory.json": "f6b5cca1869e96029da35633867d7fa4637108541901d319125d2d23a9e3ef49",
+        "launch_receipt.json": "95cb3886354c9f98b8e0662e8bf8777c0962fba05fc458674d85417dc0dfbf42",
+        "source_evaluate.py": "c4d73e61efff308051dd4f5e7c450ae4d38f7dc3406f61456b26e935a1423ed4"
+      },
+      "retrieval_receipt_sha256": "6d18b75b5c93ea5f8883e6097d896a54608d890bb8096c3872be3c8d47ae682e",
+      "source_retrieval_receipt_sha256": "2af093ca9efc3397fc0c0f29fd2150e70df0940b8061e7dd36122d010dfe5c72",
+      "effective_contract_sha256": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3",
+      "original_inference_run": true,
+      "source_recorded_QA": 500,
+      "source_status_counts": {
+        "PASS": 500
+      }
+    },
+    {
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\p3_F_missing\\M1_F_chartqa_full_2500_missing_Fbank_v1",
+      "raw_hashes": {
+        "manifest.json": "16da439fa8d2c0878fd10c0af06a0ab43ab53d78308a2c2a1c3cc811f8fa6b20",
+        "records.jsonl": "7939ea9f5898bb073973b762ff89d0b3f8d3fb9c3cf5cc19f0f6ada4bed19c7e",
+        "complete.json": "7a30d7f157b9cefe77c2d2140e18e33c625e917303c779c2d7eca0e09af50232"
+      },
+      "source_proof_hashes": {
+        "source_inventory.json": "1529ec987c94c463739fbe3489ddfdac1a0cfc65ce756fe31255603dac1300e3",
+        "launch_receipt.json": "4f5fbb00d1925eacef17d0fe3564c8a654606b47e2fa00a628aafce606c335c2",
+        "source_evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22"
+      },
+      "retrieval_receipt_sha256": "d6cf0bd048e775083da1b0297ac988e0e28a87b271ccfc856baf22cbeb65fbba",
+      "source_retrieval_receipt_sha256": "b819411ccf060f545558c91a81289ac2c2d28fef7961170bf5c5aab5f7b75cd5",
+      "effective_contract_sha256": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3",
+      "original_inference_run": true,
+      "source_recorded_QA": 2000,
+      "source_status_counts": {
+        "PASS": 2000
+      }
+    }
+  ],
+  "view_original_SHA256": {
+    "manifest.json": "07fbf54129b284623109f4682d241b045a92121065629fe36d02dd58a0e59402",
+    "records.jsonl": "4de0c2c509a704be2256383096d0ade3cb9f75604da323509e1fe1b3f775021a",
+    "complete.json": "f3e7cfaed0b3af24b542189530a65bc00f1937ec060298639836fbccdda9d636",
+    "provenance.jsonl": "6c7be2636debb2a8b6555a05404b132e4d04162aba1a1f2ef0eb64c5e714490f"
+  },
+  "scored_summary_original_SHA256": "71c5b5600e781c8988fe92eb57dd417262ed5bb688cb9830ba93f59a3a2c1355",
+  "not_compression_algorithm_result": true,
+  "not_whole_P2_P3_or_library_completion": true
+}

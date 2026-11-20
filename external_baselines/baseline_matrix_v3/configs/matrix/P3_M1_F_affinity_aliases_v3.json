@@ -1,0 +1,35 @@
+{
+  "status": "READY_NATIVE_F_AFFINITY_ALIASES_NOT_LAUNCHED",
+  "source_unused_check": "audit/onlyterp_F_affinity_original_unused_check_v1.json",
+  "all_original_jobs_configs_unchanged": true,
+  "rows": [
+    {
+      "dataset": "textvqa",
+      "original_unused_job": "configs/jobs/bm_M1_F_textvqa_full_5000_missing_Fbank_v1.json",
+      "original_job_do_not_run": true,
+      "alias_job": "configs/jobs/bm_M1_F_textvqa_full_5000_missing_Fbank_v1_GPU1_affinity_v2.json",
+      "alias_name": "bm_M1_F_textvqa_full_5000_missing_Fbank_v1_GPU1_affinity_v2",
+      "gpu": "1",
+      "canonical_output_unchanged": "${DATA_ROOT}/results/p3_F_missing/M1_F_textvqa_full_5000_missing_Fbank_v1",
+      "actual_reused_QA": 500,
+      "new_QA": 4500,
+      "config_unchanged": "configs/eval/M1_F_textvqa_full_5000_missing_Fbank_v1.json",
+      "job_sha256": "8a19f8f016c938071bd766748081d2f492e7678af0431aa6ba4297cccaf33a93",
+      "source_ready_matrix": "configs/matrix/P3_M1_F_all4_missing_v2.json"
+    },
+    {
+      "dataset": "infovqa",
+      "original_unused_job": "configs/jobs/bm_M1_F_infovqa_full_2801_missing_Fbank_v1.json",
+      "original_job_do_not_run": true,
+      "alias_job": "configs/jobs/bm_M1_F_infovqa_full_2801_missing_Fbank_v1_GPU0_affinity_v2.json",
+      "alias_name": "bm_M1_F_infovqa_full_2801_missing_Fbank_v1_GPU0_affinity_v2",
+      "gpu": "0",
+      "canonical_output_unchanged": "${DATA_ROOT}/results/p3_F_missing/M1_F_infovqa_full_2801_missing_Fbank_v1",
+      "actual_reused_QA": 500,
+      "new_QA": 2301,
+      "config_unchanged": "configs/eval/M1_F_infovqa_full_2801_missing_Fbank_v1.json",
+      "job_sha256": "99a21646a06fead0de67e947633f349ac000898c9b15b542aba0f22397427b8f",
+      "source_ready_matrix": "configs/matrix/P3_M1_F_all4_missing_v2.json"
+    }
+  ]
+}

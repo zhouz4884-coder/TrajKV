@@ -1,0 +1,35 @@
+{
+  "status": "ACTIVE_HMIX23_WAITING_FCHART_NATURAL_COMPLETION",
+  "controller": "External_baselines_P2_Fbank_OT23_chain_queue_v9",
+  "controller_PID": 1055414,
+  "plan": "configs/queues/External_baselines_P2_Fbank_OT23_chain_queue_v9.json",
+  "parent_queue_pause": "audit/onlyterp_hmix23_pause_v8.json",
+  "GPU0_worker": "bm_M1_F_docvqa_full_5349_missing_Fbank_v1 PID1041987",
+  "GPU1_worker": "bm_M1_F_chartqa_full_2500_missing_Fbank_v1 PID1051751",
+  "GPU_workers_must_not_be_signaled_or_restarted": true,
+  "scope": "OnlyTerpMSE existing Hmix23 bits_regular2/outlier3, QJL0, max_new64, original metadata/model protocol; no new Gaussian module registration or execution",
+  "queued_probe": "configs/jobs/bm_M1_OT_Hmix23_textvqa_probe2_v2.json",
+  "probe_expected_E": "${EVIDENCE_ROOT}/results/onlyterp_hmix23_v2/M1_OT_Hmix23_textvqa_probe2_v2",
+  "next_steps": [
+    "Wait Chart2000 existing worker to finish naturally; probe launches next before fullText4500 alias",
+    "When probe active pause verified CPU controller only so it cannot launch fullText before harvesting probe/8/64",
+    "Fetch real probe raw+sourceproof; run ops/prepare_onlyterp_hmix23_reuse_v1.py stage8 from real probe, serial Text missing2 then Info4 on GPU1",
+    "Actual stage8 PASS coverage in each dataset allows stage64 real4hits/missing28 each; score Textsoft and InfoANLS separately vs existing exact FP16 first32 references",
+    "Resume all original pending node objects/order and aliases/E4; no Hmix12 rerun; prepare500 only, report real64 and release lease"
+  ],
+  "Root_GPU_queue_change_lease": "child currently owns; Root promised not to mutate during task",
+  "no_Hmix23_answers_fabricated": true,
+  "main_500_not_authorized_to_launch": true,
+  "after_real64_before_fullText_DIAGNOSTIC": {
+    "job": "configs/jobs/bm_M1_late_question_boundary_diag2_v1.json",
+    "gpu": "1",
+    "completion_contract": {
+      "type": "diagnostic_json",
+      "accepted_status": "BOUNDARY_DIAGNOSTIC_RAW_COMPLETE",
+      "expected_cases": 2,
+      "expected_arms": 6
+    },
+    "not_main_or_prediction_cache": true,
+    "root_will_independently_analyze": true
+  }
+}

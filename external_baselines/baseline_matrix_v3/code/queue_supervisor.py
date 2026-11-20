@@ -28,12 +28,28 @@ def observed(receipt):
     return 'live'
 
 
-def output_complete(receipt):
+def output_complete(receipt, contract=None):
     argv = receipt['argv_executed']
     output = Path(argv[argv.index('--output') + 1])
-    complete = output / 'complete.json'
+    complete = output if output.suffix == '.json' and contract and contract.get('type') == 'json_status' else output / 'complete.json'
     if not complete.exists(): return {'status': 'PROCESS_EXITED_WITHOUT_COMPLETE', 'output': str(output)}
     value = read(complete)
+    if contract and contract.get('type') == 'json_status':
+        status=value['status']
+        fields_ok=all(value.get(key)==expected for key,expected in contract.get('required_fields', {}).items())
+        if status==contract['accepted_status'] and not fields_ok:status='JSON_STATUS_CONTRACT_MISMATCH'
+        return {'status':status, 'required_fields_match':fields_ok,
+                'report_sha256':hashlib.sha256(complete.read_bytes()).hexdigest(),
+                'quality_score_or_full_matrix_cell':False}
+    if contract and contract.get('type') == 'diagnostic_json':
+        cases=value.get('cases', [])
+        valid=(len(cases)==contract['expected_cases'] and
+               all(case.get('status')=='PASS' and len(case.get('arms', []))==contract['expected_arms'] and
+                   all(arm.get('status')=='PASS' for arm in case['arms']) for case in cases))
+        status=value['status']
+        if status==contract['accepted_status'] and not valid:status='DIAGNOSTIC_COVERAGE_MISMATCH'
+        return {'status':status, 'cases':len(cases), 'all_expected_arms_executed':valid,
+                'quality_score_or_full_matrix_cell':False}
     # The inference runner owns this marker. Validate its raw identities before
     # using it as a prerequisite; do not infer completion from a log tail.
     for name, key in [('manifest.json', 'manifest_sha256'), ('records.jsonl', 'records_jsonl_sha256')]:
@@ -73,11 +89,12 @@ def main():
             active = lane['active']
             if active:
                 if observed(active['receipt']) == 'live': continue
-                complete = output_complete(active['receipt'])
+                complete = output_complete(active['receipt'], active.get('completion_contract'))
                 lane['completed'].append({'name': active['name'], 'initial_external': active.get('initial_external', False),
                                           'observed_complete': complete, 'observed_unix': time.time()})
                 lane['active'] = None
-                if complete['status'] != 'PASS_RAW_COMPLETE':
+                expected_status=active.get('completion_contract', {}).get('accepted_status', 'PASS_RAW_COMPLETE')
+                if complete['status'] != expected_status:
                     lane.update(status='STOPPED_ON_ACTUAL_JOB_FAILURE', failure=complete)
                     flush(); continue
             if lane['next'] >= len(plan['lanes'][gpu]):
@@ -86,7 +103,9 @@ def main():
             config_path = root / item['job']
             assert hashlib.sha256(config_path.read_bytes()).hexdigest() == item['job_sha256']
             job = read(config_path)
-            assert str(job['env']['CUDA_VISIBLE_DEVICES']) == str(gpu)
+            if item.get('execution_resource') == 'cpu':
+                assert job['env']['CUDA_VISIBLE_DEVICES'] == ''
+            else:assert str(job['env']['CUDA_VISIBLE_DEVICES']) == str(gpu)
             prerequisites = item.get('require_pass', [])
             if any(not (root / condition).exists() for condition in prerequisites): continue
             failed_gate = next((condition for condition in prerequisites
@@ -99,7 +118,8 @@ def main():
             run = subprocess.run(['/usr/bin/python3', '-B', str(launcher), str(root), str(config_path), str(volume)],
                                  capture_output=True, text=True, check=True)
             receipt = json.loads(run.stdout)
-            lane['active'] = {'name': job['name'], 'receipt': receipt}
+            lane['active'] = {'name': job['name'], 'receipt': receipt,
+                              'completion_contract':item.get('completion_contract', {})}
             lane['next'] += 1
             print(json.dumps({'gpu': gpu, 'job': job['name'], 'pid': receipt['pid'], 'status': 'SCHEDULED'}), flush=True)
             flush()

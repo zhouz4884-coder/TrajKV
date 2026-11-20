@@ -1,0 +1,45 @@
+{
+  "status": "SOURCE_EXAMPLE_DEFAULT_LOCKED_CPU_PASS_CUDA_PENDING",
+  "upstream_repo": "https://github.com/jy-yuan/KIVI",
+  "upstream_commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+  "source_files": {
+    "third_party/kivi/example.py": {
+      "raw_sha256": "e78a57296c1089d1dae42f4680b2c0ec9ab8057172db95415810b0de32284a8b",
+      "LF_sha256": "6d6868ba2a412ca47e73ed056b418a540c4c1e25b9a01c63b55fac359fa7504e",
+      "git_blob_sha1": "9a88445940f8e383725b260c0927096ccb682e30"
+    },
+    "third_party/kivi/models/llama_kivi.py": {
+      "raw_sha256": "2e823f68358c35b414f04fd25e5e91ec646eb16af7d2d6869a1fd7b2a30d3e68",
+      "LF_sha256": "67ca858604a460fcafae018d97c5e420841b1ea7dcce522daf554e2df3af68f1",
+      "git_blob_sha1": "427fd2b650457f75392e04658fdcebbdc026583a"
+    },
+    "third_party/kivi/quant/new_pack.py": {
+      "raw_sha256": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+      "LF_sha256": "3678af0e34a0ba18e5d80a4128acf11d4070667c800a15540a16d07253a4f75e",
+      "git_blob_sha1": "72380af9dcc931547367deb00117dc2cbd5d1ebf"
+    }
+  },
+  "port_files": {
+    "code/methods/kivi_example_adapter.py": "9fb779267f600553a0e89ac951095f1d18758d957588afaf31fadcfc774978b0",
+    "code/methods/kivi_example_reader.py": "ec3680c9d1c5c6bc9643d445e5f32b691d2ad872a0872d2e6951e5fc4c57e412",
+    "code/gates/kivi_example_gate.py": "29cc880cded75253ba8a5dffbf896c79dd64079943560c5e3fcf203153dd36f4"
+  },
+  "admitted_point": {
+    "bits": 2,
+    "group_size": 32,
+    "residual_length": 32,
+    "dtype": "float16",
+    "batch_size": 1,
+    "head_dim": 128
+  },
+  "source_prefill_policy": {
+    "K_quantized_tokens": "N-N%R",
+    "K_FP16_tail": "N%R",
+    "V_quantized_tokens": "max(0,N-R)",
+    "V_FP16_tail": "min(N,R)",
+    "current_R_equals_G": true
+  },
+  "scope": "pinned example hyperparameters and prefill policy, immutable visual prefix, all text FP16; not original rolling whole-KV Llama system",
+  "reader": "independent tile decoder; GROUP constexpr32; V metadata offset includes token*(D/G)+dim/G",
+  "CUDA_gate_completed": false
+}

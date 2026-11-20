@@ -1,0 +1,91 @@
+{
+  "status": "EXISTING_DRAFTS_VERIFIED_NO_REGENERATION_OR_GPU_LAUNCH",
+  "source": "primary OnlyTerp MSE QJL0",
+  "rows": [
+    {
+      "variant": "OT_Hmix23",
+      "phase": "probe2",
+      "dataset": "textvqa",
+      "expected_QA": 2,
+      "config": "configs/eval/M1_OT_Hmix23_textvqa_probe2_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_textvqa_probe2_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection",
+      "config_sha256": "665e7b4e3feb235704dbe471c0bc3839f64aaa4925ad5e151f0d77071dc22bcc",
+      "job_sha256": "0572bc55878e121ba2d0d02d0730e1d5d177fdf7dce7a6aa81a44574fca1ad0e",
+      "whole_model_status": "NOT_EXECUTED_BY_THIS_PREPARATION",
+      "GPU_launched": false
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "pilot8",
+      "dataset": "textvqa",
+      "expected_QA": 4,
+      "config": "configs/eval/M1_OT_Hmix23_textvqa_pilot8_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_textvqa_pilot8_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection",
+      "config_sha256": "c6d62fe4e252a4bfdc260ebb3c1b14bea7734b70d9810623f6fc941c93f0aa64",
+      "job_sha256": "658b73c7d6cede403b3b56d2a7365bb50f6c3e5f88444d4e5fece092a2d0078f",
+      "whole_model_status": "NOT_EXECUTED_BY_THIS_PREPARATION",
+      "GPU_launched": false
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "pilot8",
+      "dataset": "infovqa",
+      "expected_QA": 4,
+      "config": "configs/eval/M1_OT_Hmix23_infovqa_pilot8_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_infovqa_pilot8_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection",
+      "config_sha256": "54a71c196623107cd57954b8f9c457fa55aace95a7c2e7522fd936f943355c18",
+      "job_sha256": "48ddf862a0a2e39fc95cc6042aa7a018135f2655f923043aa17f3c80cb1da325",
+      "whole_model_status": "NOT_EXECUTED_BY_THIS_PREPARATION",
+      "GPU_launched": false
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "pilot64",
+      "dataset": "textvqa",
+      "expected_QA": 32,
+      "config": "configs/eval/M1_OT_Hmix23_textvqa_pilot64_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_textvqa_pilot64_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection",
+      "config_sha256": "38e1b39607a6168be6e23ad0faf9675dee5ad9fa4c2677cca8b8eb0379ccee80",
+      "job_sha256": "d67cf50e6dc7e25acba22c4d03d8825f5fb5e2c95ac9a49fd0af91183fd72e28",
+      "whole_model_status": "NOT_EXECUTED_BY_THIS_PREPARATION",
+      "GPU_launched": false
+    },
+    {
+      "variant": "OT_Hmix23",
+      "phase": "pilot64",
+      "dataset": "infovqa",
+      "expected_QA": 32,
+      "config": "configs/eval/M1_OT_Hmix23_infovqa_pilot64_v1.json",
+      "job": "configs/jobs/bm_M1_OT_Hmix23_infovqa_pilot64_v1.json",
+      "gpu_in_draft": "1, root may issue a separately versioned lane assignment",
+      "actual_effective_bits": "unmeasured until GPU owner; never replace by a target or CPU projection",
+      "config_sha256": "8cb2591a48fbe9625e5c0f464aacc735350ce996242b82ad9c60205294831c02",
+      "job_sha256": "3f1c469b4c2aa88bb48e042f068c3fe9c0968fe6a0b8297a97c24b2f495e9cf0",
+      "whole_model_status": "NOT_EXECUTED_BY_THIS_PREPARATION",
+      "GPU_launched": false
+    }
+  ],
+  "math_CUDA_evidence": {
+    "file": "${EVIDENCE_ROOT}\\results\\p0\\onlyterp_mse_adapter_cuda_v1.json",
+    "exists": true,
+    "sha256": "82fd5660308ae7ffdb60bc1ba46ae376451877c596ccce0f05627d302a34b493",
+    "status": "PASS_ONLYTERP_MSE_SOURCE_PACKING_OWNER_REFERENCE_GATE",
+    "GPU_used": true,
+    "relevant_cases": 1
+  },
+  "whole_model_success_not_assumed": true,
+  "actual_MSE_payload_formula": "(128*2 +32*3)/128 =2.75 due regular96 padded to128",
+  "source_group_norm_overhead_bits": 0.25,
+  "payload_plus_source_norm_core_bits": 3.0,
+  "complete_bits": "Actual GPU owner adds all maps/signs/codebooks/boundaries/CPU-GPU constants/positions; never substitute3.0 or paper labels",
+  "order": "existing probe2 -> Text4+Info4 -> Text32+Info32; exact-context cache plans only after actual reference",
+  "old_MSE_module_evaluate_bridge_or_controller_modified": false
+}

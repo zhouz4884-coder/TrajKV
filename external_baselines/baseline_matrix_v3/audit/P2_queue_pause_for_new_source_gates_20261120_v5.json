@@ -1,0 +1,238 @@
+{
+  "status": "CPU_SCHEDULER_STOPPED_GPU_WORKERS_UNTOUCHED",
+  "controller": "P2_core_with_C2_diagnostics_queue_v4",
+  "controller_pid": 1001932,
+  "state": {
+    "status": "RUNNING",
+    "started_unix": 1795143475.6135721,
+    "lanes": {
+      "0": {
+        "next": 3,
+        "active": {
+          "name": "bm_M2_E_r0888_docvqa_p2_500_v1",
+          "receipt": {
+            "status": "LAUNCHED",
+            "pid": 1020233,
+            "name": "bm_M2_E_r0888_docvqa_p2_500_v1",
+            "argv_executed": [
+              "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+              "-m",
+              "evaluate",
+              "--config",
+              "${DATA_ROOT}/configs/eval/M2_E_r0888_docvqa_p2_500_v1.json",
+              "--output",
+              "${DATA_ROOT}/results/p2/M2_E_r0888_docvqa_p2_500_v1"
+            ],
+            "source_snapshot": "${DATA_ROOT}/jobs/bm_M2_E_r0888_docvqa_p2_500_v1.source",
+            "source_inventory_sha256": "f839f192e4a93d5ec8b4454460dda81371d83dd9c7463d777705e4e7f72c4247",
+            "job_sha256": "9fe8ebe6792203c64c8c0a27900d727a5a17aba9a26f185d715badb7f3a9edc5",
+            "log": "${DATA_ROOT}/logs/bm_M2_E_r0888_docvqa_p2_500_v1.log",
+            "cache_environment": {
+              "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+              "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+              "TMP": "${DATA_ROOT}/cache/main/tmp",
+              "TEMP": "${DATA_ROOT}/cache/main/tmp",
+              "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+              "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+              "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+              "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+              "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+              "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+              "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+              "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+              "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+              "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+            },
+            "CUDA_VISIBLE_DEVICES": "0",
+            "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+          },
+          "completion_contract": {}
+        },
+        "completed": [
+          {
+            "name": "bm_M1_C1_bias32_docvqa_p2_500_v1",
+            "initial_external": true,
+            "observed_complete": {
+              "status": "PASS_RAW_COMPLETE",
+              "expected_QA": 500,
+              "recorded_QA": 500,
+              "counts": {
+                "PASS": 500
+              },
+              "coverage_complete": true
+            },
+            "observed_unix": 1795144197.7540796
+          },
+          {
+            "name": "bm_M1_E_r0888_docvqa_p2_500_v1",
+            "initial_external": false,
+            "observed_complete": {
+              "status": "PASS_RAW_COMPLETE",
+              "expected_QA": 500,
+              "recorded_QA": 500,
+              "counts": {
+                "PASS": 500
+              },
+              "coverage_complete": true
+            },
+            "observed_unix": 1795145129.4498956
+          },
+          {
+            "name": "bm_M2_K2_R0_docvqa_p2_500_v1",
+            "initial_external": false,
+            "observed_complete": {
+              "status": "PASS_RAW_COMPLETE",
+              "expected_QA": 500,
+              "recorded_QA": 500,
+              "counts": {
+                "PASS": 500
+              },
+              "coverage_complete": true
+            },
+            "observed_unix": 1795146331.883252
+          }
+        ],
+        "status": "RUNNING"
+      },
+      "1": {
+        "next": 7,
+        "active": {
+          "name": "bm_M2_F_chartqa_p2_500_v1",
+          "receipt": {
+            "status": "LAUNCHED",
+            "pid": 1021165,
+            "name": "bm_M2_F_chartqa_p2_500_v1",
+            "argv_executed": [
+              "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+              "-m",
+              "evaluate",
+              "--config",
+              "${DATA_ROOT}/configs/eval/M2_F_chartqa_p2_500_v1.json",
+              "--output",
+              "${DATA_ROOT}/results/p2/M2_F_chartqa_p2_500_v1"
+            ],
+            "source_snapshot": "${DATA_ROOT}/jobs/bm_M2_F_chartqa_p2_500_v1.source",
+            "source_inventory_sha256": "f839f192e4a93d5ec8b4454460dda81371d83dd9c7463d777705e4e7f72c4247",
+            "job_sha256": "fd08c949a14beab26c646f5a61915761fc953aebb25643f5498f4ae52452eb90",
+            "log": "${DATA_ROOT}/logs/bm_M2_F_chartqa_p2_500_v1.log",
+            "cache_environment": {
+              "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+              "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+              "TMP": "${DATA_ROOT}/cache/main/tmp",
+              "TEMP": "${DATA_ROOT}/cache/main/tmp",
+              "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+              "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+              "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+              "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+              "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+              "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+              "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+              "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+              "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+              "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+            },
+            "CUDA_VISIBLE_DEVICES": "1",
+            "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+          },
+          "completion_contract": {}
+        },
+        "completed": [
+          {
+            "name": "bm_M1_K2_R0_chartqa_p2_500_v1",
+            "initial_external": true,
+            "observed_complete": {
+              "status": "PASS_RAW_COMPLETE",
+              "expected_QA": 500,
+              "recorded_QA": 500,
+              "counts": {
+                "PASS": 500
+              },
+              "coverage_complete": true
+            },
+            "observed_unix": 1795143645.9653025
+          },
+          {
+            "name": "bm_C2_roundoff_capture_v1",
+            "initial_external": false,
+            "observed_complete": {
+              "status": "SOURCE_OPERATOR_REPLAY_CAPTURED",
+              "required_fields_match": true,
+              "report_sha256": "40eb5c9f6fc9cf5d0b9703b8a3c052cdec736c305caced96c15323207c03904c",
+              "quality_score_or_full_matrix_cell": false
+            },
+            "observed_unix": 1795143676.2514722
+          },
+          {
+            "name": "bm_C2_roundoff_bound_cpu_v1",
+            "initial_external": false,
+            "observed_complete": {
+              "status": "PASS_FROZEN_CAPTURE_FORWARD_ERROR_AUDIT",
+              "required_fields_match": true,
+              "report_sha256": "4dc052feb13ee68904afc813c7d2e0c2bb11ad014a74bbc79b4a221070a8ed64",
+              "quality_score_or_full_matrix_cell": false
+            },
+            "observed_unix": 1795143686.5377903
+          },
+          {
+            "name": "bm_M1_C2_bias32_textvqa_p1extra_1_v1",
+            "initial_external": false,
+            "observed_complete": {
+              "status": "PASS_RAW_COMPLETE",
+              "expected_QA": 1,
+              "recorded_QA": 1,
+              "counts": {
+                "PASS": 1
+              },
+              "coverage_complete": true
+            },
+            "observed_unix": 1795143746.854136
+          },
+          {
+            "name": "bm_M1_C2_bias32_textvqa_p1extra_128_v1",
+            "initial_external": false,
+            "observed_complete": {
+              "status": "PASS_RAW_COMPLETE",
+              "expected_QA": 128,
+              "recorded_QA": 128,
+              "counts": {
+                "PASS": 128
+              },
+              "coverage_complete": true
+            },
+            "observed_unix": 1795144348.2149777
+          },
+          {
+            "name": "bm_M1_C1_bias32_chartqa_p2_500_v1",
+            "initial_external": false,
+            "observed_complete": {
+              "status": "PASS_RAW_COMPLETE",
+              "expected_QA": 500,
+              "recorded_QA": 500,
+              "counts": {
+                "PASS": 500
+              },
+              "coverage_complete": true
+            },
+            "observed_unix": 1795145610.532106
+          },
+          {
+            "name": "bm_M1_E_r0888_chartqa_p2_500_v1",
+            "initial_external": false,
+            "observed_complete": {
+              "status": "PASS_RAW_COMPLETE",
+              "expected_QA": 500,
+              "recorded_QA": 500,
+              "counts": {
+                "PASS": 500
+              },
+              "coverage_complete": true
+            },
+            "observed_unix": 1795146472.458253
+          }
+        ],
+        "status": "RUNNING"
+      }
+    }
+  },
+  "observed_unix": 1795146946.8863232
+}

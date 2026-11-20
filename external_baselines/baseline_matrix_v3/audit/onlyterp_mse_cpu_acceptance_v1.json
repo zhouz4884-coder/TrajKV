@@ -1,0 +1,30 @@
+{
+  "status": "PASS_CPU_ONLY_SOURCE_CODEC_STORAGE_READER",
+  "GPU_used": false,
+  "model_quality_measured": false,
+  "upstream_commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+  "source_lock": "configs/methods/onlyterp_mse_source_lock_v2.json",
+  "norm_precision": "FP16 as source, no extra precision reduction",
+  "reader_backend": "torch_materialize_fp32_reference",
+  "CPU_artifacts": [
+    {
+      "path": "results/p0/onlyterp_source_cpu_audit_v3.json",
+      "sha256": "75e3b160dcdba848ffd896ae11e950c5e88cdce6145a7233f3144bb3f83809e6",
+      "source": "E mirror exact CPU result, not GPU or model score"
+    },
+    {
+      "path": "results/p0/onlyterp_mse_adapter_cpu_v1.json",
+      "sha256": "3227ac6429a5fac2d03d3b64317fb6c87c68665461602c32d60d178bcf158b86",
+      "source": "E mirror exact CPU result, not GPU or model score"
+    },
+    {
+      "path": "results/p0/onlyterp_mse_adapter_cpu_v2.json",
+      "sha256": "7cf5229f9484ebf76807bb08077b8613f67bcd1b5bc027225994270e8157f2d0",
+      "source": "E mirror exact CPU result, not GPU or model score"
+    }
+  ],
+  "GPU_gate_job": "configs/jobs/bm_onlyterp_mse_cuda_gate_v1.json",
+  "GPU_gate_status": "not run by this child; root controls GPU leases",
+  "stage_receipt": "audit/stage_onlyterp_mse_pilots_v2.json",
+  "published_P1_changed": false
+}

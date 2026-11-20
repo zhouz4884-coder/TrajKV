@@ -1,0 +1,50 @@
+{
+  "schema": "baseline_matrix.fixed_matrix.v1",
+  "phase": "P0_EXTRA",
+  "rows": [
+    {
+      "model": "M1",
+      "method": "E_w8_drop0888",
+      "dataset": "textvqa",
+      "count": 8,
+      "config": "configs/eval/M1_E_w8_drop0888_textvqa_p0extra_8_v1.json",
+      "job": "configs/jobs/bm_M1_E_w8_drop0888_textvqa_p0extra_8_v1.json",
+      "name": "bm_M1_E_w8_drop0888_textvqa_p0extra_8_v1",
+      "gpu": "0",
+      "output_relative": "results/p0_extra/M1_E_w8_drop0888_textvqa_p0extra_8_v1",
+      "require_pass": [
+        "results/p1extra/M1_E_w8_drop0888_textvqa_p1extra_1_v1/complete.json"
+      ],
+      "single_config": "configs/eval/M1_E_w8_drop0888_textvqa_p1extra_1_v1.json",
+      "single_job": "configs/jobs/bm_M1_E_w8_drop0888_textvqa_p1extra_1_v1.json",
+      "fixed_input_cohort": "textvqa_p1_inputs.jsonl",
+      "statistical_decision": false
+    },
+    {
+      "model": "M1",
+      "method": "E_w8_drop091875",
+      "dataset": "textvqa",
+      "count": 8,
+      "config": "configs/eval/M1_E_w8_drop091875_textvqa_p0extra_8_v1.json",
+      "job": "configs/jobs/bm_M1_E_w8_drop091875_textvqa_p0extra_8_v1.json",
+      "name": "bm_M1_E_w8_drop091875_textvqa_p0extra_8_v1",
+      "gpu": "1",
+      "output_relative": "results/p0_extra/M1_E_w8_drop091875_textvqa_p0extra_8_v1",
+      "require_pass": [
+        "results/p1extra/M1_E_w8_drop091875_textvqa_p1extra_1_v1/complete.json"
+      ],
+      "single_config": "configs/eval/M1_E_w8_drop091875_textvqa_p1extra_1_v1.json",
+      "single_job": "configs/jobs/bm_M1_E_w8_drop091875_textvqa_p1extra_1_v1.json",
+      "fixed_input_cohort": "textvqa_p1_inputs.jsonl",
+      "statistical_decision": false
+    }
+  ],
+  "total_expected_QA": 16,
+  "status": "PREPARED_NOT_LAUNCHED",
+  "old128_plans": "preserved but not required or launched by this preparation",
+  "common_method_contract": "identical to frozen E/W8 500-target config; only scope/count differ",
+  "cache_expectation": "After actual raw and source proof, each Text500 may reuse its same-contract8 PASS rows; Info500 has different keys and no hits",
+  "references_read": false,
+  "GPU_launched_by_this_tool": false,
+  "prior_pilot_matrix_sha256": "1345a1f645b9eabdd4fcde845b0f313c28e3c6a77fdff9876ccaf9507c599a22"
+}

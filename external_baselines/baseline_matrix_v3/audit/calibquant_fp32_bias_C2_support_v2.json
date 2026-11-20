@@ -1,0 +1,115 @@
+{
+  "status": "SUPPORTED_EXPLICIT_FP32_BIAS_C2_PORT_FOR_PILOT",
+  "method": "calibquant_visual_fp32_bias_reduction_v1",
+  "adapter": "methods.calibquant_fp32_bias_adapter.CalibQuantFP32BiasAdapter",
+  "bits": 2,
+  "K_clip": 1.0,
+  "V_clip": 1.0,
+  "reader_backend": "upstream_triton",
+  "precision_port": "Finite FP16 bias products; SUM/DIV FP32 then cast to FP16 before unchanged calibration",
+  "model_weights_and_text_KV_dtype": "float16",
+  "published_infer_default_dtype": "bfloat16",
+  "method_source_sha256": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+  "original_pending_record_preserved": "audit/calibquant_fp32_bias_C2_diagnostic_status_v1.json",
+  "original_FP16_overflow_failure_preserved": true,
+  "old_FP64_final_output_tolerance_raised": false,
+  "source_operator_replay": {
+    "actual_CUDA": true,
+    "model_weights_loaded": false,
+    "production_replay_bitwise_equal": true,
+    "old_capture_bitwise_reproduced": true,
+    "report_sha256": "40eb5c9f6fc9cf5d0b9703b8a3c052cdec736c305caced96c15323207c03904c"
+  },
+  "CPU_forward_error_audit": {
+    "checks": 23,
+    "violations": 0,
+    "report_sha256": "4dc052feb13ee68904afc813c7d2e0c2bb11ad014a74bbc79b4a221070a8ed64",
+    "probability_delta": {
+      "max_L1": 3.337860107421875e-06,
+      "mean_L1": 1.71266592942275e-08,
+      "max_channel_weighted_bound": 4.880537744611502e-05
+    },
+    "max_observed_to_bound_ratio": 0.5216024158614091,
+    "max_gap": {
+      "actual": 0.252685546875,
+      "ideal": 0.237060546875,
+      "probability_term": 3.278437361586839e-07,
+      "actual_roundoff_budget": 0.019132552077280707,
+      "ideal_roundoff_budget": 0.02268844506215828,
+      "total_allowed": 0.041821324983175145
+    }
+  },
+  "local_trace": {
+    "status": "CPU_MAX_GAP_LOCAL_TRACE_COMPLETE",
+    "GPU_used": false,
+    "quality_scored": false,
+    "source_capture_sha256": "92611e4d781a3a1faf9bbbb8766fbbb454a61909805cb27c06972bf78e8f4737",
+    "location_B_H_Q_D": [
+      0,
+      0,
+      4,
+      36
+    ],
+    "visual_value_scale": 12.3515625,
+    "visual_zero_point": 1.9443359375,
+    "stored_scale_times_zero": 24.015625,
+    "stages": {
+      "weighted_code_exact_FP64_from_own_p": {
+        "actual_path": 1.5024420619010925,
+        "FP64_instrument_path": 1.5024411082267761,
+        "difference": 9.5367431640625e-07
+      },
+      "weighted_code_stored_Half": {
+        "actual_path": 1.5029296875,
+        "FP64_instrument_path": 1.501953125,
+        "difference": 0.0009765625
+      },
+      "visual_weight_sum_Half": {
+        "actual_path": 0.76220703125,
+        "FP64_instrument_path": 0.76220703125,
+        "difference": 0.0
+      },
+      "scale_times_weighted_code_Half": {
+        "actual_path": 18.5625,
+        "FP64_instrument_path": 18.546875,
+        "difference": 0.015625
+      },
+      "scaled_zero_times_weight_sum_Half": {
+        "actual_path": 18.3125,
+        "FP64_instrument_path": 18.3125,
+        "difference": 0.0
+      },
+      "visual_output_Half": {
+        "actual_path": 0.25,
+        "FP64_instrument_path": 0.234375,
+        "difference": 0.015625
+      },
+      "text_output_Half": {
+        "actual_path": 0.0027103424072265625,
+        "FP64_instrument_path": 0.0027103424072265625,
+        "difference": 0.0
+      },
+      "final_output_Half": {
+        "actual_path": 0.252685546875,
+        "FP64_instrument_path": 0.237060546875,
+        "difference": 0.015625
+      }
+    },
+    "weighted_code_half_rounding": {
+      "stored_values_midpoint": 1.50244140625,
+      "actual_exact_distance_to_midpoint": 6.556510925292969e-07,
+      "ideal_exact_distance_to_midpoint": -2.980232238769531e-07,
+      "exact_values_straddle_midpoint": true,
+      "actual_kernel_vs_FP64_rounded_same_actual_p_difference": 0.0
+    },
+    "probability_L1": 4.76837158203125e-07,
+    "scope": "One frozen operator coordinate only; trace the numerical path, not a task-quality conclusion"
+  },
+  "clearance_scope": "Frozen source0/layer26 numeric case, plus prior finite two-source full-M1 suffix/freegen evidence; permits further diagnostic pilot, not an all-input numerical theorem or task-quality claim",
+  "next_validation": "Each pilot QA retains original raw status/finite-logit/owner evidence; source zero-width or nonfinite failure is not clamped or scored as a fake zero",
+  "evidence_files": {
+    "results/p0/calibquant_C2_roundoff_replay_v1/complete.json": "40eb5c9f6fc9cf5d0b9703b8a3c052cdec736c305caced96c15323207c03904c",
+    "results/p0/calibquant_C2_roundoff_bound_cpu_v1.json": "4dc052feb13ee68904afc813c7d2e0c2bb11ad014a74bbc79b4a221070a8ed64",
+    "results/p0/calibquant_C2_roundoff_local_trace_cpu_v1.json": "2bb5398063dcd7d407e8af0917233ec494e52a73da747881f7eb6c7f726aecb3"
+  }
+}

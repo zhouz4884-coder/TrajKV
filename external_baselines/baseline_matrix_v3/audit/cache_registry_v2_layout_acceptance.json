@@ -1,0 +1,174 @@
+{
+  "status": "PASS_CPU_BOUNDED_REGISTRY_AND_LEGACY_CACHE_COMPATIBILITY",
+  "GPU_used": false,
+  "new_model_inference_QA": 0,
+  "cases": [
+    {
+      "case": "evaluate_only_exact_three_tuple_append_all_other_AST_unchanged",
+      "status": "PASS",
+      "before_sha256": "c4d73e61efff308051dd4f5e7c450ae4d38f7dc3406f61456b26e935a1423ed4",
+      "after_sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22"
+    },
+    {
+      "case": "all_three_explicit_sources_have_same_legacy_numerical_key",
+      "status": "PASS",
+      "key": {
+        "equivalence": "model_identity_IO_only_reviewed_v1",
+        "numerical_program_ast_sha256": "c96836da3d6a22df0d346deafada31f690015e6e2e227f99641fbe51fe3330cb"
+      }
+    },
+    {
+      "case": "snapshot_missing_cache_configs_uses_exact_reviewed_data_root_policy",
+      "status": "PASS"
+    },
+    {
+      "case": "policy_LF_and_JSON_formatting_do_not_change_admission",
+      "status": "PASS"
+    },
+    {
+      "case": "changed_data_root_or_snapshot_policy_content_refused",
+      "status": "PASS",
+      "error": "STALE_PROTOCOL: reviewed policy content changed; LF/JSON formatting alone is allowed"
+    },
+    {
+      "case": "legacy_pair_removal_refused",
+      "status": "PASS",
+      "error": "Legacy adapter registry entries may not be removed"
+    },
+    {
+      "case": "unapproved_fourth_pair_refused",
+      "status": "PASS",
+      "error": "Only the three specifically approved registry additions are compatible"
+    },
+    {
+      "case": "numerical_statement_change_changes_AST_key",
+      "status": "PASS"
+    },
+    {
+      "case": "unknown_comment_only_version_refused",
+      "status": "PASS",
+      "error": "STALE_PROTOCOL: unreviewed evaluate.py source version"
+    },
+    {
+      "case": "changed_numerical_source_refused",
+      "status": "PASS",
+      "error": "STALE_PROTOCOL: unreviewed evaluate.py source version"
+    },
+    {
+      "case": "unknown_identity_body_refused",
+      "status": "PASS",
+      "error": "STALE_PROTOCOL: unreviewed evaluate.py source version"
+    },
+    {
+      "case": "unchanged_F_P1_to_P2_reuse",
+      "status": "PASS",
+      "hits": 128,
+      "missing": 372,
+      "contract_sha256": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3"
+    },
+    {
+      "case": "unchanged_K2_R0_P1_to_P2_reuse",
+      "status": "PASS",
+      "hits": 128,
+      "missing": 372,
+      "contract_sha256": "37f0062802c39b272d121ded81c062f7df6fceb8333cf76c6f6f1e60af822b5f"
+    },
+    {
+      "case": "unchanged_C1_bias32_P1_to_P2_reuse",
+      "status": "PASS",
+      "hits": 128,
+      "missing": 372,
+      "contract_sha256": "e2471a40dee47d81bf7fca7d1c2f7988f3d407d652e3371235bd8af1e00841ae"
+    },
+    {
+      "case": "unchanged_E_r0888_P1_to_P2_reuse",
+      "status": "PASS",
+      "hits": 128,
+      "missing": 372,
+      "contract_sha256": "ad19df611656d75ef312cb0186415015d63250e62f895d5913ccc10336f86d23"
+    },
+    {
+      "case": "changed_cap_still_invalidates",
+      "status": "PASS",
+      "error": "STALE_PROTOCOL: planned model/method/pixels/prompt/generation differs"
+    },
+    {
+      "case": "changed_constructor_still_invalidates",
+      "status": "PASS",
+      "error": "STALE_PROTOCOL: planned model/method/pixels/prompt/generation differs"
+    },
+    {
+      "case": "changed_prompt_still_invalidates",
+      "status": "PASS",
+      "error": "STALE_PROTOCOL: planned model/method/pixels/prompt/generation differs"
+    },
+    {
+      "case": "changed_executed_reader_still_invalidates",
+      "status": "PASS",
+      "error": "STALE_PROTOCOL: current source differs from reference: code/methods/kivi_reader.py"
+    },
+    {
+      "case": "KIVIExampleAdapter_has_independent_executed_dependencies",
+      "status": "PASS",
+      "dependency_files": 12
+    },
+    {
+      "case": "TurboQuantBufferedAdapter_has_independent_executed_dependencies",
+      "status": "PASS",
+      "dependency_files": 35
+    },
+    {
+      "case": "OnlyTerpMSEAdapter_has_independent_executed_dependencies",
+      "status": "PASS",
+      "dependency_files": 10
+    },
+    {
+      "case": "buffered_class_constructor_source_cannot_hit_bad_T0_contract",
+      "status": "PASS"
+    },
+    {
+      "case": "OnlyTerp_unreviewed_module_revision_rejected",
+      "status": "PASS",
+      "error": "DEPENDENCY_CONTRACT_PENDING: unreviewed OnlyTerpMSEAdapter production-source revision"
+    },
+    {
+      "case": "OnlyTerp_self_contained_MSE_dependencies_cannot_hit_bad_T0_contract",
+      "status": "PASS"
+    },
+    {
+      "case": "old_policy_v1_exact_bytes_preserved",
+      "status": "PASS",
+      "sha256": "05a456a447c3d9fd7eac14d6cc1d2b0d98abcf5c67dfa3c48ec0268f95673703"
+    }
+  ],
+  "case_count": 26,
+  "legacy_reuse": {
+    "F": {
+      "hits": 128,
+      "missing": 372,
+      "contract_sha256": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3"
+    },
+    "K2_R0": {
+      "hits": 128,
+      "missing": 372,
+      "contract_sha256": "37f0062802c39b272d121ded81c062f7df6fceb8333cf76c6f6f1e60af822b5f"
+    },
+    "C1_bias32": {
+      "hits": 128,
+      "missing": 372,
+      "contract_sha256": "e2471a40dee47d81bf7fca7d1c2f7988f3d407d652e3371235bd8af1e00841ae"
+    },
+    "E_r0888": {
+      "hits": 128,
+      "missing": 372,
+      "contract_sha256": "ad19df611656d75ef312cb0186415015d63250e62f895d5913ccc10336f86d23"
+    }
+  },
+  "evaluate_source_sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+  "cache_engine_sha256": "2f9ec87d1c00cd57d2e3f603317c6613ad2540958be9f3e7cc5068957de4330e",
+  "policy_v2_sha256": "ea7f28f6e0b6fb558846ea89af8ca91e345ed475edd61af23bd8136fb4863c7a",
+  "prior_policy_v1_sha256": "05a456a447c3d9fd7eac14d6cc1d2b0d98abcf5c67dfa3c48ec0268f95673703",
+  "new_port_CUDA_or_main_readiness_claimed": false,
+  "OnlyTerp_dependency_status": "CONFIRMED_THREE_RUNTIME_FILES_CPU_V2_SOURCE; CUDA_AND_MAIN_PENDING",
+  "new_map_controls": "CPU in-memory metadata only; not produced GPU model outputs"
+}

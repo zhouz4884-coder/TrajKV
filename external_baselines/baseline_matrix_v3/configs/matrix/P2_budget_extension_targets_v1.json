@@ -1,0 +1,54 @@
+{
+  "schema": "baseline_matrix.predeclared_budget_extensions.v1",
+  "phase": "P2",
+  "declared_date_local": "2026-11-20",
+  "status": "PREDECLARED_TARGETS_NOT_LAUNCHED_BY_THIS_FILE",
+  "purpose": "Fill source-default and legal-budget coverage gaps before treating visual ports as strong external references",
+  "questions_per_cell": 500,
+  "inputs": "configs/datasets/v3/{dataset}_p2_inputs.jsonl",
+  "selection": "Existing frozen source-cluster SHA selection; no quality-based question selection",
+  "common_protocol": {
+    "weights_and_text_kv_dtype": "float16",
+    "information_condition": "query_unknown",
+    "compression_scope": "visual image prefix; all question suffix recomputed under that prefix",
+    "model_processor_prompt_generation": "identical to each model's frozen core matrix",
+    "actual_bytes_required": true,
+    "budget_rule": "A nominal or payload-guidance budget never establishes complete-owner iso-budget eligibility"
+  },
+  "already_required_anchors": [
+    {"method": "F", "scope": "existing core cells"},
+    {"method": "K2_R0", "bits": 2, "group_size": 128, "residual_length": 0, "role": "cheap packed source-encoder technical anchor"},
+    {"method": "C1_bias32", "scope": "M1", "bits": 1, "K_clip": 0.5, "V_clip": 0.3},
+    {"method": "E_w64_drop0888", "window_size": 64, "compression_ratio": 0.888, "kernel_size": 5, "beta": 20}
+  ],
+  "variants": [
+    {"id": "K2_R128", "adapter": "methods.kivi_style.KIVIStyleAdapter", "constructor_args": {"bits": 2, "group_size": 128, "residual_length": 128, "reader_backend": "triton_packed"}, "role": "source recent-residual prefill policy visual port", "tail_semantics": "K incomplete g128 group; V min(128,N) full precision; text exact; not original whole-system rolling KIVI"},
+    {"id": "K4_R0", "adapter": "methods.kivi_style.KIVIStyleAdapter", "constructor_args": {"bits": 4, "group_size": 128, "residual_length": 0, "reader_backend": "triton_packed"}, "role": "uniform 4-bit source RTN technical-quality anchor"},
+    {"id": "K4_R128", "adapter": "methods.kivi_style.KIVIStyleAdapter", "constructor_args": {"bits": 4, "group_size": 128, "residual_length": 128, "reader_backend": "triton_packed"}, "role": "source recent-residual policy at second legal bitwidth"},
+    {"id": "C2_bias32", "adapter": "methods.calibquant_fp32_bias_adapter.CalibQuantFP32BiasAdapter", "constructor_args": {"bits": 2, "reader_backend": "upstream_triton"}, "K_clip": 1.0, "V_clip": 1.0, "calibration": {"norm_offset_max": -3.0, "norm_offset_min": 0.0}, "role": "second source-legal bitwidth; explicit FP32 bias SUM/DIV numerical port", "release_condition": "finite source-products; source operator/reduction contract review; one real QA then fixed 128 source pilot before 500; no quality threshold used to redefine the method"},
+    {"id": "E_w64_drop091875", "adapter": "methods.eviction_adapter.PyramidKVVisualAdapter", "constructor_args": {"compression_ratio": 0.91875, "window_size": 64, "kernel_size": 5, "beta": 20, "information_condition": "query_unknown"}, "payload_guidance_bits": 1.3, "role": "selected NVIDIA implementation default window at lower capacity"},
+    {"id": "E_w8_drop091875", "adapter": "methods.eviction_adapter.PyramidKVVisualAdapter", "constructor_args": {"compression_ratio": 0.91875, "window_size": 8, "kernel_size": 5, "beta": 20, "information_condition": "query_unknown"}, "payload_guidance_bits": 1.3, "role": "paper experiment window at lower capacity"},
+    {"id": "E_w8_drop0888", "adapter": "methods.eviction_adapter.PyramidKVVisualAdapter", "constructor_args": {"compression_ratio": 0.888, "window_size": 8, "kernel_size": 5, "beta": 20, "information_condition": "query_unknown"}, "payload_guidance_bits": 1.792, "comparison_target_bits": 1.8, "role": "paper experiment window; identical drop parameter to existing W64 core anchor"},
+    {"id": "T_K3V2_R128", "adapter": "methods.turboquant_buffered_adapter.TurboQuantBufferedAdapter", "constructor_args": {"key_bits": 3, "value_bits": 2, "recent_window": 128, "group_size": 32}, "per_layer_seed": {"base_constructor_seed": 42, "constructor_step": 6, "encode_layer_idx_added": true, "effective_seed": "42+7*layer_idx"}, "reader_backend": "upstream_triton_score", "role": "selected third-party source default prefill recent-window visual port", "release_condition": "new module actual CUDA/real M1 suffix/freegen and packed-vs-dense/source-default diagnostics reviewed; old T0 does not satisfy this condition"},
+    {"id": "T_K3V4_R128", "adapter": "methods.turboquant_buffered_adapter.TurboQuantBufferedAdapter", "constructor_args": {"key_bits": 3, "value_bits": 4, "recent_window": 128, "group_size": 32}, "per_layer_seed": {"base_constructor_seed": 42, "constructor_step": 6, "encode_layer_idx_added": true, "effective_seed": "42+7*layer_idx"}, "reader_backend": "upstream_triton_score", "role": "second source-legal V bitwidth with identical key codec and recent-window policy", "release_condition": "same technical review as T_K3V2_R128"}
+  ],
+  "execution_tiers": [
+    {"tier": "A_primary_coverage", "models": ["M1"], "datasets": ["textvqa", "infovqa"], "variants": ["K2_R128", "K4_R0", "K4_R128", "C2_bias32", "E_w64_drop091875", "E_w8_drop091875", "E_w8_drop0888", "T_K3V2_R128", "T_K3V4_R128"], "maximum_cells": 18, "maximum_QA": 9000},
+    {"tier": "B_transfer_default_check", "models": ["M2", "M3"], "datasets": ["textvqa"], "variants": ["K2_R128"], "maximum_cells": 2, "maximum_QA": 1000},
+    {"tier": "C_followup_not_automatic_cartesian", "models": ["M1"], "datasets": ["docvqa", "chartqa"], "status": "Root declares only required source-default/frontier confirmation points after source and budget audit; no automatic nine-variant multiplication"}
+  ],
+  "capacity_accounting": {
+    "KIVI": "metadata, original positions, incomplete K groups and V FP16 residual tails all charged; nominal2/4 not actual2.25/4.25 on arbitrary N",
+    "CalibQuant": "packed uint8, per-channel scale/zero, LUT and common positions charged; clips change with bitwidth per source",
+    "eviction": "complete retained FP16 K/V, per-head original positions and common visual positions charged; native window may impose a floor; source fallback regime reported; no interpolation or dropping over-budget questions",
+    "TurboQuant": "FP32 norms/scales, packing granularity, per-layer Pi/S/constants, logical-recent FP16 visual tail and original positions charged; not paper mixed-outlier/nonoutlier2.5bit configuration"
+  },
+  "prohibited_shortcuts": ["Do not tune clip/window/beta/seed by highest evaluated score", "Do not run TrajKV O/P4 as part of this baseline coverage stage", "Do not relabel source-default port as original paper full system", "Do not include future question information in E query_unknown scores", "Do not claim every question is iso-budget from an average or nominal rate"],
+  "sources": {
+    "KIVI": {"repo": "https://github.com/jy-yuan/KIVI", "commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6", "local_lock": "configs/methods/kivi_style_source_v1.json"},
+    "CalibQuant": {"repo": "https://github.com/insuhan/calibquant", "commit": "1dcfce862162e4a3888ef137df65b36cdc19efd0", "source": "calibquant.py BITS_KV and SCALE_K/SCALE_V; patch_internvl.py normalization"},
+    "NVIDIA_window64": {"repo": "https://github.com/NVIDIA/kvpress", "commit": "6cf5e324be90ea9cedce66e843699b6dc655c0bd", "source": "kvpress/presses/pyramidkv_press.py dataclass defaults"},
+    "Pyramid_paper_window8": {"url": "https://arxiv.org/html/2406.02069v2", "section": "5.4 Experiment Setup", "beta": 20, "alpha_window": 8},
+    "TurboQuant_selected": {"repo": "https://github.com/0xSero/turboquant", "commit": "31660314b229b8d1c29bfddf8b9f5026b5121095", "source": "turboquant/kv_cache.py buffer_size=128 and prefill split"}
+  }
+}
