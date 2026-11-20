@@ -1,0 +1,299 @@
+{
+  "schema": "baseline_matrix.deferred_source_speed_supplement.v2",
+  "status": "DECLARED_ONLY_NO_SOURCE_EXPECTATIONS_OR_GPU_EXECUTION",
+  "scope": "M2 and M3 Text-only five source representatives; each own2 smoke40 then own8 formal160. No Info/Doc/Chart speed extrapolation.",
+  "models": [
+    "M2",
+    "M3"
+  ],
+  "methods": [
+    "F",
+    "K2_g32R32",
+    "C2_bias32",
+    "E_r0888",
+    "OT_Hmix23"
+  ],
+  "rows": [
+    {
+      "model": "M2",
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA_per_method": 2,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 10,
+      "measured_trials": 30,
+      "total_trials": 40,
+      "source_configs": {
+        "F": "configs/eval/M2_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M2_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M2_C2_bias32_textvqa_p2_500_v1.json",
+        "E_r0888": "configs/eval/M2_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M2_OT_Hmix23_textvqa_p2_500_target_v7.json"
+      },
+      "source_config_sha256": {
+        "F": "83f9bbbc1e341f112cd502b74e70985437361e6fbd86638c86de13257678719c",
+        "K2_g32R32": "78324f04df31d48d76c1faf144e2ac252e7353b34070fe3869004d5c67211a37",
+        "C2_bias32": "f21c44183c2ee40c48be5dc80fe54ab53664670e6d8a7b10a8fc1880e8ab62ee",
+        "E_r0888": "f14cf10ba28a6c399d96692b7f0a7c41b43f2da0b7ced4f91bc7db19eebc2db8",
+        "OT_Hmix23": "ec6eb2ccc8b7a4e6244919ffb8c34839718d4ea2e7daabc66d5f59de0d7cd4de"
+      },
+      "preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "model_spec": {
+        "model_id": "M2",
+        "hf_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+        "architecture": "Qwen2_5_VLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen2_5_vl",
+        "mrope_section": [
+          16,
+          24,
+          24
+        ],
+        "mrope_interleaved": false,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "processor_spatial_factor": 28
+      },
+      "source_generation_rule": "Use each own-model source generation_native/overrides unchanged; M3 native repetition penalty/DeepStack/mRoPE retained by existing qwen_protocol",
+      "source_gate": "All five corresponding own-model TextVQA P2 fixed500 views and independent scores must actually PASS before any expected file/job is prepared",
+      "actual_expected_prepared": false,
+      "GPU_trials_executed": 0,
+      "formal_launch_job_mechanically_withheld_until_actual_own40": true,
+      "execution_gate": "After current P2/full16 execution naturally terminates and reviewed dispatcher returns authority; fresh Root authorization required",
+      "formal_gate": "Own same-model Text2 real40 GPU trials, source/runtime/token/context/owner independently PASS before formal160"
+    },
+    {
+      "model": "M2",
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA_per_method": 8,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 40,
+      "measured_trials": 120,
+      "total_trials": 160,
+      "source_configs": {
+        "F": "configs/eval/M2_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M2_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M2_C2_bias32_textvqa_p2_500_v1.json",
+        "E_r0888": "configs/eval/M2_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M2_OT_Hmix23_textvqa_p2_500_target_v7.json"
+      },
+      "source_config_sha256": {
+        "F": "83f9bbbc1e341f112cd502b74e70985437361e6fbd86638c86de13257678719c",
+        "K2_g32R32": "78324f04df31d48d76c1faf144e2ac252e7353b34070fe3869004d5c67211a37",
+        "C2_bias32": "f21c44183c2ee40c48be5dc80fe54ab53664670e6d8a7b10a8fc1880e8ab62ee",
+        "E_r0888": "f14cf10ba28a6c399d96692b7f0a7c41b43f2da0b7ced4f91bc7db19eebc2db8",
+        "OT_Hmix23": "ec6eb2ccc8b7a4e6244919ffb8c34839718d4ea2e7daabc66d5f59de0d7cd4de"
+      },
+      "preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "model_spec": {
+        "model_id": "M2",
+        "hf_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+        "architecture": "Qwen2_5_VLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen2_5_vl",
+        "mrope_section": [
+          16,
+          24,
+          24
+        ],
+        "mrope_interleaved": false,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "processor_spatial_factor": 28
+      },
+      "source_generation_rule": "Use each own-model source generation_native/overrides unchanged; M3 native repetition penalty/DeepStack/mRoPE retained by existing qwen_protocol",
+      "source_gate": "All five corresponding own-model TextVQA P2 fixed500 views and independent scores must actually PASS before any expected file/job is prepared",
+      "actual_expected_prepared": false,
+      "GPU_trials_executed": 0,
+      "formal_launch_job_mechanically_withheld_until_actual_own40": true,
+      "execution_gate": "After current P2/full16 execution naturally terminates and reviewed dispatcher returns authority; fresh Root authorization required",
+      "formal_gate": "Own same-model Text2 real40 GPU trials, source/runtime/token/context/owner independently PASS before formal160"
+    },
+    {
+      "model": "M3",
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA_per_method": 2,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 10,
+      "measured_trials": 30,
+      "total_trials": 40,
+      "source_configs": {
+        "F": "configs/eval/M3_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M3_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M3_C2_bias32_textvqa_p2_500_v1.json",
+        "E_r0888": "configs/eval/M3_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M3_OT_Hmix23_textvqa_p2_500_target_v7.json"
+      },
+      "source_config_sha256": {
+        "F": "94f9cdb751eeca42b07fe71371deba36584b6dab2b22da2a99df54d2b7e5505e",
+        "K2_g32R32": "59b26b2049e63ea874720801fad0b2e504dc578703e4ba60fc9b5c250e16bbef",
+        "C2_bias32": "7d7ad26f8b926cc6f2fc978dcd54054cfd5d9bef577fcac48fdcf495fd1affae",
+        "E_r0888": "d48fa67f3d8be223c842615b14b7af442336674ec03227cbba7ceeef41d2f773",
+        "OT_Hmix23": "352fb426118d895bc5ae4505424f2e5e2f5274d692984b6473f3407b107ed872"
+      },
+      "preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "model_spec": {
+        "model_id": "M3",
+        "hf_id": "Qwen/Qwen3-VL-4B-Instruct",
+        "revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+        "architecture": "Qwen3VLForConditionalGeneration",
+        "layers": 36,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen3_vl",
+        "mrope_section": [
+          24,
+          20,
+          20
+        ],
+        "mrope_interleaved": true,
+        "deepstack_visual_indexes": [
+          5,
+          11,
+          17
+        ],
+        "sliding_attention": false,
+        "processor_spatial_factor": 32
+      },
+      "source_generation_rule": "Use each own-model source generation_native/overrides unchanged; M3 native repetition penalty/DeepStack/mRoPE retained by existing qwen_protocol",
+      "source_gate": "All five corresponding own-model TextVQA P2 fixed500 views and independent scores must actually PASS before any expected file/job is prepared",
+      "actual_expected_prepared": false,
+      "GPU_trials_executed": 0,
+      "formal_launch_job_mechanically_withheld_until_actual_own40": true,
+      "execution_gate": "After current P2/full16 execution naturally terminates and reviewed dispatcher returns authority; fresh Root authorization required",
+      "formal_gate": "Own same-model Text2 real40 GPU trials, source/runtime/token/context/owner independently PASS before formal160"
+    },
+    {
+      "model": "M3",
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA_per_method": 8,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 40,
+      "measured_trials": 120,
+      "total_trials": 160,
+      "source_configs": {
+        "F": "configs/eval/M3_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M3_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M3_C2_bias32_textvqa_p2_500_v1.json",
+        "E_r0888": "configs/eval/M3_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M3_OT_Hmix23_textvqa_p2_500_target_v7.json"
+      },
+      "source_config_sha256": {
+        "F": "94f9cdb751eeca42b07fe71371deba36584b6dab2b22da2a99df54d2b7e5505e",
+        "K2_g32R32": "59b26b2049e63ea874720801fad0b2e504dc578703e4ba60fc9b5c250e16bbef",
+        "C2_bias32": "7d7ad26f8b926cc6f2fc978dcd54054cfd5d9bef577fcac48fdcf495fd1affae",
+        "E_r0888": "d48fa67f3d8be223c842615b14b7af442336674ec03227cbba7ceeef41d2f773",
+        "OT_Hmix23": "352fb426118d895bc5ae4505424f2e5e2f5274d692984b6473f3407b107ed872"
+      },
+      "preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "model_spec": {
+        "model_id": "M3",
+        "hf_id": "Qwen/Qwen3-VL-4B-Instruct",
+        "revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+        "architecture": "Qwen3VLForConditionalGeneration",
+        "layers": 36,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen3_vl",
+        "mrope_section": [
+          24,
+          20,
+          20
+        ],
+        "mrope_interleaved": true,
+        "deepstack_visual_indexes": [
+          5,
+          11,
+          17
+        ],
+        "sliding_attention": false,
+        "processor_spatial_factor": 32
+      },
+      "source_generation_rule": "Use each own-model source generation_native/overrides unchanged; M3 native repetition penalty/DeepStack/mRoPE retained by existing qwen_protocol",
+      "source_gate": "All five corresponding own-model TextVQA P2 fixed500 views and independent scores must actually PASS before any expected file/job is prepared",
+      "actual_expected_prepared": false,
+      "GPU_trials_executed": 0,
+      "formal_launch_job_mechanically_withheld_until_actual_own40": true,
+      "execution_gate": "After current P2/full16 execution naturally terminates and reviewed dispatcher returns authority; fresh Root authorization required",
+      "formal_gate": "Own same-model Text2 real40 GPU trials, source/runtime/token/context/owner independently PASS before formal160"
+    }
+  ],
+  "planned_trials": 400,
+  "warmup_trials": 100,
+  "measured_trials": 300,
+  "trials_are_not_QA": true,
+  "quality_QA_added": 0,
+  "already_measured_legacy656_or_M1_canonical560_not_reused": true,
+  "shared_F_E64_controls_rerun_only_within_new_own_model_five_method_window": true,
+  "cross_day_or_cross_model_unified_speed_ranking": false,
+  "host_quiet_asserted": false,
+  "locked_runtime_sources_sha256": {
+    "code/benchmark_speed.py": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+    "code/evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+    "ops/prepare_speed_expected.py": "e10c540bc62e65ea6643646453023163058e3620a9425fa3f0d019a7f1b1db76"
+  },
+  "new_GPU_jobs_launched": 0,
+  "transport_queue_full_ledger_or_GitHub_changed": false,
+  "formal_admission_entry": "ops/admit_qwen_source_formal160_v1.py"
+}

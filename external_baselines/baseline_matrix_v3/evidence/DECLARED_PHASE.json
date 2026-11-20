@@ -1,167 +1,361 @@
 {
   "contract": {
     "schema": "baseline_matrix.public_phase_contract.v2",
-    "phase_label": "M1_FP16_FOUR_OFFICIAL_FULL_REFERENCE_BANKS",
-    "family": "native_f_all4_full_reference",
-    "matrix": "configs/matrix/M1_FP16_all4_full_reference_milestone_v1.json",
-    "coverage_scope": "M1 native FP16 reference bank for four complete official splits: TextVQA validation5000, DocVQA validation5349, InfographicVQA validation2801, ChartQA test2500 (human1250+aug1250). This phase does not complete P2/P3 compressed baselines or the whole external library.",
-    "view_root": "${EVIDENCE_ROOT}/results/native_F_full_views/native_F_v1",
-    "score_root": "${EVIDENCE_ROOT}/results/scored/native_F_full_native_F_v1",
+    "phase_label": "KIVI_SOURCE_EXAMPLE_THREE_MODELS_ALL4_FIXED500",
+    "family": "kivi_source_example_12_fixed500",
+    "matrix": "${EVIDENCE_ROOT}\\results\\publication\\KIVI_source_example12_candidate_20261121_v1\\declared_matrix.json",
+    "coverage_scope": "Exactly the existing12 fixed500 KIVI source-example visual-port cells:3 native models x4 official-dataset subsets; not full splits, P2-114 completion, controlled speed or whole-library completion.",
+    "view_root": "${EVIDENCE_ROOT}\\results\\extension_views\\source_compat_v1",
+    "score_root": "${EVIDENCE_ROOT}\\results\\scored\\extension_source_compat_v1",
     "completion_policy": "all_expected_QA_pass",
     "completion_scope": "declared_matrix_only",
-    "whole_library_completion_assessed": false,
-    "fixture_only": false
+    "whole_library_completion_assessed": false
   },
   "phase": {
     "status": "PASS_DECLARED_MATRIX_COMPLETE",
-    "phase_label": "M1_FP16_FOUR_OFFICIAL_FULL_REFERENCE_BANKS",
-    "family": "native_f_all4_full_reference",
-    "coverage_scope": "M1 native FP16 reference bank for four complete official splits: TextVQA validation5000, DocVQA validation5349, InfographicVQA validation2801, ChartQA test2500 (human1250+aug1250). This phase does not complete P2/P3 compressed baselines or the whole external library.",
+    "phase_label": "KIVI_SOURCE_EXAMPLE_THREE_MODELS_ALL4_FIXED500",
+    "family": "kivi_source_example_12_fixed500",
+    "coverage_scope": "Exactly the existing12 fixed500 KIVI source-example visual-port cells:3 native models x4 official-dataset subsets; not full splits, P2-114 completion, controlled speed or whole-library completion.",
     "completion_scope": "declared_matrix_only",
     "whole_external_library_completion_assessed": false,
-    "declared_matrix_source_sha256": "268bb84803e794733dc823901c7bfadcf3180b48e1abb0a99dc982f84d495b41",
-    "expected_cells": 4,
-    "verified_scored_cells": 4,
-    "expected_questions": 15650,
-    "verified_scored_questions": 15650,
-    "closed_artifact_cells": 4,
+    "declared_matrix_source_sha256": "ec4b26de86c3084f32d6e54e480acf9d6f484dbc202f50ba011d5578a021a2b9",
+    "expected_cells": 12,
+    "verified_scored_cells": 12,
+    "expected_questions": 6000,
+    "verified_scored_questions": 6000,
+    "closed_artifact_cells": 12,
     "missing": [],
     "observed": [
       {
-        "cell": "M1_F_textvqa_full_5000_v1",
-        "questions": 5000,
+        "cell": "M1_K2_g32R32_textvqa_p2_500_v1",
+        "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
         "score_status": "PASS_SCORED_COMPLETE",
         "origin_counts": {
-          "reused": 500,
-          "fresh": 4500
+          "reused": 2,
+          "fresh": 498
         }
       },
       {
-        "cell": "M1_F_infovqa_full_2801_v1",
-        "questions": 2801,
+        "cell": "M1_K2_g32R32_infovqa_p2_500_v1",
+        "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
         "score_status": "PASS_SCORED_COMPLETE",
         "origin_counts": {
-          "reused": 500,
-          "fresh": 2301
+          "fresh": 500
         }
       },
       {
-        "cell": "M1_F_docvqa_full_5349_v1",
-        "questions": 5349,
+        "cell": "M1_K2_g32R32_docvqa_p2_500_v1",
+        "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
         "score_status": "PASS_SCORED_COMPLETE",
         "origin_counts": {
-          "fresh": 4849,
-          "reused": 500
+          "fresh": 500
         }
       },
       {
-        "cell": "M1_F_chartqa_full_2500_v1",
-        "questions": 2500,
+        "cell": "M1_K2_g32R32_chartqa_p2_500_v1",
+        "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
         "score_status": "PASS_SCORED_COMPLETE",
         "origin_counts": {
-          "fresh": 2000,
-          "reused": 500
+          "fresh": 500
+        }
+      },
+      {
+        "cell": "M2_K2_g32R32_textvqa_p2_500_v1",
+        "questions": 500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "reused": 2,
+          "fresh": 498
+        }
+      },
+      {
+        "cell": "M2_K2_g32R32_infovqa_p2_500_v1",
+        "questions": 500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 500
+        }
+      },
+      {
+        "cell": "M2_K2_g32R32_docvqa_p2_500_v1",
+        "questions": 500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 500
+        }
+      },
+      {
+        "cell": "M2_K2_g32R32_chartqa_p2_500_v1",
+        "questions": 500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 500
+        }
+      },
+      {
+        "cell": "M3_K2_g32R32_textvqa_p2_500_v1",
+        "questions": 500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "reused": 2,
+          "fresh": 498
+        }
+      },
+      {
+        "cell": "M3_K2_g32R32_infovqa_p2_500_v1",
+        "questions": 500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 500
+        }
+      },
+      {
+        "cell": "M3_K2_g32R32_docvqa_p2_500_v1",
+        "questions": 500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 500
+        }
+      },
+      {
+        "cell": "M3_K2_g32R32_chartqa_p2_500_v1",
+        "questions": 500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 500
         }
       }
     ]
   },
   "artifacts": [
     {
-      "cell": "M1_F_textvqa_full_5000_v1",
-      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_textvqa_full_5000_v1",
-      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_textvqa_full_5000_v1",
-      "config": "configs/eval/M1_F_textvqa_full_5000_v1.json",
+      "cell": "M1_K2_g32R32_textvqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_textvqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M1_K2_g32R32_textvqa_p2_500_v1",
+      "config": "configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json",
       "kind": "derived_prediction_view",
-      "expected_QA": 5000
+      "expected_QA": 500
     },
     {
-      "cell": "M1_F_infovqa_full_2801_v1",
-      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_infovqa_full_2801_v1",
-      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_infovqa_full_2801_v1",
-      "config": "configs/eval/M1_F_infovqa_full_2801_v1.json",
+      "cell": "M1_K2_g32R32_infovqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_infovqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M1_K2_g32R32_infovqa_p2_500_v1",
+      "config": "configs/eval/M1_K2_g32R32_infovqa_p2_500_v1.json",
       "kind": "derived_prediction_view",
-      "expected_QA": 2801
+      "expected_QA": 500
     },
     {
-      "cell": "M1_F_docvqa_full_5349_v1",
-      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_docvqa_full_5349_v1",
-      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_docvqa_full_5349_v1",
-      "config": "configs/eval/M1_F_docvqa_full_5349_v1.json",
+      "cell": "M1_K2_g32R32_docvqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_docvqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M1_K2_g32R32_docvqa_p2_500_v1",
+      "config": "configs/eval/M1_K2_g32R32_docvqa_p2_500_v1.json",
       "kind": "derived_prediction_view",
-      "expected_QA": 5349
+      "expected_QA": 500
     },
     {
-      "cell": "M1_F_chartqa_full_2500_v1",
-      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_chartqa_full_2500_v1",
-      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_chartqa_full_2500_v1",
-      "config": "configs/eval/M1_F_chartqa_full_2500_v1.json",
+      "cell": "M1_K2_g32R32_chartqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_chartqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M1_K2_g32R32_chartqa_p2_500_v1",
+      "config": "configs/eval/M1_K2_g32R32_chartqa_p2_500_v1.json",
       "kind": "derived_prediction_view",
-      "expected_QA": 2500
+      "expected_QA": 500
+    },
+    {
+      "cell": "M2_K2_g32R32_textvqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M2_K2_g32R32_textvqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M2_K2_g32R32_textvqa_p2_500_v1",
+      "config": "configs/eval/M2_K2_g32R32_textvqa_p2_500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 500
+    },
+    {
+      "cell": "M2_K2_g32R32_infovqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M2_K2_g32R32_infovqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M2_K2_g32R32_infovqa_p2_500_v1",
+      "config": "configs/eval/M2_K2_g32R32_infovqa_p2_500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 500
+    },
+    {
+      "cell": "M2_K2_g32R32_docvqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M2_K2_g32R32_docvqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M2_K2_g32R32_docvqa_p2_500_v1",
+      "config": "configs/eval/M2_K2_g32R32_docvqa_p2_500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 500
+    },
+    {
+      "cell": "M2_K2_g32R32_chartqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M2_K2_g32R32_chartqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M2_K2_g32R32_chartqa_p2_500_v1",
+      "config": "configs/eval/M2_K2_g32R32_chartqa_p2_500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 500
+    },
+    {
+      "cell": "M3_K2_g32R32_textvqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M3_K2_g32R32_textvqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M3_K2_g32R32_textvqa_p2_500_v1",
+      "config": "configs/eval/M3_K2_g32R32_textvqa_p2_500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 500
+    },
+    {
+      "cell": "M3_K2_g32R32_infovqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M3_K2_g32R32_infovqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M3_K2_g32R32_infovqa_p2_500_v1",
+      "config": "configs/eval/M3_K2_g32R32_infovqa_p2_500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 500
+    },
+    {
+      "cell": "M3_K2_g32R32_docvqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M3_K2_g32R32_docvqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M3_K2_g32R32_docvqa_p2_500_v1",
+      "config": "configs/eval/M3_K2_g32R32_docvqa_p2_500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 500
+    },
+    {
+      "cell": "M3_K2_g32R32_chartqa_p2_500_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M3_K2_g32R32_chartqa_p2_500_v1",
+      "scored_dir": "results/scored/extension_source_compat_v1/M3_K2_g32R32_chartqa_p2_500_v1",
+      "config": "configs/eval/M3_K2_g32R32_chartqa_p2_500_v1.json",
+      "kind": "derived_prediction_view",
+      "expected_QA": 500
     }
   ],
   "closure": [
     {
-      "raw_dir": "results/p1/M1_F_textvqa_p1_128_v1",
+      "raw_dir": "results/p1_smoke/M1_K2_g32R32_text_probe2_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/p2_missing/M1_F_textvqa_p2_500_missing_v1",
+      "raw_dir": "results/p2_kivi_example_missing/v2/M1_K2_g32R32_textvqa_p2_500_missing_v2",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/p3_F_missing/M1_F_textvqa_full_5000_missing_Fbank_v1",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_textvqa_full_5000_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_textvqa_p2_500_v1",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/p1/M1_F_infovqa_p1_128_v1",
+      "raw_dir": "results/p2_kivi_example_missing/v2/M1_K2_g32R32_infovqa_p2_500_missing_v2",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/p2_missing/M1_F_infovqa_p2_500_missing_v1",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/p3_F_missing/M1_F_infovqa_full_2801_missing_Fbank_v1",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_infovqa_full_2801_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_infovqa_p2_500_v1",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/p2/M1_F_docvqa_p2_500_v1",
+      "raw_dir": "results/p2_kivi_example_missing/v2/M1_K2_g32R32_docvqa_p2_500_missing_v2",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/p3_F_missing/M1_F_docvqa_full_5349_missing_Fbank_v1",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_docvqa_full_5349_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_docvqa_p2_500_v1",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/p2/M1_F_chartqa_p2_500_v1",
+      "raw_dir": "results/p2_kivi_example_missing/v2/M1_K2_g32R32_chartqa_p2_500_missing_v2",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/p3_F_missing/M1_F_chartqa_full_2500_missing_Fbank_v1",
+      "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_chartqa_p2_500_v1",
+      "kind": "derived_prediction_view"
+    },
+    {
+      "raw_dir": "results/p1_smoke/M2_K2_g32R32_textvqa_probe2_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/native_F_full_views/native_F_v1/M1_F_chartqa_full_2500_v1",
+      "raw_dir": "results/p2_kivi_example_missing/source_compat_cpu_v2_M2_K32/M2_K2_g32R32_textvqa_p2_500_missing_source_compat_cpu_v2_M2_K32",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/extension_views/source_compat_v1/M2_K2_g32R32_textvqa_p2_500_v1",
+      "kind": "derived_prediction_view"
+    },
+    {
+      "raw_dir": "results/p2_kivi_example_missing/source_compat_cpu_v2_M2_K32/M2_K2_g32R32_infovqa_p2_500_missing_source_compat_cpu_v2_M2_K32",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/extension_views/source_compat_v1/M2_K2_g32R32_infovqa_p2_500_v1",
+      "kind": "derived_prediction_view"
+    },
+    {
+      "raw_dir": "results/p2_kivi_example_missing/source_compat_cpu_v2_M2_K32/M2_K2_g32R32_docvqa_p2_500_missing_source_compat_cpu_v2_M2_K32",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/extension_views/source_compat_v1/M2_K2_g32R32_docvqa_p2_500_v1",
+      "kind": "derived_prediction_view"
+    },
+    {
+      "raw_dir": "results/p2_kivi_example_missing/source_compat_cpu_v2_M2_K32/M2_K2_g32R32_chartqa_p2_500_missing_source_compat_cpu_v2_M2_K32",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/extension_views/source_compat_v1/M2_K2_g32R32_chartqa_p2_500_v1",
+      "kind": "derived_prediction_view"
+    },
+    {
+      "raw_dir": "results/p1_smoke/M3_K2_g32R32_textvqa_probe2_v1",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/p2_kivi_example_missing/source_compat_cpu_v2_M3_K32/M3_K2_g32R32_textvqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/extension_views/source_compat_v1/M3_K2_g32R32_textvqa_p2_500_v1",
+      "kind": "derived_prediction_view"
+    },
+    {
+      "raw_dir": "results/p2_kivi_example_missing/source_compat_cpu_v2_M3_K32/M3_K2_g32R32_infovqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/extension_views/source_compat_v1/M3_K2_g32R32_infovqa_p2_500_v1",
+      "kind": "derived_prediction_view"
+    },
+    {
+      "raw_dir": "results/p2_kivi_example_missing/source_compat_cpu_v2_M3_K32/M3_K2_g32R32_docvqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/extension_views/source_compat_v1/M3_K2_g32R32_docvqa_p2_500_v1",
+      "kind": "derived_prediction_view"
+    },
+    {
+      "raw_dir": "results/p2_kivi_example_missing/source_compat_cpu_v2_M3_K32/M3_K2_g32R32_chartqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "kind": "original_inference_run"
+    },
+    {
+      "raw_dir": "results/extension_views/source_compat_v1/M3_K2_g32R32_chartqa_p2_500_v1",
       "kind": "derived_prediction_view"
     }
   ]

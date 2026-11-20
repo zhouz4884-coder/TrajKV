@@ -1,0 +1,212 @@
+{
+  "status": "PASS_GITHUB_BASELINE_INCREMENT_DELIVERED",
+  "repository": "https://github.com/zhouz4884-coder/TrajKV",
+  "phase": {
+    "status": "PASS_DECLARED_MATRIX_COMPLETE",
+    "phase_label": "M1_FP16_FOUR_OFFICIAL_FULL_REFERENCE_BANKS",
+    "family": "native_f_all4_full_reference",
+    "coverage_scope": "M1 native FP16 reference bank for four complete official splits: TextVQA validation5000, DocVQA validation5349, InfographicVQA validation2801, ChartQA test2500 (human1250+aug1250). This phase does not complete P2/P3 compressed baselines or the whole external library.",
+    "completion_scope": "declared_matrix_only",
+    "whole_external_library_completion_assessed": false,
+    "declared_matrix_source_sha256": "268bb84803e794733dc823901c7bfadcf3180b48e1abb0a99dc982f84d495b41",
+    "expected_cells": 4,
+    "verified_scored_cells": 4,
+    "expected_questions": 15650,
+    "verified_scored_questions": 15650,
+    "closed_artifact_cells": 4,
+    "missing": [],
+    "observed": [
+      {
+        "cell": "M1_F_textvqa_full_5000_v1",
+        "questions": 5000,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "reused": 500,
+          "fresh": 4500
+        }
+      },
+      {
+        "cell": "M1_F_infovqa_full_2801_v1",
+        "questions": 2801,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "reused": 500,
+          "fresh": 2301
+        }
+      },
+      {
+        "cell": "M1_F_docvqa_full_5349_v1",
+        "questions": 5349,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 4849,
+          "reused": 500
+        }
+      },
+      {
+        "cell": "M1_F_chartqa_full_2500_v1",
+        "questions": 2500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 2000,
+          "reused": 500
+        }
+      }
+    ]
+  },
+  "auxiliary_phases": [
+    {
+      "status": "PASS_DECLARED_MATRIX_COMPLETE",
+      "phase_label": "TIMING560_REQUIRED_ORIGINAL_PREDICTION_SUPPORT",
+      "family": "timing560_original_prediction_support",
+      "coverage_scope": "Existing exact fixed500 quality views required only to carry complete original timing-prediction source closures. Not new GPU inference, extra timing QA, P2-114 completion or full official splits.",
+      "completion_scope": "declared_matrix_only",
+      "whole_external_library_completion_assessed": false,
+      "declared_matrix_source_sha256": "9872c97b6bbdaca36f70a2d175bb269755c832672cc0e8d7f1259cad157d3104",
+      "expected_cells": 3,
+      "verified_scored_cells": 3,
+      "expected_questions": 1500,
+      "verified_scored_questions": 1500,
+      "closed_artifact_cells": 3,
+      "missing": [],
+      "observed": [
+        {
+          "cell": "M1_C2_bias32_infovqa_p2_500_v1",
+          "questions": 500,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "fresh": 500
+          }
+        },
+        {
+          "cell": "M1_K2_g32R32_textvqa_p2_500_v1",
+          "questions": 500,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "reused": 2,
+            "fresh": 498
+          }
+        },
+        {
+          "cell": "M1_K2_g32R32_infovqa_p2_500_v1",
+          "questions": 500,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "fresh": 500
+          }
+        }
+      ]
+    }
+  ],
+  "supporting_completed_evidence_groups": [
+    {
+      "label": "canonical560_complete_two_CPU_closures_v1",
+      "scope": "Canonical five source profiles: Text2 smoke40 + Text16 formal320 + Info2 smoke40 + Info8 formal160. Natural answers, host_quiet=false; warm1/repeat3. No old E8/legacy656/Calib32; no QA or wall-only speed ranking.",
+      "counts": {
+        "new_canonical_trials": 560,
+        "warmup_trials": 140,
+        "measured_trials": 420,
+        "Text_smoke_trials": 40,
+        "Text_formal_trials": 320,
+        "Info_smoke_trials": 40,
+        "Info_formal_trials": 160,
+        "legacy_E8_legacy656_Calib32_trials_added": 0,
+        "timing_quality_QA_added": 0,
+        "existing_support_only_fixed500_view_QA": 1500,
+        "new_GPU_QA_by_CPU_packaging": 0
+      }
+    }
+  ],
+  "phase_group_totals_are_separate": true,
+  "prior_head": "2056c39d696e335da58c3e9982d71da7691c67e6",
+  "head": "26376d042702ee6e346e3a70d4e8e9363f72b626",
+  "tree": "dae72e59e6f5cd64e7de723e9ef7816cbaef2ae8",
+  "namespace": "external_baselines/baseline_matrix_v3",
+  "release": "https://github.com/zhouz4884-coder/TrajKV/releases/tag/external-baselines-canonical-source560-20261120",
+  "assets": [
+    {
+      "name": "canonical560_source_profiles_20261120_v1.zip",
+      "bytes": 272870823,
+      "sha256": "6829ec2df3239227beeb958d2fa70c3273710347af4d7bdce8caa70c829e4d3b",
+      "server_digest": "sha256:6829ec2df3239227beeb958d2fa70c3273710347af4d7bdce8caa70c829e4d3b",
+      "url": "https://github.com/zhouz4884-coder/TrajKV/releases/download/external-baselines-canonical-source560-20261120/canonical560_source_profiles_20261120_v1.zip"
+    },
+    {
+      "name": "PUBLIC_CONTENT_REFS.json",
+      "bytes": 1445557,
+      "sha256": "8fdc08a759a0987431c6e8bc8087220f5be4acc12cfaf1a39ce10d00b3c88ac4",
+      "server_digest": "sha256:8fdc08a759a0987431c6e8bc8087220f5be4acc12cfaf1a39ce10d00b3c88ac4",
+      "url": "https://github.com/zhouz4884-coder/TrajKV/releases/download/external-baselines-canonical-source560-20261120/PUBLIC_CONTENT_REFS.json"
+    },
+    {
+      "name": "DELIVERY.json",
+      "bytes": 5807,
+      "sha256": "dab83f24ca898c2b4d6bbf8a4eb00a04f914ebacbc2ff280255f0fd291d583bc",
+      "server_digest": "sha256:dab83f24ca898c2b4d6bbf8a4eb00a04f914ebacbc2ff280255f0fd291d583bc",
+      "url": "https://github.com/zhouz4884-coder/TrajKV/releases/download/external-baselines-canonical-source560-20261120/DELIVERY.json"
+    }
+  ],
+  "actual_remote_tree_paths_verified": 1484,
+  "all_expected_blob_bodies_independently_refetched": true,
+  "independent_refetch_backend": {
+    "status": "PASS_REMOTE_FIXED_COMMIT_BLOB_BODIES",
+    "commit": "26376d042702ee6e346e3a70d4e8e9363f72b626",
+    "tree": "dae72e59e6f5cd64e7de723e9ef7816cbaef2ae8",
+    "source_url": "https://codeload.github.com/zhouz4884-coder/TrajKV/zip/26376d042702ee6e346e3a70d4e8e9363f72b626",
+    "source_archive_sha256": "72d631e5ac6b5741f73569974c3f896eefae23173dd483a3ad34264a69c1b17b",
+    "bodies_verified": 1484,
+    "body_checks": "server actual tree OID plus Git blob header/OID plus LF SHA256",
+    "local_staging_used_as_download_source": false
+  },
+  "old_namespace_tree_preserved": true,
+  "prior_releases_preserved": 8,
+  "prior_tags_preserved": true,
+  "account": "zhouz4884-coder",
+  "visibility": "public",
+  "content_ref": {
+    "commit": "26376d042702ee6e346e3a70d4e8e9363f72b626",
+    "index_blob_oid": "25c9165f3ffdf3aca7d563a2be05351e2fa86850",
+    "index_git_body_sha256": "8fdc08a759a0987431c6e8bc8087220f5be4acc12cfaf1a39ce10d00b3c88ac4",
+    "archive_sha256": "6829ec2df3239227beeb958d2fa70c3273710347af4d7bdce8caa70c829e4d3b"
+  },
+  "local_cold_verification": {
+    "status": "PASS_PUBLIC_EXPORT_VERIFIED_V3",
+    "score_cells": 7,
+    "independent_phase_groups": [
+      {
+        "phase_label": "M1_FP16_FOUR_OFFICIAL_FULL_REFERENCE_BANKS",
+        "cells": 4,
+        "view_questions": 15650,
+        "primary": true
+      },
+      {
+        "phase_label": "TIMING560_REQUIRED_ORIGINAL_PREDICTION_SUPPORT",
+        "cells": 3,
+        "view_questions": 1500,
+        "primary": false
+      }
+    ],
+    "closure_nodes": 21,
+    "original_runs": 14,
+    "derived_quality_views": 7,
+    "source_closure_verified": true
+  },
+  "completion_scope": "declared_matrix_only",
+  "whole_external_library_completion_assessed": false,
+  "P1_commit_preserved_as_ancestor": true,
+  "verified_utc": "2026-11-20T13:03:37.681591+00:00"
+}
