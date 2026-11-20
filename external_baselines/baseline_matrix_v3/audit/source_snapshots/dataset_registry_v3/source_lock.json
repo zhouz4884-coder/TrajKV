@@ -1,0 +1,355 @@
+{
+  "version": "v3",
+  "selection_seed": 20261119,
+  "selection_rule": "sha256(seed NUL dataset NUL source_cluster_id); first original split question; chart human/aug balanced distinct sources preferred",
+  "input_has_reference_or_ocr": false,
+  "sources": {
+    "textvqa": {
+      "repo": "lmms-lab-encoder/textvqa",
+      "revision": "9c0699cd19768ac5ab97568f6b3cbac4c0062884",
+      "split": "validation",
+      "expected_questions": 5000,
+      "prefix": "data/validation-",
+      "cluster": "image_id",
+      "parquets": [
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\textvqa_validation_pinned\\data\\validation-00000-of-00003.parquet",
+          "upstream_path": "data/validation-00000-of-00003.parquet",
+          "bytes": 310398494,
+          "sha256": "491649b5b8add2c5bde13a1e36707002fcd11898699255d65e2e568ac4fbddff",
+          "metadata_sha256": "f1762f994e0830e7708d917e9111d2f7f1973b039c6b8a7c200d3c2f4520bfd2"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\textvqa_validation_pinned\\data\\validation-00001-of-00003.parquet",
+          "upstream_path": "data/validation-00001-of-00003.parquet",
+          "bytes": 311190265,
+          "sha256": "909ad12a378217431548a7f4b66fda163a6def9d21e70844c96449e64206c2dd",
+          "metadata_sha256": "f1762f994e0830e7708d917e9111d2f7f1973b039c6b8a7c200d3c2f4520bfd2"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\textvqa_validation_pinned\\data\\validation-00002-of-00003.parquet",
+          "upstream_path": "data/validation-00002-of-00003.parquet",
+          "bytes": 298732781,
+          "sha256": "a770d03ec95fef58def04cda949d97669b7666caaf174af927856d75684e6fe6",
+          "metadata_sha256": "f1762f994e0830e7708d917e9111d2f7f1973b039c6b8a7c200d3c2f4520bfd2"
+        }
+      ],
+      "actual_questions": 5000,
+      "actual_sources": 3166,
+      "unique_raw_images": 3166,
+      "groups": {
+        "all": 5000
+      },
+      "subsets": {
+        "p1": {
+          "questions": 128,
+          "sources": 128,
+          "groups": {
+            "all": 128
+          }
+        },
+        "p2": {
+          "questions": 500,
+          "sources": 500,
+          "groups": {
+            "all": 500
+          }
+        }
+      }
+    },
+    "docvqa": {
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "split": "validation",
+      "expected_questions": 5349,
+      "prefix": "DocVQA/validation-",
+      "cluster": "ucsf_document_id",
+      "parquets": [
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\docvqa_validation_pinned\\validation-00000-of-00006.parquet",
+          "upstream_path": "DocVQA/validation-00000-of-00006.parquet",
+          "bytes": 114817746,
+          "sha256": "a31507f0b700ac64f3ead52057c5dc3ccfb0baadcc62bc0d19d17159f080a4d8",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\docvqa_validation_pinned\\validation-00001-of-00006.parquet",
+          "upstream_path": "DocVQA/validation-00001-of-00006.parquet",
+          "bytes": 160435747,
+          "sha256": "ce63ba45f11bfb4e17362f9c073984b4c6c84a0e966ba3d33a86fa285a1fb3dc",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\docvqa_validation_pinned\\validation-00002-of-00006.parquet",
+          "upstream_path": "DocVQA/validation-00002-of-00006.parquet",
+          "bytes": 184452290,
+          "sha256": "2d580a39996ad05226ad462f2d31bad0df02f0f47f46263d96ad8df584a5667b",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\docvqa_validation_pinned\\validation-00003-of-00006.parquet",
+          "upstream_path": "DocVQA/validation-00003-of-00006.parquet",
+          "bytes": 177861893,
+          "sha256": "588a587567d1548a174b83b160132d97eb2b12a7d57374675d3c45b431403354",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\docvqa_validation_pinned\\validation-00004-of-00006.parquet",
+          "upstream_path": "DocVQA/validation-00004-of-00006.parquet",
+          "bytes": 206232388,
+          "sha256": "b43b8aa3e28a1b0f8728243fdf776b798a684b5baafb27d6a734edbbe3983302",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\docvqa_validation_pinned\\validation-00005-of-00006.parquet",
+          "upstream_path": "DocVQA/validation-00005-of-00006.parquet",
+          "bytes": 212034964,
+          "sha256": "5bba6d5f7b8e6ee0b64df2e4c2885f93cd759c732998e4d6f9b86ce4c690fcf2",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        }
+      ],
+      "actual_questions": 5349,
+      "actual_sources": 938,
+      "unique_raw_images": 1285,
+      "groups": {
+        "all": 5349
+      },
+      "subsets": {
+        "p1": {
+          "questions": 128,
+          "sources": 128,
+          "groups": {
+            "all": 128
+          }
+        },
+        "p2": {
+          "questions": 500,
+          "sources": 500,
+          "groups": {
+            "all": 500
+          }
+        }
+      }
+    },
+    "infovqa": {
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "split": "validation",
+      "expected_questions": 2801,
+      "prefix": "InfographicVQA/validation-",
+      "cluster": "image.path",
+      "parquets": [
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\infovqa_validation_round8_pinned\\validation-00000-of-00004.parquet",
+          "upstream_path": "InfographicVQA/validation-00000-of-00004.parquet",
+          "bytes": 63414360,
+          "sha256": "a71b63eca8d3cedc5bda7f7d2a4c959b041dca8766592675f6bd0ac49500775a",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\infovqa_validation_round8_pinned\\validation-00001-of-00004.parquet",
+          "upstream_path": "InfographicVQA/validation-00001-of-00004.parquet",
+          "bytes": 72073153,
+          "sha256": "12cbc18ad5a499deebca691fcdf9a852c3d3917e448b30dc604bfdfb4559e756",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\infovqa_validation_round8_pinned\\validation-00002-of-00004.parquet",
+          "upstream_path": "InfographicVQA/validation-00002-of-00004.parquet",
+          "bytes": 57944291,
+          "sha256": "0f4b8f8633105395d8acb5fd341311c614033f35d99cc25337e43c7fd905b3c1",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        },
+        {
+          "local_path": "${FROZEN_TRAJKV_ROOT}\\data\\infovqa_validation_round8_pinned\\validation-00003-of-00004.parquet",
+          "upstream_path": "InfographicVQA/validation-00003-of-00004.parquet",
+          "bytes": 73025844,
+          "sha256": "254fdbd3f69499aca70292167f61d89430fb485b3f6a2fce939ab84f02ae5776",
+          "metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b"
+        }
+      ],
+      "actual_questions": 2801,
+      "actual_sources": 500,
+      "unique_raw_images": 500,
+      "groups": {
+        "all": 2801
+      },
+      "subsets": {
+        "p1": {
+          "questions": 128,
+          "sources": 128,
+          "groups": {
+            "all": 128
+          }
+        },
+        "p2": {
+          "questions": 500,
+          "sources": 500,
+          "groups": {
+            "all": 500
+          }
+        }
+      }
+    },
+    "chartqa": {
+      "repo": "ahmed-masry/ChartQA",
+      "revision": "af8b6f5c08c95085271561c2a3f9d15f2b5a9031",
+      "split": "test",
+      "expected_questions": 2500,
+      "prefix": "data/test-",
+      "cluster": "imgname_or_raw_sha",
+      "parquets": [
+        {
+          "local_path": "${EVIDENCE_ROOT}_mirror\\datasets\\chartqa_af8b6f5c\\test-00000-of-00001.parquet",
+          "upstream_path": "data/test-00000-of-00001.parquet",
+          "bytes": 68916402,
+          "sha256": "84889bae30aaf6e24ff899e1604221606c0b65e658b6c70a7d02c79f50fc87df",
+          "metadata_sha256": "78dfb4896b1e469b9e1e00ec40709b03637368db4afa8706badbeb0b647363b2"
+        }
+      ],
+      "actual_questions": 2500,
+      "actual_sources": 1509,
+      "unique_raw_images": 1509,
+      "groups": {
+        "human": 1250,
+        "augmented": 1250
+      },
+      "subsets": {
+        "p1": {
+          "questions": 128,
+          "sources": 128,
+          "groups": {
+            "human": 64,
+            "augmented": 64
+          }
+        },
+        "p2": {
+          "questions": 500,
+          "sources": 500,
+          "groups": {
+            "human": 250,
+            "augmented": 250
+          }
+        }
+      },
+      "declared_metric_group_alias": {
+        "human": "human",
+        "augmented": "aug"
+      }
+    }
+  },
+  "files": {
+    "chartqa_full_inputs.jsonl": {
+      "sha256": "f1501ac89974c216271e81faaab23305844b2b20b185149660475724da027e26",
+      "bytes": 1947611
+    },
+    "chartqa_full_refs.jsonl": {
+      "sha256": "d5639de12ade4d4a6a52b7708d568d194c1a5e31e42a5853b00a7f06eaebb467",
+      "bytes": 313975
+    },
+    "chartqa_locators.jsonl": {
+      "sha256": "4aa33d3deac48da88e8e892bc0bad949cef43887857119f2a49d35f5e09a6972",
+      "bytes": 803890
+    },
+    "chartqa_p1_inputs.jsonl": {
+      "sha256": "0a9daf09189d933584e76742950728819c155c5211387c2f2ef639cae55ebde9",
+      "bytes": 99057
+    },
+    "chartqa_p1_refs.jsonl": {
+      "sha256": "a988db2cf69c6de3f93c66aec89952ce9a47dc44ce4eb9ce378d619cd4fcc7c7",
+      "bytes": 15988
+    },
+    "chartqa_p2_inputs.jsonl": {
+      "sha256": "50c32cde2817abdc01fc1406a8e6899339e6ac9ab927d2e71d0d869a87d22282",
+      "bytes": 387447
+    },
+    "chartqa_p2_refs.jsonl": {
+      "sha256": "7ba8286a7672d841275803d9443f98dd69f06a758e57c71392dd92efbb70398a",
+      "bytes": 63136
+    },
+    "docvqa_full_inputs.jsonl": {
+      "sha256": "cc764152255f1b78d713c3c1d880e234be3b77c12e9228bb6f4d12b54555eeec",
+      "bytes": 3893652
+    },
+    "docvqa_full_refs.jsonl": {
+      "sha256": "1bc8da5cc8b8a039f0ea9a15fa5ea5f28a4e6d12c1b5a284b6e912cd4dc47294",
+      "bytes": 617915
+    },
+    "docvqa_locators.jsonl": {
+      "sha256": "0cf6ef33b96090e871a40943bea871e2fd746691a41e5ea660799fb51eabf9cb",
+      "bytes": 1720785
+    },
+    "docvqa_p1_inputs.jsonl": {
+      "sha256": "de40983b6acf585200ecd8c3208b3b39cb8714ca647c90f4aaafe00c26e1200b",
+      "bytes": 92685
+    },
+    "docvqa_p1_refs.jsonl": {
+      "sha256": "01b84eb9b5ffa68416e660b26280223456c0af3239b7832171dd33ff9182122e",
+      "bytes": 15301
+    },
+    "docvqa_p2_inputs.jsonl": {
+      "sha256": "f04642bccfe6f08027369cf4f21aff1782227371c120d7fff42888b8d92203b7",
+      "bytes": 361553
+    },
+    "docvqa_p2_refs.jsonl": {
+      "sha256": "ef75bd3a659c0c218992ad5180e994f76e62e761195173f2af19456e2edbeea4",
+      "bytes": 60286
+    },
+    "infovqa_full_inputs.jsonl": {
+      "sha256": "0dc74bec6d1ef1e3b577265be648a8d415d7ece7cf606cebc6fe3754106534fc",
+      "bytes": 2107231
+    },
+    "infovqa_full_refs.jsonl": {
+      "sha256": "6d595fb2f0a2f439197b3963329859547b409ce50019da2f50a2d4e74dd6b06b",
+      "bytes": 300046
+    },
+    "infovqa_locators.jsonl": {
+      "sha256": "b59e8100c035a3b66185268838599f3212f19f37e9925657ac4b596e5f317557",
+      "bytes": 926691
+    },
+    "infovqa_p1_inputs.jsonl": {
+      "sha256": "2fe80c3e00c12e6570023acf2899d2c3847d7ffe16ee8bf9b34acaa082a11fe0",
+      "bytes": 96320
+    },
+    "infovqa_p1_refs.jsonl": {
+      "sha256": "60fd14d4e088c148ff7c8fab86a94cae52cc6c74a38c5a7aabb3f0b2446a9dcb",
+      "bytes": 13702
+    },
+    "infovqa_p2_inputs.jsonl": {
+      "sha256": "353dba9f703dce8269e3653fe54106518e7b564a809bb8ced501643a78970969",
+      "bytes": 376076
+    },
+    "infovqa_p2_refs.jsonl": {
+      "sha256": "8ad2100a230a8ee2e9819ebbb4cab258f19544f567b7f41e82d7e01799c36482",
+      "bytes": 53106
+    },
+    "textvqa_full_inputs.jsonl": {
+      "sha256": "1597366e6eb680e442ed5b3a7a1071e6c2442b4de98d897bc0c931adc9ecd009",
+      "bytes": 3672924
+    },
+    "textvqa_full_refs.jsonl": {
+      "sha256": "aef61abdd3c73ff548b61a8497fe2497713a92b031dff60e92f5e6461fdaed0c",
+      "bytes": 1083578
+    },
+    "textvqa_locators.jsonl": {
+      "sha256": "1ac4dd36f737cdf36e410f2ed388add3eb0abb0247b04390086758f518991c7b",
+      "bytes": 1651670
+    },
+    "textvqa_p1_inputs.jsonl": {
+      "sha256": "5181fcce6a31dfa9ea1ab4b18598cd93ca500d764a1d49154e0f2a52192882b2",
+      "bytes": 94026
+    },
+    "textvqa_p1_refs.jsonl": {
+      "sha256": "b06f07cd26bd79c2198eddec7f81db7e1c31f1222c5999c9617650ea29c3c456",
+      "bytes": 27783
+    },
+    "textvqa_p2_inputs.jsonl": {
+      "sha256": "9891e84b7589cce22ff398bab28b25ff94b0db92a4db63751a11e368fe3c18d8",
+      "bytes": 367458
+    },
+    "textvqa_p2_refs.jsonl": {
+      "sha256": "282bf6b9d1b7b6668676edc611224cbed3a4683209d1f5f7120587a022de8d5a",
+      "bytes": 107690
+    }
+  }
+}

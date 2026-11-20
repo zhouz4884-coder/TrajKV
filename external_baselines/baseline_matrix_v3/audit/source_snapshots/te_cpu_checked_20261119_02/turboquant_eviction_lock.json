@@ -1,0 +1,79 @@
+{
+  "created_date": "2026-11-19",
+  "status": "SOURCE_LOCKED_CPU_CODEC_PASS_CUDA_AND_MODEL_PENDING",
+  "sources": {
+    "turboquant_0xsero": {
+      "repo": "https://github.com/0xSero/turboquant",
+      "local_root": "third_party/turboquant_0xsero",
+      "commit": "31660314b229b8d1c29bfddf8b9f5026b5121095",
+      "selected": true,
+      "files": {
+        "turboquant/quantizer.py": "37be2cf9e2795ebe3c9baea311d93ff6a87abbf3322b8002350709d90b4f01c7",
+        "turboquant/rotation.py": "2e98e9e9248bed857d52124e35b8e435fc57929c4fe516d4a2aecbd37d815fdf",
+        "turboquant/kv_cache.py": "189e49a35d42f8cf5b4e129438164c2931efbd624e93f07742b52b01b3250b37",
+        "turboquant/codebook.py": "de89d9a35d30f7c6a777568cf0c061d1ecaf78db6fef3dabf65f320209b974c8",
+        "turboquant/codebooks/codebook_d128_b2.json": "7e3b2bf4cfcbed6a1055d11abc45129faf74cd9a49c051909fcbc3cfba383b4a"
+      }
+    },
+    "turboquant_onlyterp": {
+      "repo": "https://github.com/OnlyTerp/turboquant",
+      "local_root": "third_party/turboquant_onlyterp",
+      "commit": "1891cdd2ee60514dbd6dd0172ea3dcf00a3b0306",
+      "selected": false,
+      "files": {
+        "src/cache.py": "cafa0d42ab72a1ff468ed70e36f855585f2a38c8829a0a7933ecfbfef5e77431"
+      }
+    },
+    "kvpress": {
+      "repo": "https://github.com/NVIDIA/kvpress",
+      "local_root": "third_party/kvpress",
+      "commit": "6cf5e324be90ea9cedce66e843699b6dc655c0bd",
+      "selected": true,
+      "files": {
+        "kvpress/presses/pyramidkv_press.py": "3038f17a91b262f934eb45d9633896a6c8c9f70074dd3bf363df3c1b964852f9",
+        "kvpress/presses/snapkv_press.py": "37092ff56b75248c60613445df9656260b746a1a334f50db8cac4119db902712"
+      }
+    }
+  },
+  "method_configs": {
+    "T_K3V2": {
+      "class": "methods.turboquant_adapter.TurboQuantAdapter",
+      "key_bits": 3,
+      "value_bits": 2,
+      "group_size": 32,
+      "seed": 42,
+      "bits_nominal_payload": 2.5,
+      "information_condition": "query_unknown",
+      "identity": "0xSero third-party algorithm visual-only port, not paper mixed-channel replication"
+    },
+    "T_K3V4": {
+      "class": "methods.turboquant_adapter.TurboQuantAdapter",
+      "key_bits": 3,
+      "value_bits": 4,
+      "group_size": 32,
+      "seed": 42,
+      "bits_nominal_payload": 3.5,
+      "information_condition": "query_unknown",
+      "identity": "0xSero third-party algorithm visual-only port, not paper mixed-channel replication"
+    },
+    "E_unknown": {
+      "class": "methods.eviction_adapter.PyramidKVVisualAdapter",
+      "compression_ratio": 0.875,
+      "window_size": 64,
+      "kernel_size": 5,
+      "beta": 20,
+      "information_condition": "query_unknown",
+      "budget_scope": "original full-prefix NVIDIA budget minus all exact text"
+    },
+    "E_known": {
+      "class": "methods.eviction_adapter.PyramidKVVisualAdapter",
+      "compression_ratio": 0.875,
+      "window_size": 64,
+      "kernel_size": 5,
+      "beta": 20,
+      "information_condition": "query_known",
+      "main_table_compatible": false,
+      "budget_scope": "original full-prefix NVIDIA budget minus all exact text"
+    }
+  }
+}

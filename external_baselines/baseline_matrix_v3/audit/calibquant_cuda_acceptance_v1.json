@@ -1,0 +1,66 @@
+{
+  "status": "PASS_CUDA_MATH_OWNER_ONLY",
+  "checks": {
+    "status_is_cuda_math_owner_pass": true,
+    "hardware_sm86_3090": true,
+    "upstream_reader": true,
+    "upstream_commit_lock": true,
+    "twelve_cases": true,
+    "case_geometry_coverage": true,
+    "independent_source_pack_and_quant": true,
+    "original_cache_released": true,
+    "code_matches_actual_run": true,
+    "live_argv_matched_launch": true,
+    "live_snapshot_matches_launch": true,
+    "snapshot_file_hashes_unchanged": true,
+    "live_cache_variables_match_data_volume_job": true,
+    "live_gpu0_only": true,
+    "worker_finished": true
+  },
+  "quality_unlocked": false,
+  "remaining_required_gates": [
+    "native FP16 bridge",
+    "all-layer native post-RoPE Q hook",
+    "multi-token visual suffix replay",
+    "paired public-task evaluation"
+  ],
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "capability": [
+    8,
+    6
+  ],
+  "torch_version": "2.4.1+cu121",
+  "cuda_version": "12.1",
+  "runtime_dependencies": {
+    "torch": {
+      "version": "2.4.1",
+      "source_sha256": "34fd26c3046775a70a6a654df60afb362b2f2e98b2f9b8e713c8763b7a80ff83"
+    },
+    "triton": {
+      "version": "3.0.0",
+      "source_sha256": "ded80ef47a6837162e4f6b2f74ab59c991d89b620d337d1abff9e56b39925e3b"
+    }
+  },
+  "max_errors": {
+    "qk_max_abs_error": 0.0009765625,
+    "calibrated_logits_max_abs_error": 0.0,
+    "wv_max_abs_error": 0.0
+  },
+  "peak_allocated_bytes_including_gate_and_autotune": 269958144,
+  "wall_seconds_including_first_autotune": 424.73133635520935,
+  "upstream_commit": "1dcfce862162e4a3888ef137df65b36cdc19efd0",
+  "upstream_tree": "0fd1a0ead673bb5309968816210c325c1e803518",
+  "source_inventory_sha256": "fd4d7901a288b93eb15dffe75396a4b8d0287a40359405672ac7fa62aadd9fa7",
+  "evidence": {
+    "results/p0/calibquant_math_cuda_v1.json": "6947e159f442c27351f762c23987a6a4db7b1cc3a45e5b89c245ecfd040f747f",
+    "audit/logs/bm_p0_calib_cuda_v1.log": "cdf5d5741d963581569d5fb900d7960c2ffede2ff309b7be594566a894519415",
+    "audit/launch/bm_p0_calib_cuda_v1.json": "a293a95e69542075b8e290f9da2d9b6f6ee62c02a5c79fd6e07ac8d25b30ec82",
+    "audit/live/bm_p0_calib_cuda_v1/20261119T135708963187Z.json": "2b96e44f96ba8dbb3379d71288e093ab461284d304a3b33ba7654ab9b9f821d3",
+    "audit/live/bm_p0_calib_cuda_v1/20261119T135850837918Z.json": "d7f4f0bc7584fc7a715d48b77377e4470c045286f56065c4573b73e3aec7415f"
+  },
+  "numeric_source_hashes": {
+    "code/gates/calibquant_math_gate.py": "c4da10f3ccb8a3899c497171392a757a516b6173e2da14b10db1b57884847bc6",
+    "code/methods/calibquant_adapter.py": "fe8f42d9460a2d209648c3fc9da3dfb4d04cc2c189f61f0d897c7c87672a3132"
+  },
+  "interpretation": "Official packed QK/WV execute correctly on SM86 in declared cases; this is neither model compatibility nor benchmark score or throughput reproduction."
+}

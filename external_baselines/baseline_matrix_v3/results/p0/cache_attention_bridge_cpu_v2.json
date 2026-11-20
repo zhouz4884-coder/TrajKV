@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_CACHE_AND_SDPA_FACADE_NO_MODEL_QUALITY",
+  "torch_version": "2.11.0+cpu",
+  "transformers_version": "5.4.0",
+  "device": "cpu",
+  "tests": [
+    {
+      "name": "native_capture_exact_vision_delegation_and_restore",
+      "status": "PASS",
+      "captured_layers": 2
+    },
+    {
+      "name": "exception_restores_registry_and_configs",
+      "status": "PASS"
+    },
+    {
+      "name": "FP16_logical_cache_irregular_visual_positions_mixed_reader",
+      "status": "PASS",
+      "max_error": 0.0,
+      "reader_backend": null,
+      "text_dtype": "torch.float16",
+      "consumes_native_full_prefix": true,
+      "no_native_full_storage_alias": true
+    },
+    {
+      "name": "TurboQuant_logical_cache_irregular_visual_positions_mixed_reader",
+      "status": "PASS",
+      "max_error": 0.0,
+      "reader_backend": "torch_dequant",
+      "text_dtype": "torch.float16",
+      "consumes_native_full_prefix": true,
+      "no_native_full_storage_alias": true
+    },
+    {
+      "name": "PyramidKV_logical_cache_irregular_visual_positions_mixed_reader",
+      "status": "PASS",
+      "max_error": 0.0,
+      "reader_backend": null,
+      "text_dtype": "torch.float16",
+      "consumes_native_full_prefix": true,
+      "no_native_full_storage_alias": true
+    },
+    {
+      "name": "CalibQuant_logical_cache_irregular_visual_positions_mixed_reader",
+      "status": "PASS",
+      "max_error": 0.000244140625,
+      "reader_backend": "torch_unfused",
+      "text_dtype": "torch.float16",
+      "consumes_native_full_prefix": true,
+      "no_native_full_storage_alias": true,
+      "source_oracle": "AST exact author patch attn_weights_quant_t FP16 QK/division before FP32 softmax",
+      "source_oracle_sha256": "62421c73b8025f0d03708f4c6af03ea3436bb9d9265ef17cfe753b7827f19df2"
+    },
+    {
+      "name": "unsupported_batch_expansion_rejected",
+      "status": "PASS"
+    }
+  ],
+  "runtime_module_file": "${PROJECT_ROOT}\\code\\attention_bridge.py",
+  "source_hashes": {
+    "attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+    "cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025"
+  }
+}

@@ -1,0 +1,549 @@
+{
+  "scope": "P0_SYNTHETIC_CODEC_SELECTOR_OWNER_ONLY",
+  "device": "cuda:0",
+  "torch_version": "2.4.1+cu121",
+  "cuda_version": "12.1",
+  "runtime_module_file": "${DATA_ROOT}/jobs/bm_p0_turboquant_eviction_cuda_v2.source/code/methods/validate_turboquant_eviction.py",
+  "runtime_executable": "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+  "baseline_source_root": "${DATA_ROOT}/jobs/bm_p0_turboquant_eviction_cuda_v2.source",
+  "pythonpath": "${DATA_ROOT}/jobs/bm_p0_turboquant_eviction_cuda_v2.source/code:",
+  "model_quality_measured": false,
+  "tests": [
+    {
+      "name": "TurboQuant_K3V2_source_exact_packed_real_reader",
+      "status": "PASS",
+      "key_max_error": 0.0,
+      "value_max_error": 0.0,
+      "qjl_identity_max_error": 1.1444091796875e-05,
+      "reader_sdpa_max_error": 3.0517578125e-05,
+      "owner": {
+        "method": "TurboQuant_0xSero_K3V2_visual_port",
+        "upstream_repo": "https://github.com/0xSero/turboquant",
+        "upstream_commit": "31660314b229b8d1c29bfddf8b9f5026b5121095",
+        "method_paper": "https://arxiv.org/abs/2504.19874",
+        "faithfulness_status": "THIRD_PARTY_ALGORITHM_VISUAL_SCOPE_PORT",
+        "reader": "upstream_dequantize_then_torch_grouped_attention",
+        "available_reader_backends": [
+          "torch_dequant",
+          "upstream_triton_score"
+        ],
+        "qjl_enabled": true,
+        "recent_visual_buffer_tokens": 0,
+        "numerical_variant": "UPSTREAM_FP32_ENCODER_AND_FP32_METADATA",
+        "bits_nominal": 2.5,
+        "payload_bytes": 61440,
+        "coder_metadata_bytes": 30720,
+        "positions_bytes": 1536,
+        "encoder_constants_bytes": 131116,
+        "lookup_bytes": 0,
+        "stored_visual_KV_bytes": 93696,
+        "all_owner_bytes_including_constants": 224812,
+        "actual_effective_visual_bits": 3.8125,
+        "effective_bits_including_constants": 9.147623697916666,
+        "full_kv_byte_denominator": 393216,
+        "temporary_full_dequant_KV_bytes": 786432,
+        "temporary_full_fp32_V_bytes_upstream_triton_score": 393216,
+        "temporary_full_dequant_is_persistent": false,
+        "storage": {
+          "total_bytes": 224812,
+          "tensors": {
+            "key_mse_indices": {
+              "shape": [
+                1,
+                4,
+                192,
+                32
+              ],
+              "dtype": "torch.uint8",
+              "device": "cuda:0",
+              "logical_bytes": 24576,
+              "storage_bytes": 24576,
+              "charged_bytes": 24576
+            },
+            "key_qjl_signs": {
+              "shape": [
+                1,
+                4,
+                192,
+                16
+              ],
+              "dtype": "torch.uint8",
+              "device": "cuda:0",
+              "logical_bytes": 12288,
+              "storage_bytes": 12288,
+              "charged_bytes": 12288
+            },
+            "key_norms": {
+              "shape": [
+                1,
+                4,
+                192
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 3072,
+              "storage_bytes": 3072,
+              "charged_bytes": 3072
+            },
+            "key_residual_norms": {
+              "shape": [
+                1,
+                4,
+                192
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 3072,
+              "storage_bytes": 3072,
+              "charged_bytes": 3072
+            },
+            "value_codes": {
+              "shape": [
+                1,
+                4,
+                192,
+                32
+              ],
+              "dtype": "torch.uint8",
+              "device": "cuda:0",
+              "logical_bytes": 24576,
+              "storage_bytes": 24576,
+              "charged_bytes": 24576
+            },
+            "value_scales": {
+              "shape": [
+                1,
+                4,
+                192,
+                4
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 12288,
+              "storage_bytes": 12288,
+              "charged_bytes": 12288
+            },
+            "value_zeros": {
+              "shape": [
+                1,
+                4,
+                192,
+                4
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 12288,
+              "storage_bytes": 12288,
+              "charged_bytes": 12288
+            },
+            "positions": {
+              "shape": [
+                192
+              ],
+              "dtype": "torch.int64",
+              "device": "cuda:0",
+              "logical_bytes": 1536,
+              "storage_bytes": 1536,
+              "charged_bytes": 1536
+            },
+            "encoder_constants.S": {
+              "shape": [
+                128,
+                128
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 65536,
+              "storage_bytes": 65536,
+              "charged_bytes": 65536
+            },
+            "encoder_constants.mse_quantizer.Pi": {
+              "shape": [
+                128,
+                128
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 65536,
+              "storage_bytes": 65536,
+              "charged_bytes": 65536
+            },
+            "encoder_constants.mse_quantizer.centroids": {
+              "shape": [
+                4
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 16,
+              "storage_bytes": 16,
+              "charged_bytes": 16
+            },
+            "encoder_constants.mse_quantizer.boundaries": {
+              "shape": [
+                5
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 20,
+              "storage_bytes": 20,
+              "charged_bytes": 20
+            },
+            "encoder_constants.mse_quantizer.decision_boundaries": {
+              "shape": [
+                3
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 12,
+              "storage_bytes": 20,
+              "charged_bytes": 0
+            },
+            "encoder_constants.qjl_bit_powers": {
+              "shape": [
+                8
+              ],
+              "dtype": "torch.uint8",
+              "device": "cuda:0",
+              "logical_bytes": 8,
+              "storage_bytes": 8,
+              "charged_bytes": 8
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "TurboQuant_K3V2_upstream_Triton_SM86_real_reader",
+      "status": "PASS",
+      "logits_max_error": 1.9073486328125e-06,
+      "text_merge_reader_max_error": 0.000244140625,
+      "original_fused_visual_only_max_error": 0.0001220703125,
+      "main_reader_backend": "upstream_triton_score_torch_value_dequant",
+      "original_fused_decode_unpacks_full_uint8_V": true,
+      "full_uint8_V_temporary_bytes": 98304,
+      "main_reader_full_fp32_V_temporary_bytes": 393216
+    },
+    {
+      "name": "TurboQuant_K3V4_source_exact_packed_real_reader",
+      "status": "PASS",
+      "key_max_error": 0.0,
+      "value_max_error": 0.0,
+      "qjl_identity_max_error": 1.1444091796875e-05,
+      "reader_sdpa_max_error": 0.0001220703125,
+      "owner": {
+        "method": "TurboQuant_0xSero_K3V4_visual_port",
+        "upstream_repo": "https://github.com/0xSero/turboquant",
+        "upstream_commit": "31660314b229b8d1c29bfddf8b9f5026b5121095",
+        "method_paper": "https://arxiv.org/abs/2504.19874",
+        "faithfulness_status": "THIRD_PARTY_ALGORITHM_VISUAL_SCOPE_PORT",
+        "reader": "upstream_dequantize_then_torch_grouped_attention",
+        "available_reader_backends": [
+          "torch_dequant",
+          "upstream_triton_score"
+        ],
+        "qjl_enabled": true,
+        "recent_visual_buffer_tokens": 0,
+        "numerical_variant": "UPSTREAM_FP32_ENCODER_AND_FP32_METADATA",
+        "bits_nominal": 3.5,
+        "payload_bytes": 86016,
+        "coder_metadata_bytes": 30720,
+        "positions_bytes": 1536,
+        "encoder_constants_bytes": 131116,
+        "lookup_bytes": 0,
+        "stored_visual_KV_bytes": 118272,
+        "all_owner_bytes_including_constants": 249388,
+        "actual_effective_visual_bits": 4.8125,
+        "effective_bits_including_constants": 10.147623697916666,
+        "full_kv_byte_denominator": 393216,
+        "temporary_full_dequant_KV_bytes": 786432,
+        "temporary_full_fp32_V_bytes_upstream_triton_score": 393216,
+        "temporary_full_dequant_is_persistent": false,
+        "storage": {
+          "total_bytes": 249388,
+          "tensors": {
+            "key_mse_indices": {
+              "shape": [
+                1,
+                4,
+                192,
+                32
+              ],
+              "dtype": "torch.uint8",
+              "device": "cuda:0",
+              "logical_bytes": 24576,
+              "storage_bytes": 24576,
+              "charged_bytes": 24576
+            },
+            "key_qjl_signs": {
+              "shape": [
+                1,
+                4,
+                192,
+                16
+              ],
+              "dtype": "torch.uint8",
+              "device": "cuda:0",
+              "logical_bytes": 12288,
+              "storage_bytes": 12288,
+              "charged_bytes": 12288
+            },
+            "key_norms": {
+              "shape": [
+                1,
+                4,
+                192
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 3072,
+              "storage_bytes": 3072,
+              "charged_bytes": 3072
+            },
+            "key_residual_norms": {
+              "shape": [
+                1,
+                4,
+                192
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 3072,
+              "storage_bytes": 3072,
+              "charged_bytes": 3072
+            },
+            "value_codes": {
+              "shape": [
+                1,
+                4,
+                192,
+                64
+              ],
+              "dtype": "torch.uint8",
+              "device": "cuda:0",
+              "logical_bytes": 49152,
+              "storage_bytes": 49152,
+              "charged_bytes": 49152
+            },
+            "value_scales": {
+              "shape": [
+                1,
+                4,
+                192,
+                4
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 12288,
+              "storage_bytes": 12288,
+              "charged_bytes": 12288
+            },
+            "value_zeros": {
+              "shape": [
+                1,
+                4,
+                192,
+                4
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 12288,
+              "storage_bytes": 12288,
+              "charged_bytes": 12288
+            },
+            "positions": {
+              "shape": [
+                192
+              ],
+              "dtype": "torch.int64",
+              "device": "cuda:0",
+              "logical_bytes": 1536,
+              "storage_bytes": 1536,
+              "charged_bytes": 1536
+            },
+            "encoder_constants.S": {
+              "shape": [
+                128,
+                128
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 65536,
+              "storage_bytes": 65536,
+              "charged_bytes": 65536
+            },
+            "encoder_constants.mse_quantizer.Pi": {
+              "shape": [
+                128,
+                128
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 65536,
+              "storage_bytes": 65536,
+              "charged_bytes": 65536
+            },
+            "encoder_constants.mse_quantizer.centroids": {
+              "shape": [
+                4
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 16,
+              "storage_bytes": 16,
+              "charged_bytes": 16
+            },
+            "encoder_constants.mse_quantizer.boundaries": {
+              "shape": [
+                5
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 20,
+              "storage_bytes": 20,
+              "charged_bytes": 20
+            },
+            "encoder_constants.mse_quantizer.decision_boundaries": {
+              "shape": [
+                3
+              ],
+              "dtype": "torch.float32",
+              "device": "cuda:0",
+              "logical_bytes": 12,
+              "storage_bytes": 20,
+              "charged_bytes": 0
+            },
+            "encoder_constants.qjl_bit_powers": {
+              "shape": [
+                8
+              ],
+              "dtype": "torch.uint8",
+              "device": "cuda:0",
+              "logical_bytes": 8,
+              "storage_bytes": 8,
+              "charged_bytes": 8
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "TurboQuant_K3V4_upstream_Triton_SM86_real_reader",
+      "status": "PASS",
+      "logits_max_error": 1.9073486328125e-06,
+      "text_merge_reader_max_error": 0.0001220703125,
+      "original_fused_visual_only_max_error": 0.000244140625,
+      "main_reader_backend": "upstream_triton_score_torch_value_dequant",
+      "original_fused_decode_unpacks_full_uint8_V": true,
+      "full_uint8_V_temporary_bytes": 98304,
+      "main_reader_full_fp32_V_temporary_bytes": 393216
+    },
+    {
+      "name": "PyramidKV_original_NVIDIA_score_and_budget",
+      "status": "PASS",
+      "score_max_error": 0.0,
+      "exact_budget_cases": 48
+    },
+    {
+      "name": "PyramidKV_visual_topk_compact_owner_sparse_reader",
+      "status": "PASS",
+      "reader_max_error": 0.0001220703125,
+      "owner": {
+        "method": "NVIDIA_kvpress_PyramidKV_visual_port",
+        "method_paper": "https://arxiv.org/abs/2406.02069",
+        "upstream_repo": "https://github.com/NVIDIA/kvpress",
+        "upstream_commit": "6cf5e324be90ea9cedce66e843699b6dc655c0bd",
+        "faithfulness_status": "PINNED_SELECTOR_AND_BUDGET_VISUAL_CANDIDATE_PORT",
+        "bits_nominal": null,
+        "stored_visual_KV_bytes": 66560,
+        "coder_metadata_bytes": 0,
+        "positions_bytes": 1024,
+        "encoder_constants_bytes": 0,
+        "lookup_bytes": 0,
+        "actual_effective_visual_bits": 2.3214285714285716,
+        "full_kv_byte_denominator": 458752,
+        "retained_visual_tokens_per_head": 32,
+        "original_visual_tokens": 224,
+        "temporary_full_dequant_KV_bytes": 0,
+        "config": {
+          "compression_ratio": 0.75,
+          "window_size": 8,
+          "kernel_size": 5,
+          "beta": 20,
+          "num_layers": 28,
+          "information_condition": "query_unknown",
+          "budget_regime": "UPSTREAM_EXPLICIT_SNAPKV_FALLBACK",
+          "question_in_observation": false,
+          "prefix_is_question_free": true,
+          "budget_scope": "original_full_prefix_budget_minus_all_exact_text",
+          "protected_visual_window_tokens": 0
+        },
+        "storage": {
+          "total_bytes": 66560,
+          "tensors": {
+            "keys": {
+              "shape": [
+                1,
+                4,
+                32,
+                128
+              ],
+              "dtype": "torch.float16",
+              "device": "cuda:0",
+              "logical_bytes": 32768,
+              "storage_bytes": 32768,
+              "charged_bytes": 32768
+            },
+            "values": {
+              "shape": [
+                1,
+                4,
+                32,
+                128
+              ],
+              "dtype": "torch.float16",
+              "device": "cuda:0",
+              "logical_bytes": 32768,
+              "storage_bytes": 32768,
+              "charged_bytes": 32768
+            },
+            "positions": {
+              "shape": [
+                1,
+                4,
+                32
+              ],
+              "dtype": "torch.int64",
+              "device": "cuda:0",
+              "logical_bytes": 1024,
+              "storage_bytes": 1024,
+              "charged_bytes": 1024
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "unknown_rejects_question",
+      "status": "PASS"
+    },
+    {
+      "name": "unknown_rejects_unverified_prefix",
+      "status": "PASS"
+    }
+  ],
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "capability": [
+    8,
+    6
+  ],
+  "peak_allocated_bytes": 17699840,
+  "end_allocated_bytes": 16614400,
+  "status": "PASS",
+  "source_hashes": {
+    "code/methods/validate_turboquant_eviction.py": "ed2cf217525c2dbd236e217a04004bbb96bd9f4d845a91813e9a8b9b970c186b",
+    "code/methods/turboquant_adapter.py": "bd824c42b9a653001c88f542879cea820865ff31b5ab342c2322f1d9b4f2bfe5",
+    "code/methods/eviction_adapter.py": "91b4ea675763d410f491955394ba1a8c42c09d3be7aa6c35c8d4fa852788372b",
+    "third_party/kvpress/kvpress/presses/snapkv_press.py": "37092ff56b75248c60613445df9656260b746a1a334f50db8cac4119db902712",
+    "third_party/kvpress/kvpress/presses/pyramidkv_press.py": "3038f17a91b262f934eb45d9633896a6c8c9f70074dd3bf363df3c1b964852f9"
+  }
+}

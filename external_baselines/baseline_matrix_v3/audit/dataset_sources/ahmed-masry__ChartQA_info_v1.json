@@ -1,0 +1,164 @@
+{
+  "_id": "650bb8efa17882d7e08a2c50",
+  "id": "ahmed-masry/ChartQA",
+  "author": "ahmed-masry",
+  "sha": "af8b6f5c08c95085271561c2a3f9d15f2b5a9031",
+  "lastModified": "2024-06-22T00:15:38.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "license:gpl-3.0",
+    "size_categories:10K<n<100K",
+    "format:parquet",
+    "modality:image",
+    "modality:text",
+    "library:datasets",
+    "library:dask",
+    "library:mlcroissant",
+    "library:polars",
+    "region:us"
+  ],
+  "description": "If you wanna use the dataset, you need to download the zip file manually from the \"Files and versions\" tab. \nPlease note that this dataset can not be directly loaded with the load_dataset function from the datasets library.\nIf you want a version of the dataset that can be loaded with the load_dataset function, you can use this one: https://huggingface.co/datasets/ahmed-masry/chartqa_without_images\nBut it doesn't contain the chart images. Hence, you will still need to use the images stored in… See the full description on the dataset page: https://huggingface.co/datasets/ahmed-masry/ChartQA.",
+  "downloads": 8737,
+  "likes": 33,
+  "cardData": {
+    "license": "gpl-3.0",
+    "dataset_info": {
+      "features": [
+        {
+          "name": "imgname",
+          "dtype": "string"
+        },
+        {
+          "name": "query",
+          "dtype": "string"
+        },
+        {
+          "name": "label",
+          "dtype": "string"
+        },
+        {
+          "name": "type",
+          "dtype": "string"
+        },
+        {
+          "name": "image",
+          "dtype": "binary"
+        }
+      ],
+      "splits": [
+        {
+          "name": "train",
+          "num_bytes": 1257038553,
+          "num_examples": 28299
+        },
+        {
+          "name": "val",
+          "num_bytes": 84243017,
+          "num_examples": 1920
+        },
+        {
+          "name": "test",
+          "num_bytes": 107100539,
+          "num_examples": 2500
+        }
+      ],
+      "download_size": 973601338,
+      "dataset_size": 1448382109
+    },
+    "configs": [
+      {
+        "config_name": "default",
+        "data_files": [
+          {
+            "split": "train",
+            "path": "data/train-*"
+          },
+          {
+            "split": "val",
+            "path": "data/val-*"
+          },
+          {
+            "split": "test",
+            "path": "data/test-*"
+          }
+        ]
+      }
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "28df5f900b358436f0267334b3e3e9af33f917ba",
+      "size": 2307
+    },
+    {
+      "rfilename": "ChartQA Dataset.zip",
+      "blobId": "679e2e75570c7fcfe89cf3f69bef264900edea6d",
+      "size": 875370872,
+      "lfs": {
+        "sha256": "1bf310e5a51101681495c4a24f4f29d22c4f70b52df24e2e4feb0d79cae3c160",
+        "size": 875370872,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "040288e81decbcfe932c7feec04027a975d0d7e3",
+      "size": 2121
+    },
+    {
+      "rfilename": "data/test-00000-of-00001.parquet",
+      "blobId": "b57829eba2c59db40c7fa46ebe45e7e08cfafb82",
+      "size": 68916402,
+      "lfs": {
+        "sha256": "84889bae30aaf6e24ff899e1604221606c0b65e658b6c70a7d02c79f50fc87df",
+        "size": 68916402,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "data/train-00000-of-00003.parquet",
+      "blobId": "0423fb16f7a285b1a58e8a98955caea0cd914c12",
+      "size": 219074332,
+      "lfs": {
+        "sha256": "3cca5735d17267ba006b298f78743ef33156c18db9deeadc9c0982ad1ea74bb7",
+        "size": 219074332,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "data/train-00001-of-00003.parquet",
+      "blobId": "b333145b78682d1dca79f3426c30d71316527178",
+      "size": 313907067,
+      "lfs": {
+        "sha256": "7325567601edb49501b7e3ae070f1a7fc9a0e69617803c50bd013a818a9b9610",
+        "size": 313907067,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "data/train-00002-of-00003.parquet",
+      "blobId": "ee08ae4ca81c81b7244823c51a4af41ba64d6171",
+      "size": 321464759,
+      "lfs": {
+        "sha256": "e067dfcc67183219cfab854252038bcd517b26e37367ed6a2ff4ead8d0955c27",
+        "size": 321464759,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "data/val-00000-of-00001.parquet",
+      "blobId": "f6b463e8fce3c7812438adf58d0b49c9711e9bdb",
+      "size": 50238778,
+      "lfs": {
+        "sha256": "46ee830d03a1f288ef21be3d8d149d307cbf09404f9e056906169e617679fb09",
+        "size": 50238778,
+        "pointerSize": 133
+      }
+    }
+  ],
+  "createdAt": "2023-09-21T03:30:55.000Z",
+  "usedStorage": 1850835855
+}

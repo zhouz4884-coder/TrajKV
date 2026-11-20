@@ -1,0 +1,26 @@
+{
+  "upstream_repo": "https://github.com/0xSero/turboquant",
+  "upstream_commit": "31660314b229b8d1c29bfddf8b9f5026b5121095",
+  "inherits_frozen_source_lock": "configs/methods/turboquant_eviction_lock.json",
+  "inherits_frozen_source_lock_sha256": "4074c7784634a04d66e1b5749aa6826008dcd9cdc8845bf7fbf7294e69861983",
+  "source_scope": "TurboQuantKVCache and CompressedKVStore per-layer codec instance semantics",
+  "seed_policy": {
+    "source_effective_seed": "42+7*layer_idx",
+    "adapter_constructor_seed": "42+6*layer_idx",
+    "encode_layer_idx": "layer_idx"
+  },
+  "allocation_policy": {
+    "Pi_S": "per-layer independent storages; shared across all KV heads within one layer",
+    "QJL_bit_powers": "global per-device 8-byte storage; count once across owner inventory"
+  },
+  "numerical_variant": "UPSTREAM_FP32_ENCODER_AND_FP32_METADATA",
+  "reader_backends": [
+    "upstream_triton_score",
+    "torch_dequant"
+  ],
+  "prior_codec_gate_seed_scope": "original adapter default42+layer_idx; not retroactively relabeled",
+  "source_files": {
+    "third_party\\turboquant_0xsero\\turboquant\\kv_cache.py": "189e49a35d42f8cf5b4e129438164c2931efbd624e93f07742b52b01b3250b37",
+    "third_party\\turboquant_0xsero\\turboquant\\store.py": "9a95e4f6986d11f5009c6bbf165059fea3fa593621e189f66e46894781b55e94"
+  }
+}

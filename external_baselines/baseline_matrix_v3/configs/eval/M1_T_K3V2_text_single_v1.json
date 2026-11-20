@@ -1,0 +1,33 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M1",
+  "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p1_inputs.jsonl",
+  "start": 0,
+  "count": 1,
+  "max_new_tokens": 64,
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "max_patches": 8
+  },
+  "method": {
+    "id": "TurboQuant_0xSero_K3V2_visual",
+    "family": "turboquant",
+    "adapter_module": "methods.turboquant_adapter",
+    "adapter_class": "TurboQuantAdapter",
+    "constructor_args": {
+      "key_bits": 3,
+      "value_bits": 2
+    },
+    "reader_backend": "upstream_triton_score",
+    "per_layer_seed": {
+      "base": 42,
+      "step": 6
+    },
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "scope": "P1_TRUE_MODEL_METHOD_SINGLE_QA_SMOKE_NOT_SOTA_SCORE"
+}

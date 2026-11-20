@@ -1,0 +1,65 @@
+{
+  "schema": "baseline_matrix.paired_cluster_comparison.v1",
+  "status": "PASS_PAIRED_COMPLETE",
+  "model_id": "M1",
+  "dataset": "infovqa",
+  "metric_ids": [
+    "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+  ],
+  "anchor_method": "F_native_split",
+  "candidate_method": "CalibQuant_visual_FP32bias_1bit",
+  "expected_QA": 128,
+  "paired_scored_QA": 128,
+  "failed_ids": [],
+  "anchor_summary_sha256": "42a15702b702374ccb470408138d99f2d425c8602b8396da25ce9b8f6932891d",
+  "candidate_summary_sha256": "a6c47bb1f70b664ba9a889cba7ddd6c32b2c2c80418ae38370c3cba939491641",
+  "anchor_scored_rows_sha256": "9425412f439ddef467be10a83a2bd00613d2a59ecd8c9caa51089cc8e2704e29",
+  "candidate_scored_rows_sha256": "909be1622a352c6910baa894ca5453cc62cda80c12a5fd84af031e9f1e54f9ec",
+  "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+  "primary": {
+    "difference": -0.3070407527820911,
+    "difference_pp": -30.70407527820911,
+    "ci95": [
+      -0.38757754876746897,
+      -0.23049573183553315
+    ],
+    "ci95_pp": [
+      -38.757754876746894,
+      -23.049573183553314
+    ],
+    "cluster_count": 128,
+    "bootstrap_draws": 2000,
+    "seed": 20261119,
+    "sign_flip_p_unadjusted": 9.999000099990002e-05,
+    "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+    "requires_family_adjustment_before_significance_claim": true,
+    "pilot_MDE80_normal_approx_pp": 11.766928871001888
+  },
+  "created_unix": 1795140963.963981,
+  "resources": {
+    "scope": "all successfully paired requests; not controlled timing",
+    "complete_visual_bytes_ratio_to_native": 0.06386140298344947,
+    "mean_effective_bits": 1.0238633155822754,
+    "min_effective_bits": 1.0161481584821428,
+    "max_effective_bits": 1.1274762834821428,
+    "iso_budget": {
+      "1.3": {
+        "all_QA_eligible": true,
+        "over_budget_QA": 0,
+        "quality_never_recomputed_on_budget_selected_subset": true
+      },
+      "1.8": {
+        "all_QA_eligible": true,
+        "over_budget_QA": 0,
+        "quality_never_recomputed_on_budget_selected_subset": true
+      },
+      "2.25": {
+        "all_QA_eligible": true,
+        "over_budget_QA": 0,
+        "quality_never_recomputed_on_budget_selected_subset": true
+      }
+    },
+    "mean_instrumented_wall_ms": 7162.722875531017,
+    "wall_is_not_canonical_method_speed": true
+  }
+}

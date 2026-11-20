@@ -1,0 +1,22 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M3",
+  "model_revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+  "inputs": "${DATA_ROOT}/data/registry/v3/chartqa_p2_inputs.jsonl",
+  "start": 0,
+  "count": 500,
+  "max_new_tokens": 64,
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "min_pixels": 65536,
+    "max_pixels": 16777216
+  },
+  "method": {
+    "id": "F_native_split",
+    "family": "fp16",
+    "information_condition": "query_unknown"
+  },
+  "scope": "P2_FIXED_OFFICIAL_SPLIT_SUBSET_NO_LABEL_SELECTION"
+}

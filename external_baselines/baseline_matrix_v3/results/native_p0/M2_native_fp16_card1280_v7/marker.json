@@ -1,0 +1,247 @@
+{
+  "status": "PASS",
+  "model_spec": {
+    "model_id": "M2",
+    "hf_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "architecture": "Qwen2_5_VLForConditionalGeneration",
+    "layers": 28,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "image_token_id": 151655,
+    "vision_start_token_id": 151652,
+    "vision_end_token_id": 151653,
+    "native_adapter": "qwen2_5_vl",
+    "mrope_section": [
+      16,
+      24,
+      24
+    ],
+    "mrope_interleaved": false,
+    "deepstack_visual_indexes": [],
+    "sliding_attention": false,
+    "processor_spatial_factor": 28
+  },
+  "job": {
+    "model_id": "M2",
+    "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "output_dir": "${DATA_ROOT}/results/native_p0/M2_native_fp16_card1280_v7",
+    "image_manifest": "${DATA_ROOT}/configs/models/native_p0_images_v1.json",
+    "min_pixels": 200704,
+    "max_pixels": 1003520,
+    "max_new_tokens": 32,
+    "limit": 10,
+    "attn_implementation": "sdpa",
+    "scope": "P0_technical_hardware_only_not_task_scores",
+    "download_integrity_report": "${DATA_ROOT}/results/model_download/M2_download_r8_resume64.json",
+    "runtime_policy": "isolated_venv_overlay_with_readonly_frozen_base",
+    "change_from_previous": "Fix version helper accidentally changing workspace root v3 to v4 in path; failed v6 never loaded model"
+  },
+  "argv": [
+    "${DATA_ROOT}/jobs/M2_native_fp16_card1280_v7.source/code/native_model_smoke.py",
+    "--job",
+    "${DATA_ROOT}/configs/models/M2_native_fp16_card1280_v7.json"
+  ],
+  "pid": 815989,
+  "python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+  "started_unix": 1795101417.4978263,
+  "source_sha256": "140e22c2e79a740d8f3b7c40571afbae0fbe451c3555fa07900550a92d8c9c12",
+  "registry_sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+  "download_integrity_report_sha256": "448495080179e5f1cb23dff30b91a5d315c62bb76e3928ead5dc488a8ca161a7",
+  "metadata_integrity": [
+    {
+      "file": "chat_template.json",
+      "sha256": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "config.json",
+      "sha256": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "generation_config.json",
+      "sha256": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "merges.txt",
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "sha256": "73b333b0b16e5286ddba615d2caebcd495cf7e616f52eb217a81781393d79de9",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "preprocessor_config.json",
+      "sha256": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "tokenizer.json",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "tokenizer_config.json",
+      "sha256": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    }
+  ],
+  "model_revision_lock_sha256": "c9296aed54fbe6589597a01f4c48932b6079bd0c860b1ba1db4cf07691dfee9e",
+  "environment": {
+    "torch": "2.4.1+cu121",
+    "transformers": "5.12.0",
+    "cuda": "12.1",
+    "hardware": "NVIDIA GeForce RTX 3090",
+    "capability": [
+      8,
+      6
+    ],
+    "python": "3.10.20",
+    "CUDA_VISIBLE_DEVICES": "1",
+    "cache_env": {
+      "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+      "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+      "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+      "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+      "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda"
+    }
+  },
+  "model_config_sha256": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+  "native_weight_dtype": "bfloat16",
+  "dtype_override": "float16",
+  "processor_image_config": {
+    "size": {
+      "longest_edge": 1003520,
+      "shortest_edge": 200704
+    },
+    "patch_size": 14,
+    "temporal_patch_size": 2,
+    "merge_size": 2,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "image_processor_type": "Qwen2VLImageProcessor",
+    "do_convert_rgb": true,
+    "do_resize": true,
+    "resample": 3,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true
+  },
+  "processor_source_config_sha256": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+  "load_ms": 124174.05936600699,
+  "actual_architecture": "Qwen2_5_VLForConditionalGeneration",
+  "native_generation_config": {
+    "max_length": null,
+    "max_new_tokens": null,
+    "min_length": null,
+    "min_new_tokens": null,
+    "early_stopping": null,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": true,
+    "num_beams": null,
+    "use_cache": null,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": 1e-06,
+    "top_k": null,
+    "top_p": null,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": null,
+    "epsilon_cutoff": null,
+    "eta_cutoff": null,
+    "repetition_penalty": 1.05,
+    "encoder_repetition_penalty": null,
+    "length_penalty": null,
+    "no_repeat_ngram_size": null,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": null,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": null,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": null,
+    "output_logits": null,
+    "return_dict_in_generate": null,
+    "pad_token_id": 151643,
+    "bos_token_id": 151643,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "encoder_no_repeat_ngram_size": null,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": null,
+    "num_assistant_tokens_schedule": null,
+    "assistant_confidence_threshold": null,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": null,
+    "target_lookbehind": null,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": null,
+    "num_beam_groups": null,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_from_model_config": null,
+    "transformers_version": "5.12.0"
+  },
+  "generation_overrides": {
+    "do_sample": false,
+    "max_new_tokens": 32
+  },
+  "load_peak_allocated_bytes": 16584355840,
+  "weights_resident_unique_storage_bytes": 16584333312,
+  "transformers_model_source": {
+    "file_name": "modeling_qwen2_5_vl.py",
+    "sha256": "8ec8f3eb6b21bdd8f24c30bc54dbcf10eaa16c6f7f5e36e7f9ff6a88fbd0e630"
+  },
+  "completed_cases": 10,
+  "peak_allocated_bytes": 16892775936,
+  "completed_unix": 1795101566.5486877
+}

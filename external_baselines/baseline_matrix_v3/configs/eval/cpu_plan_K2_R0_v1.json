@@ -1,0 +1,23 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M1",
+  "model_path": "PLAN_ONLY",
+  "inputs": "${PROJECT_ROOT}\\configs\\datasets\\v3\\textvqa_p1_inputs.jsonl",
+  "count": 1,
+  "max_new_tokens": 64,
+  "preprocessing": {
+    "max_patches": 8
+  },
+  "method": {
+    "id": "K2_R0",
+    "family": "kivi",
+    "adapter_module": "methods.kivi_style",
+    "adapter_class": "KIVIStyleAdapter",
+    "constructor_args": {
+      "bits": 2,
+      "group_size": 128,
+      "residual_length": 0
+    },
+    "reader_backend": "triton_packed"
+  }
+}

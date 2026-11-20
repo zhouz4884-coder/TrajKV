@@ -1,0 +1,190 @@
+{
+  "status": "PASS",
+  "scope": "P0 technical only; no official task score",
+  "runtime": {
+    "torch": "2.4.1+cu121",
+    "transformers": "5.12.0",
+    "cuda": "12.1",
+    "hardware": "NVIDIA GeForce RTX 3090",
+    "capability": [
+      8,
+      6
+    ],
+    "python": "3.10.20",
+    "CUDA_VISIBLE_DEVICES": "1",
+    "cache_env": {
+      "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+      "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+      "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+      "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+      "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda"
+    }
+  },
+  "weights_resident_bytes": 15888747520,
+  "load_peak_allocated_bytes": 16434295296,
+  "inference_peak_allocated_bytes": 16302934528,
+  "official_identity_proof": "audit/M1_official_identity_verification_v2.json",
+  "official_tree": "audit/M1_pinned_official_tree_v1.json",
+  "cases": [
+    {
+      "index": 0,
+      "source_id": "sha256:528273f2928d7db406691e78bb2ffbad92851b852f8122c9c423ce7df61ab57a",
+      "dimensions": [
+        1783,
+        2290
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1818,
+      "output_tokens": 9,
+      "peak_allocated_bytes": 16300593664,
+      "prefill_ms": 1397.4505520018283,
+      "generation_ms": 1271.8928789981874,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 1,
+      "source_id": "sha256:35df0ffa8c11f3dbf8259fd886b7db7290bd796b0929c19af9edad4e36e2929d",
+      "dimensions": [
+        2248,
+        1752
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1825,
+      "output_tokens": 9,
+      "peak_allocated_bytes": 16301520384,
+      "prefill_ms": 509.6896269969875,
+      "generation_ms": 824.1795270005241,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 2,
+      "source_id": "sha256:d159f8501156b720c5cd282577f4e0f0a28f9530214317dfb5c483ab29d59ff8",
+      "dimensions": [
+        1710,
+        2208
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1818,
+      "output_tokens": 5,
+      "peak_allocated_bytes": 16300583424,
+      "prefill_ms": 511.23604900203645,
+      "generation_ms": 671.2724060053006,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 3,
+      "source_id": "sha256:03f54cb2f45f095351debcbd03c4dc548e372bafb75378652ed11ccf77a3ad09",
+      "dimensions": [
+        1740,
+        2239
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1820,
+      "output_tokens": 13,
+      "peak_allocated_bytes": 16300865024,
+      "prefill_ms": 510.35123599285726,
+      "generation_ms": 978.5515190014848,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 4,
+      "source_id": "sha256:24413c9e0bf8ab1844629ace8bf4ca3ff22589bf396b46c2e664feccab359042",
+      "dimensions": [
+        1654,
+        2276
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1836,
+      "output_tokens": 11,
+      "peak_allocated_bytes": 16302934528,
+      "prefill_ms": 510.71625101030804,
+      "generation_ms": 900.7466250041034,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 5,
+      "source_id": "sha256:0f308e2ac9b9b8f0950e56479c80d6051c33260406812721d6ab041769b44d66",
+      "dimensions": [
+        732,
+        1024
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1824,
+      "output_tokens": 3,
+      "peak_allocated_bytes": 16301735424,
+      "prefill_ms": 503.6861330008833,
+      "generation_ms": 588.8261049985886,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 6,
+      "source_id": "sha256:1dec421b5ef5161f468df097ce243f17f82494356447dd2d8a17736c43c14fa7",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "visual_tokens": 1280,
+      "input_tokens": 1312,
+      "output_tokens": 3,
+      "peak_allocated_bytes": 16190654464,
+      "prefill_ms": 374.2528540024068,
+      "generation_ms": 452.4271310074255,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 7,
+      "source_id": "sha256:d199c16ea4de2b7a68159cecf7a0e84558622b286bdf3080fa363981ce2df6c8",
+      "dimensions": [
+        683,
+        1024
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1821,
+      "output_tokens": 2,
+      "peak_allocated_bytes": 16301327872,
+      "prefill_ms": 511.7044039943721,
+      "generation_ms": 559.3568420008523,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 8,
+      "source_id": "sha256:7b67b96173d6ee2d9a605cd4d47a42c2368bfe53eff7ebbcd68166ca2c41937c",
+      "dimensions": [
+        1024,
+        678
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1819,
+      "output_tokens": 3,
+      "peak_allocated_bytes": 16300280320,
+      "prefill_ms": 506.1085000052117,
+      "generation_ms": 592.7615739929024,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    },
+    {
+      "index": 9,
+      "source_id": "sha256:842cbb7873fbf54e72c0390df373d0b04db7dbd71355773a1c4867c877efc3dc",
+      "dimensions": [
+        1024,
+        768
+      ],
+      "visual_tokens": 1792,
+      "input_tokens": 1828,
+      "output_tokens": 6,
+      "peak_allocated_bytes": 16301475328,
+      "prefill_ms": 507.51945401134435,
+      "generation_ms": 706.1623229965335,
+      "native_first_token_matches": true,
+      "status": "PASS"
+    }
+  ]
+}

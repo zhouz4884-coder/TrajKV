@@ -1,0 +1,743 @@
+{
+  "_id": "65ae97ec755c534def9c99e4",
+  "id": "lmms-lab-encoder/DocVQA",
+  "author": "lmms-lab-encoder",
+  "sha": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+  "lastModified": "2024-04-18T05:14:35.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "license:apache-2.0",
+    "size_categories:10K<n<100K",
+    "format:parquet",
+    "modality:image",
+    "modality:text",
+    "library:datasets",
+    "library:dask",
+    "library:polars",
+    "library:mlcroissant",
+    "arxiv:2007.00398",
+    "region:us"
+  ],
+  "description": "\n\n\n\n\n\t\n\t\t\n\t\n\t\n\t\tLarge-scale Multi-modality Models Evaluation Suite\n\t\n\n\nAccelerating the development of large-scale multi-modality models (LMMs) with lmms-eval\n\n🏠 Homepage | 📚 Documentation | 🤗 Huggingface Datasets\n\n\t\n\t\t\n\t\n\t\n\t\tThis Dataset\n\t\n\nThis is a formatted version of DocVQA. It is used in our lmms-eval pipeline to allow for one-click evaluations of large multi-modality models.\n@article{mathew2020docvqa,\n  title={DocVQA: A Dataset for VQA on Document Images. CoRR abs/2007.00398 (2020)}… See the full description on the dataset page: https://huggingface.co/datasets/lmms-lab-encoder/DocVQA.",
+  "downloads": 49412,
+  "likes": 90,
+  "cardData": {
+    "license": "apache-2.0",
+    "dataset_info": [
+      {
+        "config_name": "DocVQA",
+        "features": [
+          {
+            "name": "questionId",
+            "dtype": "string"
+          },
+          {
+            "name": "question",
+            "dtype": "string"
+          },
+          {
+            "name": "question_types",
+            "sequence": "string"
+          },
+          {
+            "name": "image",
+            "dtype": "image"
+          },
+          {
+            "name": "docId",
+            "dtype": "int64"
+          },
+          {
+            "name": "ucsf_document_id",
+            "dtype": "string"
+          },
+          {
+            "name": "ucsf_document_page_no",
+            "dtype": "string"
+          },
+          {
+            "name": "answers",
+            "sequence": "string"
+          },
+          {
+            "name": "data_split",
+            "dtype": "string"
+          }
+        ],
+        "splits": [
+          {
+            "name": "validation",
+            "num_bytes": 2532447207.066,
+            "num_examples": 5349
+          },
+          {
+            "name": "test",
+            "num_bytes": 2500408525.732,
+            "num_examples": 5188
+          }
+        ],
+        "download_size": 9555791945,
+        "dataset_size": 10691862676.428999
+      },
+      {
+        "config_name": "InfographicVQA",
+        "features": [
+          {
+            "name": "questionId",
+            "dtype": "string"
+          },
+          {
+            "name": "question",
+            "dtype": "string"
+          },
+          {
+            "name": "answers",
+            "sequence": "string"
+          },
+          {
+            "name": "answer_type",
+            "sequence": "string"
+          },
+          {
+            "name": "image",
+            "dtype": "image"
+          },
+          {
+            "name": "image_url",
+            "dtype": "string"
+          },
+          {
+            "name": "operation/reasoning",
+            "sequence": "string"
+          },
+          {
+            "name": "ocr",
+            "dtype": "string"
+          },
+          {
+            "name": "data_split",
+            "dtype": "string"
+          }
+        ],
+        "splits": [
+          {
+            "name": "validation",
+            "num_bytes": 1863177404.253,
+            "num_examples": 2801
+          },
+          {
+            "name": "test",
+            "num_bytes": 1851304047.712,
+            "num_examples": 3288
+          }
+        ],
+        "download_size": 2544892079,
+        "dataset_size": 15274175998.285
+      }
+    ],
+    "configs": [
+      {
+        "config_name": "DocVQA",
+        "data_files": [
+          {
+            "split": "validation",
+            "path": "DocVQA/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "DocVQA/test-*"
+          }
+        ]
+      },
+      {
+        "config_name": "InfographicVQA",
+        "data_files": [
+          {
+            "split": "validation",
+            "path": "InfographicVQA/validation-*"
+          },
+          {
+            "split": "test",
+            "path": "InfographicVQA/test-*"
+          }
+        ]
+      }
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "28df5f900b358436f0267334b3e3e9af33f917ba",
+      "size": 2307
+    },
+    {
+      "rfilename": "DocVQA/test-00000-of-00006.parquet",
+      "blobId": "f3ed8ea08877c9243d0ea43102df71b49d62bee1",
+      "size": 139100923,
+      "lfs": {
+        "sha256": "9934d28ce7290d15bb2b56204a2ba66434d3d14b290e521485bdbbc196b6b1b3",
+        "size": 139100923,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/test-00001-of-00006.parquet",
+      "blobId": "f7532afda89dec11a0614d03f8d2214358561628",
+      "size": 161354657,
+      "lfs": {
+        "sha256": "cbf1548e2380c4b452b4e63ecdf80f759bd6559c6f1643863f0a99d85e3b4bf5",
+        "size": 161354657,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/test-00002-of-00006.parquet",
+      "blobId": "cc460a1afa057708514c0eef6e7ad388411978a3",
+      "size": 178752984,
+      "lfs": {
+        "sha256": "486252ce2a07fe246b6c4dd9c9610d54fd4410aa3020d51464c1c2f083df54ce",
+        "size": 178752984,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/test-00003-of-00006.parquet",
+      "blobId": "e131cc18929bc739559d6264555e5beb43dbda4b",
+      "size": 188853064,
+      "lfs": {
+        "sha256": "2cc76ea6087e58e6b3db37bd66ea40ad1c8682b7d9ec3e88a97d871e9fb33b1b",
+        "size": 188853064,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/test-00004-of-00006.parquet",
+      "blobId": "fe62ca6537126169a8395089904132e8cad9a60d",
+      "size": 211416543,
+      "lfs": {
+        "sha256": "2093032e49ad44feed708697692156d9560a7d4794c23cb3e969bbdf67fdbcde",
+        "size": 211416543,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/test-00005-of-00006.parquet",
+      "blobId": "81c3ca01df433b7b1b01719a2f428e22756b9a1c",
+      "size": 227806678,
+      "lfs": {
+        "sha256": "6e01665bfbd62f9313c81300f013c673c15a82c264642949e611bab40e763506",
+        "size": 227806678,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00000-of-00012.parquet",
+      "blobId": "8b94f3cfbe5da64cbab5aab39b2e0591d07e7234",
+      "size": 616602754,
+      "lfs": {
+        "sha256": "37bde9b3f93add0cf47c980897eee7971cbf6b661b632a168359e35ff3c136f4",
+        "size": 616602754,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00001-of-00012.parquet",
+      "blobId": "99a28ea430ededd287dbb8441bb353cfb632a9ca",
+      "size": 94630890,
+      "lfs": {
+        "sha256": "99b528d5a28d3496eb198e21ef10377d4fc94dcc0c5d4e9de03f816074933414",
+        "size": 94630890,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00002-of-00012.parquet",
+      "blobId": "5d2ab90b39dc97d89b70348dd46aefd1e0b1f30f",
+      "size": 93607033,
+      "lfs": {
+        "sha256": "357128e27abad13d59f2ff1725005079078c3de5e8976bdd6c18d9300ef84441",
+        "size": 93607033,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00003-of-00012.parquet",
+      "blobId": "0617e3f63c8197c2c60d6818bc60509a92dec4fc",
+      "size": 327482106,
+      "lfs": {
+        "sha256": "9f05b9bb30aa9467178d7505757cd7582d07cb44d421e31556f8d27334642e42",
+        "size": 327482106,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00004-of-00012.parquet",
+      "blobId": "b89f110bcaa65f75408b265c902832fda8e2f021",
+      "size": 798907355,
+      "lfs": {
+        "sha256": "09af2ebb14b99e4fea2a80314a6ed98705c54dc39ddbe02daf15d41f50ebd733",
+        "size": 798907355,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00005-of-00012.parquet",
+      "blobId": "a58de6126df86a74749e2f7af6068379795a915b",
+      "size": 1039426177,
+      "lfs": {
+        "sha256": "0ba8fef50a814c9a50fb4b60b2547ae0484d995599b0f488565800e01ecb5282",
+        "size": 1039426177,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00006-of-00012.parquet",
+      "blobId": "6c720cdbfaeec38218816ea1b519f52a47c53e01",
+      "size": 1010826516,
+      "lfs": {
+        "sha256": "fdf114fe2552cedbd7fffa5a72e91c0fd494ab7e35d850c8b8c8e18d2a7f0e99",
+        "size": 1010826516,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00007-of-00012.parquet",
+      "blobId": "429367f181b585ec6b739c363c2d5e9065307a38",
+      "size": 1159424589,
+      "lfs": {
+        "sha256": "72c7d97cb713070ee24a8b7588ac6c861ac36bd516d2e6abb892afac74bc7ada",
+        "size": 1159424589,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00008-of-00012.parquet",
+      "blobId": "cd3b818d68072d27071f08644d3808af4dea4cfe",
+      "size": 417595455,
+      "lfs": {
+        "sha256": "adabcb963a6e5fa219a2407401a5cf4765933ba748ee23517a0e58eb4f31e992",
+        "size": 417595455,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00009-of-00012.parquet",
+      "blobId": "322f5eb470ef1393b001f3efa11d46ff881f8ab0",
+      "size": 730465380,
+      "lfs": {
+        "sha256": "738a196376279e188264db1163e43dc4d21b1982e60a65d46d6ce7ac6a0765e2",
+        "size": 730465380,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00010-of-00012.parquet",
+      "blobId": "45d57754c4c84b9ea1f5b7fb01e51045cb7dfde2",
+      "size": 309937202,
+      "lfs": {
+        "sha256": "66ce2781f362621ca0bf32e55ba39a384708c76331b31aaee67a3bae19c5927d",
+        "size": 309937202,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/train-00011-of-00012.parquet",
+      "blobId": "93eff0644fffd5571ae450012c5eb72383016a44",
+      "size": 793766611,
+      "lfs": {
+        "sha256": "58c475ce1f8e49650ec56fb2ab5d8041ac0106fca954b775ca03c705d22cefe3",
+        "size": 793766611,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/validation-00000-of-00006.parquet",
+      "blobId": "eee0067a50a7d8c3601edc776fd0afd4d248e255",
+      "size": 114817746,
+      "lfs": {
+        "sha256": "a31507f0b700ac64f3ead52057c5dc3ccfb0baadcc62bc0d19d17159f080a4d8",
+        "size": 114817746,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/validation-00001-of-00006.parquet",
+      "blobId": "0c3b2cb763e5225a2c85bae94330a9573f07fb81",
+      "size": 160435747,
+      "lfs": {
+        "sha256": "ce63ba45f11bfb4e17362f9c073984b4c6c84a0e966ba3d33a86fa285a1fb3dc",
+        "size": 160435747,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/validation-00002-of-00006.parquet",
+      "blobId": "cc84ce06087bdfce934f870560fa8a00c18c103c",
+      "size": 184452290,
+      "lfs": {
+        "sha256": "2d580a39996ad05226ad462f2d31bad0df02f0f47f46263d96ad8df584a5667b",
+        "size": 184452290,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/validation-00003-of-00006.parquet",
+      "blobId": "fcfa17b3c6bae800440c2723a3242c7825e27ac4",
+      "size": 177861893,
+      "lfs": {
+        "sha256": "588a587567d1548a174b83b160132d97eb2b12a7d57374675d3c45b431403354",
+        "size": 177861893,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/validation-00004-of-00006.parquet",
+      "blobId": "b5041050cb04531fcc3e7a184b9447fde425ec3d",
+      "size": 206232388,
+      "lfs": {
+        "sha256": "b43b8aa3e28a1b0f8728243fdf776b798a684b5baafb27d6a734edbbe3983302",
+        "size": 206232388,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "DocVQA/validation-00005-of-00006.parquet",
+      "blobId": "4349a0eb6ff449dce03d781872853323445b3ac7",
+      "size": 212034964,
+      "lfs": {
+        "sha256": "5bba6d5f7b8e6ee0b64df2e4c2885f93cd759c732998e4d6f9b86ce4c690fcf2",
+        "size": 212034964,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/test-00000-of-00004.parquet",
+      "blobId": "ba84224fa6f8263a5bbbca9a37ba8660084c3404",
+      "size": 61666878,
+      "lfs": {
+        "sha256": "aa37d831c8919a28e6b3fcad68937031530a16127f4c4abb2640a1631cabbb75",
+        "size": 61666878,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/test-00001-of-00004.parquet",
+      "blobId": "0ef10ecaa773249f89b59325c89363159e04ee2e",
+      "size": 81462058,
+      "lfs": {
+        "sha256": "0825b0d094b26b7bc41c8dcb69f00ada8a0e0f90f01f877f0f419d62932921f0",
+        "size": 81462058,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/test-00002-of-00004.parquet",
+      "blobId": "1be25853c0b2ee722c359b16db1e23713ac3aa3b",
+      "size": 73056068,
+      "lfs": {
+        "sha256": "e52d8d5aa42681ae687b15df52d07ec36ea4b73389d669c9b9de044198eacab1",
+        "size": 73056068,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/test-00003-of-00004.parquet",
+      "blobId": "18f1b48a1f07414d7a0558c19080d305e3059a7b",
+      "size": 80997771,
+      "lfs": {
+        "sha256": "85ef1ccdd4335230f3d1d6ad17b47a26cf28f608034d6061ba53aa6f4a5e14cb",
+        "size": 80997771,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00000-of-00024.parquet",
+      "blobId": "24096bbecdd9f1b50143c8fefb59612803f8c4b8",
+      "size": 78923135,
+      "lfs": {
+        "sha256": "11bdf0477b3f6b4f8e6369225769d68b1ed31fb4be2cdffdca510a2797533cd0",
+        "size": 78923135,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00001-of-00024.parquet",
+      "blobId": "63f6dbc3db84715d6b2d0bf9fddafc6bc5bfd867",
+      "size": 105851200,
+      "lfs": {
+        "sha256": "268be504c99caf8446e4f10c575e0afb07d55b1cddb96cd7c921b68090e9a61e",
+        "size": 105851200,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00002-of-00024.parquet",
+      "blobId": "7b06d1d3fe667feb13b32b97275ce3456d5070d0",
+      "size": 90666039,
+      "lfs": {
+        "sha256": "10e85f8868049785c25e516c3fd98dcdc62e4c9c27dc2d13742f071a6e74c894",
+        "size": 90666039,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00003-of-00024.parquet",
+      "blobId": "a3b07ce3465a96994c201fd563ed633747d4fb25",
+      "size": 92779539,
+      "lfs": {
+        "sha256": "1ae4e5ff1369d850a812692ec059bee94cb855aa15e5556b4368464756b461dc",
+        "size": 92779539,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00004-of-00024.parquet",
+      "blobId": "6aa7be63cc30894e8a68d71bca4eefd4c1d873ee",
+      "size": 75215119,
+      "lfs": {
+        "sha256": "e330d8914dc324c9766bca59192f411d26d99cf6483c8c1a768653fc10987d5d",
+        "size": 75215119,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00005-of-00024.parquet",
+      "blobId": "4a9c26fa0ab6b0115b9752ea2f3f2cd058e96a7b",
+      "size": 84792967,
+      "lfs": {
+        "sha256": "9b916ddb13ba3e81f4eae4b666863bf2fd524ba4f337e638ef5f038d229e5dc8",
+        "size": 84792967,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00006-of-00024.parquet",
+      "blobId": "adeb9aac3186a56d338f0e537ea2f7e6fb8f3cf2",
+      "size": 86871259,
+      "lfs": {
+        "sha256": "add807c68dc527538e886518aaca72e5c22bc66ee7d5a0c3efa8a60cfc422ec2",
+        "size": 86871259,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00007-of-00024.parquet",
+      "blobId": "aeace296f1cef7bc54b286ec941aabc30dfa76dd",
+      "size": 81032752,
+      "lfs": {
+        "sha256": "549cdafd43c28939c197ed09116406165f41e1e7ded507dd4a4145b385e8559a",
+        "size": 81032752,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00008-of-00024.parquet",
+      "blobId": "bf5e6aa7e6b99e3dc22c9c51dbcce532c6c98909",
+      "size": 67232602,
+      "lfs": {
+        "sha256": "4edff0be4be9e4c18fe1c3c8cdab21f344a5ef705443f06a8999dceafcd338af",
+        "size": 67232602,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00009-of-00024.parquet",
+      "blobId": "27061bafbac44e2d3516d654594f251325d9531f",
+      "size": 92541246,
+      "lfs": {
+        "sha256": "792bb5df7dfb832fea6d10d30a4118120d13a419848a4e5f9c2b7e20ce05d472",
+        "size": 92541246,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00010-of-00024.parquet",
+      "blobId": "a518c53d24b4fb52cd76e80e3dd409cd30727f22",
+      "size": 85740484,
+      "lfs": {
+        "sha256": "ecca0664529d4b8b36b54567ea455d36840a6d7fc84df790ff19d7f429441b31",
+        "size": 85740484,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00011-of-00024.parquet",
+      "blobId": "79aac8ce934407e8c290783c850c878a2e14b953",
+      "size": 74322213,
+      "lfs": {
+        "sha256": "d90d853083e4604fa70737566fdb7645b11ecf4c29e9d6c8ddb8ba335c96e3c6",
+        "size": 74322213,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00012-of-00024.parquet",
+      "blobId": "2f5be01d99d5fe842a28045a794a7506d7c34a77",
+      "size": 45463634,
+      "lfs": {
+        "sha256": "ac02e813ba66763682c9367aec0353d8c71c214cf176622c33965cee9f9dd4f2",
+        "size": 45463634,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00013-of-00024.parquet",
+      "blobId": "6e21956d4bdba7271af75b066601302b92983c77",
+      "size": 85924828,
+      "lfs": {
+        "sha256": "0ea21b9afdb930bf250777d1a6bf3a3711b4ae6aa9a3fae68244870face9fa9f",
+        "size": 85924828,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00014-of-00024.parquet",
+      "blobId": "1713a38440f4df8ccc098fd326954a88e3e40619",
+      "size": 77161679,
+      "lfs": {
+        "sha256": "e38ab4079defa1254ccc54c5ab3ff79be25b4a17b4cede02ea34a3dec3d80368",
+        "size": 77161679,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00015-of-00024.parquet",
+      "blobId": "db14a89d7649e1c9661347babc66484a53bd1192",
+      "size": 91801097,
+      "lfs": {
+        "sha256": "629714b039c6e7ef970adcdccb64fd505d9639d3b03149f6a0672520faf8e14f",
+        "size": 91801097,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00016-of-00024.parquet",
+      "blobId": "fc5c295be994754621170cee6f7e0c36db02b6b0",
+      "size": 79160813,
+      "lfs": {
+        "sha256": "61826bacdc28feb16302112bf7ccd4e978a9a055bdbb405708f4249f9d138cb3",
+        "size": 79160813,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00017-of-00024.parquet",
+      "blobId": "a1a9ac191c88e49cb862330fb3350e2da848db41",
+      "size": 86112817,
+      "lfs": {
+        "sha256": "c0d6ded8a027a646fa3773d3810bacb2e7495db79b58d0cd5cd31bad5766c275",
+        "size": 86112817,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00018-of-00024.parquet",
+      "blobId": "5a1041ece9f012921dac706ed9b34cdaf00d0f1b",
+      "size": 85014656,
+      "lfs": {
+        "sha256": "a84027a7b43736dc3de97e0f64ec664b47bf237c1864738c2fdf3a8d8b4bf3ed",
+        "size": 85014656,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00019-of-00024.parquet",
+      "blobId": "907417fa1ed239d513c6ec8c686f1da226a849d6",
+      "size": 96240363,
+      "lfs": {
+        "sha256": "7d47c3d4d504540f8d82376d238014bf42642b7947a0fe4997b28479dceefb27",
+        "size": 96240363,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00020-of-00024.parquet",
+      "blobId": "15e4c51dda35d15e2f27859c536adda854a0a488",
+      "size": 103078380,
+      "lfs": {
+        "sha256": "fced4c9af8d5fd52ec9439b5a8393e8856dc185e872d1d66af23ddd5820a7f5a",
+        "size": 103078380,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00021-of-00024.parquet",
+      "blobId": "d36e7e6c1b19edf97b25e5d02fc993394f8d5da8",
+      "size": 72435118,
+      "lfs": {
+        "sha256": "484ca7d1eaf92cadb24c8af88d680fb70b574839c4b1619d9ecb62daae103605",
+        "size": 72435118,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00022-of-00024.parquet",
+      "blobId": "eb1b101cf183f25a7105f2bf8cd5f1510a3604c8",
+      "size": 71810377,
+      "lfs": {
+        "sha256": "686402ec6da3a42cc52031c6bf86fc73b501fbbd66c32f6559e33a870aeb7f53",
+        "size": 71810377,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/train-00023-of-00024.parquet",
+      "blobId": "7ca1c95b3c7d476ca09578de7857d665c7bdc234",
+      "size": 71079339,
+      "lfs": {
+        "sha256": "976b84e517bbb0ba66db37b25a1149dfdde72428c2e50b620a90f9267929952b",
+        "size": 71079339,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/validation-00000-of-00004.parquet",
+      "blobId": "59d00a4ed21a6865b3ee865cdb74f7e8167c8572",
+      "size": 63414360,
+      "lfs": {
+        "sha256": "a71b63eca8d3cedc5bda7f7d2a4c959b041dca8766592675f6bd0ac49500775a",
+        "size": 63414360,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/validation-00001-of-00004.parquet",
+      "blobId": "e8755286f8b701363740b310380a019ded6a20fe",
+      "size": 72073153,
+      "lfs": {
+        "sha256": "12cbc18ad5a499deebca691fcdf9a852c3d3917e448b30dc604bfdfb4559e756",
+        "size": 72073153,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/validation-00002-of-00004.parquet",
+      "blobId": "7a0c6d857c50e6067779a19c73b78c37b2d0a09f",
+      "size": 57944291,
+      "lfs": {
+        "sha256": "0f4b8f8633105395d8acb5fd341311c614033f35d99cc25337e43c7fd905b3c1",
+        "size": 57944291,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "InfographicVQA/validation-00003-of-00004.parquet",
+      "blobId": "621a2d2c8012e9fd79b2af4a2ba2b194646bdc31",
+      "size": 73025844,
+      "lfs": {
+        "sha256": "254fdbd3f69499aca70292167f61d89430fb485b3f6a2fce939ab84f02ae5776",
+        "size": 73025844,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "67f107df5895fe445cccf053d7c299d90add0610",
+      "size": 2689
+    }
+  ],
+  "createdAt": "2024-01-22T16:29:32.000Z",
+  "usedStorage": 12100684024
+}

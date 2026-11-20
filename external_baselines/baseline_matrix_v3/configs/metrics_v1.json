@@ -1,0 +1,40 @@
+{
+  "metric_contract_version": "matrix_v3_metrics_v1",
+  "declared_before_public_quality_runs": true,
+  "model_independent": true,
+  "scale": "question scores 0..1; report percentages only as explicit presentation conversion",
+  "textvqa": {
+    "primary": "textvqa_mmf_ten_vote_leave_one_out_v1",
+    "ten_answers_required": true,
+    "source": "Meta MMF commit 72f898ec35af86567423c7a019dd1dc5175d1a5a"
+  },
+  "docvqa": {
+    "primary": "docvqa_anls_qwenvl_vendor_rawlen_ge0p5_v1",
+    "official_server_identity": "unverified: direct RRC evaluation script unavailable during audit",
+    "normalization": "lowercase, strip and collapse whitespace for edit distance; original uppercase string lengths for denominator",
+    "threshold": "similarity >= 0.5",
+    "diagnostics": ["anls_normalized_length_ge0p5_v1", "anls_docvqa_author_strip_ge0p5_v1"]
+  },
+  "infovqa": {
+    "primary": "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1",
+    "official_server_identity": "unverified: vendor source states official-site origin; direct original unavailable",
+    "normalization": "lowercase, strip and collapse whitespace for edit distance; original uppercase string lengths for denominator",
+    "threshold": "similarity >= 0.5",
+    "diagnostics": ["anls_normalized_length_ge0p5_v1", "anls_docvqa_author_strip_ge0p5_v1"],
+    "cross_dataset_note": "same explicit local protocol; does not assert current DocVQA/InfoVQA servers have identical implementations"
+  },
+  "chartqa": {
+    "primary": "chartqa_pix2struct_relaxed_5pct_v1",
+    "source": "Google Pix2Struct commit 110d6666e8813936185fa0e9e6c38f35b387012c",
+    "numeric": "relative error <= 0.05; percent suffix divides by 100",
+    "zero": "numeric target zero falls back to case-insensitive original-string exact match",
+    "text": "case-insensitive exact, no punctuation/answer-prefix removal or extra whitespace stripping",
+    "groups_required_in_reports": ["human", "aug"]
+  },
+  "all_datasets": {
+    "raw_prediction_preserved": true,
+    "reference_answers": "offline scorer only; never prompt/model inputs or calibration selection",
+    "old_prediction_reuse": "rescore raw predictions under this exact metric contract; do not copy old scalar scores",
+    "selection_policy": "never choose metric variants after observing quality differences"
+  }
+}

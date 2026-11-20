@@ -1,0 +1,23 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M1",
+  "model_path": "PLAN_ONLY",
+  "inputs": "${PROJECT_ROOT}\\configs\\datasets\\v3\\textvqa_p1_inputs.jsonl",
+  "count": 1,
+  "max_new_tokens": 64,
+  "preprocessing": {
+    "max_patches": 8
+  },
+  "method": {
+    "id": "E_unknown",
+    "family": "eviction",
+    "adapter_module": "methods.eviction_adapter",
+    "adapter_class": "PyramidKVVisualAdapter",
+    "constructor_args": {
+      "compression_ratio": 0.875,
+      "window_size": 64,
+      "beta": 20
+    },
+    "reader_backend": null
+  }
+}

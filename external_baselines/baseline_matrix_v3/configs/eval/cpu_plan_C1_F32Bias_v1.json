@@ -1,0 +1,22 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M1",
+  "model_path": "PLAN_ONLY",
+  "inputs": "${PROJECT_ROOT}\\configs\\datasets\\v3\\textvqa_p1_inputs.jsonl",
+  "count": 1,
+  "max_new_tokens": 64,
+  "preprocessing": {
+    "max_patches": 8
+  },
+  "method": {
+    "id": "C1_F32Bias",
+    "family": "calibquant",
+    "adapter_module": "methods.calibquant_fp32_bias_adapter",
+    "adapter_class": "CalibQuantFP32BiasAdapter",
+    "constructor_args": {
+      "bits": 1,
+      "reader_backend": "upstream_triton"
+    },
+    "reader_backend": "upstream_triton"
+  }
+}

@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "${DATA_ROOT}/jobs/bm_M1_calibquant_model_gate_v2.source/code/gates/calibquant_model_gate.py", line 331, in main
+    c_logits, c_tokens, c_trace = run_bridge(c_cache, source_oracle=True)
+  File "${DATA_ROOT}/jobs/bm_M1_calibquant_model_gate_v2.source/code/gates/calibquant_model_gate.py", line 251, in run_bridge
+    output, suffix_ms = timed(lambda: m1_forward_suffix(model, batch, cache, logits_to_keep=suffix_length))
+  File "${DATA_ROOT}/jobs/bm_M1_calibquant_model_gate_v2.source/code/gates/calibquant_model_gate.py", line 133, in timed
+    value = function()
+  File "${DATA_ROOT}/jobs/bm_M1_calibquant_model_gate_v2.source/code/gates/calibquant_model_gate.py", line 251, in <lambda>
+    output, suffix_ms = timed(lambda: m1_forward_suffix(model, batch, cache, logits_to_keep=suffix_length))
+  File "${DATA_ROOT}/jobs/bm_M1_calibquant_model_gate_v2.source/code/m1_protocol.py", line 61, in m1_forward_suffix
+    return model(input_ids=batch.ids[:, batch.boundary:], attention_mask=batch.mask,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/utils/generic.py", line 907, in wrapper
+    output = func(self, *args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/internvl/modeling_internvl.py", line 812, in forward
+    outputs = self.model(
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/utils/generic.py", line 907, in wrapper
+    output = func(self, *args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/internvl/modeling_internvl.py", line 646, in forward
+    outputs = self.language_model(
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/utils/generic.py", line 1036, in wrapper
+    output = func(self, *args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/utils/output_capturing.py", line 252, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 399, in forward
+    hidden_states = decoder_layer(
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/modeling_layers.py", line 93, in __call__
+    return super().__call__(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 293, in forward
+    hidden_states, _ = self.self_attn(
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/qwen2/modeling_qwen2.py", line 231, in forward
+    attn_output, attn_weights = attention_interface(
+  File "${DATA_ROOT}/jobs/bm_M1_calibquant_model_gate_v2.source/code/attention_bridge.py", line 70, in dispatch
+    return cache.read(index, query, module, attention_mask, scaling, original,
+  File "${DATA_ROOT}/jobs/bm_M1_calibquant_model_gate_v2.source/code/gates/calibquant_model_gate.py", line 246, in audited_read
+    torch.testing.assert_close(actual[0], expected, atol=.0078125, rtol=.005)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/testing/_comparison.py", line 1524, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 2689 / 78848 (3.4%)
+Greatest absolute difference: nan at index (0, 2, 10, 0) (up to 0.0078125 allowed)
+Greatest relative difference: nan at index (0, 2, 10, 0) (up to 0.005 allowed)

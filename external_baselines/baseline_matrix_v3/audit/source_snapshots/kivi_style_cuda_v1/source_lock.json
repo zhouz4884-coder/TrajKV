@@ -1,0 +1,48 @@
+{
+  "upstream_repo": "https://github.com/jy-yuan/KIVI",
+  "upstream_commit": "876b4d2d08e3b1d5f70d0969c299d8c7c42ddfb6",
+  "paper": "https://arxiv.org/abs/2402.02750",
+  "license": "MIT",
+  "source_files": {
+    "third_party\\kivi\\quant\\new_pack.py": {
+      "raw_sha256": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+      "LF_sha256": "3678af0e34a0ba18e5d80a4128acf11d4070667c800a15540a16d07253a4f75e",
+      "git_blob": "72380af9dcc931547367deb00117dc2cbd5d1ebf"
+    }
+  },
+  "port_files": {
+    "code\\methods\\kivi_style.py": "131fdb42046d2d1eafa41cd0782b90f98872705b175f6c28ff8a70d546dbdf6b",
+    "code\\methods\\kivi_reader.py": "dc18877960576a2104a7e4d7a123bfefe513cf526e13c964c2f3fe131d895353",
+    "code\\gates\\kivi_style_gate.py": "c2b23ac2fb29ba89e80aff842ddc7cec36f70e64eb10ccd1016e8b0391cdf7f7"
+  },
+  "legal_configs": {
+    "bits": [
+      2,
+      4
+    ],
+    "group_size": 128,
+    "residual_length": [
+      0,
+      128
+    ],
+    "head_dim": 128,
+    "dtype": "float16",
+    "batch_size": 1
+  },
+  "prefill_scope": {
+    "K_quantized_tokens": "N-N%128",
+    "K_tail": "N%128 FP16 tokens",
+    "V_quantized_tokens": "max(0,N-R)",
+    "V_tail": "min(R,N) FP16 tokens",
+    "global_text": "FP16 exact",
+    "original_positions": "all visual kept; no position compaction",
+    "whole_system_rolling_KIVI": false
+  },
+  "reader_backends": {
+    "triton_packed": "project online-softmax visual adapter with independent K/V tails; tile decode only",
+    "torch_dequant_reference": "explicit independent runtime variant, never silent fallback"
+  },
+  "gate_cpu": "results/p0/kivi_style_cpu_v1.json",
+  "gate_CPU_scope": "official author PyTorch AST fixtures; production GPU encoder not substituted",
+  "cuda_gate_pending": true
+}

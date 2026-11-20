@@ -1,0 +1,43 @@
+{
+  "status": "RUNNABLE_WITH_PENDING_FINITE_PRECISION_CONTRACT",
+  "method": "calibquant_visual_fp32_bias_reduction_v1",
+  "bits": 2,
+  "method_source_sha256": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+  "primary_pilot_inclusion": false,
+  "reason": "C1 is independently cleared; C2's fixed absolute FP64-output threshold was exceeded by one finite element, while source/operator precision differences remain separately instrumented",
+  "actual_execution": {
+    "source6": "Complete 28-layer suffix/free-generation/owner/FP64 gate passed in fp32_bias_model_gate_v1",
+    "source0": "Focused short diagnostic completed finite 28-layer suffix and independent compressed-prefix native free generation"
+  },
+  "source0_layer26_observed": {
+    "FP64_reference_max_abs": 0.015625,
+    "FP64_reference_relative_l2": 0.00007716954132774845,
+    "FP64_reference_different_elements": 17,
+    "total_output_elements": 78848,
+    "FP64_reference_99_9_percent_abs_error": 0,
+    "actual_at_max_abs": 0.252685546875,
+    "FP64_reference_at_max_abs": 0.237060546875,
+    "max_abs_location_output_ULP_distance": 117,
+    "source_AST_same_precision_max_abs": 0.015625,
+    "source_AST_same_precision_relative_l2": 0.00011068677849834785,
+    "raw_QK_source_vs_FP64_max_abs": 0.0625,
+    "raw_QK_max_abs_location_ULP_distance": 1,
+    "raw_WV_source_vs_FP64_same_probabilities_max_abs": 0
+  },
+  "instrument_scope": {
+    "source_AST_reference": "Author's original per-query execution with only bias sum/div FP32 and cast-back, mapped visual-first/text-tail key order",
+    "production_reference_shape_difference": "Production text QK and bias reductions use the complete suffix batch; AST reference uses one query at a time, so same precision does not imply identical reduction/GEMM shape",
+    "not_inferred": "The raw WV result does not support attributing the observed output difference to a WV raw rounding tie; output ULP near cancellation is not a raw-kernel ULP guarantee",
+    "no_threshold_expansion_or_method_change": true
+  },
+  "frozen_results": [
+    "results/p0/bm_M1_calibquant_fp32_bias_model_gate_v1/complete.json",
+    "results/p0/bm_M1_calibquant_fp32_bias_short_diagnostic_v1/complete.json",
+    "results/p0/bm_M1_calibquant_fp32_bias_short_diagnostic_v2/complete.json"
+  ],
+  "short_diagnostic_v2_sha256": "0676debe97f68defa64ec63b7f0291ad7d0d37b217fe55ad0668439f028eac8c",
+  "raw_frozen_inputs": "Remote project data volume only; source0_C2_layer26_inputs.pt and finite_oracle_capture.pt hashes are in the short diagnostic",
+  "no_additional_full_model_runs_authorized_by_this_receipt": true,
+  "task_scores": null,
+  "GPU0_released": true
+}

@@ -1,0 +1,21 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M1",
+  "model_path": "PLAN_ONLY",
+  "inputs": "${PROJECT_ROOT}\\configs\\datasets\\v3\\textvqa_p1_inputs.jsonl",
+  "count": 1,
+  "max_new_tokens": 64,
+  "preprocessing": {
+    "max_patches": 8
+  },
+  "method": {
+    "id": "T_K3V2",
+    "family": "turboquant",
+    "adapter_module": "methods.turboquant_adapter",
+    "adapter_class": "TurboQuantAdapter",
+    "constructor_args": {
+      "value_bits": 2
+    },
+    "reader_backend": "upstream_triton_score"
+  }
+}

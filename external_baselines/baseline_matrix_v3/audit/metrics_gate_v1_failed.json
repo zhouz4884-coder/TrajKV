@@ -1,0 +1,11 @@
+{
+  "status": "FAILED_RUN",
+  "run": "metrics_gate_v1",
+  "stage": "Parsing source before any scoring comparison",
+  "observed_error": "UnicodeDecodeError: 'gbk' codec can't decode byte 0x9d in position 3290: illegal multibyte sequence",
+  "trigger": "Windows Path.read_text default encoding used for UTF-8 Pix2Struct source",
+  "code_snapshot": "audit/failed_sources/metrics_gate_v1_before_utf8_fix.py",
+  "metric_scores_produced": false,
+  "fix_scope": "Explicit UTF-8 source reads in the gate only; no scoring math change",
+  "next_run": "metrics_gate_v2"
+}

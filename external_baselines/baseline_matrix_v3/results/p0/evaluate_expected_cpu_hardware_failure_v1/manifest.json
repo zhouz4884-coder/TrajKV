@@ -1,0 +1,53 @@
+{
+  "schema": "baseline_matrix.raw_inference.v1",
+  "config": {
+    "schema": "baseline_matrix.eval.v1",
+    "model_id": "M1",
+    "model_path": "PLAN_ONLY",
+    "inputs": "${PROJECT_ROOT}\\configs\\datasets\\v3\\textvqa_p1_inputs.jsonl",
+    "count": 1,
+    "max_new_tokens": 64,
+    "preprocessing": {
+      "max_patches": 8
+    },
+    "method": {
+      "id": "F_native_split",
+      "family": "fp16"
+    },
+    "question_suffix": "\nAnswer the question using a single word or phrase."
+  },
+  "config_sha256": "0b38e70f4034b77c93077ae2700df4084f6c57577b9fc562484ab7271c21e270",
+  "inputs_sha256": "5181fcce6a31dfa9ea1ab4b18598cd93ca500d764a1d49154e0f2a52192882b2",
+  "expected_ids": [
+    "textvqa:validation:39023"
+  ],
+  "expected_QA": 1,
+  "model_spec": {
+    "model_id": "M1",
+    "hf_id": "OpenGVLab/InternVL3-8B-hf",
+    "architecture": "InternVLForConditionalGeneration",
+    "layers": 28,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "image_token_id": 151667,
+    "deepstack_visual_indexes": [],
+    "sliding_attention": false,
+    "native_adapter": "internvl3",
+    "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+  },
+  "references_read": false,
+  "prediction_cache_used": false,
+  "runtime_source_root": "${PROJECT_ROOT}",
+  "runtime_executable": "E:\\Anaconda\\python.exe",
+  "started_unix": 1795100880.5833,
+  "source_hashes": {
+    "code\\evaluate.py": "da0c80d4bd621a904836427dcd7e9ed46d1538290961fb34e2364f276881d06f",
+    "code\\ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+    "code\\cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "code\\attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+    "code\\dataset_registry.py": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+    "code\\model_registry.py": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58"
+  }
+}

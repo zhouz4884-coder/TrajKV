@@ -1,0 +1,228 @@
+{
+  "status": "NATIVE_MODEL_GATES_COMPLETE",
+  "models": [
+    {
+      "spec": {
+        "model_id": "M1",
+        "hf_id": "OpenGVLab/InternVL3-8B-hf",
+        "architecture": "InternVLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151667,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "native_adapter": "internvl3",
+        "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+        "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+      },
+      "native_run": "M1_native_fp16_cap8_v2",
+      "native_status": "PASS",
+      "native_cases": 10,
+      "dtype": "float16",
+      "weight_quantization": false,
+      "actual_visual_tokens_range": [
+        1280,
+        1792
+      ],
+      "weights_resident_parameter_bytes": 15888747520,
+      "inference_peak_allocated_bytes": 16302934528,
+      "load_peak_allocated_bytes": 16434295296,
+      "first_native_token_matches": 10,
+      "native_marker_sha256": "7229a2e63f8caac54ef69ed44c1a0b209ea8ebc4e7fcd57e035fe2986bd665f1",
+      "native_records_sha256": "8b8bfb546fbaad49886a0731e3fd77abf54d5cf64b04d1db9182f915934e336f",
+      "runtime_python": "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+      "runtime_versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "5.12.0",
+        "cuda": "12.1",
+        "hardware": "NVIDIA GeForce RTX 3090",
+        "capability": [
+          8,
+          6
+        ],
+        "python": "3.10.20",
+        "CUDA_VISIBLE_DEVICES": "1",
+        "cache_env": {
+          "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+          "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+          "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+          "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+          "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda"
+        }
+      },
+      "native_scope": "P0 real-image native hardware/cache only; no benchmark task score",
+      "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "identity_proof": "audit/M1_official_identity_verification_v2.json",
+      "identity_proof_sha256": "b980d54185173da02d2aee744e24355e8c5a53338e1d620ff495a85eae3d26ab",
+      "pinned_tree_receipt_sha256": "41a5919af0555990ca126324aee18f9951ab5b5ee922e9a4f8a57e1ccacab5f0"
+    },
+    {
+      "spec": {
+        "model_id": "M2",
+        "hf_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+        "architecture": "Qwen2_5_VLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen2_5_vl",
+        "mrope_section": [
+          16,
+          24,
+          24
+        ],
+        "mrope_interleaved": false,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "processor_spatial_factor": 28
+      },
+      "native_run": "M2_native_fp16_card1280_v7",
+      "native_status": "PASS",
+      "native_cases": 10,
+      "dtype": "float16",
+      "weight_quantization": false,
+      "actual_visual_tokens_range": [
+        888,
+        1240
+      ],
+      "weights_resident_parameter_bytes": 16584333312,
+      "inference_peak_allocated_bytes": 16892775936,
+      "load_peak_allocated_bytes": 16584355840,
+      "first_native_token_matches": 10,
+      "native_marker_sha256": "563fc662b90c96a69cb367b9cebf565e07700f0fd16c1f84e84ff9c549b47e4e",
+      "native_records_sha256": "4b8c39e1bb47901f8997090f14e44ed6011fe6281b5a7a2b168d1943abd11fcd",
+      "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+      "runtime_versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "5.12.0",
+        "cuda": "12.1",
+        "hardware": "NVIDIA GeForce RTX 3090",
+        "capability": [
+          8,
+          6
+        ],
+        "python": "3.10.20",
+        "CUDA_VISIBLE_DEVICES": "1",
+        "cache_env": {
+          "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+          "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+          "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+          "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+          "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda"
+        }
+      },
+      "native_scope": "P0 real-image native hardware/cache only; no benchmark task score",
+      "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "identity_proof": "results/model_download/M2_download_r8_resume64.json",
+      "identity_proof_sha256": "448495080179e5f1cb23dff30b91a5d315c62bb76e3928ead5dc488a8ca161a7",
+      "fp16_bridge": {
+        "status": "PASS",
+        "cases": 2,
+        "complete_native_token_matches": [
+          true,
+          true
+        ],
+        "suffix_logit_max_abs_errors": [
+          0.0234375,
+          0.0234375
+        ],
+        "proof": "results/qwen_bridge/M2_fp16_native_bridge_v2.json",
+        "proof_sha256": "ad41923786c671984c402760677b8e63fe2bb2d64ddc6c1885d741e67d3434cc",
+        "scope": "two fixed real-image traces; not universal or bit-exact logit equivalence"
+      }
+    },
+    {
+      "spec": {
+        "model_id": "M3",
+        "hf_id": "Qwen/Qwen3-VL-4B-Instruct",
+        "revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+        "architecture": "Qwen3VLForConditionalGeneration",
+        "layers": 36,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen3_vl",
+        "mrope_section": [
+          24,
+          20,
+          20
+        ],
+        "mrope_interleaved": true,
+        "deepstack_visual_indexes": [
+          5,
+          11,
+          17
+        ],
+        "sliding_attention": false,
+        "processor_spatial_factor": 32
+      },
+      "native_run": "M3_native_fp16_nativepixels_v7",
+      "native_status": "PASS",
+      "native_cases": 10,
+      "dtype": "float16",
+      "weight_quantization": false,
+      "actual_visual_tokens_range": [
+        672,
+        4032
+      ],
+      "weights_resident_parameter_bytes": 8875631616,
+      "inference_peak_allocated_bytes": 10255327232,
+      "load_peak_allocated_bytes": 8875651584,
+      "first_native_token_matches": 10,
+      "native_marker_sha256": "7dbfeb53458333ee810bbefeb698537f8cbb1684650086270f1273f29a52b99e",
+      "native_records_sha256": "a1bcdfa783b4c20572352a3835bd2e8dafc2ddc5693540da0105c413dc6df287",
+      "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+      "runtime_versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "5.12.0",
+        "cuda": "12.1",
+        "hardware": "NVIDIA GeForce RTX 3090",
+        "capability": [
+          8,
+          6
+        ],
+        "python": "3.10.20",
+        "CUDA_VISIBLE_DEVICES": "1",
+        "cache_env": {
+          "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+          "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+          "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+          "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+          "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda"
+        }
+      },
+      "native_scope": "P0 real-image native hardware/cache only; no benchmark task score",
+      "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+      "identity_proof": "results/model_download/M3_download_r8_resume64.json",
+      "identity_proof_sha256": "675444a819919b88ebf36aed0ac69b4c7a5622269864deac9abb49dc47c7b9e4",
+      "fp16_bridge": {
+        "status": "PASS",
+        "cases": 2,
+        "complete_native_token_matches": [
+          true,
+          true
+        ],
+        "suffix_logit_max_abs_errors": [
+          0.046875,
+          0.0390625
+        ],
+        "proof": "results/qwen_bridge/M3_fp16_native_bridge_v2.json",
+        "proof_sha256": "2faaf9493cdc591a58d550996108f601bbaa29849a4d7e6823d85bc44fcc7698",
+        "scope": "two fixed real-image traces; not universal or bit-exact logit equivalence"
+      }
+    }
+  ],
+  "scope": "native model identity/hardware and Qwen FP16 bridge only; external method/task matrix remains separate",
+  "stat_binding": "audit/model_stat_binding_v1.json",
+  "independent_raw_artifact_rehash": "audit/model_artifact_remote_rehash_v1.json",
+  "historical_P0_sources_not_official_score_sources": true
+}

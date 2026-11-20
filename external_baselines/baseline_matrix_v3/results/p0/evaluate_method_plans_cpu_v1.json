@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "scope": "CPU_CLI_METHOD_CONFIGURATION_ONLY_NO_GPU_MEASUREMENT",
+  "plans": [
+    {
+      "id": "K2_R0",
+      "status": "PLAN_VALID",
+      "effective_method": {
+        "id": "K2_R0",
+        "family": "kivi",
+        "adapter_module": "methods.kivi_style",
+        "adapter_class": "KIVIStyleAdapter",
+        "constructor_args": {
+          "bits": 2,
+          "group_size": 128,
+          "residual_length": 0
+        },
+        "reader_backend": "triton_packed"
+      }
+    },
+    {
+      "id": "C1_F32Bias",
+      "status": "PLAN_VALID",
+      "effective_method": {
+        "id": "C1_F32Bias",
+        "family": "calibquant",
+        "adapter_module": "methods.calibquant_fp32_bias_adapter",
+        "adapter_class": "CalibQuantFP32BiasAdapter",
+        "constructor_args": {
+          "bits": 1,
+          "reader_backend": "upstream_triton"
+        },
+        "reader_backend": "upstream_triton"
+      }
+    },
+    {
+      "id": "T_K3V2",
+      "status": "PLAN_VALID",
+      "effective_method": {
+        "id": "T_K3V2",
+        "family": "turboquant",
+        "adapter_module": "methods.turboquant_adapter",
+        "adapter_class": "TurboQuantAdapter",
+        "constructor_args": {
+          "value_bits": 2
+        },
+        "reader_backend": "upstream_triton_score",
+        "per_layer_seed": {
+          "base": 42,
+          "step": 6
+        }
+      }
+    },
+    {
+      "id": "E_unknown",
+      "status": "PLAN_VALID",
+      "effective_method": {
+        "id": "E_unknown",
+        "family": "eviction",
+        "adapter_module": "methods.eviction_adapter",
+        "adapter_class": "PyramidKVVisualAdapter",
+        "constructor_args": {
+          "compression_ratio": 0.875,
+          "window_size": 64,
+          "beta": 20,
+          "num_layers": 28
+        },
+        "reader_backend": null,
+        "encode_scope": "prefix"
+      }
+    }
+  ]
+}

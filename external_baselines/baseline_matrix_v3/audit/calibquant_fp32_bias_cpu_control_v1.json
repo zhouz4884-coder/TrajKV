@@ -1,0 +1,98 @@
+{
+  "status": "CPU_CONTROL_ONLY_FP32_BIAS_PORT",
+  "cases": [
+    {
+      "bits": 1,
+      "n": 32,
+      "format_and_owner_equal": true,
+      "finite_source_uncalibrated_max_abs_difference": 0.001953125,
+      "finite_source_calibrated_max_abs_difference": 0.0029296875
+    },
+    {
+      "bits": 1,
+      "n": 257,
+      "format_and_owner_equal": true,
+      "finite_source_uncalibrated_max_abs_difference": 0.00390625,
+      "finite_source_calibrated_max_abs_difference": 0.0078125
+    },
+    {
+      "bits": 1,
+      "n": 512,
+      "format_and_owner_equal": true,
+      "finite_source_uncalibrated_max_abs_difference": 0.00390625,
+      "finite_source_calibrated_max_abs_difference": 0.01171875
+    },
+    {
+      "bits": 2,
+      "n": 32,
+      "format_and_owner_equal": true,
+      "finite_source_uncalibrated_max_abs_difference": 0.00390625,
+      "finite_source_calibrated_max_abs_difference": 0.00390625
+    },
+    {
+      "bits": 2,
+      "n": 257,
+      "format_and_owner_equal": true,
+      "finite_source_uncalibrated_max_abs_difference": 0.00390625,
+      "finite_source_calibrated_max_abs_difference": 0.005859375
+    },
+    {
+      "bits": 2,
+      "n": 512,
+      "format_and_owner_equal": true,
+      "finite_source_uncalibrated_max_abs_difference": 0.00390625,
+      "finite_source_calibrated_max_abs_difference": 0.005859375
+    }
+  ],
+  "isolated_finite_product_sum_overflow": {
+    "published_FP16_nonfinite": true,
+    "new_port_finite": true,
+    "calibration_disabled_only_for_isolation": true,
+    "bias_product_max_abs": 1002.0
+  },
+  "new_method_manifest": {
+    "method": "calibquant_visual_fp32_bias_reduction_v1",
+    "method_paper": "https://arxiv.org/abs/2502.14882v2",
+    "upstream_repo": "https://github.com/insuhan/calibquant",
+    "upstream_commit": "1dcfce862162e4a3888ef137df65b36cdc19efd0",
+    "port_name": "post_rope_visual_gqa_suffix_replay_fp32_bias_reduction_v1",
+    "faithfulness_status": "P0_PENDING",
+    "bits_nominal": 1,
+    "reader_backend": "upstream_triton",
+    "k_range_multiplier": 0.5,
+    "v_range_multiplier": 0.3,
+    "norm_offset_max": -3.0,
+    "norm_offset_min": 0.0,
+    "calibration_data": "none: published upstream constants frozen without tuning",
+    "calibration_provenance_gap": "paper describes grid search but released code has no calibration runner or split manifest",
+    "prefill_protocol": "image prefix captured natively, compressed, all question suffix tokens replayed",
+    "upstream_protocol_difference": "released script quantizes after full prompt and only reads compressed visual KV at decode",
+    "runtime_variant": "official packed QK/WV plus explicitly declared FP32 bias reduction/division",
+    "rotation": false,
+    "sparse_outlier_owner": false,
+    "text_kv": "unmodified full precision; engine owner",
+    "weight_quantization": false,
+    "precision_change": "FP16 channel-bias products unchanged; sum/div FP32; cast to original FP16 before subtract/calibrate",
+    "unchanged": [
+      "clip multipliers",
+      "integer codes",
+      "packed uint8 format",
+      "scale/zero dtype",
+      "persistent owner",
+      "official QK/WV kernels",
+      "calibration map",
+      "model weights FP16"
+    ],
+    "published_infer_default_dtype": "bfloat16",
+    "matrix_weights_and_kv_dtype": "float16",
+    "motivation_evidence": "audit/calibquant_M1_model_acceptance_v1.json",
+    "source_published_fp16_branch": "retained separately; C1 passed, C2 finite-product bias-sum overflow preserved",
+    "fitted_parameters": false,
+    "adds_persistent_tensors": false
+  },
+  "quality_measured": false,
+  "source_hashes": {
+    "code/gates/calibquant_fp32_bias_cpu_control.py": "c266896bf7d03d75c1da5c8ea5fdf44a9d24b05c76f03569d3aaff70cbd46fa1",
+    "code/methods/calibquant_fp32_bias_adapter.py": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d"
+  }
+}

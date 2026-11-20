@@ -1,0 +1,92 @@
+{
+  "status": "PASS_CPU_CACHE_CONTRACT_AND_PROVENANCE",
+  "GPU_used": false,
+  "new_model_inference_QA": 0,
+  "real_evidence_scope": "Two prior FP16 raw runs; original files remain unchanged",
+  "mock_faults_are_not_remote_evidence": true,
+  "cases": [
+    {
+      "case": "actual_F128_to_fixed_P2_500",
+      "status": "PASS",
+      "detail": "128 exact same-source hits; 372 missing; no labels or GPU"
+    },
+    {
+      "case": "same_answer_duplicate_is_validated",
+      "status": "PASS",
+      "detail": "Fsingle/F128 overlap exact generation/execution identity; first source retained explicitly"
+    },
+    {
+      "case": "changed_cap_invalidates",
+      "status": "PASS",
+      "detail": "STALE_PROTOCOL: planned model/method/pixels/prompt/generation differs"
+    },
+    {
+      "case": "changed_prompt_invalidates",
+      "status": "PASS",
+      "detail": "STALE_PROTOCOL: planned model/method/pixels/prompt/generation differs"
+    },
+    {
+      "case": "changed_generation_invalidates",
+      "status": "PASS",
+      "detail": "STALE_PROTOCOL: planned model/method/pixels/prompt/generation differs"
+    },
+    {
+      "case": "changed_checkpoint_invalidates",
+      "status": "PASS",
+      "detail": "STALE_PROTOCOL: planned model/method/pixels/prompt/generation differs"
+    },
+    {
+      "case": "changed_protocol_source_invalidates",
+      "status": "PASS",
+      "detail": "STALE_PROTOCOL: current source differs from reference: code/m1_protocol.py"
+    },
+    {
+      "case": "changed_numerical_AST_not_equivalent",
+      "status": "PASS",
+      "detail": "Changing actual RNG seed outside model_identity changes numerical-program AST"
+    },
+    {
+      "case": "bounded_identity_IO_equivalence",
+      "status": "PASS",
+      "detail": "Only two explicitly whitelisted full-source versions; all numerical AST identical"
+    },
+    {
+      "case": "changed_processor_fingerprint_invalidates",
+      "status": "PASS",
+      "detail": "Processor bytes are an explicit global-contract component"
+    },
+    {
+      "case": "conflicting_duplicate_refused",
+      "status": "PASS",
+      "detail": "Same-contract duplicate predictions/execution differ: textvqa:validation:39023 ${EVIDENCE_ROOT}\\cache_validation\\mock_index_a ${EVIDENCE_ROOT}\\cache_validation\\mock_index_b"
+    },
+    {
+      "case": "failure_is_not_a_cache_hit",
+      "status": "PASS",
+      "detail": "In-memory fault injection: 127 PASS hits; failed QA remains missing"
+    },
+    {
+      "case": "actual_derived_view_original_row_bytes",
+      "status": "PASS",
+      "detail": "128 originals individually rehashed; 1 reused/127 fresh-origin; explicitly not new GPU inference"
+    }
+  ],
+  "case_count": 13,
+  "implementation_sha256": "d63c0a93f6695dfe1c9947bd4c17c1f5462589bd0d8769ce6008dce86c419bb9",
+  "equivalence_policy_sha256": "05a456a447c3d9fd7eac14d6cc1d2b0d98abcf5c67dfa3c48ec0268f95673703",
+  "derived_validation": {
+    "status": "PASS_DERIVED_SOURCE_PROVENANCE",
+    "raw_hashes": {
+      "manifest.json": "25ca3cc3164849419a1a48d12dcf0e33a820ae6f7670404fb3eb1287e5e4eff9",
+      "records.jsonl": "5b971e1037568fdbbd502b6ccecaef0780963bc8046129b2c1e8a323b0ba1aeb",
+      "complete.json": "bf8584b6995e3c1acb27a480e0ac1ae9e7dba6b2482a60eb05df884721ef5a0a"
+    },
+    "origin_counts": {
+      "reused": 1,
+      "fresh": 127
+    },
+    "source_runs": 2,
+    "inference_run": false,
+    "provenance_sha256": "c91547f52842e3bff438e1b00876dbbb9718138f792d66e05971ca2eca77b3c6"
+  }
+}

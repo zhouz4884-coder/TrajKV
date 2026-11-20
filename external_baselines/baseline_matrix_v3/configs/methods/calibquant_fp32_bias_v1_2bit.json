@@ -1,0 +1,12 @@
+{
+  "method": "calibquant_visual_fp32_bias_reduction_v1",
+  "adapter": "methods.calibquant_fp32_bias_adapter.CalibQuantFP32BiasAdapter",
+  "bits": 2,
+  "reader_backend": "upstream_triton",
+  "upstream_commit": "1dcfce862162e4a3888ef137df65b36cdc19efd0",
+  "precision_port": "Original finite FP16 bias products; FP32 sum/div; cast to FP16 before subtract and unchanged calibration",
+  "published_infer_default": "BF16; original FP16 C2 finite-product sum overflow retained as separate failed run",
+  "new_fitting_or_parameter_selection": false,
+  "additional_persistent_tensors": false,
+  "status": "P0_PENDING"
+}

@@ -1,0 +1,58 @@
+{
+  "status": "PASS_M1_C1_FP32_BIAS_PORT_TWO_INPUT_P0",
+  "method_id": "calibquant_visual_fp32_bias_reduction_v1",
+  "adapter_module": "methods.calibquant_fp32_bias_adapter",
+  "adapter_class": "CalibQuantFP32BiasAdapter",
+  "constructor_args": {
+    "bits": 1,
+    "reader_backend": "upstream_triton"
+  },
+  "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "upstream_commit": "1dcfce862162e4a3888ef137df65b36cdc19efd0",
+  "protocol": "configs/protocol/M1_native_split_v1.json",
+  "source_sha256": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+  "precision_scope": "FP16 bias products unchanged, FP32 sum/div, back to FP16 before subtract/calibration; no other source math/format changes",
+  "declared_pilot_support_bits": [
+    1
+  ],
+  "c2_support": "pending separate implementation-fidelity/FP64 instrument analysis; not needed to unlock C1 pilot",
+  "input_cases": [
+    {
+      "source_index": 0,
+      "visual_tokens": 1792,
+      "suffix_tokens": 22,
+      "real_decoder_layers": 28,
+      "codec_bytes": 6537440,
+      "actual_codec_visual_bits": 1.0178920200892858,
+      "peak_allocated_bytes_including_independent_oracle": 16289977856,
+      "full_attention_vs_declared_rounding_FP64_oracle_max_abs_error": 0.00390625,
+      "Eq6_FP64_two_form_max_abs_error": 0.0,
+      "uncalibrated_vs_ideal_Eq6_max_relative_l2": 0.0007127533511968959,
+      "published_FP16_finite_calibrated_logit_max_abs_difference": 8.0,
+      "task_score": null
+    },
+    {
+      "source_index": 6,
+      "visual_tokens": 1280,
+      "suffix_tokens": 28,
+      "real_decoder_layers": 28,
+      "codec_bytes": 4702432,
+      "actual_codec_visual_bits": 1.025048828125,
+      "peak_allocated_bytes_including_independent_oracle": 16180356096,
+      "full_attention_vs_declared_rounding_FP64_oracle_max_abs_error": 0.00390625,
+      "Eq6_FP64_two_form_max_abs_error": 0.0,
+      "uncalibrated_vs_ideal_Eq6_max_relative_l2": 0.000598309893290255,
+      "published_FP16_finite_calibrated_logit_max_abs_difference": 6.0,
+      "task_score": null
+    }
+  ],
+  "fitted_or_selected_on_benchmark_labels": false,
+  "official_quality_scores_measured": false,
+  "evidence": {
+    "results/p0/bm_M1_calibquant_fp32_bias_model_gate_v1/complete.json": "051d6600930a27e98a0f74b26ed4214bce9381949017b2e0a8c29f2f32945b47",
+    "audit/calibquant_fp32_bias_cpu_control_v1.json": "8b5ae273d69f00d989b2c927ce4eef5b8c285d9891b9fb9684ceea27b4abb167",
+    "code/methods/calibquant_fp32_bias_adapter.py": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+    "configs/methods/calibquant_fp32_bias_v1_1bit.json": "8e8f5f24797faaa5dbc28ccea5f5790c3b2f095ce2c0e8368902654af614b0c7"
+  },
+  "old_published_FP16_branch_preserved": "audit/calibquant_M1_model_acceptance_v1.json"
+}

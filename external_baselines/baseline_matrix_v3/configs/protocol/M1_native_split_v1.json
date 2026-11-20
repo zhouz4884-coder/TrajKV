@@ -1,0 +1,21 @@
+{
+  "model_id": "M1",
+  "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "dtype": "float16",
+  "compression_boundary": "Native image prefix ends immediately after last image placeholder; entire remaining question/template suffix recomputed",
+  "primary_uncompressed_anchor": "Native DynamicCache image-prefix then full question suffix, with native greedy generation",
+  "native_full_prompt_execution": "Independent reference; FP16 full/split execution shape can differ numerically",
+  "fp16_hybrid_bridge_acceptance": {
+    "same_native_prefix": true,
+    "same_full_suffix_shape": true,
+    "all_suffix_logits_bitwise_equal": true,
+    "all_layer_post_rope_queries_bitwise_equal": true,
+    "query_positions_identical": true,
+    "complete_greedy_token_ids_equal": true
+  },
+  "native_shape_diagnostic_evidence": "results/p0/bm_M1_fp16_split_diagnostic_v1/complete.json",
+  "native_shape_diagnostic_sha256": "cca49d4ddea785119ec5e0a79b560491e4b2448b42bc61db377a13d521e492c7",
+  "diagnostic_observation": "On source0, native-full repeat and prefix KV are exact; native-full vs native-split maxabs0.1484375/relL2 0.0039879833; same-prefix native-split vs Hybrid-split exact; four greedy sequences identical",
+  "not_a_change": "No threshold expansion, shared native first token, weight quantization, method fitting or original-evidence overwrite",
+  "all_methods": "Use identical native image-prefix/suffix protocol and native generation configuration"
+}

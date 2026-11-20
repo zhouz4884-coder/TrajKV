@@ -1,0 +1,24 @@
+{
+  "model_id": "M1",
+  "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_identity_report": "${DATA_ROOT}/audit/M1_official_identity_verification_v2.json",
+  "image_manifest": "${DATA_ROOT}/configs/models/native_p0_images_v1.json",
+  "output_dir": "${DATA_ROOT}/results/p0/bm_M1_fp16_split_diagnostic_v1",
+  "source_indices": [
+    0
+  ],
+  "max_patches": 8,
+  "max_new_tokens": 16,
+  "bitwidths": [
+    1,
+    2
+  ],
+  "fp16_max_abs_logit": 0.0625,
+  "scope": "Same-input native-full repeat, full-generated prefix split, prefix-only native split and same-prefix Hybrid FP16 split; no CalibQuant execution",
+  "dense_oracle": "actual post-RoPE Q at all layers; expanded integers + FP64 reduction + official AST textQK + original sequence softmax",
+  "dense_oracle_tolerance": {
+    "atol": 0.0078125,
+    "rtol": 0.005
+  },
+  "runtime_cost_scope": "P0 includes independent dense oracle and first official autotune; no performance claim"
+}

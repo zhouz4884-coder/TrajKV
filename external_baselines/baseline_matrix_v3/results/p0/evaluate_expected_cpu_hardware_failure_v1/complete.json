@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE_WITH_FAILURES",
+  "expected_QA": 1,
+  "recorded_QA": 1,
+  "counts": {
+    "FAILED_RUN": 1
+  },
+  "coverage_complete": true,
+  "failed_QA_must_remain_in_primary_denominator": true,
+  "quality_scored": false,
+  "load_error": {
+    "error_type": "RuntimeError",
+    "error": "HARDWARE_UNSUPPORTED: actual CUDA is required",
+    "traceback": "Traceback (most recent call last):\n  File \"${PROJECT_ROOT}\\code\\evaluate.py\", line 205, in main\n    if not torch.cuda.is_available(): raise RuntimeError(\"HARDWARE_UNSUPPORTED: actual CUDA is required\")\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: HARDWARE_UNSUPPORTED: actual CUDA is required\n"
+  },
+  "completed_unix": 1795100885.8182952,
+  "manifest_sha256": "29f8cbb3595684ec7d86e9a497c8e25a129320451ef04da7766d2246f9ecf21e",
+  "records_jsonl_sha256": "1b77d89277466ed661fed0613874187cf3c2118964c421f67bfbf14e403b351a"
+}

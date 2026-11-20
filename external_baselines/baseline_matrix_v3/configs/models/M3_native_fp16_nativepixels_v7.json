@@ -1,0 +1,15 @@
+{
+  "model_id": "M3",
+  "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "output_dir": "${DATA_ROOT}/results/native_p0/M3_native_fp16_nativepixels_v7",
+  "image_manifest": "${DATA_ROOT}/configs/models/native_p0_images_v1.json",
+  "min_pixels": 65536,
+  "max_pixels": 16777216,
+  "max_new_tokens": 32,
+  "limit": 10,
+  "attn_implementation": "sdpa",
+  "scope": "P0_technical_hardware_only_not_task_scores",
+  "download_integrity_report": "${DATA_ROOT}/results/model_download/M3_download_r8_resume64.json",
+  "runtime_policy": "isolated_venv_overlay_with_readonly_frozen_base",
+  "change_from_previous": "Explicit UTF-8 record writer; preserve failed ASCII-locale run. Model/input/inference unchanged."
+}

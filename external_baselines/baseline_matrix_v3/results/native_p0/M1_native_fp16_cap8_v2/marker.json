@@ -1,0 +1,183 @@
+{
+  "status": "PASS",
+  "model_spec": {
+    "model_id": "M1",
+    "hf_id": "OpenGVLab/InternVL3-8B-hf",
+    "architecture": "InternVLForConditionalGeneration",
+    "layers": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "image_token_id": 151667,
+    "deepstack_visual_indexes": [],
+    "sliding_attention": false,
+    "native_adapter": "internvl3",
+    "revision": null,
+    "revision_status": "SUPPLY_VERIFIED_M1_LOCK"
+  },
+  "job": {
+    "model_id": "M1",
+    "model_path": "${DATA_DISK}/models/InternVL3-8B-hf",
+    "output_dir": "${DATA_ROOT}/results/native_p0/M1_native_fp16_cap8_v2",
+    "image_manifest": "${DATA_ROOT}/configs/models/native_p0_images_v1.json",
+    "max_patches": 8,
+    "max_new_tokens": 32,
+    "limit": 10,
+    "attn_implementation": "sdpa",
+    "scope": "P0_technical_hardware_only_not_task_scores",
+    "runtime_policy": "temporary_read_only_original_P72_clone_pending",
+    "model_identity_policy": "local_exact_file_sha256_official_revision_pending",
+    "change_from_v1": "Fix unspecified native repetition_penalty None to native default 1.0; numerical/model/input protocol unchanged"
+  },
+  "argv": [
+    "${DATA_ROOT}/jobs/M1_native_fp16_cap8_v2.source/code/native_model_smoke.py",
+    "--job",
+    "${DATA_ROOT}/configs/models/M1_native_fp16_cap8_v2.json"
+  ],
+  "pid": 785197,
+  "python": "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+  "started_unix": 1795097174.1737638,
+  "source_sha256": "ba1033f84f577e1b284bf171e0f92ed8d981cb6a7b445c5b1cfcaf100fe1b430",
+  "registry_sha256": "a908a1214f21a85edde7756513990b1d68927f8eae8b02f7fce6671615937eb9",
+  "checkpoint_identity_status": "LOCAL_EXACT_FILE_SHA256_OFFICIAL_REVISION_NOT_ESTABLISHED",
+  "checkpoint_files": [
+    {
+      "file": "model-00001-of-00004.safetensors",
+      "bytes": 4877374576,
+      "sha256": "7a34fa2f58c41aa1e6dbf28e9f4e43be590fb6077d33e4befe54a8413db03641"
+    },
+    {
+      "file": "model-00002-of-00004.safetensors",
+      "bytes": 4991497800,
+      "sha256": "11a0e1a80e29b9451771e03b9b2da118cfd8da0912631b6de0d4e1137f63dffc"
+    },
+    {
+      "file": "model-00003-of-00004.safetensors",
+      "bytes": 4932774744,
+      "sha256": "8b578604029b9046396b61bf4ae223e0e85c9e89e138da067505bc6f7f9de921"
+    },
+    {
+      "file": "model-00004-of-00004.safetensors",
+      "bytes": 1087199376,
+      "sha256": "6814f162cc1ca061db92cb8808c7202876d8c1a56a0e7e856db12b21cba23a28"
+    },
+    {
+      "file": "config.json",
+      "bytes": 1960,
+      "sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637"
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "bytes": 73875,
+      "sha256": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4"
+    }
+  ],
+  "hub_download_metadata_present": false,
+  "environment": {
+    "torch": "2.4.1+cu121",
+    "transformers": "5.12.0",
+    "cuda": "12.1",
+    "hardware": "NVIDIA GeForce RTX 3090",
+    "capability": [
+      8,
+      6
+    ],
+    "python": "3.10.20",
+    "CUDA_VISIBLE_DEVICES": "1",
+    "cache_env": {
+      "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+      "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+      "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+      "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+      "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda"
+    }
+  },
+  "model_config_sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+  "native_weight_dtype": "bfloat16",
+  "dtype_override": "float16",
+  "load_ms": 36540.74801701063,
+  "actual_architecture": "InternVLForConditionalGeneration",
+  "native_generation_config": {
+    "max_length": null,
+    "max_new_tokens": null,
+    "min_length": null,
+    "min_new_tokens": null,
+    "early_stopping": null,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": null,
+    "num_beams": null,
+    "use_cache": null,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": null,
+    "top_k": null,
+    "top_p": null,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": null,
+    "epsilon_cutoff": null,
+    "eta_cutoff": null,
+    "repetition_penalty": null,
+    "encoder_repetition_penalty": null,
+    "length_penalty": null,
+    "no_repeat_ngram_size": null,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": null,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": null,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": null,
+    "output_logits": null,
+    "return_dict_in_generate": null,
+    "pad_token_id": null,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "encoder_no_repeat_ngram_size": null,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": null,
+    "num_assistant_tokens_schedule": null,
+    "assistant_confidence_threshold": null,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": null,
+    "target_lookbehind": null,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": null,
+    "num_beam_groups": null,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_from_model_config": true,
+    "transformers_version": "5.12.0"
+  },
+  "generation_overrides": {
+    "do_sample": false,
+    "max_new_tokens": 32
+  },
+  "load_peak_allocated_bytes": 16434295296,
+  "weights_resident_unique_storage_bytes": 15888747520,
+  "transformers_model_source": {
+    "file_name": "modeling_internvl.py",
+    "sha256": "fec9f18a83dea42dd32730555cac5a66ece67ef5f236f32967fed1f296d42bd6"
+  },
+  "completed_cases": 10,
+  "peak_allocated_bytes": 16302934528,
+  "completed_unix": 1795097250.8346434
+}

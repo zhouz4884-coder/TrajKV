@@ -1,0 +1,1032 @@
+{
+  "status": "DIAGNOSTIC_COMPLETED_IMPLEMENTATION_FIDELITY_SEPARATE_FROM_FP64_ERROR",
+  "scope": "C2_SOURCE0_SAME_OPERATOR_PRECISION_DIAGNOSTIC_NO_QUALITY_SCORE",
+  "job": {
+    "model_id": "M1",
+    "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "model_identity_report": "${DATA_ROOT}/audit/M1_official_identity_verification_v2.json",
+    "image_manifest": "${DATA_ROOT}/configs/models/native_p0_images_v1.json",
+    "output_dir": "${DATA_ROOT}/results/p0/bm_M1_calibquant_fp32_bias_short_diagnostic_v2",
+    "source_indices": [
+      0
+    ],
+    "max_patches": 8,
+    "max_new_tokens": 16,
+    "bitwidths": [
+      2
+    ],
+    "scope": "Only C2/source0, layer26 same-precision author AST vs ideal FP64 instrument; finite suffix/freegen; no scoring or scalar tolerance expansion",
+    "dense_oracle": "Independent FP64 Eq6 two forms plus declared-rounding full attention oracle; frozen-source finite-interval errors reported",
+    "dense_oracle_tolerance": {
+      "atol": 0.0078125,
+      "rtol": 0.005
+    },
+    "runtime_cost_scope": "P0 includes independent dense oracle and first official autotune; no performance claim",
+    "primary_fp16_anchor": "native_image_prefix_then_suffix_same_shape",
+    "native_full_prompt": "independent reference, not a gate threshold",
+    "fp16_contract": "same prefix logits/post-RoPE Q bitwise, query positions exact, complete greedy IDs exact",
+    "protocol_ref": "configs/protocol/M1_native_split_v1.json",
+    "change_from_v1": "Instrument fix only: Torch2.4 CUDA Half nextafter unsupported; compute exact IEEE Half spacing from bits/value. Save frozen input tensors before reports to permit offline replay.",
+    "gate_revision": "fp32_bias_port_v1",
+    "numeric_failure_evidence": "source Q/rawdot/bias/calibration/decoder-hidden stats and derived tensor dump on remote data volume only",
+    "change_from_v2": "No codec/reader/FP16 contract/tolerance changes. Preserve C2 nonfinite failure, locate its first numeric stage; continue independent C1/C2 cases.",
+    "method": "calibquant_visual_fp32_bias_reduction_v1",
+    "precision_change": "Keep bias products FP16. Only sum/div are FP32; cast bias back to FP16 before original logits subtraction/calibration.",
+    "calibration_or_parameter_tuning": false,
+    "original_published_FP16_branch_preserved": true,
+    "performance_scope": "actual reader CUDA/wall/temporary peak measured before independent oracle; gate totals include diagnostics/autotune",
+    "change_from_v3": "Separately named precision-compatible same-equation port; no quantizer/format/clipping/calibration/model precision changes"
+  },
+  "started_unix": 1795101254.875398,
+  "quality_unlocked_by_this_diagnostic_alone": false,
+  "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "source_id": "sha256:528273f2928d7db406691e78bb2ffbad92851b852f8122c9c423ce7df61ab57a",
+  "image_sha256": "528273f2928d7db406691e78bb2ffbad92851b852f8122c9c423ce7df61ab57a",
+  "visual_tokens": 1792,
+  "suffix_tokens": 22,
+  "torch": "2.4.1+cu121",
+  "transformers": "5.12.0",
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "remote_only_input_tensor_evidence": {
+    "file": "source0_C2_layer26_inputs.pt",
+    "bytes": 892110,
+    "sha256": "e5e08c610c5fc6d0fefa869630ec72c164a21a928f8da8b704767efe45d98c65",
+    "download_policy": "remote data volume only; saved before any instrument/report function"
+  },
+  "actual_vs_ideal_fp64_instrument": {
+    "max_abs": 0.015625,
+    "relative_l2": 7.716954132774845e-05,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.015625
+    ],
+    "max_ulp": 117,
+    "elements": 78848,
+    "different_elements": 17,
+    "max_abs_location": [
+      0,
+      4,
+      0,
+      36
+    ],
+    "actual_at_max_abs": 0.252685546875,
+    "reference_at_max_abs": 0.237060546875,
+    "output_ulp_at_max_abs": 117,
+    "reference_spacing_up_at_max_abs": 0.0001220703125,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "actual_vs_author_AST_same_precision_mapped_operator_reference": {
+    "max_abs": 0.015625,
+    "relative_l2": 0.00011068677849834785,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.015625
+    ],
+    "max_ulp": 448,
+    "elements": 78848,
+    "different_elements": 16,
+    "max_abs_location": [
+      0,
+      3,
+      2,
+      22
+    ],
+    "actual_at_max_abs": 1.640625,
+    "reference_at_max_abs": 1.625,
+    "output_ulp_at_max_abs": 16,
+    "reference_spacing_up_at_max_abs": 0.0009765625,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "Eq6_fp64_diagnostics": {
+    "oracle": "independent_FP64_Eq6_two_forms_and_declared_FP16_boundaries_FP32_bias_sum_div",
+    "q_stats": {
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        28,
+        22,
+        128
+      ],
+      "nonfinite": 0,
+      "nan": 0,
+      "inf": 0,
+      "finite_max_abs": 18.015625
+    },
+    "bias_products_stats": {
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        28,
+        22,
+        128
+      ],
+      "nonfinite": 0,
+      "nan": 0,
+      "inf": 0,
+      "finite_max_abs": 323.0
+    },
+    "bias_after_division_stats": {
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        28,
+        22,
+        1
+      ],
+      "nonfinite": 0,
+      "nan": 0,
+      "inf": 0,
+      "finite_max_abs": 47.78125
+    },
+    "ideal_Eq6_two_form_max_abs_error": 0.0,
+    "ported_uncalibrated_vs_ideal_Eq6_max_abs_error": 0.04263167720590921,
+    "ported_uncalibrated_vs_ideal_Eq6_relative_l2": 0.0006667356717627462,
+    "published_FP16_nonfinite_head_queries": 0,
+    "published_FP16_finite_interval_calibrated_max_abs_difference": 0.0625,
+    "minimum_visual_logit_range": 11.3203125,
+    "visual_queries_with_range_below_three": 0,
+    "visual_queries_with_zero_range": 0,
+    "expected_output_stats": {
+      "dtype": "torch.float16",
+      "shape": [
+        1,
+        28,
+        22,
+        128
+      ],
+      "nonfinite": 0,
+      "nan": 0,
+      "inf": 0,
+      "finite_max_abs": 13.125
+    }
+  },
+  "raw_qk_source_vs_fp64": {
+    "max_abs": 0.0625,
+    "relative_l2": 1.8851037566491868e-06,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0625
+    ],
+    "max_ulp": 14,
+    "elements": 1103872,
+    "different_elements": 80,
+    "max_abs_location": [
+      0,
+      0,
+      6,
+      871
+    ],
+    "actual_at_max_abs": 64.1875,
+    "reference_at_max_abs": 64.125,
+    "output_ulp_at_max_abs": 1,
+    "reference_spacing_up_at_max_abs": 0.0625,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "raw_wv_source_vs_fp64_same_probabilities": {
+    "max_abs": 0.0,
+    "relative_l2": 0.0,
+    "abs_quantiles_0_50_90_99_999_100": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_ulp": 0,
+    "elements": 78848,
+    "different_elements": 0,
+    "max_abs_location": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "actual_at_max_abs": 0.8115234375,
+    "reference_at_max_abs": 0.8115234375,
+    "output_ulp_at_max_abs": 0,
+    "reference_spacing_up_at_max_abs": 0.00048828125,
+    "spacing_basis": "IEEE binary16 bit spacing; no unsupported CUDA Half nextafter"
+  },
+  "max_error_raw_value_context": {
+    "output_location_B_T_H_D": [
+      0,
+      4,
+      0,
+      36
+    ],
+    "source_raw_weighted_code": 1.5029296875,
+    "fp64_rounded_raw_weighted_code_same_source_probabilities": 1.5029296875,
+    "value_channel_scale": 12.3515625,
+    "raw_weighted_difference_times_scale": 0.0
+  },
+  "remote_only_tensor_evidence": {
+    "file": "source0_C2_layer26_finite_oracle_capture.pt",
+    "bytes": 1208502,
+    "sha256": "4e13182842f97808edc355598ba3c97c806fb658cd7dcf6fbc254c49a1922390",
+    "download_policy": "remote data volume only"
+  },
+  "complete_suffix_all_28_layers_finite": true,
+  "suffix_and_freegen_with_instrument_ms": 13646.455349997268,
+  "peak_allocated_bytes_including_instrument": 16194702336,
+  "own_compressed_suffix_generated_token_ids": [
+    34532,
+    468,
+    13,
+    82810,
+    151645
+  ],
+  "raw_prediction_unscored": "Robert E. Shank",
+  "all_attention_calls_finite": true,
+  "calls_by_layer": {
+    "0": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "1": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "2": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "3": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "4": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "5": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "6": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "7": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "8": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "9": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "10": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "11": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "12": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "13": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "14": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "15": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "16": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "17": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "18": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "19": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "20": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "21": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "22": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "23": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "24": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "25": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "26": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ],
+    "27": [
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 22,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      },
+      {
+        "query_tokens": 1,
+        "finite": true
+      }
+    ]
+  },
+  "method_manifest": {
+    "method": "calibquant_visual_fp32_bias_reduction_v1",
+    "method_paper": "https://arxiv.org/abs/2502.14882v2",
+    "upstream_repo": "https://github.com/insuhan/calibquant",
+    "upstream_commit": "1dcfce862162e4a3888ef137df65b36cdc19efd0",
+    "port_name": "post_rope_visual_gqa_suffix_replay_fp32_bias_reduction_v1",
+    "faithfulness_status": "P0_PENDING",
+    "bits_nominal": 2,
+    "reader_backend": "upstream_triton",
+    "k_range_multiplier": 1.0,
+    "v_range_multiplier": 1.0,
+    "norm_offset_max": -3.0,
+    "norm_offset_min": 0.0,
+    "calibration_data": "none: published upstream constants frozen without tuning",
+    "calibration_provenance_gap": "paper describes grid search but released code has no calibration runner or split manifest",
+    "prefill_protocol": "image prefix captured natively, compressed, all question suffix tokens replayed",
+    "upstream_protocol_difference": "released script quantizes after full prompt and only reads compressed visual KV at decode",
+    "runtime_variant": "official packed QK/WV plus explicitly declared FP32 bias reduction/division",
+    "rotation": false,
+    "sparse_outlier_owner": false,
+    "text_kv": "unmodified full precision; engine owner",
+    "weight_quantization": false,
+    "precision_change": "FP16 channel-bias products unchanged; sum/div FP32; cast to original FP16 before subtract/calibrate",
+    "unchanged": [
+      "clip multipliers",
+      "integer codes",
+      "packed uint8 format",
+      "scale/zero dtype",
+      "persistent owner",
+      "official QK/WV kernels",
+      "calibration map",
+      "model weights FP16"
+    ],
+    "published_infer_default_dtype": "bfloat16",
+    "matrix_weights_and_kv_dtype": "float16",
+    "motivation_evidence": "audit/calibquant_M1_model_acceptance_v1.json",
+    "source_published_fp16_branch": "retained separately; C1 passed, C2 finite-product bias-sum overflow preserved",
+    "fitted_parameters": false,
+    "adds_persistent_tensors": false
+  },
+  "source_hashes": {
+    "code/gates/calibquant_fp32_bias_short_diagnostic.py": "047280bd336ca4f5829fcd4c95e2bcfc284ee7d19b7d0db7056294fec9e5d10d",
+    "code/gates/calibquant_operator_reference.py": "06ae142cf641c11ea0a3c0bc60747093c5f411413ce71b3810a92c1f6f4e4a19",
+    "code/methods/calibquant_fp32_bias_adapter.py": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+    "code/gates/calibquant_fp32_bias_oracle.py": "861fe33fd8fe5e41f98510f24f03e6954c57ccd22f14c9d5e6a1e0f8eafbc014",
+    "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "code/attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876"
+  },
+  "completed_unix": 1795101289.4383886
+}

@@ -1,0 +1,25 @@
+{
+  "model_id": "M1",
+  "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_identity_report": "${DATA_ROOT}/audit/M1_official_identity_verification_v2.json",
+  "image_manifest": "${DATA_ROOT}/configs/models/native_p0_images_v1.json",
+  "output_dir": "${DATA_ROOT}/results/p0/bm_M1_calibquant_model_gate_v1",
+  "source_indices": [
+    0,
+    6
+  ],
+  "max_patches": 8,
+  "max_new_tokens": 16,
+  "bitwidths": [
+    1,
+    2
+  ],
+  "fp16_max_abs_logit": 0.0625,
+  "scope": "M1 native vs complete image-prefix/suffix FP16 bridge then actual CalibQuant C1/C2, no official task scores or fitting",
+  "dense_oracle": "actual post-RoPE Q at all layers; expanded integers + FP64 reduction + official AST textQK + original sequence softmax",
+  "dense_oracle_tolerance": {
+    "atol": 0.0078125,
+    "rtol": 0.005
+  },
+  "runtime_cost_scope": "P0 includes independent dense oracle and first official autotune; no performance claim"
+}

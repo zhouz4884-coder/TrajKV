@@ -1,0 +1,36 @@
+{
+  "model_id": "M1",
+  "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_identity_report": "${DATA_ROOT}/audit/M1_official_identity_verification_v2.json",
+  "image_manifest": "${DATA_ROOT}/configs/models/native_p0_images_v1.json",
+  "output_dir": "${DATA_ROOT}/results/p0/bm_M1_calibquant_fp32_bias_short_diagnostic_v1",
+  "source_indices": [
+    0
+  ],
+  "max_patches": 8,
+  "max_new_tokens": 16,
+  "bitwidths": [
+    2
+  ],
+  "scope": "Only C2/source0, layer26 same-precision author AST vs ideal FP64 instrument; finite suffix/freegen; no scoring or scalar tolerance expansion",
+  "dense_oracle": "Independent FP64 Eq6 two forms plus declared-rounding full attention oracle; frozen-source finite-interval errors reported",
+  "dense_oracle_tolerance": {
+    "atol": 0.0078125,
+    "rtol": 0.005
+  },
+  "runtime_cost_scope": "P0 includes independent dense oracle and first official autotune; no performance claim",
+  "primary_fp16_anchor": "native_image_prefix_then_suffix_same_shape",
+  "native_full_prompt": "independent reference, not a gate threshold",
+  "fp16_contract": "same prefix logits/post-RoPE Q bitwise, query positions exact, complete greedy IDs exact",
+  "protocol_ref": "configs/protocol/M1_native_split_v1.json",
+  "change_from_v1": "Use evidenced same-prefix/same-shape native control; no method/math/weights/input changes or threshold expansion",
+  "gate_revision": "fp32_bias_port_v1",
+  "numeric_failure_evidence": "source Q/rawdot/bias/calibration/decoder-hidden stats and derived tensor dump on remote data volume only",
+  "change_from_v2": "No codec/reader/FP16 contract/tolerance changes. Preserve C2 nonfinite failure, locate its first numeric stage; continue independent C1/C2 cases.",
+  "method": "calibquant_visual_fp32_bias_reduction_v1",
+  "precision_change": "Keep bias products FP16. Only sum/div are FP32; cast bias back to FP16 before original logits subtraction/calibration.",
+  "calibration_or_parameter_tuning": false,
+  "original_published_FP16_branch_preserved": true,
+  "performance_scope": "actual reader CUDA/wall/temporary peak measured before independent oracle; gate totals include diagnostics/autotune",
+  "change_from_v3": "Separately named precision-compatible same-equation port; no quantizer/format/clipping/calibration/model precision changes"
+}

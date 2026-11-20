@@ -1,0 +1,30 @@
+{
+  "dataset": "textvqa",
+  "dataset_revision": "9c0699cd19768ac5ab97568f6b3cbac4c0062884",
+  "height": 768,
+  "id": "textvqa:validation:39023",
+  "image_bytes": 477312,
+  "image_format": "jpeg",
+  "image_path": "${DATA_ROOT}/data/images/253a586c9cbb33350ab7bdcba89fbae409765f5f309757093186354f6aa28e7a.jpg",
+  "original_image_sha256": "253a586c9cbb33350ab7bdcba89fbae409765f5f309757093186354f6aa28e7a",
+  "original_split_row": 4421,
+  "question": "what is written on the streen sign?",
+  "question_id": "39023",
+  "question_sha256": "681cefc38cd56621e2f11968c2906cb3172494b5276c7f1c2ae875da9741e81a",
+  "source_cluster_id": "textvqa:image:42f525eb96da8ac3",
+  "source_id": "42f525eb96da8ac3",
+  "split": "validation",
+  "width": 1024,
+  "model_id": "M1",
+  "method": "F_native_split",
+  "status": "FAILED_RUN",
+  "output_token_ids": null,
+  "raw_prediction": null,
+  "official_score": null,
+  "error": {
+    "error_type": "RuntimeError",
+    "error": "HARDWARE_UNSUPPORTED: actual CUDA is required",
+    "traceback": "Traceback (most recent call last):\n  File \"${PROJECT_ROOT}\\code\\evaluate.py\", line 205, in main\n    if not torch.cuda.is_available(): raise RuntimeError(\"HARDWARE_UNSUPPORTED: actual CUDA is required\")\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: HARDWARE_UNSUPPORTED: actual CUDA is required\n"
+  },
+  "score_status": "NOT_READ_OR_COMPUTED_BY_RUNNER"
+}

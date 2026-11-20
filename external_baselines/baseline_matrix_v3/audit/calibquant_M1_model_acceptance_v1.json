@@ -1,0 +1,160 @@
+{
+  "status": "PASS_M1_C1_P0_AND_EVIDENCED_C2_FP16_FAILURE",
+  "checks": {
+    "expected_partial_status": true,
+    "two_real_source_density_cases": true,
+    "default_c1_passed_all_cases": true,
+    "published_fp16_c2_failed_all_cases": true,
+    "quality_unlocked_only_one_bit": true,
+    "fp16_same_prefix_same_shape_logits_bitwise": true,
+    "fp16_all_layer_post_rope_q_bitwise": true,
+    "native_and_bridge_complete_greedy_ids_equal": true,
+    "all_28_real_layers_exercised": true,
+    "original_full_fp16_inputs_released_and_visual_owner_immutable": true,
+    "source_dense_oracle_bounded": true,
+    "c2_q_and_raw_qk_finite_before_bias_overflow": true,
+    "c2_not_preexisting_hidden_or_mlp_nonfinite": true,
+    "c2_actual_and_independent_source_nan_counts_match": true,
+    "all_executed_source_bytes_match_current_frozen_versions": true,
+    "live_argv_source_inventory_and_all_dependency_hashes_match_launch": true,
+    "all_actual_caches_on_declared_data_volume": true,
+    "official_main_runtime_and_gpu_lease": true,
+    "worker_completed_before_lease_return": true,
+    "no_quality_scores_measured": true
+  },
+  "upstream_commit": "1dcfce862162e4a3888ef137df65b36cdc19efd0",
+  "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "runtime": {
+    "torch_version": "2.4.1+cu121",
+    "transformers_version": "5.12.0",
+    "cuda_version": "12.1",
+    "hardware": "NVIDIA GeForce RTX 3090",
+    "capability": [
+      8,
+      6
+    ]
+  },
+  "protocol": "configs/protocol/M1_native_split_v1.json",
+  "default_c1_cases": [
+    {
+      "source_index": 0,
+      "source_id": "sha256:528273f2928d7db406691e78bb2ffbad92851b852f8122c9c423ce7df61ab57a",
+      "image_sha256": "528273f2928d7db406691e78bb2ffbad92851b852f8122c9c423ce7df61ab57a",
+      "visual_tokens": 1792,
+      "suffix_tokens": 22,
+      "fp16_bridge_vs_native_split_logit_max_abs_error": 0.0,
+      "native_full_and_split_generation_equal": true,
+      "native_full_vs_split_diagnostic": {
+        "max_abs": 0.1484375,
+        "mean_abs": 0.01161850243806839,
+        "relative_l2": 0.003987983334809542,
+        "all_suffix_argmax_agreement": 1.0
+      },
+      "visual_codec_bytes": 6537440,
+      "all_positions_bytes": 15232,
+      "exact_text_kv_bytes": 229376,
+      "all_cache_storage_bytes_before_suffix": 6782048,
+      "actual_codec_visual_bits": 1.0178920200892858,
+      "source_oracle_max_abs_error": 0.00390625,
+      "peak_allocated_bytes_including_diagnostic_oracle": 16289977856,
+      "output_token_ids": [
+        34532,
+        468,
+        13,
+        82810,
+        151645
+      ],
+      "task_score": null
+    },
+    {
+      "source_index": 6,
+      "source_id": "sha256:1dec421b5ef5161f468df097ce243f17f82494356447dd2d8a17736c43c14fa7",
+      "image_sha256": "1dec421b5ef5161f468df097ce243f17f82494356447dd2d8a17736c43c14fa7",
+      "visual_tokens": 1280,
+      "suffix_tokens": 28,
+      "fp16_bridge_vs_native_split_logit_max_abs_error": 0.0,
+      "native_full_and_split_generation_equal": true,
+      "native_full_vs_split_diagnostic": {
+        "max_abs": 0.234375,
+        "mean_abs": 0.013759885914623737,
+        "relative_l2": 0.0038041090592741966,
+        "all_suffix_argmax_agreement": 0.9642857313156128
+      },
+      "visual_codec_bytes": 4702432,
+      "all_positions_bytes": 11136,
+      "exact_text_kv_bytes": 229376,
+      "all_cache_storage_bytes_before_suffix": 4942944,
+      "actual_codec_visual_bits": 1.025048828125,
+      "source_oracle_max_abs_error": 0.00390625,
+      "peak_allocated_bytes_including_diagnostic_oracle": 16180356096,
+      "output_token_ids": [
+        40579,
+        1659,
+        594,
+        151645
+      ],
+      "task_score": null
+    }
+  ],
+  "published_fp16_c2_failures": [
+    {
+      "source_index": 0,
+      "bits": 2,
+      "layer": 27,
+      "status": "FAILED_RUN",
+      "q_nonfinite": 0,
+      "scaled_q_nonfinite": 0,
+      "raw_qk_fp16_nonfinite": 0,
+      "bias_terms_nonfinite": 0,
+      "bias_sum_fp16_inf": 21,
+      "calibrated_visual_nan": 37632,
+      "actual_output_nan": 2688,
+      "independent_oracle_output_nan": 2688,
+      "nonfinite_hidden_components_before_failed_attention": 0,
+      "task_score": null,
+      "failure_tensor": {
+        "file": "numeric_failure_source0_C2_layer27.pt",
+        "sha256": "b0ded3138d6f030c274be6b9d3a3030ded384f23912f9ccdf57fa61bb9d06e0f",
+        "bytes": 734314,
+        "policy": "derived activations only, remote data volume; not copied to local or public automatically"
+      }
+    },
+    {
+      "source_index": 6,
+      "bits": 2,
+      "layer": 27,
+      "status": "FAILED_RUN",
+      "q_nonfinite": 0,
+      "scaled_q_nonfinite": 0,
+      "raw_qk_fp16_nonfinite": 0,
+      "bias_terms_nonfinite": 0,
+      "bias_sum_fp16_inf": 26,
+      "calibrated_visual_nan": 33280,
+      "actual_output_nan": 3328,
+      "independent_oracle_output_nan": 3328,
+      "nonfinite_hidden_components_before_failed_attention": 0,
+      "task_score": null,
+      "failure_tensor": {
+        "file": "numeric_failure_source6_C2_layer27.pt",
+        "sha256": "b6b988857e9b1bb71874a62d6772e7b11c23f6bc9fbc5bb290c2b4f58651bb7b",
+        "bytes": 651242,
+        "policy": "derived activations only, remote data volume; not copied to local or public automatically"
+      }
+    }
+  ],
+  "failure_mechanism": "Finite FP16 channel-bias products overflow when sum output is cast to FP16 before division by sqrt(D); original calibration converts infinite scores to NaNs",
+  "support_scope": "Only C1 is cleared for M1 cap8 image-prefix/full-suffix pilot; this is not an official task score or universal model/input guarantee",
+  "evidence": {
+    "results/p0/bm_M1_calibquant_model_gate_v3/complete.json": "16dce44bde8c2ce3f1cc8b21df1898d7cc7d3f4d1a5668934a4c4a279a6eec40",
+    "audit/launch/bm_M1_calibquant_model_gate_v3.json": "15198dd790d88987d0408e7c8463070160351ce32617d187416b7d8bb9843655",
+    "audit/live/bm_M1_calibquant_model_gate_v3/20261119T144417193154Z.json": "d01347086e8e6cc4ef8a86c93ed03d8c0c5194bd7776b23389272be60ac040eb",
+    "audit/live/bm_M1_calibquant_model_gate_v3/20261119T144544583056Z.json": "614cf35ba49f08f1cf1682695af97feb78217e5c6c547372538d3a41e355de00",
+    "audit/calibquant_model_failure_tensors_remote_receipt_v1.json": "b9c0c8ccfa5567cae2b805ddf0c2691e50764dd8dd766a64cec9cce2750e7ce6"
+  },
+  "method_source_unchanged": true,
+  "original_failed_runs_preserved": [
+    "bm_M1_calibquant_model_gate_v1",
+    "bm_M1_calibquant_model_gate_v2"
+  ],
+  "no_clamp_nan_to_num_or_parameter_tuning": true
+}

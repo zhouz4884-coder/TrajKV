@@ -1,0 +1,257 @@
+{
+  "status": "PASS",
+  "model_spec": {
+    "model_id": "M3",
+    "hf_id": "Qwen/Qwen3-VL-4B-Instruct",
+    "revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "layers": 36,
+    "query_heads": 32,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "image_token_id": 151655,
+    "vision_start_token_id": 151652,
+    "vision_end_token_id": 151653,
+    "native_adapter": "qwen3_vl",
+    "mrope_section": [
+      24,
+      20,
+      20
+    ],
+    "mrope_interleaved": true,
+    "deepstack_visual_indexes": [
+      5,
+      11,
+      17
+    ],
+    "sliding_attention": false,
+    "processor_spatial_factor": 32
+  },
+  "job": {
+    "model_id": "M3",
+    "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+    "output_dir": "${DATA_ROOT}/results/native_p0/M3_native_fp16_nativepixels_v7",
+    "image_manifest": "${DATA_ROOT}/configs/models/native_p0_images_v1.json",
+    "min_pixels": 65536,
+    "max_pixels": 16777216,
+    "max_new_tokens": 32,
+    "limit": 10,
+    "attn_implementation": "sdpa",
+    "scope": "P0_technical_hardware_only_not_task_scores",
+    "download_integrity_report": "${DATA_ROOT}/results/model_download/M3_download_r8_resume64.json",
+    "runtime_policy": "isolated_venv_overlay_with_readonly_frozen_base",
+    "change_from_previous": "Explicit UTF-8 record writer; preserve failed ASCII-locale run. Model/input/inference unchanged."
+  },
+  "argv": [
+    "${DATA_ROOT}/jobs/M3_native_fp16_nativepixels_v7.source/code/native_model_smoke.py",
+    "--job",
+    "${DATA_ROOT}/configs/models/M3_native_fp16_nativepixels_v7.json"
+  ],
+  "pid": 801040,
+  "python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+  "started_unix": 1795099238.1514535,
+  "source_sha256": "140e22c2e79a740d8f3b7c40571afbae0fbe451c3555fa07900550a92d8c9c12",
+  "registry_sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+  "download_integrity_report_sha256": "675444a819919b88ebf36aed0ac69b4c7a5622269864deac9abb49dc47c7b9e4",
+  "metadata_integrity": [
+    {
+      "file": "chat_template.json",
+      "sha256": "6f8a6a55027e3da5160105556cda5dd69f6423f1c32645f6730d32de7773d0c4",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "config.json",
+      "sha256": "edac7703329133edfc53e46ac0081835144c99d7eebf28b71c732694d435224d",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "generation_config.json",
+      "sha256": "8469742d1fce0de951c8909b26a2c0c0d8490837ce476efb114da9e0cefc4d44",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "merges.txt",
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "sha256": "58a7841d7bff2548dd91577d216274a83cf1b500bc6a534b809d6c1b1707cf2b",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "preprocessor_config.json",
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "tokenizer.json",
+      "sha256": "a5d85b6dcc535e6b93115a9ef287e6132fdbf30270da6218194ba742261173c7",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "tokenizer_config.json",
+      "sha256": "c2da771801886ad9ae98181793ffd3dfb7f1af30f6f7c6a4e15d7dbba52e2399",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "video_preprocessor_config.json",
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    },
+    {
+      "file": "vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "official_identity_kind": "GIT_BLOB_SHA1",
+      "exact_match": true
+    }
+  ],
+  "model_revision_lock_sha256": "c9296aed54fbe6589597a01f4c48932b6079bd0c860b1ba1db4cf07691dfee9e",
+  "environment": {
+    "torch": "2.4.1+cu121",
+    "transformers": "5.12.0",
+    "cuda": "12.1",
+    "hardware": "NVIDIA GeForce RTX 3090",
+    "capability": [
+      8,
+      6
+    ],
+    "python": "3.10.20",
+    "CUDA_VISIBLE_DEVICES": "1",
+    "cache_env": {
+      "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+      "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+      "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+      "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+      "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda"
+    }
+  },
+  "model_config_sha256": "edac7703329133edfc53e46ac0081835144c99d7eebf28b71c732694d435224d",
+  "native_weight_dtype": "bfloat16",
+  "dtype_override": "float16",
+  "processor_image_config": {
+    "size": {
+      "longest_edge": 16777216,
+      "shortest_edge": 65536
+    },
+    "patch_size": 16,
+    "temporal_patch_size": 2,
+    "merge_size": 2,
+    "image_mean": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_std": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "image_processor_type": "Qwen2VLImageProcessor",
+    "do_convert_rgb": true,
+    "do_resize": true,
+    "resample": 3,
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true
+  },
+  "processor_source_config_sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516",
+  "load_ms": 10971.983115989133,
+  "actual_architecture": "Qwen3VLForConditionalGeneration",
+  "native_generation_config": {
+    "max_length": null,
+    "max_new_tokens": null,
+    "min_length": null,
+    "min_new_tokens": null,
+    "early_stopping": null,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": true,
+    "num_beams": null,
+    "use_cache": null,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": 0.7,
+    "top_k": 20,
+    "top_p": 0.8,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": null,
+    "epsilon_cutoff": null,
+    "eta_cutoff": null,
+    "repetition_penalty": 1.0,
+    "encoder_repetition_penalty": null,
+    "length_penalty": null,
+    "no_repeat_ngram_size": null,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": null,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": null,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": null,
+    "output_logits": null,
+    "return_dict_in_generate": null,
+    "pad_token_id": 151643,
+    "bos_token_id": 151643,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "encoder_no_repeat_ngram_size": null,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": null,
+    "num_assistant_tokens_schedule": null,
+    "assistant_confidence_threshold": null,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": null,
+    "target_lookbehind": null,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": null,
+    "num_beam_groups": null,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_from_model_config": null,
+    "transformers_version": "5.12.0"
+  },
+  "generation_overrides": {
+    "do_sample": false,
+    "max_new_tokens": 32
+  },
+  "load_peak_allocated_bytes": 8875651584,
+  "weights_resident_unique_storage_bytes": 8875631616,
+  "transformers_model_source": {
+    "file_name": "modeling_qwen3_vl.py",
+    "sha256": "f39b3621fea3f757a01d2e00ebd3a2be3516b7df3048d862a365988aba9fa994"
+  },
+  "completed_cases": 10,
+  "peak_allocated_bytes": 10255327232,
+  "completed_unix": 1795099278.7766469
+}
