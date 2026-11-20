@@ -1,0 +1,59 @@
+{
+  "schema": "baseline_matrix.speed_profile_supersession.v1",
+  "status": "OLD_E8_PROFILE40_REAL_RETAINED_AND520_UNRUN_SUPERSEDED",
+  "old_matrix": "configs/matrix/SPEED_M1_source_representatives_targets_v1.json",
+  "old_matrix_sha256": "e9c15f156055dce5d0178ceef952db1c2b1328e73dab4f0ce0d57300b5e354fe",
+  "replacement_matrix": "configs/matrix/SPEED_M1_source_representatives_targets_v2.json",
+  "replacement_matrix_sha256": "69c3cd00a95a26291dd4dc2f9a14a10f7831965debdd92d49b9b4dabd99e508f",
+  "rows": [
+    {
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA": 2,
+      "total_trials": 40,
+      "speed_config": "configs/speed/M1_source_representatives_textvqa_2_hardware_smoke_v1.json",
+      "status": "HISTORICAL_REAL_E8_PROFILE_HARDWARE_SMOKE_RETAINED",
+      "actual_trials": 40,
+      "actual_raw": "${EVIDENCE_ROOT}\\results\\source_representative_speed\\M1_source_representatives_textvqa_2_hardware_smoke_GPU0_stagefix_v2",
+      "actual_complete_sha256": "20509fcb8d5d6e82ee64459d9bc2ca9b04918430d0e57626e8e58124e1b8e607",
+      "formal_canonical_profile": false
+    },
+    {
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA": 16,
+      "total_trials": 320,
+      "speed_config": "configs/speed/M1_source_representatives_textvqa_16_formal_fixed_cohort_v1.json",
+      "status": "SUPERSEDED_UNRUN_BY_GLOBAL_CANONICAL_E64_CHOICE",
+      "actual_trials": 0,
+      "reason": "Root selected source-default W64 globally; no GPU trial, failure or metric is inferred."
+    },
+    {
+      "dataset": "infovqa",
+      "role": "hardware_smoke",
+      "QA": 2,
+      "total_trials": 40,
+      "speed_config": "configs/speed/M1_source_representatives_infovqa_2_hardware_smoke_v1.json",
+      "status": "SUPERSEDED_UNRUN_BY_GLOBAL_CANONICAL_E64_CHOICE",
+      "actual_trials": 0,
+      "reason": "Root selected source-default W64 globally; no GPU trial, failure or metric is inferred."
+    },
+    {
+      "dataset": "infovqa",
+      "role": "formal_fixed_cohort",
+      "QA": 8,
+      "total_trials": 160,
+      "speed_config": "configs/speed/M1_source_representatives_infovqa_8_formal_fixed_cohort_v1.json",
+      "status": "SUPERSEDED_UNRUN_BY_GLOBAL_CANONICAL_E64_CHOICE",
+      "actual_trials": 0,
+      "reason": "Root selected source-default W64 globally; no GPU trial, failure or metric is inferred."
+    }
+  ],
+  "historical_actual_trials": 40,
+  "superseded_unrun_trials": 520,
+  "not_measured_not_failed": true,
+  "new_GPU_trials": 0,
+  "old_files_modified": false,
+  "no_speed_measurement_reuse_into_new560": true,
+  "public_0853_cutoff_not_extended": true
+}

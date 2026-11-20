@@ -1,0 +1,84 @@
+{
+  "status": "PASS_CANONICAL_TEXT320_CONTINUATION_PREPARED_NOT_STAGED_OR_LAUNCHED",
+  "version": "v21",
+  "formal_original": "configs/jobs/bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1.json",
+  "formal_GPU0_alias": "configs/jobs/bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21.json",
+  "only_formal_alias_changes": [
+    "name",
+    "env.CUDA_VISIBLE_DEVICES"
+  ],
+  "stage_files_sha256": {
+    "code/gates/canonical_text2_prerequisite_v3.py": "75a5ca0269bc946f3809aab088081e640bb30c9577f77642c6fe30465658de2e",
+    "configs/eval/M1_C2_bias32_textvqa_p2_500_v1.json": "d957fe934855c16aba7734b756ea6f12eea1fe2f7bfcf723cb85dc35b9ba2117",
+    "configs/eval/M1_E_r0888_textvqa_p2_500_v1.json": "b9c1aabbd3f057166dba9b6b2de7fdaa2cb40f4060a9f86dce60791cb719afb2",
+    "configs/eval/M1_F_textvqa_p2_500_v1.json": "f7ddf90ae551e424ce1801e0dcf6ab33e819ef9796d2e44438004732078a4e91",
+    "configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json": "f57462f89a773641a36f66c801812cf0a92747339a315b032eca3bdf5533f9d2",
+    "configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json": "966ed14257f2c26c2499eff12b9b76202b9887162d064a72ec99c26ee1c63c95",
+    "configs/gates/M1_canonical_E64_Text2_prerequisite_v21.json": "ae830d7fdc2c198499697ed5084c218059515db151cc6f5623f2b95d01c0ae2c",
+    "configs/jobs/bm_M1_canonical_E64_Text2_evidence_CPU_v21_sourcev3.json": "976b82dd01a19befa4ab9e8327683d5391d3b5144ad682bb7a6729e45f5e24ec",
+    "configs/jobs/bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21.json": "e6f2337e6d317fe0a59d77895cfbba673324ee3247dd3a1855a3d2aa29abaa68",
+    "configs/speed/M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1.json": "ceec0bd68a4ccd56b6a224772bcc067baa08a1f217985eb5794127317a20c9b5",
+    "configs/speed/expected_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1.json": "e1a3929381663e368df4507bd1e8afe7478c2aa77101909bb631340412ae8b82",
+    "configs/queues/External_baselines_P2_canonical_Text16_continuation_v21.json": "42c8e519280500d5d5761d888582f35da1f1ea9f33a130821cb61d9ce8b50ffb",
+    "configs/jobs/bm_External_baselines_P2_canonical_Text16_continuation_v21.json": "ef680033c53368db49c441f38d757d9dd231ed91ae0d8a2ec504188b65cdb619"
+  },
+  "new_GPU_trials": 320,
+  "new_CPU_evidence_nodes": 1,
+  "canonical_producer": {
+    "job": "configs/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20.json",
+    "name": "bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20",
+    "completion_contract": {
+      "type": "json_status",
+      "accepted_status": "PASS_TIMED_AND_TOKEN_VALIDATED",
+      "required_fields": {
+        "GPU_used": true,
+        "recorded_trials": 40,
+        "expected_trials": 40,
+        "warmup_and_measure_status_counts": {
+          "PASS": 40
+        }
+      },
+      "hash_fields": {
+        "manifest.json": "manifest_sha256",
+        "records.jsonl": "records_jsonl_sha256",
+        "summary.json": "summary_sha256"
+      }
+    }
+  },
+  "no_Text2_duplicate": true,
+  "Supervisor_unchanged_sha256": "613dfdf18d75bbe9e4ccabcd2521d80c0b8b2f380a70c8525b46bd8b1e10ecf1",
+  "helper_source_sha256": "c1d1810ce3350ad3165de1746a6dbc5e1364031d57ef7e117897c418877d8471",
+  "stage_launch_pause_or_queue_mutation": false,
+  "failure_semantics": "CPU gate runs after the actual canonical producer even if no marker; it writes PASS/FAIL. Optional formal requires the CPU gate PASS, so failed/missing gate skips only formal and cannot wait forever.",
+  "controller": "External_baselines_P2_canonical_Text16_continuation_v21",
+  "plan": "configs/queues/External_baselines_P2_canonical_Text16_continuation_v21.json",
+  "plan_sha256": "42c8e519280500d5d5761d888582f35da1f1ea9f33a130821cb61d9ce8b50ffb",
+  "controller_job": "configs/jobs/bm_External_baselines_P2_canonical_Text16_continuation_v21.json",
+  "pause_receipt": "audit\\compat_extension\\v21_root_pause_v20.json",
+  "pause_receipt_sha256": "733d165775ccfca80180b9a90ff864bd6c95efc01d0f7c6ce00032ab20d21429",
+  "conservation": {
+    "insertion_mode": "pending",
+    "insertion_index_GPU0": 1,
+    "old_pending_nodes": 82,
+    "old_pending_by_lane_sha256": {
+      "0": "fc02f3e8ab28d2201a692319a2fceecfddb7ce5c88c783add08172f928fe0fa4",
+      "1": "3e4ae27d2bc11c44058eba9632ba1730c3723cb9c7386b2551b4cb38715175dc"
+    },
+    "active_descriptors": {
+      "0": {
+        "name": "bm_M1_OT_Hmix12_textvqa_p2_500_missing468_v4_GPU0_affinity_v11",
+        "completion_contract": {},
+        "on_failure": "continue"
+      },
+      "1": {
+        "name": "bm_M1_OT_Hmix12_infovqa_p2_500_missing468_v4",
+        "completion_contract": {},
+        "on_failure": "continue"
+      }
+    },
+    "new_GPU_trials": 320,
+    "new_CPU_evidence_nodes": 1,
+    "all_old_node_objects_and_relative_order_preserved": true,
+    "gate_failure_skips_only_formal320": true
+  }
+}

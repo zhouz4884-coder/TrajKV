@@ -1,0 +1,57 @@
+{
+  "status": "PASS_CANONICAL_560_AND_ORIGINAL_DEPENDENCY_CLOSURE_CPU",
+  "expected_trials": 560,
+  "actual_PASS_trials": 560,
+  "raw_trials_are_not_independent_QA": true,
+  "quality_QA_added": 0,
+  "legacy656_calib32_oldE8_excluded": true,
+  "publication_eligible": true,
+  "ledger": "${EVIDENCE_ROOT}\\results\\timing_execution\\m1_canonical_source_representatives_v2\\ledger_v6.json",
+  "ledger_sha256": "7be927ebfd8fa00e3be54fbce4b918c11623ec17f4a1e84e32874d0caee8be5d",
+  "definitions": [
+    {
+      "dataset": "textvqa",
+      "step": "hardware_smoke",
+      "QA_per_method": 2,
+      "trials": 40,
+      "job": "configs/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20.json",
+      "job_sha256": "7cb540f5c449e4f2916751517aa2247f96eb3de7a80ea3a3c223666a04c50eb0",
+      "actual_PASS": true
+    },
+    {
+      "dataset": "textvqa",
+      "step": "formal_fixed_cohort",
+      "QA_per_method": 16,
+      "trials": 320,
+      "job": "configs/jobs/bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21.json",
+      "job_sha256": "e6f2337e6d317fe0a59d77895cfbba673324ee3247dd3a1855a3d2aa29abaa68",
+      "actual_PASS": true
+    },
+    {
+      "dataset": "infovqa",
+      "step": "hardware_smoke",
+      "QA_per_method": 2,
+      "trials": 40,
+      "job": "configs/jobs/bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26.json",
+      "job_sha256": "efb8437edb922670a892fdc3ca1d7e71a4b23380edbc21554cabe968f8a66165",
+      "actual_PASS": true
+    },
+    {
+      "dataset": "infovqa",
+      "step": "formal_fixed_cohort",
+      "QA_per_method": 8,
+      "trials": 160,
+      "job": "configs/jobs/bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27.json",
+      "job_sha256": "3bb64e5c1f18abb0000803dc995956d6cc27806f972c4a94b2b69f9f68f597b5",
+      "actual_PASS": true
+    }
+  ],
+  "missing": [],
+  "host_quiet_asserted": false,
+  "expected_source_line_checks": 140,
+  "unique_expected_original_sources": 14,
+  "required_auxiliary_quality_contracts": [
+    "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\timing_origin_support_contract.json"
+  ],
+  "attach_to_primary_contract": "${PROJECT_ROOT}\\configs\\publication\\M1_FP16_all4_full_reference_v1.json"
+}

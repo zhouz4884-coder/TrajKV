@@ -1,0 +1,43 @@
+{
+  "schema": "baseline_matrix.fixed_matrix.v1",
+  "phase": "TIMING560_ORIGINAL_PREDICTION_SUPPORT",
+  "rows": [
+    {
+      "model": "M1",
+      "method": "C2_bias32",
+      "dataset": "infovqa",
+      "count": 500,
+      "config": "configs/eval/M1_C2_bias32_infovqa_p2_500_v1.json",
+      "config_sha256": "6b7b4a6e763094eadfe657ce397300f42e6a716e1c2bb266048dbb21f9998663",
+      "partition": "budget16",
+      "frozen_declaration_status": "REGISTERED_EXISTING_ACTUAL_GPU_QUEUE_NODE_NOT_LAUNCHED_BY_REGISTRAR",
+      "view": "${EVIDENCE_ROOT}\\results\\extension_views\\budget_extension_v1\\M1_C2_bias32_infovqa_p2_500_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\scored\\extension_budget_extension_v1\\M1_C2_bias32_infovqa_p2_500_v1"
+    },
+    {
+      "model": "M1",
+      "method": "K2_g32R32",
+      "dataset": "textvqa",
+      "count": 500,
+      "config": "configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json",
+      "config_sha256": "f57462f89a773641a36f66c801812cf0a92747339a315b032eca3bdf5533f9d2",
+      "partition": "source_compat42",
+      "frozen_declaration_status": "ACTUAL_SAME_MODEL_REUSE_PLAN_VALID",
+      "view": "${EVIDENCE_ROOT}\\results\\extension_views\\source_compat_v1\\M1_K2_g32R32_textvqa_p2_500_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\scored\\extension_source_compat_v1\\M1_K2_g32R32_textvqa_p2_500_v1"
+    },
+    {
+      "model": "M1",
+      "method": "K2_g32R32",
+      "dataset": "infovqa",
+      "count": 500,
+      "config": "configs/eval/M1_K2_g32R32_infovqa_p2_500_v1.json",
+      "config_sha256": "59a3943ce1938cd8a67f51015553ba1a47bc5dbdfe5e31e7731e72d6943440d2",
+      "partition": "source_compat42",
+      "frozen_declaration_status": "ACTUAL_SAME_MODEL_REUSE_PLAN_VALID",
+      "view": "${EVIDENCE_ROOT}\\results\\extension_views\\source_compat_v1\\M1_K2_g32R32_infovqa_p2_500_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\scored\\extension_source_compat_v1\\M1_K2_g32R32_infovqa_p2_500_v1"
+    }
+  ],
+  "scope": "Existing exact fixed500 quality views required only to carry complete original timing-prediction source closures. Not new GPU inference, extra timing QA, P2-114 completion or full official splits."
+}

@@ -1,0 +1,1268 @@
+{
+  "schema": "baseline_matrix.public_support_files.v1",
+  "label": "canonical560_complete_two_CPU_closures_v1",
+  "completed_evidence_only": true,
+  "primary_quality_QA_added": 0,
+  "quality_QA_added": 0,
+  "scope": "Canonical five source profiles: Text2 smoke40 + Text16 formal320 + Info2 smoke40 + Info8 formal160. Natural answers, host_quiet=false; warm1/repeat3. No old E8/legacy656/Calib32; no QA or wall-only speed ranking.",
+  "required_current_bundle_contracts": [
+    {
+      "path": "${PROJECT_ROOT}\\configs\\publication\\M1_FP16_all4_full_reference_v1.json",
+      "sha256": "9fcf980022e5dfcded15132ea7a756962bcd23d8012da2e7587e5cee5e9d072c"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\timing_origin_support_contract.json",
+      "sha256": "8c1f0f3c6bb557bdb51088743e2015bb03a6ee1f9de4038e60dbe84b82cd9ecc"
+    }
+  ],
+  "files": [
+    {
+      "path": "${PROJECT_ROOT}\\docs\\CANONICAL_SOURCE_TIMING560_STAGE_v1.md",
+      "sha256": "9fc471b8647fe5fce0bcdf9293a720c94a389a67ab65c2c6885fad3c4debf108",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\prepare_canonical560_delivery_review_v1.py",
+      "sha256": "f9ee685ed1ee0b592ee55e8f39bf695bd8f1e543c17e4ef4616fe55e7324a555",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\prepare_remaining_phase_delivery_v1.py",
+      "sha256": "621b9a3bf29811e3b11292397c1248b19046154a8924dee87cd2fa1ae10c0650",
+      "role": "canonical560_support_CPU_generator"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2\\complete.json",
+      "sha256": "85e0d2bc64c18a7cfecb7f0080a585a200b43256de1e835c62743cd654ca32c8",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2\\launch_receipt.json",
+      "sha256": "a833913e4861411c2232086ee7eef388e39af0f685b5ab4f1b2a403755fe6418",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2\\manifest.json",
+      "sha256": "10fcb88caf7f081fc01e783798cdcad41ce148a5d649a83cf814b9c01dffed1e",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2\\records.jsonl",
+      "sha256": "3ae6e3f7e55409081613f26162a7d7977a53abe1eb4cd72540a7a20bd8da9d96",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2\\retrieval_receipt.json",
+      "sha256": "009c4cbeae4362ebd0be6c0d24bd51acab7cbc696e573da59a6a1c004531d4a9",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2\\source_inventory.json",
+      "sha256": "375df79818c7c93b1eeb3ce3259980aafca460e3608c47c2631ff20e707743f9",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2\\source_retrieval_receipt_v2.json",
+      "sha256": "3c08abd69db40c99be1e0d2372c995d61b62d83e346232fe6140a8951b635e1a",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5\\complete.json",
+      "sha256": "3a320a502b197326596696af402b70b67f6afee9984597af53ac49658f585da3",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5\\launch_receipt.json",
+      "sha256": "166616c4355714f3e84d45897c6ee128589392d0e8fcfacac87122d487a2f3aa",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5\\manifest.json",
+      "sha256": "81c8e15f7c33aefb5ac087f50ba4c91ef9bc5f36798001f3431d7423366281e4",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5\\records.jsonl",
+      "sha256": "5cb9f04ca5064825aa72c400005350b8104e5f7677a347af9c9f83c38c23b039",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5\\retrieval_receipt.json",
+      "sha256": "7fdd4d80991fa714a9d94940e4e3c93116bc419167f0f76c2901421db4cb6522",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5\\source_inventory.json",
+      "sha256": "375df79818c7c93b1eeb3ce3259980aafca460e3608c47c2631ff20e707743f9",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5\\source_retrieval_receipt_v2.json",
+      "sha256": "60f675836973b303a6aea791468fddbd01daeeeae48a7fa11d8ddcaece424065",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4\\complete.json",
+      "sha256": "acaeace782ccbdbe83bf15c6a1f522ceb8192715acd7eaa2a7dd497a070e1b84",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4\\launch_receipt.json",
+      "sha256": "d0728b9570f783541bf6f9fa3e2fc7fc846cdf44e6448e1288a909f5adae8909",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4\\manifest.json",
+      "sha256": "6f17ea0b1c8d01d739e0d17562ce2380eabd997d7ca34713ec1c1bf713543134",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4\\records.jsonl",
+      "sha256": "aeee09e811bb4896cd1e1949ddce56f9259c15196fe016d4c245cad4b8c6eccf",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4\\retrieval_receipt.json",
+      "sha256": "0d913d51edc3832c33a6a13aa99aeca295798c911af8e08ad1889668826ce24e",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4\\source_inventory.json",
+      "sha256": "375df79818c7c93b1eeb3ce3259980aafca460e3608c47c2631ff20e707743f9",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4\\source_retrieval_receipt_v2.json",
+      "sha256": "a60c511247814a8d9b599b0fc1663e3cfd16bed7f448fd61d133cc5b50fc66b0",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5\\complete.json",
+      "sha256": "60381660c277dbf491b9a0ea1b23e717389a84f1915b3f486697053ff5774ce3",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5\\launch_receipt.json",
+      "sha256": "4245f025cf51a83f73922a31437127dc7103d7b1918fe39a12a6cdde1371c241",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5\\manifest.json",
+      "sha256": "f634253968fe892181a4564ec43130c1c4e689d816299f96064633e9d1b1289b",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5\\records.jsonl",
+      "sha256": "989a7a04400e546c43b575219eec75ea1f2bac6cef8e3d7e9b984d16cc856785",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5\\retrieval_receipt.json",
+      "sha256": "0176128383283a8f1668a35e6acc21caed46afe1c9d021ef04a67fffd106e5e4",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5\\source_inventory.json",
+      "sha256": "375df79818c7c93b1eeb3ce3259980aafca460e3608c47c2631ff20e707743f9",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5\\source_retrieval_receipt_v2.json",
+      "sha256": "03f9afb4c46852755b455cb0c52a40b4cd53a22d56aef514d6f5a025a4467531",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4\\complete.json",
+      "sha256": "333f6d7632410214288ebfa17325bd393887e5ff7df0540e10fead83296b1038",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4\\launch_receipt.json",
+      "sha256": "5cc34c803e1cb1bb78e7b3675ee6a0372faac3a35faeec45fec69877ce9ca6a0",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4\\manifest.json",
+      "sha256": "9645efd23130bbc2c6cb4280300ffc497861588bce2a884720c795f7c0350c02",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4\\records.jsonl",
+      "sha256": "2e6baac5e5e79ed28e168bd5195a380694f7034fd81a8edc7e5284bfc75c178c",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4\\retrieval_receipt.json",
+      "sha256": "be9818495221870b967504cdb7ff49176ad0abafca52ca2b69fd994cc95058b1",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4\\source_inventory.json",
+      "sha256": "375df79818c7c93b1eeb3ce3259980aafca460e3608c47c2631ff20e707743f9",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4\\source_retrieval_receipt_v2.json",
+      "sha256": "9fa7de396b4a8591f4b9d004d8c5013133aa9610e9f3df7bdf06f362df1ae06d",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1\\complete.json",
+      "sha256": "ebda0ba467e52df1303c5acce506042d9f5bc793ee798381687c3350f99c14fa",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1\\launch_receipt.json",
+      "sha256": "aa1f04c8652908b9e69073b7e832a114c9d2f85a5522cdead16ab3ae992d9221",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1\\manifest.json",
+      "sha256": "699e0c88a97b66664e28166c4e93b9ef93cf8d16b31d0a4d793c7b5e69b42a35",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1\\records.jsonl",
+      "sha256": "2fcf32c29f2f5443abd2c35663d984bc99a63dcaf994d593ee6f519feb18ff79",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1\\retrieval_receipt.json",
+      "sha256": "e80ff2a72c78709c712cf4ea6cc3f41c2c133db0ce37c3dc00c61699d32d1a65",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1\\source_evaluate.py",
+      "sha256": "da0c80d4bd621a904836427dcd7e9ed46d1538290961fb34e2364f276881d06f",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1\\source_inventory.json",
+      "sha256": "be85cbf69b5fb2847363f80f61be3df5f81b7cac3b53cce1c32410bbf8daafe9",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1\\source_retrieval_receipt_v2.json",
+      "sha256": "23283b9148a73e88092599c0c1755749bf8840efa085381bc09911bb481d5d17",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1\\complete.json",
+      "sha256": "220cae6292319b31e2059d7d03b050a515cd2785363758c94445bbbae96533b1",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1\\launch_receipt.json",
+      "sha256": "e837a3e430470caa60b220619043bcfbba2d5411870f8fc9fdf844a3f11cb843",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1\\manifest.json",
+      "sha256": "6f36dd54635362584013a8408e42a28f83d2cef42c10b443c94acb9df316b4bc",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1\\records.jsonl",
+      "sha256": "574dc6e01dd9a84783fcb2b377cf52f928f5e0fbcf0c763a71367c8a330c0ab1",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1\\retrieval_receipt.json",
+      "sha256": "73e1df222adcc00712c6e8348dfa4940632b994865b16325d8b839179c75148c",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1\\source_evaluate.py",
+      "sha256": "da0c80d4bd621a904836427dcd7e9ed46d1538290961fb34e2364f276881d06f",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1\\source_inventory.json",
+      "sha256": "be85cbf69b5fb2847363f80f61be3df5f81b7cac3b53cce1c32410bbf8daafe9",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1\\source_retrieval_receipt_v2.json",
+      "sha256": "8a0090c42152cb1ed18ad1e09c5ee4d765359d83d33c75d3a14bd0909567812b",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1\\complete.json",
+      "sha256": "c6e4253ff14de3fd881445cf7d882aef50db7876714a85a9858f3030c314a867",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1\\launch_receipt.json",
+      "sha256": "4508d9b32d027eb34ea82c65502e1f3e6ebd1c2cf4316d424038ebc4cf32f374",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1\\manifest.json",
+      "sha256": "b8c97d667ad43f11cd198ef7faa80c73b4cce281234f002a34bfe4ad64cae594",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1\\records.jsonl",
+      "sha256": "5858d91a4e47dc25014bdbb4136da29309d9def93d75fefb38dfe563ba225f04",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1\\retrieval_receipt.json",
+      "sha256": "38ede3978a39ff0473c5a32b50776c9300fbbe83055f770abac14e47fac0b0b2",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1\\source_evaluate.py",
+      "sha256": "c4d73e61efff308051dd4f5e7c450ae4d38f7dc3406f61456b26e935a1423ed4",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1\\source_inventory.json",
+      "sha256": "d2f964729eb929cac94560bcaf885e70475721c93f4dfa9a24c5c532cd61641f",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1\\source_retrieval_receipt_v2.json",
+      "sha256": "fe9a8a6483337af9d4d95ff26aff6bb08d960a5f29e176da85b01ba7f34f7433",
+      "role": "expected_model_output_original_quality_origin"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\audit\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\audit.json",
+      "sha256": "94063b60b4fc497a9c7e52ddc0d6862ac6d4b270994c45f06bb14dd5664feeb9",
+      "role": "independent_cpu_timing_validation"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\audit\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\per_QA.csv",
+      "sha256": "b69d17b0b1b2315e5888dd379198ec053250b984b7b2ab45b71f9affe7f93e48",
+      "role": "independent_cpu_timing_validation"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\audit\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\audit.json",
+      "sha256": "35debd8b53949e45f6b38ae0d784f9703d5d9f244ca440b2f2f0ce24101d0609",
+      "role": "independent_cpu_timing_validation"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\audit\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\per_QA.csv",
+      "sha256": "c78954663004f81c78692e7bf00a6e3931aae6714ec779605d826239f17648a6",
+      "role": "independent_cpu_timing_validation"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\audit\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\audit.json",
+      "sha256": "47a7e63b8005ec95305f16a9902e32ee206d8688a839cb6b4ef01400c0f1a334",
+      "role": "independent_cpu_timing_validation"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\audit\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\per_QA.csv",
+      "sha256": "5cb7b755e845f3c4bb38d81f3378e4eafba44c33cff4e17ad1f61421644f0360",
+      "role": "independent_cpu_timing_validation"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\audit\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\audit.json",
+      "sha256": "4cb2372f10427c5cdaa2a54d3a9679988598218afef32bf575f34656de245437",
+      "role": "independent_cpu_timing_validation"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\audit\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\per_QA.csv",
+      "sha256": "848b68ccb0ff4556067829ebf944d31ce27f87c37df07fdaf2921578815f25df",
+      "role": "independent_cpu_timing_validation"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\domain_timing.csv",
+      "sha256": "514378849c654eb1267497316513434d6cd78e42af3a50685fcbef35f3c8728d",
+      "role": "browsable_domain_timing_scalar_table"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\domain_timing.json",
+      "sha256": "956048bbd024220cc03c414ba4e264b691e69ca43d84c73788def5d7e89c819f",
+      "role": "browsable_domain_timing_summary"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\readiness.json",
+      "sha256": "20b47798078488f8cb262800eba414772cfb24deda7739e209a65553d8b257bf",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\timing_delivery_recipe.json",
+      "sha256": "846ecfdb6b08d8b62d0870d8d26d75fbc7e647d9528e1cac37e7b0247e5968b5",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\timing_expected_origin_binding.json",
+      "sha256": "67c361130c64dc22cff0b34f739543dfe3d6ecf8ba923d189b0e317f27a9c7b6",
+      "role": "exact_expected_record_original_source_binding_audit"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\audit\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\audit.json",
+      "sha256": "94063b60b4fc497a9c7e52ddc0d6862ac6d4b270994c45f06bb14dd5664feeb9",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\audit\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\per_QA.csv",
+      "sha256": "b69d17b0b1b2315e5888dd379198ec053250b984b7b2ab45b71f9affe7f93e48",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\audit\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\audit.json",
+      "sha256": "35debd8b53949e45f6b38ae0d784f9703d5d9f244ca440b2f2f0ce24101d0609",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\audit\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\per_QA.csv",
+      "sha256": "c78954663004f81c78692e7bf00a6e3931aae6714ec779605d826239f17648a6",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\audit\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\audit.json",
+      "sha256": "47a7e63b8005ec95305f16a9902e32ee206d8688a839cb6b4ef01400c0f1a334",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\audit\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\per_QA.csv",
+      "sha256": "5cb7b755e845f3c4bb38d81f3378e4eafba44c33cff4e17ad1f61421644f0360",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\audit\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\audit.json",
+      "sha256": "4cb2372f10427c5cdaa2a54d3a9679988598218afef32bf575f34656de245437",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\audit\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\per_QA.csv",
+      "sha256": "848b68ccb0ff4556067829ebf944d31ce27f87c37df07fdaf2921578815f25df",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\domain_timing.csv",
+      "sha256": "514378849c654eb1267497316513434d6cd78e42af3a50685fcbef35f3c8728d",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\domain_timing.json",
+      "sha256": "956048bbd024220cc03c414ba4e264b691e69ca43d84c73788def5d7e89c819f",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\readiness.json",
+      "sha256": "7362eac5d992c2ad95e2fa6b21ace88f7751a22e2fde90ea4ae9eba3b4d0d46b",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\timing_delivery_recipe.json",
+      "sha256": "3dee81ed64c5bbbbaa1c86e89c0593480dc2bdd25cdbd2e7ada6421d525ae5de",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_independent_full_CPU_B_v1\\timing_expected_origin_binding.json",
+      "sha256": "e01d447b62d885d83d951e2cd41b466d5eaaf18e5e9a5af4dee58b37937fb20a",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_reviewed_delivery_v1\\independent_closure_comparison.json",
+      "sha256": "cc4e1e64ae9f318951e48cc7a09de78e009c9c6af865f3c307afc5207104e224",
+      "role": "canonical560_independent_validation_and_browsable_report"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\complete.json",
+      "sha256": "66248390bcfa283794d7dc41379f06ec1aeb302ee5907787f9532bf379c65757",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\expected_predictions.json",
+      "sha256": "a900380decddae78c556ff41ddfc80356098ef10043b64bd885805b95f34d831",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\launch_receipt.json",
+      "sha256": "f7948d6e697204d34b8b029a6f1d3ad8dd12e945cb69bfc6a01f74d5666e8f21",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\manifest.json",
+      "sha256": "dcc51f56a277a3ce7520f424b9cf18ee66698ad527e628ab54d8b2872efb492e",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\plan.json",
+      "sha256": "6725568ac8f5b2438c3342562eded95cfb7568bae0bcdb570f9c06bffe77d632",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\records.jsonl",
+      "sha256": "8aaa77990eba105dc40d3949b3d1ff91e88895bf8751a45ae29883d6547ed908",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\source_benchmark_speed.py",
+      "sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\source_inventory.json",
+      "sha256": "b9b7be67fede247ca926fab42f78376a514a074ae146bd01e5f2927ce1b16fc9",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\speed_retrieval_receipt_v1.json",
+      "sha256": "6305d9ffd90e340f96beaa485fb41c3031283f3c17de24be76a31b5333e101d9",
+      "role": "independent_remote_raw_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1\\summary.json",
+      "sha256": "3ee7398e43c51c7e65bc83e36e085473c9fea4946100efa63318b7589710bc7d",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\complete.json",
+      "sha256": "ede18c3ec5a8e68d8b440828b0c14a02ead7816311dcd6b5300182b0c62affef",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\expected_predictions.json",
+      "sha256": "bd0765f7251b9f2d19e870fb03c2dd81b371723bb3adde8e157323382c90df15",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\launch_receipt.json",
+      "sha256": "8edcbea0fd0f4466fe5366cc5ad31fc426efcf5e97d835fda549c347e96a9c1a",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\manifest.json",
+      "sha256": "f16073977735901b8b780dc91971548d564803acdbbe3253b4cc8c1b8d13c367",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\plan.json",
+      "sha256": "84da45db50303b650008e6f69140e7a0e0a68d259ebe866211116158c831a676",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\records.jsonl",
+      "sha256": "cda05b96632b2f1b9ebedbaf66e293884cc0df4668cb470b44cda08d1271caf6",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\source_benchmark_speed.py",
+      "sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\source_inventory.json",
+      "sha256": "b9b7be67fede247ca926fab42f78376a514a074ae146bd01e5f2927ce1b16fc9",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\speed_retrieval_receipt_v1.json",
+      "sha256": "ff1bedf237062d2a6cdd6a88e92c5ce0b2ce9e6602c4646eb7c14bdf55a8591c",
+      "role": "independent_remote_raw_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1\\summary.json",
+      "sha256": "2c4d588c349d2afe82ff4af750d6d83fe3adb0c08bf3ad76a3f371a3de1cf91d",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\complete.json",
+      "sha256": "bf6bfba872e11c8f2445355e26d8ab13f7b5a7e6cef996752857022b52fd229c",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\expected_predictions.json",
+      "sha256": "e1a3929381663e368df4507bd1e8afe7478c2aa77101909bb631340412ae8b82",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\launch_receipt.json",
+      "sha256": "6ce90c7f0e0f0647e2ac50be216553341c8d71c68d852b17e5c5fb987814c83e",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\manifest.json",
+      "sha256": "04c47fc03cdeeef02f8b3d52794c2b41dbd5bd184db86c056f08b69c93eefb25",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\plan.json",
+      "sha256": "bc1fb6b5b20461299650e54434d5196613d1414e9d621b7d9f51f9fd09aece4f",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\records.jsonl",
+      "sha256": "7d8f282f4ecec478d6191fb40535d267f784d961c0171f6a9cad05124560a552",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\source_benchmark_speed.py",
+      "sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\source_inventory.json",
+      "sha256": "b9b7be67fede247ca926fab42f78376a514a074ae146bd01e5f2927ce1b16fc9",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\speed_retrieval_receipt_v1.json",
+      "sha256": "1b2c6e3129b0e2bae2f08a0dfa221b6f9726ec744d8341a7cab3e45ce65a136d",
+      "role": "independent_remote_raw_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1\\summary.json",
+      "sha256": "05f585af54124a523d914b0218054af595461e7d513ab4beba6150dfa992d148",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\complete.json",
+      "sha256": "0447012e18293fcd2d999cc28035a6691ff79fec54b0aa10c74cb11d52f03c5b",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\expected_predictions.json",
+      "sha256": "07837010bc8e1643e72d10a08e6f01874d64664fa334c9111b5cadaad593ab96",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\launch_receipt.json",
+      "sha256": "72bd9c2cb8c3cd8c6f37db3e3047cb9576bfc87334f5817ae92c41c38e210d11",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\manifest.json",
+      "sha256": "4ab6ebea602340a2bfb2d567f6857ae59ebe5be31a9b0d72d134ecbec310f237",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\plan.json",
+      "sha256": "35b8098d2df410b15fd54bc1c406c6d4e6047cf2cf20dc19aa1f0475b783129f",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\records.jsonl",
+      "sha256": "81d964a5ad2b1f145f0caffafa8879b1a1b30163a19331008ffecd62826fcbae",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\source_benchmark_speed.py",
+      "sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\source_inventory.json",
+      "sha256": "b9b7be67fede247ca926fab42f78376a514a074ae146bd01e5f2927ce1b16fc9",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\speed_retrieval_receipt_v1.json",
+      "sha256": "8a3f7f1837255c077856dc21065d2ba91b16bfd1026fc460f406e9301681a8e2",
+      "role": "independent_remote_raw_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\speed_representatives\\M1_source_representatives_textvqa_2_hardware_smoke_v2\\summary.json",
+      "sha256": "9515cd8ce315cf447cf6521985d55e92d5bd2a625a8e8501d463f29be7a067e3",
+      "role": "timing_original_raw_or_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_execution\\m1_canonical_source_representatives_v2\\ledger_v6.json",
+      "sha256": "7be927ebfd8fa00e3be54fbce4b918c11623ec17f4a1e84e32874d0caee8be5d",
+      "role": "immutable_canonical_execution_ledger"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\job.json",
+      "sha256": "efb8437edb922670a892fdc3ca1d7e71a4b23380edbc21554cabe968f8a66165",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\launch_receipt.json",
+      "sha256": "f7948d6e697204d34b8b029a6f1d3ad8dd12e945cb69bfc6a01f74d5666e8f21",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\retrieval_receipt.json",
+      "sha256": "a9c0c3106f63a7045320450a4b871f905a3b79cc161280c6a86109e1a8ae00c6",
+      "role": "independent_executed_dependency_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\attention_bridge.py",
+      "sha256": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\benchmark_speed.py",
+      "sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\cache_bridge.py",
+      "sha256": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\dataset_registry.py",
+      "sha256": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\m1_protocol.py",
+      "sha256": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\methods\\calibquant_adapter.py",
+      "sha256": "fe8f42d9460a2d209648c3fc9da3dfb4d04cc2c189f61f0d897c7c87672a3132",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\methods\\calibquant_fp32_bias_adapter.py",
+      "sha256": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\methods\\eviction_adapter.py",
+      "sha256": "91b4ea675763d410f491955394ba1a8c42c09d3be7aa6c35c8d4fa852788372b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\methods\\kivi_example_adapter.py",
+      "sha256": "9fb779267f600553a0e89ac951095f1d18758d957588afaf31fadcfc774978b0",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\methods\\kivi_example_reader.py",
+      "sha256": "ec3680c9d1c5c6bc9643d445e5f32b691d2ad872a0872d2e6951e5fc4c57e412",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\methods\\turboquant_adapter.py",
+      "sha256": "bd824c42b9a653001c88f542879cea820865ff31b5ab342c2322f1d9b4f2bfe5",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\methods\\turboquant_onlyterp_mse_adapter.py",
+      "sha256": "ef52ac83eaabae8cbc41c46bc976bc6d6fcb696f2897bcb2bda534e2431ee86e",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\model_registry.py",
+      "sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\code\\ownership.py",
+      "sha256": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\configs\\methods\\kivi_example_source_v1.json",
+      "sha256": "4bcc837a6611190e0a87f1f3b1c95c74044e6ef92f4cd2039bd4f0dd5e13498b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\configs\\methods\\onlyterp_mse_source_lock_v2.json",
+      "sha256": "e425980143e4b0bad408ddd910b4dd8682be33f3e4f24a319096eef27e1b7d4b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\third_party\\calibquant\\calibquant.py",
+      "sha256": "b4cca4467a88ba40d784bcc50309fb510a935859fc2cf297d944d1e743f2c194",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\third_party\\kivi\\example.py",
+      "sha256": "e78a57296c1089d1dae42f4680b2c0ec9ab8057172db95415810b0de32284a8b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\third_party\\kivi\\quant\\new_pack.py",
+      "sha256": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\third_party\\kvpress\\kvpress\\presses\\pyramidkv_press.py",
+      "sha256": "3038f17a91b262f934eb45d9633896a6c8c9f70074dd3bf363df3c1b964852f9",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\third_party\\kvpress\\kvpress\\presses\\snapkv_press.py",
+      "sha256": "37092ff56b75248c60613445df9656260b746a1a334f50db8cac4119db902712",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source\\third_party\\turboquant_onlyterp\\src\\cache.py",
+      "sha256": "cafa0d42ab72a1ff468ed70e36f855585f2a38c8829a0a7933ecfbfef5e77431",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_2_hardware_smoke_v2_actualC2Info_v1_GPU0_affinity_v26\\source_inventory.json",
+      "sha256": "b9b7be67fede247ca926fab42f78376a514a074ae146bd01e5f2927ce1b16fc9",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\job.json",
+      "sha256": "3bb64e5c1f18abb0000803dc995956d6cc27806f972c4a94b2b69f9f68f597b5",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\launch_receipt.json",
+      "sha256": "8edcbea0fd0f4466fe5366cc5ad31fc426efcf5e97d835fda549c347e96a9c1a",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\retrieval_receipt.json",
+      "sha256": "b67880fbd92929cca83ede32c868ca5fb81d96af32d965f43b76b55fe7f18711",
+      "role": "independent_executed_dependency_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\attention_bridge.py",
+      "sha256": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\benchmark_speed.py",
+      "sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\cache_bridge.py",
+      "sha256": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\dataset_registry.py",
+      "sha256": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\m1_protocol.py",
+      "sha256": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\methods\\calibquant_adapter.py",
+      "sha256": "fe8f42d9460a2d209648c3fc9da3dfb4d04cc2c189f61f0d897c7c87672a3132",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\methods\\calibquant_fp32_bias_adapter.py",
+      "sha256": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\methods\\eviction_adapter.py",
+      "sha256": "91b4ea675763d410f491955394ba1a8c42c09d3be7aa6c35c8d4fa852788372b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\methods\\kivi_example_adapter.py",
+      "sha256": "9fb779267f600553a0e89ac951095f1d18758d957588afaf31fadcfc774978b0",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\methods\\kivi_example_reader.py",
+      "sha256": "ec3680c9d1c5c6bc9643d445e5f32b691d2ad872a0872d2e6951e5fc4c57e412",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\methods\\turboquant_adapter.py",
+      "sha256": "bd824c42b9a653001c88f542879cea820865ff31b5ab342c2322f1d9b4f2bfe5",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\methods\\turboquant_onlyterp_mse_adapter.py",
+      "sha256": "ef52ac83eaabae8cbc41c46bc976bc6d6fcb696f2897bcb2bda534e2431ee86e",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\model_registry.py",
+      "sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\code\\ownership.py",
+      "sha256": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\configs\\methods\\kivi_example_source_v1.json",
+      "sha256": "4bcc837a6611190e0a87f1f3b1c95c74044e6ef92f4cd2039bd4f0dd5e13498b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\configs\\methods\\onlyterp_mse_source_lock_v2.json",
+      "sha256": "e425980143e4b0bad408ddd910b4dd8682be33f3e4f24a319096eef27e1b7d4b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\third_party\\calibquant\\calibquant.py",
+      "sha256": "b4cca4467a88ba40d784bcc50309fb510a935859fc2cf297d944d1e743f2c194",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\third_party\\kivi\\example.py",
+      "sha256": "e78a57296c1089d1dae42f4680b2c0ec9ab8057172db95415810b0de32284a8b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\third_party\\kivi\\quant\\new_pack.py",
+      "sha256": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\third_party\\kvpress\\kvpress\\presses\\pyramidkv_press.py",
+      "sha256": "3038f17a91b262f934eb45d9633896a6c8c9f70074dd3bf363df3c1b964852f9",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\third_party\\kvpress\\kvpress\\presses\\snapkv_press.py",
+      "sha256": "37092ff56b75248c60613445df9656260b746a1a334f50db8cac4119db902712",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source\\third_party\\turboquant_onlyterp\\src\\cache.py",
+      "sha256": "cafa0d42ab72a1ff468ed70e36f855585f2a38c8829a0a7933ecfbfef5e77431",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_actualC2Info_v1_GPU0_affinity_v27\\source_inventory.json",
+      "sha256": "b9b7be67fede247ca926fab42f78376a514a074ae146bd01e5f2927ce1b16fc9",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\job.json",
+      "sha256": "e6f2337e6d317fe0a59d77895cfbba673324ee3247dd3a1855a3d2aa29abaa68",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\launch_receipt.json",
+      "sha256": "6ce90c7f0e0f0647e2ac50be216553341c8d71c68d852b17e5c5fb987814c83e",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\retrieval_receipt.json",
+      "sha256": "563151c8ee7c288101f9c039dc0112e65b772939afca7bec1233158b5439ff3e",
+      "role": "independent_executed_dependency_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\attention_bridge.py",
+      "sha256": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\benchmark_speed.py",
+      "sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\cache_bridge.py",
+      "sha256": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\dataset_registry.py",
+      "sha256": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\m1_protocol.py",
+      "sha256": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\methods\\calibquant_adapter.py",
+      "sha256": "fe8f42d9460a2d209648c3fc9da3dfb4d04cc2c189f61f0d897c7c87672a3132",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\methods\\calibquant_fp32_bias_adapter.py",
+      "sha256": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\methods\\eviction_adapter.py",
+      "sha256": "91b4ea675763d410f491955394ba1a8c42c09d3be7aa6c35c8d4fa852788372b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\methods\\kivi_example_adapter.py",
+      "sha256": "9fb779267f600553a0e89ac951095f1d18758d957588afaf31fadcfc774978b0",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\methods\\kivi_example_reader.py",
+      "sha256": "ec3680c9d1c5c6bc9643d445e5f32b691d2ad872a0872d2e6951e5fc4c57e412",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\methods\\turboquant_adapter.py",
+      "sha256": "bd824c42b9a653001c88f542879cea820865ff31b5ab342c2322f1d9b4f2bfe5",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\methods\\turboquant_onlyterp_mse_adapter.py",
+      "sha256": "ef52ac83eaabae8cbc41c46bc976bc6d6fcb696f2897bcb2bda534e2431ee86e",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\model_registry.py",
+      "sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\code\\ownership.py",
+      "sha256": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\configs\\methods\\kivi_example_source_v1.json",
+      "sha256": "4bcc837a6611190e0a87f1f3b1c95c74044e6ef92f4cd2039bd4f0dd5e13498b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\configs\\methods\\onlyterp_mse_source_lock_v2.json",
+      "sha256": "e425980143e4b0bad408ddd910b4dd8682be33f3e4f24a319096eef27e1b7d4b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\third_party\\calibquant\\calibquant.py",
+      "sha256": "b4cca4467a88ba40d784bcc50309fb510a935859fc2cf297d944d1e743f2c194",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\third_party\\kivi\\example.py",
+      "sha256": "e78a57296c1089d1dae42f4680b2c0ec9ab8057172db95415810b0de32284a8b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\third_party\\kivi\\quant\\new_pack.py",
+      "sha256": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\third_party\\kvpress\\kvpress\\presses\\pyramidkv_press.py",
+      "sha256": "3038f17a91b262f934eb45d9633896a6c8c9f70074dd3bf363df3c1b964852f9",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\third_party\\kvpress\\kvpress\\presses\\snapkv_press.py",
+      "sha256": "37092ff56b75248c60613445df9656260b746a1a334f50db8cac4119db902712",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source\\third_party\\turboquant_onlyterp\\src\\cache.py",
+      "sha256": "cafa0d42ab72a1ff468ed70e36f855585f2a38c8829a0a7933ecfbfef5e77431",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1_GPU0_affinity_v21\\source_inventory.json",
+      "sha256": "b9b7be67fede247ca926fab42f78376a514a074ae146bd01e5f2927ce1b16fc9",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\job.json",
+      "sha256": "7cb540f5c449e4f2916751517aa2247f96eb3de7a80ea3a3c223666a04c50eb0",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\launch_receipt.json",
+      "sha256": "72bd9c2cb8c3cd8c6f37db3e3047cb9576bfc87334f5817ae92c41c38e210d11",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\retrieval_receipt.json",
+      "sha256": "8e584ed7f332a89a8643bb49069fec596337e13529c5bd14d568327f8cc80f32",
+      "role": "independent_executed_dependency_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\attention_bridge.py",
+      "sha256": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\benchmark_speed.py",
+      "sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\cache_bridge.py",
+      "sha256": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\dataset_registry.py",
+      "sha256": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\m1_protocol.py",
+      "sha256": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\methods\\calibquant_adapter.py",
+      "sha256": "fe8f42d9460a2d209648c3fc9da3dfb4d04cc2c189f61f0d897c7c87672a3132",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\methods\\calibquant_fp32_bias_adapter.py",
+      "sha256": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\methods\\eviction_adapter.py",
+      "sha256": "91b4ea675763d410f491955394ba1a8c42c09d3be7aa6c35c8d4fa852788372b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\methods\\kivi_example_adapter.py",
+      "sha256": "9fb779267f600553a0e89ac951095f1d18758d957588afaf31fadcfc774978b0",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\methods\\kivi_example_reader.py",
+      "sha256": "ec3680c9d1c5c6bc9643d445e5f32b691d2ad872a0872d2e6951e5fc4c57e412",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\methods\\turboquant_adapter.py",
+      "sha256": "bd824c42b9a653001c88f542879cea820865ff31b5ab342c2322f1d9b4f2bfe5",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\methods\\turboquant_onlyterp_mse_adapter.py",
+      "sha256": "ef52ac83eaabae8cbc41c46bc976bc6d6fcb696f2897bcb2bda534e2431ee86e",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\model_registry.py",
+      "sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\code\\ownership.py",
+      "sha256": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\configs\\methods\\kivi_example_source_v1.json",
+      "sha256": "4bcc837a6611190e0a87f1f3b1c95c74044e6ef92f4cd2039bd4f0dd5e13498b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\configs\\methods\\onlyterp_mse_source_lock_v2.json",
+      "sha256": "e425980143e4b0bad408ddd910b4dd8682be33f3e4f24a319096eef27e1b7d4b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\third_party\\calibquant\\calibquant.py",
+      "sha256": "b4cca4467a88ba40d784bcc50309fb510a935859fc2cf297d944d1e743f2c194",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\third_party\\kivi\\example.py",
+      "sha256": "e78a57296c1089d1dae42f4680b2c0ec9ab8057172db95415810b0de32284a8b",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\third_party\\kivi\\quant\\new_pack.py",
+      "sha256": "3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\third_party\\kvpress\\kvpress\\presses\\pyramidkv_press.py",
+      "sha256": "3038f17a91b262f934eb45d9633896a6c8c9f70074dd3bf363df3c1b964852f9",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\third_party\\kvpress\\kvpress\\presses\\snapkv_press.py",
+      "sha256": "37092ff56b75248c60613445df9656260b746a1a334f50db8cac4119db902712",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source\\third_party\\turboquant_onlyterp\\src\\cache.py",
+      "sha256": "cafa0d42ab72a1ff468ed70e36f855585f2a38c8829a0a7933ecfbfef5e77431",
+      "role": "executed_source_dependency"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\timing_source_proofs_v1\\bm_M1_source_representatives_textvqa_2_hardware_smoke_v2_GPU0_affinity_v20\\source_inventory.json",
+      "sha256": "b9b7be67fede247ca926fab42f78376a514a074ae146bd01e5f2927ce1b16fc9",
+      "role": "executed_source_dependency"
+    }
+  ],
+  "counts": {
+    "new_canonical_trials": 560,
+    "warmup_trials": 140,
+    "measured_trials": 420,
+    "Text_smoke_trials": 40,
+    "Text_formal_trials": 320,
+    "Info_smoke_trials": 40,
+    "Info_formal_trials": 160,
+    "legacy_E8_legacy656_Calib32_trials_added": 0,
+    "timing_quality_QA_added": 0,
+    "existing_support_only_fixed500_view_QA": 1500,
+    "new_GPU_QA_by_CPU_packaging": 0
+  }
+}

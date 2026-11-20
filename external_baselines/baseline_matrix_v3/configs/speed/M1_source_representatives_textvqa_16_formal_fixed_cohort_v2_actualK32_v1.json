@@ -1,0 +1,22 @@
+{
+  "schema": "baseline_matrix.speed_job.v1",
+  "eval_configs": [
+    "${DATA_ROOT}/configs/eval/M1_F_textvqa_p2_500_v1.json",
+    "${DATA_ROOT}/configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json",
+    "${DATA_ROOT}/configs/eval/M1_C2_bias32_textvqa_p2_500_v1.json",
+    "${DATA_ROOT}/configs/eval/M1_E_r0888_textvqa_p2_500_v1.json",
+    "${DATA_ROOT}/configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json"
+  ],
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+  "selection": {
+    "mode": "first",
+    "count": 16
+  },
+  "repeat": 3,
+  "warmup_per_qa": 1,
+  "seed": 20261120,
+  "expected_predictions": "${DATA_ROOT}/configs/speed/expected_M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_actualK32_v1.json",
+  "allocator_policy": "retain_caching_allocator",
+  "verify_gpu_exclusive": true,
+  "host_quiet_asserted": false
+}

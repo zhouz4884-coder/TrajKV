@@ -2,296 +2,118 @@
   {
     "phase": {
       "status": "PASS_DECLARED_MATRIX_COMPLETE",
-      "phase_label": "ONLYTERP_HMIX12_REAL64",
-      "family": "onlyterp_hmix12_real64",
-      "coverage_scope": "OT_Hmix12 real fixed pilot: Text32 and Info32, 64 distinct QA for this source point; metrics reported separately. Not full official split, not production/paper-exact table, not controlled speed.",
+      "phase_label": "TIMING560_REQUIRED_ORIGINAL_PREDICTION_SUPPORT",
+      "family": "timing560_original_prediction_support",
+      "coverage_scope": "Existing exact fixed500 quality views required only to carry complete original timing-prediction source closures. Not new GPU inference, extra timing QA, P2-114 completion or full official splits.",
       "completion_scope": "declared_matrix_only",
       "whole_external_library_completion_assessed": false,
-      "declared_matrix_source_sha256": "d78b24eee1662348ee45c698c8f5fd59ab26c0af5e7a08571b082651d223137a",
-      "expected_cells": 2,
-      "verified_scored_cells": 2,
-      "expected_questions": 64,
-      "verified_scored_questions": 64,
-      "closed_artifact_cells": 2,
+      "declared_matrix_source_sha256": "9872c97b6bbdaca36f70a2d175bb269755c832672cc0e8d7f1259cad157d3104",
+      "expected_cells": 3,
+      "verified_scored_cells": 3,
+      "expected_questions": 1500,
+      "verified_scored_questions": 1500,
+      "closed_artifact_cells": 3,
       "missing": [],
       "observed": [
         {
-          "cell": "M1_OT_Hmix12_textvqa_stage64_target32_v3",
-          "questions": 32,
+          "cell": "M1_C2_bias32_infovqa_p2_500_v1",
+          "questions": 500,
           "kind": "derived_prediction_view",
           "raw_status": "PASS_RAW_COMPLETE",
           "score_status": "PASS_SCORED_COMPLETE",
           "origin_counts": {
-            "reused": 4,
-            "fresh": 28
+            "fresh": 500
           }
         },
         {
-          "cell": "M1_OT_Hmix12_infovqa_stage64_target32_v3",
-          "questions": 32,
+          "cell": "M1_K2_g32R32_textvqa_p2_500_v1",
+          "questions": 500,
           "kind": "derived_prediction_view",
           "raw_status": "PASS_RAW_COMPLETE",
           "score_status": "PASS_SCORED_COMPLETE",
           "origin_counts": {
-            "reused": 4,
-            "fresh": 28
+            "reused": 2,
+            "fresh": 498
+          }
+        },
+        {
+          "cell": "M1_K2_g32R32_infovqa_p2_500_v1",
+          "questions": 500,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "fresh": 500
           }
         }
       ]
     },
     "contract": {
       "schema": "baseline_matrix.public_phase_contract.v2",
-      "phase_label": "ONLYTERP_HMIX12_REAL64",
-      "family": "onlyterp_hmix12_real64",
-      "matrix": "configs/matrix/OnlyTerp_Hmix12_real64_publication_v1.json",
-      "coverage_scope": "OT_Hmix12 real fixed pilot: Text32 and Info32, 64 distinct QA for this source point; metrics reported separately. Not full official split, not production/paper-exact table, not controlled speed.",
-      "view_root": "${EVIDENCE_ROOT}\\results\\onlyterp_views",
-      "score_root": "${EVIDENCE_ROOT}\\results\\onlyterp_scored\\stage64_v3",
+      "phase_label": "TIMING560_REQUIRED_ORIGINAL_PREDICTION_SUPPORT",
+      "family": "timing560_original_prediction_support",
+      "matrix": "${EVIDENCE_ROOT}\\results\\publication\\canonical560_delivery_CPU_v1\\timing_origin_support_matrix.json",
+      "coverage_scope": "Existing exact fixed500 quality views required only to carry complete original timing-prediction source closures. Not new GPU inference, extra timing QA, P2-114 completion or full official splits.",
       "completion_policy": "all_expected_QA_pass",
       "completion_scope": "declared_matrix_only",
-      "whole_library_completion_assessed": false,
-      "fixture_only": false
+      "whole_library_completion_assessed": false
     },
     "phase_artifacts": [
       {
-        "cell": "M1_OT_Hmix12_textvqa_stage64_target32_v3",
-        "raw_dir": "results/onlyterp_views/stage64_text32_v3",
-        "scored_dir": "results/onlyterp_scored/stage64_v3/stage64_text32_v3",
-        "config": "configs/eval/M1_OT_Hmix12_textvqa_stage64_target32_v3.json",
+        "cell": "M1_C2_bias32_infovqa_p2_500_v1",
+        "raw_dir": "results/extension_views/budget_extension_v1/M1_C2_bias32_infovqa_p2_500_v1",
+        "scored_dir": "results/scored/extension_budget_extension_v1/M1_C2_bias32_infovqa_p2_500_v1",
+        "config": "configs/eval/M1_C2_bias32_infovqa_p2_500_v1.json",
         "kind": "derived_prediction_view",
-        "expected_QA": 32
+        "expected_QA": 500
       },
       {
-        "cell": "M1_OT_Hmix12_infovqa_stage64_target32_v3",
-        "raw_dir": "results/onlyterp_views/stage64_info32_v3",
-        "scored_dir": "results/onlyterp_scored/stage64_v3/stage64_info32_v3",
-        "config": "configs/eval/M1_OT_Hmix12_infovqa_stage64_target32_v3.json",
+        "cell": "M1_K2_g32R32_textvqa_p2_500_v1",
+        "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_textvqa_p2_500_v1",
+        "scored_dir": "results/scored/extension_source_compat_v1/M1_K2_g32R32_textvqa_p2_500_v1",
+        "config": "configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json",
         "kind": "derived_prediction_view",
-        "expected_QA": 32
+        "expected_QA": 500
+      },
+      {
+        "cell": "M1_K2_g32R32_infovqa_p2_500_v1",
+        "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_infovqa_p2_500_v1",
+        "scored_dir": "results/scored/extension_source_compat_v1/M1_K2_g32R32_infovqa_p2_500_v1",
+        "config": "configs/eval/M1_K2_g32R32_infovqa_p2_500_v1.json",
+        "kind": "derived_prediction_view",
+        "expected_QA": 500
       }
     ],
     "source_closure": [
       {
-        "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix12_textvqa_stage64_missing28_v3",
+        "raw_dir": "results/p2_missing/M1_C2_bias32_infovqa_p2_500_missing_v3",
         "kind": "original_inference_run"
       },
       {
-        "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix12_textvqa_stage8_missing2_v2",
-        "kind": "original_inference_run"
-      },
-      {
-        "raw_dir": "results/onlyterp_pilot_v1/M1_OT_Hmix12_textvqa_probe2_v1",
-        "kind": "original_inference_run"
-      },
-      {
-        "raw_dir": "results/onlyterp_views/stage64_text32_v3",
+        "raw_dir": "results/extension_views/budget_extension_v1/M1_C2_bias32_infovqa_p2_500_v1",
         "kind": "derived_prediction_view"
       },
       {
-        "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix12_infovqa_stage64_missing28_v3",
+        "raw_dir": "results/p1_smoke/M1_K2_g32R32_text_probe2_v1",
         "kind": "original_inference_run"
       },
       {
-        "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix12_infovqa_stage8_missing4_v2",
+        "raw_dir": "results/p2_kivi_example_missing/v2/M1_K2_g32R32_textvqa_p2_500_missing_v2",
         "kind": "original_inference_run"
       },
       {
-        "raw_dir": "results/onlyterp_views/stage64_info32_v3",
-        "kind": "derived_prediction_view"
-      }
-    ],
-    "declared_matrix_file": "configs/matrix/OnlyTerp_Hmix12_real64_publication_v1.json"
-  },
-  {
-    "phase": {
-      "status": "PASS_DECLARED_MATRIX_COMPLETE",
-      "phase_label": "ONLYTERP_HMIX23_REAL64",
-      "family": "onlyterp_hmix23_real64",
-      "coverage_scope": "OT_Hmix23 real fixed pilot: Text32 and Info32, 64 distinct QA for this source point; metrics reported separately. Not full official split, not production/paper-exact table, not controlled speed.",
-      "completion_scope": "declared_matrix_only",
-      "whole_external_library_completion_assessed": false,
-      "declared_matrix_source_sha256": "aa011da67478b2c28668f1d2ca497ff7d09b52b33eda83e999f799714c8e7304",
-      "expected_cells": 2,
-      "verified_scored_cells": 2,
-      "expected_questions": 64,
-      "verified_scored_questions": 64,
-      "closed_artifact_cells": 2,
-      "missing": [],
-      "observed": [
-        {
-          "cell": "M1_OT_Hmix23_textvqa_stage64_target32_v5",
-          "questions": 32,
-          "kind": "derived_prediction_view",
-          "raw_status": "PASS_RAW_COMPLETE",
-          "score_status": "PASS_SCORED_COMPLETE",
-          "origin_counts": {
-            "reused": 4,
-            "fresh": 28
-          }
-        },
-        {
-          "cell": "M1_OT_Hmix23_infovqa_stage64_target32_v5",
-          "questions": 32,
-          "kind": "derived_prediction_view",
-          "raw_status": "PASS_RAW_COMPLETE",
-          "score_status": "PASS_SCORED_COMPLETE",
-          "origin_counts": {
-            "reused": 4,
-            "fresh": 28
-          }
-        }
-      ]
-    },
-    "contract": {
-      "schema": "baseline_matrix.public_phase_contract.v2",
-      "phase_label": "ONLYTERP_HMIX23_REAL64",
-      "family": "onlyterp_hmix23_real64",
-      "matrix": "configs/matrix/OnlyTerp_Hmix23_real64_publication_v1.json",
-      "coverage_scope": "OT_Hmix23 real fixed pilot: Text32 and Info32, 64 distinct QA for this source point; metrics reported separately. Not full official split, not production/paper-exact table, not controlled speed.",
-      "view_root": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_views",
-      "score_root": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_scored\\stage64_v5",
-      "completion_policy": "all_expected_QA_pass",
-      "completion_scope": "declared_matrix_only",
-      "whole_library_completion_assessed": false,
-      "fixture_only": false
-    },
-    "phase_artifacts": [
-      {
-        "cell": "M1_OT_Hmix23_textvqa_stage64_target32_v5",
-        "raw_dir": "results/onlyterp_hmix23_views/stage64_text32_v5",
-        "scored_dir": "results/onlyterp_hmix23_scored/stage64_v5/stage64_text32_v5",
-        "config": "configs/eval/M1_OT_Hmix23_textvqa_stage64_target32_v5.json",
-        "kind": "derived_prediction_view",
-        "expected_QA": 32
-      },
-      {
-        "cell": "M1_OT_Hmix23_infovqa_stage64_target32_v5",
-        "raw_dir": "results/onlyterp_hmix23_views/stage64_info32_v5",
-        "scored_dir": "results/onlyterp_hmix23_scored/stage64_v5/stage64_info32_v5",
-        "config": "configs/eval/M1_OT_Hmix23_infovqa_stage64_target32_v5.json",
-        "kind": "derived_prediction_view",
-        "expected_QA": 32
-      }
-    ],
-    "source_closure": [
-      {
-        "raw_dir": "results/onlyterp_hmix23_v2/M1_OT_Hmix23_textvqa_probe2_v2",
-        "kind": "original_inference_run"
-      },
-      {
-        "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix23_textvqa_stage64_missing28_v5",
-        "kind": "original_inference_run"
-      },
-      {
-        "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix23_textvqa_stage8_missing2_v4",
-        "kind": "original_inference_run"
-      },
-      {
-        "raw_dir": "results/onlyterp_hmix23_views/stage64_text32_v5",
+        "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_textvqa_p2_500_v1",
         "kind": "derived_prediction_view"
       },
       {
-        "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix23_infovqa_stage64_missing28_v5",
+        "raw_dir": "results/p2_kivi_example_missing/v2/M1_K2_g32R32_infovqa_p2_500_missing_v2",
         "kind": "original_inference_run"
       },
       {
-        "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix23_infovqa_stage8_missing4_v4",
-        "kind": "original_inference_run"
-      },
-      {
-        "raw_dir": "results/onlyterp_hmix23_views/stage64_info32_v5",
+        "raw_dir": "results/extension_views/source_compat_v1/M1_K2_g32R32_infovqa_p2_500_v1",
         "kind": "derived_prediction_view"
       }
     ],
-    "declared_matrix_file": "configs/matrix/OnlyTerp_Hmix23_real64_publication_v1.json"
-  },
-  {
-    "phase": {
-      "status": "PASS_DECLARED_MATRIX_COMPLETE",
-      "phase_label": "ONLYTERP_SHARED_FP16_MATCH64_SUPPORT",
-      "family": "onlyterp_shared_fp16_match64_support",
-      "coverage_scope": "Shared native FP16 matched reference views: Text32 and Info32; zero new GPU QA; support only, not additive to native full-bank inference totals.",
-      "completion_scope": "declared_matrix_only",
-      "whole_external_library_completion_assessed": false,
-      "declared_matrix_source_sha256": "ec992444fb1029a2ebb8a78b8fb71a31cb19509c68f4cc5b4f150c9296224a52",
-      "expected_cells": 2,
-      "verified_scored_cells": 2,
-      "expected_questions": 64,
-      "verified_scored_questions": 64,
-      "closed_artifact_cells": 2,
-      "missing": [],
-      "observed": [
-        {
-          "cell": "M1_F_textvqa_OT_match32_v1",
-          "questions": 32,
-          "kind": "derived_prediction_view",
-          "raw_status": "PASS_RAW_COMPLETE",
-          "score_status": "PASS_SCORED_COMPLETE",
-          "origin_counts": {
-            "reused": 32
-          }
-        },
-        {
-          "cell": "M1_F_infovqa_OT_match32_v1",
-          "questions": 32,
-          "kind": "derived_prediction_view",
-          "raw_status": "PASS_RAW_COMPLETE",
-          "score_status": "PASS_SCORED_COMPLETE",
-          "origin_counts": {
-            "reused": 32
-          }
-        }
-      ]
-    },
-    "contract": {
-      "schema": "baseline_matrix.public_phase_contract.v2",
-      "phase_label": "ONLYTERP_SHARED_FP16_MATCH64_SUPPORT",
-      "family": "onlyterp_shared_fp16_match64_support",
-      "matrix": "configs/matrix/OnlyTerp_shared_FP16_match64_support_publication_v1.json",
-      "coverage_scope": "Shared native FP16 matched reference views: Text32 and Info32; zero new GPU QA; support only, not additive to native full-bank inference totals.",
-      "view_root": "${EVIDENCE_ROOT}\\results\\onlyterp_baseline_match32_v1",
-      "score_root": "${EVIDENCE_ROOT}\\results\\onlyterp_baseline_match32_scored_v1",
-      "completion_policy": "all_expected_QA_pass",
-      "completion_scope": "declared_matrix_only",
-      "whole_library_completion_assessed": false,
-      "fixture_only": false
-    },
-    "phase_artifacts": [
-      {
-        "cell": "M1_F_textvqa_OT_match32_v1",
-        "raw_dir": "results/onlyterp_baseline_match32_v1/F_textvqa_32",
-        "scored_dir": "results/onlyterp_baseline_match32_scored_v1/F_textvqa_32",
-        "config": "configs/eval/M1_F_textvqa_OT_match32_v1.json",
-        "kind": "derived_prediction_view",
-        "expected_QA": 32
-      },
-      {
-        "cell": "M1_F_infovqa_OT_match32_v1",
-        "raw_dir": "results/onlyterp_baseline_match32_v1/F_infovqa_32",
-        "scored_dir": "results/onlyterp_baseline_match32_scored_v1/F_infovqa_32",
-        "config": "configs/eval/M1_F_infovqa_OT_match32_v1.json",
-        "kind": "derived_prediction_view",
-        "expected_QA": 32
-      }
-    ],
-    "source_closure": [
-      {
-        "raw_dir": "results/p1/M1_F_textvqa_p1_128_v1",
-        "kind": "original_inference_run"
-      },
-      {
-        "raw_dir": "results/onlyterp_baseline_match32_v1/F_textvqa_32",
-        "kind": "derived_prediction_view"
-      },
-      {
-        "raw_dir": "results/p1/M1_F_infovqa_p1_128_v1",
-        "kind": "original_inference_run"
-      },
-      {
-        "raw_dir": "results/onlyterp_baseline_match32_v1/F_infovqa_32",
-        "kind": "derived_prediction_view"
-      }
-    ],
-    "declared_matrix_file": "configs/matrix/OnlyTerp_shared_FP16_match64_support_publication_v1.json"
+    "declared_matrix_file": "configs/publication/TIMING560_REQUIRED_ORIGINAL_PREDICTION_SUPPORT/matrix.json"
   }
 ]

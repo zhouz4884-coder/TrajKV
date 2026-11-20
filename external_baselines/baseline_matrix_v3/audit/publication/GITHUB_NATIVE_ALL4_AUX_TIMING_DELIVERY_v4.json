@@ -1,0 +1,531 @@
+{
+  "status": "PASS_GITHUB_BASELINE_INCREMENT_DELIVERED",
+  "repository": "https://github.com/zhouz4884-coder/TrajKV",
+  "phase": {
+    "status": "PASS_DECLARED_MATRIX_COMPLETE",
+    "phase_label": "M1_FP16_FOUR_OFFICIAL_FULL_REFERENCE_BANKS",
+    "family": "native_f_all4_full_reference",
+    "coverage_scope": "M1 native FP16 reference bank for four complete official splits: TextVQA validation5000, DocVQA validation5349, InfographicVQA validation2801, ChartQA test2500 (human1250+aug1250). This phase does not complete P2/P3 compressed baselines or the whole external library.",
+    "completion_scope": "declared_matrix_only",
+    "whole_external_library_completion_assessed": false,
+    "declared_matrix_source_sha256": "268bb84803e794733dc823901c7bfadcf3180b48e1abb0a99dc982f84d495b41",
+    "expected_cells": 4,
+    "verified_scored_cells": 4,
+    "expected_questions": 15650,
+    "verified_scored_questions": 15650,
+    "closed_artifact_cells": 4,
+    "missing": [],
+    "observed": [
+      {
+        "cell": "M1_F_textvqa_full_5000_v1",
+        "questions": 5000,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "reused": 500,
+          "fresh": 4500
+        }
+      },
+      {
+        "cell": "M1_F_infovqa_full_2801_v1",
+        "questions": 2801,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "reused": 500,
+          "fresh": 2301
+        }
+      },
+      {
+        "cell": "M1_F_docvqa_full_5349_v1",
+        "questions": 5349,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 4849,
+          "reused": 500
+        }
+      },
+      {
+        "cell": "M1_F_chartqa_full_2500_v1",
+        "questions": 2500,
+        "kind": "derived_prediction_view",
+        "raw_status": "PASS_RAW_COMPLETE",
+        "score_status": "PASS_SCORED_COMPLETE",
+        "origin_counts": {
+          "fresh": 2000,
+          "reused": 500
+        }
+      }
+    ]
+  },
+  "auxiliary_phases": [
+    {
+      "status": "PASS_DECLARED_MATRIX_COMPLETE",
+      "phase_label": "ONLYTERP_HMIX12_REAL64",
+      "family": "onlyterp_hmix12_real64",
+      "coverage_scope": "OT_Hmix12 real fixed pilot: Text32 and Info32, 64 distinct QA for this source point; metrics reported separately. Not full official split, not production/paper-exact table, not controlled speed.",
+      "completion_scope": "declared_matrix_only",
+      "whole_external_library_completion_assessed": false,
+      "declared_matrix_source_sha256": "d78b24eee1662348ee45c698c8f5fd59ab26c0af5e7a08571b082651d223137a",
+      "expected_cells": 2,
+      "verified_scored_cells": 2,
+      "expected_questions": 64,
+      "verified_scored_questions": 64,
+      "closed_artifact_cells": 2,
+      "missing": [],
+      "observed": [
+        {
+          "cell": "M1_OT_Hmix12_textvqa_stage64_target32_v3",
+          "questions": 32,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "reused": 4,
+            "fresh": 28
+          }
+        },
+        {
+          "cell": "M1_OT_Hmix12_infovqa_stage64_target32_v3",
+          "questions": 32,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "reused": 4,
+            "fresh": 28
+          }
+        }
+      ]
+    },
+    {
+      "status": "PASS_DECLARED_MATRIX_COMPLETE",
+      "phase_label": "ONLYTERP_HMIX23_REAL64",
+      "family": "onlyterp_hmix23_real64",
+      "coverage_scope": "OT_Hmix23 real fixed pilot: Text32 and Info32, 64 distinct QA for this source point; metrics reported separately. Not full official split, not production/paper-exact table, not controlled speed.",
+      "completion_scope": "declared_matrix_only",
+      "whole_external_library_completion_assessed": false,
+      "declared_matrix_source_sha256": "aa011da67478b2c28668f1d2ca497ff7d09b52b33eda83e999f799714c8e7304",
+      "expected_cells": 2,
+      "verified_scored_cells": 2,
+      "expected_questions": 64,
+      "verified_scored_questions": 64,
+      "closed_artifact_cells": 2,
+      "missing": [],
+      "observed": [
+        {
+          "cell": "M1_OT_Hmix23_textvqa_stage64_target32_v5",
+          "questions": 32,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "reused": 4,
+            "fresh": 28
+          }
+        },
+        {
+          "cell": "M1_OT_Hmix23_infovqa_stage64_target32_v5",
+          "questions": 32,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "reused": 4,
+            "fresh": 28
+          }
+        }
+      ]
+    },
+    {
+      "status": "PASS_DECLARED_MATRIX_COMPLETE",
+      "phase_label": "ONLYTERP_SHARED_FP16_MATCH64_SUPPORT",
+      "family": "onlyterp_shared_fp16_match64_support",
+      "coverage_scope": "Shared native FP16 matched reference views: Text32 and Info32; zero new GPU QA; support only, not additive to native full-bank inference totals.",
+      "completion_scope": "declared_matrix_only",
+      "whole_external_library_completion_assessed": false,
+      "declared_matrix_source_sha256": "ec992444fb1029a2ebb8a78b8fb71a31cb19509c68f4cc5b4f150c9296224a52",
+      "expected_cells": 2,
+      "verified_scored_cells": 2,
+      "expected_questions": 64,
+      "verified_scored_questions": 64,
+      "closed_artifact_cells": 2,
+      "missing": [],
+      "observed": [
+        {
+          "cell": "M1_F_textvqa_OT_match32_v1",
+          "questions": 32,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "reused": 32
+          }
+        },
+        {
+          "cell": "M1_F_infovqa_OT_match32_v1",
+          "questions": 32,
+          "kind": "derived_prediction_view",
+          "raw_status": "PASS_RAW_COMPLETE",
+          "score_status": "PASS_SCORED_COMPLETE",
+          "origin_counts": {
+            "reused": 32
+          }
+        }
+      ]
+    }
+  ],
+  "supporting_completed_evidence_groups": [
+    {
+      "label": "completed_diagnostics_through_native_bank_v1",
+      "scope": "Completed auxiliary evidence only: native fixed-q CPU60 operator cases, source CUDA gates, C2 replay/CPU error bounds, GPU diagnostic cases/arms and late-boundary controls. CPU cases and diagnostic arms are not full-split or primary-quality QA. Raw native Q/K/V PT, images, weights and credential/SSH route files are not exported. Machine paths in canonical job/launch proofs require public derivation templates with separate identities. CPU60 input accounting: 4 captured source QA reused x 5 layers x 3 codecs = 60 fixed-query operator cases; new_GPU_QA=0. Its unique_input_QA=0 column counts only newly generated model-QA cases in this CPU control, not the number of real captured queries.",
+      "counts": {
+        "counts_by_type": {
+          "CPU_REAL_NATIVE_FIXED_QUERY_OPERATOR_CONTROL": {
+            "groups": 1,
+            "operator_or_gate_cases_known_sum": 60,
+            "groups_with_unspecified_operator_case_count": 0,
+            "input_QA_sum_group_local_not_globally_unique": 0,
+            "free_generation_arm_runs": 0,
+            "primary_quality_QA_added": 0
+          },
+          "GPU_MODEL_DIAGNOSTIC": {
+            "groups": 2,
+            "operator_or_gate_cases_known_sum": 0,
+            "groups_with_unspecified_operator_case_count": 2,
+            "input_QA_sum_group_local_not_globally_unique": 6,
+            "free_generation_arm_runs": 34,
+            "primary_quality_QA_added": 0
+          },
+          "GPU_SOURCE_OPERATOR_REPLAY_NO_MODEL": {
+            "groups": 1,
+            "operator_or_gate_cases_known_sum": 0,
+            "groups_with_unspecified_operator_case_count": 1,
+            "input_QA_sum_group_local_not_globally_unique": 0,
+            "free_generation_arm_runs": 0,
+            "primary_quality_QA_added": 0
+          },
+          "CPU_FROZEN_CAPTURE_FORWARD_ERROR_AUDIT": {
+            "groups": 1,
+            "operator_or_gate_cases_known_sum": 23,
+            "groups_with_unspecified_operator_case_count": 0,
+            "input_QA_sum_group_local_not_globally_unique": 0,
+            "free_generation_arm_runs": 0,
+            "primary_quality_QA_added": 0
+          },
+          "CPU_FROZEN_CAPTURE_LOCAL_TRACE": {
+            "groups": 1,
+            "operator_or_gate_cases_known_sum": 1,
+            "groups_with_unspecified_operator_case_count": 0,
+            "input_QA_sum_group_local_not_globally_unique": 0,
+            "free_generation_arm_runs": 0,
+            "primary_quality_QA_added": 0
+          },
+          "GPU_MODEL_BOUNDARY_CONTROL_DIFFERENT_INFORMATION_CONDITIONS": {
+            "groups": 1,
+            "operator_or_gate_cases_known_sum": 0,
+            "groups_with_unspecified_operator_case_count": 1,
+            "input_QA_sum_group_local_not_globally_unique": 2,
+            "free_generation_arm_runs": 12,
+            "primary_quality_QA_added": 0
+          },
+          "GPU_SOURCE_OPERATOR_GATE_NO_MODEL": {
+            "groups": 6,
+            "operator_or_gate_cases_known_sum": 159,
+            "groups_with_unspecified_operator_case_count": 0,
+            "input_QA_sum_group_local_not_globally_unique": 0,
+            "free_generation_arm_runs": 0,
+            "primary_quality_QA_added": 0
+          },
+          "GPU_MODEL_DIAGNOSTIC_NOT_FORMAL_PREDICTION_PRODUCER": {
+            "groups": 1,
+            "operator_or_gate_cases_known_sum": 0,
+            "groups_with_unspecified_operator_case_count": 1,
+            "input_QA_sum_group_local_not_globally_unique": 2,
+            "free_generation_arm_runs": 6,
+            "primary_quality_QA_added": 0
+          }
+        },
+        "counts_per_group": [
+          {
+            "id": "native_fixed_query_60",
+            "kind": "CPU_REAL_NATIVE_FIXED_QUERY_OPERATOR_CONTROL",
+            "operator_or_gate_cases": 60,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0,
+            "captured_source_QA_reused": 4,
+            "new_GPU_QA": 0,
+            "layers_per_source": 5,
+            "codec_variants": 3,
+            "operator_case_formula": "4 captured source QA x 5 layers x 3 codecs = 60 operator cases",
+            "unique_input_QA_definition": "Newly generated model-QA cases in this CPU control; real frozen teacher-query inputs come from four previously captured source QA"
+          },
+          {
+            "id": "native_T_R0_R128",
+            "kind": "GPU_MODEL_DIAGNOSTIC",
+            "operator_or_gate_cases": null,
+            "unique_input_QA": 4,
+            "free_generation_arm_runs": 24
+          },
+          {
+            "id": "C2_source_roundoff_replay",
+            "kind": "GPU_SOURCE_OPERATOR_REPLAY_NO_MODEL",
+            "operator_or_gate_cases": null,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          },
+          {
+            "id": "C2_forward_roundoff_bound",
+            "kind": "CPU_FROZEN_CAPTURE_FORWARD_ERROR_AUDIT",
+            "operator_or_gate_cases": 23,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          },
+          {
+            "id": "C2_max_gap_trace",
+            "kind": "CPU_FROZEN_CAPTURE_LOCAL_TRACE",
+            "operator_or_gate_cases": 1,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          },
+          {
+            "id": "calib_affine",
+            "kind": "GPU_MODEL_DIAGNOSTIC",
+            "operator_or_gate_cases": null,
+            "unique_input_QA": 2,
+            "free_generation_arm_runs": 10
+          },
+          {
+            "id": "late_question_boundary",
+            "kind": "GPU_MODEL_BOUNDARY_CONTROL_DIFFERENT_INFORMATION_CONDITIONS",
+            "operator_or_gate_cases": null,
+            "unique_input_QA": 2,
+            "free_generation_arm_runs": 12
+          },
+          {
+            "id": "OnlyTerp_MSE_CUDA_gate",
+            "kind": "GPU_SOURCE_OPERATOR_GATE_NO_MODEL",
+            "operator_or_gate_cases": 6,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          },
+          {
+            "id": "OnlyTerp_prod_CUDA_gate",
+            "kind": "GPU_SOURCE_OPERATOR_GATE_NO_MODEL",
+            "operator_or_gate_cases": 5,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          },
+          {
+            "id": "OnlyTerp_prod_probe",
+            "kind": "GPU_MODEL_DIAGNOSTIC_NOT_FORMAL_PREDICTION_PRODUCER",
+            "operator_or_gate_cases": null,
+            "unique_input_QA": 2,
+            "free_generation_arm_runs": 6
+          },
+          {
+            "id": "KIVI_g32R32_CUDA_gate",
+            "kind": "GPU_SOURCE_OPERATOR_GATE_NO_MODEL",
+            "operator_or_gate_cases": 48,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          },
+          {
+            "id": "KIVI_g128_CUDA_gate",
+            "kind": "GPU_SOURCE_OPERATOR_GATE_NO_MODEL",
+            "operator_or_gate_cases": 80,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          },
+          {
+            "id": "CalibQuant_CUDA_gate",
+            "kind": "GPU_SOURCE_OPERATOR_GATE_NO_MODEL",
+            "operator_or_gate_cases": 12,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          },
+          {
+            "id": "TurboQuant_eviction_CUDA_gate",
+            "kind": "GPU_SOURCE_OPERATOR_GATE_NO_MODEL",
+            "operator_or_gate_cases": 8,
+            "unique_input_QA": 0,
+            "free_generation_arm_runs": 0
+          }
+        ],
+        "counts_not_additive_with_native_or_OnlyTerp_quality_QA": true,
+        "primary_quality_QA_added": 0
+      }
+    },
+    {
+      "label": "native_f_all4_independent_cold_review_and_bounded_reports_v3",
+      "scope": "Independent CPU-only cold recomputation of the four native reference splits and all original/donor identities. The 15650 reviewed rows already belong to the primary phase; this review adds zero GPU inference or quality QA. All included reports are explicitly selected source/protocol or completed-result documents; no continuously globbed later P2 result reports.",
+      "counts": {
+        "reviewed_splits": 4,
+        "reviewed_existing_primary_QA": 15650,
+        "original_GPU_runs": 10,
+        "new_GPU_QA": 0
+      }
+    },
+    {
+      "label": "completed_M1_K32_M2_M3_eight_source_smokes_with_Calib_cold_metadata_v2",
+      "scope": "Fixed cutoff: M1 K32 and M2/M3 C1/C2/K32/OnlyTerp Hmix23, nine original technical jobs and 18 model/method responses on the same two TextVQA inputs. This is two-QA-per-cell source/finite/input/owner acceptance, not 18 unique questions or quality evidence. The 32 exact fixed500 plans total16000 target QA, with16 real cached QA plus15984 future QA; none is labeled16000 completed GPU QA. New formal/timing/quality cells after this cutoff are excluded. Existing metadata JSON only, without PT or compiled binaries.",
+      "counts": {
+        "original_inference_jobs": 9,
+        "model_method_prediction_rows": 18,
+        "unique_dataset_QA_ids": 2,
+        "dataset_QA_ids": [
+          "textvqa:validation:36209",
+          "textvqa:validation:39023"
+        ],
+        "primary_quality_QA_added": 0,
+        "existing_metadata_records_all_prior_cache": 1647,
+        "metadata_records_matched_to_M2_C1_C2_actual_intervals": 312,
+        "ready_fixed500_plans": 32,
+        "target_QA_not_completed_GPU_QA": 16000,
+        "actual_cached_target_QA": 16,
+        "planned_future_QA": 15984
+      }
+    },
+    {
+      "label": "completed_timing_with_original_quality_origins_v2",
+      "scope": "Four legacy formal cohorts576 and three legacy technical smokes80 =656; independent Calib two-process diagnostics32; source-representative retry hardware smoke40. Previous prerequisite32 is existing support only. Source representative520 conditional trials remain unrun. No quality QA increments, no short-natural-answer wall rankings, no cross-domain pooling; host quiet false; no PT/images/weights/private route files. Source-profile smoke denotes then-predeclared source candidates, not strongest or final choices; E full remains under review. Original prediction origins are self-contained through the declared current native/MSE/compat bundle closures plus additional eight-file SourceRun donors; no previous release dependency.",
+      "counts": {
+        "counts_by_scope": {
+          "legacy_formal": {
+            "runs": 4,
+            "raw_trials": 576,
+            "warmup_trials": 144,
+            "measured_trials": 432,
+            "primary_quality_QA_added": 0
+          },
+          "legacy_hardware_smoke": {
+            "runs": 3,
+            "raw_trials": 80,
+            "warmup_trials": 20,
+            "measured_trials": 60,
+            "primary_quality_QA_added": 0
+          },
+          "calib_process_diagnostic": {
+            "runs": 2,
+            "raw_trials": 32,
+            "warmup_trials": 8,
+            "measured_trials": 24,
+            "primary_quality_QA_added": 0
+          },
+          "source_representative_hardware_smoke": {
+            "runs": 1,
+            "raw_trials": 40,
+            "warmup_trials": 10,
+            "measured_trials": 30,
+            "primary_quality_QA_added": 0
+          },
+          "previous_existing_prerequisite_not_new728": {
+            "runs": 1,
+            "raw_trials": 32,
+            "warmup_trials": 8,
+            "measured_trials": 24,
+            "primary_quality_QA_added": 0
+          }
+        },
+        "new_trials": 728,
+        "previous_support_trials_excluded_from_new": 32,
+        "source_representative_conditional_trials_unrun": 520,
+        "quality_QA_added": 0
+      }
+    }
+  ],
+  "phase_group_totals_are_separate": true,
+  "prior_head": "27a88288e18032ce88de1fe19392197ff80e656c",
+  "head": "2056c39d696e335da58c3e9982d71da7691c67e6",
+  "tree": "595dd321e01b8127ee54dcd41368d56f2863c6fd",
+  "namespace": "external_baselines/baseline_matrix_v3",
+  "release": "https://github.com/zhouz4884-coder/TrajKV/releases/tag/external-baselines-native-all4-full-20261120",
+  "assets": [
+    {
+      "name": "n4_reference_aux_timing_20261120_v4.zip",
+      "bytes": 258019213,
+      "sha256": "22e8eced81ba3bcfcb9a527f77ab0688742664695ab6c6072f7d33b8e1e5cca3",
+      "server_digest": "sha256:22e8eced81ba3bcfcb9a527f77ab0688742664695ab6c6072f7d33b8e1e5cca3",
+      "url": "https://github.com/zhouz4884-coder/TrajKV/releases/download/external-baselines-native-all4-full-20261120/n4_reference_aux_timing_20261120_v4.zip"
+    },
+    {
+      "name": "PUBLIC_CONTENT_REFS.json",
+      "bytes": 2020939,
+      "sha256": "8cdb76c32268f155ba26340b428363186756b6b00b581dfe25b18d4cf0c25b56",
+      "server_digest": "sha256:8cdb76c32268f155ba26340b428363186756b6b00b581dfe25b18d4cf0c25b56",
+      "url": "https://github.com/zhouz4884-coder/TrajKV/releases/download/external-baselines-native-all4-full-20261120/PUBLIC_CONTENT_REFS.json"
+    },
+    {
+      "name": "DELIVERY.json",
+      "bytes": 19718,
+      "sha256": "3f3f98bcda2e491792368802935fb28d72510fb77576e8f7ca895b901b19a96a",
+      "server_digest": "sha256:3f3f98bcda2e491792368802935fb28d72510fb77576e8f7ca895b901b19a96a",
+      "url": "https://github.com/zhouz4884-coder/TrajKV/releases/download/external-baselines-native-all4-full-20261120/DELIVERY.json"
+    }
+  ],
+  "actual_remote_tree_paths_verified": 1951,
+  "all_expected_blob_bodies_independently_refetched": true,
+  "independent_refetch_backend": {
+    "status": "PASS_REMOTE_FIXED_COMMIT_BLOB_BODIES",
+    "commit": "2056c39d696e335da58c3e9982d71da7691c67e6",
+    "tree": "595dd321e01b8127ee54dcd41368d56f2863c6fd",
+    "source_url": "https://codeload.github.com/zhouz4884-coder/TrajKV/zip/2056c39d696e335da58c3e9982d71da7691c67e6",
+    "source_archive_sha256": "324cc560dab4fe39a97f76946b77fa7250d528ebb7924a8132d6911ac2068a6c",
+    "bodies_verified": 1951,
+    "body_checks": "server actual tree OID plus Git blob header/OID plus LF SHA256",
+    "local_staging_used_as_download_source": false
+  },
+  "old_namespace_tree_preserved": true,
+  "prior_releases_preserved": 7,
+  "prior_tags_preserved": true,
+  "account": "zhouz4884-coder",
+  "visibility": "public",
+  "content_ref": {
+    "commit": "2056c39d696e335da58c3e9982d71da7691c67e6",
+    "index_blob_oid": "03aa7875b1f4225a7dbd17f88dac5378cbcd60a0",
+    "index_git_body_sha256": "8cdb76c32268f155ba26340b428363186756b6b00b581dfe25b18d4cf0c25b56",
+    "archive_sha256": "22e8eced81ba3bcfcb9a527f77ab0688742664695ab6c6072f7d33b8e1e5cca3"
+  },
+  "local_cold_verification": {
+    "status": "PASS_PUBLIC_EXPORT_VERIFIED_V3",
+    "score_cells": 10,
+    "independent_phase_groups": [
+      {
+        "phase_label": "M1_FP16_FOUR_OFFICIAL_FULL_REFERENCE_BANKS",
+        "cells": 4,
+        "view_questions": 15650,
+        "primary": true
+      },
+      {
+        "phase_label": "ONLYTERP_HMIX12_REAL64",
+        "cells": 2,
+        "view_questions": 64,
+        "primary": false
+      },
+      {
+        "phase_label": "ONLYTERP_HMIX23_REAL64",
+        "cells": 2,
+        "view_questions": 64,
+        "primary": false
+      },
+      {
+        "phase_label": "ONLYTERP_SHARED_FP16_MATCH64_SUPPORT",
+        "cells": 2,
+        "view_questions": 64,
+        "primary": false
+      }
+    ],
+    "closure_nodes": 30,
+    "original_runs": 20,
+    "derived_quality_views": 10,
+    "source_closure_verified": true
+  },
+  "completion_scope": "declared_matrix_only",
+  "whole_external_library_completion_assessed": false,
+  "P1_commit_preserved_as_ancestor": true,
+  "verified_utc": "2026-11-20T09:53:37.577709+00:00"
+}

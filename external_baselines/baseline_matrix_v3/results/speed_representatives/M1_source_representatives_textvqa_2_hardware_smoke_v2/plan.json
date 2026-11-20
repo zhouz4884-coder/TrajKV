@@ -1,0 +1,560 @@
+{
+  "schema": "baseline_matrix.speed_plan.v1",
+  "status": "CPU_PLAN_ONLY_NO_GPU",
+  "job": {
+    "schema": "baseline_matrix.speed_job.v1",
+    "eval_configs": [
+      "${DATA_ROOT}/configs/eval/M1_F_textvqa_p2_500_v1.json",
+      "${DATA_ROOT}/configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json",
+      "${DATA_ROOT}/configs/eval/M1_C2_bias32_textvqa_p2_500_v1.json",
+      "${DATA_ROOT}/configs/eval/M1_E_r0888_textvqa_p2_500_v1.json",
+      "${DATA_ROOT}/configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json"
+    ],
+    "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+    "selection": {
+      "mode": "first",
+      "count": 2
+    },
+    "repeat": 3,
+    "warmup_per_qa": 1,
+    "seed": 20261120,
+    "expected_predictions": "${DATA_ROOT}/configs/speed/expected_M1_source_representatives_textvqa_2_hardware_smoke_v2.json",
+    "allocator_policy": "retain_caching_allocator",
+    "verify_gpu_exclusive": true,
+    "host_quiet_asserted": false
+  },
+  "job_sha256": "26b94689ef033468f3e986da3e1e8f217cf96c20351450fbff41907d657cec40",
+  "model_spec": {
+    "model_id": "M1",
+    "hf_id": "OpenGVLab/InternVL3-8B-hf",
+    "architecture": "InternVLForConditionalGeneration",
+    "layers": 28,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "image_token_id": 151667,
+    "deepstack_visual_indexes": [],
+    "sliding_attention": false,
+    "native_adapter": "internvl3",
+    "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+  },
+  "effective_configs": [
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M1",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 2,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "method": {
+        "id": "F_native_split",
+        "family": "fp16",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ]
+    },
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M1",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 2,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "method": {
+        "id": "KIVI_source_example_K2V2_g32_R32_visual",
+        "family": "kivi_source_example",
+        "adapter_module": "methods.kivi_example_adapter",
+        "adapter_class": "KIVIExampleAdapter",
+        "constructor_args": {
+          "bits": 2,
+          "group_size": 32,
+          "residual_length": 32,
+          "reader_backend": "triton_packed"
+        },
+        "reader_backend": "triton_packed",
+        "encode_scope": "visual",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ]
+    },
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M1",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 2,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "method": {
+        "id": "CalibQuant_visual_FP32bias_2bit",
+        "family": "calibquant",
+        "adapter_module": "methods.calibquant_fp32_bias_adapter",
+        "adapter_class": "CalibQuantFP32BiasAdapter",
+        "constructor_args": {
+          "bits": 2,
+          "reader_backend": "upstream_triton"
+        },
+        "encode_scope": "visual",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ]
+    },
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M1",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 2,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "method": {
+        "id": "PyramidKV_visual_drop0p888_unknown",
+        "family": "pyramidkv",
+        "adapter_module": "methods.eviction_adapter",
+        "adapter_class": "PyramidKVVisualAdapter",
+        "constructor_args": {
+          "compression_ratio": 0.888,
+          "window_size": 64,
+          "kernel_size": 5,
+          "beta": 20,
+          "num_layers": 28,
+          "information_condition": "query_unknown"
+        },
+        "encode_scope": "prefix",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ]
+    },
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M1",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 2,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "method": {
+        "id": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+        "family": "onlyterp_mse",
+        "adapter_module": "methods.turboquant_onlyterp_mse_adapter",
+        "adapter_class": "OnlyTerpMSEAdapter",
+        "constructor_args": {
+          "bits_regular": 2,
+          "bits_outlier": 3,
+          "mixed_precision": true,
+          "reader_backend": "torch_materialize_fp32_reference"
+        },
+        "reader_backend": "torch_materialize_fp32_reference",
+        "encode_scope": "visual",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ]
+    }
+  ],
+  "original_config_hashes": {
+    "${DATA_ROOT}/configs/eval/M1_F_textvqa_p2_500_v1.json": "f7ddf90ae551e424ce1801e0dcf6ab33e819ef9796d2e44438004732078a4e91",
+    "${DATA_ROOT}/configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json": "f57462f89a773641a36f66c801812cf0a92747339a315b032eca3bdf5533f9d2",
+    "${DATA_ROOT}/configs/eval/M1_C2_bias32_textvqa_p2_500_v1.json": "d957fe934855c16aba7734b756ea6f12eea1fe2f7bfcf723cb85dc35b9ba2117",
+    "${DATA_ROOT}/configs/eval/M1_E_r0888_textvqa_p2_500_v1.json": "b9c1aabbd3f057166dba9b6b2de7fdaa2cb40f4060a9f86dce60791cb719afb2",
+    "${DATA_ROOT}/configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json": "966ed14257f2c26c2499eff12b9b76202b9887162d064a72ec99c26ee1c63c95"
+  },
+  "inputs_sha256": "9891e84b7589cce22ff398bab28b25ff94b0db92a4db63751a11e368fe3c18d8",
+  "source_lock_sha256": "d3d48f16e788ed7e62123bcdfad0d16a6e182215e2814792a1014db5b55d1f2f",
+  "expected_ids": [
+    "textvqa:validation:39023",
+    "textvqa:validation:36209"
+  ],
+  "selection": {
+    "mode": "first_in_frozen_input_order",
+    "count": 2,
+    "labels_or_scores_used": false
+  },
+  "method_ids": [
+    "F_native_split",
+    "KIVI_source_example_K2V2_g32_R32_visual",
+    "CalibQuant_visual_FP32bias_2bit",
+    "PyramidKV_visual_drop0p888_unknown",
+    "OT_Hmix23_OnlyTerp_MSE_QJL0_visual"
+  ],
+  "measured_trials": 30,
+  "warmup_trials": 10,
+  "schedule": [
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "CalibQuant_visual_FP32bias_2bit",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_source_example_K2V2_g32_R32_visual",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+      "config_index": 4,
+      "method_order_within_QA": 3
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 3,
+      "method_order_within_QA": 4
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "CalibQuant_visual_FP32bias_2bit",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+      "config_index": 4,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 3,
+      "method_order_within_QA": 3
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_source_example_K2V2_g32_R32_visual",
+      "config_index": 1,
+      "method_order_within_QA": 4
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "CalibQuant_visual_FP32bias_2bit",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 3,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+      "config_index": 4,
+      "method_order_within_QA": 3
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_source_example_K2V2_g32_R32_visual",
+      "config_index": 1,
+      "method_order_within_QA": 4
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+      "config_index": 4,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_source_example_K2V2_g32_R32_visual",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "CalibQuant_visual_FP32bias_2bit",
+      "config_index": 2,
+      "method_order_within_QA": 3
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 3,
+      "method_order_within_QA": 4
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 3,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_source_example_K2V2_g32_R32_visual",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "CalibQuant_visual_FP32bias_2bit",
+      "config_index": 2,
+      "method_order_within_QA": 3
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+      "config_index": 4,
+      "method_order_within_QA": 4
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 3,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_source_example_K2V2_g32_R32_visual",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "CalibQuant_visual_FP32bias_2bit",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+      "config_index": 4,
+      "method_order_within_QA": 3
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 4
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "CalibQuant_visual_FP32bias_2bit",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_source_example_K2V2_g32_R32_visual",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 3,
+      "method_order_within_QA": 3
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+      "config_index": 4,
+      "method_order_within_QA": 4
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+      "config_index": 4,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_source_example_K2V2_g32_R32_visual",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "CalibQuant_visual_FP32bias_2bit",
+      "config_index": 2,
+      "method_order_within_QA": 3
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 3,
+      "method_order_within_QA": 4
+    }
+  ],
+  "references_read": false,
+  "GPU_used": false,
+  "source_sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+  "extensions": []
+}

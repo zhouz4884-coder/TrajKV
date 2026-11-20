@@ -10,8 +10,4 @@ PUBLIC_CONTENT_REFS.json separates original source, sanitized archive and LF-nor
 
 From the extracted namespace run `python -B code/verify_public_export.py --root . --recompute-scores`. This validates donor closure, exact prediction provenance, fixed-reference metrics, cluster CIs and declared coverage. Use exact archive bytes for source guards that distinguish original CRLF from Git LF. Runtime and method limitations remain explicit in reports.
 
-- Auxiliary `ONLYTERP_HMIX12_REAL64`: 2 views / 64 view questions. OT_Hmix12 real fixed pilot: Text32 and Info32, 64 distinct QA for this source point; metrics reported separately. Not full official split, not production/paper-exact table, not controlled speed.
-- Auxiliary `ONLYTERP_HMIX23_REAL64`: 2 views / 64 view questions. OT_Hmix23 real fixed pilot: Text32 and Info32, 64 distinct QA for this source point; metrics reported separately. Not full official split, not production/paper-exact table, not controlled speed.
-- Auxiliary `ONLYTERP_SHARED_FP16_MATCH64_SUPPORT`: 2 views / 64 view questions. Shared native FP16 matched reference views: Text32 and Info32; zero new GPU QA; support only, not additive to native full-bank inference totals.
-
-The current primary report is [M1 native full reference v2](docs/MILESTONE_M1_FP16_ALL4_FULL_REFERENCE_v2.md). It records nine compatibility jobs / eighteen model-method responses over two shared Text inputs. Confidence intervals use source-cluster resampling.
+- Auxiliary `TIMING560_REQUIRED_ORIGINAL_PREDICTION_SUPPORT`: 3 views / 1500 view questions. Existing exact fixed500 quality views required only to carry complete original timing-prediction source closures. Not new GPU inference, extra timing QA, P2-114 completion or full official splits.

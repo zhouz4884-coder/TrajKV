@@ -1,0 +1,521 @@
+{
+  "schema": "baseline_matrix.source_representative_speed_targets.v2",
+  "status": "CPU_TARGETS_AND_ACTUAL_EXPECTED_COVERAGE_ONLY",
+  "source_profile": "M1 canonical F/K32/C2/E_window64_drop0888/OnlyTerp_Hmix23; separate from legacy656, historical v1 E8 technical40 and Calib process32",
+  "version": "v2",
+  "rows": [
+    {
+      "model": "M1",
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA": 2,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "speed_config": "configs/speed/M1_source_representatives_textvqa_2_hardware_smoke_v2.json",
+      "speed_config_sha256": "26b94689ef033468f3e986da3e1e8f217cf96c20351450fbff41907d657cec40",
+      "status": "ACTUAL_MODEL_EXPECTED_COMPLETE_NOT_LAUNCHED",
+      "job": "configs/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v2.json",
+      "expected_original_E": "${EVIDENCE_ROOT}\\results\\speed_preparation\\M1_source_representatives_v2\\expected_M1_source_representatives_textvqa_2_hardware_smoke_v2.json",
+      "expected_sha256": "07837010bc8e1643e72d10a08e6f01874d64664fa334c9111b5cadaad593ab96",
+      "CPU_plan": "${EVIDENCE_ROOT}\\results\\speed_preparation\\M1_source_representatives_v2\\M1_source_representatives_textvqa_2_hardware_smoke_v2_plan\\plan.json",
+      "warmup_trials": 10,
+      "measure_trials": 30,
+      "total_trials": 40,
+      "actual_expected_coverage": [
+        {
+          "method": "F",
+          "method_id": "F_native_split",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1\\M1_F_textvqa_p1_128_v1"
+          ],
+          "exact_contract_sha256": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3",
+          "pending_source_candidates": []
+        },
+        {
+          "method": "K2_g32R32",
+          "method_id": "KIVI_source_example_K2V2_g32_R32_visual",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1"
+          ],
+          "exact_contract_sha256": "6da2cd31f9dc168a6620228d60dbead9b4753b9199be2f3659e1cdab2712cddb",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\p2_kivi_example_missing\\v2\\M1_K2_g32R32_textvqa_p2_500_missing_v2",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        },
+        {
+          "method": "C2_bias32",
+          "method_id": "CalibQuant_visual_FP32bias_2bit",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1"
+          ],
+          "exact_contract_sha256": "2370f44088a127b28dc490a57430e2db068ba27d6d99c343581729f22be7f207",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\p2_missing\\M1_C2_bias32_textvqa_p2_500_missing_v3",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        },
+        {
+          "method": "E_r0888",
+          "method_id": "PyramidKV_visual_drop0p888_unknown",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1"
+          ],
+          "exact_contract_sha256": "ad19df611656d75ef312cb0186415015d63250e62f895d5913ccc10336f86d23",
+          "pending_source_candidates": []
+        },
+        {
+          "method": "OT_Hmix23",
+          "method_id": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5"
+          ],
+          "exact_contract_sha256": "b0e6f4264491a851317c6419e7f1198b9636b044c20320eb8b62323b1a8a3fb3",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_optional500\\M1_OT_Hmix23_textvqa_p2_500_missing468_v6",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        }
+      ],
+      "new_GPU_trials_run": 0,
+      "requires_before_formal": "Own model/dataset five-method fixed2 hardware smoke must pass with MODEL IDs before formal",
+      "launch_authority": "Root/P only; this tool neither stages nor launches"
+    },
+    {
+      "model": "M1",
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA": 16,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "speed_config": "configs/speed/M1_source_representatives_textvqa_16_formal_fixed_cohort_v2.json",
+      "speed_config_sha256": "f9ffe95426c5a7de544e55e418d6a165143358dc745216a95fb114be194981ed",
+      "status": "CONDITIONAL_REAL_MODEL_EXPECTED_PENDING",
+      "job": null,
+      "expected_original_E": null,
+      "expected_sha256": null,
+      "CPU_plan": "${EVIDENCE_ROOT}\\results\\speed_preparation\\M1_source_representatives_v2\\M1_source_representatives_textvqa_16_formal_fixed_cohort_v2_plan\\plan.json",
+      "warmup_trials": 80,
+      "measure_trials": 240,
+      "total_trials": 320,
+      "actual_expected_coverage": [
+        {
+          "method": "F",
+          "method_id": "F_native_split",
+          "required_QA": 16,
+          "actual_available_MODEL_output_QA": 16,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1\\M1_F_textvqa_p1_128_v1"
+          ],
+          "exact_contract_sha256": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3",
+          "pending_source_candidates": []
+        },
+        {
+          "method": "K2_g32R32",
+          "method_id": "KIVI_source_example_K2V2_g32_R32_visual",
+          "required_QA": 16,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 14,
+          "missing_expected_ids": [
+            "textvqa:validation:35791",
+            "textvqa:validation:38923",
+            "textvqa:validation:35278",
+            "textvqa:validation:34678",
+            "textvqa:validation:36735",
+            "textvqa:validation:37504",
+            "textvqa:validation:37945",
+            "textvqa:validation:34871",
+            "textvqa:validation:36188",
+            "textvqa:validation:37228",
+            "textvqa:validation:37175",
+            "textvqa:validation:38068",
+            "textvqa:validation:36575",
+            "textvqa:validation:34686"
+          ],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1"
+          ],
+          "exact_contract_sha256": "6da2cd31f9dc168a6620228d60dbead9b4753b9199be2f3659e1cdab2712cddb",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\p2_kivi_example_missing\\v2\\M1_K2_g32R32_textvqa_p2_500_missing_v2",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        },
+        {
+          "method": "C2_bias32",
+          "method_id": "CalibQuant_visual_FP32bias_2bit",
+          "required_QA": 16,
+          "actual_available_MODEL_output_QA": 16,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1"
+          ],
+          "exact_contract_sha256": "2370f44088a127b28dc490a57430e2db068ba27d6d99c343581729f22be7f207",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\p2_missing\\M1_C2_bias32_textvqa_p2_500_missing_v3",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        },
+        {
+          "method": "E_r0888",
+          "method_id": "PyramidKV_visual_drop0p888_unknown",
+          "required_QA": 16,
+          "actual_available_MODEL_output_QA": 16,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_textvqa_p1_128_v1"
+          ],
+          "exact_contract_sha256": "ad19df611656d75ef312cb0186415015d63250e62f895d5913ccc10336f86d23",
+          "pending_source_candidates": []
+        },
+        {
+          "method": "OT_Hmix23",
+          "method_id": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+          "required_QA": 16,
+          "actual_available_MODEL_output_QA": 16,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5"
+          ],
+          "exact_contract_sha256": "b0e6f4264491a851317c6419e7f1198b9636b044c20320eb8b62323b1a8a3fb3",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_optional500\\M1_OT_Hmix23_textvqa_p2_500_missing468_v6",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        }
+      ],
+      "new_GPU_trials_run": 0,
+      "requires_before_formal": "Own model/dataset five-method fixed2 hardware smoke must pass with MODEL IDs before formal",
+      "launch_authority": "Root/P only; this tool neither stages nor launches"
+    },
+    {
+      "model": "M1",
+      "dataset": "infovqa",
+      "role": "hardware_smoke",
+      "QA": 2,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "speed_config": "configs/speed/M1_source_representatives_infovqa_2_hardware_smoke_v2.json",
+      "speed_config_sha256": "32aa0491d12e306582d2aad0c43785e0df959f63a492e99c87e75bb335dbab9e",
+      "status": "CONDITIONAL_REAL_MODEL_EXPECTED_PENDING",
+      "job": null,
+      "expected_original_E": null,
+      "expected_sha256": null,
+      "CPU_plan": "${EVIDENCE_ROOT}\\results\\speed_preparation\\M1_source_representatives_v2\\M1_source_representatives_infovqa_2_hardware_smoke_v2_plan\\plan.json",
+      "warmup_trials": 10,
+      "measure_trials": 30,
+      "total_trials": 40,
+      "actual_expected_coverage": [
+        {
+          "method": "F",
+          "method_id": "F_native_split",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1\\M1_F_infovqa_p1_128_v1"
+          ],
+          "exact_contract_sha256": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3",
+          "pending_source_candidates": []
+        },
+        {
+          "method": "K2_g32R32",
+          "method_id": "KIVI_source_example_K2V2_g32_R32_visual",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 0,
+          "missing_expected_QA": 2,
+          "missing_expected_ids": [
+            "infovqa:validation:94616",
+            "infovqa:validation:98198"
+          ],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1"
+          ],
+          "exact_contract_sha256": "6da2cd31f9dc168a6620228d60dbead9b4753b9199be2f3659e1cdab2712cddb",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\p2_kivi_example_missing\\v2\\M1_K2_g32R32_infovqa_p2_500_missing_v2",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        },
+        {
+          "method": "C2_bias32",
+          "method_id": "CalibQuant_visual_FP32bias_2bit",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 0,
+          "missing_expected_QA": 2,
+          "missing_expected_ids": [
+            "infovqa:validation:94616",
+            "infovqa:validation:98198"
+          ],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1"
+          ],
+          "exact_contract_sha256": "2370f44088a127b28dc490a57430e2db068ba27d6d99c343581729f22be7f207",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\p2_missing\\M1_C2_bias32_infovqa_p2_500_missing_v3",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        },
+        {
+          "method": "E_r0888",
+          "method_id": "PyramidKV_visual_drop0p888_unknown",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1"
+          ],
+          "exact_contract_sha256": "ad19df611656d75ef312cb0186415015d63250e62f895d5913ccc10336f86d23",
+          "pending_source_candidates": []
+        },
+        {
+          "method": "OT_Hmix23",
+          "method_id": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+          "required_QA": 2,
+          "actual_available_MODEL_output_QA": 2,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5"
+          ],
+          "exact_contract_sha256": "b0e6f4264491a851317c6419e7f1198b9636b044c20320eb8b62323b1a8a3fb3",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_optional500\\M1_OT_Hmix23_infovqa_p2_500_missing468_v6",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        }
+      ],
+      "new_GPU_trials_run": 0,
+      "requires_before_formal": "Own model/dataset five-method fixed2 hardware smoke must pass with MODEL IDs before formal",
+      "launch_authority": "Root/P only; this tool neither stages nor launches"
+    },
+    {
+      "model": "M1",
+      "dataset": "infovqa",
+      "role": "formal_fixed_cohort",
+      "QA": 8,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "speed_config": "configs/speed/M1_source_representatives_infovqa_8_formal_fixed_cohort_v2.json",
+      "speed_config_sha256": "58aa6f52b7946aab86f8d1d7c2e28588014bb7a0cf0460b6c7b3875dadd14788",
+      "status": "CONDITIONAL_REAL_MODEL_EXPECTED_PENDING",
+      "job": null,
+      "expected_original_E": null,
+      "expected_sha256": null,
+      "CPU_plan": "${EVIDENCE_ROOT}\\results\\speed_preparation\\M1_source_representatives_v2\\M1_source_representatives_infovqa_8_formal_fixed_cohort_v2_plan\\plan.json",
+      "warmup_trials": 40,
+      "measure_trials": 120,
+      "total_trials": 160,
+      "actual_expected_coverage": [
+        {
+          "method": "F",
+          "method_id": "F_native_split",
+          "required_QA": 8,
+          "actual_available_MODEL_output_QA": 8,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1\\M1_F_infovqa_p1_128_v1"
+          ],
+          "exact_contract_sha256": "d6e213556a566740280fcca4aa3476bda189cded50f6a3feb201cdbcec014eb3",
+          "pending_source_candidates": []
+        },
+        {
+          "method": "K2_g32R32",
+          "method_id": "KIVI_source_example_K2V2_g32_R32_visual",
+          "required_QA": 8,
+          "actual_available_MODEL_output_QA": 0,
+          "missing_expected_QA": 8,
+          "missing_expected_ids": [
+            "infovqa:validation:94616",
+            "infovqa:validation:98198",
+            "infovqa:validation:93308",
+            "infovqa:validation:94579",
+            "infovqa:validation:95544",
+            "infovqa:validation:94150",
+            "infovqa:validation:91529",
+            "infovqa:validation:96483"
+          ],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1"
+          ],
+          "exact_contract_sha256": "6da2cd31f9dc168a6620228d60dbead9b4753b9199be2f3659e1cdab2712cddb",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\p2_kivi_example_missing\\v2\\M1_K2_g32R32_infovqa_p2_500_missing_v2",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        },
+        {
+          "method": "C2_bias32",
+          "method_id": "CalibQuant_visual_FP32bias_2bit",
+          "required_QA": 8,
+          "actual_available_MODEL_output_QA": 0,
+          "missing_expected_QA": 8,
+          "missing_expected_ids": [
+            "infovqa:validation:94616",
+            "infovqa:validation:98198",
+            "infovqa:validation:93308",
+            "infovqa:validation:94579",
+            "infovqa:validation:95544",
+            "infovqa:validation:94150",
+            "infovqa:validation:91529",
+            "infovqa:validation:96483"
+          ],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1"
+          ],
+          "exact_contract_sha256": "2370f44088a127b28dc490a57430e2db068ba27d6d99c343581729f22be7f207",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\p2_missing\\M1_C2_bias32_infovqa_p2_500_missing_v3",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        },
+        {
+          "method": "E_r0888",
+          "method_id": "PyramidKV_visual_drop0p888_unknown",
+          "required_QA": 8,
+          "actual_available_MODEL_output_QA": 8,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\p1\\M1_E_r0888_infovqa_p1_128_v1"
+          ],
+          "exact_contract_sha256": "ad19df611656d75ef312cb0186415015d63250e62f895d5913ccc10336f86d23",
+          "pending_source_candidates": []
+        },
+        {
+          "method": "OT_Hmix23",
+          "method_id": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+          "required_QA": 8,
+          "actual_available_MODEL_output_QA": 8,
+          "missing_expected_QA": 0,
+          "missing_expected_ids": [],
+          "verified_source_runs": [
+            "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_v2\\M1_OT_Hmix23_textvqa_probe2_v2",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage8_missing2_v4",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage8_missing4_v4",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_textvqa_stage64_missing28_v5",
+            "${EVIDENCE_ROOT}\\results\\onlyterp_pilot_reuse\\M1_OT_Hmix23_infovqa_stage64_missing28_v5"
+          ],
+          "exact_contract_sha256": "b0e6f4264491a851317c6419e7f1198b9636b044c20320eb8b62323b1a8a3fb3",
+          "pending_source_candidates": [
+            {
+              "raw_dir": "${EVIDENCE_ROOT}\\results\\onlyterp_hmix23_optional500\\M1_OT_Hmix23_infovqa_p2_500_missing468_v6",
+              "status": "NO_ACTUAL_CLOSED_RAW_YET"
+            }
+          ]
+        }
+      ],
+      "new_GPU_trials_run": 0,
+      "requires_before_formal": "Own model/dataset five-method fixed2 hardware smoke must pass with MODEL IDs before formal",
+      "launch_authority": "Root/P only; this tool neither stages nor launches"
+    }
+  ],
+  "planned_total_trials": 560,
+  "canonical_E_choice": "Source-default W64 globally across all four domains, per Root decision; W8 predefined500 sensitivity remains retained",
+  "historical_v1_actual_trials": 40,
+  "historical_v1_unrun_trials_superseded": 520,
+  "profile_trial_domains": {
+    "new_canonical_v2": 560,
+    "old_E8_historical_actual": 40,
+    "legacy_formal": 656,
+    "Calib_process_diagnostic": 32
+  },
+  "public_cutoff_20261120_0853_unchanged": true,
+  "actual_ready_jobs": 1,
+  "conditional_targets": 3,
+  "new_GPU_trials_run": 0,
+  "source_or_driver_modified": false,
+  "benchmark_source_sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+  "target_matrix_sha256": "59efc359c35e4af7ad5409bfedfb922a6eb5dbabcfe4361a32043ef77b0ca0fb",
+  "selected_GPU": "1 exclusive; Root/P choose a controlled window",
+  "host_quiet_asserted": false,
+  "stage_launch_or_queue_changed": false,
+  "files_ready_for_optional_stage": {
+    "configs/speed/M1_source_representatives_textvqa_2_hardware_smoke_v2.json": "26b94689ef033468f3e986da3e1e8f217cf96c20351450fbff41907d657cec40",
+    "configs/speed/expected_M1_source_representatives_textvqa_2_hardware_smoke_v2.json": "07837010bc8e1643e72d10a08e6f01874d64664fa334c9111b5cadaad593ab96",
+    "configs/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v2.json": "fb99440b64ed3650385c9ab0ca51a8885ac2702213bbc5bfcff8613ac3f9d775"
+  },
+  "refresh_rule": "Run this CPU tool with a new --version after actual own source raw/proof closes; no invented expected IDs or whole-500 GPU claim"
+}

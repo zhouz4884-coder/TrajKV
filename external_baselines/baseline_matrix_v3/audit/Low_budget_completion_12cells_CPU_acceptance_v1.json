@@ -1,0 +1,81 @@
+{
+  "status": "PASS_CPU_LOW_BUDGET_COMPLETION_12CELLS_AND_CONDITIONAL_SOURCE_SAFEGUARDS",
+  "case_count": 9,
+  "checks": [
+    {
+      "case": "EXACT_TWELVE_FIXED500_UNITS_102_PLUS12_NOT_METHOD_CROSS_PRODUCT",
+      "status": "PASS"
+    },
+    {
+      "case": "EXISTING_POINT_PARAMETERS_FIXED_LOCKED500_NO_FULL_EXPANSION_OR_NEW_CODEC",
+      "status": "PASS"
+    },
+    {
+      "case": "FOUR_M1_REAL_SAME_POINT_SOURCE_PLANS_ZERO_HITS_FRESH500",
+      "status": "PASS"
+    },
+    {
+      "case": "EIGHT_CONDITIONAL_QWEN_CELLS_OWN_PROFILE_FIRST2_NATIVE_CONTRACTS_NO_FAKE_HITS",
+      "status": "PASS"
+    },
+    {
+      "case": "M1_HMIX12_CANNOT_UNLOCK_M2",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "case": "OWN_M2_HMIX23_CANNOT_UNLOCK_HMIX12",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "case": "OWN_M3_HMIX23_CANNOT_UNLOCK_HMIX12",
+      "status": "PASS_REJECTED"
+    },
+    {
+      "case": "ALL72_EXISTING_REFERENCE_ROWS_FULL_PHYSICAL_OWNER_BITS_AND_SOURCE_CHECKED_NO_SCORE_GATE",
+      "status": "PASS"
+    },
+    {
+      "case": "FROZEN_NUMERICAL_CACHE_PROTOCOL_SOURCES_UNCHANGED_AND_NO_STAGE_GPU_QUEUE",
+      "status": "PASS"
+    }
+  ],
+  "matrix": "configs/matrix/P2_low_budget_completion_12cells_v1.json",
+  "matrix_sha256": "e33c079a118a1110f43f5721eaf4c7773138e715180401626721fa39214df6c6",
+  "actual_ready_cells": 4,
+  "actual_fresh_QA": 2000,
+  "conditional_cells": 8,
+  "total_target_QA": 6000,
+  "own_model_smoke_jobs": 2,
+  "existing_reference_owner_rows_verified": 72,
+  "reference_actual_bits": [
+    {
+      "kind": "OT_Hmix12",
+      "QA": 64,
+      "min": 1.7564852275545635,
+      "max": 1.760527111235119
+    },
+    {
+      "kind": "E_w8_drop091875",
+      "QA": 8,
+      "min": 1.2717633928571428,
+      "max": 1.2898995535714286
+    }
+  ],
+  "new_GPU_QA": 0,
+  "new_math_or_codec": false,
+  "official_full_low_points_prepared": false,
+  "numerical_sources_unchanged": {
+    "code/evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+    "code/prediction_cache.py": "91e765556ab97716e4ea0b10c2b36d3f5df27ad84aabf649a975302fe5b66a6d",
+    "code/methods/turboquant_onlyterp_mse_adapter.py": "ef52ac83eaabae8cbc41c46bc976bc6d6fcb696f2897bcb2bda534e2431ee86e",
+    "code/methods/eviction_adapter.py": "91b4ea675763d410f491955394ba1a8c42c09d3be7aa6c35c8d4fa852788372b",
+    "code/methods/turboquant_adapter.py": "bd824c42b9a653001c88f542879cea820865ff31b5ab342c2322f1d9b4f2bfe5",
+    "third_party/turboquant_onlyterp/src/cache.py": "cafa0d42ab72a1ff468ed70e36f855585f2a38c8829a0a7933ecfbfef5e77431",
+    "code/qwen_protocol.py": "1be51e44c8884fd4787f87de487350e78aeeff6dbffd8efb3dfcd7e7be5099b4",
+    "code/m1_protocol.py": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427"
+  },
+  "stage_or_queue_changes": false,
+  "public_cutoff_unchanged": true,
+  "safe_Qwen_refresh_CLI": "python ops/prepare_low_budget_completion_12cells_v1.py --refresh-model M2_OR_M3 --reference-run ACTUAL_OWN_HMIX12_PROBE2 --output E_NEW_DIR --version NEW_RUN_ID",
+  "future_data_rule": "Low-quality rows stay. Exact source/input/finite/complete-owner validation admits compatibility, not a quality threshold or unmeasured byte claim."
+}
