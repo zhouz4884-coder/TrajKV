@@ -1,0 +1,974 @@
+{
+  "schema": "baseline_matrix.speed_plan.v1",
+  "status": "CPU_PLAN_ONLY_NO_GPU",
+  "job": {
+    "schema": "baseline_matrix.speed_job.v1",
+    "eval_configs": [
+      "${DATA_ROOT}/configs/eval/M3_F_textvqa_p2_500_v1.json",
+      "${DATA_ROOT}/configs/eval/M3_K2_R0_textvqa_p2_500_v1.json",
+      "${DATA_ROOT}/configs/eval/M3_E_r0888_textvqa_p2_500_v1.json"
+    ],
+    "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+    "selection": {
+      "mode": "first",
+      "count": 8
+    },
+    "repeat": 3,
+    "warmup_per_qa": 1,
+    "seed": 20261120,
+    "expected_predictions": "${DATA_ROOT}/configs/speed/expected_M3_text8_v1.json",
+    "allocator_policy": "retain_caching_allocator",
+    "verify_gpu_exclusive": true,
+    "host_quiet_asserted": false
+  },
+  "job_sha256": "052ab61c7810a578d4962529973917fc3c52fe6e9ab15cbf8196493de4727418",
+  "model_spec": {
+    "model_id": "M3",
+    "hf_id": "Qwen/Qwen3-VL-4B-Instruct",
+    "revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+    "architecture": "Qwen3VLForConditionalGeneration",
+    "layers": 36,
+    "query_heads": 32,
+    "kv_heads": 8,
+    "head_dim": 128,
+    "image_token_id": 151655,
+    "vision_start_token_id": 151652,
+    "vision_end_token_id": 151653,
+    "native_adapter": "qwen3_vl",
+    "mrope_section": [
+      24,
+      20,
+      20
+    ],
+    "mrope_interleaved": true,
+    "deepstack_visual_indexes": [
+      5,
+      11,
+      17
+    ],
+    "sliding_attention": false,
+    "processor_spatial_factor": 32
+  },
+  "effective_configs": [
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M3",
+      "model_revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+      "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+      "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 8,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "method": {
+        "id": "F_native_split",
+        "family": "fp16",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209",
+        "textvqa:validation:35791",
+        "textvqa:validation:38923",
+        "textvqa:validation:35278",
+        "textvqa:validation:34678",
+        "textvqa:validation:36735",
+        "textvqa:validation:37504"
+      ]
+    },
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M3",
+      "model_revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+      "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+      "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 8,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "method": {
+        "id": "KIVI_style_K2V2_g128_R0",
+        "family": "kivi_style",
+        "adapter_module": "methods.kivi_style",
+        "adapter_class": "KIVIStyleAdapter",
+        "constructor_args": {
+          "bits": 2,
+          "group_size": 128,
+          "residual_length": 0,
+          "reader_backend": "triton_packed"
+        },
+        "reader_backend": "triton_packed",
+        "encode_scope": "visual",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209",
+        "textvqa:validation:35791",
+        "textvqa:validation:38923",
+        "textvqa:validation:35278",
+        "textvqa:validation:34678",
+        "textvqa:validation:36735",
+        "textvqa:validation:37504"
+      ]
+    },
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M3",
+      "model_revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+      "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+      "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 8,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "method": {
+        "id": "PyramidKV_visual_drop0p888_unknown",
+        "family": "pyramidkv",
+        "adapter_module": "methods.eviction_adapter",
+        "adapter_class": "PyramidKVVisualAdapter",
+        "constructor_args": {
+          "compression_ratio": 0.888,
+          "window_size": 64,
+          "kernel_size": 5,
+          "beta": 20,
+          "num_layers": 36,
+          "information_condition": "query_unknown"
+        },
+        "encode_scope": "prefix",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209",
+        "textvqa:validation:35791",
+        "textvqa:validation:38923",
+        "textvqa:validation:35278",
+        "textvqa:validation:34678",
+        "textvqa:validation:36735",
+        "textvqa:validation:37504"
+      ]
+    }
+  ],
+  "original_config_hashes": {
+    "${DATA_ROOT}/configs/eval/M3_F_textvqa_p2_500_v1.json": "94f9cdb751eeca42b07fe71371deba36584b6dab2b22da2a99df54d2b7e5505e",
+    "${DATA_ROOT}/configs/eval/M3_K2_R0_textvqa_p2_500_v1.json": "2993805b4b34830a395dc4b94140616737c1cccd50acb2df9e4edcae780a7367",
+    "${DATA_ROOT}/configs/eval/M3_E_r0888_textvqa_p2_500_v1.json": "d48fa67f3d8be223c842615b14b7af442336674ec03227cbba7ceeef41d2f773"
+  },
+  "inputs_sha256": "9891e84b7589cce22ff398bab28b25ff94b0db92a4db63751a11e368fe3c18d8",
+  "source_lock_sha256": "d3d48f16e788ed7e62123bcdfad0d16a6e182215e2814792a1014db5b55d1f2f",
+  "expected_ids": [
+    "textvqa:validation:39023",
+    "textvqa:validation:36209",
+    "textvqa:validation:35791",
+    "textvqa:validation:38923",
+    "textvqa:validation:35278",
+    "textvqa:validation:34678",
+    "textvqa:validation:36735",
+    "textvqa:validation:37504"
+  ],
+  "selection": {
+    "mode": "first_in_frozen_input_order",
+    "count": 8,
+    "labels_or_scores_used": false
+  },
+  "method_ids": [
+    "F_native_split",
+    "KIVI_style_K2V2_g128_R0",
+    "PyramidKV_visual_drop0p888_unknown"
+  ],
+  "measured_trials": 72,
+  "warmup_trials": 24,
+  "schedule": [
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:35791",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:35791",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:35791",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:38923",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:38923",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:38923",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:35278",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:35278",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:35278",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:34678",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:34678",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:34678",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36735",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36735",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36735",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:37504",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:37504",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:37504",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:35791",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:35791",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:35791",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:38923",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:38923",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:38923",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:35278",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:35278",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:35278",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:34678",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:34678",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:34678",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36735",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36735",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36735",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:37504",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:37504",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:37504",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:35791",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:35791",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:35791",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:38923",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:38923",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:38923",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:35278",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:35278",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:35278",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:34678",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:34678",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:34678",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36735",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36735",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36735",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:37504",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:37504",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:37504",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:35791",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:35791",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:35791",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:38923",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:38923",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:38923",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:35278",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:35278",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:35278",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:34678",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:34678",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:34678",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36735",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36735",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36735",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:37504",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:37504",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:37504",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    }
+  ],
+  "references_read": false,
+  "GPU_used": false,
+  "source_sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+  "extensions": []
+}

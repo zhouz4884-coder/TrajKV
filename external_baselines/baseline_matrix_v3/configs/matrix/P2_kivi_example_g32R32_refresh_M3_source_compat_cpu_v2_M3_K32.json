@@ -1,0 +1,148 @@
+{
+  "schema": "baseline_matrix.source_example_default_extension.v1",
+  "status": "PREPARED_NOT_LAUNCHED",
+  "source_configuration": "K2/V2 group32 residual32 pinned source example prefill visual port; not original rolling whole system",
+  "scope": "Additional strong-quality default point; g128R0 baseline unchanged; no other widths prepared",
+  "source_method": {
+    "id": "KIVI_source_example_K2V2_g32_R32_visual",
+    "family": "kivi_source_example",
+    "adapter_module": "methods.kivi_example_adapter",
+    "adapter_class": "KIVIExampleAdapter",
+    "constructor_args": {
+      "bits": 2,
+      "group_size": 32,
+      "residual_length": 32,
+      "reader_backend": "triton_packed"
+    },
+    "reader_backend": "triton_packed",
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "target_cells": 4,
+  "target_QA": 2000,
+  "actual_plan_cells": 4,
+  "actual_verified_cache_hits": 2,
+  "actual_missing_inference_QA": 1998,
+  "conditional_cells": 0,
+  "conditional_target_QA": 0,
+  "GPU_launched": false,
+  "reference_answers_read": false,
+  "smoke_jobs": [],
+  "rows": [
+    {
+      "model": "M3",
+      "method": "K2_g32R32",
+      "dataset": "textvqa",
+      "count": 500,
+      "full_target_config": "configs/eval/M3_K2_g32R32_textvqa_p2_500_v1.json",
+      "config": "configs/eval/M3_K2_g32R32_textvqa_p2_500_v1.json",
+      "status": "ACTUAL_SAME_MODEL_REUSE_PLAN_VALID",
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\kivi_example_p2\\source_compat_cpu_v2_M3_K32\\M3_K2_g32R32_textvqa_p2_500_v1.json",
+      "plan_sha256": "628c1ca60f915fc17dd38988af94a1cf1f20551224ed0513c8da569ea4414c29",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1"
+      ],
+      "effective_contract_sha256": "257f1417f7a46df52ed04bcba61501c57101bd6f0d4614e05b3da889466d6dae",
+      "cached_PASS_QA": 2,
+      "fresh_QA": 498,
+      "missing_config": "configs/eval/M3_K2_g32R32_textvqa_p2_500_missing_source_compat_cpu_v2_M3_K32.json",
+      "job": "configs/jobs/bm_M3_K2_g32R32_textvqa_p2_500_missing_source_compat_cpu_v2_M3_K32.json",
+      "name": "bm_M3_K2_g32R32_textvqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "remote_new_output": "${DATA_ROOT}/results/p2_kivi_example_missing/source_compat_cpu_v2_M3_K32/M3_K2_g32R32_textvqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "gpu_in_draft": "0",
+      "requires_pass": [
+        "results/p1_smoke/M3_K2_g32R32_textvqa_probe2_v1/complete.json"
+      ],
+      "verified_local_reference_marker": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1\\complete.json",
+      "launch_policy": "Root GPU lease plus actual contract plan; no launcher called by preparation"
+    },
+    {
+      "model": "M3",
+      "method": "K2_g32R32",
+      "dataset": "infovqa",
+      "count": 500,
+      "full_target_config": "configs/eval/M3_K2_g32R32_infovqa_p2_500_v1.json",
+      "config": "configs/eval/M3_K2_g32R32_infovqa_p2_500_v1.json",
+      "status": "ACTUAL_SAME_MODEL_REUSE_PLAN_VALID",
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\kivi_example_p2\\source_compat_cpu_v2_M3_K32\\M3_K2_g32R32_infovqa_p2_500_v1.json",
+      "plan_sha256": "6c732b1239d637cca2c966aa1fdc49d4d20bc2d0e53d5c22ef860ceff6355b86",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1"
+      ],
+      "effective_contract_sha256": "257f1417f7a46df52ed04bcba61501c57101bd6f0d4614e05b3da889466d6dae",
+      "cached_PASS_QA": 0,
+      "fresh_QA": 500,
+      "missing_config": "configs/eval/M3_K2_g32R32_infovqa_p2_500_missing_source_compat_cpu_v2_M3_K32.json",
+      "job": "configs/jobs/bm_M3_K2_g32R32_infovqa_p2_500_missing_source_compat_cpu_v2_M3_K32.json",
+      "name": "bm_M3_K2_g32R32_infovqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "remote_new_output": "${DATA_ROOT}/results/p2_kivi_example_missing/source_compat_cpu_v2_M3_K32/M3_K2_g32R32_infovqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "gpu_in_draft": "1",
+      "requires_pass": [
+        "results/p1_smoke/M3_K2_g32R32_textvqa_probe2_v1/complete.json"
+      ],
+      "verified_local_reference_marker": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1\\complete.json",
+      "launch_policy": "Root GPU lease plus actual contract plan; no launcher called by preparation"
+    },
+    {
+      "model": "M3",
+      "method": "K2_g32R32",
+      "dataset": "docvqa",
+      "count": 500,
+      "full_target_config": "configs/eval/M3_K2_g32R32_docvqa_p2_500_v1.json",
+      "config": "configs/eval/M3_K2_g32R32_docvqa_p2_500_v1.json",
+      "status": "ACTUAL_SAME_MODEL_REUSE_PLAN_VALID",
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\kivi_example_p2\\source_compat_cpu_v2_M3_K32\\M3_K2_g32R32_docvqa_p2_500_v1.json",
+      "plan_sha256": "fd624fa02602255cb42c40bd2216e8c853a614b443986c84a07ba1400053b097",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1"
+      ],
+      "effective_contract_sha256": "257f1417f7a46df52ed04bcba61501c57101bd6f0d4614e05b3da889466d6dae",
+      "cached_PASS_QA": 0,
+      "fresh_QA": 500,
+      "missing_config": "configs/eval/M3_K2_g32R32_docvqa_p2_500_missing_source_compat_cpu_v2_M3_K32.json",
+      "job": "configs/jobs/bm_M3_K2_g32R32_docvqa_p2_500_missing_source_compat_cpu_v2_M3_K32.json",
+      "name": "bm_M3_K2_g32R32_docvqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "remote_new_output": "${DATA_ROOT}/results/p2_kivi_example_missing/source_compat_cpu_v2_M3_K32/M3_K2_g32R32_docvqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "gpu_in_draft": "0",
+      "requires_pass": [
+        "results/p1_smoke/M3_K2_g32R32_textvqa_probe2_v1/complete.json"
+      ],
+      "verified_local_reference_marker": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1\\complete.json",
+      "launch_policy": "Root GPU lease plus actual contract plan; no launcher called by preparation"
+    },
+    {
+      "model": "M3",
+      "method": "K2_g32R32",
+      "dataset": "chartqa",
+      "count": 500,
+      "full_target_config": "configs/eval/M3_K2_g32R32_chartqa_p2_500_v1.json",
+      "config": "configs/eval/M3_K2_g32R32_chartqa_p2_500_v1.json",
+      "status": "ACTUAL_SAME_MODEL_REUSE_PLAN_VALID",
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\kivi_example_p2\\source_compat_cpu_v2_M3_K32\\M3_K2_g32R32_chartqa_p2_500_v1.json",
+      "plan_sha256": "c61aafab89be4615dd64688b96fd66b7bfc6bfba880bc666af5824b8b052ae60",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1"
+      ],
+      "effective_contract_sha256": "257f1417f7a46df52ed04bcba61501c57101bd6f0d4614e05b3da889466d6dae",
+      "cached_PASS_QA": 0,
+      "fresh_QA": 500,
+      "missing_config": "configs/eval/M3_K2_g32R32_chartqa_p2_500_missing_source_compat_cpu_v2_M3_K32.json",
+      "job": "configs/jobs/bm_M3_K2_g32R32_chartqa_p2_500_missing_source_compat_cpu_v2_M3_K32.json",
+      "name": "bm_M3_K2_g32R32_chartqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "remote_new_output": "${DATA_ROOT}/results/p2_kivi_example_missing/source_compat_cpu_v2_M3_K32/M3_K2_g32R32_chartqa_p2_500_missing_source_compat_cpu_v2_M3_K32",
+      "gpu_in_draft": "1",
+      "requires_pass": [
+        "results/p1_smoke/M3_K2_g32R32_textvqa_probe2_v1/complete.json"
+      ],
+      "verified_local_reference_marker": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_K2_g32R32_textvqa_probe2_v1\\complete.json",
+      "launch_policy": "Root GPU lease plus actual contract plan; no launcher called by preparation"
+    }
+  ],
+  "all_new_inference_paths_and_caches_on_project_data_disk": true,
+  "local_new_raw_mirror": "${EVIDENCE_ROOT}/results",
+  "actual_bits": "Measure complete owners; do not assume the two M1 smoke rates apply to all N/models"
+}

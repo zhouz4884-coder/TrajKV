@@ -1,0 +1,32 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M2",
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+  "start": 0,
+  "count": 500,
+  "max_new_tokens": 64,
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "min_pixels": 200704,
+    "max_pixels": 1003520
+  },
+  "method": {
+    "id": "OT_Hmix23_OnlyTerp_MSE_QJL0_visual",
+    "family": "onlyterp_mse",
+    "adapter_module": "methods.turboquant_onlyterp_mse_adapter",
+    "adapter_class": "OnlyTerpMSEAdapter",
+    "constructor_args": {
+      "bits_regular": 2,
+      "bits_outlier": 3,
+      "mixed_precision": true,
+      "reader_backend": "torch_materialize_fp32_reference"
+    },
+    "reader_backend": "torch_materialize_fp32_reference",
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "scope": "ONLYTERP_SOURCE_ALG1_MSE_QJL0_HMIX23_STANDARD_TARGET; OWN_MODEL_SOURCE_REQUIRED; NOT_PROD_OR_EXACT_PAPER3P5_TABLE"
+}

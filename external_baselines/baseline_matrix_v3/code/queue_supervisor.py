@@ -18,6 +18,49 @@ import time
 def read(path): return json.loads(Path(path).read_text(encoding='utf-8'))
 
 
+def record_finished(lane, active, complete):
+    """Default is still stop. Only explicitly optional new jobs may continue."""
+    expected = active.get('completion_contract', {}).get('accepted_status', 'PASS_RAW_COMPLETE')
+    policy = active.get('on_failure', 'stop')
+    assert policy in ('stop', 'continue')
+    row = {'name': active['name'], 'initial_external': active.get('initial_external', False),
+           'observed_complete': complete, 'observed_unix': time.time(), 'on_failure': policy}
+    lane['completed'].append(row)
+    lane['active'] = None
+    if complete['status'] != expected:
+        if policy == 'continue':
+            lane.setdefault('optional_failures', []).append(row)
+        else:
+            lane.update(status='STOPPED_ON_ACTUAL_JOB_FAILURE', failure=complete)
+    return lane['status'] == 'RUNNING'
+
+
+def json_prerequisite_state(root, condition, completed):
+    """Missing markers wait only while their declared producer is nonterminal."""
+    path = root / condition['path']
+    if not path.exists():
+        terminal = any(row['name'] == condition.get('producer_name') for row in completed)
+        return 'failed' if terminal else 'pending'
+    try:
+        value = read(path)
+        valid = value.get('status') == condition['accepted_status'] and all(
+            value.get(key) == expected for key, expected in condition.get('required_fields', {}).items())
+        return 'passed' if valid else 'failed'
+    except Exception:
+        return 'failed'
+
+
+def existing_active(root, initial):
+    descriptor = {'name': initial} if isinstance(initial, str) else initial
+    assert set(descriptor) <= {'name', 'completion_contract', 'on_failure'}
+    assert descriptor.get('on_failure', 'stop') in ('stop', 'continue')
+    name = descriptor['name']
+    receipt = read(root / 'jobs' / (name + '.launch.json'))
+    return {'name': name, 'initial_external': True, 'receipt': receipt,
+            'completion_contract': descriptor.get('completion_contract', {}),
+            'on_failure': descriptor.get('on_failure', 'stop')}
+
+
 def observed(receipt):
     p = Path('/proc') / str(receipt['pid'])
     if not p.exists(): return 'gone'
@@ -37,6 +80,8 @@ def output_complete(receipt, contract=None):
     if contract and contract.get('type') == 'json_status':
         status=value['status']
         fields_ok=all(value.get(key)==expected for key,expected in contract.get('required_fields', {}).items())
+        for name,key in contract.get('hash_fields', {}).items():
+            assert hashlib.sha256((complete.parent/name).read_bytes()).hexdigest()==value[key], name
         if status==contract['accepted_status'] and not fields_ok:status='JSON_STATUS_CONTRACT_MISMATCH'
         return {'status':status, 'required_fields_match':fields_ok,
                 'report_sha256':hashlib.sha256(complete.read_bytes()).hexdigest(),
@@ -63,6 +108,8 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     plan = read(args.plan); root = Path(plan['root']); volume = Path(plan['data_volume'])
+    assert all(item.get('on_failure', 'stop') in ('stop', 'continue')
+               for items in plan['lanes'].values() for item in items)
     assert str(root.resolve()).startswith(str(volume.resolve()).rstrip('/') + '/')
     args.output.mkdir(parents=True, exist_ok=False)
     launcher = Path(plan['launcher_source'])
@@ -79,9 +126,9 @@ def main():
         temporary.write_text(json.dumps(state, indent=2), encoding='utf-8')
         os.replace(temporary, args.output / 'state.json')
     for gpu, initial in plan.get('wait_for_existing', {}).items():
-        receipt = read(root / 'jobs' / (initial + '.launch.json'))
-        assert str(receipt['CUDA_VISIBLE_DEVICES']) == str(gpu)
-        state['lanes'][gpu]['active'] = {'name': initial, 'initial_external': True, 'receipt': receipt}
+        active = existing_active(root, initial)
+        assert str(active['receipt']['CUDA_VISIBLE_DEVICES']) == str(gpu)
+        state['lanes'][gpu]['active'] = active
     flush()
     while any(lane['status'] == 'RUNNING' for lane in state['lanes'].values()):
         for gpu, lane in state['lanes'].items():
@@ -89,13 +136,13 @@ def main():
             active = lane['active']
             if active:
                 if observed(active['receipt']) == 'live': continue
-                complete = output_complete(active['receipt'], active.get('completion_contract'))
-                lane['completed'].append({'name': active['name'], 'initial_external': active.get('initial_external', False),
-                                          'observed_complete': complete, 'observed_unix': time.time()})
-                lane['active'] = None
-                expected_status=active.get('completion_contract', {}).get('accepted_status', 'PASS_RAW_COMPLETE')
-                if complete['status'] != expected_status:
-                    lane.update(status='STOPPED_ON_ACTUAL_JOB_FAILURE', failure=complete)
+                try:
+                    complete = output_complete(active['receipt'], active.get('completion_contract'))
+                except Exception as error:
+                    if active.get('on_failure') != 'continue': raise
+                    complete = {'status': 'INVALID_OR_INCOMPLETE_OPTIONAL_RAW',
+                                'error_type': type(error).__name__, 'error': str(error)[-1800:]}
+                if not record_finished(lane, active, complete):
                     flush(); continue
             if lane['next'] >= len(plan['lanes'][gpu]):
                 lane['status'] = 'COMPLETE'; flush(); continue
@@ -108,10 +155,21 @@ def main():
             else:assert str(job['env']['CUDA_VISIBLE_DEVICES']) == str(gpu)
             prerequisites = item.get('require_pass', [])
             if any(not (root / condition).exists() for condition in prerequisites): continue
+            json_prerequisites = item.get('require_json_status', [])
+            json_states = [(condition, json_prerequisite_state(root, condition, lane['completed']))
+                           for condition in json_prerequisites]
+            if any(status == 'pending' for condition, status in json_states): continue
             failed_gate = next((condition for condition in prerequisites
                                 if read(root / condition)['status'] != 'PASS_RAW_COMPLETE'), None)
+            failed_json = next((condition['path'] for condition, status in json_states if status == 'failed'), None)
+            failed_gate = failed_gate or failed_json
             if failed_gate:
-                lane.update(status='STOPPED_ON_ACTUAL_PREREQUISITE_FAILURE', failure=failed_gate)
+                if item.get('on_failure') == 'continue':
+                    lane.setdefault('optional_prerequisite_failures', []).append({
+                        'job': item['job'], 'failure': failed_gate, 'observed_unix': time.time()})
+                    lane['next'] += 1
+                else:
+                    lane.update(status='STOPPED_ON_ACTUAL_PREREQUISITE_FAILURE', failure=failed_gate)
                 flush(); continue
             # This is the original source-snapshot launcher with a fixed SHA,
             # not an alternate inference implementation or a fallback backend.
@@ -119,12 +177,15 @@ def main():
                                  capture_output=True, text=True, check=True)
             receipt = json.loads(run.stdout)
             lane['active'] = {'name': job['name'], 'receipt': receipt,
-                              'completion_contract':item.get('completion_contract', {})}
+                              'completion_contract':item.get('completion_contract', {}),
+                              'on_failure':item.get('on_failure', 'stop')}
             lane['next'] += 1
             print(json.dumps({'gpu': gpu, 'job': job['name'], 'pid': receipt['pid'], 'status': 'SCHEDULED'}), flush=True)
             flush()
         if any(lane['status'] == 'RUNNING' for lane in state['lanes'].values()): time.sleep(10)
-    state['status'] = 'PASS_QUEUE_COMPLETE' if all(lane['status'] == 'COMPLETE' for lane in state['lanes'].values()) else 'QUEUE_COMPLETE_WITH_FAILURES'
+    state['status'] = ('PASS_QUEUE_COMPLETE' if all(lane['status'] == 'COMPLETE' and
+        not lane.get('optional_failures') and not lane.get('optional_prerequisite_failures')
+        for lane in state['lanes'].values()) else 'QUEUE_COMPLETE_WITH_FAILURES')
     state['finished_unix'] = time.time(); flush()
     with (args.output / 'complete.json').open('x', encoding='utf-8') as stream: json.dump(state, stream, indent=2)
     print(json.dumps({'status': state['status']}), flush=True)

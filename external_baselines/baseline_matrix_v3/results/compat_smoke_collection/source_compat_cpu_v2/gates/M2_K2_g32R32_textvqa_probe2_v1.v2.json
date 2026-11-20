@@ -1,0 +1,97 @@
+{
+  "schema": "baseline_matrix.actual_model_compatibility_gate.v2",
+  "status": "PASS_ACTUAL_MODEL_2QA_SOURCE_FINITE_OWNER_INPUT_GATE",
+  "model": "M2",
+  "method": {
+    "id": "KIVI_source_example_K2V2_g32_R32_visual",
+    "family": "kivi_source_example",
+    "adapter_module": "methods.kivi_example_adapter",
+    "adapter_class": "KIVIExampleAdapter",
+    "constructor_args": {
+      "bits": 2,
+      "group_size": 32,
+      "residual_length": 32,
+      "reader_backend": "triton_packed"
+    },
+    "reader_backend": "triton_packed",
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "source_run": {
+    "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1",
+    "raw_hashes": {
+      "manifest.json": "3d120166344067b3aa56e5951b88d5eb1fcc287828acf64be9621089fd8355ac",
+      "records.jsonl": "0ee07302f670f12012d3f04b027c65a68f40a1679e5866388f0858b792e6be56",
+      "complete.json": "425e9a1b2278226fb58f57f2e5713a874ac92ada63cb7fb5c77a2e1d0e5d6f6e"
+    },
+    "source_proof_hashes": {
+      "source_inventory.json": "f803e1121b5466966aac2ef6c47f99f5b14b599220261fa05d3e82d2e0c246e3",
+      "launch_receipt.json": "27de08e31cc1c14322cebc81fa7b9f2aa10d1c5ac19cc815b8d6d541a724104e",
+      "source_evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22"
+    },
+    "retrieval_receipt_sha256": "af199897ee778d2520e4b75403afeba99cba320fa0165a49f4c3e3a157dcc22d",
+    "source_retrieval_receipt_sha256": "089489856b589e35c0a644a74dcb70916adb109cf0a4c18d008e194975cdfe01",
+    "effective_contract_sha256": "94f475304a2558e3d3b2a4b94df2a29467b5851ce90b4c40fc39d66739bc4de6",
+    "original_inference_run": true,
+    "source_recorded_QA": 2,
+    "source_status_counts": {
+      "PASS": 2
+    }
+  },
+  "target_config": "configs\\eval\\M2_K2_g32R32_textvqa_probe2_v1.json",
+  "target_config_sha256": "aef7c7e6dc47723cd82b774a90a964221bc709b6c55b3ba9e54303082a247d79",
+  "gate_source_sha256": "2035cc29dadee687046923af3a712b9ba401a1a66c938c17d80275dc2104984d",
+  "reports": [
+    {
+      "id": "textvqa:validation:39023",
+      "PASS": true,
+      "actual_visual_tokens": 999,
+      "actual_effective_visual_bits": 3.318488130988131,
+      "complete_visual_owner_bytes": 11881568,
+      "native_layers": 28,
+      "native_Hq": 28,
+      "native_Hkv": 4,
+      "native_D": 128,
+      "native_position_ids_shape": [
+        3,
+        1,
+        1039
+      ],
+      "compression_boundary": 1014,
+      "full_question_suffix_tokens": 25,
+      "finite_outer_forward_calls": 3,
+      "peak_allocated_bytes": 16823006720,
+      "peak_reserved_bytes": 17041457152,
+      "output_tokens": 2,
+      "quality_threshold_applied": false
+    },
+    {
+      "id": "textvqa:validation:36209",
+      "PASS": true,
+      "actual_visual_tokens": 1225,
+      "actual_effective_visual_bits": 3.2822849854227405,
+      "complete_visual_owner_bytes": 14410544,
+      "native_layers": 28,
+      "native_Hq": 28,
+      "native_Hkv": 4,
+      "native_D": 128,
+      "native_position_ids_shape": [
+        3,
+        1,
+        1261
+      ],
+      "compression_boundary": 1240,
+      "full_question_suffix_tokens": 21,
+      "finite_outer_forward_calls": 6,
+      "peak_allocated_bytes": 16879725568,
+      "peak_reserved_bytes": 17129537536,
+      "output_tokens": 5,
+      "quality_threshold_applied": false
+    }
+  ],
+  "actual_GPU_QA": 2,
+  "no_reference_answers_read": true,
+  "new_GPU_experiment_by_gate": false,
+  "quality_threshold_or_numerical_equivalence_claim": false,
+  "positions_limit": "Actual shape/indices/boundary and recorded SHA verified; exact native 3-axis values rely on locked audited protocol and prior native bridge controls, not newly recomputed by this CPU gate"
+}

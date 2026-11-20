@@ -1,0 +1,165 @@
+{
+  "schema": "baseline_matrix.offline_score.v1",
+  "status": "PASS_SCORED_COMPLETE",
+  "dataset": "infovqa",
+  "model_id": "M1",
+  "method": "F_native_split",
+  "metric_contract_version": "matrix_v3_metrics_v1",
+  "metric_ids": [
+    "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+  ],
+  "metric_provenance": [
+    "explicit vendor ANLS protocol; current server identity unverified"
+  ],
+  "groups": {
+    "overall": {
+      "expected_questions": 32,
+      "scored_pass_questions": 32,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 0.7583333333333334,
+        "questions": 32,
+        "source_clusters": 32,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.61875,
+          0.8833333333333333
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 0.7583333333333334,
+        "questions": 32,
+        "source_clusters": 32,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.61875,
+          0.8833333333333333
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    }
+  },
+  "primary_mean": 0.7583333333333334,
+  "primary_ci95": [
+    0.61875,
+    0.8833333333333333
+  ],
+  "primary_mean_percent": 75.83333333333334,
+  "primary_ci95_percent": [
+    61.875,
+    88.33333333333333
+  ],
+  "diagnostic_metrics_not_selected_by_score": {
+    "anls_docvqa_author_strip_ge0p5_v1": {
+      "primary_full_cohort_mean": 0.7583333333333334,
+      "primary_full_cohort_ci95": [
+        0.61875,
+        0.8833333333333333
+      ],
+      "conditional_success_only": {
+        "mean": 0.7583333333333334,
+        "questions": 32,
+        "source_clusters": 32,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.61875,
+          0.8833333333333333
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      }
+    },
+    "anls_normalized_length_ge0p5_v1": {
+      "primary_full_cohort_mean": 0.7583333333333334,
+      "primary_full_cohort_ci95": [
+        0.61875,
+        0.8833333333333333
+      ],
+      "conditional_success_only": {
+        "mean": 0.7583333333333334,
+        "questions": 32,
+        "source_clusters": 32,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.61875,
+          0.8833333333333333
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      }
+    }
+  },
+  "raw_status_counts": {
+    "PASS": 32
+  },
+  "score_status_counts": {
+    "SCORED_PASS": 32
+  },
+  "expected_run_questions": 32,
+  "reference_cohort_questions": 128,
+  "entire_reference_cohort_selected": false,
+  "expected_ids_sha256": "d5f9d591f4686b247eb636fd502f1aa6e69b17807e4b2af8f42661408deb00ad",
+  "coverage_rule": "Any raw/scoring failure makes primary full-run mean/CI null; successful conditional mean is separately labeled, no fake zero or success-subset primary",
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261119,
+    "type": "percentile source-cluster resampling with replacement, question-weighted ratio",
+    "scale": "0..1"
+  },
+  "integrity": {
+    "status": "PASS_ALL_SHA_AND_EXPECTED_ID_CHECKS",
+    "raw_files": {
+      "manifest.json": "f9a3010851f976b794163fabaa1e95c3a1860cca9ebcee590fc29c7a846501a5",
+      "records.jsonl": "6cf5c0884b830f2f0b9bcb9f65fd05f8891e6ac670558536d704da2de7d8f768",
+      "complete.json": "e3e0a0400def493ef9331bd417aecf9fd6120418b727e68e96110df2fa3d4168"
+    },
+    "retrieval_receipt_sha256": null,
+    "derived_source_provenance": {
+      "status": "PASS_DERIVED_SOURCE_PROVENANCE",
+      "raw_hashes": {
+        "manifest.json": "f9a3010851f976b794163fabaa1e95c3a1860cca9ebcee590fc29c7a846501a5",
+        "records.jsonl": "6cf5c0884b830f2f0b9bcb9f65fd05f8891e6ac670558536d704da2de7d8f768",
+        "complete.json": "e3e0a0400def493ef9331bd417aecf9fd6120418b727e68e96110df2fa3d4168"
+      },
+      "origin_counts": {
+        "reused": 32
+      },
+      "source_runs": 1,
+      "inference_run": false,
+      "provenance_sha256": "9a3018d6c5fa28b02d5a2df75873c96f36439570efa694b7f2404201789efb8c"
+    },
+    "refs_sha256": "60fd14d4e088c148ff7c8fab86a94cae52cc6c74a38c5a7aabb3f0b2446a9dcb",
+    "inputs_sha256": "2fe80c3e00c12e6570023acf2899d2c3847d7ffe16ee8bf9b34acaa082a11fe0",
+    "dataset_source_lock_sha256": "d3d48f16e788ed7e62123bcdfad0d16a6e182215e2814792a1014db5b55d1f2f",
+    "metric_source_lock_sha256": "4ec78ff4f807843e358914afcf3e60e1a7eaf6f3013575a1f63787016da788e3",
+    "metric_code_hashes": {
+      "code/gates/metrics_gate.py": "e91887b55561759c2349860cf9a5acb2ed9284be99d6b3ae6469e8f2c4731606",
+      "code/metrics.py": "98b260c766e095f2b629d603de5cfd6519a91dccaaee471f02486955bb590d47",
+      "code/vendor_textvqa_metric.py": "b1a8e90abbf35e32e1e6c146c36c4a47ad72b71e73011f97cc3729aa1402b4c5"
+    },
+    "scorer_sha256": "72b5182eeb97e930403a970feebb4f1fadac23d04544c9646c6c9fd6b34bfba6",
+    "raw_dir": "${EVIDENCE_ROOT}\\results\\onlyterp_baseline_match32_v1\\F_infovqa_32",
+    "refs_path": "${PROJECT_ROOT}\\configs\\datasets\\v3\\infovqa_p1_refs.jsonl",
+    "fixture_only": false
+  },
+  "created_unix": 1795150007.045723,
+  "scoring_uses_GPU": false,
+  "prediction_provenance": {
+    "type": "derived_prediction_view",
+    "inference_run": false,
+    "origin_counts": {
+      "reused": 32
+    },
+    "source_runs": 1
+  },
+  "derived_file_hashes": {
+    "scored_records.jsonl": "210f78058ff049bcc686307dfb8afa32a0e1bbae88735a9838f9e538104fd61b",
+    "scores.csv": "55deb9f5a3fc1f18e0560d7b4aa5820d2f3f10bd7b807ef4a82be05752441b22"
+  }
+}

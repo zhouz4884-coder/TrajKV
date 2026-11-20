@@ -1,0 +1,35 @@
+{
+  "status": "LAUNCHED",
+  "pid": 1082093,
+  "name": "bm_onlyterp_mixed_prod_cuda_gate_v1",
+  "argv_executed": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "${DATA_ROOT}/jobs/bm_onlyterp_mixed_prod_cuda_gate_v1.source/code/gates/onlyterp_mixed_prod_gate.py",
+    "--device",
+    "cuda:0",
+    "--output",
+    "${DATA_ROOT}/results/p0/onlyterp_mixed_prod_cuda_v1.json"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_onlyterp_mixed_prod_cuda_gate_v1.source",
+  "source_inventory_sha256": "375df79818c7c93b1eeb3ce3259980aafca460e3608c47c2631ff20e707743f9",
+  "job_sha256": "9185a534188898a161736fb66d2313341aac20c5166cbd9f4be1985ba6d46f37",
+  "log": "${DATA_ROOT}/logs/bm_onlyterp_mixed_prod_cuda_gate_v1.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+    "TMP": "${DATA_ROOT}/cache/main/tmp",
+    "TEMP": "${DATA_ROOT}/cache/main/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "1",
+  "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+}

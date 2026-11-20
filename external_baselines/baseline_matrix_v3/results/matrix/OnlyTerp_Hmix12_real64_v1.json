@@ -1,0 +1,86 @@
+{
+  "schema": "baseline_matrix.onlyterp64_result.v1",
+  "status": "REAL_GPU_64_QA_COMPLETE_INDEPENDENT_SOURCE_AND_SCORE_VALIDATED",
+  "point": "OnlyTerp source MSE Algorithm1 Hmix12 practical Hadamard / QJL0",
+  "not_prod_or_original_paper_2p5_table": true,
+  "new_GPU_QA_by_subtask": 62,
+  "prior_probe_QA_reused": 2,
+  "actual_unique_QA_total": 64,
+  "raw_failure_QA": 0,
+  "quality_types_not_mixed": true,
+  "rows": [
+    {
+      "dataset": "textvqa",
+      "metric": "textvqa_mmf_ten_vote_leave_one_out_v1",
+      "QA": 32,
+      "source_clusters": 32,
+      "score_percent": 45.0,
+      "score_ci95_percent": [
+        29.6875,
+        60.62499999999999
+      ],
+      "same_source_FP16_percent": 81.875,
+      "paired_difference_pp": -36.875,
+      "paired_difference_ci95_pp": [
+        -54.37499999999999,
+        -20.625
+      ],
+      "effective_bits_mean": 1.7573333013625372,
+      "effective_bits_min": 1.7570626395089286,
+      "effective_bits_max": 1.760527111235119,
+      "all_within_1p8": true,
+      "mean_complete_visual_owner_bytes": 10580528,
+      "actual_peak_allocated_bytes_max": 16289841664,
+      "actual_peak_reserved_bytes_max": 16512974848,
+      "mean_instrumented_quality_wall_ms": 4756.5968862518275,
+      "mean_output_tokens": 3.5,
+      "max_new64_hit_QA": 0,
+      "max_one_layer_temporary_decoded_FP32_visual_KV_bytes": 7340032,
+      "temporary_value_scope": "one layer reported decoded K/V only, not all temporaries and not summed across sequential layers",
+      "timing_not_formal_speed": true,
+      "technical_status": "ALL_PASS_NO_MISSING_QA",
+      "scored_summary_sha256": "8f9bc8b132d6f1bbf6dd82bd0ea7e0ff15450e0e8bc76742c8c8869167e3245b",
+      "view_complete_sha256": "c89c2b397e06532ada14ea462cb152a088065a1fd2208af35b4f8003c2faac1c"
+    },
+    {
+      "dataset": "infovqa",
+      "metric": "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1",
+      "QA": 32,
+      "source_clusters": 32,
+      "score_percent": 16.607142857142858,
+      "score_ci95_percent": [
+        6.25,
+        29.109374999999986
+      ],
+      "same_source_FP16_percent": 75.83333333333334,
+      "paired_difference_pp": -59.226190476190474,
+      "paired_difference_ci95_pp": [
+        -75.3125,
+        -41.36755952380953
+      ],
+      "effective_bits_mean": 1.7574469793410528,
+      "effective_bits_min": 1.7564852275545635,
+      "effective_bits_max": 1.7590114048549108,
+      "all_within_1p8": true,
+      "mean_complete_visual_owner_bytes": 10580528,
+      "actual_peak_allocated_bytes_max": 16400157696,
+      "actual_peak_reserved_bytes_max": 16485711872,
+      "mean_instrumented_quality_wall_ms": 14775.969608283049,
+      "mean_output_tokens": 15.96875,
+      "max_new64_hit_QA": 3,
+      "max_one_layer_temporary_decoded_FP32_visual_KV_bytes": 9437184,
+      "temporary_value_scope": "one layer reported decoded K/V only, not all temporaries and not summed across sequential layers",
+      "timing_not_formal_speed": true,
+      "technical_status": "ALL_PASS_NO_MISSING_QA",
+      "scored_summary_sha256": "6145f21a1231ccfc0f3083bddda42cc1903ae231d529a74ba4a1724e13e2e6aa",
+      "view_complete_sha256": "caf8e407381d30154a2ae91f6aa52716ae49c5b4f64db98d85e41eab4c12d820"
+    }
+  ],
+  "root_controller": "External_baselines_P2_Fbank_OT64_E8_queue_v8",
+  "controller_PID": 1048149,
+  "old_node_conservation": "audit/OnlyTerp64_final_node_conservation_v1.json",
+  "optional500_plan": "configs/matrix/OnlyTerp_Hmix12_P2_500_optional_v4.json",
+  "GPU500_launched": false,
+  "recommendation": "Retain this accurate low-budget source point; do not expand it alone as the family strongest comparator. Review the already declared higher-bit Hmix23 together with other byte-matched baselines before deciding the optional 500 jobs.",
+  "quality_is_not_technical_failure_or_a_claim_paper_is_invalid": true
+}

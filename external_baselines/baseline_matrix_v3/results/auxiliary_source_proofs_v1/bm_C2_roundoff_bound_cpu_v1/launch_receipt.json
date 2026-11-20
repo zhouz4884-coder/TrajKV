@@ -1,0 +1,36 @@
+{
+  "status": "LAUNCHED",
+  "pid": 1002959,
+  "name": "bm_C2_roundoff_bound_cpu_v1",
+  "argv_executed": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-m",
+    "gates.calibquant_c2_roundoff_bound_cpu",
+    "--capture",
+    "${DATA_ROOT}/results/p0/calibquant_C2_roundoff_replay_v1/operator_intermediates.pt",
+    "--output",
+    "${DATA_ROOT}/results/p0/calibquant_C2_roundoff_bound_cpu_v1.json"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_C2_roundoff_bound_cpu_v1.source",
+  "source_inventory_sha256": "d2f964729eb929cac94560bcaf885e70475721c93f4dfa9a24c5c532cd61641f",
+  "job_sha256": "825a8554dc5d0fdc7280af72676056806b060b23087c621f4f2b4335643b10cd",
+  "log": "${DATA_ROOT}/logs/bm_C2_roundoff_bound_cpu_v1.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+    "TMP": "${DATA_ROOT}/cache/main/tmp",
+    "TEMP": "${DATA_ROOT}/cache/main/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "",
+  "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+}

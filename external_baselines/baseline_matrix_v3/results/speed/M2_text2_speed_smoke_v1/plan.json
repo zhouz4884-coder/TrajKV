@@ -1,0 +1,370 @@
+{
+  "schema": "baseline_matrix.speed_plan.v1",
+  "status": "CPU_PLAN_ONLY_NO_GPU",
+  "job": {
+    "schema": "baseline_matrix.speed_job.v1",
+    "eval_configs": [
+      "${DATA_ROOT}/configs/eval/M2_F_textvqa_p2_500_v1.json",
+      "${DATA_ROOT}/configs/eval/M2_K2_R0_textvqa_p2_500_v1.json",
+      "${DATA_ROOT}/configs/eval/M2_E_r0888_textvqa_p2_500_v1.json"
+    ],
+    "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+    "selection": {
+      "mode": "first",
+      "count": 2
+    },
+    "repeat": 3,
+    "warmup_per_qa": 1,
+    "seed": 20261120,
+    "expected_predictions": "${DATA_ROOT}/configs/speed/expected_M2_text8_v1.json",
+    "allocator_policy": "retain_caching_allocator",
+    "verify_gpu_exclusive": true,
+    "host_quiet_asserted": false
+  },
+  "job_sha256": "942822ce136bad1d24dbdb75eaf4bbaa23c26a69647d56120fc0740ccf9e8fb1",
+  "model_spec": {
+    "model_id": "M2",
+    "hf_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "architecture": "Qwen2_5_VLForConditionalGeneration",
+    "layers": 28,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "image_token_id": 151655,
+    "vision_start_token_id": 151652,
+    "vision_end_token_id": 151653,
+    "native_adapter": "qwen2_5_vl",
+    "mrope_section": [
+      16,
+      24,
+      24
+    ],
+    "mrope_interleaved": false,
+    "deepstack_visual_indexes": [],
+    "sliding_attention": false,
+    "processor_spatial_factor": 28
+  },
+  "effective_configs": [
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M2",
+      "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 2,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "method": {
+        "id": "F_native_split",
+        "family": "fp16",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ]
+    },
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M2",
+      "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 2,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "method": {
+        "id": "KIVI_style_K2V2_g128_R0",
+        "family": "kivi_style",
+        "adapter_module": "methods.kivi_style",
+        "adapter_class": "KIVIStyleAdapter",
+        "constructor_args": {
+          "bits": 2,
+          "group_size": 128,
+          "residual_length": 0,
+          "reader_backend": "triton_packed"
+        },
+        "reader_backend": "triton_packed",
+        "encode_scope": "visual",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ]
+    },
+    {
+      "schema": "baseline_matrix.eval.v1",
+      "model_id": "M2",
+      "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+      "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+      "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 2,
+      "max_new_tokens": 64,
+      "question_suffix": "\nAnswer the question using a single word or phrase.",
+      "preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "method": {
+        "id": "PyramidKV_visual_drop0p888_unknown",
+        "family": "pyramidkv",
+        "adapter_module": "methods.eviction_adapter",
+        "adapter_class": "PyramidKVVisualAdapter",
+        "constructor_args": {
+          "compression_ratio": 0.888,
+          "window_size": 64,
+          "kernel_size": 5,
+          "beta": 20,
+          "num_layers": 28,
+          "information_condition": "query_unknown"
+        },
+        "encode_scope": "prefix",
+        "information_condition": "query_unknown"
+      },
+      "scope": "FIXED_SCORE_BLIND_SPEED_COHORT; native whole-request replay, no reference answers",
+      "ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ]
+    }
+  ],
+  "original_config_hashes": {
+    "${DATA_ROOT}/configs/eval/M2_F_textvqa_p2_500_v1.json": "83f9bbbc1e341f112cd502b74e70985437361e6fbd86638c86de13257678719c",
+    "${DATA_ROOT}/configs/eval/M2_K2_R0_textvqa_p2_500_v1.json": "5c08dfab71acff03a3f1f0479fa989ca3ac7f5d45ffa2ca3369e0f9bbaf52732",
+    "${DATA_ROOT}/configs/eval/M2_E_r0888_textvqa_p2_500_v1.json": "f14cf10ba28a6c399d96692b7f0a7c41b43f2da0b7ced4f91bc7db19eebc2db8"
+  },
+  "inputs_sha256": "9891e84b7589cce22ff398bab28b25ff94b0db92a4db63751a11e368fe3c18d8",
+  "source_lock_sha256": "d3d48f16e788ed7e62123bcdfad0d16a6e182215e2814792a1014db5b55d1f2f",
+  "expected_ids": [
+    "textvqa:validation:39023",
+    "textvqa:validation:36209"
+  ],
+  "selection": {
+    "mode": "first_in_frozen_input_order",
+    "count": 2,
+    "labels_or_scores_used": false
+  },
+  "method_ids": [
+    "F_native_split",
+    "KIVI_style_K2V2_g128_R0",
+    "PyramidKV_visual_drop0p888_unknown"
+  ],
+  "measured_trials": 18,
+  "warmup_trials": 6,
+  "schedule": [
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "warmup",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 0,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 1,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:39023",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 2
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "F_native_split",
+      "config_index": 0,
+      "method_order_within_QA": 0
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "PyramidKV_visual_drop0p888_unknown",
+      "config_index": 2,
+      "method_order_within_QA": 1
+    },
+    {
+      "phase": "measure",
+      "repeat": 2,
+      "id": "textvqa:validation:36209",
+      "method": "KIVI_style_K2V2_g128_R0",
+      "config_index": 1,
+      "method_order_within_QA": 2
+    }
+  ],
+  "references_read": false,
+  "GPU_used": false,
+  "source_sha256": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+  "extensions": []
+}

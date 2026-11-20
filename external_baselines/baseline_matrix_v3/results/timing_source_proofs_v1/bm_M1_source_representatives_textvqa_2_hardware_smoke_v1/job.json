@@ -1,0 +1,36 @@
+{
+  "name": "bm_M1_source_representatives_textvqa_2_hardware_smoke_v1",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+    "TMP": "${DATA_ROOT}/cache/main/tmp",
+    "TEMP": "${DATA_ROOT}/cache/main/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+  },
+  "argv": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-m",
+    "benchmark_speed",
+    "--config",
+    "${DATA_ROOT}/configs/speed/M1_source_representatives_textvqa_2_hardware_smoke_v1.json",
+    "--output",
+    "${DATA_ROOT}/results/speed_representatives/M1_source_representatives_textvqa_2_hardware_smoke_v1"
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "status": "PASS_FROZEN_CAPTURE_FORWARD_ERROR_AUDIT",
+  "scope": "This frozen operator capture only; no all-input theorem or task-quality claim",
+  "GPU_used": false,
+  "model_weights_loaded": false,
+  "quality_scored": false,
+  "source_capture_sha256": "92611e4d781a3a1faf9bbbb8766fbbb454a61909805cb27c06972bf78e8f4737",
+  "source_replay_report_sha256": "40eb5c9f6fc9cf5d0b9703b8a3c052cdec736c305caced96c15323207c03904c",
+  "production_source_replay_bitwise_equal": true,
+  "contract": {
+    "QK_WV": "source-explicit FP32 products/reduction, FP16 store",
+    "bias": "FP16 products; FP32 sum/div then FP16 cast",
+    "text_matmul": "captured operation is checked against FP32 accumulation plus FP16-store bound; this is not asserted universally for all cublas algorithms",
+    "pointwise": "IEEE binary16 finite arithmetic, relative rounding bound u16 plus half-min-subnormal/2",
+    "probabilities": "actual and independent-instrument post-softmax FP16 probabilities are used directly; no unverified expf accuracy assumption",
+    "future_scope": "A different source/runtime/shape requires separate evidence; no output-ULP threshold is increased"
+  },
+  "checks": [
+    {
+      "name": "official_QK_FP32_reduction_then_FP16_store",
+      "violations": 0,
+      "elements": 1103872,
+      "max_actual_error": 0.21405029296875,
+      "max_allowed_bound": 0.2621134061820739
+    },
+    {
+      "name": "declared_FP32_bias_sum",
+      "violations": 0,
+      "elements": 616,
+      "max_actual_error": 2.86102294921875e-05,
+      "max_allowed_bound": 0.009143299343430729
+    },
+    {
+      "name": "declared_FP32_bias_division_then_FP16_cast",
+      "violations": 0,
+      "elements": 616,
+      "max_actual_error": 0.014682942271910804,
+      "max_allowed_bound": 0.024110343699842357
+    },
+    {
+      "name": "actual_WV_code_reduction_and_cast",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0009737610816955566,
+      "max_allowed_bound": 0.0014917405537015766
+    },
+    {
+      "name": "actual_visual_probability_sum_and_cast",
+      "violations": 0,
+      "elements": 616,
+      "max_actual_error": 0.00023978948593139648,
+      "max_allowed_bound": 0.0005373217413509324
+    },
+    {
+      "name": "actual_Half_scale_times_weighted_codes",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0078125,
+      "max_allowed_bound": 0.01501404494047165
+    },
+    {
+      "name": "actual_Half_scale_times_zero",
+      "violations": 0,
+      "elements": 3584,
+      "max_actual_error": 0.0077667236328125,
+      "max_allowed_bound": 0.01605137437582016
+    },
+    {
+      "name": "actual_Half_affine_bias_product",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0078125,
+      "max_allowed_bound": 0.014492511749267578
+    },
+    {
+      "name": "actual_Half_affine_subtraction",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.00390625,
+      "max_allowed_bound": 0.006416350603103638
+    },
+    {
+      "name": "actual_text_matmul_FP32_accumulation_FP16_store",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0019422268960624933,
+      "max_allowed_bound": 0.002804813236250364
+    },
+    {
+      "name": "actual_Half_visual_plus_text",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0037689208984375,
+      "max_allowed_bound": 0.006408259272575378
+    },
+    {
+      "name": "actual_component_forward_error_closure",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.025591070221707923,
+      "max_allowed_bound": 0.028541081677758484
+    },
+    {
+      "name": "ideal_WV_code_reduction_and_cast",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0009737610816955566,
+      "max_allowed_bound": 0.0012239895295351744
+    },
+    {
+      "name": "ideal_visual_probability_sum_and_cast",
+      "violations": 0,
+      "elements": 616,
+      "max_actual_error": 0.00023978948593139648,
+      "max_allowed_bound": 0.0005373217413509324
+    },
+    {
+      "name": "ideal_Half_scale_times_weighted_codes",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0078125,
+      "max_allowed_bound": 0.01501404494047165
+    },
+    {
+      "name": "ideal_Half_scale_times_zero",
+      "violations": 0,
+      "elements": 3584,
+      "max_actual_error": 0.0077667236328125,
+      "max_allowed_bound": 0.01605137437582016
+    },
+    {
+      "name": "ideal_Half_affine_bias_product",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0078125,
+      "max_allowed_bound": 0.014492511749267578
+    },
+    {
+      "name": "ideal_Half_affine_subtraction",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.00390625,
+      "max_allowed_bound": 0.006416350603103638
+    },
+    {
+      "name": "ideal_text_matmul_FP32_accumulation_FP16_store",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0019422268960624933,
+      "max_allowed_bound": 0.002804813236250364
+    },
+    {
+      "name": "ideal_Half_visual_plus_text",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.0037689208984375,
+      "max_allowed_bound": 0.006408259272575378
+    },
+    {
+      "name": "ideal_component_forward_error_closure",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.025591070221707923,
+      "max_allowed_bound": 0.028541081677758484
+    },
+    {
+      "name": "exact_weighted_probability_perturbation_inequality",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 4.70911618322134e-05,
+      "max_allowed_bound": 4.880537744611502e-05
+    },
+    {
+      "name": "actual_vs_FP64_complete_forward_error_bound",
+      "violations": 0,
+      "elements": 78848,
+      "max_actual_error": 0.015625,
+      "max_allowed_bound": 0.05708216335551697
+    }
+  ],
+  "component_budgets": {
+    "actual": {
+      "max_weighted_code_roundoff": 0.009089457336813211,
+      "max_probability_sum_roundoff": 0.007882636623435246,
+      "max_affine_intermediate_roundoff": 0.018726341426372528,
+      "max_text_accumulation_roundoff": 0.0019422268960624933,
+      "max_final_add_roundoff": 0.0037689208984375,
+      "max_total_roundoff_budget": 0.028541081677758484
+    },
+    "ideal": {
+      "max_weighted_code_roundoff": 0.009089457336813211,
+      "max_probability_sum_roundoff": 0.007882636623435246,
+      "max_affine_intermediate_roundoff": 0.018726341426372528,
+      "max_text_accumulation_roundoff": 0.0019422268960624933,
+      "max_final_add_roundoff": 0.0037689208984375,
+      "max_total_roundoff_budget": 0.028541081677758484
+    }
+  },
+  "probability_delta": {
+    "max_L1": 3.337860107421875e-06,
+    "mean_L1": 1.71266592942275e-08,
+    "max_channel_weighted_bound": 4.880537744611502e-05
+  },
+  "observed_output": {
+    "max_abs": 0.015625,
+    "different_elements": 17,
+    "elements": 78848,
+    "relative_L2": 7.716953590120951e-05,
+    "max_gap_location_B_H_Q_D": [
+      0,
+      0,
+      4,
+      36
+    ],
+    "at_max_gap": {
+      "actual": 0.252685546875,
+      "ideal": 0.237060546875,
+      "probability_term": 3.278437361586839e-07,
+      "actual_roundoff_budget": 0.019132552077280707,
+      "ideal_roundoff_budget": 0.02268844506215828,
+      "total_allowed": 0.041821324983175145
+    }
+  },
+  "max_observed_to_complete_bound_ratio": 0.5216024158614091,
+  "audit_source_sha256": "0912d35bf45eefa75c86a4d3829afd1e3d80aefa8c0c4c1ad6748d5766cd71ac",
+  "created_unix": 1795143679.3620734
+}

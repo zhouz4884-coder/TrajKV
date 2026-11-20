@@ -1,0 +1,40 @@
+{
+  "status": "LAUNCHED",
+  "pid": 1085238,
+  "name": "bm_M1_late_question_boundary_diag2_v1",
+  "argv_executed": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-m",
+    "gates.late_question_compression_m1",
+    "--job",
+    "${DATA_ROOT}/configs/eval/M1_F_text_single_v1.json",
+    "--output",
+    "${DATA_ROOT}/results/p0/M1_late_question_boundary_diag2_v1",
+    "--qa-per-dataset",
+    "1",
+    "--max-new-tokens",
+    "64"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_M1_late_question_boundary_diag2_v1.source",
+  "source_inventory_sha256": "375df79818c7c93b1eeb3ce3259980aafca460e3608c47c2631ff20e707743f9",
+  "job_sha256": "db20e8d17084bf34d6b3efebab35c3841a0b9f9fc5ffe7a460ebfd80489e6642",
+  "log": "${DATA_ROOT}/logs/bm_M1_late_question_boundary_diag2_v1.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+    "TMP": "${DATA_ROOT}/cache/main/tmp",
+    "TEMP": "${DATA_ROOT}/cache/main/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "1",
+  "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+}

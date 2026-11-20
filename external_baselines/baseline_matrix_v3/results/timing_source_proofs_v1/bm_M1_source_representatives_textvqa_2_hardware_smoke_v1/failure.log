@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "${DATA_ROOT}/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v1.source/code/benchmark_speed.py", line 518, in <module>
+    if __name__=='__main__':main()
+  File "${DATA_ROOT}/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v1.source/code/benchmark_speed.py", line 438, in main
+    plan,rows,registry=make_plan(args.config,args.output)
+  File "${DATA_ROOT}/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v1.source/code/benchmark_speed.py", line 143, in make_plan
+    original=[read(p) for p in base_paths]
+  File "${DATA_ROOT}/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v1.source/code/benchmark_speed.py", line 143, in <listcomp>
+    original=[read(p) for p in base_paths]
+  File "${DATA_ROOT}/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v1.source/code/benchmark_speed.py", line 50, in read
+    def read(path):return json.loads(Path(path).read_text(encoding='utf-8'))
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '${DATA_ROOT}/configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json'

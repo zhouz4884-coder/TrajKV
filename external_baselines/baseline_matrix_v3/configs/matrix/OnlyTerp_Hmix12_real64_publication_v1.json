@@ -1,0 +1,32 @@
+{
+  "schema": "baseline_matrix.fixed_matrix.v1",
+  "phase": "OnlyTerp_Hmix12_real64",
+  "status": "FROZEN_REAL_GPU_RECORDS_DERIVED_AND_SCORED",
+  "expected_cells": 2,
+  "expected_QA": 64,
+  "metrics_not_mixed": true,
+  "new_GPU_inference_for_publication": 0,
+  "rows": [
+    {
+      "model": "M1",
+      "method": "OT_Hmix12",
+      "dataset": "textvqa",
+      "count": 32,
+      "config": "configs/eval/M1_OT_Hmix12_textvqa_stage64_target32_v3.json",
+      "config_sha256": "7548073c974fa8aba625633cfccc77e732ab9249bb47e09b2024999746cae3d7",
+      "view": "${EVIDENCE_ROOT}\\results\\onlyterp_views\\stage64_text32_v3",
+      "scored": "${EVIDENCE_ROOT}\\results\\onlyterp_scored\\stage64_v3\\stage64_text32_v3"
+    },
+    {
+      "model": "M1",
+      "method": "OT_Hmix12",
+      "dataset": "infovqa",
+      "count": 32,
+      "config": "configs/eval/M1_OT_Hmix12_infovqa_stage64_target32_v3.json",
+      "config_sha256": "3c106e6ccc4c1a64d11f0be31b290d88a53ab8354c3fb3c6aad8f00cbc9cfef0",
+      "view": "${EVIDENCE_ROOT}\\results\\onlyterp_views\\stage64_info32_v3",
+      "scored": "${EVIDENCE_ROOT}\\results\\onlyterp_scored\\stage64_v3\\stage64_info32_v3"
+    }
+  ],
+  "source_point": "Algorithm1 MSE/QJL0 practical Hadamard OT_Hmix12; not paper-exact production table or optimized speed."
+}

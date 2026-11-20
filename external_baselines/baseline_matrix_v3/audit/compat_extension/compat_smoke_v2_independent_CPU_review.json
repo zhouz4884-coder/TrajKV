@@ -1,0 +1,86 @@
+{
+  "status": "PASS_CPU_COMPAT_SMOKE_V2_INDEPENDENT_REVIEW",
+  "GPU_used": false,
+  "new_model_QA": 0,
+  "cases": [
+    {
+      "case": "real_existing_M1_K32",
+      "status": "PASS",
+      "actual_existing_GPU_QA": 2,
+      "new_GPU_QA": 0
+    },
+    {
+      "case": "real_existing_M1_OT23",
+      "status": "PASS",
+      "actual_existing_GPU_QA": 2,
+      "new_GPU_QA": 0
+    },
+    {
+      "case": "real_M1_K32_raw_cannot_unlock_M2_target",
+      "status": "PASS_REJECTED",
+      "error": "Actual source model geometry/revision differs from target model registry"
+    },
+    {
+      "case": "same_model_method_but_wrong_suffix_rejected",
+      "status": "PASS_REJECTED",
+      "error": "Full source/target inference behavior differs"
+    },
+    {
+      "case": "RAM_only_wrong_original_image_sha256",
+      "status": "PASS_REJECTED",
+      "error": "Locked question/image/source input identity differs"
+    },
+    {
+      "case": "RAM_only_wrong_question",
+      "status": "PASS_REJECTED",
+      "error": "Locked question/image/source input identity differs"
+    },
+    {
+      "case": "self_consistent_wrong_denominator_cannot_pass",
+      "status": "PASS_REJECTED",
+      "error": "Visual FP16 denominator differs from locked model geometry"
+    },
+    {
+      "case": "wrong_original_boundary_rejected",
+      "status": "PASS_REJECTED",
+      "error": "Native compression boundary or full suffix length differs"
+    },
+    {
+      "case": "RAM_only_M2_cannot_use_M1_serial_position_shape",
+      "status": "PASS_REJECTED",
+      "error": "Native position axes/length incompatible with this model"
+    },
+    {
+      "case": "RAM_only_M3_cannot_use_M1_serial_position_shape",
+      "status": "PASS_REJECTED",
+      "error": "Native position axes/length incompatible with this model"
+    }
+  ],
+  "case_count": 10,
+  "Qwen_recorded_geometry_controls": [
+    {
+      "model": "M2",
+      "scope": "Actual prior g128 recorded geometry, NOT a new K32/C/OT compatibility unlock",
+      "old_raw_QA_used": 2,
+      "Qwen_axes": 3,
+      "native_Hq": 28,
+      "native_Hkv": 4
+    },
+    {
+      "model": "M3",
+      "scope": "Actual prior g128 recorded geometry, NOT a new K32/C/OT compatibility unlock",
+      "old_raw_QA_used": 2,
+      "Qwen_axes": 3,
+      "native_Hq": 32,
+      "native_Hkv": 8
+    }
+  ],
+  "faults_never_written_as_fake_remote_raw": true,
+  "v1_source_unchanged_sha256": "14f23d0fc0699eb7a1fca4208127f4f162150d864ced1e9e49f9695ac65c7ff3",
+  "v2_source_sha256": "2035cc29dadee687046923af3a712b9ba401a1a66c938c17d80275dc2104984d",
+  "limitations": [
+    "No task quality threshold",
+    "No newly computed native three-axis values or GPU arithmetic-equivalence claim",
+    "Finite/positions/ownership evidence remains tied to verified producer source and original observed raw"
+  ]
+}

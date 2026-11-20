@@ -1,0 +1,311 @@
+{
+  "status": "PASS_CPU_SOURCE_AST_DTYPE_TRACE",
+  "GPU_used": false,
+  "model_weights_loaded": false,
+  "quality_scored": false,
+  "infer_model_dtype": {
+    "line": 89,
+    "expression": "torch.bfloat16"
+  },
+  "infer_example_quant_method": {
+    "line": 102,
+    "expression": "'qjl'"
+  },
+  "patch_model_quant_method_default": "calibquant",
+  "source_calib_decode_final_dtype": "hard-coded torch.bfloat16",
+  "promotion_rule": {
+    "Half_plus_BFloat16": "torch.float32",
+    "Half_plus_Half": "torch.float16"
+  },
+  "runs": [
+    {
+      "model_input_dtype": "torch.bfloat16",
+      "trace": [
+        {
+          "line": 277,
+          "name": "attn_weights_quant_s",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 278,
+          "name": "attn_weights_quant_t",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 280,
+          "name": "bias_k",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 281,
+          "name": "bias_k",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 283,
+          "name": "attn_weights_quant_v",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 285,
+          "name": "current_max",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 285,
+          "name": "current_min",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 285,
+          "name": "target_max",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 285,
+          "name": "target_min",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 285,
+          "name": "normalized_weights",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 285,
+          "name": "attn_weights_quant_v",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 296,
+          "name": "attn_weights_quant",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 300,
+          "name": "attn_weights",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 317,
+          "name": "attn_weights",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 320,
+          "name": "attn_output_v",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 321,
+          "name": "attn_output_v",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 322,
+          "name": "bias_v",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 324,
+          "name": "attn_output_v",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 326,
+          "name": "value_states_s",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 327,
+          "name": "value_states_t",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 328,
+          "name": "attn_output_s",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 329,
+          "name": "attn_output_t",
+          "dtype": "torch.bfloat16"
+        },
+        {
+          "line": 330,
+          "name": "attn_output",
+          "dtype": "torch.float32"
+        },
+        {
+          "line": 331,
+          "name": "attn_output",
+          "dtype": "torch.bfloat16"
+        }
+      ],
+      "declared_kernel_dtype_stubs": [
+        {
+          "kernel": "QK",
+          "lut_dtype": "torch.bfloat16",
+          "weights_dtype": "torch.bfloat16",
+          "output_dtype": "torch.float16"
+        },
+        {
+          "kernel": "WV",
+          "lut_dtype": "torch.float16",
+          "weights_dtype": "torch.float16",
+          "output_dtype": "torch.float16"
+        }
+      ],
+      "calibrated_visual_logits_dtype": "torch.float32"
+    },
+    {
+      "model_input_dtype": "torch.float16",
+      "trace": [
+        {
+          "line": 277,
+          "name": "attn_weights_quant_s",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 278,
+          "name": "attn_weights_quant_t",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 280,
+          "name": "bias_k",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 281,
+          "name": "bias_k",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 283,
+          "name": "attn_weights_quant_v",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 285,
+          "name": "current_max",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 285,
+          "name": "current_min",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 285,
+          "name": "target_max",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 285,
+          "name": "target_min",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 285,
+          "name": "normalized_weights",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 285,
+          "name": "attn_weights_quant_v",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 296,
+          "name": "attn_weights_quant",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 300,
+          "name": "attn_weights",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 317,
+          "name": "attn_weights",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 320,
+          "name": "attn_output_v",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 321,
+          "name": "attn_output_v",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 322,
+          "name": "bias_v",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 324,
+          "name": "attn_output_v",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 326,
+          "name": "value_states_s",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 327,
+          "name": "value_states_t",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 328,
+          "name": "attn_output_s",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 329,
+          "name": "attn_output_t",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 330,
+          "name": "attn_output",
+          "dtype": "torch.float16"
+        },
+        {
+          "line": 331,
+          "name": "attn_output",
+          "dtype": "torch.bfloat16"
+        }
+      ],
+      "declared_kernel_dtype_stubs": [
+        {
+          "kernel": "QK",
+          "lut_dtype": "torch.float16",
+          "weights_dtype": "torch.float16",
+          "output_dtype": "torch.float16"
+        },
+        {
+          "kernel": "WV",
+          "lut_dtype": "torch.float16",
+          "weights_dtype": "torch.float16",
+          "output_dtype": "torch.float16"
+        }
+      ],
+      "calibrated_visual_logits_dtype": "torch.float16"
+    }
+  ],
+  "kernel_stub_scope": "Only source-declared FP16 return dtype; does not emulate CUDA numeric values",
+  "interpretation": "Default BF16 model plus hard-FP16 source kernel results promotes visual affine/calibration to FP32; all-FP16 common-model port has different intermediate precision even with FP32 bias SUM/DIV then Half cast",
+  "torch_version": "2.11.0+cpu",
+  "source_sha256": {
+    "code/gates/calibquant_source_dtype_audit.py": "701bc5edb44a5cde8f546ce49c606b0e651214efb071be9d87bb1711e5b19eb0",
+    "third_party/calibquant/patch_internvl.py": "62421c73b8025f0d03708f4c6af03ea3436bb9d9265ef17cfe753b7827f19df2",
+    "third_party/calibquant/calibquant.py": "b4cca4467a88ba40d784bcc50309fb510a935859fc2cf297d944d1e743f2c194",
+    "third_party/calibquant/infer.py": "796ee977c3b029b056f319e70fab7d62611b01137611da4c396b8b69e1db447e"
+  }
+}

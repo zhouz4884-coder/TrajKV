@@ -1,0 +1,32 @@
+{
+  "schema": "baseline_matrix.fixed_matrix.v1",
+  "phase": "OnlyTerp_shared_FP16_match64_support",
+  "status": "FROZEN_REAL_GPU_RECORDS_DERIVED_AND_SCORED",
+  "expected_cells": 2,
+  "expected_QA": 64,
+  "metrics_not_mixed": true,
+  "new_GPU_inference_for_publication": 0,
+  "rows": [
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "textvqa",
+      "count": 32,
+      "config": "configs/eval/M1_F_textvqa_OT_match32_v1.json",
+      "config_sha256": "a4deebe91640235ecc871fbe20dd663c7411524b7f9d02c1b11840eb0d6b8171",
+      "view": "${EVIDENCE_ROOT}\\results\\onlyterp_baseline_match32_v1\\F_textvqa_32",
+      "scored": "${EVIDENCE_ROOT}\\results\\onlyterp_baseline_match32_scored_v1\\F_textvqa_32"
+    },
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "infovqa",
+      "count": 32,
+      "config": "configs/eval/M1_F_infovqa_OT_match32_v1.json",
+      "config_sha256": "5234b4bf6f78f677e21c50e422df08bb004383c2bb0afcf8537c970056b1eb01",
+      "view": "${EVIDENCE_ROOT}\\results\\onlyterp_baseline_match32_v1\\F_infovqa_32",
+      "scored": "${EVIDENCE_ROOT}\\results\\onlyterp_baseline_match32_scored_v1\\F_infovqa_32"
+    }
+  ],
+  "counting_note": "Two shared matched native F32 views, reused by both MSE points; all rows originate in existing native F bank donors. Not 64 additional GPU inferences."
+}

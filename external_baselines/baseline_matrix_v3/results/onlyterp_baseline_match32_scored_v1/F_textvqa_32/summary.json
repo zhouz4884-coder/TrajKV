@@ -1,0 +1,126 @@
+{
+  "schema": "baseline_matrix.offline_score.v1",
+  "status": "PASS_SCORED_COMPLETE",
+  "dataset": "textvqa",
+  "model_id": "M1",
+  "method": "F_native_split",
+  "metric_contract_version": "matrix_v3_metrics_v1",
+  "metric_ids": [
+    "textvqa_mmf_ten_vote_leave_one_out_v1"
+  ],
+  "metric_provenance": [
+    "Meta MMF official TextVQA scorer"
+  ],
+  "groups": {
+    "overall": {
+      "expected_questions": 32,
+      "scored_pass_questions": 32,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 0.81875,
+        "questions": 32,
+        "source_clusters": 32,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.6812499999999999,
+          0.9312499999999999
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 0.81875,
+        "questions": 32,
+        "source_clusters": 32,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.6812499999999999,
+          0.9312499999999999
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    }
+  },
+  "primary_mean": 0.81875,
+  "primary_ci95": [
+    0.6812499999999999,
+    0.9312499999999999
+  ],
+  "primary_mean_percent": 81.875,
+  "primary_ci95_percent": [
+    68.12499999999999,
+    93.12499999999999
+  ],
+  "diagnostic_metrics_not_selected_by_score": {},
+  "raw_status_counts": {
+    "PASS": 32
+  },
+  "score_status_counts": {
+    "SCORED_PASS": 32
+  },
+  "expected_run_questions": 32,
+  "reference_cohort_questions": 128,
+  "entire_reference_cohort_selected": false,
+  "expected_ids_sha256": "1abccfc826793a9e75eb4b75da6b71c27638398670224fc418c3d3f81d646754",
+  "coverage_rule": "Any raw/scoring failure makes primary full-run mean/CI null; successful conditional mean is separately labeled, no fake zero or success-subset primary",
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261119,
+    "type": "percentile source-cluster resampling with replacement, question-weighted ratio",
+    "scale": "0..1"
+  },
+  "integrity": {
+    "status": "PASS_ALL_SHA_AND_EXPECTED_ID_CHECKS",
+    "raw_files": {
+      "manifest.json": "006be7ab1264d6d95ef16a86ce1c0d9d2bd23a5c404704dda724216caba18a58",
+      "records.jsonl": "7f9b5adccc24fe7bf65469e7cb34d180b12c0ac3ba8b7e8afd8b57d3b3c2d4aa",
+      "complete.json": "536490a01259c4e7b9f5efd2d7c9561e694c7510cdeac791469f2895681e232a"
+    },
+    "retrieval_receipt_sha256": null,
+    "derived_source_provenance": {
+      "status": "PASS_DERIVED_SOURCE_PROVENANCE",
+      "raw_hashes": {
+        "manifest.json": "006be7ab1264d6d95ef16a86ce1c0d9d2bd23a5c404704dda724216caba18a58",
+        "records.jsonl": "7f9b5adccc24fe7bf65469e7cb34d180b12c0ac3ba8b7e8afd8b57d3b3c2d4aa",
+        "complete.json": "536490a01259c4e7b9f5efd2d7c9561e694c7510cdeac791469f2895681e232a"
+      },
+      "origin_counts": {
+        "reused": 32
+      },
+      "source_runs": 1,
+      "inference_run": false,
+      "provenance_sha256": "1c85b6936171eb01602204c9072656bbc148a49d3528891b38e1e0c62df6ead9"
+    },
+    "refs_sha256": "b06f07cd26bd79c2198eddec7f81db7e1c31f1222c5999c9617650ea29c3c456",
+    "inputs_sha256": "5181fcce6a31dfa9ea1ab4b18598cd93ca500d764a1d49154e0f2a52192882b2",
+    "dataset_source_lock_sha256": "d3d48f16e788ed7e62123bcdfad0d16a6e182215e2814792a1014db5b55d1f2f",
+    "metric_source_lock_sha256": "4ec78ff4f807843e358914afcf3e60e1a7eaf6f3013575a1f63787016da788e3",
+    "metric_code_hashes": {
+      "code/gates/metrics_gate.py": "e91887b55561759c2349860cf9a5acb2ed9284be99d6b3ae6469e8f2c4731606",
+      "code/metrics.py": "98b260c766e095f2b629d603de5cfd6519a91dccaaee471f02486955bb590d47",
+      "code/vendor_textvqa_metric.py": "b1a8e90abbf35e32e1e6c146c36c4a47ad72b71e73011f97cc3729aa1402b4c5"
+    },
+    "scorer_sha256": "72b5182eeb97e930403a970feebb4f1fadac23d04544c9646c6c9fd6b34bfba6",
+    "raw_dir": "${EVIDENCE_ROOT}\\results\\onlyterp_baseline_match32_v1\\F_textvqa_32",
+    "refs_path": "${PROJECT_ROOT}\\configs\\datasets\\v3\\textvqa_p1_refs.jsonl",
+    "fixture_only": false
+  },
+  "created_unix": 1795150006.2088156,
+  "scoring_uses_GPU": false,
+  "prediction_provenance": {
+    "type": "derived_prediction_view",
+    "inference_run": false,
+    "origin_counts": {
+      "reused": 32
+    },
+    "source_runs": 1
+  },
+  "derived_file_hashes": {
+    "scored_records.jsonl": "e5f0bc674898d99de0e142b37f923191942ca01b6b1916fd28f82a41c0e67ae8",
+    "scores.csv": "a78255b25db93189419fe491cdbc8b1905235d5641e431cade442a31c5de82d7"
+  }
+}

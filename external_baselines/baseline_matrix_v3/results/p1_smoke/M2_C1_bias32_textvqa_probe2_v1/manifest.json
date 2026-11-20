@@ -1,0 +1,352 @@
+{
+  "schema": "baseline_matrix.raw_inference.v1",
+  "config": {
+    "schema": "baseline_matrix.eval.v1",
+    "model_id": "M2",
+    "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+    "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+    "start": 0,
+    "count": 2,
+    "max_new_tokens": 64,
+    "question_suffix": "\nAnswer the question using a single word or phrase.",
+    "preprocessing": {
+      "min_pixels": 200704,
+      "max_pixels": 1003520
+    },
+    "method": {
+      "id": "CalibQuant_visual_FP32bias_1bit",
+      "family": "calibquant",
+      "adapter_module": "methods.calibquant_fp32_bias_adapter",
+      "adapter_class": "CalibQuantFP32BiasAdapter",
+      "constructor_args": {
+        "bits": 1,
+        "reader_backend": "upstream_triton"
+      },
+      "encode_scope": "visual",
+      "information_condition": "query_unknown"
+    },
+    "scope": "ACTUAL_QWEN_CALIBQUANT_TWO_QA_TECHNICAL_SMOKE_REQUIRED; COMMON_FP16_FP32BIAS_NOT_AUTHOR_BF16"
+  },
+  "config_sha256": "e3f56957c3b52d318e6615a292e712637f506343135a3537e4ce94f2a35c9f6e",
+  "inputs_sha256": "9891e84b7589cce22ff398bab28b25ff94b0db92a4db63751a11e368fe3c18d8",
+  "expected_ids": [
+    "textvqa:validation:39023",
+    "textvqa:validation:36209"
+  ],
+  "expected_QA": 2,
+  "model_spec": {
+    "model_id": "M2",
+    "hf_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+    "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "architecture": "Qwen2_5_VLForConditionalGeneration",
+    "layers": 28,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "image_token_id": 151655,
+    "vision_start_token_id": 151652,
+    "vision_end_token_id": 151653,
+    "native_adapter": "qwen2_5_vl",
+    "mrope_section": [
+      16,
+      24,
+      24
+    ],
+    "mrope_interleaved": false,
+    "deepstack_visual_indexes": [],
+    "sliding_attention": false,
+    "processor_spatial_factor": 28
+  },
+  "references_read": false,
+  "prediction_cache_used": false,
+  "runtime_source_root": "${DATA_ROOT}/jobs/bm_M2_C1_bias32_textvqa_probe2_v1.source",
+  "runtime_executable": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+  "started_unix": 1795158847.22875,
+  "source_hashes": {
+    "code/evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+    "code/ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+    "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "code/attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+    "code/dataset_registry.py": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+    "code/model_registry.py": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58"
+  },
+  "model_identity": {
+    "status": "PASS_EXACT_HF_REQUIRED_TREE",
+    "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+    "source_lock_sha256": "c9296aed54fbe6589597a01f4c48932b6079bd0c860b1ba1db4cf07691dfee9e",
+    "files": [
+      {
+        "file": "chat_template.json",
+        "bytes": 1050,
+        "sha256": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96"
+      },
+      {
+        "file": "config.json",
+        "bytes": 1374,
+        "sha256": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43"
+      },
+      {
+        "file": "generation_config.json",
+        "bytes": 216,
+        "sha256": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e"
+      },
+      {
+        "file": "merges.txt",
+        "bytes": 1671839,
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+      },
+      {
+        "file": "model-00001-of-00005.safetensors",
+        "bytes": 3900233256,
+        "sha256": "e97b877e47fde53a6c6e77aafb36e58e91ee9d95c4a3eeac6f1b5c0e6a1c986e"
+      },
+      {
+        "file": "model-00002-of-00005.safetensors",
+        "bytes": 3864726320,
+        "sha256": "a9a300a43b4724eee2abe7c18ceb26768d0ab011eb0cad19d9bfd2476a24d024"
+      },
+      {
+        "file": "model-00003-of-00005.safetensors",
+        "bytes": 3864726424,
+        "sha256": "111223d173e00bbee81cba1216fad28668df3476706b7fd26f4d5b50f8b3a507"
+      },
+      {
+        "file": "model-00004-of-00005.safetensors",
+        "bytes": 3864733680,
+        "sha256": "ef47f634fa57d46ee134edcc09f34085a47da1e16c12a2abe0d67118be6d72ed"
+      },
+      {
+        "file": "model-00005-of-00005.safetensors",
+        "bytes": 1089994880,
+        "sha256": "0c859795ad3a627a9b95bcb762e059d5b768a4a36fdd4affeff269d93fdecc67"
+      },
+      {
+        "file": "model.safetensors.index.json",
+        "bytes": 57619,
+        "sha256": "73b333b0b16e5286ddba615d2caebcd495cf7e616f52eb217a81781393d79de9"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "bytes": 350,
+        "sha256": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0"
+      },
+      {
+        "file": "tokenizer.json",
+        "bytes": 7031645,
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+      },
+      {
+        "file": "tokenizer_config.json",
+        "bytes": 5702,
+        "sha256": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56"
+      },
+      {
+        "file": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "verification_audit": {
+      "binding_status": "SHA_LOCKED_PRIOR_FULL_HASH_AND_STAT_BINDING",
+      "binding_sha256": "8d8a651bc0a865551aaeb8fb9b8306c6e7c12b53a09d9bc1d46151109f050bb2",
+      "prior_full_hash_proof": "${DATA_ROOT}/results/model_download/M2_download_r8_resume64.json",
+      "prior_full_hash_proof_sha256": "448495080179e5f1cb23dff30b91a5d315c62bb76e3928ead5dc488a8ca161a7",
+      "checks": [
+        {
+          "file": "chat_template.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "generation_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "merges.txt",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "model-00001-of-00005.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00002-of-00005.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00003-of-00005.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00004-of-00005.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00005-of-00005.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "preprocessor_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "tokenizer.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "vocab.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        }
+      ]
+    }
+  },
+  "torch_version": "2.4.1+cu121",
+  "transformers_version": "5.12.0",
+  "cuda_version": "12.1",
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "python_version": "3.10.20",
+  "model_load_ms": 117426.01202899823,
+  "model_residency": {
+    "weight_resident_bytes": 16584333312,
+    "all_model_tensor_bytes": 16584333904,
+    "buffer_bytes_incremental": 592
+  },
+  "processor_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "processor_version": "5.12.0",
+  "processor_file_hashes": {
+    "chat_template.json": "ad60d90252ed0b0705ba14e2d0ad0fec0beac1ea955642b54059b36052d8bc96",
+    "config.json": "77d9ec7321cc572e3579e2c84799c9cadaded63c49ce93b101733349fc330c43",
+    "generation_config.json": "0a3aea82869fe29f20dc95ccf3e2bcff380eca1f5ad6447a4a4b37110b08e43e",
+    "merges.txt": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+    "model.safetensors.index.json": "73b333b0b16e5286ddba615d2caebcd495cf7e616f52eb217a81781393d79de9",
+    "preprocessor_config.json": "f2058c716eef96ccaed1cc1e2d0c08306b62586d535b28d9d08e691b2fab7ca0",
+    "tokenizer.json": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_config.json": "4abd3520120e266da84c0864fee064d1fb10806f02225911a47253dd38dc5f56",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "generation_native": {
+    "max_length": null,
+    "max_new_tokens": null,
+    "min_length": null,
+    "min_new_tokens": null,
+    "early_stopping": null,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": true,
+    "num_beams": null,
+    "use_cache": null,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": 1e-06,
+    "top_k": null,
+    "top_p": null,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": null,
+    "epsilon_cutoff": null,
+    "eta_cutoff": null,
+    "repetition_penalty": 1.05,
+    "encoder_repetition_penalty": null,
+    "length_penalty": null,
+    "no_repeat_ngram_size": null,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": null,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": null,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": null,
+    "output_logits": null,
+    "return_dict_in_generate": null,
+    "pad_token_id": 151643,
+    "bos_token_id": 151643,
+    "eos_token_id": [
+      151645,
+      151643
+    ],
+    "encoder_no_repeat_ngram_size": null,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": null,
+    "num_assistant_tokens_schedule": null,
+    "assistant_confidence_threshold": null,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": null,
+    "target_lookbehind": null,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": null,
+    "num_beam_groups": null,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_from_model_config": null,
+    "transformers_version": "5.12.0"
+  },
+  "generation_overrides": {
+    "do_sample": false,
+    "max_new_tokens": 64,
+    "use_cache": true,
+    "return_dict_in_generate": false
+  },
+  "timing_scope": "instrumented prototype quality run; includes finite checks, synchronization and streamer, not canonical method speed",
+  "protocol_source_sha256": "1be51e44c8884fd4787f87de487350e78aeeff6dbffd8efb3dfcd7e7be5099b4",
+  "method_source_sha256": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+  "method_and_reader_source_hashes": {
+    "turboquant_adapter.py": "bd824c42b9a653001c88f542879cea820865ff31b5ab342c2322f1d9b4f2bfe5",
+    "validate_turboquant_eviction.py": "ed2cf217525c2dbd236e217a04004bbb96bd9f4d845a91813e9a8b9b970c186b",
+    "turboquant_onlyterp_mse_adapter.py": "ef52ac83eaabae8cbc41c46bc976bc6d6fcb696f2897bcb2bda534e2431ee86e",
+    "calibquant_fp32_affine_adapter.py": "9cee1e0022b6631fc59777ee0d60df8b28e5466ad3906b66221c4ac0c8e9dae7",
+    "kivi_example_adapter.py": "9fb779267f600553a0e89ac951095f1d18758d957588afaf31fadcfc774978b0",
+    "calibquant_adapter.py": "fe8f42d9460a2d209648c3fc9da3dfb4d04cc2c189f61f0d897c7c87672a3132",
+    "turboquant_onlyterp_mixed_prod_adapter.py": "6c9abe9c4eacb6f1d70622d30a71a6fedda6a8cd3227e976d63c08c9d5507792",
+    "kivi_style.py": "131fdb42046d2d1eafa41cd0782b90f98872705b175f6c28ff8a70d546dbdf6b",
+    "turboquant_buffered_adapter.py": "a01cf815f25ad76636e6a6e4de2b5a17de32c4f3140acc9ce6a2d64b54b34796",
+    "calibquant_fp32_bias_adapter.py": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+    "kivi_reader.py": "dc18877960576a2104a7e4d7a123bfefe513cf526e13c964c2f3fe131d895353",
+    "kivi_example_reader.py": "ec3680c9d1c5c6bc9643d445e5f32b691d2ad872a0872d2e6951e5fc4c57e412",
+    "eviction_adapter.py": "91b4ea675763d410f491955394ba1a8c42c09d3be7aa6c35c8d4fa852788372b"
+  }
+}

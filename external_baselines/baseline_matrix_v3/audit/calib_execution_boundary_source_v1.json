@@ -1,0 +1,99 @@
+{
+  "status": "SOURCE_BOUNDARY_CONFIRMED_NO_INFERENCE",
+  "GPU_used": false,
+  "model_weights_loaded": false,
+  "calib_source_sha256": "62421c73b8025f0d03708f4c6af03ea3436bb9d9265ef17cfe753b7827f19df2",
+  "Calib_prefill": {
+    "condition": "LOW_BITS and query_states.shape[1] > 1",
+    "encode_line": 219,
+    "native_attention_else_line": 351,
+    "native_call": "self._flash_attention_forward(query_states[:, i:i + CHUNK_SIZE], key_states[:, :i + CHUNK_SIZE], value_states[:, :i + CHUNK_SIZE], attention_mask, query_states[:, :i + CHUNK_SIZE].shape[1])",
+    "text_past_assignment_line": 210,
+    "text_past_assignment": "past_key_value = (key_states_st, value_states_st) if use_cache else None",
+    "original_keys_values_used_for_prefill_output": true,
+    "question_text_KV_native": true
+  },
+  "Calib_decode": {
+    "condition": "query_states.shape[1] == 1",
+    "line": 263,
+    "packed_calls": [
+      "fused_kernel(self.unique_values_k, query_states * self.scale_key, encoded_features_k)",
+      "fused_kernel_wv(self.unique_values_v.half(), attn_weights[:, :, :, self.sprompt_len:self.sprompt_len + self.image_token_num].half(), encoded_features_v)"
+    ]
+  },
+  "generate_wrapper": {
+    "line": 83,
+    "call": "self.language_model.generate(inputs_embeds=input_embeds, attention_mask=attention_mask, generation_config=generation_config, output_hidden_states=output_hidden_states, use_cache=True, **generate_kwargs)"
+  },
+  "infer_example_quant_method": "qjl; this proof is conditional on selecting the separately available calibquant branch",
+  "first_token_inference": "Fresh full-prompt Calib prefill emits native hidden states/logits; HF selects y1 from those logits before a one-token compressed-cache forward.",
+  "target_generation_source": {
+    "status": "TARGET_HF_GREEDY_SOURCE_INSPECTED_CPU_ONLY",
+    "transformers": "5.12.0",
+    "torch": "2.4.1+cu121",
+    "source_file": "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/generation/utils.py",
+    "source_file_sha256": "1eaf0aebe61f9616968f298bc33c78f6bfc83cb43f563db4d7ce572824131c7b",
+    "sample_source_sha256": "27b37a3fc740a2e711329ebb28bb74d633632f5bcf09fb3aad153ef4feb40f5c",
+    "statements": [
+      {
+        "line": 2768,
+        "statement": "unfinished_sequences = torch.ones(batch_size, dtype=torch.long, device=input_ids.device)"
+      },
+      {
+        "line": 2784,
+        "statement": "outputs = self._prefill(input_ids, generation_config, model_kwargs, is_first_iteration=not generation_config.is_assistant)"
+      },
+      {
+        "line": 2794,
+        "statement": "model_inputs = self.prepare_inputs_for_generation(input_ids, next_sequence_length=next_sequence_length, **model_kwargs)"
+      },
+      {
+        "line": 2798,
+        "statement": "outputs = model_forward(**model_inputs, return_dict=True)"
+      },
+      {
+        "line": 2800,
+        "statement": "model_kwargs = self._update_model_kwargs_for_generation(outputs, model_kwargs, is_encoder_decoder=self.config.is_encoder_decoder)"
+      },
+      {
+        "line": 2810,
+        "statement": "next_token_logits = outputs.logits[:, -1, :].to(copy=True, dtype=torch.float32, device=input_ids.device)"
+      },
+      {
+        "line": 2813,
+        "statement": "next_token_scores = logits_processor(input_ids, next_token_logits)"
+      },
+      {
+        "line": 2839,
+        "statement": "next_tokens = torch.multinomial(probs, num_samples=1).squeeze(1)"
+      },
+      {
+        "line": 2841,
+        "statement": "next_tokens = torch.argmax(next_token_scores, dim=-1)"
+      },
+      {
+        "line": 2845,
+        "statement": "next_tokens = next_tokens * unfinished_sequences + pad_token_id * (1 - unfinished_sequences)"
+      },
+      {
+        "line": 2848,
+        "statement": "input_ids = torch.cat([input_ids, next_tokens[:, None]], dim=-1)"
+      },
+      {
+        "line": 2852,
+        "statement": "unfinished_sequences = unfinished_sequences & ~stopping_criteria(input_ids, scores)"
+      },
+      {
+        "line": 2868,
+        "statement": "return GenerateEncoderDecoderOutput(sequences=input_ids, scores=scores, logits=raw_logits, encoder_attentions=encoder_attentions, encoder_hidden_states=encoder_hidden_states, decoder_attentions=decoder_attentions, cross_attentions=cross_attentions, decoder_hidden_states=decoder_hidden_states, past_key_values=cache)"
+      },
+      {
+        "line": 2880,
+        "statement": "return GenerateDecoderOnlyOutput(sequences=input_ids, scores=scores, logits=raw_logits, attentions=decoder_attentions, hidden_states=decoder_hidden_states, past_key_values=cache)"
+      }
+    ],
+    "CUDA_initialized": false,
+    "model_weights_loaded": false
+  },
+  "not_inferred": "Not a runnable original InternVL2.5 replication or a GPU quality result; the proposed control uses common M1/FP16 numerical ports."
+}

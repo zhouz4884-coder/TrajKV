@@ -1,0 +1,131 @@
+{
+  "schema": "baseline_matrix.qwen_calibquant_compatibility_preparation.v1",
+  "status": "PREPARED_NOT_LAUNCHED",
+  "models": [
+    "M2"
+  ],
+  "bits": [
+    2
+  ],
+  "target_cells": 4,
+  "target_QA": 2000,
+  "smoke_jobs": [],
+  "rows": [
+    {
+      "model": "M2",
+      "method": "C2_bias32",
+      "bits": 2,
+      "dataset": "textvqa",
+      "count": 500,
+      "config": "configs/eval/M2_C2_bias32_textvqa_p2_500_v1.json",
+      "full_target_config": "configs/eval/M2_C2_bias32_textvqa_p2_500_v1.json",
+      "status": "ACTUAL_SAME_MODEL_AND_BIT_REUSE_PLAN_VALID",
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\qwen_calibquant_p2\\source_compat_cpu_v2_M2_C2\\M2_C2_bias32_textvqa_p2_500_v1.json",
+      "plan_sha256": "7f47c70616f040d15c37b9a844f9f456331d75498093e961c4d8997ea0f0247f",
+      "effective_contract_sha256": "86c3df3c4eeb5e82042c3dd130252b01e24fa1018f451812c3b7dfe2cb745a6c",
+      "cached_PASS_QA": 2,
+      "fresh_QA": 498,
+      "missing_config": "configs/eval/M2_C2_bias32_textvqa_p2_500_missing_source_compat_cpu_v2_M2_C2.json",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1"
+      ],
+      "job": "configs/jobs/bm_M2_C2_bias32_textvqa_p2_500_missing_source_compat_cpu_v2_M2_C2.json",
+      "remote_new_output": "${DATA_ROOT}/results/p2_qwen_calibquant_missing/source_compat_cpu_v2_M2_C2/M2_C2_bias32_textvqa_p2_500_missing_source_compat_cpu_v2_M2_C2",
+      "requires_pass": [
+        "results/p1_smoke/M2_C2_bias32_textvqa_probe2_v1/complete.json"
+      ]
+    },
+    {
+      "model": "M2",
+      "method": "C2_bias32",
+      "bits": 2,
+      "dataset": "infovqa",
+      "count": 500,
+      "config": "configs/eval/M2_C2_bias32_infovqa_p2_500_v1.json",
+      "full_target_config": "configs/eval/M2_C2_bias32_infovqa_p2_500_v1.json",
+      "status": "ACTUAL_SAME_MODEL_AND_BIT_REUSE_PLAN_VALID",
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\qwen_calibquant_p2\\source_compat_cpu_v2_M2_C2\\M2_C2_bias32_infovqa_p2_500_v1.json",
+      "plan_sha256": "bc3d8fbbdada4894676360878b36cca4e62c3b32f5c672a2eb20b0fdc313f8df",
+      "effective_contract_sha256": "86c3df3c4eeb5e82042c3dd130252b01e24fa1018f451812c3b7dfe2cb745a6c",
+      "cached_PASS_QA": 0,
+      "fresh_QA": 500,
+      "missing_config": "configs/eval/M2_C2_bias32_infovqa_p2_500_missing_source_compat_cpu_v2_M2_C2.json",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1"
+      ],
+      "job": "configs/jobs/bm_M2_C2_bias32_infovqa_p2_500_missing_source_compat_cpu_v2_M2_C2.json",
+      "remote_new_output": "${DATA_ROOT}/results/p2_qwen_calibquant_missing/source_compat_cpu_v2_M2_C2/M2_C2_bias32_infovqa_p2_500_missing_source_compat_cpu_v2_M2_C2",
+      "requires_pass": [
+        "results/p1_smoke/M2_C2_bias32_textvqa_probe2_v1/complete.json"
+      ]
+    },
+    {
+      "model": "M2",
+      "method": "C2_bias32",
+      "bits": 2,
+      "dataset": "docvqa",
+      "count": 500,
+      "config": "configs/eval/M2_C2_bias32_docvqa_p2_500_v1.json",
+      "full_target_config": "configs/eval/M2_C2_bias32_docvqa_p2_500_v1.json",
+      "status": "ACTUAL_SAME_MODEL_AND_BIT_REUSE_PLAN_VALID",
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\qwen_calibquant_p2\\source_compat_cpu_v2_M2_C2\\M2_C2_bias32_docvqa_p2_500_v1.json",
+      "plan_sha256": "ed1bffa82a10dbd08efeb0e49761365b001dfb06fae6b69a34884df5d66575bf",
+      "effective_contract_sha256": "86c3df3c4eeb5e82042c3dd130252b01e24fa1018f451812c3b7dfe2cb745a6c",
+      "cached_PASS_QA": 0,
+      "fresh_QA": 500,
+      "missing_config": "configs/eval/M2_C2_bias32_docvqa_p2_500_missing_source_compat_cpu_v2_M2_C2.json",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1"
+      ],
+      "job": "configs/jobs/bm_M2_C2_bias32_docvqa_p2_500_missing_source_compat_cpu_v2_M2_C2.json",
+      "remote_new_output": "${DATA_ROOT}/results/p2_qwen_calibquant_missing/source_compat_cpu_v2_M2_C2/M2_C2_bias32_docvqa_p2_500_missing_source_compat_cpu_v2_M2_C2",
+      "requires_pass": [
+        "results/p1_smoke/M2_C2_bias32_textvqa_probe2_v1/complete.json"
+      ]
+    },
+    {
+      "model": "M2",
+      "method": "C2_bias32",
+      "bits": 2,
+      "dataset": "chartqa",
+      "count": 500,
+      "config": "configs/eval/M2_C2_bias32_chartqa_p2_500_v1.json",
+      "full_target_config": "configs/eval/M2_C2_bias32_chartqa_p2_500_v1.json",
+      "status": "ACTUAL_SAME_MODEL_AND_BIT_REUSE_PLAN_VALID",
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\qwen_calibquant_p2\\source_compat_cpu_v2_M2_C2\\M2_C2_bias32_chartqa_p2_500_v1.json",
+      "plan_sha256": "b7a4f96b4af5bb640e024ea65569579076b7bedf31214a8ccf5e61aacaa7748c",
+      "effective_contract_sha256": "86c3df3c4eeb5e82042c3dd130252b01e24fa1018f451812c3b7dfe2cb745a6c",
+      "cached_PASS_QA": 0,
+      "fresh_QA": 500,
+      "missing_config": "configs/eval/M2_C2_bias32_chartqa_p2_500_missing_source_compat_cpu_v2_M2_C2.json",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1"
+      ],
+      "job": "configs/jobs/bm_M2_C2_bias32_chartqa_p2_500_missing_source_compat_cpu_v2_M2_C2.json",
+      "remote_new_output": "${DATA_ROOT}/results/p2_qwen_calibquant_missing/source_compat_cpu_v2_M2_C2/M2_C2_bias32_chartqa_p2_500_missing_source_compat_cpu_v2_M2_C2",
+      "requires_pass": [
+        "results/p1_smoke/M2_C2_bias32_textvqa_probe2_v1/complete.json"
+      ]
+    }
+  ],
+  "GPU_launched": false,
+  "reference_answers_read": false,
+  "actual_same_model_bit_reference_used": true,
+  "source_M1_context_not_borrowed": true,
+  "precision_port": "FP16 common matrix + FP32 bias reduction, not author BF16 full system",
+  "source_numerical_parameters_unchanged": {
+    "C1_K_clip": 0.5,
+    "C1_V_clip": 0.3,
+    "C2_K_clip": 1.0,
+    "C2_V_clip": 1.0,
+    "norm_offset_max": -3.0,
+    "norm_offset_min": 0.0
+  },
+  "compatibility_claim": "pending actual two-QA model smoke, not assumed incompatible from paper original model",
+  "source_modules_evaluate_controller_not_modified": true,
+  "caches_models_results_disk": "remote project8TB; raw/plan mirror E"
+}

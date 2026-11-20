@@ -1,0 +1,59 @@
+{
+  "schema": "baseline_matrix.extension_execution_ledger.v1",
+  "run_id": "m1_source_representatives_v1",
+  "controller": "External_baselines_P2_representative_stagefix_continuation_v18",
+  "rows": [],
+  "timing_rows": [
+    {
+      "cohort": "M1_source_representatives_text2",
+      "step": "hardware_smoke",
+      "model": "M1",
+      "dataset": "textvqa",
+      "job": "configs/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_GPU0_stagefix_v2.json",
+      "job_sha256": "de1185af4ea7da0cf6a77a8cd8f287813025cdeb2af8997e2dc01b7f6f6e8d9b",
+      "config": "configs/speed/M1_source_representatives_textvqa_2_hardware_smoke_v1.json",
+      "remote_output": "${DATA_ROOT}/results/source_representative_speed/M1_source_representatives_textvqa_2_hardware_smoke_GPU0_stagefix_v2",
+      "expected_trials": 40,
+      "measured_trials": 30,
+      "warmup_trials": 10,
+      "GPU": "0",
+      "host_quiet_asserted": false,
+      "quality_500_QA": 0,
+      "formal_ranking": false,
+      "status": "SCHEDULED_NEW_RUN_AFTER_DEPLOYMENT_ONLY_FAILURE",
+      "original_failed_attempt": "configs/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v1.json",
+      "unchanged_speed_config_sha256": "aecdfbe17415009bc9911a911f57667b9370a975f8b76ef71355b51bc43159f0",
+      "expected_output_unchanged": true
+    }
+  ],
+  "requested_profile_trials": 560,
+  "ready_trials": 40,
+  "conditional_targets": 3,
+  "conditional_trials": 520,
+  "quality_500_QA": 0,
+  "formal_legacy_656_unchanged": true,
+  "calib_process_diagnostic_32_unchanged": true,
+  "whole_external_library_complete": false,
+  "attempt_history": [
+    {
+      "cohort": "M1_source_representatives_text2",
+      "step": "hardware_smoke",
+      "model": "M1",
+      "dataset": "textvqa",
+      "job": "configs/jobs/bm_M1_source_representatives_textvqa_2_hardware_smoke_v1.json",
+      "job_sha256": "82a571d3b03d1c6284916b110572ea04fd19f6e02f4be26d193c168ac593ec49",
+      "config": "configs/speed/M1_source_representatives_textvqa_2_hardware_smoke_v1.json",
+      "remote_output": "${DATA_ROOT}/results/speed_representatives/M1_source_representatives_textvqa_2_hardware_smoke_v1",
+      "expected_trials": 40,
+      "measured_trials": 0,
+      "warmup_trials": 10,
+      "GPU": "1",
+      "host_quiet_asserted": false,
+      "quality_500_QA": 0,
+      "formal_ranking": false,
+      "status": "SCHEDULED_REAL_EXPECTED_HARDWARE_SMOKE",
+      "terminal_status": "FAILED_BEFORE_MODEL_OR_GPU_TRIALS",
+      "failure": "Missing nested eval config in make_plan; original run and log preserved"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "baseline_matrix.actual_model_compatibility_gate.v2",
+  "status": "PASS_ACTUAL_MODEL_2QA_SOURCE_FINITE_OWNER_INPUT_GATE",
+  "model": "M3",
+  "method": {
+    "id": "CalibQuant_visual_FP32bias_2bit",
+    "family": "calibquant",
+    "adapter_module": "methods.calibquant_fp32_bias_adapter",
+    "adapter_class": "CalibQuantFP32BiasAdapter",
+    "constructor_args": {
+      "bits": 2,
+      "reader_backend": "upstream_triton"
+    },
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "source_run": {
+    "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M3_C2_bias32_textvqa_probe2_v1",
+    "raw_hashes": {
+      "manifest.json": "f4d0eacddf45abfa95e40e3c1b36470010ec4be90aba003dc8f52d374464e9b5",
+      "records.jsonl": "fda4963413f5e0aa35f39593d0a1f7cebc452abe34afa1f3309d323982f5fbd1",
+      "complete.json": "585238e1aabdd86ba92deeccea10ebaf03cb66d7a2a55913c861656e03eedcd2"
+    },
+    "source_proof_hashes": {
+      "source_inventory.json": "bf7e7d912bd8acc77a56023df5649d8c20d86a5f1f0529a82380d21fb80ced80",
+      "launch_receipt.json": "bd39fc337e3e8458ba5d5c7ca5c581adf7396bce476beb40fa54e527d8d539ce",
+      "source_evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22"
+    },
+    "retrieval_receipt_sha256": "b82b9c9dfdbf57245c1b93cfc6e5b0a9a69881f61de602ef8645918d04cbfc1a",
+    "source_retrieval_receipt_sha256": "27d688849fe9b8c112da3bda51be43fbf11470cef8c5fb3a14e91a4eb2c01509",
+    "effective_contract_sha256": "371937d2b363eb7b5ff1c7c5f8648eb3e0be1c0ca6206f3c9b43a45fd351ff97",
+    "original_inference_run": true,
+    "source_recorded_QA": 2,
+    "source_status_counts": {
+      "PASS": 2
+    }
+  },
+  "target_config": "configs\\eval\\M3_C2_bias32_textvqa_probe2_v1.json",
+  "target_config_sha256": "9c3743363feffab89f749b494213abff1a71f487903c6d08171a666a90894be6",
+  "gate_source_sha256": "2035cc29dadee687046923af3a712b9ba401a1a66c938c17d80275dc2104984d",
+  "reports": [
+    {
+      "id": "textvqa:validation:39023",
+      "PASS": true,
+      "actual_visual_tokens": 768,
+      "actual_effective_visual_bits": 2.0426172327112266,
+      "complete_visual_owner_bytes": 14457416,
+      "native_layers": 36,
+      "native_Hq": 32,
+      "native_Hkv": 8,
+      "native_D": 128,
+      "native_position_ids_shape": [
+        3,
+        1,
+        797
+      ],
+      "compression_boundary": 772,
+      "full_question_suffix_tokens": 25,
+      "finite_outer_forward_calls": 3,
+      "peak_allocated_bytes": 9160894976,
+      "peak_reserved_bytes": 9435086848,
+      "output_tokens": 2,
+      "quality_threshold_applied": false
+    },
+    {
+      "id": "textvqa:validation:36209",
+      "PASS": true,
+      "actual_visual_tokens": 1024,
+      "actual_effective_visual_bits": 2.032179938422309,
+      "complete_visual_owner_bytes": 19178056,
+      "native_layers": 36,
+      "native_Hq": 32,
+      "native_Hkv": 8,
+      "native_D": 128,
+      "native_position_ids_shape": [
+        3,
+        1,
+        1049
+      ],
+      "compression_boundary": 1028,
+      "full_question_suffix_tokens": 21,
+      "finite_outer_forward_calls": 6,
+      "peak_allocated_bytes": 9186532352,
+      "peak_reserved_bytes": 9502195712,
+      "output_tokens": 5,
+      "quality_threshold_applied": false
+    }
+  ],
+  "actual_GPU_QA": 2,
+  "no_reference_answers_read": true,
+  "new_GPU_experiment_by_gate": false,
+  "quality_threshold_or_numerical_equivalence_claim": false,
+  "positions_limit": "Actual shape/indices/boundary and recorded SHA verified; exact native 3-axis values rely on locked audited protocol and prior native bridge controls, not newly recomputed by this CPU gate"
+}

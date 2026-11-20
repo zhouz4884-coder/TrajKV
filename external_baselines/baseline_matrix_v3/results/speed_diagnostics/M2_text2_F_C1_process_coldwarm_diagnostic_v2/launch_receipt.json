@@ -1,0 +1,36 @@
+{
+  "status": "LAUNCHED",
+  "pid": 1216589,
+  "name": "bm_M2_text2_F_C1_process_coldwarm_diagnostic_v2",
+  "argv_executed": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-m",
+    "benchmark_speed",
+    "--config",
+    "${DATA_ROOT}/configs/speed/M2_text2_F_C1_process_coldwarm_diagnostic_v2.json",
+    "--output",
+    "${DATA_ROOT}/results/speed_diagnostics/M2_text2_F_C1_process_coldwarm_diagnostic_v2"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_M2_text2_F_C1_process_coldwarm_diagnostic_v2.source",
+  "source_inventory_sha256": "bf7e7d912bd8acc77a56023df5649d8c20d86a5f1f0529a82380d21fb80ced80",
+  "job_sha256": "de081b87eb681151279cf3404b29da556d4bd14b05d814f8258b6b2fe57428ac",
+  "log": "${DATA_ROOT}/logs/bm_M2_text2_F_C1_process_coldwarm_diagnostic_v2.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+    "TMP": "${DATA_ROOT}/cache/main/tmp",
+    "TEMP": "${DATA_ROOT}/cache/main/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "1",
+  "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+}

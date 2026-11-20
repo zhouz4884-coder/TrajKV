@@ -1,0 +1,36 @@
+{
+  "status": "LAUNCHED",
+  "pid": 1146556,
+  "name": "bm_M2_OT_Hmix23_textvqa_probe2_v1",
+  "argv_executed": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-m",
+    "evaluate",
+    "--config",
+    "${DATA_ROOT}/configs/eval/M2_OT_Hmix23_textvqa_probe2_v1.json",
+    "--output",
+    "${DATA_ROOT}/results/onlyterp_compat_smoke_v1/M2_OT_Hmix23_textvqa_probe2_v1"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_M2_OT_Hmix23_textvqa_probe2_v1.source",
+  "source_inventory_sha256": "f803e1121b5466966aac2ef6c47f99f5b14b599220261fa05d3e82d2e0c246e3",
+  "job_sha256": "28862c905da0a3492cbc4a677939014d5a05823c6747ccfe4cb523e983788d4c",
+  "log": "${DATA_ROOT}/logs/bm_M2_OT_Hmix23_textvqa_probe2_v1.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+    "TMP": "${DATA_ROOT}/cache/main/tmp",
+    "TEMP": "${DATA_ROOT}/cache/main/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "0",
+  "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+}

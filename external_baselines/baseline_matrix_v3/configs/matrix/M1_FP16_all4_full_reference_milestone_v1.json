@@ -1,0 +1,37 @@
+{
+  "schema": "baseline_matrix.fixed_matrix.v1",
+  "phase": "M1_FP16_FOUR_OFFICIAL_FULL_REFERENCE_BANKS",
+  "scope": "M1 native FP16 reference bank for four complete official splits: TextVQA validation5000, DocVQA validation5349, InfographicVQA validation2801, ChartQA test2500 (human1250+aug1250). This phase does not complete P2/P3 compressed baselines or the whole external library.",
+  "rows": [
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "textvqa",
+      "count": 5000,
+      "config": "configs/eval/M1_F_textvqa_full_5000_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "infovqa",
+      "count": 2801,
+      "config": "configs/eval/M1_F_infovqa_full_2801_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "docvqa",
+      "count": 5349,
+      "config": "configs/eval/M1_F_docvqa_full_5349_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "chartqa",
+      "count": 2500,
+      "config": "configs/eval/M1_F_chartqa_full_2500_v1.json"
+    }
+  ],
+  "expected_QA": 15650,
+  "completion_scope": "four_declared_native_reference_targets_only"
+}

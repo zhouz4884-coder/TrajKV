@@ -1,0 +1,190 @@
+{
+  "schema": "baseline_matrix.native_full_reference_milestone.v1",
+  "status": "ALL_FOUR_OFFICIAL_SPLITS_FULL_PASS_AND_COLD_REVIEWED",
+  "expected_questions": 15650,
+  "fresh_P3_source_predictions": 13650,
+  "prior_same_contract_predictions_reused": 2000,
+  "original_GPU_source_runs": 10,
+  "model": "OpenGVLab/InternVL3-8B-hf",
+  "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "cross_dataset_quality_average_defined": false,
+  "whole_external_library_complete": false,
+  "instrumented_raw_timing_is_not_controlled_speed": true,
+  "rows": [
+    {
+      "model": "M1",
+      "model_name": "OpenGVLab/InternVL3-8B-hf",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "dataset": "textvqa",
+      "questions": 5000,
+      "metric_ids": "textvqa_mmf_ten_vote_leave_one_out_v1",
+      "mean_percent": 81.94,
+      "ci95_low_percent": 80.9334533449597,
+      "ci95_high_percent": 82.9330822234925,
+      "fresh_QA": 4500,
+      "reused_QA": 500,
+      "raw_status": "PASS_RAW_COMPLETE",
+      "score_status": "PASS_SCORED_COMPLETE",
+      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_textvqa_full_5000_v1",
+      "view_dir": "results/native_F_full_views/native_F_v1/M1_F_textvqa_full_5000_v1",
+      "summary_source_sha256": "5ae6d40b7d51bd47d9bfe0763eda9a1ae48407f00260be18ea1f9c4d791ebe73",
+      "ChartQA_groups": null
+    },
+    {
+      "model": "M1",
+      "model_name": "OpenGVLab/InternVL3-8B-hf",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "dataset": "docvqa",
+      "questions": 5349,
+      "metric_ids": "docvqa_anls_qwenvl_vendor_rawlen_ge0p5_v1",
+      "mean_percent": 91.40370103853742,
+      "ci95_low_percent": 90.53451700131913,
+      "ci95_high_percent": 92.26105354767601,
+      "fresh_QA": 4849,
+      "reused_QA": 500,
+      "raw_status": "PASS_RAW_COMPLETE",
+      "score_status": "PASS_SCORED_COMPLETE",
+      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_docvqa_full_5349_v1",
+      "view_dir": "results/native_F_full_views/native_F_v1/M1_F_docvqa_full_5349_v1",
+      "summary_source_sha256": "758e53fa062693b598a9c388463eed1c2bf3d68b317dc4c93bdc81d7585de970",
+      "ChartQA_groups": null
+    },
+    {
+      "model": "M1",
+      "model_name": "OpenGVLab/InternVL3-8B-hf",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "dataset": "infovqa",
+      "questions": 2801,
+      "metric_ids": "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1",
+      "mean_percent": 72.1017630916698,
+      "ci95_low_percent": 69.61738065305573,
+      "ci95_high_percent": 74.45288338234516,
+      "fresh_QA": 2301,
+      "reused_QA": 500,
+      "raw_status": "PASS_RAW_COMPLETE",
+      "score_status": "PASS_SCORED_COMPLETE",
+      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_infovqa_full_2801_v1",
+      "view_dir": "results/native_F_full_views/native_F_v1/M1_F_infovqa_full_2801_v1",
+      "summary_source_sha256": "4af8816a026de7a19c9572e64bdca199116611a71aa49ea27145bc5d48b6e19b",
+      "ChartQA_groups": null
+    },
+    {
+      "model": "M1",
+      "model_name": "OpenGVLab/InternVL3-8B-hf",
+      "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+      "dataset": "chartqa",
+      "questions": 2500,
+      "metric_ids": "chartqa_pix2struct_relaxed_5pct_v1",
+      "mean_percent": 86.24000000000001,
+      "ci95_low_percent": 84.83738768158223,
+      "ci95_high_percent": 87.65334909637461,
+      "fresh_QA": 2000,
+      "reused_QA": 500,
+      "raw_status": "PASS_RAW_COMPLETE",
+      "score_status": "PASS_SCORED_COMPLETE",
+      "scored_dir": "results/scored/native_F_full_native_F_v1/M1_F_chartqa_full_2500_v1",
+      "view_dir": "results/native_F_full_views/native_F_v1/M1_F_chartqa_full_2500_v1",
+      "summary_source_sha256": "71c5b5600e781c8988fe92eb57dd417262ed5bb688cb9830ba93f59a3a2c1355",
+      "ChartQA_groups": {
+        "overall": {
+          "expected_questions": 2500,
+          "scored_pass_questions": 2500,
+          "failure_questions": 0,
+          "coverage_fraction": 1.0,
+          "primary": {
+            "mean": 0.8624,
+            "questions": 2500,
+            "source_clusters": 1509,
+            "estimand": "question-weighted mean",
+            "resampling_unit": "source_cluster_id",
+            "ci95": [
+              0.8483738768158223,
+              0.8765334909637461
+            ],
+            "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+          },
+          "conditional_success_only": {
+            "mean": 0.8624,
+            "questions": 2500,
+            "source_clusters": 1509,
+            "estimand": "question-weighted mean",
+            "resampling_unit": "source_cluster_id",
+            "ci95": [
+              0.8483738768158223,
+              0.8765334909637461
+            ],
+            "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+            "is_full_cohort_quality": true
+          },
+          "failed_ids": []
+        },
+        "human": {
+          "expected_questions": 1250,
+          "scored_pass_questions": 1250,
+          "failure_questions": 0,
+          "coverage_fraction": 1.0,
+          "primary": {
+            "mean": 0.7768,
+            "questions": 1250,
+            "source_clusters": 625,
+            "estimand": "question-weighted mean",
+            "resampling_unit": "source_cluster_id",
+            "ci95": [
+              0.75358,
+              0.8016
+            ],
+            "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+          },
+          "conditional_success_only": {
+            "mean": 0.7768,
+            "questions": 1250,
+            "source_clusters": 625,
+            "estimand": "question-weighted mean",
+            "resampling_unit": "source_cluster_id",
+            "ci95": [
+              0.75358,
+              0.8016
+            ],
+            "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+            "is_full_cohort_quality": true
+          },
+          "failed_ids": []
+        },
+        "aug": {
+          "expected_questions": 1250,
+          "scored_pass_questions": 1250,
+          "failure_questions": 0,
+          "coverage_fraction": 1.0,
+          "primary": {
+            "mean": 0.948,
+            "questions": 1250,
+            "source_clusters": 987,
+            "estimand": "question-weighted mean",
+            "resampling_unit": "source_cluster_id",
+            "ci95": [
+              0.9349717625957406,
+              0.9605991976617789
+            ],
+            "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+          },
+          "conditional_success_only": {
+            "mean": 0.948,
+            "questions": 1250,
+            "source_clusters": 987,
+            "estimand": "question-weighted mean",
+            "resampling_unit": "source_cluster_id",
+            "ci95": [
+              0.9349717625957406,
+              0.9605991976617789
+            ],
+            "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+            "is_full_cohort_quality": true
+          },
+          "failed_ids": []
+        }
+      }
+    }
+  ],
+  "cold_review": "audit/native_F_cold/all4_cold_v1.json",
+  "cold_review_sha256": "58c8666497ebef240ed8606312f7855df1ebe29b95310d4f2eba29d2c4980959"
+}

@@ -1,10 +1,11 @@
-"""Streaming cold verification of declared-phase exports and donor provenance."""
+"""Cold verification of separately counted primary/auxiliary phase closures."""
 from __future__ import annotations
 import argparse
 from collections import Counter,defaultdict
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
 import sys
 import zipfile
@@ -32,9 +33,15 @@ def relative(value):
     raise ValueError('Unresolvable public evidence path template')
 
 
+def io_path(value):
+    path=Path(value).resolve();prefix=chr(92)*2+'?'+chr(92)
+    return Path(prefix+str(path)) if os.name=='nt' and not str(path).startswith(prefix) else path
+
+
 def verify(root,archive=None,recompute_scores=False):
-    root=Path(root).resolve();index=load(root/'PUBLIC_CONTENT_REFS.json');entries=index['files']
-    require(index['schema']=='baseline_matrix.public_content_refs.v2','Expected v2 source/public identity schema')
+    root=io_path(root);index=load(root/'PUBLIC_CONTENT_REFS.json');entries=index['files']
+    require(index['schema'] in ('baseline_matrix.public_content_refs.v2','baseline_matrix.public_content_refs.v3'),
+            'Expected source/public identity schema')
     require(index['completion_scope']=='declared_matrix_only' and index['whole_external_library_completion_assessed'] is False,'Unsupported whole-library completion claim')
     total=0;line_count=0
     for name,entry in entries.items():
@@ -63,6 +70,11 @@ def verify(root,archive=None,recompute_scores=False):
         total+=entry['public_bytes']
     actual={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()}
     require(actual==set(entries)|{'PUBLIC_CONTENT_REFS.json'},'Unindexed or missing public files')
+    for group in index.get('supporting_evidence_groups',[]):
+        require(group['not_part_of_primary_or_auxiliary_quality_QA'] is True,'Supporting controls mixed into quality QA counts')
+        for row in group['files']:
+            require(row['file'] in entries and entries[row['file']]['source_sha256']==row['source_sha256'],
+                    'Supporting original evidence identity differs')
     if archive:
         prefix=index['namespace']+'/'
         with zipfile.ZipFile(archive) as zipped:
@@ -96,16 +108,30 @@ def verify(root,archive=None,recompute_scores=False):
         if value in entries:return value
         candidate=relative(value)
         require(candidate in entries,'Declared source file missing');return candidate
-    matrix_name=index.get('declared_matrix_file')
-    if matrix_name is None:
-        candidates=[name for name,info in entries.items() if info['source_sha256']==index['phase']['declared_matrix_source_sha256']]
-        require(candidates,'Declared matrix original SHA not represented');matrix_name=candidates[0]
-    require(entries[matrix_name]['source_sha256']==index['phase']['declared_matrix_source_sha256'],'Wrong declared matrix source SHA')
-    matrix=load(root/matrix_name);require(matrix['rows'],'Missing declared matrix rows')
-    declared={source_file_reference(row['config']):row for row in matrix['rows']}
-    require(len(declared)==len(matrix['rows'])==index['phase']['expected_cells'] and
-            sum(int(row['count']) for row in matrix['rows'])==index['phase']['expected_questions'],'Declared matrix totals differ')
-    require(len(index['phase_artifacts'])==len({a['config'] for a in index['phase_artifacts']}),'Duplicate phase artifact')
+    groups=[{'phase':index['phase'],'phase_artifacts':index['phase_artifacts'],
+             'declared_matrix_file':index.get('declared_matrix_file'),
+             'source_closure':index.get('primary_source_closure',index['source_closure'])}]+index.get('auxiliary_phases',[])
+    require(len({g['phase']['phase_label'] for g in groups})==len(groups),'Duplicate independent phase labels')
+    artifacts=[];declared={};artifact_group={}
+    for group_number,group in enumerate(groups):
+        phase=group['phase']
+        require(phase['completion_scope']=='declared_matrix_only' and phase['whole_external_library_completion_assessed'] is False,
+                'Unsupported auxiliary whole-library claim')
+        matrix_name=group.get('declared_matrix_file')
+        if matrix_name is None:
+            candidates=[name for name,info in entries.items() if info['source_sha256']==phase['declared_matrix_source_sha256']]
+            require(candidates,'Declared matrix original SHA not represented');matrix_name=candidates[0]
+        require(entries[matrix_name]['source_sha256']==phase['declared_matrix_source_sha256'],'Wrong declared matrix source SHA')
+        matrix=load(root/matrix_name);require(matrix['rows'],'Missing declared matrix rows')
+        local={source_file_reference(row['config']):row for row in matrix['rows']}
+        require(len(local)==len(matrix['rows'])==phase['expected_cells'] and
+                sum(int(row['count']) for row in matrix['rows'])==phase['expected_questions'],'Declared independent matrix totals differ')
+        require(not set(local)&set(declared),'Duplicate target across phases; shared reference views require their own support group')
+        declared.update(local)
+        require(len(group['phase_artifacts'])==len({a['config'] for a in group['phase_artifacts']}),'Duplicate phase artifact')
+        require(all(a['config'] in local for a in group['phase_artifacts']),'Artifact lies outside its declared independent phase')
+        for artifact in group['phase_artifacts']:
+            artifacts.append(artifact);artifact_group[artifact['config']]=group_number
     def line_metadata(folder):
         path=folder+'/records.jsonl';side=entry(folder,'records.jsonl')['line_identities_file'];rows=[]
         with (root/path).open('rb') as stream,(root/side).open(encoding='utf-8') as identity:
@@ -180,11 +206,19 @@ def verify(root,archive=None,recompute_scores=False):
             require(sha(root/folder/'source_evaluate.py')==inventory['code/evaluate.py'],'Producer evaluate source was transformed; explicit additional AST map required')
             contracts[folder]=public_contract(m,inventory,root/folder/'source_evaluate.py')
         raw_meta[folder]=(m,c);visited.add(folder);active.remove(folder)
-    for artifact in index['phase_artifacts']:walk(artifact['raw_dir'])
+    for artifact in artifacts:walk(artifact['raw_dir'])
     require(visited=={n['raw_dir'] for n in index['source_closure']},'Source closure is incomplete or contains unclaimed nodes')
-    scoring=[];complete_cells=0;complete_questions=0
+    def reachable(folder,seen):
+        if folder in seen:return
+        seen.add(folder);manifest=raw_meta[folder][0]
+        for descriptor in manifest.get('source_runs',[]):reachable(relative(descriptor['raw_dir']),seen)
+    for group in groups:
+        own=set()
+        for artifact in group['phase_artifacts']:reachable(artifact['raw_dir'],own)
+        require(own=={node['raw_dir'] for node in group['source_closure']},'Independent phase donor closure differs')
+    scoring=[];complete_cells=Counter();complete_questions=Counter()
     source_lock=load(root/'configs/datasets/v3/source_lock.json')
-    for artifact in index['phase_artifacts']:
+    for artifact in artifacts:
         folder=artifact['raw_dir'];m,c=raw_meta[folder];cfg=load(root/artifact['config'])
         require(artifact['config'] in declared,'Artifact outside declared matrix')
         declaration=declared[artifact['config']]
@@ -245,17 +279,28 @@ def verify(root,archive=None,recompute_scores=False):
                         interval=np.quantile(sums[draws].sum(1)/sizes[draws].sum(1),[.025,.975])
                         require(np.allclose(interval,data['primary']['ci95'],rtol=0,atol=1e-12),'ChartQA subgroup CI differs')
         passed=summary['status']=='PASS_SCORED_COMPLETE' and c['status']=='PASS_RAW_COMPLETE'
-        if passed:complete_cells+=1;complete_questions+=len(expected)
+        group_number=artifact_group[artifact['config']]
+        if passed:complete_cells[group_number]+=1;complete_questions[group_number]+=len(expected)
         scoring.append({'cell':artifact['cell'],'questions':len(expected),'mean':summary['primary_mean'],'passed':passed,
+                        'phase_label':groups[group_number]['phase']['phase_label'],
                         'kind':artifact['kind'],'origin_counts':m.get('QA_origin_counts',{'fresh':len(expected)}),
                         'metrics_recomputed':bool(recompute_scores)})
-    phase=index['phase']
-    require(phase['verified_scored_cells']==complete_cells and phase['verified_scored_questions']==complete_questions,'Published phase progress differs from closed artifacts')
-    is_complete=complete_cells==phase['expected_cells'] and complete_questions==phase['expected_questions'] and not phase['missing']
-    require((phase['status']=='PASS_DECLARED_MATRIX_COMPLETE')==is_complete,'False declared phase completion')
-    eligible=is_complete and not index.get('fixture_only',False)
+    verified_groups=[];all_complete=True
+    for group_number,group in enumerate(groups):
+        phase=group['phase']
+        require(phase['verified_scored_cells']==complete_cells[group_number] and phase['verified_scored_questions']==complete_questions[group_number],
+                'Published independent phase progress differs from closed artifacts')
+        is_complete=complete_cells[group_number]==phase['expected_cells'] and complete_questions[group_number]==phase['expected_questions'] and not phase['missing']
+        require((phase['status']=='PASS_DECLARED_MATRIX_COMPLETE')==is_complete,'False independent phase completion')
+        all_complete=all_complete and is_complete
+        verified_groups.append({'phase_label':phase['phase_label'],'cells':complete_cells[group_number],
+                                'view_questions':complete_questions[group_number],'primary':group_number==0})
+    eligible=all_complete and not index.get('fixture_only',False)
     require(index['publication_eligible']==eligible,'Incomplete preview/fixture publication eligibility differs')
-    return {'status':'PASS_PUBLIC_EXPORT_VERIFIED_V2','public_files':len(entries),'public_payload_bytes':total,
+    phase=index['phase']
+    return {'status':'PASS_PUBLIC_EXPORT_VERIFIED_V3','public_files':len(entries),'public_payload_bytes':total,
+        'independent_phases_verified':verified_groups,'phase_group_totals_are_separate':True,
+        'supporting_evidence_groups_verified':len(index.get('supporting_evidence_groups',[])),
         'jsonl_line_identities':line_count,'raw_complete_runs_verified':len(visited),
         'original_donors':sum(n['kind']=='original_inference_run' for n in index['source_closure']),
         'derived_views':sum(n['kind']=='derived_prediction_view' for n in index['source_closure']),

@@ -1,0 +1,191 @@
+{
+  "status": "PASS_READ_ONLY_CPU_STATIC_AND_EXISTING_GPU_METADATA_AUDIT",
+  "new_GPU_inference_QA": 0,
+  "GPU_launched": false,
+  "queue_or_method_changes": false,
+  "existing_remote_metadata_file": "${EVIDENCE_ROOT}\\results\\diagnostics\\calib_compile_static_v1\\remote_existing_cache_metadata.json",
+  "existing_remote_metadata_sha256": "6468e0c9e04a626dac9e56ad9b35563e974598336f810083cd24e6c1585cd7df",
+  "new_metadata_exact_source_snapshot_and_run_interval": true,
+  "observations": [
+    {
+      "method": "C1",
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1",
+      "raw_file_sha256": {
+        "manifest.json": "da08861913e2e98bbb9ae79fa5c1aa65dfbf80bd3b6258a327019f0c58c86079",
+        "records.jsonl": "3a544f313803827dabcfb4a7875deed44c61d747d3465553e030caced7e717e7",
+        "complete.json": "e56cc4dcff7500802c8415657e440baedf67471a54fc2db81ed82c4e1fc3d4ca"
+      },
+      "model_load_ms_outside_request": 117426.01202899823,
+      "actual_records": [
+        {
+          "id": "textvqa:validation:39023",
+          "Nv": 999,
+          "suffix_tokens": 25,
+          "encode_ms": 861.5093800181057,
+          "question_prefill_ms": 136724.2070879729,
+          "subsequent_decode_outer_forward_ms": [
+            111.88223399221897
+          ],
+          "new_metadata_by_family": {
+            "tiled_encoded_group_vecmat_transp_kernel": {
+              "compiled_metadata_records": 54,
+              "first_mtime_unix": 1795158995.4869819,
+              "last_mtime_unix": 1795159063.2942312
+            },
+            "tiled_encoded_group_vecmat_kernel": {
+              "compiled_metadata_records": 24,
+              "first_mtime_unix": 1795159064.1302226,
+              "last_mtime_unix": 1795159119.921687
+            }
+          },
+          "raw_record_sha256": "3d2a0379fd34c90dece2b0d751f96c0717eb1c629d6b621f49596a87ea16d160",
+          "raw_record_hash_note": "analysis serialization only; original raw file SHA below is authoritative"
+        },
+        {
+          "id": "textvqa:validation:36209",
+          "Nv": 1225,
+          "suffix_tokens": 21,
+          "encode_ms": 216.0671729943715,
+          "question_prefill_ms": 166468.74108799966,
+          "subsequent_decode_outer_forward_ms": [
+            90.17921899794601,
+            92.21140597946942,
+            87.81517200986855,
+            98.79838698543608
+          ],
+          "new_metadata_by_family": {
+            "tiled_encoded_group_vecmat_transp_kernel": {
+              "compiled_metadata_records": 54,
+              "first_mtime_unix": 1795159122.709662,
+              "last_mtime_unix": 1795159192.4770863
+            },
+            "tiled_encoded_group_vecmat_kernel": {
+              "compiled_metadata_records": 24,
+              "first_mtime_unix": 1795159193.589078,
+              "last_mtime_unix": 1795159288.3844366
+            }
+          },
+          "raw_record_sha256": "4a57c0684e5439702763831599b4abe88a3ce520e945e9873b2f0e4b271987f2",
+          "raw_record_hash_note": "analysis serialization only; original raw file SHA below is authoritative"
+        }
+      ]
+    },
+    {
+      "method": "C2",
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1",
+      "raw_file_sha256": {
+        "manifest.json": "e456bad03e6890c19a8362cb1e9f092de5debc9f0afaeeeff8c16a2425e0696a",
+        "records.jsonl": "8416312239efa03d43829652e125c31320425a11664dfb89e3ce6c1645a9e664",
+        "complete.json": "13319a74b30d09bf23f1453aefb15e0b6dbe3e322289f652f472b39d5a7ef8ad"
+      },
+      "model_load_ms_outside_request": 34560.96031900961,
+      "actual_records": [
+        {
+          "id": "textvqa:validation:39023",
+          "Nv": 999,
+          "suffix_tokens": 25,
+          "encode_ms": 345.48218399868347,
+          "question_prefill_ms": 108282.48854199774,
+          "subsequent_decode_outer_forward_ms": [
+            110.93525699106976
+          ],
+          "new_metadata_by_family": {
+            "tiled_encoded_group_vecmat_transp_kernel": {
+              "compiled_metadata_records": 54,
+              "first_mtime_unix": 1795159346.3081126,
+              "last_mtime_unix": 1795159421.1397598
+            },
+            "tiled_encoded_group_vecmat_kernel": {
+              "compiled_metadata_records": 24,
+              "first_mtime_unix": 1795159421.7437572,
+              "last_mtime_unix": 1795159451.8236346
+            }
+          },
+          "raw_record_sha256": "f3707d1ce8b164fa4723aff047fc0404e18e9d2eb37edd7e8c5d23ca6fcecc7d",
+          "raw_record_hash_note": "analysis serialization only; original raw file SHA below is authoritative"
+        },
+        {
+          "id": "textvqa:validation:36209",
+          "Nv": 1225,
+          "suffix_tokens": 21,
+          "encode_ms": 240.98617100389674,
+          "question_prefill_ms": 126157.80145599274,
+          "subsequent_decode_outer_forward_ms": [
+            88.33449397934601,
+            107.05978298210539,
+            87.79754501301795,
+            87.100097007351
+          ],
+          "new_metadata_by_family": {
+            "tiled_encoded_group_vecmat_transp_kernel": {
+              "compiled_metadata_records": 54,
+              "first_mtime_unix": 1795159454.4716241,
+              "last_mtime_unix": 1795159531.5473554
+            },
+            "tiled_encoded_group_vecmat_kernel": {
+              "compiled_metadata_records": 24,
+              "first_mtime_unix": 1795159532.271353,
+              "last_mtime_unix": 1795159579.7792158
+            }
+          },
+          "raw_record_sha256": "f23062123add3ec5c67c7adc9e3176d82aae18762ff179ec19604c150c410c0d",
+          "raw_record_hash_note": "analysis serialization only; original raw file SHA below is authoritative"
+        }
+      ]
+    }
+  ],
+  "source_findings": {
+    "QK_candidates_per_new_Nv": 54,
+    "WV_candidates_per_new_Nv": 24,
+    "QK_declared_autotune_key": [
+      "K",
+      "N"
+    ],
+    "WV_declared_autotune_key": [
+      "K",
+      "ROUNDED_K",
+      "N"
+    ],
+    "constexpr_QK": {
+      "K": 128,
+      "N": "Nv",
+      "BITS": "fixed by method",
+      "DATUM_PER_ELEM": "8/BITS",
+      "ROUNDED_K": 128
+    },
+    "constexpr_WV": {
+      "K": "Nv",
+      "ROUNDED_K": "next_power_of_2(Nv)",
+      "N": 128,
+      "BITS": "fixed by method",
+      "DATUM_PER_ELM": "8/BITS",
+      "NUM_SM": 82
+    },
+    "suffix_token_index_or_text_prefix_position_not_kernel_arguments": true,
+    "all_layers_share_fixed_visual_Nv_and_head_dimension": true,
+    "single_upstream_module_cached_per_process": true,
+    "process_local_autotune_winners_not_persisted_to_disk_by_triton_3_0": true,
+    "GQA": {
+      "query_heads": 28,
+      "KV_heads": 4,
+      "repeat_factor": 7,
+      "packed_KV_and_metadata_repeated_to_query_heads_before_single_query_loops": true,
+      "QK_plus_WV_calls_per_full_28_layer_suffix": "2*28*T (1400 at T=25; 1176 at T=21)",
+      "new_shape_autotune_not_repeated_for_each_t_or_each_layer": true
+    },
+    "declared_key_runtime_caveat": "Triton 3.0 filters absent heuristic ROUNDED_K before applying original arg indexes: the WV tuple actually contains Nv,128,total_matrices plus dtypes. Nv still invalidates the key; this does not alter the kernel arithmetic.",
+    "BITS_not_in_autotune_key_caveat": "JIT binaries specialize BITS, but autotune winner keys do not. Interleaved C1/C2 in one process share a winner for the same Nv/dtypes, following the frozen source."
+  },
+  "inference": "The actual 54+24 new metadata per Nv and sub-0.12s subsequent decode support cold compilation/autotuning as the dominant explanation of these first suffix observations; no profiler partition or hot repeated-suffix timing has yet been measured.",
+  "not_concluded": [
+    "all 500 QA require minutes each",
+    "exact fraction of suffix wall due to compiler",
+    "production throughput",
+    "the method is computationally invalid"
+  ],
+  "runtime_source_sha256": {
+    "runtime/autotuner.py": "9dd27fc2e39569708156c8e6233157d4844f1d3007e852949bed421e93a1350b",
+    "runtime/jit.py": "7542bf9254646331ed90ce16fe1bfb2caf87d77d748d84396aab44c8027d508b",
+    "runtime/cache.py": "166afa0200ee6d3ed73def4b6a7e9613f7336d24bb64567fffcaa476f6969121"
+  }
+}

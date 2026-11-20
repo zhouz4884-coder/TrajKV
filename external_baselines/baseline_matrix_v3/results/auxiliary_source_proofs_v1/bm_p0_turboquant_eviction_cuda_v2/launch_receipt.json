@@ -1,0 +1,36 @@
+{
+  "status": "LAUNCHED",
+  "pid": 779168,
+  "name": "bm_p0_turboquant_eviction_cuda_v2",
+  "argv_executed": [
+    "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python",
+    "-m",
+    "methods.validate_turboquant_eviction",
+    "--device",
+    "cuda:0",
+    "--output",
+    "${DATA_ROOT}/results/p0/turboquant_eviction_math_cuda_v2.json"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_p0_turboquant_eviction_cuda_v2.source",
+  "source_inventory_sha256": "41a91ab9a80ecec6207e39c3f93b55348e2cdad59a4e0cd0308f050e9e45f42e",
+  "job_sha256": "219f68aa28b51d138e9dfc5f40618ff491cc37a4964aa205ff99fa4542bca21a",
+  "log": "${DATA_ROOT}/logs/bm_p0_turboquant_eviction_cuda_v2.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/main/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/main/tmp",
+    "TMP": "${DATA_ROOT}/cache/main/tmp",
+    "TEMP": "${DATA_ROOT}/cache/main/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/main/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/main/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/main/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/main/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/main/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/main/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/main/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/main/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/main/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/main/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "1",
+  "runtime_python": "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/bin/python"
+}

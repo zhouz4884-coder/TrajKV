@@ -1,0 +1,379 @@
+{
+  "schema": "baseline_matrix.public_support_files.v1",
+  "label": "completed_M1_K32_and_M2_four_source_smokes_with_Calib_cold_metadata_v1",
+  "completed_evidence_only": true,
+  "scope": "Five completed technical source-compatible prediction jobs: M1 K32 and M2 C1/C2/K32/OnlyTerp Hmix23, two fixed TextVQA inputs each. Ten model/method response rows reuse the same two dataset questions, not ten unique questions. These technical rows add zero primary-quality QA to native15650, P2 full500, or the real64 phases. Existing Calib compile-metadata JSON is included without tensors or compiled binaries. New M3/pending speed jobs are excluded. Public job/launch proofs retain separate derived/source identities.",
+  "counts": {
+    "original_inference_jobs": 5,
+    "model_method_prediction_rows": 10,
+    "unique_dataset_QA_ids": 2,
+    "dataset_QA_ids": [
+      "textvqa:validation:36209",
+      "textvqa:validation:39023"
+    ],
+    "primary_quality_QA_added": 0,
+    "existing_metadata_records_all_prior_cache": 1647,
+    "metadata_records_matched_to_M2_C1_C2_actual_intervals": 312
+  },
+  "counts_per_group": [
+    {
+      "id": "M1_K2_g32R32_text_probe2_v1",
+      "model": "M1",
+      "method": "K32",
+      "kind": "COMPLETED_TECHNICAL_TWO_QA_PREDICTION_SMOKE",
+      "original_inference_jobs": 1,
+      "model_method_prediction_rows": 2,
+      "unique_input_QA_in_this_group": 2,
+      "dataset_QA_ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ],
+      "primary_quality_QA_added": 0,
+      "gate_report": "${PROJECT_ROOT}\\audit\\compat_extension\\M1_K32_existing_actual_gate_control_v2.json",
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1",
+      "effective_contract_sha256": "6da2cd31f9dc168a6620228d60dbead9b4753b9199be2f3659e1cdab2712cddb"
+    },
+    {
+      "id": "M2_C1_bias32_textvqa_probe2_v1",
+      "model": "M2",
+      "method": "C1",
+      "kind": "COMPLETED_TECHNICAL_TWO_QA_PREDICTION_SMOKE",
+      "original_inference_jobs": 1,
+      "model_method_prediction_rows": 2,
+      "unique_input_QA_in_this_group": 2,
+      "dataset_QA_ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ],
+      "primary_quality_QA_added": 0,
+      "gate_report": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\gates\\M2_C1_bias32_textvqa_probe2_v1.v2.json",
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1",
+      "effective_contract_sha256": "197e71453ec9f65d8307929f27ca20a559f2857798b54d2587661e923ba9820b"
+    },
+    {
+      "id": "M2_C2_bias32_textvqa_probe2_v1",
+      "model": "M2",
+      "method": "C2",
+      "kind": "COMPLETED_TECHNICAL_TWO_QA_PREDICTION_SMOKE",
+      "original_inference_jobs": 1,
+      "model_method_prediction_rows": 2,
+      "unique_input_QA_in_this_group": 2,
+      "dataset_QA_ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ],
+      "primary_quality_QA_added": 0,
+      "gate_report": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\gates\\M2_C2_bias32_textvqa_probe2_v1.v2.json",
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1",
+      "effective_contract_sha256": "86c3df3c4eeb5e82042c3dd130252b01e24fa1018f451812c3b7dfe2cb745a6c"
+    },
+    {
+      "id": "M2_K2_g32R32_textvqa_probe2_v1",
+      "model": "M2",
+      "method": "K32",
+      "kind": "COMPLETED_TECHNICAL_TWO_QA_PREDICTION_SMOKE",
+      "original_inference_jobs": 1,
+      "model_method_prediction_rows": 2,
+      "unique_input_QA_in_this_group": 2,
+      "dataset_QA_ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ],
+      "primary_quality_QA_added": 0,
+      "gate_report": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\gates\\M2_K2_g32R32_textvqa_probe2_v1.v2.json",
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1",
+      "effective_contract_sha256": "94f475304a2558e3d3b2a4b94df2a29467b5851ce90b4c40fc39d66739bc4de6"
+    },
+    {
+      "id": "M2_OT_Hmix23_textvqa_probe2_v1",
+      "model": "M2",
+      "method": "OT23",
+      "kind": "COMPLETED_TECHNICAL_TWO_QA_PREDICTION_SMOKE",
+      "original_inference_jobs": 1,
+      "model_method_prediction_rows": 2,
+      "unique_input_QA_in_this_group": 2,
+      "dataset_QA_ids": [
+        "textvqa:validation:39023",
+        "textvqa:validation:36209"
+      ],
+      "primary_quality_QA_added": 0,
+      "gate_report": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\gates\\M2_OT_Hmix23_textvqa_probe2_v1.v2.json",
+      "raw_dir": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1",
+      "effective_contract_sha256": "837789eb4d33f923e1bef0c005fdd5a2e17ac0055e659fcf74e23e7de0a1e43e"
+    }
+  ],
+  "primary_quality_QA_added": 0,
+  "counts_not_additive_with_native_P2_or_OnlyTerp_quality_QA": true,
+  "collection_used_GPU": false,
+  "collection_performed_new_inference": false,
+  "M3_pending_evidence_included": false,
+  "files": [
+    {
+      "path": "${PROJECT_ROOT}\\audit\\calibquant_compile_metadata_observation_receipt_v1.json",
+      "sha256": "e05b18887088003c8e317738ff61710fcbfa101578dce22ff2083014040b1908",
+      "role": "CPU_observation_identity_receipt_not_GPU_producer_receipt"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\audit\\calibquant_M2_cold_compile_CPU_v1.json",
+      "sha256": "a343059938741bb9da39e8dffb30c06622d96ce58456e3e0f8df4759ba8acc72",
+      "role": "CPU_static_existing_GPU_metadata_analysis"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\audit\\compat_extension\\compat_smoke_v2_independent_CPU_review.json",
+      "sha256": "16982f37fd1f0b699a88d61b600d4845b2d1e6be2611b1c13ca92d3af8ea142f",
+      "role": "independent_CPU_gate_controls"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\audit\\compat_extension\\M1_K32_existing_actual_gate_control_v2.json",
+      "sha256": "fae4801b2c18dcdb7c7291e00e31e226474ca6d816fb4b5f5e8ac4c3af498ad4",
+      "role": "actual_input_owner_source_gate_v2"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\ANALYSIS_M2_Calib_cold_compile_20261120.md",
+      "sha256": "5759feb2b73a12c301d7403dbdb29f1545427df514787527715ff7a59fea0cf0",
+      "role": "research_report"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\accept_compat_smoke_v2.py",
+      "sha256": "2035cc29dadee687046923af3a712b9ba401a1a66c938c17d80275dc2104984d",
+      "role": "acceptance_source"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\inspect_calib_compile_metadata_v1.py",
+      "sha256": "cf4ea42dfb7945d4c91f5f35ced5b5dcde470f0e80ad6db59462880ee17bf14a",
+      "role": "read_only_CPU_observation_program"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\gates\\M2_C1_bias32_textvqa_probe2_v1.v2.json",
+      "sha256": "db1186880b9464adb2b3075b0120e19de59cea0d7e73e84dc29617ce374f3873",
+      "role": "actual_input_owner_source_gate_v2"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\gates\\M2_C2_bias32_textvqa_probe2_v1.v2.json",
+      "sha256": "5705bcafdd34f53e5a1369adc66692b0b8fc3297ea34b9ba77a621614b346cbc",
+      "role": "actual_input_owner_source_gate_v2"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\gates\\M2_K2_g32R32_textvqa_probe2_v1.v2.json",
+      "sha256": "a227ba0ad7199cfa6e5fef1881248be468f28acc40166909c0fe54eb8672b558",
+      "role": "actual_input_owner_source_gate_v2"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\gates\\M2_OT_Hmix23_textvqa_probe2_v1.v2.json",
+      "sha256": "fc9eaaec1e782cff2c159d80ba88c391d183ade0fa8180c3008e295a4bac660f",
+      "role": "actual_input_owner_source_gate_v2"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\compat_smoke_collection\\source_compat_cpu_v2\\model_batches\\M2.summary.json",
+      "sha256": "2093405c5180b4200af414fe82423003e770efbcbaa4c466111a75ec649094a1",
+      "role": "M2_four_smoke_actual_support_and_plan_summary"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\diagnostics\\calib_compile_static_v1\\remote_existing_cache_metadata.json",
+      "sha256": "6468e0c9e04a626dac9e56ad9b35563e974598336f810083cd24e6c1585cd7df",
+      "role": "existing_compile_metadata_observation_only_not_binary_cache"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1\\complete.json",
+      "sha256": "37b82d19693f50465dd0228d5382cca4912b86dc3709325848f781849735b7cf",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1\\launch_receipt.json",
+      "sha256": "562119aaf677c1901ca1b6aff06312f89cc809d8a02825a1957640c41ec92c04",
+      "role": "launch"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1\\manifest.json",
+      "sha256": "b4d3aa927a57b52fb3b6e71ddc8ee779b126cb68be73349446fb99f77b8beca7",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1\\records.jsonl",
+      "sha256": "419e8409c89304ac69323312b9fffb9a38af02ab66b5037825531f19d5e4af1f",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1\\retrieval_receipt.json",
+      "sha256": "332a76ff0318f74b17822d6dde60ffa1473ad9a77e991b3603d5a3b50c27748f",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_evaluate_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1\\source_inventory.json",
+      "sha256": "f803e1121b5466966aac2ef6c47f99f5b14b599220261fa05d3e82d2e0c246e3",
+      "role": "source_inventory"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\onlyterp_compat_smoke_v1\\M2_OT_Hmix23_textvqa_probe2_v1\\source_retrieval_receipt_v2.json",
+      "sha256": "4065870a2aa83b00420877ba051ce30565e6bbb306724d7538d9e5394f67cb0a",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1\\complete.json",
+      "sha256": "d20f62d1103b3f49cb8420ab0eb82682977a3bf71bbaa092718801e469584daf",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1\\launch_receipt.json",
+      "sha256": "851ca2327db2f58e1b2c7474da5a83af599f9c89369a380b10d3a61f860adcc3",
+      "role": "launch"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1\\manifest.json",
+      "sha256": "f42af71cc90674c1632428d41d5dde510b65047361aa8f361d123af9cc6bb642",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1\\records.jsonl",
+      "sha256": "c522696a16251ccfd5cdbf2006ef3ce1603650884ecd58d3a7932e941a119a62",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1\\retrieval_receipt.json",
+      "sha256": "96acb3bfecf49f4f1d835299cfa6ff14ca800110eeb4d8821944cc7876d40a43",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_evaluate_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1\\source_inventory.json",
+      "sha256": "3eb5088fea597f533603042fd4124079f7a66bca50a818c6aba437bff3496b2a",
+      "role": "source_inventory"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M1_K2_g32R32_text_probe2_v1\\source_retrieval_receipt_v2.json",
+      "sha256": "99634aeb0b68300c929b25664aacce73670512904fac5f49dd6f9d1fdb5c5b20",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1\\complete.json",
+      "sha256": "e56cc4dcff7500802c8415657e440baedf67471a54fc2db81ed82c4e1fc3d4ca",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1\\launch_receipt.json",
+      "sha256": "16c93a995f867fdf7b7c9326f4d81ef1c06b5d8523184694c7860d08cf7beff3",
+      "role": "launch"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1\\manifest.json",
+      "sha256": "da08861913e2e98bbb9ae79fa5c1aa65dfbf80bd3b6258a327019f0c58c86079",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1\\records.jsonl",
+      "sha256": "3a544f313803827dabcfb4a7875deed44c61d747d3465553e030caced7e717e7",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1\\retrieval_receipt.json",
+      "sha256": "4636398bc07cf4da6be0d55f604ac6d47d2b5557695aa1b19c4ac41306d25c1e",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_evaluate_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1\\source_inventory.json",
+      "sha256": "f803e1121b5466966aac2ef6c47f99f5b14b599220261fa05d3e82d2e0c246e3",
+      "role": "source_inventory"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C1_bias32_textvqa_probe2_v1\\source_retrieval_receipt_v2.json",
+      "sha256": "a813d8746a3ed6a44c8712d9cc14b9947817de8ce036a534b8fa083d4304f3e9",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1\\complete.json",
+      "sha256": "13319a74b30d09bf23f1453aefb15e0b6dbe3e322289f652f472b39d5a7ef8ad",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1\\launch_receipt.json",
+      "sha256": "6af4778546fb367f6d574dff9950d1068a2f75bf54457b2928d7cae8eb0fcc03",
+      "role": "launch"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1\\manifest.json",
+      "sha256": "e456bad03e6890c19a8362cb1e9f092de5debc9f0afaeeeff8c16a2425e0696a",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1\\records.jsonl",
+      "sha256": "8416312239efa03d43829652e125c31320425a11664dfb89e3ce6c1645a9e664",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1\\retrieval_receipt.json",
+      "sha256": "2e426d2c88d04b96fb1288e280063eb3799fcf487ddf832a685bdba6bd04c468",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_evaluate_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1\\source_inventory.json",
+      "sha256": "f803e1121b5466966aac2ef6c47f99f5b14b599220261fa05d3e82d2e0c246e3",
+      "role": "source_inventory"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_C2_bias32_textvqa_probe2_v1\\source_retrieval_receipt_v2.json",
+      "sha256": "06abbf17492b42f86571365760d433a1fc8938e1ce8ec9a9350cd9a7e7f01c0a",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1\\complete.json",
+      "sha256": "425e9a1b2278226fb58f57f2e5713a874ac92ada63cb7fb5c77a2e1d0e5d6f6e",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1\\launch_receipt.json",
+      "sha256": "27de08e31cc1c14322cebc81fa7b9f2aa10d1c5ac19cc815b8d6d541a724104e",
+      "role": "launch"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1\\manifest.json",
+      "sha256": "3d120166344067b3aa56e5951b88d5eb1fcc287828acf64be9621089fd8355ac",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1\\records.jsonl",
+      "sha256": "0ee07302f670f12012d3f04b027c65a68f40a1679e5866388f0858b792e6be56",
+      "role": "raw"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1\\retrieval_receipt.json",
+      "sha256": "af199897ee778d2520e4b75403afeba99cba320fa0165a49f4c3e3a157dcc22d",
+      "role": "independent_remote_hash_proof"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1\\source_evaluate.py",
+      "sha256": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+      "role": "executed_evaluate_source"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1\\source_inventory.json",
+      "sha256": "f803e1121b5466966aac2ef6c47f99f5b14b599220261fa05d3e82d2e0c246e3",
+      "role": "source_inventory"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\p1_smoke\\M2_K2_g32R32_textvqa_probe2_v1\\source_retrieval_receipt_v2.json",
+      "sha256": "089489856b589e35c0a644a74dcb70916adb109cf0a4c18d008e194975cdfe01",
+      "role": "independent_remote_hash_proof"
+    }
+  ],
+  "public_delivery_not_performed_by_this_manifest": true,
+  "generator_sha256": "9786cdc4d7de645ebc2f973d83381521ef5bbea3da7f1b78d25e0ee6e25a992d"
+}

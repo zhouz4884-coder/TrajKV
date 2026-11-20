@@ -1,0 +1,79 @@
+{
+  "schema": "baseline_matrix.onlyterp_hmix23_real64.v1",
+  "status": "REAL_GPU_SOURCE_HMIX23_64_QA_COMPLETE_AND_SCORED",
+  "source": "OnlyTerp-MSE/QJL0 practical Hadamard Hmix23, not paper-exact3.5 table or prod",
+  "actual_unique_GPU_QA": 64,
+  "probe_QA": 2,
+  "stage8_additional_QA": 6,
+  "stage64_additional_QA": 56,
+  "all64_status_PASS": true,
+  "metrics_not_mixed": true,
+  "rows": [
+    {
+      "dataset": "textvqa",
+      "metric": "textvqa_mmf_ten_vote_leave_one_out_v1",
+      "QA": 32,
+      "technical_status": "ALL_32_PASS_NO_MISSING_QA",
+      "score_percent": 78.4375,
+      "score_ci95_percent": [
+        64.6875,
+        89.99999999999999
+      ],
+      "same_source_FP16_percent": 81.875,
+      "paired_difference_pp": -3.4375000000000004,
+      "paired_difference_ci95_pp": [
+        -10.624999999999998,
+        3.75
+      ],
+      "same_source_Hmix12_percent": 45.0,
+      "effective_bits_mean": 3.007349805767033,
+      "effective_bits_min": 3.0070775868941326,
+      "effective_bits_max": 3.010561988467262,
+      "mean_complete_visual_owner_bytes": 18107024,
+      "actual_peak_allocated_bytes_max": 16289841664,
+      "actual_peak_reserved_bytes_max": 16512974848,
+      "mean_instrumented_wall_ms": 4988.578759250231,
+      "mean_output_tokens": 3.8125,
+      "max_new64_hit_QA": 0,
+      "max_one_layer_temporary_decoded_FP32_visual_KV_bytes": 7340032,
+      "temporary_not_summed_across_sequential_layers": true,
+      "timing_is_not_canonical_benchmark": true,
+      "eligible_at1p8_or2p25": false
+    },
+    {
+      "dataset": "infovqa",
+      "metric": "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1",
+      "QA": 32,
+      "technical_status": "ALL_32_PASS_NO_MISSING_QA",
+      "score_percent": 73.125,
+      "score_ci95_percent": [
+        57.70833333333334,
+        86.25
+      ],
+      "same_source_FP16_percent": 75.83333333333334,
+      "paired_difference_pp": -2.708333333333334,
+      "paired_difference_ci95_pp": [
+        -11.458333333333334,
+        4.791666666666666
+      ],
+      "same_source_Hmix12_percent": 16.607142857142858,
+      "effective_bits_mean": 3.0074641376936517,
+      "effective_bits_min": 3.006496853298611,
+      "effective_bits_max": 3.009037562779018,
+      "mean_complete_visual_owner_bytes": 18107024,
+      "actual_peak_allocated_bytes_max": 16400157696,
+      "actual_peak_reserved_bytes_max": 16487809024,
+      "mean_instrumented_wall_ms": 5383.32894549967,
+      "mean_output_tokens": 4.25,
+      "max_new64_hit_QA": 0,
+      "max_one_layer_temporary_decoded_FP32_visual_KV_bytes": 9437184,
+      "temporary_not_summed_across_sequential_layers": true,
+      "timing_is_not_canonical_benchmark": true,
+      "eligible_at1p8_or2p25": false
+    }
+  ],
+  "recommendation": "Legitimate higher-precision source-family candidate worth fixed M1 500 confirmation under Root scheduling; no automatic expansion or equality claim from a CI crossing zero",
+  "optional500_matrix": "configs/matrix/OnlyTerp_Hmix23_P2_500_optional_v6.json",
+  "optional500_enqueued": false,
+  "IP_and_boundary_controls_separate_from_MSE_main": true
+}

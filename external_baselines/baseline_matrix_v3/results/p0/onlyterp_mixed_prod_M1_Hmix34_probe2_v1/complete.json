@@ -1,0 +1,548 @@
+{
+  "status": "DIAGNOSTIC_RAW_COMPLETE",
+  "schema": "baseline_matrix.real_source_ip_diagnostic.v1",
+  "references_read": false,
+  "quality_scored": false,
+  "formal_prediction_cache_producer": false,
+  "storage_or_speed_benchmark": false,
+  "native_prototypes_retained": true,
+  "config_sha256": "cee294dd0e57879060407329322e1ff46348f6fcc9ceda6bfd4f1f8f2e776641",
+  "config": {
+    "model_id": "M1",
+    "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+    "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p1_inputs.jsonl",
+    "question_suffix": "\nAnswer the question using a single word or phrase.",
+    "preprocessing": {
+      "max_patches": 8
+    },
+    "count": 2,
+    "max_new_tokens": 64,
+    "constructor_args": {
+      "bits_regular": 3,
+      "bits_outlier": 4,
+      "value_read_mode": "source_cache_mse",
+      "reader_backend": "torch_source_ip_fp32_reference"
+    },
+    "value_read_modes": [
+      "source_cache_mse",
+      "full_prod_decode"
+    ],
+    "scope": "REAL_M1_SOURCE_DEFAULT_MSE3_OUT4_PLUS_SINGLE_GLOBAL_GAUSSIAN_QJL_DIAGNOSTIC_NOT_PAPER3P5_OR_FORMAL_BENCHMARK"
+  },
+  "cases": [
+    {
+      "id": "textvqa:validation:39023",
+      "dataset": "textvqa",
+      "original_image_sha256": "253a586c9cbb33350ab7bdcba89fbae409765f5f309757093186354f6aa28e7a",
+      "arms": [
+        {
+          "name": "F_native_split",
+          "status": "PASS",
+          "raw_prediction": "stop",
+          "output_token_ids": [
+            9495,
+            151645
+          ],
+          "calls": 2,
+          "all_logits_finite": true
+        },
+        {
+          "name": "OnlyTerp_mixed_prod_source_cache_mse",
+          "status": "PASS",
+          "V_read_mode": "source_cache_mse",
+          "last_suffix_logit_vs_native": {
+            "max_abs": 23.86328125,
+            "relative_L2": 1.4087539911270142,
+            "argmax_id": 785,
+            "native_argmax_id": 9495
+          },
+          "complete_visual_owner_bytes": 42709584,
+          "actual_effective_visual_bits": 6.649964624521684,
+          "encoder_constants_bytes": 7342672,
+          "positions_bytes": 28672,
+          "coder_metadata_bytes": 3225600,
+          "process_peak_not_a_compression_benchmark": true,
+          "raw_prediction": "The the",
+          "output_token_ids": [
+            785,
+            279,
+            151645
+          ],
+          "calls": 3,
+          "all_logits_finite": true
+        },
+        {
+          "name": "OnlyTerp_mixed_prod_full_prod_decode",
+          "status": "PASS",
+          "V_read_mode": "full_prod_decode",
+          "last_suffix_logit_vs_native": {
+            "max_abs": 24.53515625,
+            "relative_L2": 1.387438416481018,
+            "argmax_id": 785,
+            "native_argmax_id": 9495
+          },
+          "complete_visual_owner_bytes": 42709584,
+          "actual_effective_visual_bits": 6.649964624521684,
+          "encoder_constants_bytes": 7342672,
+          "positions_bytes": 28672,
+          "coder_metadata_bytes": 3225600,
+          "process_peak_not_a_compression_benchmark": true,
+          "raw_prediction": "TheTheText image the theThe\nstop",
+          "output_token_ids": [
+            785,
+            785,
+            1178,
+            2168,
+            279,
+            279,
+            785,
+            198,
+            9495,
+            151645
+          ],
+          "calls": 10,
+          "all_logits_finite": true
+        }
+      ],
+      "actual_visual_token_count": 1792,
+      "prefix_length": 1796,
+      "full_prompt_hash": "f93365627fa8beda73a357173b48a63df899fbd7eb4a5210e9c8bd2660748ff5",
+      "adapter_manifest": {
+        "method": "OnlyTerp_mixed_prod_single_GaussianQJL_visual_source_variant",
+        "source_lock": "configs/methods/onlyterp_mixed_prod_source_lock_v1.json",
+        "bits_regular_MSE": 3,
+        "bits_outlier_MSE": 4,
+        "outlier_channels": 32,
+        "regular_channels": 96,
+        "regular_padded_dimension": 128,
+        "outlier_rotation_dimension": 32,
+        "Gaussian_QJL_dimension": 128,
+        "K_QJL_corrections": 1,
+        "V_encoding": "MSE plus Gaussian QJL as source store_batch",
+        "V_read": "source_cache_mse",
+        "source_value_default": "source_cache_mse",
+        "full_prod_V_is_separate_decode_interface_variant": true,
+        "MSE_norm_dtype": "FP16 source",
+        "QJL_residual_norm_dtype": "FP32 source",
+        "projection_dtype": "FP32 source",
+        "categorical_changes": "lossless packing only",
+        "Gaussian_matrices_all_persistent_copies_named_and_charged": true,
+        "reader_backend": "torch_source_ip_fp32_reference",
+        "experimental_kernels_or_buffer_manager_used": false,
+        "training_or_GT_used": false,
+        "scope": "immutable visual prefix + exact FP16 text, not full rolling source cache or paper 2.5/3.5 table reproduction"
+      },
+      "own_first_token_for_every_arm": true,
+      "status": "PASS"
+    },
+    {
+      "id": "textvqa:validation:36209",
+      "dataset": "textvqa",
+      "original_image_sha256": "093d3d55df52ff8f05b5167c2c3110c5d22a3dc3b83ce0d208947c955ee75a83",
+      "arms": [
+        {
+          "name": "F_native_split",
+          "status": "PASS",
+          "raw_prediction": "2011",
+          "output_token_ids": [
+            17,
+            15,
+            16,
+            16,
+            151645
+          ],
+          "calls": 5,
+          "all_logits_finite": true
+        },
+        {
+          "name": "OnlyTerp_mixed_prod_source_cache_mse",
+          "status": "PASS",
+          "V_read_mode": "source_cache_mse",
+          "last_suffix_logit_vs_native": {
+            "max_abs": 29.2109375,
+            "relative_L2": 1.1286976337432861,
+            "argmax_id": 11,
+            "native_argmax_id": 17
+          },
+          "complete_visual_owner_bytes": 32608848,
+          "actual_effective_visual_bits": 7.108164760044643,
+          "encoder_constants_bytes": 7342672,
+          "positions_bytes": 20480,
+          "coder_metadata_bytes": 2308096,
+          "process_peak_not_a_compression_benchmark": true,
+          "raw_prediction": ",[ handwritten to a0\n,\n%000000000000\n00000\n0000000\n0000000000000000\n00000\n00000",
+          "output_token_ids": [
+            11,
+            58,
+            98389,
+            311,
+            264,
+            15,
+            198,
+            345,
+            4,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            198,
+            15,
+            15,
+            15,
+            15,
+            15,
+            198,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            198,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            198,
+            15,
+            15,
+            15,
+            15,
+            15,
+            198,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          "calls": 64,
+          "all_logits_finite": true
+        },
+        {
+          "name": "OnlyTerp_mixed_prod_full_prod_decode",
+          "status": "PASS",
+          "V_read_mode": "full_prod_decode",
+          "last_suffix_logit_vs_native": {
+            "max_abs": 29.5546875,
+            "relative_L2": 1.1079808473587036,
+            "argmax_id": 11,
+            "native_argmax_id": 17
+          },
+          "complete_visual_owner_bytes": 32608848,
+          "actual_effective_visual_bits": 7.108164760044643,
+          "encoder_constants_bytes": 7342672,
+          "positions_bytes": 20480,
+          "coder_metadata_bytes": 2308096,
+          "process_peak_not_a_compression_benchmark": true,
+          "raw_prediction": ", to aemail0/ to0\n\n1\n\n2000000000\n0000000000000000000000000000000000000000",
+          "output_token_ids": [
+            11,
+            311,
+            264,
+            2332,
+            15,
+            14,
+            311,
+            15,
+            198,
+            198,
+            16,
+            198,
+            198,
+            17,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            198,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15,
+            15
+          ],
+          "calls": 64,
+          "all_logits_finite": true
+        }
+      ],
+      "actual_visual_token_count": 1280,
+      "prefix_length": 1284,
+      "full_prompt_hash": "f1e553232fb313aa8f596f312ce8c8b6c0eb91968589f6ba16d4ad97755f96b5",
+      "adapter_manifest": {
+        "method": "OnlyTerp_mixed_prod_single_GaussianQJL_visual_source_variant",
+        "source_lock": "configs/methods/onlyterp_mixed_prod_source_lock_v1.json",
+        "bits_regular_MSE": 3,
+        "bits_outlier_MSE": 4,
+        "outlier_channels": 32,
+        "regular_channels": 96,
+        "regular_padded_dimension": 128,
+        "outlier_rotation_dimension": 32,
+        "Gaussian_QJL_dimension": 128,
+        "K_QJL_corrections": 1,
+        "V_encoding": "MSE plus Gaussian QJL as source store_batch",
+        "V_read": "source_cache_mse",
+        "source_value_default": "source_cache_mse",
+        "full_prod_V_is_separate_decode_interface_variant": true,
+        "MSE_norm_dtype": "FP16 source",
+        "QJL_residual_norm_dtype": "FP32 source",
+        "projection_dtype": "FP32 source",
+        "categorical_changes": "lossless packing only",
+        "Gaussian_matrices_all_persistent_copies_named_and_charged": true,
+        "reader_backend": "torch_source_ip_fp32_reference",
+        "experimental_kernels_or_buffer_manager_used": false,
+        "training_or_GT_used": false,
+        "scope": "immutable visual prefix + exact FP16 text, not full rolling source cache or paper 2.5/3.5 table reproduction"
+      },
+      "own_first_token_for_every_arm": true,
+      "status": "PASS"
+    }
+  ],
+  "started_unix": 1795153927.0400043,
+  "producer_source_sha256": "a71c8e2303fc48f270f7c45bbb826db68307e6e78e4b22bc1497aa6a67149f09",
+  "model_identity": {
+    "status": "PASS_EXACT_HF_REQUIRED_TREE",
+    "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "source_lock_sha256": "9d6ad47a69be644749017026e732ed8d08bca4967985287ed62a245fbf678d67",
+    "files": [
+      {
+        "file": "added_tokens.json",
+        "bytes": 811,
+        "sha256": "222d504fd2fb42e08a43b7ef6383a130483d34233f506b6ccc799655de48dff8"
+      },
+      {
+        "file": "chat_template.jinja",
+        "bytes": 481,
+        "sha256": "b3e3fa7cdeceec1d3dfe0d17b77724baf3857714e688f3a700261567e96140eb"
+      },
+      {
+        "file": "config.json",
+        "bytes": 1960,
+        "sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637"
+      },
+      {
+        "file": "generation_config.json",
+        "bytes": 126,
+        "sha256": "c142bebeae7dfc9ef119d3f12fb03022261ceef51320c75ead103af4d8e150c2"
+      },
+      {
+        "file": "merges.txt",
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      {
+        "file": "model-00001-of-00004.safetensors",
+        "bytes": 4877374576,
+        "sha256": "7a34fa2f58c41aa1e6dbf28e9f4e43be590fb6077d33e4befe54a8413db03641"
+      },
+      {
+        "file": "model-00002-of-00004.safetensors",
+        "bytes": 4991497800,
+        "sha256": "11a0e1a80e29b9451771e03b9b2da118cfd8da0912631b6de0d4e1137f63dffc"
+      },
+      {
+        "file": "model-00003-of-00004.safetensors",
+        "bytes": 4932774744,
+        "sha256": "8b578604029b9046396b61bf4ae223e0e85c9e89e138da067505bc6f7f9de921"
+      },
+      {
+        "file": "model-00004-of-00004.safetensors",
+        "bytes": 1087199376,
+        "sha256": "6814f162cc1ca061db92cb8808c7202876d8c1a56a0e7e856db12b21cba23a28"
+      },
+      {
+        "file": "model.safetensors.index.json",
+        "bytes": 73875,
+        "sha256": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "bytes": 666,
+        "sha256": "af09ffbe57900d5ae07f93f4c20693559a272e32fa6c5f816132cb71985aac98"
+      },
+      {
+        "file": "processor_config.json",
+        "bytes": 72,
+        "sha256": "3511f4ae65c2fa5c1ab6a0fb2bb2fe767d6f0ee53ba412953b33acc892327c2a"
+      },
+      {
+        "file": "special_tokens_map.json",
+        "bytes": 877,
+        "sha256": "e847a86633f2470a0d9fed41b5a36ff1f4435050929aa80b28c41d28420501b2"
+      },
+      {
+        "file": "tokenizer.json",
+        "bytes": 11423732,
+        "sha256": "7cc80b7e20adf8bf6f6ca442bf1abfac8056bb3b7d3e0b11c9d497d3e79398c9"
+      },
+      {
+        "file": "tokenizer_config.json",
+        "bytes": 6861,
+        "sha256": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f"
+      },
+      {
+        "file": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "verification_audit": {
+      "binding_status": "SHA_LOCKED_PRIOR_FULL_HASH_AND_STAT_BINDING",
+      "binding_sha256": "8d8a651bc0a865551aaeb8fb9b8306c6e7c12b53a09d9bc1d46151109f050bb2",
+      "prior_full_hash_proof": "${DATA_ROOT}/audit/M1_official_identity_verification_v2.json",
+      "prior_full_hash_proof_sha256": "b980d54185173da02d2aee744e24355e8c5a53338e1d620ff495a85eae3d26ab",
+      "checks": [
+        {
+          "file": "added_tokens.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "chat_template.jinja",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "generation_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "merges.txt",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "model-00001-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00002-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00003-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00004-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "preprocessor_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "processor_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "special_tokens_map.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "tokenizer.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "vocab.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        }
+      ]
+    }
+  },
+  "expected_QA": 2,
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "torch_version": "2.4.1+cu121",
+  "CUDA": "12.1",
+  "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "input_file_sha256": "5181fcce6a31dfa9ea1ab4b18598cd93ca500d764a1d49154e0f2a52192882b2",
+  "finished_unix": 1795154237.573241
+}

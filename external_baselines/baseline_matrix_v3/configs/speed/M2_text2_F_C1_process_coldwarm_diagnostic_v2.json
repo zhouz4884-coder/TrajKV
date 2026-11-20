@@ -1,0 +1,19 @@
+{
+  "schema": "baseline_matrix.speed_job.v1",
+  "eval_configs": [
+    "${DATA_ROOT}/configs/eval/M2_F_textvqa_p2_500_v1.json",
+    "${DATA_ROOT}/configs/eval/M2_C1_bias32_textvqa_probe2_v1.json"
+  ],
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+  "selection": {
+    "mode": "first",
+    "count": 2
+  },
+  "repeat": 3,
+  "warmup_per_qa": 1,
+  "seed": 20261120,
+  "expected_predictions": "${DATA_ROOT}/configs/speed/expected_M2_text2_F_C1_process_coldwarm_diagnostic_v2.json",
+  "allocator_policy": "retain_caching_allocator",
+  "verify_gpu_exclusive": true,
+  "host_quiet_asserted": false
+}
