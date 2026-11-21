@@ -121,3 +121,129 @@ def diagnostic_profile(candidate,original_selected):
     p['diagnostic_scope']='No model QA or cal optimum claim; donor substitution only to execute retained-KRE branch'
     for key in ('predicted_cal_route_loss','predicted_cal_change_percent','base_cal_route_loss'):p.pop(key,None)
     return p
+
+
+def cpu_check(output,legacy_a2,profile_path):
+    from unittest.mock import patch
+    import types
+    from types import SimpleNamespace
+    a2=Path(legacy_a2);root=Path(single.__file__).resolve().parents[1]
+    cfg=load(root/'configs/r7_research/M1_R7gt43_docvqa_smoke4_v1.json');selected=cfg['variant']['selected_stages'][:43]
+    p=deepcopy(load(profile_path));validate_profile(p)
+    high_path=root/'configs/r7_research/frozen_assets_v2/gaussian_vq_g4_256.json';p['high_book_path']=str(high_path)
+    low=torch.tensor(load(root/'configs/r7_research/frozen_assets_v2/gaussian_vq_g4_16.json')['centers'],dtype=torch.float16)
+    torch.manual_seed(0);n=256;vp=torch.arange(4,n+4)
+    native=SimpleNamespace(layers=[SimpleNamespace(keys=torch.randn(1,4,n+4,128).half()*.1,values=torch.randn(1,4,n+4,128).half()*.1) for _ in range(28)])
+    def fake_original(*args,**kwargs):
+        look=torch.full((28,2,4,2),-1,dtype=torch.int32);shared={'book':low,'global_residual_lookup':look,
+            'encoder_ranking_bytes':torch.zeros(448,dtype=torch.uint8),'encoder_policy_bytes':torch.zeros(5,dtype=torch.uint8)}
+        for name in ('key_head_factors','value_head_factors','value_center_offsets'):shared['encoder_factor.'+name]=torch.ones(28,4)
+        owners=[]
+        for i in range(28):
+            rows=[x for x in selected if x[1]==i]
+            state=SimpleNamespace(direction_code=torch.zeros(1,4,n,16,dtype=torch.uint8),direction_gain=torch.ones(1,4,n,1,dtype=torch.float16),direction_mean=torch.zeros(1,4,1,128,dtype=torch.float16),
+                v_code=torch.zeros(1,4,128,n//32,dtype=torch.int32),v_scale=torch.ones(1,4,128,1,dtype=torch.float16),v_min=torch.zeros(1,4,128,1,dtype=torch.float16),visual_pos=vp,depth_residual_lookup=look[i])
+            if rows:
+                state.depth_residual_code=torch.zeros(len(rows),n,4,dtype=torch.int32);state.depth_residual_alpha=torch.zeros(len(rows),n,dtype=torch.float16)
+                for j,(axis,_,head,stage) in enumerate(rows):look[i,0 if axis=='k' else 1,head,stage]=j
+            owners.append(bridge.R7LegacyOwner(i,state,shared,None,n+4))
+        directory=root/'configs/r7_research/frozen_assets_v2'
+        names={'direction_book_path':'gaussian_vq_g4_16.json','metadata_factor_path':'factors_for_book16_inherited.json','round7_policy_path':'policy_k1_cond.json'}
+        assets={key:{'path':str(directory/names[key]),'sha256':digest} for key,digest in bridge._DEFAULT_ASSETS.items()}
+        return owners,{'variant':{'name':'r7_joint_k1_gt_cond'},'selected_stage_count':43,'selected_stages':selected,'fixed_assets':assets,'verified_legacy_source_pins':{},'legacy_sources':{}}
+    stub=types.ModuleType('fast_wht');stub.wht=single._cpu_wht
+    diag=diagnostic_profile(p,selected);require(diag is not None,'actual U3D11 expected to need nonempty-KRE fixture')
+    cases=[]
+    with bridge._legacy_paths(a2,a2.parent/'experiments',a2):
+        for label,mode,candidate in [('actual_profile',m,p) for m in MODES]+[('diagnostic_nonempty_KRE','Exchange',diag)]:
+            with patch.object(bridge,'build_r7_owners',side_effect=fake_original),patch.dict(sys.modules,{'fast_wht':stub}):
+                owners,meta=build_round9_precision_exchange_owners(native,vp,{},mode=mode,candidate=candidate,
+                    legacy_a2=str(a2),legacy_experiments=str(a2.parent/'experiments'),legacy_scripts=str(a2))
+            proof=meta['round9_precision_exchange'];recoded=sum(x['retained_K_stages_reencoded'] for x in proof['layer_stats'])
+            if label=='diagnostic_nonempty_KRE':require(recoded>0,'nonempty KRE branch not executed')
+            cases.append({'scope':label,'mode':mode,'actual_delta_bytes':proof['actual_delta_bytes'],'stage_count':meta['selected_stage_count'],
+                'actual_tensor_storage_geometry':True,'retained_K_stages_reencoded':recoded,'old_lookup_pool_released':True})
+    out=Path(output);out.mkdir(parents=True,exist_ok=False)
+    result={'status':'PASS_CPU_U3D11_FAKE_OWNER_STORAGE_AND_SOURCE_CODEC_BRANCH_ONLY','cases':cases,
+        'source_sha256':sha(__file__),'numerical_v1_sha256':V1_SHA,'profile_sha256':sha(profile_path),
+        'actual_GPU_calls':0,'production_whole_bank_GPU_positive':False,'fixture_not_model_QA':True}
+    write(out/'CPU_RECEIPT.json',result);print(json.dumps(result));return result
+
+
+@torch.no_grad()
+def gpu_check(config_path,profile_path,output):
+    import r7_bridge_gpu_check_v1 as ref
+    require(sha(ref.__file__)==single.REFERENCE_SHA,'frozen numeric reference helper')
+    cfg=load(config_path);ref.validate_metadata(cfg);variant=ref.profile(cfg);p=load(profile_path);validate_profile(p)
+    require(sha(profile_path)==PROFILE_SHA,'exact cal-only selected profile')
+    require(torch.cuda.is_available() and torch.cuda.get_device_capability()==(8,6),'actual SM86 CUDA required')
+    from transformers.cache_utils import DynamicCache
+    torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cudnn.allow_tf32=False
+    out=Path(output);out.mkdir(parents=True,exist_ok=False)
+    pins={str(Path(__file__).resolve()):sha(__file__),str(Path(single.__file__).resolve()):V1_SHA,str(config_path):sha(config_path),str(profile_path):PROFILE_SHA,p['high_book_path']:HIGH_SHA}
+    write(out/'manifest.json',{'schema':'trajkv.round9.U3D11_synthetic.v1','sources':pins,'Nv':[256,1792],
+        'model_images_GT_loaded':False,'quality_QA_added':0,'diagnostic_references_are_not_deployment_storage_savings':True})
+    kwargs={name:cfg[name] for name in ('legacy_a2','legacy_experiments','legacy_scripts','kivi_source')};kwargs['expected_asset_sha256']=ref.ASSETS
+    records=[];nonempty_observed=0
+    for n in (256,1792):
+        torch.manual_seed(0);native=DynamicCache()
+        for i in range(28):
+            k=torch.randn(1,4,n+4,128,device='cuda',dtype=torch.float16)*.15;v=torch.randn_like(k)*.1;native.update(k,v,i)
+        k=v=None;vp=torch.arange(4,n+4,device='cuda',dtype=torch.long)
+        oldowners,base=bridge.build_r7_owners(native,vp,variant,**kwargs);b0=_unique(oldowners)
+        native_hash=[(ref.tensor_identity(x.keys),ref.tensor_identity(x.values)) for x in native.layers]
+        diag=diagnostic_profile(p,base['selected_stages']);scopes=[('actual_cal_profile',mode,p) for mode in MODES]
+        if diag is not None:
+            write(out/('DIAGNOSTIC_NONEMPTY_KRE_N'+str(n)+'.json'),diag);scopes.append(('diagnostic_nonempty_KRE_not_task','Exchange',diag))
+        high=torch.tensor(load(p['high_book_path'])['centers'],device='cuda',dtype=torch.float16)
+        codec=importlib.import_module('round7_key_codec');wht=importlib.import_module('fast_wht').wht;modes=[]
+        for scope,mode,candidate in scopes:
+            owners,meta=build_round9_precision_exchange_owners(native,vp,variant,mode=mode,candidate=candidate,**kwargs)
+            delta=-1344 if mode=='Lookup8' else -198*n-1283 if mode=='DropD' else 765-6*n
+            require(_unique(owners)-b0==delta,'actual complete bytes')
+            checks=[];qp=torch.arange(n+4,n+8,device='cuda');tp=torch.cat((torch.arange(4,device='cuda'),qp))
+            for i,(old,owner) in enumerate(zip(oldowners,owners)):
+                up=mode=='Exchange' and i in LAYERS
+                rot=wht(native.layers[i].keys.index_select(2,vp).float()-old.state.direction_mean.float()) if up else None
+                local_drops=[] if mode=='Lookup8' else [x for x in candidate['dropped_k_units'] if x[0]==i]
+                f,book,_=precision_exchange_fields(vars(old.state),rot,old.shared['book'],high,old.shared['encoder_factor.key_head_factors'][i],
+                    layer_idx=i,upgraded_layer=i,dropped_k_units=local_drops,upgrade=up,compact=False,
+                    encode_key=codec.encode_key,decode_key=codec.decode_key,encode_sign_depth=codec.encode_sign_depth)
+                state=copy(old.state)
+                for name,value in f.items():setattr(state,name,value)
+                reference=bridge.R7LegacyOwner(i,state,{**old.shared,'book':book},old._reader,n+4)
+                require(torch.equal(decode_exchange_key_fields(f,book),decode_exchange_key_fields(vars(owner.state),book)),'compact field decode')
+                for name in ('v_code','v_scale','v_min','direction_mean'):require(torch.equal(getattr(old.state,name),getattr(owner.state,name)),'fixed V0/mean')
+                if not up:require(torch.equal(old.state.direction_code,owner.state.direction_code) and torch.equal(old.state.direction_gain,owner.state.direction_gain),'nonupgraded K base')
+                for h in range(4):
+                    for stage in range(2):
+                        a=int(old.state.depth_residual_lookup[1,h,stage]);b=int(owner.state.depth_residual_lookup[1,h,stage]);require((a>=0)==(b>=0),'V20 coverage')
+                        if a>=0:require(torch.equal(old.state.depth_residual_code[a],owner.state.depth_residual_code[b]) and torch.equal(old.state.depth_residual_alpha[a],owner.state.depth_residual_alpha[b]),'V residual values')
+                q=torch.randn(1,28,4,128,device='cuda',dtype=torch.float16)*.2
+                tk=torch.cat((native.layers[i].keys[:,:,:4],torch.randn(1,4,4,128,device='cuda',dtype=torch.float16)*.15),2)
+                tv=torch.cat((native.layers[i].values[:,:,:4],torch.randn(1,4,4,128,device='cuda',dtype=torch.float16)*.1),2)
+                args=dict(exact_keys=tk,exact_values=tv,exact_positions=tp,query_positions=qp,scale=128**-.5)
+                left,right=reference.attend(q,**args),owner.attend(q,**args)
+                require(bool(torch.isfinite(left).all() and torch.isfinite(right).all()) and torch.equal(left,right),'actual int8/compact reader not bitwise versus int32 noncompact reference')
+                checks.append({'layer':i,'field_and_reader_bitwise_equal':True})
+            recoded=sum(x['retained_K_stages_reencoded'] for x in meta['round9_precision_exchange']['layer_stats'])
+            if scope.startswith('diagnostic') or diag is None and mode=='Exchange':require(recoded>0,'nonempty retained KRE GPU branch mandatory');nonempty_observed+=recoded
+            modes.append({'scope':scope,'mode':mode,'status':'PASS_FIELDS_READER_ACTUAL_BYTES','actual_delta_bytes':_unique(owners)-b0,
+                'expected_delta_bytes':delta,'retained_K_stages_reencoded':recoded,'metadata':meta,'all28_checks':checks,'quality_QA_added':0})
+        require(native_hash==[(ref.tensor_identity(x.keys),ref.tensor_identity(x.values)) for x in native.layers],'native source mutated')
+        records.append({'Nv':n,'status':'PASS_FIELDS_READER_ACTUAL_BYTES','scopes':modes})
+    require(nonempty_observed>0 and all(sha(path)==digest for path,digest in pins.items()),'missing KRE branch or changed source/asset')
+    with (out/'records.jsonl').open('x',encoding='utf-8') as f:
+        for r in records:f.write(json.dumps(r,ensure_ascii=False,allow_nan=False)+'\n')
+    result={'status':'PASS_ALL2_U3D11_FIELDS_READER_BYTES_AND_NONEMPTY_KRE_BRANCH','cases':2,'records_sha256':sha(out/'records.jsonl'),
+        'nonempty_KRE_GPU_stages_observed':nonempty_observed,'quality_QA_added':0,'diagnostic_fixture_not_task_candidate':True}
+    write(out/'complete.json',result);print(json.dumps(result));return result
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();mode=parser.add_mutually_exclusive_group(required=True);mode.add_argument('--cpu-check',action='store_true');mode.add_argument('--gpu-check',action='store_true')
+    parser.add_argument('--output',type=Path,required=True);parser.add_argument('--config',type=Path);parser.add_argument('--candidate',type=Path,required=True)
+    parser.add_argument('--legacy-a2',type=Path,default=Path('${FROZEN_TRAJKV_ROOT}/code/a2'));a=parser.parse_args()
+    if a.cpu_check:cpu_check(a.output,a.legacy_a2,a.candidate)
+    else:
+        require(a.config is not None,'frozen low smoke4 asset config required');gpu_check(a.config,a.candidate,a.output)
