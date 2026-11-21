@@ -1,0 +1,1302 @@
+{
+  "textvqa_minus_F": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "textvqa",
+    "metric_ids": [
+      "textvqa_mmf_ten_vote_leave_one_out_v1"
+    ],
+    "anchor_method": "F_native_split",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "583c7c5ec0e263265c67b80192966cfaaecfa7f7291adc1bf19384814ce6a7a5",
+    "candidate_summary_sha256": "a8460f4df22b60e855e4db977f74118a203f86818e91c6add30fc51800f9ca8a",
+    "anchor_scored_rows_sha256": "9b211b6a245c754cfe1bdc943c4adcc6345c42593ea4392cda386902aa634add",
+    "candidate_scored_rows_sha256": "67f0fa0df3f6074555cc599df67d5a210c751f1d4ff12c531412dbd3ad1a6073",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.0404,
+      "difference_pp": -4.04,
+      "ci95": [
+        -0.065805,
+        -0.015795000000000028
+      ],
+      "ci95_pp": [
+        -6.580500000000001,
+        -1.5795000000000028
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.0015998400159984002,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 3.6116340702099206
+    },
+    "created_unix": 1795285158.6722796,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.07970901148847385,
+      "mean_effective_bits": 1.2760019016239916,
+      "min_effective_bits": 1.2743712444694675,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7532.090084918542,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "textvqa_minus_R7_K1": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "textvqa",
+    "metric_ids": [
+      "textvqa_mmf_ten_vote_leave_one_out_v1"
+    ],
+    "anchor_method": "TrajKV_R7_K1_gtcond43_v2",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "414fc390367c499fe2deaa74bc7493d1f25f14626696b4e5700c71f03cab24d5",
+    "candidate_summary_sha256": "a8460f4df22b60e855e4db977f74118a203f86818e91c6add30fc51800f9ca8a",
+    "anchor_scored_rows_sha256": "b093ca66dab3b556f2e2134b380245758b6c171c160d63263825e4fb6a2bbb07",
+    "candidate_scored_rows_sha256": "67f0fa0df3f6074555cc599df67d5a210c751f1d4ff12c531412dbd3ad1a6073",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.004199999999999999,
+      "difference_pp": -0.4199999999999999,
+      "ci95": [
+        -0.0132,
+        0.0038049999999999738
+      ],
+      "ci95_pp": [
+        -1.32,
+        0.3804999999999974
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.37136286371362864,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 1.210922920025307
+    },
+    "created_unix": 1795285158.7741811,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.984327052117142,
+      "mean_effective_bits": 1.2760019016239916,
+      "min_effective_bits": 1.2743712444694675,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7532.090084918542,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "textvqa_minus_R7_K2": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "textvqa",
+    "metric_ids": [
+      "textvqa_mmf_ten_vote_leave_one_out_v1"
+    ],
+    "anchor_method": "TrajKV_R7_K2_cond_v2",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "2c2aca36c9f56392635ef30420b55951e42d092f781df803512f8d9c1a851605",
+    "candidate_summary_sha256": "a8460f4df22b60e855e4db977f74118a203f86818e91c6add30fc51800f9ca8a",
+    "anchor_scored_rows_sha256": "a7d50738bc59e3f76c159acf80c983ef576368605bb4e852a77dcc83274851d3",
+    "candidate_scored_rows_sha256": "67f0fa0df3f6074555cc599df67d5a210c751f1d4ff12c531412dbd3ad1a6073",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.026,
+      "difference_pp": -2.6,
+      "ci95": [
+        -0.04819999999999999,
+        -0.0038
+      ],
+      "ci95_pp": [
+        -4.819999999999999,
+        -0.38
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.0268973102689731,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 3.2162342673878883
+    },
+    "created_unix": 1795285158.8200188,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.708711765621569,
+      "mean_effective_bits": 1.2760019016239916,
+      "min_effective_bits": 1.2743712444694675,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7532.090084918542,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "textvqa_minus_K2_g32R32": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "textvqa",
+    "metric_ids": [
+      "textvqa_mmf_ten_vote_leave_one_out_v1"
+    ],
+    "anchor_method": "KIVI_source_example_K2V2_g32_R32_visual",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "d7e5d689aa1c5a7f6cf3a8634d3e77054b76b12b87be559cb79777499589f190",
+    "candidate_summary_sha256": "a8460f4df22b60e855e4db977f74118a203f86818e91c6add30fc51800f9ca8a",
+    "anchor_scored_rows_sha256": "c0b22f2116f0ded923b28b53fd6c09a8c3a14e2f40d92d6bba17f4bd7398a2e7",
+    "candidate_scored_rows_sha256": "67f0fa0df3f6074555cc599df67d5a210c751f1d4ff12c531412dbd3ad1a6073",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.029400000000000003,
+      "difference_pp": -2.9400000000000004,
+      "ci95": [
+        -0.054,
+        -0.005395000000000027
+      ],
+      "ci95_pp": [
+        -5.4,
+        -0.5395000000000028
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.020597940205979402,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 3.503483389253726
+    },
+    "created_unix": 1795285158.8671792,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.39991907678784744,
+      "mean_effective_bits": 1.2760019016239916,
+      "min_effective_bits": 1.2743712444694675,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7532.090084918542,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "textvqa_minus_C2_bias32": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "textvqa",
+    "metric_ids": [
+      "textvqa_mmf_ten_vote_leave_one_out_v1"
+    ],
+    "anchor_method": "CalibQuant_visual_FP32Affine_Text32_v2_2bit",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "a6c164584b19df5459b66f10a5b6b8aafc487abd55d8e54b7b7d8c0a530729d8",
+    "candidate_summary_sha256": "a8460f4df22b60e855e4db977f74118a203f86818e91c6add30fc51800f9ca8a",
+    "anchor_scored_rows_sha256": "e1dab3452c8b2735f359aabced9cb7129212810a8c65432119ab4bd8fed81068",
+    "candidate_scored_rows_sha256": "67f0fa0df3f6074555cc599df67d5a210c751f1d4ff12c531412dbd3ad1a6073",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.010600000000000002,
+      "difference_pp": -1.0600000000000003,
+      "ci95": [
+        -0.0378,
+        0.016604999999999967
+      ],
+      "ci95_pp": [
+        -3.7800000000000002,
+        1.6604999999999968
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.46585341465853414,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 3.8993670946378667
+    },
+    "created_unix": 1795285158.9151213,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.6309131748781701,
+      "mean_effective_bits": 1.2760019016239916,
+      "min_effective_bits": 1.2743712444694675,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7532.090084918542,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "infovqa_minus_F": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "infovqa",
+    "metric_ids": [
+      "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "F_native_split",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "a617661b005458acc3a2b0a48f2373996889932b2663be23ecfbdd948af44093",
+    "candidate_summary_sha256": "dd6ba3215b0cfdf85eb4555fe1219c891612cd6617b54e23a0e377341bc87ec5",
+    "anchor_scored_rows_sha256": "b52b92d3f15ef109953252f6fd162c7236c9d6b1c89adf3c4d1354105dc01116",
+    "candidate_scored_rows_sha256": "91237da63899ded126d3479d6e2dcfbb141655ebdc6ca2caa245739f48ebef1f",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.0790425963476927,
+      "difference_pp": -7.90425963476927,
+      "ci95": [
+        -0.11117500096801504,
+        -0.0473281284964602
+      ],
+      "ci95_pp": [
+        -11.117500096801503,
+        -4.73281284964602
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 9.999000099990002e-05,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 4.592562564480184
+    },
+    "created_unix": 1795285158.958241,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.07975549317877213,
+      "mean_effective_bits": 1.2781335051011065,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 6,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8666.773021214527,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "infovqa_minus_R7_K1": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "infovqa",
+    "metric_ids": [
+      "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "TrajKV_R7_K1_gtcond43_v2",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "6707e3bf4a71f9546b16ba93f7548a3d00ae22c9565f91c310da72d65e1ceab7",
+    "candidate_summary_sha256": "dd6ba3215b0cfdf85eb4555fe1219c891612cd6617b54e23a0e377341bc87ec5",
+    "anchor_scored_rows_sha256": "9aaaf52951c3fe2b1bf7d7d4c73d925d12ae76cace5bc48e7c39376cf02c2e58",
+    "candidate_scored_rows_sha256": "91237da63899ded126d3479d6e2dcfbb141655ebdc6ca2caa245739f48ebef1f",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.001943867208060758,
+      "difference_pp": -0.1943867208060758,
+      "ci95": [
+        -0.019225222256238385,
+        0.01579041489961651
+      ],
+      "ci95_pp": [
+        -1.9225222256238386,
+        1.579041489961651
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.83001699830017,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 2.566803838195421
+    },
+    "created_unix": 1795285159.0020435,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.9843277162945756,
+      "mean_effective_bits": 1.2781335051011065,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 6,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8666.773021214527,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "infovqa_minus_R7_K2": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "infovqa",
+    "metric_ids": [
+      "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "TrajKV_R7_K2_cond_v2",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "626d7b036709bd415c1e93f935c29d24fa1c74a3e6e3ff28628d380d186c2b97",
+    "candidate_summary_sha256": "dd6ba3215b0cfdf85eb4555fe1219c891612cd6617b54e23a0e377341bc87ec5",
+    "anchor_scored_rows_sha256": "2abd40a1f311471d96790cff7c6973380b38c50b76baec55182e7caf1eaa98fd",
+    "candidate_scored_rows_sha256": "91237da63899ded126d3479d6e2dcfbb141655ebdc6ca2caa245739f48ebef1f",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.052093231945565206,
+      "difference_pp": -5.209323194556521,
+      "ci95": [
+        -0.0839351253298116,
+        -0.022747530608179755
+      ],
+      "ci95_pp": [
+        -8.393512532981159,
+        -2.2747530608179756
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.0014998500149985001,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 4.452050242926081
+    },
+    "created_unix": 1795285159.045457,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.7097146166378246,
+      "mean_effective_bits": 1.2781335051011065,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 6,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8666.773021214527,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "infovqa_minus_K2_g32R32": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "infovqa",
+    "metric_ids": [
+      "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "KIVI_source_example_K2V2_g32_R32_visual",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "42098b18e8dcd4edc1ba17474d9babf2928642af6959ac97f7ee717efaf2ebb0",
+    "candidate_summary_sha256": "dd6ba3215b0cfdf85eb4555fe1219c891612cd6617b54e23a0e377341bc87ec5",
+    "anchor_scored_rows_sha256": "34f5a8f06ba5168f8c6f527906ec3ba1f47a65ec65a7ba93845a3a818d7de591",
+    "candidate_scored_rows_sha256": "91237da63899ded126d3479d6e2dcfbb141655ebdc6ca2caa245739f48ebef1f",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.055240497523034136,
+      "difference_pp": -5.524049752303414,
+      "ci95": [
+        -0.0888228086653745,
+        -0.02207993451818364
+      ],
+      "ci95_pp": [
+        -8.88228086653745,
+        -2.207993451818364
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.0007999200079992001,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 4.699863261412871
+    },
+    "created_unix": 1795285159.087171,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.39936713121560435,
+      "mean_effective_bits": 1.2781335051011065,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 6,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8666.773021214527,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "infovqa_minus_C2_bias32": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "infovqa",
+    "metric_ids": [
+      "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "CalibQuant_visual_FP32Affine_Text32_v2_2bit",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "dea76aa601986435ac09f9212f68582eef0a8d18db574facf0ea159ff765c8ad",
+    "candidate_summary_sha256": "dd6ba3215b0cfdf85eb4555fe1219c891612cd6617b54e23a0e377341bc87ec5",
+    "anchor_scored_rows_sha256": "526705283c63278fc450cb7e2f0c14eb6d10c6ed703e30a2290d0c5221bbb217",
+    "candidate_scored_rows_sha256": "91237da63899ded126d3479d6e2dcfbb141655ebdc6ca2caa245739f48ebef1f",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": 0.05806726922402919,
+      "difference_pp": 5.806726922402919,
+      "ci95": [
+        0.023241163952008356,
+        0.09367667327896366
+      ],
+      "ci95_pp": [
+        2.3241163952008357,
+        9.367667327896365
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.0012998700129987,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 4.998571645456584
+    },
+    "created_unix": 1795285159.127876,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.6309788307346763,
+      "mean_effective_bits": 1.2781335051011065,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 6,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8666.773021214527,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "docvqa_minus_F": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "docvqa",
+    "metric_ids": [
+      "docvqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "F_native_split",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "18a266a286fa25d244cf8d0abe75d50929335802e258bee4f2223c873e198a3b",
+    "candidate_summary_sha256": "3ae8bba1fc71babf8d81fc3c6a6aac04ad83837224a262af7c0653de84539954",
+    "anchor_scored_rows_sha256": "a55a243edce7abb1e17adff1567b5894f5a65fb1fdc75b50d32dce332e9015a1",
+    "candidate_scored_rows_sha256": "071ebd7c0f96490987e8bd2d1da9df395e788fb3f306a352a733b10be7c78dae",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.04020712947309526,
+      "difference_pp": -4.0207129473095256,
+      "ci95": [
+        -0.06251868423564504,
+        -0.01743823638122597
+      ],
+      "ci95_pp": [
+        -6.2518684235645035,
+        -1.743823638122597
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.0007999200079992001,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 3.2798233196148665
+    },
+    "created_unix": 1795285159.1725814,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.0796496805160938,
+      "mean_effective_bits": 1.2745398329096855,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8018.13285763585,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "docvqa_minus_R7_K1": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "docvqa",
+    "metric_ids": [
+      "docvqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "TrajKV_R7_K1_gtcond43_v2",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "182c7bc32266b98cae5d7c112ee59dec1dc76c1db81ba42ef12e6510702770bf",
+    "candidate_summary_sha256": "3ae8bba1fc71babf8d81fc3c6a6aac04ad83837224a262af7c0653de84539954",
+    "anchor_scored_rows_sha256": "ba04c61c6d5909820178b24aaeae7921268993df3e10aafa15afbd45ce37c63b",
+    "candidate_scored_rows_sha256": "071ebd7c0f96490987e8bd2d1da9df395e788fb3f306a352a733b10be7c78dae",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.01032878787878788,
+      "difference_pp": -1.032878787878788,
+      "ci95": [
+        -0.023667613636363636,
+        0.0026318939393939387
+      ],
+      "ci95_pp": [
+        -2.3667613636363636,
+        0.2631893939393939
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.1314868513148685,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 1.9219384031935802
+    },
+    "created_unix": 1795285159.2150295,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.9843262032112103,
+      "mean_effective_bits": 1.2745398329096855,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8018.13285763585,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "docvqa_minus_R7_K2": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "docvqa",
+    "metric_ids": [
+      "docvqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "TrajKV_R7_K2_cond_v2",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "2456c8b5db456b33bdc95e16cf57c332008fa15044733cc84b2482c88101b3f6",
+    "candidate_summary_sha256": "3ae8bba1fc71babf8d81fc3c6a6aac04ad83837224a262af7c0653de84539954",
+    "anchor_scored_rows_sha256": "4a140a41b5fe12a0db705134810b22c4a039bd72b7a2cb260986b7b8ce57726e",
+    "candidate_scored_rows_sha256": "071ebd7c0f96490987e8bd2d1da9df395e788fb3f306a352a733b10be7c78dae",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.020120626231406775,
+      "difference_pp": -2.0120626231406775,
+      "ci95": [
+        -0.041730591897017694,
+        0.0011673667602658674
+      ],
+      "ci95_pp": [
+        -4.173059189701769,
+        0.11673667602658674
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.07589241075892411,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 3.1874394097552843
+    },
+    "created_unix": 1795285159.2577991,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.7081111036729126,
+      "mean_effective_bits": 1.2745398329096855,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8018.13285763585,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "docvqa_minus_K2_g32R32": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "docvqa",
+    "metric_ids": [
+      "docvqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "KIVI_source_example_K2V2_g32_R32_visual",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "8c255fe6b441a9ac240fdf00db45ce5f3f5a9013e7a613e6035c1fd84f5ea4d0",
+    "candidate_summary_sha256": "3ae8bba1fc71babf8d81fc3c6a6aac04ad83837224a262af7c0653de84539954",
+    "anchor_scored_rows_sha256": "f0c0dd76f3933b8a0a034a095662ba682408daee5ec1471bedbeab974c79c392",
+    "candidate_scored_rows_sha256": "071ebd7c0f96490987e8bd2d1da9df395e788fb3f306a352a733b10be7c78dae",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.01761032876478148,
+      "difference_pp": -1.761032876478148,
+      "ci95": [
+        -0.03927369843768999,
+        0.0052888565289830256
+      ],
+      "ci95_pp": [
+        -3.9273698437689992,
+        0.5288856528983026
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.13338666133386662,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 3.2444717242787435
+    },
+    "created_unix": 1795285159.3028376,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.4006267618229619,
+      "mean_effective_bits": 1.2745398329096855,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8018.13285763585,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "docvqa_minus_C2_bias32": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "docvqa",
+    "metric_ids": [
+      "docvqa_anls_qwenvl_vendor_rawlen_ge0p5_v1"
+    ],
+    "anchor_method": "CalibQuant_visual_FP32Affine_Text32_v2_2bit",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "0d8e8e836b6b0c1ca07d0f1d5b15d5c06ebf4b5488ac106483423f5d3a2d8222",
+    "candidate_summary_sha256": "3ae8bba1fc71babf8d81fc3c6a6aac04ad83837224a262af7c0653de84539954",
+    "anchor_scored_rows_sha256": "8752512cb4a589f8fef0ee1c0d6b49da3e7fd3de7afc83b10402d50b91df2a49",
+    "candidate_scored_rows_sha256": "071ebd7c0f96490987e8bd2d1da9df395e788fb3f306a352a733b10be7c78dae",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": 0.055470395206993095,
+      "difference_pp": 5.547039520699309,
+      "ci95": [
+        0.02729144415820555,
+        0.08375547760457365
+      ],
+      "ci95_pp": [
+        2.729144415820555,
+        8.375547760457366
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.00029997000299970003,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 4.133163889019785
+    },
+    "created_unix": 1795285159.347748,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.6308292778371527,
+      "mean_effective_bits": 1.2745398329096855,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.2927293323335194,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 8018.13285763585,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "chartqa_minus_F": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "chartqa",
+    "metric_ids": [
+      "chartqa_pix2struct_relaxed_5pct_v1"
+    ],
+    "anchor_method": "F_native_split",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "38f05f38c12a30465e8e3d5a284fe321c534eb8e0b6765549ee3708630782b5f",
+    "candidate_summary_sha256": "b3818c1e6dfb332c8a72cb05195e18a3a2cc12b2b3d0ae46c3279323812a7eee",
+    "anchor_scored_rows_sha256": "48dafd8d739bc03480ec0a94bb0e27b358107e4b49dbdc03de0da2e6eb7cfdd7",
+    "candidate_scored_rows_sha256": "ae08fe7597c87f18ee06c993e7b76b9402fc15e974c8465319a11c1b8111f837",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.012,
+      "difference_pp": -1.2,
+      "ci95": [
+        -0.03,
+        0.006
+      ],
+      "ci95_pp": [
+        -3.0,
+        0.6
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.28147185281471854,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 2.6264435657749576
+    },
+    "created_unix": 1795285159.3885646,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.07968996632928708,
+      "mean_effective_bits": 1.2777635131386131,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 18,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7805.951784320525,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "chartqa_minus_R7_K1": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "chartqa",
+    "metric_ids": [
+      "chartqa_pix2struct_relaxed_5pct_v1"
+    ],
+    "anchor_method": "TrajKV_R7_K1_gtcond43_v2",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "0ded452ebfdf6d01f9c4f952195a416192572df10de2c8ce03f21100db499741",
+    "candidate_summary_sha256": "b3818c1e6dfb332c8a72cb05195e18a3a2cc12b2b3d0ae46c3279323812a7eee",
+    "anchor_scored_rows_sha256": "302eef8d10b0a4e99d976628a4c4dfbff6a748d5e5bf484854ac0fe6c3031c25",
+    "candidate_scored_rows_sha256": "ae08fe7597c87f18ee06c993e7b76b9402fc15e974c8465319a11c1b8111f837",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": 0.0,
+      "difference_pp": 0.0,
+      "ci95": [
+        -0.012,
+        0.01
+      ],
+      "ci95_pp": [
+        -1.2,
+        1.0
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 1.0,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 1.5864031217572507
+    },
+    "created_unix": 1795285159.4277773,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.9843267797571215,
+      "mean_effective_bits": 1.2777635131386131,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 18,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7805.951784320525,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "chartqa_minus_R7_K2": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "chartqa",
+    "metric_ids": [
+      "chartqa_pix2struct_relaxed_5pct_v1"
+    ],
+    "anchor_method": "TrajKV_R7_K2_cond_v2",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "1cab645ff44b3038995b76c46a998a3b77007dc031b480d998543ff026391274",
+    "candidate_summary_sha256": "b3818c1e6dfb332c8a72cb05195e18a3a2cc12b2b3d0ae46c3279323812a7eee",
+    "anchor_scored_rows_sha256": "2a0893758061fb6f562d4dc86596f1362b4cab11e69f14e8888c8dc1c5a15bdc",
+    "candidate_scored_rows_sha256": "ae08fe7597c87f18ee06c993e7b76b9402fc15e974c8465319a11c1b8111f837",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.008,
+      "difference_pp": -0.8,
+      "ci95": [
+        -0.024,
+        0.006
+      ],
+      "ci95_pp": [
+        -2.4,
+        0.6
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.46135386461353867,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 2.241268174490375
+    },
+    "created_unix": 1795285159.4688923,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.7084605290957304,
+      "mean_effective_bits": 1.2777635131386131,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 18,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7805.951784320525,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "chartqa_minus_K2_g32R32": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "chartqa",
+    "metric_ids": [
+      "chartqa_pix2struct_relaxed_5pct_v1"
+    ],
+    "anchor_method": "KIVI_source_example_K2V2_g32_R32_visual",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "8a1694d7cfb1a53ca6d0c14a93c113c30c8caf0ee800babfa965dee9e47330ec",
+    "candidate_summary_sha256": "b3818c1e6dfb332c8a72cb05195e18a3a2cc12b2b3d0ae46c3279323812a7eee",
+    "anchor_scored_rows_sha256": "8fb5cd17ff28eb09f9773258d31c058573f9884a488289b34999e7b4031a5522",
+    "candidate_scored_rows_sha256": "ae08fe7597c87f18ee06c993e7b76b9402fc15e974c8465319a11c1b8111f837",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": -0.01,
+      "difference_pp": -1.0,
+      "ci95": [
+        -0.03,
+        0.01
+      ],
+      "ci95_pp": [
+        -3.0,
+        1.0
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.43985601439856015,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 2.911708854011571
+    },
+    "created_unix": 1795285159.513017,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.40014585530636565,
+      "mean_effective_bits": 1.2777635131386131,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 18,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7805.951784320525,
+      "wall_is_not_canonical_method_speed": true
+    }
+  },
+  "chartqa_minus_C2_bias32": {
+    "schema": "baseline_matrix.paired_cluster_comparison.v1",
+    "status": "PASS_PAIRED_COMPLETE",
+    "model_id": "M1",
+    "dataset": "chartqa",
+    "metric_ids": [
+      "chartqa_pix2struct_relaxed_5pct_v1"
+    ],
+    "anchor_method": "CalibQuant_visual_FP32Affine_Text32_v2_2bit",
+    "candidate_method": "TrajKV_R9_BRPE_Drop4_v1",
+    "expected_QA": 500,
+    "paired_scored_QA": 500,
+    "failed_ids": [],
+    "anchor_summary_sha256": "e0f5744c87f6c4c3d27ed8eb4a9572b3662a0b071ee314f4c1b5ce2f2b102550",
+    "candidate_summary_sha256": "b3818c1e6dfb332c8a72cb05195e18a3a2cc12b2b3d0ae46c3279323812a7eee",
+    "anchor_scored_rows_sha256": "fe286a3d3b526cec786d832d9452cc6627bf218446b5e5403296f2d6b44082c1",
+    "candidate_scored_rows_sha256": "ae08fe7597c87f18ee06c993e7b76b9402fc15e974c8465319a11c1b8111f837",
+    "statistical_rule": "question-weighted paired differences; cluster bootstrap and cluster sign flips; CI crossing zero is not equivalence",
+    "primary": {
+      "difference": 0.04,
+      "difference_pp": 4.0,
+      "ci95": [
+        0.016,
+        0.064
+      ],
+      "ci95_pp": [
+        1.6,
+        6.4
+      ],
+      "cluster_count": 500,
+      "bootstrap_draws": 2000,
+      "seed": 20261119,
+      "sign_flip_p_unadjusted": 0.0011998800119988001,
+      "sign_flip_type": "Monte_Carlo_cluster_sign_flip_plus_one",
+      "requires_family_adjustment_before_significance_claim": true,
+      "pilot_MDE80_normal_approx_pp": 3.3276672617275094
+    },
+    "created_unix": 1795285159.5534954,
+    "resources": {
+      "scope": "all successfully paired requests; not controlled timing",
+      "complete_visual_bytes_ratio_to_native": 0.6308862552284867,
+      "mean_effective_bits": 1.2777635131386131,
+      "min_effective_bits": 1.2713115631587921,
+      "max_effective_bits": 1.356982639857701,
+      "iso_budget": {
+        "1.3": {
+          "all_QA_eligible": false,
+          "over_budget_QA": 18,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "1.8": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        },
+        "2.25": {
+          "all_QA_eligible": true,
+          "over_budget_QA": 0,
+          "quality_never_recomputed_on_budget_selected_subset": true
+        }
+      },
+      "mean_instrumented_wall_ms": 7805.951784320525,
+      "wall_is_not_canonical_method_speed": true
+    }
+  }
+}

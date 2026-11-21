@@ -1,0 +1,38 @@
+{
+  "argv": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-B",
+    "${DATA_ROOT}/code/round9_runner_v4.py",
+    "--config",
+    "${DATA_ROOT}/configs/round9_formal_Drop4_draft_v1/BRPE_Drop4_textvqa_formal500_draft_v1.json",
+    "--output",
+    "${DATA_ROOT}/results/round9_formal_Drop4_v1/BRPE_Drop4_textvqa_formal500_draft_v1"
+  ],
+  "env": {
+    "CUDA_CACHE_MAXSIZE": "1073741824",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/cuda",
+    "CUDA_VISIBLE_DEVICES": "1",
+    "HF_HOME": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/huggingface/hub",
+    "HF_HUB_OFFLINE": "1",
+    "MKL_NUM_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/pip",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/pycache",
+    "PYTHONUTF8": "1",
+    "TEMP": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/tmp",
+    "TMP": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/tmp",
+    "TMPDIR": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/tmp",
+    "TOKENIZERS_PARALLELISM": "false",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/inductor",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/torch_extensions",
+    "TORCH_HOME": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/torch",
+    "TRANSFORMERS_OFFLINE": "1",
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/triton",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round9_formal_Drop4_v1/xdg"
+  },
+  "name": "bm_R9_BRPE_Drop4_textvqa_formal500_draft_v1"
+}

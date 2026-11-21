@@ -1,0 +1,78 @@
+{
+  "schema": "trajkv.round9.reference_answer_strata.v1",
+  "domains": [
+    "docvqa",
+    "infovqa",
+    "textvqa",
+    "chartqa"
+  ],
+  "expected_QA_per_domain": 500,
+  "normalize": "Unicode NFKC then strip at ends; do not collapse internal whitespace or remove punctuation",
+  "types_in_priority_order": [
+    "numeric",
+    "numeric_unit",
+    "lexical",
+    "mixed"
+  ],
+  "numeric_fullmatch": "[+-]?(?:[0-9]+(?:\\.[0-9]+)?|\\.[0-9]+)%?",
+  "numeric_unit_units_casefold": [
+    "mm",
+    "cm",
+    "m",
+    "km",
+    "mg",
+    "g",
+    "kg",
+    "ml",
+    "l",
+    "oz",
+    "lb",
+    "lbs",
+    "ft",
+    "in",
+    "inch",
+    "inches",
+    "s",
+    "sec",
+    "min",
+    "mins",
+    "h",
+    "hr",
+    "hrs",
+    "day",
+    "days",
+    "year",
+    "years",
+    "usd",
+    "eur",
+    "gbp",
+    "°c",
+    "°f"
+  ],
+  "numeric_unit": "All nonempty refs fully match strict number plus optional whitespace plus one listed unit; every alias must carry a unit",
+  "lexical": "All nonempty normalized refs contain no Unicode decimal digit; remaining cases are mixed",
+  "empty_reference_handling": "Discard empty aliases, fail if none remain; never omit a question",
+  "length": "Median Unicode-codepoint length of nonempty normalized refs; even median is average, half-integer assigned upward with ceil",
+  "length_bins": [
+    "1-3",
+    "4-10",
+    "11+"
+  ],
+  "partitions": [
+    "overall",
+    "answer_type",
+    "length_bin",
+    "answer_type_x_length"
+  ],
+  "reference_file_sha256": {
+    "textvqa": "282bf6b9d1b7b6668676edc611224cbed3a4683209d1f5f7120587a022de8d5a",
+    "infovqa": "8ad2100a230a8ee2e9819ebbb4cab258f19544f567b7f41e82d7e01799c36482",
+    "docvqa": "ef75bd3a659c0c218992ad5180e994f76e62e761195173f2af19456e2edbeea4",
+    "chartqa": "7ba8286a7672d841275803d9443f98dd69f06a758e57c71392dd92efbb70398a"
+  },
+  "classification_uses_predictions_or_scores": false,
+  "gross_contribution_denominator": 500,
+  "score_change_epsilon": 1e-12,
+  "subset_significance_selection": false,
+  "causal_K_or_V_sensitivity_claim": false
+}

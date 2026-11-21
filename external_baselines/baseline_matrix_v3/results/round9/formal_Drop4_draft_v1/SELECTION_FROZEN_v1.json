@@ -1,0 +1,54 @@
+{
+  "status": "SELECTED_FROZEN_FOR_FOUR_DOMAIN_FORMAL_EVALUATION",
+  "observed_utc": "2026-11-21T15:46:58.347496+00:00",
+  "mode": "BRPE_Drop4",
+  "profile_sha256": "7ec305a76cebf5ca9e358842e11e68fe6a77e6af9f2d83c39af723ff17eb5c22",
+  "runner_sha256": "cf4885b77b03fd94aadd5bbabc5a1e6d62e3259ba6037b7a708fabab71758961",
+  "kept_V0": true,
+  "dropped_k_units": [
+    [
+      14,
+      0,
+      0
+    ],
+    [
+      21,
+      1,
+      0
+    ],
+    [
+      16,
+      1,
+      0
+    ],
+    [
+      21,
+      2,
+      0
+    ]
+  ],
+  "basis": "Both new-source domains improved with no regressions (Text1/Info3 improved); fewer bytes than Exchange1; U3D11 did not improve Text and was worse than Drop4 on Info. Favor consistent cross-domain repair and simpler lower-byte representation. No further method retuning from formal500 results.",
+  "new_source_was_replication_and_candidate_selection_not_blind_confirm": true,
+  "expected_domains": [
+    "docvqa",
+    "infovqa",
+    "textvqa",
+    "chartqa"
+  ],
+  "questions_per_domain": 500,
+  "expected_fresh_model_answers": 2000,
+  "same_official_fixed500_and_primary_metrics": true,
+  "baseline_reused_predictions_not_new_GPU_QA": true,
+  "evidence": [
+    {
+      "path": "${EVIDENCE_ROOT}/results/round9/new_source_replication_v1/report/summary.json",
+      "sha256": "40ca85ca94f00c341b054ea1ad3b1c2ede876ac0d3d1b8cfbe12350f8ea969b9"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}/results/round9/new_source_replication_DP3_v1/report/summary.json",
+      "sha256": "6945b08c41f4a3f29db437d1c01675072fcbcf4a2baf3e7a555c655f13e58848"
+    }
+  ],
+  "plan_path": "${EVIDENCE_ROOT}/results/round9/formal_Drop4_draft_v1/PLAN.json",
+  "historical_draft_filenames_do_not_mean_actual_task_status": "Actual launch/raw/score receipts define execution; original preparation plan remains historical."
+}
