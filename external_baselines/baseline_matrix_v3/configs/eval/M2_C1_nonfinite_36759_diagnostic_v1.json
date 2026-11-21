@@ -1,0 +1,61 @@
+{
+  "schema": "baseline_matrix.M2_nonfinite_diagnostic.v1",
+  "model_id": "M2",
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+  "start": 0,
+  "count": 1,
+  "max_new_tokens": 64,
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "min_pixels": 200704,
+    "max_pixels": 1003520
+  },
+  "method": {
+    "id": "CalibQuant_visual_FP32bias_1bit",
+    "family": "calibquant",
+    "adapter_module": "methods.calibquant_fp32_bias_adapter",
+    "adapter_class": "CalibQuantFP32BiasAdapter",
+    "constructor_args": {
+      "bits": 1,
+      "reader_backend": "upstream_triton"
+    },
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "scope": "SINGLE_EXISTING_FAILED_INPUT_M2_DIAGNOSTIC_NOT_FORMAL_500_NO_REFS_NO_METHOD_REPLACEMENT",
+  "ids": [
+    "textvqa:validation:36759"
+  ],
+  "diagnostic_id": "textvqa:validation:36759",
+  "arms": [
+    "F_native",
+    "C1_bias32_original",
+    "C1_affine32_diagnostic"
+  ],
+  "trace_generation_forward_calls": 1,
+  "original_eval_config": "${DATA_ROOT}/configs/eval/M2_C1_bias32_textvqa_p2_500_missing_source_compat_cpu_v2_M2_C1.json",
+  "original_eval_config_sha256": "69ae3e9b700bcf7bd97b6bbb15d1d82b728bd8c9fdc031958f4c89f7c5776362",
+  "expected_original": {
+    "input_ids_sha256": "d93d61c07af29767ff39464ce1e324e898e0e4b790419d76f3d0a3f1a1819167",
+    "native_position_ids_sha256": "879a8462ee7942f0f0b354e240fbac19cf77a0e9c5e6aba9d77bbf3d458ea387",
+    "actual_visual_token_count": 1230,
+    "input_tokens": 1274,
+    "question_suffix_tokens": 29
+  },
+  "diagnostic_output": "${DATA_ROOT}/results/p0/calibquant_M2_C1_nonfinite_36759_diagnostic_v1",
+  "numeric_source_sha256": {
+    "code/evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22",
+    "code/qwen_protocol.py": "1be51e44c8884fd4787f87de487350e78aeeff6dbffd8efb3dfcd7e7be5099b4",
+    "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "code/attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+    "code/methods/calibquant_adapter.py": "fe8f42d9460a2d209648c3fc9da3dfb4d04cc2c189f61f0d897c7c87672a3132",
+    "code/methods/calibquant_fp32_bias_adapter.py": "a89f926fc889bfa75ac9b20e80fd4b4877172c099b04dbc771b406c4e5dbb10d",
+    "code/methods/calibquant_fp32_affine_adapter.py": "9cee1e0022b6631fc59777ee0d60df8b28e5466ad3906b66221c4ac0c8e9dae7",
+    "code/model_registry.py": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+    "code/dataset_registry.py": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+    "third_party/calibquant/calibquant.py": "b4cca4467a88ba40d784bcc50309fb510a935859fc2cf297d944d1e743f2c194"
+  }
+}

@@ -35,9 +35,13 @@ APPENDED_ADAPTER_PAIRS = (
     ('methods.turboquant_buffered_adapter','TurboQuantBufferedAdapter'),
     ('methods.turboquant_onlyterp_mse_adapter','OnlyTerpMSEAdapter'),
 )
+APPENDED_ADAPTER_PAIRS_V3 = APPENDED_ADAPTER_PAIRS + (
+    ('methods.calibquant_fp32_text_adapter','CalibQuantFP32AffineTextAdapter'),
+)
 REVIEWED_POLICY_JSON_SHA256 = {
     'evaluate_identity_equivalence_v1.json':'2316ccdae4082157b5fac7f17fd3f27c2d36d150cb4e4f5435429f0eadaed684',
     'evaluate_identity_equivalence_v2.json':'c02f69a0c1819db611f9df57814030866cdd544baea1760583eeaeb216c8d112',
+    'evaluate_identity_equivalence_v3.json':'0ea9512133985f41c6916b6a86b846f77f80457c2fff2af0a0dff9b81c5bc402',
 }
 
 
@@ -110,6 +114,27 @@ def evaluate_ast_registry_identity(body):
     return identity,numerical,pairs
 
 
+def evaluate_ast_registry_identity_v3(body):
+    """V3 strips only the four individually approved literal registry pairs."""
+    tree=ast.parse(body.decode('utf-8'))
+    matches=[node for node in tree.body if isinstance(node,ast.Assign) and len(node.targets)==1
+             and isinstance(node.targets[0],ast.Name) and node.targets[0].id=='ALLOWLIST']
+    require(len(matches)==1 and isinstance(matches[0].value,ast.Set),'One literal ALLOWLIST set is required')
+    allowed=matches[0].value
+    pairs=[]
+    for item in allowed.elts:
+        require(isinstance(item,ast.Tuple) and len(item.elts)==2 and all(isinstance(v,ast.Constant) and isinstance(v.value,str) for v in item.elts),
+                'ALLOWLIST must contain literal module/class string pairs only')
+        pairs.append(tuple(v.value for v in item.elts))
+    require(len(pairs)==len(set(pairs)),'Duplicate literal registry entries are forbidden')
+    require(set(LEGACY_ADAPTER_PAIRS).issubset(pairs),'Legacy adapter registry entries may not be removed')
+    require(set(pairs).issubset(set(LEGACY_ADAPTER_PAIRS)|set(APPENDED_ADAPTER_PAIRS_V3)),
+            'Only the four specifically approved registry additions are compatible')
+    allowed.elts=[item for item,pair in zip(allowed.elts,pairs) if pair not in APPENDED_ADAPTER_PAIRS_V3]
+    identity,numerical=_evaluate_ast_identity_tree(tree)
+    return identity,numerical,pairs
+
+
 def evaluate_semantics(path, original_sha):
     body=Path(path).read_bytes()
     require(hashlib.sha256(body).hexdigest()==original_sha,'Original evaluate source proof mismatch')
@@ -118,7 +143,7 @@ def evaluate_semantics(path, original_sha):
     # data root, with its complete canonical JSON content locked below. This
     # does not weaken admission or require mutating a running queue's launcher.
     data_root=Path(os.environ.get('BASELINE_DATA_ROOT',str(ROOT)))
-    candidates=[root/'configs/cache'/name for name in ('evaluate_identity_equivalence_v2.json','evaluate_identity_equivalence_v1.json')
+    candidates=[root/'configs/cache'/name for name in ('evaluate_identity_equivalence_v3.json','evaluate_identity_equivalence_v2.json','evaluate_identity_equivalence_v1.json')
                 for root in (ROOT,data_root)]
     policy_path=next((p for p in candidates if p.is_file()),None)
     require(policy_path is not None,'Explicit identity I/O-equivalence policy is required')
@@ -127,7 +152,13 @@ def evaluate_semantics(path, original_sha):
             'STALE_PROTOCOL: reviewed policy content changed; LF/JSON formatting alone is allowed')
     allowed=policy['allowed_sources'].get(original_sha)
     require(allowed is not None,'STALE_PROTOCOL: unreviewed evaluate.py source version')
-    if policy['schema']=='baseline_matrix.reviewed_identity_registry_equivalence.v2':
+    if policy['schema']=='baseline_matrix.reviewed_identity_registry_equivalence.v3':
+        require(policy['legacy_adapter_pairs']==[list(p) for p in LEGACY_ADAPTER_PAIRS] and
+                policy['approved_appended_pairs']==[list(p) for p in APPENDED_ADAPTER_PAIRS_V3],
+                'Registry compatibility policy differs from the fixed v3 code review')
+        identity_sha,numerical_sha,pairs=evaluate_ast_registry_identity_v3(body)
+        require([list(p) for p in pairs]==allowed['literal_adapter_pairs'],'Whole-source registry declaration mismatch')
+    elif policy['schema']=='baseline_matrix.reviewed_identity_registry_equivalence.v2':
         require(policy['legacy_adapter_pairs']==[list(p) for p in LEGACY_ADAPTER_PAIRS] and
                 policy['approved_appended_pairs']==[list(p) for p in APPENDED_ADAPTER_PAIRS],
                 'Registry compatibility policy differs from the fixed code review')
@@ -205,7 +236,7 @@ def _dependencies(manifest, inventory, source_evaluate):
     pair = cfg['method'].get('adapter_class')
     declared=(cfg['method'].get('adapter_module'),pair)
     if pair is not None:
-        require(declared in set(LEGACY_ADAPTER_PAIRS)|set(APPENDED_ADAPTER_PAIRS),
+        require(declared in set(LEGACY_ADAPTER_PAIRS)|set(APPENDED_ADAPTER_PAIRS_V3),
                 'Unsupported module/class dependency pair; class names alone are not enough')
     if pair == 'KIVIStyleAdapter':
         files |= {'code/methods/kivi_style.py','code/methods/kivi_reader.py','third_party/kivi/quant/new_pack.py'}
@@ -216,6 +247,13 @@ def _dependencies(manifest, inventory, source_evaluate):
     elif pair in ('CalibQuantAdapter','CalibQuantFP32BiasAdapter'):
         files |= {'code/methods/calibquant_adapter.py','third_party/calibquant/calibquant.py'}
         if pair == 'CalibQuantFP32BiasAdapter': files.add('code/methods/calibquant_fp32_bias_adapter.py')
+    elif pair == 'CalibQuantFP32AffineTextAdapter':
+        require(inventory.get('code/methods/calibquant_fp32_text_adapter.py')==
+                'd2b1c26caee553622ba159ffb2df8748b6d1d02731103cd109bfc121a0d43075',
+                'DEPENDENCY_CONTRACT_PENDING: unreviewed Calib text FP32 adapter production-source revision')
+        files |= {'code/methods/calibquant_fp32_text_adapter.py',
+                  'code/methods/calibquant_fp32_affine_adapter.py',
+                  'code/methods/calibquant_adapter.py','third_party/calibquant/calibquant.py'}
     elif pair in ('TurboQuantAdapter','TurboQuantBufferedAdapter'):
         files |= {'code/methods/turboquant_adapter.py','configs/methods/turboquant_eviction_lock.json'}
         source_files = {p for p in inventory if p.startswith('third_party/turboquant_0xsero/') and p.endswith(('.py','.json'))}

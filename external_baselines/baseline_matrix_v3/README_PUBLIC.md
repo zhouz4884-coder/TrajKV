@@ -1,6 +1,6 @@
-# External baseline increment: KIVI_SOURCE_EXAMPLE_THREE_MODELS_ALL4_FIXED500
+# External baseline increment: ONLYTERP_HMIX23_MSE_QJL0_THREE_MODELS_ALL4_FIXED500
 
-Declared scope: Exactly the existing12 fixed500 KIVI source-example visual-port cells:3 native models x4 official-dataset subsets; not full splits, P2-114 completion, controlled speed or whole-library completion.
+Declared scope: Exactly the already-declared12 OT_Hmix23 fixed500 cells:3 models x4 official-dataset subsets. OnlyTerp Algorithm1-MSE/QJL0 practical Hadamard regular2/outlier3 visual port, not Hmix12, prod, Google paper-exact or optimized-kernel speed. Not full splits, P2-114 or whole-library completion.
 
 Closed/scored cells: 12/12; questions: 6000/6000.
 

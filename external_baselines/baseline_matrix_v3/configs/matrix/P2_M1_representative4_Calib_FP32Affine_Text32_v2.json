@@ -1,0 +1,257 @@
+{
+  "schema": "baseline_matrix.fixed_scope_numeric_implementation.v2",
+  "phase": "P2_M1_representative4_Calib_FP32Affine_Text32_v2",
+  "status": "METADATA_ONLY_NO_NEW_P0_GPU_OR_JOBS",
+  "source_declaration": "${PROJECT_ROOT}\\configs\\matrix\\P2_M1_representative_completion_v1.json",
+  "source_declaration_sha256": "375dd27a75fee2f6a29c261d483850109552e96ac3c19f95b7556baf1d3e7b7d",
+  "expected_cells": 4,
+  "expected_QA": 2000,
+  "replacement_Calib_cells": 2,
+  "unchanged_nonCalib_cells": 2,
+  "logical_scope_unchanged": true,
+  "legacy_tier_names_are_labels_not_numeric_implementation_ids": true,
+  "new_numeric_adapter": {
+    "module": "methods.calibquant_fp32_text_adapter",
+    "class": "CalibQuantFP32AffineTextAdapter",
+    "source_sha256": "d2b1c26caee553622ba159ffb2df8748b6d1d02731103cd109bfc121a0d43075"
+  },
+  "rows": [
+    {
+      "model": "M1",
+      "method": "C2_bias32",
+      "logical_tier": "C2_bias32",
+      "dataset": "docvqa",
+      "count": 500,
+      "config": "configs/eval/M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2.json",
+      "full_target_config": "configs/eval/M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2.json",
+      "config_sha256": "d3ccfa573f4a5988e7d76b796a756f8c603807c052f45ca799437c2d9746a2e4",
+      "numeric_method_id": "CalibQuant_visual_FP32Affine_Text32_v2_2bit",
+      "numeric_implementation": "Calib FP32Affine plus exact-text QK FP32, version2",
+      "status": "PENDING_OWN_MODEL_NEW_PORT_STANDARD_P0_NO_JOB",
+      "job": null,
+      "missing_config": null,
+      "plan": null,
+      "reference_run": null,
+      "cached_runs": [],
+      "effective_contract_sha256": null,
+      "actual_new_port_cached_PASS_QA": null,
+      "old_port_reused_QA": 0,
+      "fresh_QA": null,
+      "new_P0_actual_PASS": false,
+      "new_P2_actual_predictions_exist": false,
+      "old_immutable_execution_binding_not_authorization": {
+        "model": "M1",
+        "method": "C2_bias32",
+        "dataset": "docvqa",
+        "count": 500,
+        "config": "configs/eval/M1_C2_bias32_docvqa_p2_500_representative_v1.json",
+        "full_target_config": "configs/eval/M1_C2_bias32_docvqa_p2_500_representative_v1.json",
+        "missing_config": "configs/eval/M1_C2_bias32_docvqa_p2_500_representative_v1_missing500.json",
+        "job": "configs/jobs/bm_M1_C2_bias32_docvqa_p2_500_representative_v1.json",
+        "name": "bm_M1_C2_bias32_docvqa_p2_500_representative_v1",
+        "gpu": "0",
+        "reference_run": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1",
+        "cached_runs": [
+          "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1"
+        ],
+        "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\p2_representative_completion_v1\\M1_C2_bias32_docvqa_p2_500_representative_v1.reuse_plan.json",
+        "plan_sha256": "c528b55eb904e5d23c926870249bfe142c5873dc10199e428b4af4d80870ef2e",
+        "expected_QA": 500,
+        "reused_QA": 0,
+        "fresh_QA": 500,
+        "effective_contract_sha256": "2370f44088a127b28dc490a57430e2db068ba27d6d99c343581729f22be7f207",
+        "source_descriptor": {
+          "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1",
+          "raw_hashes": {
+            "manifest.json": "b8c97d667ad43f11cd198ef7faa80c73b4cce281234f002a34bfe4ad64cae594",
+            "records.jsonl": "5858d91a4e47dc25014bdbb4136da29309d9def93d75fefb38dfe563ba225f04",
+            "complete.json": "c6e4253ff14de3fd881445cf7d882aef50db7876714a85a9858f3030c314a867"
+          },
+          "source_proof_hashes": {
+            "source_inventory.json": "d2f964729eb929cac94560bcaf885e70475721c93f4dfa9a24c5c532cd61641f",
+            "launch_receipt.json": "4508d9b32d027eb34ea82c65502e1f3e6ebd1c2cf4316d424038ebc4cf32f374",
+            "source_evaluate.py": "c4d73e61efff308051dd4f5e7c450ae4d38f7dc3406f61456b26e935a1423ed4"
+          },
+          "retrieval_receipt_sha256": "38ede3978a39ff0473c5a32b50776c9300fbbe83055f770abac14e47fac0b0b2",
+          "source_retrieval_receipt_sha256": "fe9a8a6483337af9d4d95ff26aff6bb08d960a5f29e176da85b01ba7f34f7433",
+          "effective_contract_sha256": "2370f44088a127b28dc490a57430e2db068ba27d6d99c343581729f22be7f207",
+          "original_inference_run": true,
+          "source_recorded_QA": 128,
+          "source_status_counts": {
+            "PASS": 128
+          }
+        },
+        "remote_new_output": "${DATA_ROOT}/results/p2_representative_completion_v1/M1_C2_bias32_docvqa_p2_500_representative_v1",
+        "new_output_relative": "results/p2_representative_completion_v1/M1_C2_bias32_docvqa_p2_500_representative_v1",
+        "status": "ACTUAL_SAME_MODEL_SOURCE_PLAN_READY_NOT_STAGED_OR_LAUNCHED",
+        "source_reference_rule": "Actual same-M1 Text source proves method/runtime contract; Doc/Chart input keys have zero hits"
+      }
+    },
+    {
+      "model": "M1",
+      "method": "C2_bias32",
+      "logical_tier": "C2_bias32",
+      "dataset": "chartqa",
+      "count": 500,
+      "config": "configs/eval/M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2.json",
+      "full_target_config": "configs/eval/M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2.json",
+      "config_sha256": "7f8eba2cd868cc4ba009add2854e30112b0e0cb8add3b11ca3bebac53e1c9c82",
+      "numeric_method_id": "CalibQuant_visual_FP32Affine_Text32_v2_2bit",
+      "numeric_implementation": "Calib FP32Affine plus exact-text QK FP32, version2",
+      "status": "PENDING_OWN_MODEL_NEW_PORT_STANDARD_P0_NO_JOB",
+      "job": null,
+      "missing_config": null,
+      "plan": null,
+      "reference_run": null,
+      "cached_runs": [],
+      "effective_contract_sha256": null,
+      "actual_new_port_cached_PASS_QA": null,
+      "old_port_reused_QA": 0,
+      "fresh_QA": null,
+      "new_P0_actual_PASS": false,
+      "new_P2_actual_predictions_exist": false,
+      "old_immutable_execution_binding_not_authorization": {
+        "model": "M1",
+        "method": "C2_bias32",
+        "dataset": "chartqa",
+        "count": 500,
+        "config": "configs/eval/M1_C2_bias32_chartqa_p2_500_representative_v1.json",
+        "full_target_config": "configs/eval/M1_C2_bias32_chartqa_p2_500_representative_v1.json",
+        "missing_config": "configs/eval/M1_C2_bias32_chartqa_p2_500_representative_v1_missing500.json",
+        "job": "configs/jobs/bm_M1_C2_bias32_chartqa_p2_500_representative_v1.json",
+        "name": "bm_M1_C2_bias32_chartqa_p2_500_representative_v1",
+        "gpu": "1",
+        "reference_run": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1",
+        "cached_runs": [
+          "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1"
+        ],
+        "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\p2_representative_completion_v1\\M1_C2_bias32_chartqa_p2_500_representative_v1.reuse_plan.json",
+        "plan_sha256": "a0338ad8d1026163c4dd1f6573f0d7b183791344a0a93c4a47fecea572e63d65",
+        "expected_QA": 500,
+        "reused_QA": 0,
+        "fresh_QA": 500,
+        "effective_contract_sha256": "2370f44088a127b28dc490a57430e2db068ba27d6d99c343581729f22be7f207",
+        "source_descriptor": {
+          "raw_dir": "${EVIDENCE_ROOT}\\results\\p1_extra\\M1_C2_bias32_textvqa_p1extra_128_v1",
+          "raw_hashes": {
+            "manifest.json": "b8c97d667ad43f11cd198ef7faa80c73b4cce281234f002a34bfe4ad64cae594",
+            "records.jsonl": "5858d91a4e47dc25014bdbb4136da29309d9def93d75fefb38dfe563ba225f04",
+            "complete.json": "c6e4253ff14de3fd881445cf7d882aef50db7876714a85a9858f3030c314a867"
+          },
+          "source_proof_hashes": {
+            "source_inventory.json": "d2f964729eb929cac94560bcaf885e70475721c93f4dfa9a24c5c532cd61641f",
+            "launch_receipt.json": "4508d9b32d027eb34ea82c65502e1f3e6ebd1c2cf4316d424038ebc4cf32f374",
+            "source_evaluate.py": "c4d73e61efff308051dd4f5e7c450ae4d38f7dc3406f61456b26e935a1423ed4"
+          },
+          "retrieval_receipt_sha256": "38ede3978a39ff0473c5a32b50776c9300fbbe83055f770abac14e47fac0b0b2",
+          "source_retrieval_receipt_sha256": "fe9a8a6483337af9d4d95ff26aff6bb08d960a5f29e176da85b01ba7f34f7433",
+          "effective_contract_sha256": "2370f44088a127b28dc490a57430e2db068ba27d6d99c343581729f22be7f207",
+          "original_inference_run": true,
+          "source_recorded_QA": 128,
+          "source_status_counts": {
+            "PASS": 128
+          }
+        },
+        "remote_new_output": "${DATA_ROOT}/results/p2_representative_completion_v1/M1_C2_bias32_chartqa_p2_500_representative_v1",
+        "new_output_relative": "results/p2_representative_completion_v1/M1_C2_bias32_chartqa_p2_500_representative_v1",
+        "status": "ACTUAL_SAME_MODEL_SOURCE_PLAN_READY_NOT_STAGED_OR_LAUNCHED",
+        "source_reference_rule": "Actual same-M1 Text source proves method/runtime contract; Doc/Chart input keys have zero hits"
+      }
+    },
+    {
+      "model": "M1",
+      "method": "E_w8_drop0888",
+      "dataset": "docvqa",
+      "count": 500,
+      "config": "configs/eval/M1_E_w8_drop0888_docvqa_p2_500_representative_v1.json",
+      "full_target_config": "configs/eval/M1_E_w8_drop0888_docvqa_p2_500_representative_v1.json",
+      "missing_config": "configs/eval/M1_E_w8_drop0888_docvqa_p2_500_representative_v1_missing500.json",
+      "job": "configs/jobs/bm_M1_E_w8_drop0888_docvqa_p2_500_representative_v1.json",
+      "name": "bm_M1_E_w8_drop0888_docvqa_p2_500_representative_v1",
+      "gpu": "0",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p0_extra\\M1_E_w8_drop0888_textvqa_p0extra_8_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p0_extra\\M1_E_w8_drop0888_textvqa_p0extra_8_v1"
+      ],
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\p2_representative_completion_v1\\M1_E_w8_drop0888_docvqa_p2_500_representative_v1.reuse_plan.json",
+      "plan_sha256": "5bfedf2bca9fd4be04b52fdebd1e3bdfca9f76307f6ff64710405d6c8f962f61",
+      "expected_QA": 500,
+      "reused_QA": 0,
+      "fresh_QA": 500,
+      "effective_contract_sha256": "b1d327b4d558528d0b48130590469d18f07253e5758e7a598e5a781fa8700d59",
+      "source_descriptor": {
+        "raw_dir": "${EVIDENCE_ROOT}\\results\\p0_extra\\M1_E_w8_drop0888_textvqa_p0extra_8_v1",
+        "raw_hashes": {
+          "manifest.json": "98c3f5e1383b689641d7be8712acaab05caf21ec531ef2fa6a50e9d03540a402",
+          "records.jsonl": "6f4a3cc272a2382872547c5714a0f2e2da6492d241ef8e2fd1d564551fa66049",
+          "complete.json": "2a6dcaa39814eb7f377eb17d9bc8b984b4406553d57936d83f24e81354be1d0d"
+        },
+        "source_proof_hashes": {
+          "source_inventory.json": "3eb5088fea597f533603042fd4124079f7a66bca50a818c6aba437bff3496b2a",
+          "launch_receipt.json": "5ef73da8d275a4730bd49fdfe8a29f70acb5a922e9d449055d3a42f5ffd3cc10",
+          "source_evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22"
+        },
+        "retrieval_receipt_sha256": "10b05dda8320e51e36d8f8cbf008e0dd75c377db3ddb2d0d0b7a2433c0f92340",
+        "source_retrieval_receipt_sha256": "419df130c63bcc62d0ca1c6412b5f4c6f8872c8ebe02e23484fe09a99d5b205b",
+        "effective_contract_sha256": "b1d327b4d558528d0b48130590469d18f07253e5758e7a598e5a781fa8700d59",
+        "original_inference_run": true,
+        "source_recorded_QA": 8,
+        "source_status_counts": {
+          "PASS": 8
+        }
+      },
+      "remote_new_output": "${DATA_ROOT}/results/p2_representative_completion_v1/M1_E_w8_drop0888_docvqa_p2_500_representative_v1",
+      "new_output_relative": "results/p2_representative_completion_v1/M1_E_w8_drop0888_docvqa_p2_500_representative_v1",
+      "status": "ACTUAL_SAME_MODEL_SOURCE_PLAN_READY_NOT_STAGED_OR_LAUNCHED",
+      "source_reference_rule": "Actual same-M1 Text source proves method/runtime contract; Doc/Chart input keys have zero hits"
+    },
+    {
+      "model": "M1",
+      "method": "E_w8_drop0888",
+      "dataset": "chartqa",
+      "count": 500,
+      "config": "configs/eval/M1_E_w8_drop0888_chartqa_p2_500_representative_v1.json",
+      "full_target_config": "configs/eval/M1_E_w8_drop0888_chartqa_p2_500_representative_v1.json",
+      "missing_config": "configs/eval/M1_E_w8_drop0888_chartqa_p2_500_representative_v1_missing500.json",
+      "job": "configs/jobs/bm_M1_E_w8_drop0888_chartqa_p2_500_representative_v1.json",
+      "name": "bm_M1_E_w8_drop0888_chartqa_p2_500_representative_v1",
+      "gpu": "1",
+      "reference_run": "${EVIDENCE_ROOT}\\results\\p0_extra\\M1_E_w8_drop0888_textvqa_p0extra_8_v1",
+      "cached_runs": [
+        "${EVIDENCE_ROOT}\\results\\p0_extra\\M1_E_w8_drop0888_textvqa_p0extra_8_v1"
+      ],
+      "plan": "${EVIDENCE_ROOT}\\results\\cache_plans\\p2_representative_completion_v1\\M1_E_w8_drop0888_chartqa_p2_500_representative_v1.reuse_plan.json",
+      "plan_sha256": "df1bf192760efcdbeddf737738bbbde6e0b7c8501935c287da93bab6116a7125",
+      "expected_QA": 500,
+      "reused_QA": 0,
+      "fresh_QA": 500,
+      "effective_contract_sha256": "b1d327b4d558528d0b48130590469d18f07253e5758e7a598e5a781fa8700d59",
+      "source_descriptor": {
+        "raw_dir": "${EVIDENCE_ROOT}\\results\\p0_extra\\M1_E_w8_drop0888_textvqa_p0extra_8_v1",
+        "raw_hashes": {
+          "manifest.json": "98c3f5e1383b689641d7be8712acaab05caf21ec531ef2fa6a50e9d03540a402",
+          "records.jsonl": "6f4a3cc272a2382872547c5714a0f2e2da6492d241ef8e2fd1d564551fa66049",
+          "complete.json": "2a6dcaa39814eb7f377eb17d9bc8b984b4406553d57936d83f24e81354be1d0d"
+        },
+        "source_proof_hashes": {
+          "source_inventory.json": "3eb5088fea597f533603042fd4124079f7a66bca50a818c6aba437bff3496b2a",
+          "launch_receipt.json": "5ef73da8d275a4730bd49fdfe8a29f70acb5a922e9d449055d3a42f5ffd3cc10",
+          "source_evaluate.py": "baff0e908230ed9d96547107ff36e0ea543128ac9a8da033329209d9ff59da22"
+        },
+        "retrieval_receipt_sha256": "10b05dda8320e51e36d8f8cbf008e0dd75c377db3ddb2d0d0b7a2433c0f92340",
+        "source_retrieval_receipt_sha256": "419df130c63bcc62d0ca1c6412b5f4c6f8872c8ebe02e23484fe09a99d5b205b",
+        "effective_contract_sha256": "b1d327b4d558528d0b48130590469d18f07253e5758e7a598e5a781fa8700d59",
+        "original_inference_run": true,
+        "source_recorded_QA": 8,
+        "source_status_counts": {
+          "PASS": 8
+        }
+      },
+      "remote_new_output": "${DATA_ROOT}/results/p2_representative_completion_v1/M1_E_w8_drop0888_chartqa_p2_500_representative_v1",
+      "new_output_relative": "results/p2_representative_completion_v1/M1_E_w8_drop0888_chartqa_p2_500_representative_v1",
+      "status": "ACTUAL_SAME_MODEL_SOURCE_PLAN_READY_NOT_STAGED_OR_LAUNCHED",
+      "source_reference_rule": "Actual same-M1 Text source proves method/runtime contract; Doc/Chart input keys have zero hits"
+    }
+  ],
+  "no_stage_queue_fullledger_or_transport_change": true
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M3",
+  "model_revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "model_path": "${DATA_ROOT}/data/models/Qwen3-VL-4B-Instruct/ebb281ec70b05090aa6165b016eac8ec08e71b17",
+  "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+  "start": 0,
+  "count": 2,
+  "max_new_tokens": 64,
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "min_pixels": 65536,
+    "max_pixels": 16777216
+  },
+  "method": {
+    "id": "CalibQuant_visual_FP32Affine_Text32_v2_1bit",
+    "family": "calibquant",
+    "adapter_module": "methods.calibquant_fp32_text_adapter",
+    "adapter_class": "CalibQuantFP32AffineTextAdapter",
+    "constructor_args": {
+      "bits": 1,
+      "reader_backend": "upstream_triton"
+    },
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "scope": "P0_COMMON_FP16_CALIBQUANT_NUMERIC_PORT_V2_SOURCE_SMOKE_NO_REFS_NO_SCORE"
+}

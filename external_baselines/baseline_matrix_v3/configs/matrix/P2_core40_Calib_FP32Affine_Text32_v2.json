@@ -1,0 +1,437 @@
+{
+  "schema": "baseline_matrix.fixed_scope_numeric_implementation.v2",
+  "phase": "P2_core40_Calib_FP32Affine_Text32_v2",
+  "status": "METADATA_ONLY_NO_NEW_P0_GPU_OR_JOBS",
+  "source_declaration": "${PROJECT_ROOT}\\configs\\matrix\\P2_harvest_targets_core_v1.json",
+  "source_declaration_sha256": "7c85cf8d09cfec9b77de627a6362cf0b96a72f988302de0785a91dedcfce61de",
+  "expected_cells": 40,
+  "expected_QA": 20000,
+  "replacement_Calib_cells": 4,
+  "unchanged_nonCalib_cells": 36,
+  "logical_scope_unchanged": true,
+  "legacy_tier_names_are_labels_not_numeric_implementation_ids": true,
+  "new_numeric_adapter": {
+    "module": "methods.calibquant_fp32_text_adapter",
+    "class": "CalibQuantFP32AffineTextAdapter",
+    "source_sha256": "d2b1c26caee553622ba159ffb2df8748b6d1d02731103cd109bfc121a0d43075"
+  },
+  "rows": [
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M1_F_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "K2_R0",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M1_K2_R0_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "C1_bias32",
+      "logical_tier": "C1_bias32",
+      "dataset": "docvqa",
+      "count": 500,
+      "config": "configs/eval/M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+      "full_target_config": "configs/eval/M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+      "config_sha256": "47580d27e409048a4264ac36917807c425c2260bd2acc701bdb8e6533e0f45bd",
+      "numeric_method_id": "CalibQuant_visual_FP32Affine_Text32_v2_1bit",
+      "numeric_implementation": "Calib FP32Affine plus exact-text QK FP32, version2",
+      "status": "PENDING_OWN_MODEL_NEW_PORT_STANDARD_P0_NO_JOB",
+      "job": null,
+      "missing_config": null,
+      "plan": null,
+      "reference_run": null,
+      "cached_runs": [],
+      "effective_contract_sha256": null,
+      "actual_new_port_cached_PASS_QA": null,
+      "old_port_reused_QA": 0,
+      "fresh_QA": null,
+      "new_P0_actual_PASS": false,
+      "new_P2_actual_predictions_exist": false,
+      "old_immutable_execution_binding_not_authorization": {
+        "model": "M1",
+        "method": "C1_bias32",
+        "dataset": "docvqa",
+        "count": 500,
+        "gpu": "0",
+        "config": "configs/eval/M1_C1_bias32_docvqa_p2_500_v1.json"
+      }
+    },
+    {
+      "model": "M1",
+      "method": "E_r0888",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M1_E_r0888_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M1_F_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "K2_R0",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M1_K2_R0_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "C1_bias32",
+      "logical_tier": "C1_bias32",
+      "dataset": "chartqa",
+      "count": 500,
+      "config": "configs/eval/M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2.json",
+      "full_target_config": "configs/eval/M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2.json",
+      "config_sha256": "32a6db6b84e9f7ec3152e8e5e64a9a1d88b6eea35d76087ade0dc59520b6b389",
+      "numeric_method_id": "CalibQuant_visual_FP32Affine_Text32_v2_1bit",
+      "numeric_implementation": "Calib FP32Affine plus exact-text QK FP32, version2",
+      "status": "PENDING_OWN_MODEL_NEW_PORT_STANDARD_P0_NO_JOB",
+      "job": null,
+      "missing_config": null,
+      "plan": null,
+      "reference_run": null,
+      "cached_runs": [],
+      "effective_contract_sha256": null,
+      "actual_new_port_cached_PASS_QA": null,
+      "old_port_reused_QA": 0,
+      "fresh_QA": null,
+      "new_P0_actual_PASS": false,
+      "new_P2_actual_predictions_exist": false,
+      "old_immutable_execution_binding_not_authorization": {
+        "model": "M1",
+        "method": "C1_bias32",
+        "dataset": "chartqa",
+        "count": 500,
+        "gpu": "1",
+        "config": "configs/eval/M1_C1_bias32_chartqa_p2_500_v1.json"
+      }
+    },
+    {
+      "model": "M1",
+      "method": "E_r0888",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M1_E_r0888_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "F",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M2_F_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "K2_R0",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M2_K2_R0_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "E_r0888",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M2_E_r0888_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "F",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M2_F_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "K2_R0",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M2_K2_R0_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "E_r0888",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M2_E_r0888_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "F",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M3_F_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "K2_R0",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M3_K2_R0_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "E_r0888",
+      "dataset": "docvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M3_E_r0888_docvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "F",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M3_F_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "K2_R0",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M3_K2_R0_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "E_r0888",
+      "dataset": "chartqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M3_E_r0888_chartqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M1_F_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "F",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M1_F_infovqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "K2_R0",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M1_K2_R0_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "K2_R0",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M1_K2_R0_infovqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "C1_bias32",
+      "logical_tier": "C1_bias32",
+      "dataset": "textvqa",
+      "count": 500,
+      "config": "configs/eval/M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+      "full_target_config": "configs/eval/M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+      "config_sha256": "377b9fffb6b5507d04944d4af7f643352c833a0bd408ec13175dfcad36f2580b",
+      "numeric_method_id": "CalibQuant_visual_FP32Affine_Text32_v2_1bit",
+      "numeric_implementation": "Calib FP32Affine plus exact-text QK FP32, version2",
+      "status": "PENDING_OWN_MODEL_NEW_PORT_STANDARD_P0_NO_JOB",
+      "job": null,
+      "missing_config": null,
+      "plan": null,
+      "reference_run": null,
+      "cached_runs": [],
+      "effective_contract_sha256": null,
+      "actual_new_port_cached_PASS_QA": null,
+      "old_port_reused_QA": 0,
+      "fresh_QA": null,
+      "new_P0_actual_PASS": false,
+      "new_P2_actual_predictions_exist": false,
+      "old_immutable_execution_binding_not_authorization": {
+        "model": "M1",
+        "method": "C1_bias32",
+        "dataset": "textvqa",
+        "count": 500,
+        "gpu": "0",
+        "config": "configs/eval/M1_C1_bias32_textvqa_p2_500_v1.json"
+      }
+    },
+    {
+      "model": "M1",
+      "method": "C1_bias32",
+      "logical_tier": "C1_bias32",
+      "dataset": "infovqa",
+      "count": 500,
+      "config": "configs/eval/M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2.json",
+      "full_target_config": "configs/eval/M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2.json",
+      "config_sha256": "7bad4e385608efa424cb9f0c8c0e94883972febeda3a6ab4c02d1bcfb7906418",
+      "numeric_method_id": "CalibQuant_visual_FP32Affine_Text32_v2_1bit",
+      "numeric_implementation": "Calib FP32Affine plus exact-text QK FP32, version2",
+      "status": "PENDING_OWN_MODEL_NEW_PORT_STANDARD_P0_NO_JOB",
+      "job": null,
+      "missing_config": null,
+      "plan": null,
+      "reference_run": null,
+      "cached_runs": [],
+      "effective_contract_sha256": null,
+      "actual_new_port_cached_PASS_QA": null,
+      "old_port_reused_QA": 0,
+      "fresh_QA": null,
+      "new_P0_actual_PASS": false,
+      "new_P2_actual_predictions_exist": false,
+      "old_immutable_execution_binding_not_authorization": {
+        "model": "M1",
+        "method": "C1_bias32",
+        "dataset": "infovqa",
+        "count": 500,
+        "gpu": "1",
+        "config": "configs/eval/M1_C1_bias32_infovqa_p2_500_v1.json"
+      }
+    },
+    {
+      "model": "M1",
+      "method": "E_r0888",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M1_E_r0888_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M1",
+      "method": "E_r0888",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M1_E_r0888_infovqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "F",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M2_F_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "F",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M2_F_infovqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "K2_R0",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M2_K2_R0_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "K2_R0",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M2_K2_R0_infovqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "E_r0888",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M2_E_r0888_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M2",
+      "method": "E_r0888",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M2_E_r0888_infovqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "F",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M3_F_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "F",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M3_F_infovqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "K2_R0",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M3_K2_R0_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "K2_R0",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M3_K2_R0_infovqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "E_r0888",
+      "dataset": "textvqa",
+      "count": 500,
+      "gpu": "0",
+      "config": "configs/eval/M3_E_r0888_textvqa_p2_500_v1.json"
+    },
+    {
+      "model": "M3",
+      "method": "E_r0888",
+      "dataset": "infovqa",
+      "count": 500,
+      "gpu": "1",
+      "config": "configs/eval/M3_E_r0888_infovqa_p2_500_v1.json"
+    }
+  ],
+  "no_stage_queue_fullledger_or_transport_change": true
+}
