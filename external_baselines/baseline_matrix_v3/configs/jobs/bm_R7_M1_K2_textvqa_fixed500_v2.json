@@ -1,0 +1,37 @@
+{
+  "name": "bm_R7_M1_K2_textvqa_fixed500_v2",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "1",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/r7_research_v1/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/r7_research_v1/tmp",
+    "TMP": "${DATA_ROOT}/cache/r7_research_v1/tmp",
+    "TEMP": "${DATA_ROOT}/cache/r7_research_v1/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/r7_research_v1/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/r7_research_v1/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/r7_research_v1/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/r7_research_v1/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/r7_research_v1/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/r7_research_v1/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/r7_research_v1/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/r7_research_v1/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/r7_research_v1/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/r7_research_v1/xdg",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "argv": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-B",
+    "${DATA_ROOT}/code/r7_frozen_pilot_v2.py",
+    "--config",
+    "${DATA_ROOT}/configs/r7_research/M1_R7_K2_textvqa_fixed500_v2.json",
+    "--output",
+    "${DATA_ROOT}/results/r7_matrix500_v2/K2_textvqa_fixed500"
+  ]
+}

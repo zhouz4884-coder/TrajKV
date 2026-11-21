@@ -1,0 +1,66 @@
+{
+  "status": "PASS_ACTUAL_GPU8_FOUR_PATH_PROTOCOL_DIAGNOSTIC",
+  "QA": 8,
+  "arms": 32,
+  "source_driver_sha256": "fd690147acc51ac32188ec516c6652ae385c4a44c563deb45e503f3f85b4c84d",
+  "prefix_B_C_all_layers_bitwise_equal_QA": 8,
+  "alternate_future_query_prefix_KV_bitwise_equal_QA": 8,
+  "first_logits_pairs": {
+    "prefix_only_vs_native_full": {
+      "top1_equal_QA": 8,
+      "max_abs_range": [
+        0.0234375,
+        0.05078125
+      ],
+      "KL_reference_to_candidate_max": 1.3671440523935264e-05
+    },
+    "full_prefill_cropped_vs_native_full": {
+      "top1_equal_QA": 8,
+      "max_abs_range": [
+        0.0234375,
+        0.05078125
+      ],
+      "KL_reference_to_candidate_max": 1.3671440523935264e-05
+    },
+    "prefix_fp16_hybrid_vs_native_full": {
+      "top1_equal_QA": 8,
+      "max_abs_range": [
+        0.0234375,
+        0.05078125
+      ],
+      "KL_reference_to_candidate_max": 1.3671440523935264e-05
+    },
+    "full_prefill_cropped_vs_prefix_only": {
+      "top1_equal_QA": 8,
+      "max_abs_range": [
+        0.0,
+        0.0
+      ],
+      "KL_reference_to_candidate_max": 0.0
+    },
+    "prefix_fp16_hybrid_vs_prefix_only": {
+      "top1_equal_QA": 8,
+      "max_abs_range": [
+        0.0,
+        0.0
+      ],
+      "KL_reference_to_candidate_max": 0.0
+    },
+    "prefix_fp16_hybrid_vs_full_prefill_cropped": {
+      "top1_equal_QA": 8,
+      "max_abs_range": [
+        0.0,
+        0.0
+      ],
+      "KL_reference_to_candidate_max": 0.0
+    }
+  },
+  "generation_sequence_equal_to_A_QA": {
+    "prefix_only_vs_A": 8,
+    "full_prefill_cropped_vs_A": 8,
+    "prefix_fp16_hybrid_vs_A": 8
+  },
+  "actual_first_generation_input_contract_match_all32": true,
+  "R7_codec_or_original_custom_runner_tested": false,
+  "quality_scored": false
+}

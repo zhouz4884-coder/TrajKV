@@ -1,0 +1,36 @@
+{
+  "status": "LAUNCHED",
+  "pid": 2608298,
+  "name": "bm_R7_M1_bridgecheck2_v1",
+  "argv_executed": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-B",
+    "${DATA_ROOT}/jobs/bm_R7_M1_bridgecheck2_v1.source/code/r7_bridge_gpu_check_v1.py",
+    "--config",
+    "${DATA_ROOT}/configs/r7_research/M1_R7gt43_docvqa_smoke4_v1.json",
+    "--output",
+    "${DATA_ROOT}/results/r7_research/bridgecheck2_v1"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_R7_M1_bridgecheck2_v1.source",
+  "source_inventory_sha256": "aee953fc7c946a806fd8ca88452806384e7031a6cda314fe18dd3f456ba22aa6",
+  "job_sha256": "8db50bf6a07a2d63125496021e4dc06edadedcad33a925e1b553e5d2fea951ff",
+  "log": "${DATA_ROOT}/logs/bm_R7_M1_bridgecheck2_v1.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/r7_research_v1/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/r7_research_v1/tmp",
+    "TMP": "${DATA_ROOT}/cache/r7_research_v1/tmp",
+    "TEMP": "${DATA_ROOT}/cache/r7_research_v1/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/r7_research_v1/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/r7_research_v1/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/r7_research_v1/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/r7_research_v1/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/r7_research_v1/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/r7_research_v1/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/r7_research_v1/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/r7_research_v1/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/r7_research_v1/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/r7_research_v1/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "0",
+  "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+}

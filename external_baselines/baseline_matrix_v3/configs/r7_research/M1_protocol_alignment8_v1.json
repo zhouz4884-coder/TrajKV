@@ -1,0 +1,40 @@
+{
+  "model_id": "M1",
+  "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+  "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "max_patches": 8
+  },
+  "schema": "trajkv.r7_research.protocol_alignment.v1",
+  "inputs": [
+    {
+      "dataset": "textvqa",
+      "path": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 4
+    },
+    {
+      "dataset": "docvqa",
+      "path": "${DATA_ROOT}/data/registry/v3/docvqa_p2_inputs.jsonl",
+      "start": 0,
+      "count": 4
+    }
+  ],
+  "max_new_tokens": 32,
+  "seed": 0,
+  "scope": "True GPU first-question protocol and FP16 facade controls only; fixed first4Text+first4Doc, no answer labels or task scoring; not R7 codec quality or old-executor equivalence",
+  "comparison_arms": [
+    "native_full",
+    "prefix_only",
+    "full_prefill_cropped",
+    "prefix_fp16_hybrid"
+  ],
+  "baseline_frozen_sources": {
+    "code\\m1_protocol.py": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+    "code\\cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "code\\attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+    "code\\ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456"
+  }
+}

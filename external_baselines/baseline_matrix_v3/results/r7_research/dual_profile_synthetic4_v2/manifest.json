@@ -1,0 +1,57 @@
+{
+  "schema": "trajkv.r7_research.dual_bridge_synthetic_control.v2.manifest",
+  "expected_cases": 4,
+  "cases": [
+    [
+      "r7_joint_k1_gt_cond",
+      256
+    ],
+    [
+      "r7_joint_k1_gt_cond",
+      1792
+    ],
+    [
+      "r7_budget_k2_cond",
+      256
+    ],
+    [
+      "r7_budget_k2_cond",
+      1792
+    ]
+  ],
+  "source_sha256": {
+    "code/r7_bridge_gpu_check_v2.py": "369ce149d9272e494bc62035908aafbfd76b9a749a43fc291ffc08fbfe1df857",
+    "code/r7_bridge_gpu_check_v1.py": "e37810a2568ebb21f10ea10488829be0758311985c5dbdeebdd20fa450c5631a",
+    "code/r7_legacy_bridge_v1.py": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b",
+    "code/r7_legacy_bridge_v2.py": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad",
+    "code/r7_frozen_pilot_v2.py": "3ff896405be5ac91067bdbe8d736c0552e46f835dea90a93c9835ceeb8fd3a91",
+    "code/m1_protocol.py": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+    "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "code/ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456"
+  },
+  "config_sha256": {
+    "${DATA_ROOT}/configs/r7_research/M1_R7_K1_docvqa_smoke4_v2.json": "d2d7ac04251017090ae2e17c397631655f30cb08e0445b5771743a3d70b32427",
+    "${DATA_ROOT}/configs/r7_research/M1_R7_K2_docvqa_smoke4_v2.json": "a24dbfc0fe72c9031adfa2391b033d7a38c1cd564f069fbf8b63d37996d533f0"
+  },
+  "seed": 0,
+  "TF32": false,
+  "model_or_images_or_dataset_loaded": false,
+  "GT_read": false,
+  "quality_QA_added": 0,
+  "reference_copies_not_deployment": true,
+  "torch": "2.4.1+cu121",
+  "transformers": "5.12.0",
+  "CUDA": "12.1",
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "visible_GPU": "1",
+  "python": "3.10.20",
+  "fixed_profile_asset_sha256": {
+    "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/confirm_doc128_s0.json": "aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4",
+    "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/gaussian_vq_g4_16.json": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/factors_for_book16_inherited.json": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/policy_k1_cond.json": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f",
+    "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/gaussian_vq_g4_256.json": "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae",
+    "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/factors_k2_original.json": "d60fe4ffcf31e36306ed2c5a4069634627c83b3af2f0b86fdb5c37e456113671",
+    "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/policy_k2_cond.json": "e8a58e602c047adbd4ca6ae253f6ba2eb3961158d7c75444d3e27a41ec47ed6e"
+  }
+}

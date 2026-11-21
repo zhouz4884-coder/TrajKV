@@ -1,6 +1,6 @@
-# External baseline increment: CALIB_NUMERIC_V2_M1_TWO_BITS_ALL4_FIXED500
+# External baseline increment: R7_ANCHOR8_FIXED500
 
-Declared scope: Exactly M1 1bit/2bit x Text/Info/Doc/Chart predetermined500; subset milestone of unchanged core114 and whole126/24, not whole-library completion. Common FP16 visual source-constant CalibQuant port with FP32 affine/calibration and exact-text QK; source packed QK/WV retained. Not author BF16 system or recovered author calibration provenance.
+Declared scope: R7 primary8 fresh500; canonical references are separately counted reused prediction views; no whole Round9 or external library completion.
 
 Closed/scored cells: 8/8; questions: 4000/4000.
 
@@ -10,3 +10,4 @@ PUBLIC_CONTENT_REFS.json separates original source, sanitized archive and LF-nor
 
 From the extracted namespace run `python -B code/verify_public_export.py --root . --recompute-scores`. This validates donor closure, exact prediction provenance, fixed-reference metrics, cluster CIs and declared coverage. Use exact archive bytes for source guards that distinguish original CRLF from Git LF. Runtime and method limitations remain explicit in reports.
 
+- Auxiliary `M1_COMPLETED_BASELINE_REFERENCES`: 39 views / 19500 view questions. R7 primary8 fresh500; canonical references are separately counted reused prediction views; no whole Round9 or external library completion.
