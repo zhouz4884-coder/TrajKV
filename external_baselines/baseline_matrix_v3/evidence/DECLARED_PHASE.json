@@ -1,55 +1,33 @@
 {
   "contract": {
     "schema": "baseline_matrix.public_phase_contract.v2",
-    "phase_label": "ONLYTERP_HMIX23_MSE_QJL0_THREE_MODELS_ALL4_FIXED500",
-    "family": "onlyterp_hmix23_12_fixed500",
-    "matrix": "${EVIDENCE_ROOT}\\results\\publication\\OnlyTerp_Hmix23_12_candidate_20261121_v1\\declared_matrix.json",
-    "coverage_scope": "Exactly the already-declared12 OT_Hmix23 fixed500 cells:3 models x4 official-dataset subsets. OnlyTerp Algorithm1-MSE/QJL0 practical Hadamard regular2/outlier3 visual port, not Hmix12, prod, Google paper-exact or optimized-kernel speed. Not full splits, P2-114 or whole-library completion.",
-    "view_root": "${EVIDENCE_ROOT}\\results\\extension_views\\source_compat_v1",
-    "score_root": "${EVIDENCE_ROOT}\\results\\scored\\extension_source_compat_v1",
+    "phase_label": "CALIB_NUMERIC_V2_M1_TWO_BITS_ALL4_FIXED500",
+    "family": "calib_numeric_v2_m1_8_fixed500",
+    "matrix": "${EVIDENCE_ROOT}\\results\\publication\\Calib_numeric_v2_M1_two_bits8_candidate_20261121_v1\\declared_matrix.json",
+    "coverage_scope": "Exactly M1 1bit/2bit x Text/Info/Doc/Chart predetermined500; subset milestone of unchanged core114 and whole126/24, not whole-library completion. Common FP16 visual source-constant CalibQuant port with FP32 affine/calibration and exact-text QK; source packed QK/WV retained. Not author BF16 system or recovered author calibration provenance.",
+    "view_root": "${EVIDENCE_ROOT}\\results\\extension_views\\calib_numeric_v2",
+    "score_root": "${EVIDENCE_ROOT}\\results\\scored\\extension_calib_numeric_v2",
     "completion_policy": "all_expected_QA_pass",
     "completion_scope": "declared_matrix_only",
     "whole_library_completion_assessed": false
   },
   "phase": {
     "status": "PASS_DECLARED_MATRIX_COMPLETE",
-    "phase_label": "ONLYTERP_HMIX23_MSE_QJL0_THREE_MODELS_ALL4_FIXED500",
-    "family": "onlyterp_hmix23_12_fixed500",
-    "coverage_scope": "Exactly the already-declared12 OT_Hmix23 fixed500 cells:3 models x4 official-dataset subsets. OnlyTerp Algorithm1-MSE/QJL0 practical Hadamard regular2/outlier3 visual port, not Hmix12, prod, Google paper-exact or optimized-kernel speed. Not full splits, P2-114 or whole-library completion.",
+    "phase_label": "CALIB_NUMERIC_V2_M1_TWO_BITS_ALL4_FIXED500",
+    "family": "calib_numeric_v2_m1_8_fixed500",
+    "coverage_scope": "Exactly M1 1bit/2bit x Text/Info/Doc/Chart predetermined500; subset milestone of unchanged core114 and whole126/24, not whole-library completion. Common FP16 visual source-constant CalibQuant port with FP32 affine/calibration and exact-text QK; source packed QK/WV retained. Not author BF16 system or recovered author calibration provenance.",
     "completion_scope": "declared_matrix_only",
     "whole_external_library_completion_assessed": false,
-    "declared_matrix_source_sha256": "2cf5b8e42b609316f71c4d34c27ebe2691efe3e999c78650c938fff62e252937",
-    "expected_cells": 12,
-    "verified_scored_cells": 12,
-    "expected_questions": 6000,
-    "verified_scored_questions": 6000,
-    "closed_artifact_cells": 12,
+    "declared_matrix_source_sha256": "8ffc5562eb86db86ce4637da3e3da2e2ac23782f63e3fe7b80d15695fd58fbd7",
+    "expected_cells": 8,
+    "verified_scored_cells": 8,
+    "expected_questions": 4000,
+    "verified_scored_questions": 4000,
+    "closed_artifact_cells": 8,
     "missing": [],
     "observed": [
       {
-        "cell": "M1_OT_Hmix23_textvqa_p2_500_target_v6",
-        "questions": 500,
-        "kind": "derived_prediction_view",
-        "raw_status": "PASS_RAW_COMPLETE",
-        "score_status": "PASS_SCORED_COMPLETE",
-        "origin_counts": {
-          "reused": 32,
-          "fresh": 468
-        }
-      },
-      {
-        "cell": "M1_OT_Hmix23_infovqa_p2_500_target_v6",
-        "questions": 500,
-        "kind": "derived_prediction_view",
-        "raw_status": "PASS_RAW_COMPLETE",
-        "score_status": "PASS_SCORED_COMPLETE",
-        "origin_counts": {
-          "reused": 32,
-          "fresh": 468
-        }
-      },
-      {
-        "cell": "M1_OT_Hmix23_docvqa_p2_500_target_v7",
+        "cell": "M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
         "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
@@ -59,7 +37,7 @@
         }
       },
       {
-        "cell": "M1_OT_Hmix23_chartqa_p2_500_target_v7",
+        "cell": "M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
         "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
@@ -69,18 +47,7 @@
         }
       },
       {
-        "cell": "M2_OT_Hmix23_textvqa_p2_500_target_v7",
-        "questions": 500,
-        "kind": "derived_prediction_view",
-        "raw_status": "PASS_RAW_COMPLETE",
-        "score_status": "PASS_SCORED_COMPLETE",
-        "origin_counts": {
-          "reused": 2,
-          "fresh": 498
-        }
-      },
-      {
-        "cell": "M2_OT_Hmix23_infovqa_p2_500_target_v7",
+        "cell": "M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2",
         "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
@@ -90,7 +57,7 @@
         }
       },
       {
-        "cell": "M2_OT_Hmix23_docvqa_p2_500_target_v7",
+        "cell": "M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2",
         "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
@@ -100,7 +67,7 @@
         }
       },
       {
-        "cell": "M2_OT_Hmix23_chartqa_p2_500_target_v7",
+        "cell": "M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
         "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
@@ -110,18 +77,7 @@
         }
       },
       {
-        "cell": "M3_OT_Hmix23_textvqa_p2_500_target_v7",
-        "questions": 500,
-        "kind": "derived_prediction_view",
-        "raw_status": "PASS_RAW_COMPLETE",
-        "score_status": "PASS_SCORED_COMPLETE",
-        "origin_counts": {
-          "reused": 2,
-          "fresh": 498
-        }
-      },
-      {
-        "cell": "M3_OT_Hmix23_infovqa_p2_500_target_v7",
+        "cell": "M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
         "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
@@ -131,7 +87,7 @@
         }
       },
       {
-        "cell": "M3_OT_Hmix23_docvqa_p2_500_target_v7",
+        "cell": "M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2",
         "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
@@ -141,7 +97,7 @@
         }
       },
       {
-        "cell": "M3_OT_Hmix23_chartqa_p2_500_target_v7",
+        "cell": "M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2",
         "questions": 500,
         "kind": "derived_prediction_view",
         "raw_status": "PASS_RAW_COMPLETE",
@@ -154,225 +110,133 @@
   },
   "artifacts": [
     {
-      "cell": "M1_OT_Hmix23_textvqa_p2_500_target_v6",
-      "raw_dir": "results/extension_views/source_compat_v1/M1_OT_Hmix23_textvqa_p2_500_target_v6",
-      "scored_dir": "results/scored/extension_source_compat_v1/M1_OT_Hmix23_textvqa_p2_500_target_v6",
-      "config": "configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json",
+      "cell": "M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "scored_dir": "results/scored/extension_calib_numeric_v2/M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "config": "configs/eval/M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
       "kind": "derived_prediction_view",
       "expected_QA": 500
     },
     {
-      "cell": "M1_OT_Hmix23_infovqa_p2_500_target_v6",
-      "raw_dir": "results/extension_views/source_compat_v1/M1_OT_Hmix23_infovqa_p2_500_target_v6",
-      "scored_dir": "results/scored/extension_source_compat_v1/M1_OT_Hmix23_infovqa_p2_500_target_v6",
-      "config": "configs/eval/M1_OT_Hmix23_infovqa_p2_500_target_v6.json",
+      "cell": "M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
+      "scored_dir": "results/scored/extension_calib_numeric_v2/M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
+      "config": "configs/eval/M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2.json",
       "kind": "derived_prediction_view",
       "expected_QA": 500
     },
     {
-      "cell": "M1_OT_Hmix23_docvqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M1_OT_Hmix23_docvqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M1_OT_Hmix23_docvqa_p2_500_target_v7",
-      "config": "configs/eval/M1_OT_Hmix23_docvqa_p2_500_target_v7.json",
+      "cell": "M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "scored_dir": "results/scored/extension_calib_numeric_v2/M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "config": "configs/eval/M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2.json",
       "kind": "derived_prediction_view",
       "expected_QA": 500
     },
     {
-      "cell": "M1_OT_Hmix23_chartqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M1_OT_Hmix23_chartqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M1_OT_Hmix23_chartqa_p2_500_target_v7",
-      "config": "configs/eval/M1_OT_Hmix23_chartqa_p2_500_target_v7.json",
+      "cell": "M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2",
+      "scored_dir": "results/scored/extension_calib_numeric_v2/M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2",
+      "config": "configs/eval/M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2.json",
       "kind": "derived_prediction_view",
       "expected_QA": 500
     },
     {
-      "cell": "M2_OT_Hmix23_textvqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M2_OT_Hmix23_textvqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M2_OT_Hmix23_textvqa_p2_500_target_v7",
-      "config": "configs/eval/M2_OT_Hmix23_textvqa_p2_500_target_v7.json",
+      "cell": "M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "scored_dir": "results/scored/extension_calib_numeric_v2/M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
+      "config": "configs/eval/M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
       "kind": "derived_prediction_view",
       "expected_QA": 500
     },
     {
-      "cell": "M2_OT_Hmix23_infovqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M2_OT_Hmix23_infovqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M2_OT_Hmix23_infovqa_p2_500_target_v7",
-      "config": "configs/eval/M2_OT_Hmix23_infovqa_p2_500_target_v7.json",
+      "cell": "M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
+      "scored_dir": "results/scored/extension_calib_numeric_v2/M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
+      "config": "configs/eval/M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2.json",
       "kind": "derived_prediction_view",
       "expected_QA": 500
     },
     {
-      "cell": "M2_OT_Hmix23_docvqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M2_OT_Hmix23_docvqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M2_OT_Hmix23_docvqa_p2_500_target_v7",
-      "config": "configs/eval/M2_OT_Hmix23_docvqa_p2_500_target_v7.json",
+      "cell": "M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2",
+      "scored_dir": "results/scored/extension_calib_numeric_v2/M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2",
+      "config": "configs/eval/M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2.json",
       "kind": "derived_prediction_view",
       "expected_QA": 500
     },
     {
-      "cell": "M2_OT_Hmix23_chartqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M2_OT_Hmix23_chartqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M2_OT_Hmix23_chartqa_p2_500_target_v7",
-      "config": "configs/eval/M2_OT_Hmix23_chartqa_p2_500_target_v7.json",
-      "kind": "derived_prediction_view",
-      "expected_QA": 500
-    },
-    {
-      "cell": "M3_OT_Hmix23_textvqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M3_OT_Hmix23_textvqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M3_OT_Hmix23_textvqa_p2_500_target_v7",
-      "config": "configs/eval/M3_OT_Hmix23_textvqa_p2_500_target_v7.json",
-      "kind": "derived_prediction_view",
-      "expected_QA": 500
-    },
-    {
-      "cell": "M3_OT_Hmix23_infovqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M3_OT_Hmix23_infovqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M3_OT_Hmix23_infovqa_p2_500_target_v7",
-      "config": "configs/eval/M3_OT_Hmix23_infovqa_p2_500_target_v7.json",
-      "kind": "derived_prediction_view",
-      "expected_QA": 500
-    },
-    {
-      "cell": "M3_OT_Hmix23_docvqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M3_OT_Hmix23_docvqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M3_OT_Hmix23_docvqa_p2_500_target_v7",
-      "config": "configs/eval/M3_OT_Hmix23_docvqa_p2_500_target_v7.json",
-      "kind": "derived_prediction_view",
-      "expected_QA": 500
-    },
-    {
-      "cell": "M3_OT_Hmix23_chartqa_p2_500_target_v7",
-      "raw_dir": "results/extension_views/source_compat_v1/M3_OT_Hmix23_chartqa_p2_500_target_v7",
-      "scored_dir": "results/scored/extension_source_compat_v1/M3_OT_Hmix23_chartqa_p2_500_target_v7",
-      "config": "configs/eval/M3_OT_Hmix23_chartqa_p2_500_target_v7.json",
+      "cell": "M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2",
+      "scored_dir": "results/scored/extension_calib_numeric_v2/M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2",
+      "config": "configs/eval/M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2.json",
       "kind": "derived_prediction_view",
       "expected_QA": 500
     }
   ],
   "closure": [
     {
-      "raw_dir": "results/onlyterp_hmix23_optional500/M1_OT_Hmix23_textvqa_p2_500_missing468_v6",
+      "raw_dir": "results/p2_calib_numeric_v2/M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2_fresh500_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/onlyterp_hmix23_v2/M1_OT_Hmix23_textvqa_probe2_v2",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix23_textvqa_stage64_missing28_v5",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix23_textvqa_stage8_missing2_v4",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/extension_views/source_compat_v1/M1_OT_Hmix23_textvqa_p2_500_target_v6",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/onlyterp_hmix23_optional500/M1_OT_Hmix23_infovqa_p2_500_missing468_v6",
+      "raw_dir": "results/p2_calib_numeric_v2/M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2_fresh500_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix23_infovqa_stage64_missing28_v5",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/onlyterp_pilot_reuse/M1_OT_Hmix23_infovqa_stage8_missing4_v4",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/extension_views/source_compat_v1/M1_OT_Hmix23_infovqa_p2_500_target_v6",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/onlyterp_hmix23_p2_v7/M1_OT_Hmix23_docvqa_p2_500_missing500_v7",
+      "raw_dir": "results/p2_calib_numeric_v2/M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2_fresh500_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/extension_views/source_compat_v1/M1_OT_Hmix23_docvqa_p2_500_target_v7",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/onlyterp_hmix23_p2_v7/M1_OT_Hmix23_chartqa_p2_500_missing500_v7",
+      "raw_dir": "results/p2_calib_numeric_v2/M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2_fresh500_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/extension_views/source_compat_v1/M1_OT_Hmix23_chartqa_p2_500_target_v7",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/onlyterp_compat_smoke_v1/M2_OT_Hmix23_textvqa_probe2_v1",
+      "raw_dir": "results/p2_calib_numeric_v2/M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2_fresh500_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/onlyterp_hmix23_p2_refresh/source_compat_cpu_v2_M2_OT23/M2_OT_Hmix23_textvqa_p2_500_missing498_source_compat_cpu_v2_M2_OT23",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/extension_views/source_compat_v1/M2_OT_Hmix23_textvqa_p2_500_target_v7",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/onlyterp_hmix23_p2_refresh/source_compat_cpu_v2_M2_OT23/M2_OT_Hmix23_infovqa_p2_500_missing500_source_compat_cpu_v2_M2_OT23",
+      "raw_dir": "results/p2_calib_numeric_v2/M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2_fresh500_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/extension_views/source_compat_v1/M2_OT_Hmix23_infovqa_p2_500_target_v7",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/onlyterp_hmix23_p2_refresh/source_compat_cpu_v2_M2_OT23/M2_OT_Hmix23_docvqa_p2_500_missing500_source_compat_cpu_v2_M2_OT23",
+      "raw_dir": "results/p2_calib_numeric_v2/M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2_fresh500_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/extension_views/source_compat_v1/M2_OT_Hmix23_docvqa_p2_500_target_v7",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2",
       "kind": "derived_prediction_view"
     },
     {
-      "raw_dir": "results/onlyterp_hmix23_p2_refresh/source_compat_cpu_v2_M2_OT23/M2_OT_Hmix23_chartqa_p2_500_missing500_source_compat_cpu_v2_M2_OT23",
+      "raw_dir": "results/p2_calib_numeric_v2/M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2_fresh500_v1",
       "kind": "original_inference_run"
     },
     {
-      "raw_dir": "results/extension_views/source_compat_v1/M2_OT_Hmix23_chartqa_p2_500_target_v7",
-      "kind": "derived_prediction_view"
-    },
-    {
-      "raw_dir": "results/onlyterp_compat_smoke_v1/M3_OT_Hmix23_textvqa_probe2_v1",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/onlyterp_hmix23_p2_refresh/source_compat_cpu_v2_M3_OT23/M3_OT_Hmix23_textvqa_p2_500_missing498_source_compat_cpu_v2_M3_OT23",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/extension_views/source_compat_v1/M3_OT_Hmix23_textvqa_p2_500_target_v7",
-      "kind": "derived_prediction_view"
-    },
-    {
-      "raw_dir": "results/onlyterp_hmix23_p2_refresh/source_compat_cpu_v2_M3_OT23/M3_OT_Hmix23_infovqa_p2_500_missing500_source_compat_cpu_v2_M3_OT23",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/extension_views/source_compat_v1/M3_OT_Hmix23_infovqa_p2_500_target_v7",
-      "kind": "derived_prediction_view"
-    },
-    {
-      "raw_dir": "results/onlyterp_hmix23_p2_refresh/source_compat_cpu_v2_M3_OT23/M3_OT_Hmix23_docvqa_p2_500_missing500_source_compat_cpu_v2_M3_OT23",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/extension_views/source_compat_v1/M3_OT_Hmix23_docvqa_p2_500_target_v7",
-      "kind": "derived_prediction_view"
-    },
-    {
-      "raw_dir": "results/onlyterp_hmix23_p2_refresh/source_compat_cpu_v2_M3_OT23/M3_OT_Hmix23_chartqa_p2_500_missing500_source_compat_cpu_v2_M3_OT23",
-      "kind": "original_inference_run"
-    },
-    {
-      "raw_dir": "results/extension_views/source_compat_v1/M3_OT_Hmix23_chartqa_p2_500_target_v7",
+      "raw_dir": "results/extension_views/calib_numeric_v2/M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2",
       "kind": "derived_prediction_view"
     }
   ]

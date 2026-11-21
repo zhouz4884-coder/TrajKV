@@ -1,0 +1,276 @@
+{
+  "schema": "baseline_matrix.numeric_source_speed_declaration.v3",
+  "kind": "qwen_400",
+  "status": "DECLARED_ONLY_NO_EXPECTED_OR_GPU_RUN",
+  "rows": [
+    {
+      "model": "M2",
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA_per_method": 2,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 10,
+      "measured_trials": 30,
+      "total_trials": 40,
+      "source_configs": {
+        "F": "configs/eval/M2_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M2_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M2_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+        "E_r0888": "configs/eval/M2_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M2_OT_Hmix23_textvqa_p2_500_target_v7.json"
+      },
+      "source_config_sha256": {
+        "F": "83f9bbbc1e341f112cd502b74e70985437361e6fbd86638c86de13257678719c",
+        "K2_g32R32": "78324f04df31d48d76c1faf144e2ac252e7353b34070fe3869004d5c67211a37",
+        "C2_bias32": "86bd6ffcf56a1186a6e8ffe9adfe068b0d8311ece9446fbf08fad408847822eb",
+        "E_r0888": "f14cf10ba28a6c399d96692b7f0a7c41b43f2da0b7ced4f91bc7db19eebc2db8",
+        "OT_Hmix23": "ec6eb2ccc8b7a4e6244919ffb8c34839718d4ea2e7daabc66d5f59de0d7cd4de"
+      },
+      "model_spec": {
+        "model_id": "M2",
+        "hf_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+        "architecture": "Qwen2_5_VLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen2_5_vl",
+        "mrope_section": [
+          16,
+          24,
+          24
+        ],
+        "mrope_interleaved": false,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "processor_spatial_factor": 28
+      },
+      "preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "source_gate": "All five own model/dataset numeric-scope PASS500+independent score+source closure",
+      "actual_expected_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_job_withheld_until_actual_same_model_dataset_40_independent_gate": true
+    },
+    {
+      "model": "M2",
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA_per_method": 8,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 40,
+      "measured_trials": 120,
+      "total_trials": 160,
+      "source_configs": {
+        "F": "configs/eval/M2_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M2_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M2_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+        "E_r0888": "configs/eval/M2_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M2_OT_Hmix23_textvqa_p2_500_target_v7.json"
+      },
+      "source_config_sha256": {
+        "F": "83f9bbbc1e341f112cd502b74e70985437361e6fbd86638c86de13257678719c",
+        "K2_g32R32": "78324f04df31d48d76c1faf144e2ac252e7353b34070fe3869004d5c67211a37",
+        "C2_bias32": "86bd6ffcf56a1186a6e8ffe9adfe068b0d8311ece9446fbf08fad408847822eb",
+        "E_r0888": "f14cf10ba28a6c399d96692b7f0a7c41b43f2da0b7ced4f91bc7db19eebc2db8",
+        "OT_Hmix23": "ec6eb2ccc8b7a4e6244919ffb8c34839718d4ea2e7daabc66d5f59de0d7cd4de"
+      },
+      "model_spec": {
+        "model_id": "M2",
+        "hf_id": "Qwen/Qwen2.5-VL-7B-Instruct",
+        "revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+        "architecture": "Qwen2_5_VLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen2_5_vl",
+        "mrope_section": [
+          16,
+          24,
+          24
+        ],
+        "mrope_interleaved": false,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "processor_spatial_factor": 28
+      },
+      "preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "source_gate": "All five own model/dataset numeric-scope PASS500+independent score+source closure",
+      "actual_expected_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_job_withheld_until_actual_same_model_dataset_40_independent_gate": true
+    },
+    {
+      "model": "M3",
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA_per_method": 2,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 10,
+      "measured_trials": 30,
+      "total_trials": 40,
+      "source_configs": {
+        "F": "configs/eval/M3_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M3_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M3_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+        "E_r0888": "configs/eval/M3_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M3_OT_Hmix23_textvqa_p2_500_target_v7.json"
+      },
+      "source_config_sha256": {
+        "F": "94f9cdb751eeca42b07fe71371deba36584b6dab2b22da2a99df54d2b7e5505e",
+        "K2_g32R32": "59b26b2049e63ea874720801fad0b2e504dc578703e4ba60fc9b5c250e16bbef",
+        "C2_bias32": "a56785628998edfa31bea899d28f1581854db337db1c3b83adde5f81ce692408",
+        "E_r0888": "d48fa67f3d8be223c842615b14b7af442336674ec03227cbba7ceeef41d2f773",
+        "OT_Hmix23": "352fb426118d895bc5ae4505424f2e5e2f5274d692984b6473f3407b107ed872"
+      },
+      "model_spec": {
+        "model_id": "M3",
+        "hf_id": "Qwen/Qwen3-VL-4B-Instruct",
+        "revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+        "architecture": "Qwen3VLForConditionalGeneration",
+        "layers": 36,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen3_vl",
+        "mrope_section": [
+          24,
+          20,
+          20
+        ],
+        "mrope_interleaved": true,
+        "deepstack_visual_indexes": [
+          5,
+          11,
+          17
+        ],
+        "sliding_attention": false,
+        "processor_spatial_factor": 32
+      },
+      "preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "source_gate": "All five own model/dataset numeric-scope PASS500+independent score+source closure",
+      "actual_expected_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_job_withheld_until_actual_same_model_dataset_40_independent_gate": true
+    },
+    {
+      "model": "M3",
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA_per_method": 8,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 40,
+      "measured_trials": 120,
+      "total_trials": 160,
+      "source_configs": {
+        "F": "configs/eval/M3_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M3_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M3_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+        "E_r0888": "configs/eval/M3_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M3_OT_Hmix23_textvqa_p2_500_target_v7.json"
+      },
+      "source_config_sha256": {
+        "F": "94f9cdb751eeca42b07fe71371deba36584b6dab2b22da2a99df54d2b7e5505e",
+        "K2_g32R32": "59b26b2049e63ea874720801fad0b2e504dc578703e4ba60fc9b5c250e16bbef",
+        "C2_bias32": "a56785628998edfa31bea899d28f1581854db337db1c3b83adde5f81ce692408",
+        "E_r0888": "d48fa67f3d8be223c842615b14b7af442336674ec03227cbba7ceeef41d2f773",
+        "OT_Hmix23": "352fb426118d895bc5ae4505424f2e5e2f5274d692984b6473f3407b107ed872"
+      },
+      "model_spec": {
+        "model_id": "M3",
+        "hf_id": "Qwen/Qwen3-VL-4B-Instruct",
+        "revision": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+        "architecture": "Qwen3VLForConditionalGeneration",
+        "layers": 36,
+        "query_heads": 32,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "image_token_id": 151655,
+        "vision_start_token_id": 151652,
+        "vision_end_token_id": 151653,
+        "native_adapter": "qwen3_vl",
+        "mrope_section": [
+          24,
+          20,
+          20
+        ],
+        "mrope_interleaved": true,
+        "deepstack_visual_indexes": [
+          5,
+          11,
+          17
+        ],
+        "sliding_attention": false,
+        "processor_spatial_factor": 32
+      },
+      "preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "source_gate": "All five own model/dataset numeric-scope PASS500+independent score+source closure",
+      "actual_expected_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_job_withheld_until_actual_same_model_dataset_40_independent_gate": true
+    }
+  ],
+  "planned_trials": 400,
+  "warmup_trials": 100,
+  "measured_trials": 300,
+  "source_P2_matrix_sha256": "fb816d1680734c32ce1474eb8dcc89a860f703ca772783d371311e785f801d5a",
+  "source_P3_matrix_sha256": "e30793e00388aa1e882f70e3411ed25ab234eaab89b3d055d35dea5c86255cb8",
+  "actual_output_namespace": "qwen_source_speed_supplement400_numeric_v3",
+  "locked_runtime_sources_sha256": {
+    "code/benchmark_speed.py": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+    "code/evaluate.py": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+    "ops/prepare_speed_expected.py": "e10c540bc62e65ea6643646453023163058e3620a9425fa3f0d019a7f1b1db76"
+  },
+  "legacy_Calib_predictions_or_timing_reused_as_new": false,
+  "trials_are_not_QA": true,
+  "quality_QA_added": 0,
+  "host_quiet_asserted": false,
+  "cross_domain_or_cross_model_speed_ranking": false,
+  "stage_launch_queue_or_execution_permission_added": false
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "baseline_matrix.eval.v1",
+  "model_id": "M2",
+  "model_revision": "cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "model_path": "${DATA_ROOT}/data/models/Qwen2.5-VL-7B-Instruct/cc594898137f460bfe9f0759e9844b3ce807cfb5",
+  "model_source_lock": "${DATA_ROOT}/configs/models/hf_revision_lock.json",
+  "inputs": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+  "start": 0,
+  "count": 4,
+  "max_new_tokens": 64,
+  "question_suffix": "\nAnswer the question using a single word or phrase.",
+  "preprocessing": {
+    "min_pixels": 200704,
+    "max_pixels": 1003520
+  },
+  "method": {
+    "id": "TurboQuant_0xSero_sourceDefault_K3V2_g32_R128_visual_v1",
+    "family": "turboquant",
+    "adapter_module": "methods.turboquant_buffered_adapter",
+    "adapter_class": "TurboQuantBufferedAdapter",
+    "constructor_args": {
+      "key_bits": 3,
+      "value_bits": 2,
+      "group_size": 32,
+      "recent_window": 128
+    },
+    "reader_backend": "upstream_triton_score",
+    "per_layer_seed": {
+      "base": 42,
+      "step": 6
+    },
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "scope": "SUPPLEMENT_FULL_SOURCE_TQ_P0_FIXED_FIRST4_TEXT_QA_NO_GT_MAX64_NEW_PROFILE_NOT_EXECUTED"
+}

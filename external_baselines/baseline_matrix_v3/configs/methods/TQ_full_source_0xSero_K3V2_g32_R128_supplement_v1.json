@@ -1,0 +1,59 @@
+{
+  "schema": "baseline_matrix.full_turboquant_source_profile.v1",
+  "status": "CPU_DECLARED_NEW_STANDARD_P0_NOT_EXECUTED",
+  "method": {
+    "id": "TurboQuant_0xSero_sourceDefault_K3V2_g32_R128_visual_v1",
+    "family": "turboquant",
+    "adapter_module": "methods.turboquant_buffered_adapter",
+    "adapter_class": "TurboQuantBufferedAdapter",
+    "constructor_args": {
+      "key_bits": 3,
+      "value_bits": 2,
+      "group_size": 32,
+      "recent_window": 128
+    },
+    "reader_backend": "upstream_triton_score",
+    "per_layer_seed": {
+      "base": 42,
+      "step": 6
+    },
+    "encode_scope": "visual",
+    "information_condition": "query_unknown"
+  },
+  "source_repo": "https://github.com/0xSero/turboquant",
+  "source_commit": "31660314b229b8d1c29bfddf8b9f5026b5121095",
+  "source_hashes": {
+    "turboquant/quantizer.py": "37be2cf9e2795ebe3c9baea311d93ff6a87abbf3322b8002350709d90b4f01c7",
+    "turboquant/rotation.py": "2e98e9e9248bed857d52124e35b8e435fc57929c4fe516d4a2aecbd37d815fdf",
+    "turboquant/kv_cache.py": "189e49a35d42f8cf5b4e129438164c2931efbd624e93f07742b52b01b3250b37",
+    "turboquant/codebook.py": "de89d9a35d30f7c6a777568cf0c061d1ecaf78db6fef3dabf65f320209b974c8",
+    "turboquant/codebooks/codebook_d128_b2.json": "7e3b2bf4cfcbed6a1055d11abc45129faf74cd9a49c051909fcbc3cfba383b4a",
+    "turboquant/triton_kernels.py": "82189057fb6f8a2f1b758d2bf1aa3eee1ff5eddd216237572bc5810040363c1d"
+  },
+  "local_source_pins": {
+    "code/methods/turboquant_adapter.py": "bd824c42b9a653001c88f542879cea820865ff31b5ab342c2322f1d9b4f2bfe5",
+    "code/methods/turboquant_buffered_adapter.py": "a01cf815f25ad76636e6a6e4de2b5a17de32c4f3140acc9ce6a2d64b54b34796",
+    "configs/methods/turboquant_eviction_lock.json": "4074c7784634a04d66e1b5749aa6826008dcd9cdc8845bf7fbf7294e69861983",
+    "configs/methods/turboquant_source_instance_v2.json": "9c50683f8c2017739a29162204ecd47f4eca3ab2df1595b4fd6579b90825121a",
+    "code/evaluate.py": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+    "code/prediction_cache.py": "e8ada8272d5e69092918bb926d3ed008368cd4f18ddd5425b1fca5573a8c6bab"
+  },
+  "K_definition": "2-bit source spherical-MSE plus1-bit independent Gaussian QJL; neither component disabled",
+  "V_definition": "unchanged source per-token group32 affine min/max2bit",
+  "source_default_prefill_window_logical_positions": 128,
+  "text_KV_precision": "FP16 native exact outside visual port",
+  "source_seed_effective": "42+7*layer_idx (ctor42+6*i plus encode layer_idx=i)",
+  "numerical_variant": "UPSTREAM_FP32_ENCODER_AND_FP32_METADATA",
+  "quantized_region_average_payload_bits": 2.5,
+  "whole_owner_actual_bits": null,
+  "actual_bits_not_payload_and_no_iso_budget_assumption": true,
+  "reader": "source packed-K score kernels; temporary source FP32 V decode plus single exact-tail/text causal softmax; not whole-KV fused/optimized-system speed",
+  "visual_port_boundaries": "Only visual candidates before question; original logical recent128 applied to visual positions; all nonvisual/text kept FP16. Not original rolling whole-LLM cache or paper mixed-outlier tables.",
+  "old_R0_P1_or_max16_diagnostic_not_new_profile_P0_cache": true,
+  "models_own_P0_required": [
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "new_inference_stage_or_transport": false
+}

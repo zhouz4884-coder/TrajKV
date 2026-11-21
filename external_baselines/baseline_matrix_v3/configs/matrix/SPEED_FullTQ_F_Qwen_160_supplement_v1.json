@@ -1,0 +1,134 @@
+{
+  "schema": "baseline_matrix.full_tq_two_profile_speed_declaration.v1",
+  "kind": "qwen_160",
+  "status": "DECLARED_ONLY_NO_EXPECTED_JOBS_OR_GPU",
+  "rows": [
+    {
+      "model": "M2",
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA_per_method": 2,
+      "methods": [
+        "F",
+        "FullTQ"
+      ],
+      "trials": 16,
+      "warmup_trials": 4,
+      "measured_trials": 12,
+      "source_configs": {
+        "F": "configs/eval/M2_F_textvqa_p2_500_v1.json",
+        "FullTQ": "configs/eval/M2_TQfull_0xSero_K3V2_g32_R128_textvqa_p2_500_supplement_v1.json"
+      },
+      "source_config_sha256": {
+        "F": "83f9bbbc1e341f112cd502b74e70985437361e6fbd86638c86de13257678719c",
+        "FullTQ": "581b39bea4e95daef24ba9b56ad679916f3988b52558cb1f15a810cdcd3ec48e"
+      },
+      "native_preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "actual_expecteds_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_requires_own_model_domain_actual16_smoke": true
+    },
+    {
+      "model": "M2",
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA_per_method": 8,
+      "methods": [
+        "F",
+        "FullTQ"
+      ],
+      "trials": 64,
+      "warmup_trials": 16,
+      "measured_trials": 48,
+      "source_configs": {
+        "F": "configs/eval/M2_F_textvqa_p2_500_v1.json",
+        "FullTQ": "configs/eval/M2_TQfull_0xSero_K3V2_g32_R128_textvqa_p2_500_supplement_v1.json"
+      },
+      "source_config_sha256": {
+        "F": "83f9bbbc1e341f112cd502b74e70985437361e6fbd86638c86de13257678719c",
+        "FullTQ": "581b39bea4e95daef24ba9b56ad679916f3988b52558cb1f15a810cdcd3ec48e"
+      },
+      "native_preprocessing": {
+        "min_pixels": 200704,
+        "max_pixels": 1003520
+      },
+      "actual_expecteds_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_requires_own_model_domain_actual16_smoke": true
+    },
+    {
+      "model": "M3",
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA_per_method": 2,
+      "methods": [
+        "F",
+        "FullTQ"
+      ],
+      "trials": 16,
+      "warmup_trials": 4,
+      "measured_trials": 12,
+      "source_configs": {
+        "F": "configs/eval/M3_F_textvqa_p2_500_v1.json",
+        "FullTQ": "configs/eval/M3_TQfull_0xSero_K3V2_g32_R128_textvqa_p2_500_supplement_v1.json"
+      },
+      "source_config_sha256": {
+        "F": "94f9cdb751eeca42b07fe71371deba36584b6dab2b22da2a99df54d2b7e5505e",
+        "FullTQ": "883d19e99115c3031b84071f4f7f14c1305b3fba37cd19505585d4bff6a982ca"
+      },
+      "native_preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "actual_expecteds_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_requires_own_model_domain_actual16_smoke": true
+    },
+    {
+      "model": "M3",
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA_per_method": 8,
+      "methods": [
+        "F",
+        "FullTQ"
+      ],
+      "trials": 64,
+      "warmup_trials": 16,
+      "measured_trials": 48,
+      "source_configs": {
+        "F": "configs/eval/M3_F_textvqa_p2_500_v1.json",
+        "FullTQ": "configs/eval/M3_TQfull_0xSero_K3V2_g32_R128_textvqa_p2_500_supplement_v1.json"
+      },
+      "source_config_sha256": {
+        "F": "94f9cdb751eeca42b07fe71371deba36584b6dab2b22da2a99df54d2b7e5505e",
+        "FullTQ": "883d19e99115c3031b84071f4f7f14c1305b3fba37cd19505585d4bff6a982ca"
+      },
+      "native_preprocessing": {
+        "min_pixels": 65536,
+        "max_pixels": 16777216
+      },
+      "actual_expecteds_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_requires_own_model_domain_actual16_smoke": true
+    }
+  ],
+  "planned_trials": 160,
+  "planned_warmup_trials": 40,
+  "planned_measured_trials": 120,
+  "source_scope_sha256": "acba07d91ec883af1816e898e605f5f14eae233288a3eb24c1d3d8a75f1044c7",
+  "profile_sha256": "e0f63cfa2fbacd87d54ea20c907211ce51a33539072db1fe555d616f38cdb2c2",
+  "source_driver_sha256": {
+    "code/benchmark_speed.py": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+    "ops/prepare_speed_expected.py": "e10c540bc62e65ea6643646453023163058e3620a9425fa3f0d019a7f1b1db76"
+  },
+  "host_quiet_asserted": false,
+  "core560_400_or_numeric_v3_modified": false,
+  "quality_QA_added": 0,
+  "trials_not_independent_QA": true,
+  "no_cross_model_domain_or_day_speed_average_or_wall_only_rank": true,
+  "actual_ledger_or_queue_written": false
+}

@@ -1,8 +1,8 @@
-# External baseline increment: ONLYTERP_HMIX23_MSE_QJL0_THREE_MODELS_ALL4_FIXED500
+# External baseline increment: CALIB_NUMERIC_V2_M1_TWO_BITS_ALL4_FIXED500
 
-Declared scope: Exactly the already-declared12 OT_Hmix23 fixed500 cells:3 models x4 official-dataset subsets. OnlyTerp Algorithm1-MSE/QJL0 practical Hadamard regular2/outlier3 visual port, not Hmix12, prod, Google paper-exact or optimized-kernel speed. Not full splits, P2-114 or whole-library completion.
+Declared scope: Exactly M1 1bit/2bit x Text/Info/Doc/Chart predetermined500; subset milestone of unchanged core114 and whole126/24, not whole-library completion. Common FP16 visual source-constant CalibQuant port with FP32 affine/calibration and exact-text QK; source packed QK/WV retained. Not author BF16 system or recovered author calibration provenance.
 
-Closed/scored cells: 12/12; questions: 6000/6000.
+Closed/scored cells: 8/8; questions: 4000/4000.
 
 The primary phase totals above exclude the independently declared auxiliary groups below. Auxiliary view counts do not imply additional unique GPU inference; provenance retains reused predictions. Reports are bound by explicit completed-evidence inventories; source/configuration files may also describe unrun targets. Completion is assessed only against these declared groups, not the whole external SOTA library or all P2/P3 research. A progress preview cannot be published by the reviewed publisher. Derived views retain original predictions and instrumented timing; they are not new GPU inference runs. All original donor runs and source/retrieval proofs are archived, including donors from earlier phases.
 

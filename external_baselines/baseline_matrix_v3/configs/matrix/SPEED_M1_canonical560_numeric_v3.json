@@ -1,0 +1,232 @@
+{
+  "schema": "baseline_matrix.numeric_source_speed_declaration.v3",
+  "kind": "m1_560",
+  "status": "DECLARED_ONLY_NO_EXPECTED_OR_GPU_RUN",
+  "rows": [
+    {
+      "model": "M1",
+      "dataset": "textvqa",
+      "role": "hardware_smoke",
+      "QA_per_method": 2,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 10,
+      "measured_trials": 30,
+      "total_trials": 40,
+      "source_configs": {
+        "F": "configs/eval/M1_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+        "E_r0888": "configs/eval/M1_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json"
+      },
+      "source_config_sha256": {
+        "F": "f7ddf90ae551e424ce1801e0dcf6ab33e819ef9796d2e44438004732078a4e91",
+        "K2_g32R32": "f57462f89a773641a36f66c801812cf0a92747339a315b032eca3bdf5533f9d2",
+        "C2_bias32": "cafbb82ad112fdac79c758a5b994c0fa5d96bc285d4125a07aa487c8fe407a02",
+        "E_r0888": "b9c1aabbd3f057166dba9b6b2de7fdaa2cb40f4060a9f86dce60791cb719afb2",
+        "OT_Hmix23": "966ed14257f2c26c2499eff12b9b76202b9887162d064a72ec99c26ee1c63c95"
+      },
+      "model_spec": {
+        "model_id": "M1",
+        "hf_id": "OpenGVLab/InternVL3-8B-hf",
+        "architecture": "InternVLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151667,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "native_adapter": "internvl3",
+        "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+        "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+      },
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "source_gate": "All five own model/dataset numeric-scope PASS500+independent score+source closure",
+      "actual_expected_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_job_withheld_until_actual_same_model_dataset_40_independent_gate": true
+    },
+    {
+      "model": "M1",
+      "dataset": "textvqa",
+      "role": "formal_fixed_cohort",
+      "QA_per_method": 16,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 80,
+      "measured_trials": 240,
+      "total_trials": 320,
+      "source_configs": {
+        "F": "configs/eval/M1_F_textvqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json",
+        "E_r0888": "configs/eval/M1_E_r0888_textvqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json"
+      },
+      "source_config_sha256": {
+        "F": "f7ddf90ae551e424ce1801e0dcf6ab33e819ef9796d2e44438004732078a4e91",
+        "K2_g32R32": "f57462f89a773641a36f66c801812cf0a92747339a315b032eca3bdf5533f9d2",
+        "C2_bias32": "cafbb82ad112fdac79c758a5b994c0fa5d96bc285d4125a07aa487c8fe407a02",
+        "E_r0888": "b9c1aabbd3f057166dba9b6b2de7fdaa2cb40f4060a9f86dce60791cb719afb2",
+        "OT_Hmix23": "966ed14257f2c26c2499eff12b9b76202b9887162d064a72ec99c26ee1c63c95"
+      },
+      "model_spec": {
+        "model_id": "M1",
+        "hf_id": "OpenGVLab/InternVL3-8B-hf",
+        "architecture": "InternVLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151667,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "native_adapter": "internvl3",
+        "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+        "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+      },
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "source_gate": "All five own model/dataset numeric-scope PASS500+independent score+source closure",
+      "actual_expected_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_job_withheld_until_actual_same_model_dataset_40_independent_gate": true
+    },
+    {
+      "model": "M1",
+      "dataset": "infovqa",
+      "role": "hardware_smoke",
+      "QA_per_method": 2,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 10,
+      "measured_trials": 30,
+      "total_trials": 40,
+      "source_configs": {
+        "F": "configs/eval/M1_F_infovqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M1_K2_g32R32_infovqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2.json",
+        "E_r0888": "configs/eval/M1_E_r0888_infovqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M1_OT_Hmix23_infovqa_p2_500_target_v6.json"
+      },
+      "source_config_sha256": {
+        "F": "9bf91934d64af0d317c66b1d674144911f8a68b94acca26e6bdabcf3a35a62f0",
+        "K2_g32R32": "59a3943ce1938cd8a67f51015553ba1a47bc5dbdfe5e31e7731e72d6943440d2",
+        "C2_bias32": "7657c99d889b2a5fe30a3f859b05e4f03eb51300723d36fea2f3fd6757990aff",
+        "E_r0888": "0045673ed390b0cbf6b69dc54540143ef71e99eeea498ca75cf9a6edb417d2f7",
+        "OT_Hmix23": "acfdd84feebccfc8ce159d5d0155b6b07a97a4ddea76e288afd60b5a69d18131"
+      },
+      "model_spec": {
+        "model_id": "M1",
+        "hf_id": "OpenGVLab/InternVL3-8B-hf",
+        "architecture": "InternVLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151667,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "native_adapter": "internvl3",
+        "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+        "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+      },
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "source_gate": "All five own model/dataset numeric-scope PASS500+independent score+source closure",
+      "actual_expected_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_job_withheld_until_actual_same_model_dataset_40_independent_gate": true
+    },
+    {
+      "model": "M1",
+      "dataset": "infovqa",
+      "role": "formal_fixed_cohort",
+      "QA_per_method": 8,
+      "methods": [
+        "F",
+        "K2_g32R32",
+        "C2_bias32",
+        "E_r0888",
+        "OT_Hmix23"
+      ],
+      "warmup_trials": 40,
+      "measured_trials": 120,
+      "total_trials": 160,
+      "source_configs": {
+        "F": "configs/eval/M1_F_infovqa_p2_500_v1.json",
+        "K2_g32R32": "configs/eval/M1_K2_g32R32_infovqa_p2_500_v1.json",
+        "C2_bias32": "configs/eval/M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2.json",
+        "E_r0888": "configs/eval/M1_E_r0888_infovqa_p2_500_v1.json",
+        "OT_Hmix23": "configs/eval/M1_OT_Hmix23_infovqa_p2_500_target_v6.json"
+      },
+      "source_config_sha256": {
+        "F": "9bf91934d64af0d317c66b1d674144911f8a68b94acca26e6bdabcf3a35a62f0",
+        "K2_g32R32": "59a3943ce1938cd8a67f51015553ba1a47bc5dbdfe5e31e7731e72d6943440d2",
+        "C2_bias32": "7657c99d889b2a5fe30a3f859b05e4f03eb51300723d36fea2f3fd6757990aff",
+        "E_r0888": "0045673ed390b0cbf6b69dc54540143ef71e99eeea498ca75cf9a6edb417d2f7",
+        "OT_Hmix23": "acfdd84feebccfc8ce159d5d0155b6b07a97a4ddea76e288afd60b5a69d18131"
+      },
+      "model_spec": {
+        "model_id": "M1",
+        "hf_id": "OpenGVLab/InternVL3-8B-hf",
+        "architecture": "InternVLForConditionalGeneration",
+        "layers": 28,
+        "query_heads": 28,
+        "kv_heads": 4,
+        "head_dim": 128,
+        "image_token_id": 151667,
+        "deepstack_visual_indexes": [],
+        "sliding_attention": false,
+        "native_adapter": "internvl3",
+        "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+        "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+      },
+      "preprocessing": {
+        "max_patches": 8
+      },
+      "source_gate": "All five own model/dataset numeric-scope PASS500+independent score+source closure",
+      "actual_expected_prepared": false,
+      "actual_GPU_trials": 0,
+      "formal_job_withheld_until_actual_same_model_dataset_40_independent_gate": true
+    }
+  ],
+  "planned_trials": 560,
+  "warmup_trials": 140,
+  "measured_trials": 420,
+  "source_P2_matrix_sha256": "fb816d1680734c32ce1474eb8dcc89a860f703ca772783d371311e785f801d5a",
+  "source_P3_matrix_sha256": "e30793e00388aa1e882f70e3411ed25ab234eaab89b3d055d35dea5c86255cb8",
+  "actual_output_namespace": "m1_canonical_source_representatives_numeric_v3",
+  "locked_runtime_sources_sha256": {
+    "code/benchmark_speed.py": "9946d79d93c041a0692d79c7120d9d682daad37cc57d99ea77fcab6d9fbd92df",
+    "code/evaluate.py": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+    "ops/prepare_speed_expected.py": "e10c540bc62e65ea6643646453023163058e3620a9425fa3f0d019a7f1b1db76"
+  },
+  "legacy_Calib_predictions_or_timing_reused_as_new": false,
+  "trials_are_not_QA": true,
+  "quality_QA_added": 0,
+  "host_quiet_asserted": false,
+  "cross_domain_or_cross_model_speed_ranking": false,
+  "stage_launch_queue_or_execution_permission_added": false
+}
