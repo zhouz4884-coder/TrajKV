@@ -1,0 +1,28 @@
+{
+  "schema": "trajkv.round9.calibration_fit_run.v1",
+  "config": {
+    "schema": "trajkv.round9.fit_config.v1",
+    "purpose": "calibration_only",
+    "kind": "K-MSE",
+    "collection": "${DATA_ROOT}/results/round9_v1/calibration32_v1",
+    "steps": 100,
+    "learning_rate": 0.003,
+    "legacy_a2": "${DATA_DISK}/VLAtest/TrajKV/code/a2",
+    "legacy_experiments": "${DATA_DISK}/VLAtest/TrajKV/code/experiments",
+    "legacy_scripts": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts"
+  },
+  "config_sha256": "0f198bf4def955be27f5c7cb82032edfe9dfc7a54e639ac3fde38e5c4d0cb8e0",
+  "collection_complete_sha256": "c838b3a79cb970233a9579f8972ae4276157fad1001fd9b4e9118945bc0dc521",
+  "sources": {
+    "${DATA_ROOT}/jobs/bm_R9_fit_K_MSE100_v1.source/code/round9_train_v1.py": "4809904d5a88643090535b925b7de9f090f2409c53d219671c07614dda466779",
+    "${DATA_ROOT}/jobs/bm_R9_fit_K_MSE100_v1.source/code/round9_calibration_v1.py": "757cc51740ad2f92d8ebd9ad9adadf2719131ae634b16b24052363f8e45ba84f",
+    "${DATA_ROOT}/jobs/bm_R9_fit_K_MSE100_v1.source/code/round9_keyfit_v1.py": "96adf8b9a94e51da00ab99eaeebb83989b005f15bb3762b18d6c01d4ef5c6ec9"
+  },
+  "private_WO_sha256": "d5957aef17614b20788bcc3c540d17f47a8d55971bce9190a4c4181aacdec3ef",
+  "actual_GPU": "NVIDIA GeForce RTX 3090",
+  "references_read": false,
+  "calibration_sources": 32,
+  "training_events": 2464,
+  "query_source": "compressed_query_same_student_text",
+  "source_weights_or_private_tensors_public_upload": false
+}

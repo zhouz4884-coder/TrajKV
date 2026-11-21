@@ -12,18 +12,17 @@ import zipfile
 
 sys.dont_write_bytecode=True
 
-# Explicit R7 source branch; canonical V3 branch below is unchanged.
 import math
-R7_SCHEMA='trajkv.r7_research.frozen_matrix500.v2'
-R7_POLICY_FILE='results/publication/R7_custom_driver_support_v2/R7_SOURCE_POLICY.json'
-R7_SOURCE_PINS={'code/r7_frozen_pilot_v2.py': '3ff896405be5ac91067bdbe8d736c0552e46f835dea90a93c9835ceeb8fd3a91', 'code/r7_legacy_bridge_v2.py': '608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad', 'code/r7_legacy_bridge_v1.py': 'b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b', 'code/dataset_registry.py': '4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983', 'code/cache_bridge.py': '36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025', 'code/attention_bridge.py': 'eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876', 'code/evaluate.py': 'dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c', 'code/model_registry.py': '969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58', 'code/ownership.py': '8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456', 'code/m1_protocol.py': '4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427'}
+R9_SCHEMA='trajkv.round9_research.raw.v1'
+R9_DRIVERS={'code/round9_runner_v1.py': '435b619f066d3a82188af46f7ad7f2d96125bc3680ace8546e0683cd087444e0', 'code/round9_runner_v2.py': 'cebbb10de62fa5ee8911c0afe5f6414f31c4180b27edbd4e500a83f6d8484bea', 'code/round9_runner_v3.py': 'bb6f766167c13f47b59f5c32aeb35e0556d1b9137596d9ea69ef009bebe38a8c', 'code/round9_runner_v4.py': 'cf4885b77b03fd94aadd5bbabc5a1e6d62e3259ba6037b7a708fabab71758961'}
+R9_EPOCHS={'code/round9_runner_v1.py': {'code/r7_legacy_bridge_v1.py': 'b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b', 'code/r7_legacy_bridge_v2.py': '608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad', 'code/m1_protocol.py': '4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427', 'code/model_registry.py': '969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58', 'code/dataset_registry.py': '4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983', 'code/evaluate.py': 'dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c', 'code/cache_bridge.py': '36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025', 'code/attention_bridge.py': 'eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876', 'code/ownership.py': '8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456', 'code/round9_runner_v1.py': '435b619f066d3a82188af46f7ad7f2d96125bc3680ace8546e0683cd087444e0', 'code/round9_value_bank_v1.py': '14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e', 'code/round9_inputs_v1.py': '46ccb0d3fffe93994b1339474887ecf86b730eb3edd9f7cee9fa4d8b96e68ac9', 'code/round9_extended_bank_v1.py': '57ec77e7c2d7f3b8abbd3f9fcaaa996c60228a2821d4085dcaf3604a98ba6001'}, 'code/round9_runner_v2.py': {'code/r7_legacy_bridge_v1.py': 'b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b', 'code/r7_legacy_bridge_v2.py': '608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad', 'code/m1_protocol.py': '4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427', 'code/model_registry.py': '969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58', 'code/dataset_registry.py': '4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983', 'code/evaluate.py': 'dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c', 'code/cache_bridge.py': '36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025', 'code/attention_bridge.py': 'eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876', 'code/ownership.py': '8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456', 'code/round9_runner_v2.py': 'cebbb10de62fa5ee8911c0afe5f6414f31c4180b27edbd4e500a83f6d8484bea', 'code/round9_value_bank_v1.py': '14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e', 'code/round9_inputs_v1.py': '46ccb0d3fffe93994b1339474887ecf86b730eb3edd9f7cee9fa4d8b96e68ac9', 'code/round9_extended_bank_v1.py': '57ec77e7c2d7f3b8abbd3f9fcaaa996c60228a2821d4085dcaf3604a98ba6001', 'code/round9_extended_bank_v2.py': '5745e4cda9c1c5d1e2256a49908c15a350321834e1d0d36097a7fac99734acff', 'code/round9_key_controls_v1.py': 'e73e8594e80f7b3b14dfc6bc3c271858dc42798de9f67843de14b7376f474878'}, 'code/round9_runner_v3.py': {'code/r7_legacy_bridge_v1.py': 'b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b', 'code/r7_legacy_bridge_v2.py': '608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad', 'code/m1_protocol.py': '4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427', 'code/model_registry.py': '969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58', 'code/dataset_registry.py': '4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983', 'code/evaluate.py': 'dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c', 'code/cache_bridge.py': '36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025', 'code/attention_bridge.py': 'eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876', 'code/ownership.py': '8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456', 'code/round9_runner_v3.py': 'bb6f766167c13f47b59f5c32aeb35e0556d1b9137596d9ea69ef009bebe38a8c', 'code/round9_value_bank_v1.py': '14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e', 'code/round9_inputs_v1.py': '46ccb0d3fffe93994b1339474887ecf86b730eb3edd9f7cee9fa4d8b96e68ac9', 'code/round9_extended_bank_v1.py': '57ec77e7c2d7f3b8abbd3f9fcaaa996c60228a2821d4085dcaf3604a98ba6001', 'code/round9_extended_bank_v2.py': '5745e4cda9c1c5d1e2256a49908c15a350321834e1d0d36097a7fac99734acff', 'code/round9_key_controls_v1.py': 'e73e8594e80f7b3b14dfc6bc3c271858dc42798de9f67843de14b7376f474878', 'code/round9_key_controls_v2.py': '44500c370f4605e377750fc003b1dfeff052f129f122a7fabb1ba3c70d4dfdf4'}, 'code/round9_runner_v4.py': {'code/r7_legacy_bridge_v1.py': 'b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b', 'code/r7_legacy_bridge_v2.py': '608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad', 'code/m1_protocol.py': '4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427', 'code/model_registry.py': '969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58', 'code/dataset_registry.py': '4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983', 'code/evaluate.py': 'dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c', 'code/cache_bridge.py': '36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025', 'code/attention_bridge.py': 'eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876', 'code/ownership.py': '8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456', 'code/round9_runner_v4.py': 'cf4885b77b03fd94aadd5bbabc5a1e6d62e3259ba6037b7a708fabab71758961', 'code/round9_value_bank_v1.py': '14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e', 'code/round9_inputs_v1.py': '46ccb0d3fffe93994b1339474887ecf86b730eb3edd9f7cee9fa4d8b96e68ac9', 'code/round9_extended_bank_v1.py': '57ec77e7c2d7f3b8abbd3f9fcaaa996c60228a2821d4085dcaf3604a98ba6001', 'code/round9_extended_bank_v2.py': '5745e4cda9c1c5d1e2256a49908c15a350321834e1d0d36097a7fac99734acff', 'code/round9_key_controls_v1.py': 'e73e8594e80f7b3b14dfc6bc3c271858dc42798de9f67843de14b7376f474878', 'code/round9_key_controls_v2.py': '44500c370f4605e377750fc003b1dfeff052f129f122a7fabb1ba3c70d4dfdf4', 'code/round9_precision_exchange_v1.py': '15e075936d235cdd0a3935961b8083c2f10c9df59c545f1a6bd2c7aecd3dd9fe'}}
+R9_POLICY_FILE='results/publication/R9_custom_driver_support_v3/R9_SOURCE_POLICY.json'
+R9_MANIFEST_SHA='583860001cbb4e7fdd1dc974263c3bf630d8daef917d5c1bb089f5a65a57a650'
+R9_CAL_COMPLETE_SHA='c838b3a79cb970233a9579f8972ae4276157fad1001fd9b4e9118945bc0dc521'
+R9_CAL_INPUT_SHA='2de0d5308892ee86bee48c3205c6eb49eee196ffee32ef6f8bcab19a30b6c216'
+R9_BASE_BOOK='af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589'
 R7_ROLE_PINS={'a2/round7_key_bank.py': '38b6e0ea2486a900e404fa6347c91972198795f8972dc7ab2bf90527fbc1cdc5', 'a2/round7_key_attention.py': 'b054e8629083b7685ad9e02289b500008b45fbeadbd2bc48455f91d0b6a728a0', 'a2/round7_key_codec.py': '80c2c16220097242b25d3f843a3b57569590131c02618e766e35f0f0791ab651', 'a2/round7_key_layout.py': '7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04', 'a2/round7_key_artifacts.py': 'f429aa502dae27b7616e8dfca63ac6d498d16f18d8bf2db4ad674b5039760485', 'a2/round6_depth_codec.py': '333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4', 'a2/fast_wht.py': '9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3', 'a2/quantizers.py': '314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38', 'a2/affine_rate_bank.py': '8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0', 'a2/masked_bank.py': '7c313fddfdadc81939235b0a4fd843540961f8841c69d7400101b33a66737d9d', 'a2/metadata_direction_bank.py': 'bea958a75c8df84702b20ba32836ae6f4f7ffaae8f6a1024ea6de3c18659ff61', 'experiments/bank.py': 'f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5', 'experiments/fused_progressive.py': 'd0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c', 'experiments/check_fused_progressive.py': 'b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55', 'code/bytes.py': '00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115', 'scripts/p185_model_state.py': '437dbb5e9bd34e699ddc1f589834d207248074e214dfa821143781cd4fe3c4af', 'scripts/p185_single_state.py': 'ca4bce75c1e80c0a99eb18451323f2d0c2a07a8c707a3238f1a4e8d5d9114b3c', 'scripts/p185_segmented_kernel.py': 'bf09b996f098aea5027f25de54b50aef78f305225de105d9b8c9343751eb3f64', 'scripts/p176_kivi_codec.py': '1c278ebd1f648170696208ffed89a01e96960c18670610948d742262ad6b7cbb', 'scripts/p201_refinement.py': 'a1b8b84b9dbc655c21ead0bffa032be1ae4af97b5da4768112fe2a6106e58afb', 'scripts/p202_refinement.py': '292aca3d0f793c164b1d4204af21573cd4092597eb3f25055ded6d879afa04aa', 'kivi_source': '3f1140b0faff2cb524a3eb684167e403dffd488477b301826497462fd36fe540', 'a2/round6_depth_bank.py': '1d423bf03cdc76c0650776230d6a1093710e9c9fb8ac2cd84974d791aa65c6f7', 'a2/round6_depth_attention.py': 'f96277c726c39f2880e8618525b4bdcbac0049e68e7c4d3e2eb699fa24dfd945'}
-R7_MANIFEST_SHA='5d4d4c0f7a02604882ff3be393cda934f0e4f806bdffeed3fbab76a69f7a87fe'
-R7_TOKENIZER_SHA='b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f'
-R7_ASSETS={'r7_joint_k1_gt_cond': {'direction_book_path': 'af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589', 'metadata_factor_path': '8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea', 'round7_policy_path': '505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f'}, 'r7_budget_k2_cond': {'direction_book_path': '9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae', 'metadata_factor_path': 'd60fe4ffcf31e36306ed2c5a4069634627c83b3af2f0b86fdb5c37e456113671', 'round7_policy_path': 'e8a58e602c047adbd4ca6ae253f6ba2eb3961158d7c75444d3e27a41ec47ed6e'}}
-R7_BASELINE39={'configs/eval/M1_F_textvqa_p2_500_v1.json': 'f7ddf90ae551e424ce1801e0dcf6ab33e819ef9796d2e44438004732078a4e91', 'configs/eval/M1_F_infovqa_p2_500_v1.json': '9bf91934d64af0d317c66b1d674144911f8a68b94acca26e6bdabcf3a35a62f0', 'configs/eval/M1_F_docvqa_p2_500_v1.json': '7893bf155224616625b0f457e368d477b9119fae7309cc1bfc6fffcdc11d558e', 'configs/eval/M1_F_chartqa_p2_500_v1.json': 'cfbdcf3a9128162c2fffa7a9c53fc60d59666bea4c7eaa8abbf849e4d1b336ad', 'configs/eval/M1_K2_R0_textvqa_p2_500_v1.json': 'b0e00f8468693bd73b382ea440aa20dffd5e7147136beeef96056189c68dcd45', 'configs/eval/M1_K2_R0_docvqa_p2_500_v1.json': '7b5820c068060354f05b51168edaa8f2599cf4f4520e598482d115ce978cb23c', 'configs/eval/M1_K2_R0_chartqa_p2_500_v1.json': '2d1424499d43f0c341497b5dd28cfae7c84120ea195e0fb35e2a0285799c2b7c', 'configs/eval/M1_K4_R0_textvqa_p2_500_v1.json': 'cc702946efa8107c4eaf47024b5b3011663c93aa6f6c9a3287e596d0ef50fbd4', 'configs/eval/M1_K2_g32R32_textvqa_p2_500_v1.json': 'f57462f89a773641a36f66c801812cf0a92747339a315b032eca3bdf5533f9d2', 'configs/eval/M1_K2_g32R32_infovqa_p2_500_v1.json': '59a3943ce1938cd8a67f51015553ba1a47bc5dbdfe5e31e7731e72d6943440d2', 'configs/eval/M1_K2_g32R32_docvqa_p2_500_v1.json': '691c20cdf1c85c23224cb02f94b7cb14de54b63f6899515dc246576da18e01e5', 'configs/eval/M1_K2_g32R32_chartqa_p2_500_v1.json': '154934e6170e6ade2eafcb2e5d77a21eb8a9478d8c849acfd804fdd65e89e2ac', 'configs/eval/M1_C1_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json': '377b9fffb6b5507d04944d4af7f643352c833a0bd408ec13175dfcad36f2580b', 'configs/eval/M1_C1_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2.json': '7bad4e385608efa424cb9f0c8c0e94883972febeda3a6ab4c02d1bcfb7906418', 'configs/eval/M1_C1_bias32_docvqa_p2_500_v1_FP32Affine_Text32_v2.json': '47580d27e409048a4264ac36917807c425c2260bd2acc701bdb8e6533e0f45bd', 'configs/eval/M1_C1_bias32_chartqa_p2_500_v1_FP32Affine_Text32_v2.json': '32a6db6b84e9f7ec3152e8e5e64a9a1d88b6eea35d76087ade0dc59520b6b389', 'configs/eval/M1_C2_bias32_textvqa_p2_500_v1_FP32Affine_Text32_v2.json': 'cafbb82ad112fdac79c758a5b994c0fa5d96bc285d4125a07aa487c8fe407a02', 'configs/eval/M1_C2_bias32_infovqa_p2_500_v1_FP32Affine_Text32_v2.json': '7657c99d889b2a5fe30a3f859b05e4f03eb51300723d36fea2f3fd6757990aff', 'configs/eval/M1_C2_bias32_docvqa_p2_500_representative_v1_FP32Affine_Text32_v2.json': 'd3ccfa573f4a5988e7d76b796a756f8c603807c052f45ca799437c2d9746a2e4', 'configs/eval/M1_C2_bias32_chartqa_p2_500_representative_v1_FP32Affine_Text32_v2.json': '7f8eba2cd868cc4ba009add2854e30112b0e0cb8add3b11ca3bebac53e1c9c82', 'configs/eval/M1_E_r0888_textvqa_p2_500_v1.json': 'b9c1aabbd3f057166dba9b6b2de7fdaa2cb40f4060a9f86dce60791cb719afb2', 'configs/eval/M1_E_r0888_docvqa_p2_500_v1.json': '7ff478548a0d14a728a39df4a4cffea227a4dcf602ad002654bb1053fc0de693', 'configs/eval/M1_E_r0888_chartqa_p2_500_v1.json': 'ea51e951c9b2e495f151ba923a2e7bdab84d1c95f95642142d36494b688f1714', 'configs/eval/M1_E_w8_drop0888_textvqa_p2_500_v1.json': 'f143e14691abef9da6f0761c48df7648029157d98270c30b8c82b65a7b3ef87b', 'configs/eval/M1_E_w8_drop0888_infovqa_p2_500_v1.json': '5a06e9bac147512eb683be766d4e1042713cc82c85e151d9af1dd4c915b14479', 'configs/eval/M1_E_w8_drop0888_docvqa_p2_500_representative_v1.json': 'db8d4c0d5d0dea3f9f307512b030352aa4452651e82dc8b32889ed64a6c6a6a8', 'configs/eval/M1_E_w8_drop0888_chartqa_p2_500_representative_v1.json': '9587869c185afb1c38bc1ab74c6d059f78fa27e1fa3a5562cb5a2c35f3b63668', 'configs/eval/M1_E_w8_drop091875_textvqa_p2_500_v1.json': '7b417e869e594ff3e470de61ae0ad0cbb2ea742c70399f8caf5fa243afc450aa', 'configs/eval/M1_E_w8_drop091875_infovqa_p2_500_v1.json': 'eef5d48078f24b56b7d1c21dad5b8f356a22580725669a8897a5c90e9ce953eb', 'configs/eval/M1_E_w8_drop091875_docvqa_p2_500_lowcompletion_target_v1.json': '604d43e8f821156a606145edd3bbec966af484d930600486a5a641a0de0bcbc9', 'configs/eval/M1_E_w8_drop091875_chartqa_p2_500_lowcompletion_target_v1.json': '8c3ad9081fc3f83dc27f2cef13ccaa56ff41dbd6425b1dda12394dc802be5605', 'configs/eval/M1_OT_Hmix12_textvqa_p2_500_target_v4.json': 'f705a575ec24e392ad1caf856311dc12610c201aa0c5bf8395107e6975905503', 'configs/eval/M1_OT_Hmix12_infovqa_p2_500_target_v4.json': '812cc893c36f5a70bbd73a1e5739ffb9a037d58c49fb8015aafba82653096d44', 'configs/eval/M1_OT_Hmix12_docvqa_p2_500_lowcompletion_target_v1.json': '34448f2b5e1ecc42dc1b1e20123062b487746a7f4db51f247fb216e7906825a5', 'configs/eval/M1_OT_Hmix12_chartqa_p2_500_lowcompletion_target_v1.json': '19ad65d8532421b490a851b20140377be2abf66e6367ad69e3f3159c7672a773', 'configs/eval/M1_OT_Hmix23_textvqa_p2_500_target_v6.json': '966ed14257f2c26c2499eff12b9b76202b9887162d064a72ec99c26ee1c63c95', 'configs/eval/M1_OT_Hmix23_infovqa_p2_500_target_v6.json': 'acfdd84feebccfc8ce159d5d0155b6b07a97a4ddea76e288afd60b5a69d18131', 'configs/eval/M1_OT_Hmix23_docvqa_p2_500_target_v7.json': 'bccb47c5ffc3ff57282aa647b795b2b57a226ded131fa810389343ddcdb8f2e5', 'configs/eval/M1_OT_Hmix23_chartqa_p2_500_target_v7.json': '5e5df7e88b7a4cfdb6015e6320a66f707650032d86cf22e355c2d28681a69417'}
 DTYPE_BYTES={'torch.float16': 2, 'torch.bfloat16': 2, 'torch.float32': 4, 'torch.float64': 8, 'torch.int64': 8, 'torch.int32': 4, 'torch.int16': 2, 'torch.int8': 1, 'torch.uint8': 1, 'torch.bool': 1}
-
 
 def r7_role_path(cfg,role):
     if role=='kivi_source':return cfg['kivi_source']
@@ -47,7 +46,6 @@ def r7_verify_record_role_pins(cfg,row):
         allowed.pop('a2/round6_depth_bank.py');allowed.pop('a2/round6_depth_attention.py')
     expected={r7_role_path(cfg,role):{'role':role,'sha256':digest} for role,digest in allowed.items()}
     require(value==expected,'Per-record frozen source role/actual-path admission differs')
-
 
 def physical_complete_bytes(raw, spec):
     owner = raw['owner_before_suffix']; tensors = owner['tensors']
@@ -101,6 +99,52 @@ def io_path(value):
     path=Path(value).resolve();prefix=chr(92)*2+'?'+chr(92)
     return Path(prefix+str(path)) if os.name=='nt' and not str(path).startswith(prefix) else path
 
+
+BRPE_HELPER_SHA='15e075936d235cdd0a3935961b8083c2f10c9df59c545f1a6bd2c7aecd3dd9fe'
+BRPE_CAL_SOURCE_SHA='8b986799062ef8d3fbc67624344d1740cfea4726b64aa3fc4d995ffaebc54438'
+BRPE_PROFILE_SHA='7ec305a76cebf5ca9e358842e11e68fe6a77e6af9f2d83c39af723ff17eb5c22'
+BRPE_DONORS=[[14, 0, 0], [21, 1, 0], [16, 1, 0], [21, 2, 0]]
+BRPE_MODES={'BRPE_Lookup8': 'Lookup8', 'BRPE_Drop4': 'Drop4', 'BRPE_Exchange': 'Exchange'}
+R9_STAGE_RUNS=['FP16_infovqa_64_v2', 'FP16_textvqa_64_v2', 'original_infovqa_64_v2', 'original_textvqa_64_v2', 'K_MSE_infovqa_screen32_v1', 'K_MSE_textvqa_screen32_v1', 'K_Func_infovqa_screen32_v1', 'K_Func_textvqa_screen32_v1', 'K_MSE_textvqa_hold32_v1', 'K_MSE_infovqa_hold32_v1', 'KMu_textvqa_diagnostic32_v1', 'KMu_infovqa_diagnostic32_v1', 'MSE_FZJ_textvqa_diagnostic32_v1', 'MSE_FZJ_infovqa_diagnostic32_v1', 'BRPE_Drop4_textvqa_screen32_v1', 'BRPE_Drop4_infovqa_screen32_v1', 'BRPE_Exchange_textvqa_screen32_v1', 'BRPE_Exchange_infovqa_screen32_v1']
+BASE_BOOK='af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589'
+CALIB_COMPLETE_SHA='c838b3a79cb970233a9579f8972ae4276157fad1001fd9b4e9118945bc0dc521'
+
+def verify_brpe_profile(profile):
+    require(profile["schema"] == "trajkv.round9.precision_exchange_profile.v1" and profile["base_profile"] == "r7_joint_k1_gt_cond" and
+            profile["upgraded_layer"] == 14 and profile["dropped_k_units"] == BRPE_DONORS, "Unreviewed conditional exchange profile")
+    require(profile["low_book_sha256"] == BASE_BOOK and profile["high_book_sha256"] == "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae" and
+            profile["base_metadata_factor_sha256"] == "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea", "Static books/original factors differ")
+    require(profile["calibration_phase"] == "suffix_last" and profile["calibration_sources"] == 32 and profile["events"] == 896 and profile["references_read"] is False and
+            profile["K112_and_V224_factors_unchanged"] is True and profile["retained_K_stages"] == 19 and profile["V_stages_unchanged"] == 20, "Conditional profile scope differs")
+    source = profile["source_provenance"]
+    require(source["calibrator"] == BRPE_CAL_SOURCE_SHA and source["exchange_helper"] == BRPE_HELPER_SHA and source["collection_complete"] == CALIB_COMPLETE_SHA,
+            "Failed v1/new native-query epoch cannot become actual BRPE selector")
+    norm = profile["normalization"]
+    require(norm["implementation"] == "explicit FP64 amax/shift/exp/sum/log" and norm["row_sum_atol"] == 1e-12 and norm["original_KL_chain_and_additivity_thresholds_unchanged"] is True,
+            "Selector normalization/thresholds differ")
+    require(abs(profile["route_loss_after"] - profile["route_loss_predicted_from_conditional_marginals"]) <= 1e-8 * (1 + abs(profile["route_loss_after"])), "Conditional four-drop replay not verified")
+
+def verify_brpe_row(row, spec, mode):
+    require(mode in BRPE_MODES, "Unknown BRPE mode")
+    actual = physical_complete_bytes(row, spec); n = row["actual_visual_token_count"]
+    b0 = 3816 * n + 89733 + 18 * n * 43
+    delta = -1344 if mode == "BRPE_Lookup8" else -72 * n - 1304 if mode == "BRPE_Drop4" else 744 - 8 * n
+    bridge = row["r7_bridge"]; proof = bridge["round9_precision_exchange"]
+    require(n >= 256 and n % 32 == 0 and actual == b0 + delta <= b0 and proof["before_unique_bytes"] == b0 and
+            proof["actual_delta_bytes"] == proof["expected_delta_bytes"] == delta and proof["after_unique_bytes"] == actual, "BRPE complete physical ledger differs")
+    require(proof["mode"] == BRPE_MODES[mode] and proof["source_sha256"] == BRPE_HELPER_SHA and proof["lookup_dtype"] == "torch.int8" and
+            proof["lookup_bytes"] == 448 and proof["old_lookup_and_original_pools_released"] is True and proof["V20_base_parameters_and_residual_values_unchanged"] is True, "BRPE signed lookup/release/V20 proof differs")
+    require(bridge["selected_stage_count"] == (43 if mode == "BRPE_Lookup8" else 39) and sum(x[0] == "v" for x in bridge["selected_stages"]) == 20, "K donors/V stages differ")
+    if mode != "BRPE_Lookup8": require(proof["dropped_k_units"] == BRPE_DONORS and proof["format_bytes"] == 28 and proof["donor_descriptor_bytes"] == 12, "Real descriptors not paid")
+    require(proof["extra_high_book_bytes"] == (2048 if mode == "BRPE_Exchange" else 0) and proof["old_low_book_bytes"] == 128, "Both static book constants not charged")
+    tensors = row["owner_before_suffix"]["tensors"]
+    for layer in range(28):
+        item = tensors[f"layers.{layer}.visual.encoder_constants.lookup_view"]
+        require(item["dtype"] == "torch.int8" and item["shape"] == [2, 4, 2] and item["storage_bytes"] == 448, "All28 views must use actual448B signed storage")
+    budget = row["BRPE_budget_vs_original_R7_low"]
+    require(budget["old_R7_low_B0_bytes"] == b0 and budget["actual_complete_bytes"] == actual and budget["exact_expected_delta_bytes"] == delta and
+            budget["at_or_below_R7_low_B0"] is True and budget["strict1p3_budget_is_separate"] is True, "Byte envelope cannot masquerade as strict1.3")
+    return actual
 
 def verify(root,archive=None,recompute_scores=False):
     root=io_path(root);index=load(root/'PUBLIC_CONTENT_REFS.json');entries=index['files']
@@ -198,18 +242,17 @@ def verify(root,archive=None,recompute_scores=False):
             artifacts.append(artifact);artifact_group[artifact['config']]=group_number
     def line_metadata(folder):
         path=folder+'/records.jsonl';side=entry(folder,'records.jsonl')['line_identities_file'];rows=[]
-        declared_manifest=load(root/folder/'manifest.json')
+        rm=load(root/folder/'manifest.json')
         with (root/path).open('rb') as stream,(root/side).open(encoding='utf-8') as identity:
             for offset,line in enumerate(stream,1):
                 row=json.loads(line);proof=json.loads(identity.readline())
-                if declared_manifest.get('runner_schema')==R7_SCHEMA:
-                    r7_verify_record_role_pins(declared_manifest['config'],row)
+                if rm.get('runner_schema')==R9_SCHEMA:
+                    physical_complete_bytes(row,rm['model_spec'])
+                    if rm['config']['candidate']['mode']!='FP16':r7_verify_record_role_pins(rm['config'],row)
+                    if rm['config']['candidate']['mode'] in BRPE_MODES:verify_brpe_row(row,rm['model_spec'],rm['config']['candidate']['mode'])
                 rows.append({'id':row['id'],'status':row['status'],'source_line_sha256':proof['source_sha256'],
                     'public_line_sha256':proof['public_sha256'],'input_key_sha256':cache.input_key(row),
-                    'execution_sha256':cache.execution_fingerprint(row),
-                    'full_input_fingerprint':canonical({k:row[k] for k in ('original_image_sha256','input_ids_sha256','full_prompt_hash',
-                        'question_suffix_sha256','native_position_ids_sha256','native_position_ids_shape','visual_positions',
-                        'actual_visual_token_count','input_tokens','compression_boundary','question_suffix_tokens')})})
+                    'execution_sha256':cache.execution_fingerprint(row)})
         return rows
     def check_proof(folder,name,required,status):
         proof=load(root/folder/name)
@@ -227,70 +270,137 @@ def verify(root,archive=None,recompute_scores=False):
             'processor_id':manifest['processor_id'],'processor_version':manifest['processor_version'],
             'processor_file_hashes':manifest['processor_file_hashes'],'generation_native':manifest['generation_native'],
             'generation_overrides':manifest['generation_overrides'],'relevant_source_hashes':cache._dependencies(manifest,inventory,source_eval)}
-    custom_folders=set()
-    def verify_R7_source(folder,m,c):
-        require(m.get('runner_schema')==R7_SCHEMA,'Unsupported custom/R9 producer; no canonical fallback')
-        require(m['expected_QA']==c['expected_QA']==c['recorded_QA']==500 and c['counts']=={'PASS':500},'Custom R7 requires complete500')
-        require(R7_POLICY_FILE in entries,'Missing exact custom source policy')
-        policy=load(root/R7_POLICY_FILE)
-        require(policy['required_baseline39_config_sha256']==R7_BASELINE39,'Frozen39 auxiliary source policy differs')
-        require(policy['schema']=='trajkv.r7_public_source_policy.v1' and policy['runner_schema']==R7_SCHEMA and
-                policy['SourceRun_admission'] is False and policy['canonical_cache_admission'] is False,'False custom admission policy')
-        require(policy['required_source_hashes']==R7_SOURCE_PINS and
-                {k:v['sha256'] for k,v in policy['required_role_sources'].items()}==R7_ROLE_PINS,'Custom source whitelist changed')
-        original_manifest=policy['fixed8_manifest_file'];require(entries[original_manifest]['source_sha256']==R7_MANIFEST_SHA,'Wrong frozen8 manifest')
-        frozen=[r for r in load(root/original_manifest)['rows'] if r['tier']=='fixed500']
-        require(len(frozen)==8 and {(r['profile'],r['dataset']) for r in frozen}=={(p,d) for p in ('K1','K2') for d in ('textvqa','infovqa','docvqa','chartqa')},'Exact8 scope differs')
-        proof=load(root/folder/'source_retrieval_receipt_r7_v2.json')
-        require(proof['status']=='PASS_R7_EXECUTED_DRIVER_AND_DEPENDENCY_SOURCE_SHA' and proof['remote_hashes_computed_independently'] is True and
-                proof['SourceRun_admission_established'] is False and proof['not_source_evaluate_alias'] is True and
-                proof['actual_driver']=='code/r7_frozen_pilot_v2.py','Invalid custom source receipt')
-        required={'source_inventory.json','launch_receipt.json','source_config.json','source_job.json','source_driver.py'}|{'source_files/'+name for name in R7_SOURCE_PINS}
-        proof_files={x['file']:x for x in proof['files']}
-        require(len(proof_files)==len(proof['files']) and required<=set(proof_files),'Missing/duplicate custom proof file')
-        for name,item in proof_files.items():
-            pure=Path(name)
-            require(not pure.is_absolute() and '..' not in pure.parts and item['bytes']<=4*1024**2 and
-                    (name in required or name.startswith('legacy_sources/') and name.endswith('.py')),'Invalid custom proof file scope')
-            original_graph(folder,name,item['sha256']);require(entry(folder,name)['source_bytes']==item['bytes'],'Custom proof byte size differs')
-        require(proof['executed_legacy_source_sha256']==c['executed_legacy_source_sha256'],'Actual legacy graph differs')
-        legacy=[x for x in proof['files'] if x['file'].startswith('legacy_sources/')]
-        require(len(legacy)==proof['legacy_source_files'] and
-                {x['remote_file']:x['sha256'] for x in legacy}==proof['executed_legacy_source_sha256'],'Legacy graph not fully archived')
-        for role,item in policy['required_role_sources'].items():
-            require(item['file'] in entries and entries[item['file']]['source_sha256']==R7_ROLE_PINS[role],'Explicit dynamic/role source missing')
-        inventory=load(root/folder/'source_inventory.json');launch=load(root/folder/'launch_receipt.json');job=load(root/folder/'source_job.json');cfg=load(root/folder/'source_config.json')
-        r7_verify_executed_roles(cfg,proof['executed_legacy_source_sha256'])
-        match=[r for r in frozen if r['config_sha256']==original_hash(folder,'source_config.json') and r['job_sha256']==original_hash(folder,'source_job.json')]
-        require(len(match)==1 and cfg==m['config'] and m['config_sha256']==match[0]['config_sha256'],'Custom config/job is not frozen8')
-        selected=match[0];base=job['argv'][job['argv'].index('--output')+1].split('/results/',1)[0]
-        snapshot=base+'/jobs/'+job['name']+'.source';expected=[snapshot+'/code/r7_frozen_pilot_v2.py' if x==base+'/code/r7_frozen_pilot_v2.py' else x for x in job['argv']]
-        require(type(launch['pid']) is int and launch['pid']>0 and launch['name']==job['name']==proof['producer_name'] and
-                launch['job_sha256']==selected['job_sha256'] and launch['argv_executed']==expected and
-                launch['source_snapshot']==m['runtime_source_root']==proof['source_snapshot']==snapshot and
-                launch['runtime_python']==m['runtime_executable']==job['argv'][0] and
-                str(launch['CUDA_VISIBLE_DEVICES'])==str(job['env']['CUDA_VISIBLE_DEVICES'])==str(selected['GPU']),'Custom producer/runtime binding differs')
-        original_graph(folder,'source_inventory.json',launch['source_inventory_sha256'])
-        require(m['source_hashes']==R7_SOURCE_PINS,'Custom declared source set differs')
-        for name,digest in R7_SOURCE_PINS.items():
-            require(inventory[name]==digest,'Snapshot numeric dependency differs');original_graph(folder,'source_files/'+name,digest)
-        original_graph(folder,'source_driver.py',R7_SOURCE_PINS['code/r7_frozen_pilot_v2.py'])
-        profile=cfg['variant']['name'];require(profile in R7_ASSETS and m['asset_sha256']==R7_ASSETS[profile]==cfg['expected_asset_sha256'],'Profile/assets changed')
-        origin=cfg['variant_source'];origin_file=source_file_reference(origin['path'])
-        require(entries[origin_file]['source_sha256']==origin['sha256']=='aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4' and
-                m['variant_original_source']==origin,'Original profile source identity differs')
-        original_variants=[x for x in load(root/origin_file)['variants'] if x['name']==profile]
-        exclude=set(R7_ASSETS[profile]);numeric=lambda v:{k:x for k,x in v.items() if k not in exclude}
-        require(len(original_variants)==1 and numeric(original_variants[0])==numeric(cfg['variant']) and
-                m['frozen_variant']==cfg['variant'],'Original frozen profile numeric fields changed')
-        require(policy['profiles'][profile]['variant']==cfg['variant'] and policy['profiles'][profile]['method_id']==cfg['method']['id'],'Frozen profile numeric fields differ')
-        for name,item in policy['profiles'][profile]['assets'].items():
-            require(item['file'] in entries and entries[item['file']]['source_sha256']==R7_ASSETS[profile][name],'Frozen asset bytes absent')
-        token=policy['tokenizer_cleanup_proof'];require(entries[token['file']]['source_sha256']==token['sha256']==R7_TOKENIZER_SHA and load(root/token['file'])['clean_up_tokenization_spaces'] is False,'Baseline implicit cleanupFalse not proven')
-        require(m['decode_overrides']=={'clean_up_tokenization_spaces':False,'skip_special_tokens':True} and
-                m['processor_file_hashes']['tokenizer_config.json']==R7_TOKENIZER_SHA and m['parameter_fit_or_new_algorithm'] is False and
-                m['native_FP16_visual_source_retained_for_serving'] is False,'Custom decode/serving contract differs')
-        custom_folders.add(folder)
+    round9_folders=set()
+    def r9_context(m):
+        runtime={}
+        for key,aliases in {'torch_version':('torch_version',),'transformers_version':('transformers_version',),
+            'cuda_version':('cuda_version','CUDA_version'),'python_version':('python_version',),'hardware':('hardware',),'runtime_executable':('runtime_executable',)}.items():
+            values=[m[x] for x in aliases if x in m];require(values and all(x==values[0] for x in values),'Unrecorded/conflicting native runtime');runtime[key]=values[0]
+        require(m['model_identity']['status']=='PASS_EXACT_HF_REQUIRED_TREE' and m['model_identity']['revision']==m['model_spec']['revision']==m['config']['model_revision'],'Original HF identity/revision differs')
+        return {'runtime':runtime,'model_spec':m['model_spec'],'model_files':sorted(({k:r[k] for k in ('file','bytes','sha256')} for r in m['model_identity']['files']),key=lambda r:r['file']),
+            **{k:m[k] for k in ('processor_id','processor_version','processor_file_hashes','generation_native','generation_overrides','decode_overrides')}}
+    def verify_round9(folder,m,c):
+        require(m.get('runner_schema')==R9_SCHEMA,'Unknown custom producer; no SourceRun fallback')
+        cfg=m['config'];candidate=cfg['candidate'];count=cfg['count']
+        require(cfg['schema']==R9_SCHEMA and cfg['cohort_kind'] in ('development','formal500') and type(count) is int and 1<=count<=500 and
+                cfg['input_count'] in (64,500) and type(cfg['start']) is int and 0<=cfg['start']<=cfg['input_count']-count,'R9 actual source slice differs')
+        require(count==m['expected_QA']==c['expected_QA']==c['recorded_QA'] and c['counts']=={'PASS':count} and
+                m['prediction_cache_used'] is False,'Partial/failed/reused run is not original fresh R9')
+        require(R9_POLICY_FILE in entries,'Missing exact R9 source policy')
+        policy=load(root/R9_POLICY_FILE)
+        require(policy['schema']=='trajkv.public_round9_source_policy.v2' and policy['SourceRun_admission'] is False and
+                policy['source_epochs']==R9_EPOCHS and policy['drivers']==R9_DRIVERS,'R9 producer/dependency whitelist differs')
+        proof=load(root/folder/'source_retrieval_receipt_round9_v2.json')
+        require(proof['status']=='PASS_INDEPENDENT_CUSTOM_DRIVER_SOURCE_INSPECTION' and proof['SourceRun_admission_established'] is False,'Independent R9 V2 source proof required')
+        pf={x['file']:x for x in proof['files']};require(len(pf)==len(proof['files']),'Duplicate source proof files')
+        driver=proof['actual_driver'];require(driver in R9_DRIVERS,'Unreviewed source epoch')
+        needed={'manifest.json','records.jsonl','complete.json','source_inventory.json','launch_receipt.json','source_config.json','source_job.json','source_driver.py'}|{'source_files/'+x for x in R9_EPOCHS[driver]}
+        require(needed<=set(pf),'Missing actual source dependencies')
+        for name,value in pf.items():
+            require(not Path(name).is_absolute() and '..' not in Path(name).parts,'Unsafe source path')
+            original_graph(folder,name,value['sha256']);require(entry(folder,name)['source_bytes']==value['bytes'],'Independent source bytes differ')
+        job=load(root/folder/'source_job.json');launch=load(root/folder/'launch_receipt.json');scfg=load(root/folder/'source_config.json');iv=load(root/folder/'source_inventory.json')
+        require(scfg==cfg and m['config_sha256']==original_hash(folder,'source_config.json') and
+                launch['job_sha256']==original_hash(folder,'source_job.json') and launch['source_inventory_sha256']==original_hash(folder,'source_inventory.json'),'Actual config/job/inventory binding differs')
+        base=job['argv'][job['argv'].index('--output')+1].split('/results/',1)[0];snap=base+'/jobs/'+job['name']+'.source'
+        argv=[snap+x[len(base):] if x.startswith(base+'/code/') and x.endswith('.py') else x for x in job['argv']]
+        require(proof['producer_name']==job['name']==launch['name'] and type(launch['pid']) is int and launch['pid']>0 and
+                launch['argv_executed']==argv and launch['source_snapshot']==m['runtime_source_root']==snap and
+                launch['runtime_python']==m['runtime_executable']==job['argv'][0] and str(launch['CUDA_VISIBLE_DEVICES'])==str(job['env']['CUDA_VISIBLE_DEVICES']),'Wrong actual producer/runtime/argv/GPU')
+        require(driver==Path(argv[2]).relative_to(snap).as_posix() and m['source_hashes']==R9_EPOCHS[driver],'Actual entry/dependency version differs')
+        if driver=='code/round9_runner_v3.py':
+            require(candidate['mode'] in ('K-Mu','K-Book_FZJ') and candidate.get('diagnostic_only') is True and candidate.get('method_frontier_eligible') is False,'Actual v3 runs must remain non-frontier diagnostics')
+        if driver=='code/round9_runner_v4.py':
+            require(candidate['mode'] in BRPE_MODES and candidate.get('profile_sha256')==BRPE_PROFILE_SHA and cfg['preprocessing']=={'max_patches':8},'Wrong BRPE v4 profile scope')
+            original_graph(folder,'assets/candidate_profile.json',BRPE_PROFILE_SHA);profile=load(root/folder/'assets/candidate_profile.json');verify_brpe_profile(profile)
+            original_graph(folder,'assets/candidate_high_book.json',profile['high_book_sha256'])
+            require(not any(candidate.get(k) for k in ('book_path','book_sha256','theta_path','theta_sha256')),'Conditional static-book exchange is not global fitted64 book')
+            cal=policy['BRPE_calibration_root'];fp=load(root/cal/'FETCH_RECEIPT.json')
+            require(fp['status']=='PASS_INDEPENDENT_REAL_EXECUTED_SOURCE_AND_METADATA' and fp['actual_executed_driver_sha256']==BRPE_CAL_SOURCE_SHA and
+                    fp['independent_probe_then_SFTP_then_second_remote_rehash'] is True and fp['private_PT_WO_weights_or_images_transferred'] is False,'Actual selector independent proof absent')
+            for x in fp['files']:original_graph(cal,x['file'],x['sha256'])
+            original_graph(cal,'profile.json',BRPE_PROFILE_SHA);cc=load(root/cal/'complete.json');cs=load(root/cal/'summary.json')
+            require(cc['status']==cs['status']=='PASS_CAL_ONLY_CONDITIONAL_EXCHANGE_PROFILE' and cc['actual_GPU'] is cs['actual_GPU'] is True and cc['calibration_sources']==32 and
+                    cc['actual_events']==896 and cc['new_model_forwards']==0 and cc['profile_sha256']==BRPE_PROFILE_SHA,'Failed/unrun selector cannot become passed profile')
+            original_graph(cal,'summary.json',cc['summary_sha256']);cj=load(root/cal/'actual_job.json');cl=load(root/cal/'launch_receipt.json');ci=load(root/cal/'source_inventory.json')
+            require(original_hash(cal,'actual_job.json')==cl['job_sha256'] and original_hash(cal,'source_inventory.json')==cl['source_inventory_sha256'] and cj['name']==cl['name']==fp['producer'] and
+                    type(cl['pid']) is int and cl['pid']>0 and ci['code/round9_exchange_calibrate_v2.py']==BRPE_CAL_SOURCE_SHA and ci['code/round9_precision_exchange_v1.py']==BRPE_HELPER_SHA,'Selector actual producer/source binding differs')
+            cargv=[cl['source_snapshot']+'/code/round9_exchange_calibrate_v2.py' if x.endswith('/code/round9_exchange_calibrate_v2.py') else x for x in cj['argv']]
+            require(cargv==cl['argv_executed'],'Selector actual argv differs')
+            original_graph(cal,'executed_source/round9_exchange_calibrate_v2.py',BRPE_CAL_SOURCE_SHA)
+        require(cfg['model_id']=='M1' and m['model_spec']['model_id']=='M1' and m['decode_overrides']=={'skip_special_tokens':True,'clean_up_tokenization_spaces':False},'M1 native decode contract differs')
+        r9_context(m)
+        for name,digest in R9_EPOCHS[driver].items():
+            require(iv[name]==digest,'Snapshot dependency mismatch');original_graph(folder,'source_files/'+name,digest)
+        original_graph(folder,'source_driver.py',R9_DRIVERS[driver])
+        # Preserve V1 defect and its independent label-only correction if present.
+        old_file=folder+'/source_retrieval_receipt_round9_v1.json'
+        if old_file in entries:
+            old=load(root/old_file)
+            require({k:v for k,v in old.items() if k!='producer_name'}=={k:v for k,v in proof.items() if k!='producer_name'},'More than old producer label changed')
+            if old['producer_name']!=proof['producer_name']:
+                correction=load(root/folder/'PRODUCER_LABEL_CORRECTION_v1.json')
+                require(correction['status']=='PASS_PRODUCER_LABEL_CORRECTED_BY_INDEPENDENT_READBACK' and
+                        correction['old_receipt_sha256']==entries[old_file]['source_sha256'] and correction['new_receipt_sha256']==original_hash(folder,'source_retrieval_receipt_round9_v2.json') and
+                        correction['actual_producer']==job['name'] and correction['model_predictions_and_scores_changed'] is False and
+                        old['producer_name']==list(c['executed_legacy_source_sha256'])[-1],'Unproven original label-only correction')
+        if candidate['mode']!='FP16':
+            r7_verify_executed_roles(cfg,c['executed_legacy_source_sha256'])
+            actual={x['remote_file']:x['sha256'] for x in proof['files'] if x['file'].startswith('legacy_sources/') and not x['file'].endswith('dynamic_kivi.py')}
+            require(actual==c['executed_legacy_source_sha256'],'Actual legacy graph not fully archived')
+        for name in ('direction_book_path','metadata_factor_path','round7_policy_path'):
+            original_graph(folder,'assets/base_'+name+'.json',cfg['expected_asset_sha256'][name])
+        original_graph(folder,'assets/original_profile.json',cfg['variant_source']['sha256'])
+        if cfg['cohort_kind']=='development':
+            require(entries[policy['input_manifest_file']]['source_sha256']==R9_MANIFEST_SHA,'Actual disjoint cal/dev manifest changed')
+            frozen=load(root/policy['input_manifest_file']);own={Path(x['path']).name:x for x in frozen['input_files'].values()}
+            require(Path(cfg['inputs']).name in own and own[Path(cfg['inputs']).name]['sha256']==cfg['inputs_sha256'],'R9 cohort not frozen development input')
+        if candidate.get('book_sha256'):
+            digest=candidate['book_sha256'];original_graph(folder,'assets/candidate_book.json',digest);book=load(root/folder/'assets/candidate_book.json')
+            require(book['original_book_sha256']==R9_BASE_BOOK and book['dimension']==4 and book['centroids']==16 and len(book['centers'])==16 and all(len(x)==4 for x in book['centers']),'Codebook capacity/original basis differs')
+            require(digest in policy['fits'],'No exact fitted artifact source closure')
+            fit=policy['fits'][digest]['folder'];fm=load(root/fit/'manifest.json');fc=load(root/fit/'complete.json');fp=load(root/fit/'EXECUTED_FIT_SOURCE_RETRIEVAL.json')
+            require(fp['status']=='PASS_REAL_GPU_FIT_ARTIFACT_AND_EXECUTED_SOURCE' and fp['actual_GPU'] is True and fp['artifact_sha256']==digest==fc['artifact_sha256'],'No actual fitted artifact proof')
+            objective=book['round9_fit']['objective'];kind={'mse':'K-MSE','functional':'K-Func'}[objective]
+            require(fm['config']['kind']==fc['kind']==kind,'Fit kind does not match book objective')
+            if candidate['mode'] in ('K-MSE','K-Func'):require(candidate['mode']==kind,'Candidate label does not match fitted book objective')
+            for x in fp['files']:original_graph(fit,x['file'],x['sha256'])
+            fj=load(root/fit/'source_job.json');fl=load(root/fit/'launch_receipt.json');fi=load(root/fit/'source_inventory.json')
+            require(fl['job_sha256']==original_hash(fit,'source_job.json') and fl['source_inventory_sha256']==original_hash(fit,'source_inventory.json') and
+                    fl['name']==fj['name'] and type(fl['pid']) is int and fl['pid']>0,'Actual fit launch/inventory differs')
+            executed=[fl['source_snapshot']+'/code/round9_train_v1.py' if x.endswith('/code/round9_train_v1.py') else x for x in fj['argv']]
+            require(fl['argv_executed']==executed,'Actual fit argv differs')
+            fitcfg=source_file_reference(fj['argv'][fj['argv'].index('--config')+1]);require(entries[fitcfg]['source_sha256']==fm['config_sha256'] and load(root/fitcfg)==fm['config'],'Actual fit config differs')
+            expected_fit={'round9_train_v1.py':'4809904d5a88643090535b925b7de9f090f2409c53d219671c07614dda466779',
+                'round9_calibration_v1.py':'757cc51740ad2f92d8ebd9ad9adadf2719131ae634b16b24052363f8e45ba84f',
+                'round9_keyfit_v1.py':'96adf8b9a94e51da00ab99eaeebb83989b005f15bb3762b18d6c01d4ef5c6ec9'}
+            for name,value in expected_fit.items():require(fi['code/'+name]==value==original_hash(fit,'source_files/'+name),'Executed fit source epoch differs')
+            require(fm['collection_complete_sha256']==R9_CAL_COMPLETE_SHA and fm['query_source']=='compressed_query_same_student_text' and
+                    fc['student_state_refreshes']==0 and fc['frozen_student_snapshot_only'] is True,'Unrun native-q/refresh substituted into S0 fit')
+            cal=policy['calibration_metadata_root'];cp=load(root/cal/'INDEPENDENT_SMALL_METADATA_RETRIEVAL.json')
+            require(cp['status']=='PASS_ACTUAL_CAL32_EXECUTED_SOURCE_AND_SMALL_METADATA' and cp['native_query_captured'] is False and
+                    cp['private_PT_WO_images_downloaded'] is False and cp['private_tensor_hashes_are_producer_recorded_not_rehashed_by_this_small_fetch'] is True,'Calibration availability/query claim differs')
+            for x in cp['files']:original_graph(cal,x['file'],x['sha256'])
+            cj=load(root/cal/'source_job.json');cl=load(root/cal/'launch_receipt.json');ci=load(root/cal/'source_inventory.json');ccfg=load(root/cal/'source_config.json');cmf=load(root/cal/'manifest.json')
+            require(ccfg==cmf['config'] and ccfg['inputs_sha256']==R9_CAL_INPUT_SHA and
+                    original_hash(cal,'source_job.json')==cl['job_sha256'] and original_hash(cal,'source_inventory.json')==cl['source_inventory_sha256'] and
+                    cj['name']==cl['name']==cp['producer_name'] and type(cl['pid']) is int and cl['pid']>0,'Actual calibration job/config/inventory binding differs')
+            cargv=[cl['source_snapshot']+'/code/round9_collect_v1.py' if x.endswith('/code/round9_collect_v1.py') else x for x in cj['argv']]
+            require(cl['argv_executed']==cargv and ci['code/round9_collect_v1.py']==cp['actual_driver_sha256']=='2d709806122c8127a766747ef5d29821fb22f389238f8448f0dfd25c363a61df','Actual calibration executed entry/argv differs')
+            original_graph(cal,'complete.json',R9_CAL_COMPLETE_SHA);original_graph(cal,'inputs/calibration32_inputs.jsonl',R9_CAL_INPUT_SHA)
+            original_graph(cal,'source_files/code/round9_collect_v1.py','2d709806122c8127a766747ef5d29821fb22f389238f8448f0dfd25c363a61df')
+            prov=book['round9_fit']['train_provenance'];cm=load(root/cal/'complete.json')
+            require(prov['collection_provenance']['complete_sha256']==R9_CAL_COMPLETE_SHA and fm['private_WO_sha256']==cm['wo_sha256'] and
+                    sorted(prov['private_train_shards'])==sorted([[x['file'],x['sha256']] for x in cm['sources']]) and
+                    prov['train_labels_or_development_answers_read'] is False and prov['fixture_only'] is False,'Fit tensor/source linkage differs')
+            calinputs=load(root/policy['input_manifest_file'])['input_files']['calibration32']['path'];calinputfile=source_file_reference(calinputs)
+            ids=[json.loads(x)['id'] for x in (root/calinputfile).read_text(encoding='utf-8').splitlines()]
+            require(sorted(prov['calibration_ids'])==sorted(ids) and [x['id'] for x in cm['sources']]==ids,'Actual calibration source32 IDs differ')
+            for item in prov['callback_sources'].values():
+                name=Path(item['file']).name;value=item['sha256']
+                if '.source/code/' in item['file']:require(fi['code/'+name]==value,'Callback not pinned by actual fit snapshot')
+                require(any(e['source_sha256']==value and e['public_sha256']==value and Path(path).name==name for path,e in entries.items()),'Exact callback code bytes not archived')
+        round9_folders.add(folder)
     def walk(folder):
         if folder in visited:return
         require(folder not in active,'Cyclic public donor closure');active.add(folder)
@@ -330,9 +440,8 @@ def verify(root,archive=None,recompute_scores=False):
             require(dict(roles)==m['QA_origin_counts']==c['QA_origin_counts'],'Fresh/reused accounting differs')
             contracts[folder]=m['effective_contract']
         elif m.get('runner_schema') is not None:
-            require(m['schema']=='baseline_matrix.raw_inference.v1','Unknown custom raw schema')
             check_proof(folder,'retrieval_receipt.json',('manifest.json','records.jsonl','complete.json'),'PASS_REMOTE_RAW_SHA256_EXACT')
-            verify_R7_source(folder,m,c)
+            verify_round9(folder,m,c)
         else:
             require(m['schema']=='baseline_matrix.raw_inference.v1','Unknown original donor schema')
             check_proof(folder,'retrieval_receipt.json',('manifest.json','records.jsonl','complete.json'),'PASS_REMOTE_RAW_SHA256_EXACT')
@@ -354,30 +463,40 @@ def verify(root,archive=None,recompute_scores=False):
         own=set()
         for artifact in group['phase_artifacts']:reachable(artifact['raw_dir'],own)
         require(own=={node['raw_dir'] for node in group['source_closure']},'Independent phase donor closure differs')
-    require(len(custom_folders)==8,'This standalone verifier requires the exact8 custom R7 originals, not a canonical-only bundle')
-    require(all(name in declared and name in {a['config'] for a in artifacts} and entries[name]['source_sha256']==digest for name,digest in R7_BASELINE39.items()),'Required39 completed baseline auxiliary configs missing or changed')
-    if custom_folders:
-        def actual_context(m):
-            runtime={}
-            for key,aliases in [('torch_version',('torch_version',)),('transformers_version',('transformers_version',)),
-                ('cuda_version',('cuda_version','CUDA_version')),('python_version',('python_version',)),
-                ('hardware',('hardware',)),('runtime_executable',('runtime_executable',))]:
-                values=[m[x] for x in aliases if x in m]
-                require(values and all(x==values[0] for x in values),'Missing/conflicting actual custom runtime field')
-                runtime[key]=values[0]
-            return {'model_spec':m['model_spec'],'model_files':sorted(({k:r[k] for k in ('file','bytes','sha256')} for r in m['model_identity']['files']),key=lambda r:r['file']),
-                'runtime':runtime,**{k:m[k] for k in ('processor_id','processor_version','processor_file_hashes','generation_native','generation_overrides')}}
-        anchors={}
-        for a in artifacts:
-            m=raw_meta[a['raw_dir']][0]
-            if m['config']['method']['id']=='F_native_split' and m['expected_QA']==500:
-                dataset=declared[a['config']]['dataset'];require(dataset not in anchors,'Duplicate same500 FP16 anchor');anchors[dataset]=a['raw_dir']
-        require(set(anchors)=={'textvqa','infovqa','docvqa','chartqa'},'All4 same500 FP16 auxiliary anchors required')
-        for folder in custom_folders:
-            m=raw_meta[folder][0];a=next(x for x in artifacts if x['raw_dir']==folder);dataset=declared[a['config']]['dataset'];anchor=anchors[dataset]
-            require(actual_context(m)==actual_context(raw_meta[anchor][0]),'R7/baseline actual model processor generation runtime differs')
-            require([(r['id'],r['full_input_fingerprint']) for r in raw_lines[folder]]==
-                    [(r['id'],r['full_input_fingerprint']) for r in raw_lines[anchor]],'R7/baseline image prompt visual positions boundary input differs')
+    require(round9_folders and index.get('custom_driver_provenance_schema')=='trajkv.public_round9.v3','This verifier requires explicit R9 source phase')
+    require(len(artifacts)==18 and sum(x['expected_QA'] for x in artifacts)==704 and len(round9_folders)==18,'v3 cannot truncate original14 plus four BRPE source scope')
+    require({Path(a['raw_dir']).name for a in artifacts}==set(R9_STAGE_RUNS),'Wrong named source components for this v3 phase')
+    frozen=load(root/load(root/R9_POLICY_FILE)['input_manifest_file'])
+    cohorts={}
+    for label in ('calibration32','textvqa_dev64','infovqa_dev64'):
+        item=frozen['input_files'][label];path=source_file_reference(item['path'])
+        require(entries[path]['source_sha256']==item['sha256'],'Frozen original source cohort changed')
+        cohorts[label]=[json.loads(x) for x in (root/path).read_text(encoding='utf-8').splitlines()]
+    require(len(cohorts['calibration32'])==32 and len(cohorts['textvqa_dev64'])==len(cohorts['infovqa_dev64'])==64,'cal32/dev64 counts changed')
+    selected=cohorts['calibration32']+cohorts['textvqa_dev64']+cohorts['infovqa_dev64']
+    formal=[]
+    for ds in ('textvqa','infovqa','docvqa','chartqa'):
+        formal += [json.loads(x) for x in (root/('configs/datasets/v3/'+ds+'_p2_inputs.jsonl')).read_text(encoding='utf-8').splitlines()]
+    for key in ('original_image_sha256','source_cluster_id'):
+        require(len({r[key] for r in selected})==160 and not {r[key] for r in selected}&{r[key] for r in formal},'cal/dev/formal source/content overlap')
+    require(all(r['split']=='train' for r in cohorts['infovqa_dev64']),'Info development relabelled as validation/test')
+    # Logical points retain real source components; no synthesized raw64 run.
+    for group in groups:
+        matrix=load(root/group['declared_matrix_file']);logical=defaultdict(list)
+        for row in matrix['rows']:
+            cfgref=source_file_reference(row['config']);a=next(x for x in group['phase_artifacts'] if x['config']==cfgref);logical[row['logical_point']].append(a['raw_dir'])
+        for point,folders in logical.items():
+            source=[raw_meta[x][0] for x in folders];source.sort(key=lambda x:x['config']['start']);ids=[];cursor=source[0]['config']['start']
+            for m in source:
+                cfg=m['config'];require(cfg['count'] in (32,64,500),'Small diagnostics cannot enter main quality groups');require(cfg['start']==cursor,'Logical union overlaps/gaps');cursor+=cfg['count'];ids+=m['expected_ids']
+                for key in ('candidate','method','inputs_sha256','cohort_kind','preprocessing','max_new_tokens','question_suffix'):require(cfg[key]==source[0]['config'][key],'Logical union protocol/algorithm differs')
+                require(m['source_hashes']==source[0]['source_hashes'],'Logical union different numeric source epochs')
+                require(r9_context(m)==r9_context(source[0]),'Logical union actual model/processor/generation/runtime differs')
+            diagnostic=source[0]['config']['candidate'].get('diagnostic_only',False)
+            if diagnostic:require(source[0]['config']['candidate'].get('method_frontier_eligible') is False,'Diagnostic promoted to method')
+            declared_point=group['phase']['logical_points'][point]
+            require(ids==declared_point['ids'] and len(ids)==len(set(ids))==declared_point['QA'] and len(source)==declared_point['source_runs'],'Logical union sources/count differs')
+            require(declared_point['single_fresh64_claim']==(len(source)==1 and len(ids)==64),'Union mislabeled as fresh64')
     scoring=[];complete_cells=Counter();complete_questions=Counter()
     source_lock=load(root/'configs/datasets/v3/source_lock.json')
     for artifact in artifacts:
@@ -388,8 +507,9 @@ def verify(root,archive=None,recompute_scores=False):
         if declaration.get('model') is not None:require(cfg['model_id']==declaration['model'],'Declared model differs')
         require(cfg==m['config'],'Declared target/view configuration differs')
         inputs=relative(cfg['inputs']);refs=inputs.replace('_inputs.jsonl','_refs.jsonl')
+        own_source_lock=load(root/'configs/round9_inputs_v1/source_lock.json') if inputs.startswith('configs/round9_inputs_v1/') else source_lock
         for path in (inputs,refs):
-            lock=source_lock['files'][Path(path).name];require(entries[path]['source_sha256']==lock['sha256'] and entries[path]['source_bytes']==lock['bytes'],'Original input/reference lock differs')
+            lock=own_source_lock['files'][Path(path).name];require(entries[path]['source_sha256']==lock['sha256'] and entries[path]['source_bytes']==lock['bytes'],'Original input/reference lock differs')
         input_rows=[json.loads(line) for line in (root/inputs).read_text(encoding='utf-8').splitlines()]
         input_lookup={r['id']:r for r in input_rows};ref_lookup={r['id']:r for r in (json.loads(line) for line in (root/refs).read_text(encoding='utf-8').splitlines())}
         expected=cfg.get('ids') if cfg.get('ids') is not None else [r['id'] for r in input_rows[int(cfg.get('start',0)):int(cfg.get('start',0))+int(cfg.get('count',len(input_rows)))]]
@@ -410,12 +530,6 @@ def verify(root,archive=None,recompute_scores=False):
             with (root/folder/'records.jsonl').open(encoding='utf-8') as raw,(root/scored/'scored_records.jsonl').open(encoding='utf-8') as scores:
                 for number,expected_id in enumerate(expected,1):
                     row=json.loads(raw.readline());value=json.loads(scores.readline());identity=raw_lines[folder][number-1]
-                    if folder in custom_folders:
-                        actual=physical_complete_bytes(row,m['model_spec'])
-                        require(abs(16*actual/row['full_kv_byte_denominator']-row['actual_effective_visual_bits'])<1e-12,'Custom complete bits differ')
-                        first=row['first_generation_call']
-                        require(first['native_first_logits_injected'] is False and first['cache_tokens_before']==row['compression_boundary'] and
-                                first['input_tokens']==row['question_suffix_tokens'] and first['input_ids_sha256']==row['question_suffix_sha256'],'Custom suffix/firsttoken differs')
                     require(row['id']==value['id']==expected_id and value['raw_status']==row['status'],'Scored/raw ID/status differs')
                     require(value['raw_jsonl_line_number']==number and value['raw_jsonl_exact_line_sha256']==identity['source_line_sha256'],'Scored original line proof differs')
                     if row['status']!='PASS':require(value['score'] is None,'Fake failure score');failures+=1;continue
@@ -463,21 +577,16 @@ def verify(root,archive=None,recompute_scores=False):
         all_complete=all_complete and is_complete
         verified_groups.append({'phase_label':phase['phase_label'],'cells':complete_cells[group_number],
                                 'view_questions':complete_questions[group_number],'primary':group_number==0})
-    if custom_folders:
-        require(len(custom_folders)==8 and groups[0]['phase']['family']=='r7_m1_anchor8_custom_driver_v2' and
-                groups[0]['phase']['expected_cells']==8 and groups[0]['phase']['expected_questions']==4000 and
-                {a['raw_dir'] for a in groups[0]['phase_artifacts']}==custom_folders,'Custom primary must be exact8/4000')
-        require(index.get('custom_driver_provenance_schema')=='trajkv.public_custom_driver.v1','Custom export identity missing')
     eligible=all_complete and not index.get('fixture_only',False)
     require(index['publication_eligible']==eligible,'Incomplete preview/fixture publication eligibility differs')
     phase=index['phase']
-    return {'status':'PASS_PUBLIC_CUSTOM_DRIVER_EXPORT_VERIFIED_V1','public_files':len(entries),'public_payload_bytes':total,
+    return {'status':'PASS_PUBLIC_ROUND9_EXPORT_VERIFIED_V4','public_files':len(entries),'public_payload_bytes':total,
         'independent_phases_verified':verified_groups,'phase_group_totals_are_separate':True,
         'supporting_evidence_groups_verified':len(index.get('supporting_evidence_groups',[])),
         'jsonl_line_identities':line_count,'raw_complete_runs_verified':len(visited),
         'original_donors':sum(n['kind']=='original_inference_run' for n in index['source_closure']),
         'derived_views':sum(n['kind']=='derived_prediction_view' for n in index['source_closure']),
-        'source_closure_verified':True,'custom_R7_originals':len(custom_folders),'custom_SourceRun_admission_claimed':False,'score_recomputations':scoring,'archive_verified':bool(archive),
+        'source_closure_verified':True,'custom_R9_originals':len(round9_folders),'round9_actual_runs':len(round9_folders),'actual_fresh_QA':sum(raw_meta[f][0]['expected_QA'] for f in round9_folders),'custom_SourceRun_admission_claimed':False,'score_recomputations':scoring,'archive_verified':bool(archive),
         'phase':phase,'publication_eligible':eligible,'fixture_only':bool(index.get('fixture_only',False)),
         'completion_scope':'declared_matrix_only',
         'whole_external_library_completion_assessed':False,'github_upload_verified':False}

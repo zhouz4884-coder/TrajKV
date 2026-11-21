@@ -1,0 +1,39 @@
+{
+  "status": "LAUNCHED",
+  "pid": 2957159,
+  "name": "bm_R9_exchange_GPU2Nv_v1",
+  "argv_executed": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-B",
+    "${DATA_ROOT}/jobs/bm_R9_exchange_GPU2Nv_v1.source/code/round9_precision_exchange_v1.py",
+    "--gpu-check",
+    "--config",
+    "${DATA_ROOT}/configs/r7_research/M1_R7gt43_docvqa_smoke4_v1.json",
+    "--candidate",
+    "${DATA_ROOT}/results/round9_v1/exchange_calibration_v2/profile.json",
+    "--output",
+    "${DATA_ROOT}/results/round9_v1/exchange_GPU2Nv_v1"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_R9_exchange_GPU2Nv_v1.source",
+  "source_inventory_sha256": "12cde84e77d5ab603e100b293d5b83ccf200010a1c05838ef720b806a8052cf0",
+  "job_sha256": "bdd99c2d7f147f61d38db6e236225ce68130a15a8ee905e825b60e5334188736",
+  "log": "${DATA_ROOT}/logs/bm_R9_exchange_GPU2Nv_v1.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round9_v1/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/round9_v1/tmp",
+    "TMP": "${DATA_ROOT}/cache/round9_v1/tmp",
+    "TEMP": "${DATA_ROOT}/cache/round9_v1/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round9_v1/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round9_v1/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round9_v1/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/round9_v1/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/round9_v1/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/round9_v1/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round9_v1/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round9_v1/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/round9_v1/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round9_v1/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "1",
+  "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+}

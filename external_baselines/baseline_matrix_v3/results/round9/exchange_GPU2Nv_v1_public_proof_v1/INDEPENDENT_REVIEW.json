@@ -1,0 +1,87 @@
+{
+  "schema": "trajkv.round9.exchange_GPU2Nv.independent_review.v1",
+  "status": "PASS_ACTUAL_GPU2NV_FIELDS_READERS_AND_COMPLETE_BYTES_INDEPENDENTLY_REVIEWED",
+  "actual_GPU": true,
+  "synthetic_geometries": [
+    256,
+    1792
+  ],
+  "all28_reader_comparisons": 168,
+  "model_quality_QA_added": 0,
+  "source_driver_sha256": "15e075936d235cdd0a3935961b8083c2f10c9df59c545f1a6bd2c7aecd3dd9fe",
+  "records_sha256": "bc69d4cb9d9e72de899a5f0e0cf0d6f7a42695af8d344d14d8b23625cb827be5",
+  "profile_sha256": "7ec305a76cebf5ca9e358842e11e68fe6a77e6af9f2d83c39af723ff17eb5c22",
+  "actual_job_sha256": "bdd99c2d7f147f61d38db6e236225ce68130a15a8ee905e825b60e5334188736",
+  "launch_receipt_sha256": "8a06c4fb2c86f261205faf058dafdfd72449d6ec27cf6df7db8ea12632b2888f",
+  "source_inventory_sha256": "12cde84e77d5ab603e100b293d5b83ccf200010a1c05838ef720b806a8052cf0",
+  "independent_remote_rehash_receipt_sha256": "8f49db3f21f84f461a50c8308a43fc5f836b3a4f727cdfca1dd1b665584d402f",
+  "fetch_receipt_sha256": "36739e280ed8f1cd8dd56ddcc78ce5e4c75e75861190a29d44ef1366242b4f2c",
+  "cases": [
+    {
+      "Nv": 256,
+      "mode": "Lookup8",
+      "stages": 43,
+      "V_stages": 20,
+      "B0": 1264773,
+      "actual_complete_bytes": 1263429,
+      "delta_bytes": -1344,
+      "all28_reader_and_field_bitwise": true
+    },
+    {
+      "Nv": 256,
+      "mode": "Drop4",
+      "stages": 39,
+      "V_stages": 20,
+      "B0": 1264773,
+      "actual_complete_bytes": 1245037,
+      "delta_bytes": -19736,
+      "all28_reader_and_field_bitwise": true
+    },
+    {
+      "Nv": 256,
+      "mode": "Exchange",
+      "stages": 39,
+      "V_stages": 20,
+      "B0": 1264773,
+      "actual_complete_bytes": 1263469,
+      "delta_bytes": -1304,
+      "all28_reader_and_field_bitwise": true
+    },
+    {
+      "Nv": 1792,
+      "mode": "Lookup8",
+      "stages": 43,
+      "V_stages": 20,
+      "B0": 8315013,
+      "actual_complete_bytes": 8313669,
+      "delta_bytes": -1344,
+      "all28_reader_and_field_bitwise": true
+    },
+    {
+      "Nv": 1792,
+      "mode": "Drop4",
+      "stages": 39,
+      "V_stages": 20,
+      "B0": 8315013,
+      "actual_complete_bytes": 8184685,
+      "delta_bytes": -130328,
+      "all28_reader_and_field_bitwise": true
+    },
+    {
+      "Nv": 1792,
+      "mode": "Exchange",
+      "stages": 39,
+      "V_stages": 20,
+      "B0": 8315013,
+      "actual_complete_bytes": 8301421,
+      "delta_bytes": -13592,
+      "all28_reader_and_field_bitwise": true
+    }
+  ],
+  "signed_int8_negative_sentinel_and_mixed16_256_reader_checked": true,
+  "upgrade_retained_K_RE_GPU_cases_observed": 0,
+  "coverage_limitation": "Selected layer14 only had K[14,0,0] and it was dropped. No retained K residual exists on the upgraded layer in this profile; that GPU RE branch is vacuous, not a failure. It is implemented/source- and CPU-field-checked, but future profiles retaining such stages require an actual GPU branch control.",
+  "worker_queue_or_remote_write_actions_by_reviewer": false,
+  "independent_GPU_experiment_started_by_reviewer": false,
+  "not_free_generation_or_task_quality": true
+}
