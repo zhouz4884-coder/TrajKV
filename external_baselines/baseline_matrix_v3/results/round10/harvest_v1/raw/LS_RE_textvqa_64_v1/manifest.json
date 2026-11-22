@@ -1,0 +1,3570 @@
+{
+  "schema": "baseline_matrix.raw_inference.v1",
+  "runner_schema": "trajkv.round10_research.raw.v1",
+  "config": {
+    "schema": "trajkv.round10_research.raw.v1",
+    "model_id": "M1",
+    "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+    "inputs": "${DATA_ROOT}/configs/round10_inputs_v1/textvqa_dev64_inputs.jsonl",
+    "start": 0,
+    "count": 64,
+    "max_new_tokens": 64,
+    "question_suffix": "\nAnswer the question using a single word or phrase.",
+    "preprocessing": {
+      "max_patches": 8
+    },
+    "method": {
+      "id": "Round10_LS_RE_v1",
+      "family": "trajkv_round10_research",
+      "encode_scope": "visual",
+      "information_condition": "query_unknown"
+    },
+    "scope": "Round10 D160 development; source-isolated; not official500 or blind confirmation",
+    "seed": 0,
+    "inputs_sha256": "705b589b268e187a380509e537a928fddc517a4056700563e2dd75bce30981ab",
+    "variant_source": {
+      "path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/confirm_doc128_s0.json",
+      "sha256": "aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4",
+      "name": "r7_joint_k1_gt_cond"
+    },
+    "variant": {
+      "method": "round7_key",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/gaussian_vq_g4_16.json",
+      "name": "r7_joint_k1_gt_cond",
+      "v_group_size": "all",
+      "metadata_factor_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/factors_for_book16_inherited.json",
+      "budget_bits": 1.8,
+      "selection_calibration_sha256": "202f92d618c41769f8344c584e6bd00e29300e171bea7dbf8721191d4a262e18",
+      "key_amplitude": "norm",
+      "selected_stages": [
+        [
+          "k",
+          24,
+          3,
+          0
+        ],
+        [
+          "v",
+          19,
+          2,
+          0
+        ],
+        [
+          "k",
+          23,
+          2,
+          0
+        ],
+        [
+          "k",
+          22,
+          1,
+          0
+        ],
+        [
+          "k",
+          19,
+          2,
+          0
+        ],
+        [
+          "v",
+          19,
+          3,
+          0
+        ],
+        [
+          "k",
+          23,
+          1,
+          0
+        ],
+        [
+          "k",
+          22,
+          3,
+          0
+        ],
+        [
+          "k",
+          20,
+          3,
+          0
+        ],
+        [
+          "k",
+          14,
+          0,
+          0
+        ],
+        [
+          "k",
+          19,
+          3,
+          0
+        ],
+        [
+          "v",
+          22,
+          3,
+          0
+        ],
+        [
+          "k",
+          25,
+          1,
+          0
+        ],
+        [
+          "v",
+          22,
+          0,
+          0
+        ],
+        [
+          "k",
+          22,
+          0,
+          0
+        ],
+        [
+          "k",
+          15,
+          2,
+          0
+        ],
+        [
+          "v",
+          15,
+          2,
+          0
+        ],
+        [
+          "v",
+          24,
+          3,
+          0
+        ],
+        [
+          "k",
+          16,
+          1,
+          0
+        ],
+        [
+          "v",
+          20,
+          3,
+          0
+        ],
+        [
+          "k",
+          27,
+          2,
+          0
+        ],
+        [
+          "v",
+          23,
+          1,
+          0
+        ],
+        [
+          "k",
+          27,
+          3,
+          0
+        ],
+        [
+          "v",
+          16,
+          0,
+          0
+        ],
+        [
+          "k",
+          23,
+          0,
+          0
+        ],
+        [
+          "k",
+          21,
+          2,
+          0
+        ],
+        [
+          "v",
+          14,
+          0,
+          0
+        ],
+        [
+          "k",
+          16,
+          0,
+          0
+        ],
+        [
+          "v",
+          22,
+          1,
+          0
+        ],
+        [
+          "v",
+          23,
+          2,
+          0
+        ],
+        [
+          "k",
+          26,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          2,
+          0
+        ],
+        [
+          "v",
+          26,
+          2,
+          0
+        ],
+        [
+          "k",
+          21,
+          0,
+          0
+        ],
+        [
+          "v",
+          14,
+          1,
+          0
+        ],
+        [
+          "v",
+          20,
+          2,
+          0
+        ],
+        [
+          "v",
+          17,
+          2,
+          0
+        ],
+        [
+          "k",
+          21,
+          1,
+          0
+        ],
+        [
+          "k",
+          25,
+          3,
+          0
+        ],
+        [
+          "v",
+          18,
+          2,
+          0
+        ],
+        [
+          "k",
+          17,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          3,
+          0
+        ],
+        [
+          "v",
+          21,
+          0,
+          0
+        ],
+        [
+          "v",
+          27,
+          2,
+          0
+        ],
+        [
+          "v",
+          8,
+          3,
+          0
+        ],
+        [
+          "k",
+          8,
+          3,
+          0
+        ],
+        [
+          "v",
+          25,
+          1,
+          0
+        ],
+        [
+          "k",
+          26,
+          3,
+          0
+        ],
+        [
+          "v",
+          16,
+          1,
+          0
+        ],
+        [
+          "k",
+          14,
+          1,
+          0
+        ],
+        [
+          "v",
+          17,
+          3,
+          0
+        ],
+        [
+          "k",
+          16,
+          2,
+          0
+        ],
+        [
+          "k",
+          17,
+          3,
+          0
+        ],
+        [
+          "k",
+          20,
+          2,
+          0
+        ],
+        [
+          "k",
+          12,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          0,
+          0
+        ],
+        [
+          "v",
+          26,
+          0,
+          0
+        ],
+        [
+          "k",
+          11,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          2,
+          0
+        ],
+        [
+          "v",
+          18,
+          1,
+          0
+        ],
+        [
+          "v",
+          16,
+          2,
+          0
+        ],
+        [
+          "k",
+          27,
+          0,
+          0
+        ],
+        [
+          "k",
+          26,
+          0,
+          0
+        ],
+        [
+          "k",
+          18,
+          1,
+          0
+        ],
+        [
+          "v",
+          25,
+          3,
+          0
+        ],
+        [
+          "v",
+          17,
+          1,
+          0
+        ],
+        [
+          "v",
+          26,
+          3,
+          0
+        ],
+        [
+          "k",
+          17,
+          1,
+          0
+        ],
+        [
+          "k",
+          22,
+          2,
+          0
+        ],
+        [
+          "v",
+          20,
+          1,
+          0
+        ],
+        [
+          "v",
+          15,
+          0,
+          0
+        ],
+        [
+          "k",
+          20,
+          0,
+          0
+        ],
+        [
+          "k",
+          20,
+          1,
+          0
+        ],
+        [
+          "k",
+          26,
+          1,
+          0
+        ],
+        [
+          "k",
+          15,
+          0,
+          0
+        ],
+        [
+          "k",
+          14,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          1,
+          0
+        ],
+        [
+          "v",
+          12,
+          3,
+          0
+        ],
+        [
+          "v",
+          23,
+          0,
+          0
+        ],
+        [
+          "v",
+          19,
+          0,
+          0
+        ],
+        [
+          "v",
+          11,
+          3,
+          0
+        ],
+        [
+          "k",
+          4,
+          1,
+          0
+        ],
+        [
+          "k",
+          21,
+          3,
+          0
+        ],
+        [
+          "v",
+          12,
+          1,
+          0
+        ],
+        [
+          "k",
+          12,
+          1,
+          0
+        ],
+        [
+          "k",
+          9,
+          0,
+          0
+        ],
+        [
+          "v",
+          22,
+          2,
+          0
+        ],
+        [
+          "k",
+          9,
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1,
+          0
+        ],
+        [
+          "k",
+          19,
+          0,
+          0
+        ],
+        [
+          "k",
+          9,
+          1,
+          0
+        ],
+        [
+          "v",
+          15,
+          3,
+          0
+        ],
+        [
+          "v",
+          26,
+          1,
+          0
+        ],
+        [
+          "v",
+          14,
+          2,
+          0
+        ],
+        [
+          "k",
+          15,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          3,
+          0
+        ],
+        [
+          "k",
+          3,
+          1,
+          0
+        ],
+        [
+          "v",
+          9,
+          3,
+          0
+        ],
+        [
+          "v",
+          9,
+          0,
+          0
+        ],
+        [
+          "v",
+          14,
+          3,
+          0
+        ],
+        [
+          "k",
+          13,
+          2,
+          0
+        ],
+        [
+          "k",
+          24,
+          1,
+          0
+        ],
+        [
+          "k",
+          14,
+          3,
+          0
+        ],
+        [
+          "v",
+          20,
+          0,
+          0
+        ],
+        [
+          "v",
+          9,
+          1,
+          0
+        ],
+        [
+          "v",
+          18,
+          3,
+          0
+        ],
+        [
+          "v",
+          13,
+          2,
+          0
+        ],
+        [
+          "v",
+          24,
+          1,
+          0
+        ],
+        [
+          "k",
+          11,
+          0,
+          0
+        ],
+        [
+          "v",
+          17,
+          0,
+          0
+        ],
+        [
+          "v",
+          9,
+          2,
+          0
+        ],
+        [
+          "k",
+          8,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          2,
+          0
+        ],
+        [
+          "v",
+          13,
+          0,
+          0
+        ],
+        [
+          "k",
+          5,
+          0,
+          0
+        ],
+        [
+          "k",
+          11,
+          1,
+          0
+        ],
+        [
+          "k",
+          10,
+          0,
+          0
+        ],
+        [
+          "k",
+          24,
+          2,
+          0
+        ],
+        [
+          "v",
+          4,
+          1,
+          0
+        ],
+        [
+          "k",
+          13,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          3,
+          0
+        ],
+        [
+          "v",
+          12,
+          2,
+          0
+        ],
+        [
+          "v",
+          16,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          0,
+          0
+        ],
+        [
+          "k",
+          17,
+          0,
+          0
+        ],
+        [
+          "v",
+          5,
+          2,
+          0
+        ],
+        [
+          "k",
+          12,
+          2,
+          0
+        ],
+        [
+          "v",
+          11,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          3,
+          0
+        ],
+        [
+          "k",
+          8,
+          0,
+          0
+        ],
+        [
+          "k",
+          10,
+          2,
+          0
+        ],
+        [
+          "k",
+          9,
+          2,
+          0
+        ],
+        [
+          "v",
+          1,
+          3,
+          0
+        ],
+        [
+          "k",
+          15,
+          1,
+          0
+        ],
+        [
+          "v",
+          8,
+          1,
+          0
+        ],
+        [
+          "k",
+          16,
+          3,
+          0
+        ],
+        [
+          "v",
+          5,
+          0,
+          0
+        ],
+        [
+          "v",
+          24,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          3,
+          0
+        ],
+        [
+          "k",
+          4,
+          0,
+          0
+        ],
+        [
+          "v",
+          2,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          0,
+          0
+        ],
+        [
+          "v",
+          11,
+          1,
+          0
+        ],
+        [
+          "v",
+          4,
+          0,
+          0
+        ],
+        [
+          "k",
+          13,
+          1,
+          0
+        ],
+        [
+          "k",
+          13,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          2,
+          0
+        ],
+        [
+          "k",
+          2,
+          0,
+          0
+        ],
+        [
+          "v",
+          13,
+          3,
+          0
+        ],
+        [
+          "v",
+          8,
+          0,
+          0
+        ],
+        [
+          "v",
+          15,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          3,
+          0
+        ],
+        [
+          "v",
+          6,
+          1,
+          0
+        ],
+        [
+          "v",
+          2,
+          2,
+          0
+        ],
+        [
+          "v",
+          1,
+          0,
+          0
+        ],
+        [
+          "v",
+          3,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          1,
+          0
+        ],
+        [
+          "k",
+          6,
+          1,
+          0
+        ],
+        [
+          "v",
+          13,
+          1,
+          0
+        ],
+        [
+          "k",
+          3,
+          2,
+          0
+        ],
+        [
+          "v",
+          7,
+          2,
+          0
+        ],
+        [
+          "k",
+          7,
+          2,
+          0
+        ],
+        [
+          "v",
+          0,
+          2,
+          0
+        ],
+        [
+          "v",
+          5,
+          1,
+          0
+        ],
+        [
+          "v",
+          12,
+          0,
+          0
+        ],
+        [
+          "k",
+          12,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          1,
+          0
+        ],
+        [
+          "k",
+          2,
+          2,
+          0
+        ],
+        [
+          "k",
+          10,
+          1,
+          0
+        ],
+        [
+          "v",
+          2,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          1,
+          0
+        ],
+        [
+          "v",
+          5,
+          3,
+          0
+        ],
+        [
+          "v",
+          0,
+          0,
+          0
+        ],
+        [
+          "k",
+          4,
+          2,
+          0
+        ],
+        [
+          "k",
+          0,
+          2,
+          0
+        ],
+        [
+          "k",
+          8,
+          2,
+          0
+        ],
+        [
+          "k",
+          6,
+          0,
+          0
+        ],
+        [
+          "v",
+          0,
+          1,
+          0
+        ],
+        [
+          "v",
+          4,
+          2,
+          0
+        ],
+        [
+          "k",
+          25,
+          0,
+          0
+        ],
+        [
+          "k",
+          2,
+          3,
+          0
+        ],
+        [
+          "k",
+          10,
+          3,
+          0
+        ],
+        [
+          "k",
+          0,
+          0,
+          0
+        ],
+        [
+          "k",
+          4,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          0,
+          0
+        ],
+        [
+          "k",
+          23,
+          3,
+          0
+        ],
+        [
+          "v",
+          8,
+          2,
+          0
+        ],
+        [
+          "v",
+          3,
+          0,
+          0
+        ],
+        [
+          "v",
+          25,
+          0,
+          0
+        ],
+        [
+          "k",
+          6,
+          2,
+          0
+        ],
+        [
+          "k",
+          3,
+          0,
+          0
+        ],
+        [
+          "v",
+          18,
+          0,
+          0
+        ],
+        [
+          "v",
+          2,
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          2,
+          0
+        ],
+        [
+          "k",
+          0,
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1,
+          0
+        ],
+        [
+          "k",
+          11,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          2,
+          0
+        ],
+        [
+          "k",
+          6,
+          3,
+          0
+        ],
+        [
+          "k",
+          2,
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          3,
+          0
+        ],
+        [
+          "k",
+          19,
+          1,
+          0
+        ],
+        [
+          "v",
+          10,
+          3,
+          0
+        ],
+        [
+          "v",
+          6,
+          2,
+          0
+        ],
+        [
+          "v",
+          3,
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          1,
+          0
+        ],
+        [
+          "k",
+          25,
+          2,
+          0
+        ],
+        [
+          "v",
+          23,
+          3,
+          0
+        ],
+        [
+          "v",
+          11,
+          2,
+          0
+        ],
+        [
+          "v",
+          6,
+          3,
+          0
+        ],
+        [
+          "k",
+          3,
+          3,
+          0
+        ],
+        [
+          "v",
+          19,
+          1,
+          0
+        ],
+        [
+          "k",
+          24,
+          0,
+          0
+        ],
+        [
+          "v",
+          4,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          1,
+          0
+        ],
+        [
+          "v",
+          6,
+          0,
+          0
+        ],
+        [
+          "v",
+          25,
+          2,
+          0
+        ],
+        [
+          "k",
+          27,
+          1,
+          0
+        ],
+        [
+          "k",
+          0,
+          3,
+          0
+        ],
+        [
+          "v",
+          24,
+          0,
+          0
+        ]
+      ],
+      "residual_layout_reference": "actual",
+      "res_stages_limit": 43,
+      "round7_policy_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/policy_k1_cond.json"
+    },
+    "expected_asset_sha256": {
+      "direction_book_path": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+      "metadata_factor_path": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+      "round7_policy_path": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f"
+    },
+    "legacy_a2": "${DATA_DISK}/VLAtest/TrajKV/code/a2",
+    "legacy_experiments": "${DATA_DISK}/VLAtest/TrajKV/code/experiments",
+    "legacy_scripts": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts",
+    "kivi_source": "${DATA_DISK}/VLAtest/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "evaluation_contract": {
+      "version": "matrix_v3_metrics_v1",
+      "primary_metric_id": "textvqa_mmf_ten_vote_leave_one_out_v1",
+      "legacy_aux_only": "author_strip_ge0p5 and normalized_length are auxiliary for Doc/Info, not primary",
+      "source_scoring_file": "code/score.py"
+    },
+    "position_owner_layout": "single_shared_visual_position_map",
+    "input_manifest_path": "${DATA_ROOT}/configs/round10_inputs_v1/INPUT_MANIFEST.json",
+    "input_role": "development",
+    "input_count": 64,
+    "cohort_kind": "development",
+    "candidate": {
+      "mode": "LS-RE",
+      "theta_path": "${DATA_ROOT}/results/round10_v1/cal64_v1/value_theta_selected.json",
+      "theta_sha256": "20f0b9a904ffe88a750e3b0520e721303d69bb668b982ed84c40cbe7e0c5b388"
+    },
+    "expected_source_hashes": {
+      "code/round10_runner_v1.py": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "code/round10_value_bank_v2.py": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c",
+      "code/round10_value_bank_v1.py": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c",
+      "code/round9_value_bank_v1.py": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e",
+      "code/r7_legacy_bridge_v1.py": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b",
+      "code/r7_legacy_bridge_v2.py": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad",
+      "code/m1_protocol.py": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+      "code/model_registry.py": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+      "code/dataset_registry.py": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+      "code/evaluate.py": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+      "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+      "code/attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+      "code/ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+      "code/round10_inputs_v1.py": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77"
+    }
+  },
+  "config_sha256": "8232fe3c4caa441aaf83e92841d6b047e67b9ada22b973dff72ce1357085ee06",
+  "inputs_sha256": "705b589b268e187a380509e537a928fddc517a4056700563e2dd75bce30981ab",
+  "expected_ids": [
+    "textvqa:validation:36344",
+    "textvqa:validation:37260",
+    "textvqa:validation:36753",
+    "textvqa:validation:34918",
+    "textvqa:validation:38975",
+    "textvqa:validation:35960",
+    "textvqa:validation:39598",
+    "textvqa:validation:38300",
+    "textvqa:validation:37915",
+    "textvqa:validation:38005",
+    "textvqa:validation:38132",
+    "textvqa:validation:38579",
+    "textvqa:validation:37283",
+    "textvqa:validation:36870",
+    "textvqa:validation:34832",
+    "textvqa:validation:36226",
+    "textvqa:validation:37858",
+    "textvqa:validation:37993",
+    "textvqa:validation:35481",
+    "textvqa:validation:37299",
+    "textvqa:validation:38503",
+    "textvqa:validation:35800",
+    "textvqa:validation:39282",
+    "textvqa:validation:35236",
+    "textvqa:validation:39244",
+    "textvqa:validation:37951",
+    "textvqa:validation:37780",
+    "textvqa:validation:37908",
+    "textvqa:validation:37806",
+    "textvqa:validation:38190",
+    "textvqa:validation:39336",
+    "textvqa:validation:37072",
+    "textvqa:validation:37169",
+    "textvqa:validation:34757",
+    "textvqa:validation:38747",
+    "textvqa:validation:35053",
+    "textvqa:validation:36550",
+    "textvqa:validation:37396",
+    "textvqa:validation:35654",
+    "textvqa:validation:35781",
+    "textvqa:validation:37039",
+    "textvqa:validation:37824",
+    "textvqa:validation:37999",
+    "textvqa:validation:38060",
+    "textvqa:validation:37044",
+    "textvqa:validation:36301",
+    "textvqa:validation:36804",
+    "textvqa:validation:35368",
+    "textvqa:validation:39292",
+    "textvqa:validation:35959",
+    "textvqa:validation:39188",
+    "textvqa:validation:37708",
+    "textvqa:validation:37124",
+    "textvqa:validation:35093",
+    "textvqa:validation:37559",
+    "textvqa:validation:35963",
+    "textvqa:validation:37503",
+    "textvqa:validation:37244",
+    "textvqa:validation:36323",
+    "textvqa:validation:38030",
+    "textvqa:validation:38908",
+    "textvqa:validation:37653",
+    "textvqa:validation:35014",
+    "textvqa:validation:36319"
+  ],
+  "expected_QA": 64,
+  "model_spec": {
+    "model_id": "M1",
+    "hf_id": "OpenGVLab/InternVL3-8B-hf",
+    "architecture": "InternVLForConditionalGeneration",
+    "layers": 28,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "image_token_id": 151667,
+    "deepstack_visual_indexes": [],
+    "sliding_attention": false,
+    "native_adapter": "internvl3",
+    "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+  },
+  "references_read": false,
+  "prediction_cache_used": false,
+  "runtime_source_root": "${DATA_ROOT}/jobs/bm_R10_candidates_gpu0_v1.source",
+  "runtime_executable": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+  "started_unix": 1795342328.2608886,
+  "source_hashes": {
+    "code/round10_runner_v1.py": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+    "code/round10_value_bank_v2.py": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c",
+    "code/round10_value_bank_v1.py": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c",
+    "code/round9_value_bank_v1.py": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e",
+    "code/r7_legacy_bridge_v1.py": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b",
+    "code/r7_legacy_bridge_v2.py": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad",
+    "code/m1_protocol.py": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+    "code/model_registry.py": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+    "code/dataset_registry.py": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+    "code/evaluate.py": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+    "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "code/attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+    "code/ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+    "code/round10_inputs_v1.py": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77"
+  },
+  "frozen_variant": {
+    "method": "round7_key",
+    "bits_v": 1,
+    "v_layout": "channel",
+    "v_encoder": "lloyd",
+    "cap": 8,
+    "selector": "none",
+    "store_selector_meta": false,
+    "direction_book_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/gaussian_vq_g4_16.json",
+    "name": "r7_joint_k1_gt_cond",
+    "v_group_size": "all",
+    "metadata_factor_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/factors_for_book16_inherited.json",
+    "budget_bits": 1.8,
+    "selection_calibration_sha256": "202f92d618c41769f8344c584e6bd00e29300e171bea7dbf8721191d4a262e18",
+    "key_amplitude": "norm",
+    "selected_stages": [
+      [
+        "k",
+        24,
+        3,
+        0
+      ],
+      [
+        "v",
+        19,
+        2,
+        0
+      ],
+      [
+        "k",
+        23,
+        2,
+        0
+      ],
+      [
+        "k",
+        22,
+        1,
+        0
+      ],
+      [
+        "k",
+        19,
+        2,
+        0
+      ],
+      [
+        "v",
+        19,
+        3,
+        0
+      ],
+      [
+        "k",
+        23,
+        1,
+        0
+      ],
+      [
+        "k",
+        22,
+        3,
+        0
+      ],
+      [
+        "k",
+        20,
+        3,
+        0
+      ],
+      [
+        "k",
+        14,
+        0,
+        0
+      ],
+      [
+        "k",
+        19,
+        3,
+        0
+      ],
+      [
+        "v",
+        22,
+        3,
+        0
+      ],
+      [
+        "k",
+        25,
+        1,
+        0
+      ],
+      [
+        "v",
+        22,
+        0,
+        0
+      ],
+      [
+        "k",
+        22,
+        0,
+        0
+      ],
+      [
+        "k",
+        15,
+        2,
+        0
+      ],
+      [
+        "v",
+        15,
+        2,
+        0
+      ],
+      [
+        "v",
+        24,
+        3,
+        0
+      ],
+      [
+        "k",
+        16,
+        1,
+        0
+      ],
+      [
+        "v",
+        20,
+        3,
+        0
+      ],
+      [
+        "k",
+        27,
+        2,
+        0
+      ],
+      [
+        "v",
+        23,
+        1,
+        0
+      ],
+      [
+        "k",
+        27,
+        3,
+        0
+      ],
+      [
+        "v",
+        16,
+        0,
+        0
+      ],
+      [
+        "k",
+        23,
+        0,
+        0
+      ],
+      [
+        "k",
+        21,
+        2,
+        0
+      ],
+      [
+        "v",
+        14,
+        0,
+        0
+      ],
+      [
+        "k",
+        16,
+        0,
+        0
+      ],
+      [
+        "v",
+        22,
+        1,
+        0
+      ],
+      [
+        "v",
+        23,
+        2,
+        0
+      ],
+      [
+        "k",
+        26,
+        2,
+        0
+      ],
+      [
+        "v",
+        21,
+        2,
+        0
+      ],
+      [
+        "v",
+        26,
+        2,
+        0
+      ],
+      [
+        "k",
+        21,
+        0,
+        0
+      ],
+      [
+        "v",
+        14,
+        1,
+        0
+      ],
+      [
+        "v",
+        20,
+        2,
+        0
+      ],
+      [
+        "v",
+        17,
+        2,
+        0
+      ],
+      [
+        "k",
+        21,
+        1,
+        0
+      ],
+      [
+        "k",
+        25,
+        3,
+        0
+      ],
+      [
+        "v",
+        18,
+        2,
+        0
+      ],
+      [
+        "k",
+        17,
+        2,
+        0
+      ],
+      [
+        "v",
+        21,
+        3,
+        0
+      ],
+      [
+        "v",
+        27,
+        3,
+        0
+      ],
+      [
+        "v",
+        21,
+        0,
+        0
+      ],
+      [
+        "v",
+        27,
+        2,
+        0
+      ],
+      [
+        "v",
+        8,
+        3,
+        0
+      ],
+      [
+        "k",
+        8,
+        3,
+        0
+      ],
+      [
+        "v",
+        25,
+        1,
+        0
+      ],
+      [
+        "k",
+        26,
+        3,
+        0
+      ],
+      [
+        "v",
+        16,
+        1,
+        0
+      ],
+      [
+        "k",
+        14,
+        1,
+        0
+      ],
+      [
+        "v",
+        17,
+        3,
+        0
+      ],
+      [
+        "k",
+        16,
+        2,
+        0
+      ],
+      [
+        "k",
+        17,
+        3,
+        0
+      ],
+      [
+        "k",
+        20,
+        2,
+        0
+      ],
+      [
+        "k",
+        12,
+        3,
+        0
+      ],
+      [
+        "v",
+        27,
+        0,
+        0
+      ],
+      [
+        "v",
+        26,
+        0,
+        0
+      ],
+      [
+        "k",
+        11,
+        3,
+        0
+      ],
+      [
+        "k",
+        18,
+        2,
+        0
+      ],
+      [
+        "v",
+        18,
+        1,
+        0
+      ],
+      [
+        "v",
+        16,
+        2,
+        0
+      ],
+      [
+        "k",
+        27,
+        0,
+        0
+      ],
+      [
+        "k",
+        26,
+        0,
+        0
+      ],
+      [
+        "k",
+        18,
+        1,
+        0
+      ],
+      [
+        "v",
+        25,
+        3,
+        0
+      ],
+      [
+        "v",
+        17,
+        1,
+        0
+      ],
+      [
+        "v",
+        26,
+        3,
+        0
+      ],
+      [
+        "k",
+        17,
+        1,
+        0
+      ],
+      [
+        "k",
+        22,
+        2,
+        0
+      ],
+      [
+        "v",
+        20,
+        1,
+        0
+      ],
+      [
+        "v",
+        15,
+        0,
+        0
+      ],
+      [
+        "k",
+        20,
+        0,
+        0
+      ],
+      [
+        "k",
+        20,
+        1,
+        0
+      ],
+      [
+        "k",
+        26,
+        1,
+        0
+      ],
+      [
+        "k",
+        15,
+        0,
+        0
+      ],
+      [
+        "k",
+        14,
+        2,
+        0
+      ],
+      [
+        "v",
+        21,
+        1,
+        0
+      ],
+      [
+        "v",
+        12,
+        3,
+        0
+      ],
+      [
+        "v",
+        23,
+        0,
+        0
+      ],
+      [
+        "v",
+        19,
+        0,
+        0
+      ],
+      [
+        "v",
+        11,
+        3,
+        0
+      ],
+      [
+        "k",
+        4,
+        1,
+        0
+      ],
+      [
+        "k",
+        21,
+        3,
+        0
+      ],
+      [
+        "v",
+        12,
+        1,
+        0
+      ],
+      [
+        "k",
+        12,
+        1,
+        0
+      ],
+      [
+        "k",
+        9,
+        0,
+        0
+      ],
+      [
+        "v",
+        22,
+        2,
+        0
+      ],
+      [
+        "k",
+        9,
+        3,
+        0
+      ],
+      [
+        "v",
+        3,
+        1,
+        0
+      ],
+      [
+        "k",
+        19,
+        0,
+        0
+      ],
+      [
+        "k",
+        9,
+        1,
+        0
+      ],
+      [
+        "v",
+        15,
+        3,
+        0
+      ],
+      [
+        "v",
+        26,
+        1,
+        0
+      ],
+      [
+        "v",
+        14,
+        2,
+        0
+      ],
+      [
+        "k",
+        15,
+        3,
+        0
+      ],
+      [
+        "k",
+        18,
+        3,
+        0
+      ],
+      [
+        "k",
+        3,
+        1,
+        0
+      ],
+      [
+        "v",
+        9,
+        3,
+        0
+      ],
+      [
+        "v",
+        9,
+        0,
+        0
+      ],
+      [
+        "v",
+        14,
+        3,
+        0
+      ],
+      [
+        "k",
+        13,
+        2,
+        0
+      ],
+      [
+        "k",
+        24,
+        1,
+        0
+      ],
+      [
+        "k",
+        14,
+        3,
+        0
+      ],
+      [
+        "v",
+        20,
+        0,
+        0
+      ],
+      [
+        "v",
+        9,
+        1,
+        0
+      ],
+      [
+        "v",
+        18,
+        3,
+        0
+      ],
+      [
+        "v",
+        13,
+        2,
+        0
+      ],
+      [
+        "v",
+        24,
+        1,
+        0
+      ],
+      [
+        "k",
+        11,
+        0,
+        0
+      ],
+      [
+        "v",
+        17,
+        0,
+        0
+      ],
+      [
+        "v",
+        9,
+        2,
+        0
+      ],
+      [
+        "k",
+        8,
+        1,
+        0
+      ],
+      [
+        "k",
+        5,
+        2,
+        0
+      ],
+      [
+        "v",
+        13,
+        0,
+        0
+      ],
+      [
+        "k",
+        5,
+        0,
+        0
+      ],
+      [
+        "k",
+        11,
+        1,
+        0
+      ],
+      [
+        "k",
+        10,
+        0,
+        0
+      ],
+      [
+        "k",
+        24,
+        2,
+        0
+      ],
+      [
+        "v",
+        4,
+        1,
+        0
+      ],
+      [
+        "k",
+        13,
+        0,
+        0
+      ],
+      [
+        "k",
+        7,
+        3,
+        0
+      ],
+      [
+        "v",
+        12,
+        2,
+        0
+      ],
+      [
+        "v",
+        16,
+        3,
+        0
+      ],
+      [
+        "v",
+        10,
+        0,
+        0
+      ],
+      [
+        "k",
+        17,
+        0,
+        0
+      ],
+      [
+        "v",
+        5,
+        2,
+        0
+      ],
+      [
+        "k",
+        12,
+        2,
+        0
+      ],
+      [
+        "v",
+        11,
+        0,
+        0
+      ],
+      [
+        "v",
+        7,
+        3,
+        0
+      ],
+      [
+        "k",
+        8,
+        0,
+        0
+      ],
+      [
+        "k",
+        10,
+        2,
+        0
+      ],
+      [
+        "k",
+        9,
+        2,
+        0
+      ],
+      [
+        "v",
+        1,
+        3,
+        0
+      ],
+      [
+        "k",
+        15,
+        1,
+        0
+      ],
+      [
+        "v",
+        8,
+        1,
+        0
+      ],
+      [
+        "k",
+        16,
+        3,
+        0
+      ],
+      [
+        "v",
+        5,
+        0,
+        0
+      ],
+      [
+        "v",
+        24,
+        2,
+        0
+      ],
+      [
+        "k",
+        1,
+        3,
+        0
+      ],
+      [
+        "k",
+        4,
+        0,
+        0
+      ],
+      [
+        "v",
+        2,
+        0,
+        0
+      ],
+      [
+        "k",
+        7,
+        0,
+        0
+      ],
+      [
+        "v",
+        7,
+        0,
+        0
+      ],
+      [
+        "v",
+        11,
+        1,
+        0
+      ],
+      [
+        "v",
+        4,
+        0,
+        0
+      ],
+      [
+        "k",
+        13,
+        1,
+        0
+      ],
+      [
+        "k",
+        13,
+        3,
+        0
+      ],
+      [
+        "v",
+        10,
+        2,
+        0
+      ],
+      [
+        "k",
+        2,
+        0,
+        0
+      ],
+      [
+        "v",
+        13,
+        3,
+        0
+      ],
+      [
+        "v",
+        8,
+        0,
+        0
+      ],
+      [
+        "v",
+        15,
+        1,
+        0
+      ],
+      [
+        "k",
+        5,
+        3,
+        0
+      ],
+      [
+        "v",
+        6,
+        1,
+        0
+      ],
+      [
+        "v",
+        2,
+        2,
+        0
+      ],
+      [
+        "v",
+        1,
+        0,
+        0
+      ],
+      [
+        "v",
+        3,
+        2,
+        0
+      ],
+      [
+        "k",
+        1,
+        0,
+        0
+      ],
+      [
+        "k",
+        7,
+        1,
+        0
+      ],
+      [
+        "k",
+        6,
+        1,
+        0
+      ],
+      [
+        "v",
+        13,
+        1,
+        0
+      ],
+      [
+        "k",
+        3,
+        2,
+        0
+      ],
+      [
+        "v",
+        7,
+        2,
+        0
+      ],
+      [
+        "k",
+        7,
+        2,
+        0
+      ],
+      [
+        "v",
+        0,
+        2,
+        0
+      ],
+      [
+        "v",
+        5,
+        1,
+        0
+      ],
+      [
+        "v",
+        12,
+        0,
+        0
+      ],
+      [
+        "k",
+        12,
+        0,
+        0
+      ],
+      [
+        "v",
+        7,
+        1,
+        0
+      ],
+      [
+        "k",
+        5,
+        1,
+        0
+      ],
+      [
+        "k",
+        2,
+        2,
+        0
+      ],
+      [
+        "k",
+        10,
+        1,
+        0
+      ],
+      [
+        "v",
+        2,
+        3,
+        0
+      ],
+      [
+        "v",
+        10,
+        1,
+        0
+      ],
+      [
+        "v",
+        5,
+        3,
+        0
+      ],
+      [
+        "v",
+        0,
+        0,
+        0
+      ],
+      [
+        "k",
+        4,
+        2,
+        0
+      ],
+      [
+        "k",
+        0,
+        2,
+        0
+      ],
+      [
+        "k",
+        8,
+        2,
+        0
+      ],
+      [
+        "k",
+        6,
+        0,
+        0
+      ],
+      [
+        "v",
+        0,
+        1,
+        0
+      ],
+      [
+        "v",
+        4,
+        2,
+        0
+      ],
+      [
+        "k",
+        25,
+        0,
+        0
+      ],
+      [
+        "k",
+        2,
+        3,
+        0
+      ],
+      [
+        "k",
+        10,
+        3,
+        0
+      ],
+      [
+        "k",
+        0,
+        0,
+        0
+      ],
+      [
+        "k",
+        4,
+        3,
+        0
+      ],
+      [
+        "k",
+        18,
+        0,
+        0
+      ],
+      [
+        "k",
+        23,
+        3,
+        0
+      ],
+      [
+        "v",
+        8,
+        2,
+        0
+      ],
+      [
+        "v",
+        3,
+        0,
+        0
+      ],
+      [
+        "v",
+        25,
+        0,
+        0
+      ],
+      [
+        "k",
+        6,
+        2,
+        0
+      ],
+      [
+        "k",
+        3,
+        0,
+        0
+      ],
+      [
+        "v",
+        18,
+        0,
+        0
+      ],
+      [
+        "v",
+        2,
+        1,
+        0
+      ],
+      [
+        "v",
+        1,
+        2,
+        0
+      ],
+      [
+        "k",
+        0,
+        1,
+        0
+      ],
+      [
+        "v",
+        1,
+        1,
+        0
+      ],
+      [
+        "k",
+        11,
+        2,
+        0
+      ],
+      [
+        "k",
+        1,
+        2,
+        0
+      ],
+      [
+        "k",
+        6,
+        3,
+        0
+      ],
+      [
+        "k",
+        2,
+        1,
+        0
+      ],
+      [
+        "v",
+        0,
+        3,
+        0
+      ],
+      [
+        "k",
+        19,
+        1,
+        0
+      ],
+      [
+        "v",
+        10,
+        3,
+        0
+      ],
+      [
+        "v",
+        6,
+        2,
+        0
+      ],
+      [
+        "v",
+        3,
+        3,
+        0
+      ],
+      [
+        "k",
+        1,
+        1,
+        0
+      ],
+      [
+        "k",
+        25,
+        2,
+        0
+      ],
+      [
+        "v",
+        23,
+        3,
+        0
+      ],
+      [
+        "v",
+        11,
+        2,
+        0
+      ],
+      [
+        "v",
+        6,
+        3,
+        0
+      ],
+      [
+        "k",
+        3,
+        3,
+        0
+      ],
+      [
+        "v",
+        19,
+        1,
+        0
+      ],
+      [
+        "k",
+        24,
+        0,
+        0
+      ],
+      [
+        "v",
+        4,
+        3,
+        0
+      ],
+      [
+        "v",
+        27,
+        1,
+        0
+      ],
+      [
+        "v",
+        6,
+        0,
+        0
+      ],
+      [
+        "v",
+        25,
+        2,
+        0
+      ],
+      [
+        "k",
+        27,
+        1,
+        0
+      ],
+      [
+        "k",
+        0,
+        3,
+        0
+      ],
+      [
+        "v",
+        24,
+        0,
+        0
+      ]
+    ],
+    "residual_layout_reference": "actual",
+    "res_stages_limit": 43,
+    "round7_policy_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/policy_k1_cond.json"
+  },
+  "frozen_variant_sha256": "31fead66de6df98ef3572996218dd1249d8e6f83d7a90bcd329d2f8c7b77b1fc",
+  "asset_sha256": {
+    "direction_book_path": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "metadata_factor_path": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "round7_policy_path": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f"
+  },
+  "variant_original_source": {
+    "path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/confirm_doc128_s0.json",
+    "sha256": "aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4",
+    "name": "r7_joint_k1_gt_cond"
+  },
+  "base_profile_numeric_fields_unchanged": true,
+  "candidate": {
+    "mode": "LS-RE",
+    "theta_path": "${DATA_ROOT}/results/round10_v1/cal64_v1/value_theta_selected.json",
+    "theta_sha256": "20f0b9a904ffe88a750e3b0520e721303d69bb668b982ed84c40cbe7e0c5b388"
+  },
+  "scope": "Round10 D160 development; source-isolated; not official500 or blind confirmation",
+  "parameter_fit_or_new_algorithm": true,
+  "native_FP16_visual_source_retained_for_serving": false,
+  "timing_scope": "instrumented quality-run prototype; not controlled speed or HBM traffic benchmark",
+  "first_logits_evidence": "one actual raw last-position logits vector before HF logits processors, saved on data disk",
+  "round10_candidate_assets": {
+    "mode": "LS-RE",
+    "theta": {
+      "origin": "exact_file",
+      "path": "${DATA_ROOT}/results/round10_v1/cal64_v1/value_theta_selected.json",
+      "sha256": "20f0b9a904ffe88a750e3b0520e721303d69bb668b982ed84c40cbe7e0c5b388",
+      "schema": "trajkv.round10.value_theta.v1",
+      "parameter_count": 224,
+      "fit_provenance": {
+        "module_sha256": "abbc45f07e5899ff6018e0a22c5bba94c8764b03cd518e764de1949d9df87a8a",
+        "source_hashes": {
+          "code/attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+          "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+          "code/evaluate.py": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+          "code/m1_protocol.py": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+          "code/model_registry.py": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+          "code/ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+          "code/r7_frozen_pilot_v2.py": "3ff896405be5ac91067bdbe8d736c0552e46f835dea90a93c9835ceeb8fd3a91",
+          "code/r7_legacy_bridge_v1.py": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b",
+          "code/r7_legacy_bridge_v2.py": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad",
+          "code/round10_calibrate_v1.py": "abbc45f07e5899ff6018e0a22c5bba94c8764b03cd518e764de1949d9df87a8a",
+          "code/round10_inputs_v1.py": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77",
+          "code/round10_value_bank_v1.py": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c",
+          "code/round10_value_bank_v2.py": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c",
+          "code/round9_calibration_v1.py": "757cc51740ad2f92d8ebd9ad9adadf2719131ae634b16b24052363f8e45ba84f",
+          "code/round9_collect_v1.py": "5e23abd412a015999a26ce6e43a2f781619ce3a6b21bd1a081ef21dfb044ba27",
+          "code/round9_query_capture_v1.py": "ccc1d1de30fb5b2c8aeec841d1baedfdf3d10239ca3037d5f95ee846024df68b",
+          "code/round9_value_bank_v1.py": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e"
+        },
+        "fit_inputs_sha256": "ddcd8bd7454b0fd878fcd4316b8fc3308813526be905a168bdf9f23311cd01e9",
+        "fit_sources": 48,
+        "fit_shards": [
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/000.pt",
+            "sha256": "925f18a53c34dda092725c596268a628ad79e05b48ccaf811e7df3b59d898c6e",
+            "source_id": "3f320652403faca3",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/001.pt",
+            "sha256": "fdd56437625375366eab13ab55d3d38aeb92885eeca3a50a8107a6d6ca4eb306",
+            "source_id": "529ce78a847e2b14",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/002.pt",
+            "sha256": "a14b64eab90646c8b493072efd9a3d768a78ecc0e523cbda1866b13195b333fb",
+            "source_id": "14744f551dcff2b9",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/003.pt",
+            "sha256": "7cda8d1aee37e1a823e099055166815eaf3784811ad7f8b6cf4a564ec22381f3",
+            "source_id": "01600cb466dbff4d",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/004.pt",
+            "sha256": "781062b7dba084ba2a597b33fa3e6ce29cdc544c730bc7792f4712acd0e044e6",
+            "source_id": "25aa0d5e189efd76",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/005.pt",
+            "sha256": "1623f48e2b758b984aa6e96dd9b1bd0dd6bba5024703984e23686c5b37f64120",
+            "source_id": "3f2d13c846eb4541",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/006.pt",
+            "sha256": "3c520617f7b0c4350b8019370b6b9cbed844cc26e758da9a98542d0bf5e277d0",
+            "source_id": "23b2e8a05f58b4c5",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/007.pt",
+            "sha256": "9a43931cfad0f1f805e39ba044b57f9da8253a445bcfa38fa1e8ef051dba5167",
+            "source_id": "0ac5b4900fb6d221",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/008.pt",
+            "sha256": "68327013d3e6a986562b171663652725919612face483d5c49530383e47bde44",
+            "source_id": "3aa32bad16fa5724",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/009.pt",
+            "sha256": "41aa3bc9873fdb9a612ca43911034baf9bdc2b924fe9d4b9ec1c4f006d263da9",
+            "source_id": "3f99ed4e4dd075d5",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/010.pt",
+            "sha256": "685c25f1393d98b8c587f3833e0f76e0a68040997fd37279beb11ba70f47787a",
+            "source_id": "0486a158aa01b171",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/011.pt",
+            "sha256": "e603a3b5cfca7b7a043319b3358b382180fe44b719a235a60483689af9721734",
+            "source_id": "017b2a8eae6f2070",
+            "dataset": "textvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/012.pt",
+            "sha256": "a26e0165d0d9bbfd87e8d24ab735c01730132476e738ca7764d7ce81c8e9dd9b",
+            "source_id": "10035.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/013.pt",
+            "sha256": "08bc172d80e43a59a61a0995586599438c420c91ea4cb3719faaa1916c674c01",
+            "source_id": "10005.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/014.pt",
+            "sha256": "bdab60d2aa4c1d68234e330e0dae93dfa2e2091c86bfc2e533d32d13f6ed69d4",
+            "source_id": "10006.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/015.pt",
+            "sha256": "dc89b9fc7fbd2c02a19eac0f731e4f44f80b3476169bacbefeb043135a958f34",
+            "source_id": "10019.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/016.pt",
+            "sha256": "da0fa63a53bd88522166e8f5f89290d5c313f69880e780ad762d5d892c3d4957",
+            "source_id": "10143.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/017.pt",
+            "sha256": "e57766e9f5f7756240abfb30964c33f476d2d7c0e5ac3d188a3f2038edb1e43f",
+            "source_id": "10017.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/018.pt",
+            "sha256": "202ded0357fa74aae39db93011ec3d295ae6e15f0deab9a9caa971a52ad8a6ff",
+            "source_id": "10009.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/019.pt",
+            "sha256": "c6798b0ea844c1f191939453880312151ec3df57215cbcaba041166d2b1569cd",
+            "source_id": "10114.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/020.pt",
+            "sha256": "74de6ce5457ca3da0238d6dd27336b9154654e11267bf42d9eb34e8cac34acbb",
+            "source_id": "10085.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/021.pt",
+            "sha256": "dcbe902bd00a0f77b3411c4ade99695881e1cbacebda5cc4b691e59e069a30ae",
+            "source_id": "10140.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/022.pt",
+            "sha256": "1c423fcfc468fc90746d7b19de7445bacfd1d420373bb4529a0ad626c7769f5a",
+            "source_id": "10024.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/023.pt",
+            "sha256": "539d30a1f2b912a3f8883fae031a214db8704dc88ea44bd8527ad88a2c77a9e4",
+            "source_id": "10037.jpeg",
+            "dataset": "infovqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/024.pt",
+            "sha256": "9d8f615fb8c268001fba11ba75cc7e6e49403f7065ad0a44097b4eb3cc272e51",
+            "source_id": "jsbn0226/2",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/025.pt",
+            "sha256": "f2c04eda84fff65a6d7b71119d7ae43f771c842971f64b22c9ae77af8cd5256a",
+            "source_id": "zznp0227/107",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/026.pt",
+            "sha256": "34da99020a5150efd47085f15890488654cdf30ee40b277c15dc0c95317ee40c",
+            "source_id": "rnjg0227/1",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/027.pt",
+            "sha256": "18bd5407af73e1360b19c2fa732dc710bd829156c2a12807504f4de165fe7323",
+            "source_id": "ytbw0217/9",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/028.pt",
+            "sha256": "32d5c635ff6f686b8666f8b5bd619993ce2dacb57db2b2453b369f9624aaa4d1",
+            "source_id": "qplp0000/2",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/029.pt",
+            "sha256": "07693482dad4525f2c183b02e6609b543f9a740c75e09c3c15ea2156069fa844",
+            "source_id": "ggmx0225/5",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/030.pt",
+            "sha256": "4c42207f6d2a201593f854442d03781549c1bf72f31b2e6dfaf5ae36c745335c",
+            "source_id": "ynbx0223/68",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/031.pt",
+            "sha256": "cad5078e039965caad29df95763d2be6f0d98bcc4cdfc44cd5fa3c878f2d7744",
+            "source_id": "lycj0037/8",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/032.pt",
+            "sha256": "3438f9fe6f0aae79c80a947ddf47d1d8630af3d12ffba2663d7d2ec14a7031d4",
+            "source_id": "gscv0228/6",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/033.pt",
+            "sha256": "d495220785bb956bb95a84ab71f1585ca22909bb2c568c5e8609677aa290b953",
+            "source_id": "kfgn0226/1",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/034.pt",
+            "sha256": "294ac50e1b3201aa6e7d61201fc38225d3eddd82cacd9cc489fbbe7b5f267487",
+            "source_id": "rgcw0217/7",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/035.pt",
+            "sha256": "aa477bb811f5671b01f2f6cdfde50f64809729cb3148ad3321aca9bc2a1469a1",
+            "source_id": "jnnw0228/2",
+            "dataset": "docvqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/036.pt",
+            "sha256": "8cdb1561f59f4f79471ae3722ae78444f3e0d79df74f19e3c1db2a62e6fafa8d",
+            "source_id": "multi_col_100172.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/037.pt",
+            "sha256": "b243e9b3d5381f65b0016720f76db47ae67fdb9a303ef6499bb9730340d2522d",
+            "source_id": "multi_col_40477.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/038.pt",
+            "sha256": "0ce30ed8ea641a5f3e414d9b48cb941a1b5a9378004262963c180cecd9fb426d",
+            "source_id": "two_col_41891.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/039.pt",
+            "sha256": "92bc083da7c2f3479f30ea7926637bd4e256078fc0cb133193f27c6f8739142e",
+            "source_id": "two_col_104500.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/040.pt",
+            "sha256": "59df6016a012abd3c0bebb5945bb6291e416efad2c490b444fe4eb8e09da3d6c",
+            "source_id": "two_col_40436.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/041.pt",
+            "sha256": "0909593cf530dee76d77142d2ca3bcdd8ebfb9cc6262c2eb306bccd800b3e1cf",
+            "source_id": "multi_col_60462.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/042.pt",
+            "sha256": "35abded126347f701b85fb60acc0d806948dd1833302a253f29b255d9783701c",
+            "source_id": "two_col_83211.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/043.pt",
+            "sha256": "a71e0abd3d0a6c9d0b66efc15196f0a635b9fd8a85733493ced63a5cc9fd18b5",
+            "source_id": "multi_col_20034.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/044.pt",
+            "sha256": "087f8951ff676171d46b35f278177bd6d42896e505c010bcbc0995a7534f2eed",
+            "source_id": "multi_col_101165.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/045.pt",
+            "sha256": "ff63905c13cf600d76e969020e39364afa9ec20acf7ab0f4b3cfa0e5f5f074a7",
+            "source_id": "47413894001985.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/046.pt",
+            "sha256": "1a650c8b631b498f745a141abfb77f2e5473b4cb0894f5ab6152492484979364",
+            "source_id": "two_col_21080.png",
+            "dataset": "chartqa"
+          },
+          {
+            "file": "${DATA_ROOT}/results/round10_v1/cal64_v1/private_fit_shards/047.pt",
+            "sha256": "d6cb6a971b040408371b169df8bb37649a4a1d566ab203b4193bb58304260f37",
+            "source_id": "two_col_688.png",
+            "dataset": "chartqa"
+          }
+        ],
+        "private_WO_sha256": "d5957aef17614b20788bcc3c540d17f47a8d55971bce9190a4c4181aacdec3ef",
+        "conditional_LS_only": true,
+        "training_updates": 0,
+        "fixed_original_student_q_text_and_discrete_fields": true,
+        "whole_model_gradient_or_RE_aware_fit_claimed": false,
+        "references_read": false,
+        "select_inputs_sha256": "216fb2a066315fae1665fa76c396c8aacc6318338ae74a0cfa26933f13b76503",
+        "select_sources": 16,
+        "selected_common_lambda": 0.5,
+        "lambda_grid": [
+          0.0,
+          0.25,
+          0.5,
+          1.0
+        ],
+        "identity_is_control_not_candidate_gate": true,
+        "nonzero_proposal_research_test_not_quality_certification": true,
+        "selection_objective": "source-balanced mean of FZ and RE full-vocabulary actual-model TF KL",
+        "select_teacher_EOS_cap32": true
+      }
+    }
+  },
+  "technical_only": false,
+  "source_driver_contract": "Round10 custom real packed inference; not canonical SourceRun evaluator admission",
+  "model_identity": {
+    "status": "PASS_EXACT_HF_REQUIRED_TREE",
+    "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "source_lock_sha256": "9d6ad47a69be644749017026e732ed8d08bca4967985287ed62a245fbf678d67",
+    "files": [
+      {
+        "file": "added_tokens.json",
+        "bytes": 811,
+        "sha256": "222d504fd2fb42e08a43b7ef6383a130483d34233f506b6ccc799655de48dff8"
+      },
+      {
+        "file": "chat_template.jinja",
+        "bytes": 481,
+        "sha256": "b3e3fa7cdeceec1d3dfe0d17b77724baf3857714e688f3a700261567e96140eb"
+      },
+      {
+        "file": "config.json",
+        "bytes": 1960,
+        "sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637"
+      },
+      {
+        "file": "generation_config.json",
+        "bytes": 126,
+        "sha256": "c142bebeae7dfc9ef119d3f12fb03022261ceef51320c75ead103af4d8e150c2"
+      },
+      {
+        "file": "merges.txt",
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      {
+        "file": "model-00001-of-00004.safetensors",
+        "bytes": 4877374576,
+        "sha256": "7a34fa2f58c41aa1e6dbf28e9f4e43be590fb6077d33e4befe54a8413db03641"
+      },
+      {
+        "file": "model-00002-of-00004.safetensors",
+        "bytes": 4991497800,
+        "sha256": "11a0e1a80e29b9451771e03b9b2da118cfd8da0912631b6de0d4e1137f63dffc"
+      },
+      {
+        "file": "model-00003-of-00004.safetensors",
+        "bytes": 4932774744,
+        "sha256": "8b578604029b9046396b61bf4ae223e0e85c9e89e138da067505bc6f7f9de921"
+      },
+      {
+        "file": "model-00004-of-00004.safetensors",
+        "bytes": 1087199376,
+        "sha256": "6814f162cc1ca061db92cb8808c7202876d8c1a56a0e7e856db12b21cba23a28"
+      },
+      {
+        "file": "model.safetensors.index.json",
+        "bytes": 73875,
+        "sha256": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "bytes": 666,
+        "sha256": "af09ffbe57900d5ae07f93f4c20693559a272e32fa6c5f816132cb71985aac98"
+      },
+      {
+        "file": "processor_config.json",
+        "bytes": 72,
+        "sha256": "3511f4ae65c2fa5c1ab6a0fb2bb2fe767d6f0ee53ba412953b33acc892327c2a"
+      },
+      {
+        "file": "special_tokens_map.json",
+        "bytes": 877,
+        "sha256": "e847a86633f2470a0d9fed41b5a36ff1f4435050929aa80b28c41d28420501b2"
+      },
+      {
+        "file": "tokenizer.json",
+        "bytes": 11423732,
+        "sha256": "7cc80b7e20adf8bf6f6ca442bf1abfac8056bb3b7d3e0b11c9d497d3e79398c9"
+      },
+      {
+        "file": "tokenizer_config.json",
+        "bytes": 6861,
+        "sha256": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f"
+      },
+      {
+        "file": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "verification_audit": {
+      "binding_status": "SHA_LOCKED_PRIOR_FULL_HASH_AND_STAT_BINDING",
+      "binding_sha256": "8d8a651bc0a865551aaeb8fb9b8306c6e7c12b53a09d9bc1d46151109f050bb2",
+      "prior_full_hash_proof": "${DATA_ROOT}/audit/M1_official_identity_verification_v2.json",
+      "prior_full_hash_proof_sha256": "b980d54185173da02d2aee744e24355e8c5a53338e1d620ff495a85eae3d26ab",
+      "checks": [
+        {
+          "file": "added_tokens.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "chat_template.jinja",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "generation_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "merges.txt",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "model-00001-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00002-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00003-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00004-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "preprocessor_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "processor_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "special_tokens_map.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "tokenizer.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "vocab.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        }
+      ]
+    }
+  },
+  "torch_version": "2.4.1+cu121",
+  "transformers_version": "5.12.0",
+  "CUDA_version": "12.1",
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "python_version": "3.10.20",
+  "weight_dtype": "float16",
+  "tf32": false,
+  "seed": 0,
+  "attention_implementation": "sdpa",
+  "model_residency": {
+    "weight_resident_bytes": 15888747520,
+    "all_model_tensor_bytes": 15888748032,
+    "buffer_bytes_incremental": 512
+  },
+  "processor_id": "OpenGVLab/InternVL3-8B-hf",
+  "processor_version": "5.12.0",
+  "processor_file_hashes": {
+    "added_tokens.json": "222d504fd2fb42e08a43b7ef6383a130483d34233f506b6ccc799655de48dff8",
+    "chat_template.jinja": "b3e3fa7cdeceec1d3dfe0d17b77724baf3857714e688f3a700261567e96140eb",
+    "config.json": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+    "generation_config.json": "c142bebeae7dfc9ef119d3f12fb03022261ceef51320c75ead103af4d8e150c2",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors.index.json": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+    "preprocessor_config.json": "af09ffbe57900d5ae07f93f4c20693559a272e32fa6c5f816132cb71985aac98",
+    "processor_config.json": "3511f4ae65c2fa5c1ab6a0fb2bb2fe767d6f0ee53ba412953b33acc892327c2a",
+    "special_tokens_map.json": "e847a86633f2470a0d9fed41b5a36ff1f4435050929aa80b28c41d28420501b2",
+    "tokenizer.json": "7cc80b7e20adf8bf6f6ca442bf1abfac8056bb3b7d3e0b11c9d497d3e79398c9",
+    "tokenizer_config.json": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "generation_native": {
+    "max_length": null,
+    "max_new_tokens": null,
+    "min_length": null,
+    "min_new_tokens": null,
+    "early_stopping": null,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": null,
+    "num_beams": null,
+    "use_cache": null,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": null,
+    "top_k": null,
+    "top_p": null,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": null,
+    "epsilon_cutoff": null,
+    "eta_cutoff": null,
+    "repetition_penalty": null,
+    "encoder_repetition_penalty": null,
+    "length_penalty": null,
+    "no_repeat_ngram_size": null,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": null,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": null,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": null,
+    "output_logits": null,
+    "return_dict_in_generate": null,
+    "pad_token_id": null,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "encoder_no_repeat_ngram_size": null,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": null,
+    "num_assistant_tokens_schedule": null,
+    "assistant_confidence_threshold": null,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": null,
+    "target_lookbehind": null,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": null,
+    "num_beam_groups": null,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_from_model_config": true,
+    "transformers_version": "5.12.0"
+  },
+  "generation_overrides": {
+    "do_sample": false,
+    "max_new_tokens": 64,
+    "use_cache": true,
+    "return_dict_in_generate": false
+  },
+  "tokenizer_class": "transformers.models.qwen2.tokenization_qwen2.Qwen2Tokenizer",
+  "tokenizer_is_fast": true,
+  "tokenizers_version": "0.22.2",
+  "decode_overrides": {
+    "clean_up_tokenization_spaces": false,
+    "skip_special_tokens": true
+  },
+  "runtime_library_source_sha256": {
+    "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/internvl/modeling_internvl.py": "fec9f18a83dea42dd32730555cac5a66ece67ef5f236f32967fed1f296d42bd6",
+    "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/internvl/processing_internvl.py": "1f2e8fccfa29a105bff6253500bdfdb4c6ecbc5cae90fddcdeada3db3afaf47b",
+    "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py": "fac4e6576bfe2369731be147a4e530f262bdf32f2ac50436f96f0d8bdd2fc628"
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "schema": "trajkv.round10.job_plan.v1",
+  "phase": "references",
+  "status": "FROZEN_PRE_LAUNCH",
+  "version": "v1",
+  "input_manifest_sha256": "b2ba5f54516abf96344e02356c7cee079b4ff48e2a270ea8fc61ea1c78baaecf",
+  "input_manifest_path": "${EVIDENCE_ROOT}\\results\\round10\\input_preparation_v1\\inputs\\INPUT_MANIFEST.json",
+  "jobs": [
+    {
+      "name": "bm_R10_references_gpu1_v1",
+      "job": "configs/jobs/bm_R10_references_gpu1_v1.json",
+      "job_sha256": "4126fab833bb54df750cfa1dbf4384324285e5ed5c532160a356e38a40655c1a",
+      "output": "results/round10_v1/queues/references_gpu1_v1",
+      "GPU": "1"
+    }
+  ],
+  "cells": [
+    {
+      "name": "FP16_chartqa_16_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/FP16_chartqa_16_v1.json",
+      "config_sha256": "d752be6ea9543c01a400a1f605dbdc26bfb996101304573e0773643cc33aab7b",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/FP16_chartqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "chartqa",
+      "mode": "FP16",
+      "GPU": "1"
+    },
+    {
+      "name": "R7low_chartqa_16_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/R7low_chartqa_16_v1.json",
+      "config_sha256": "934826b9dc254ae78ed513d2e0893d9189a7e75a4f78033c2c1b8d3f031f0501",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/R7low_chartqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "chartqa",
+      "mode": "R7low",
+      "GPU": "1"
+    },
+    {
+      "name": "R7high_chartqa_16_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/R7high_chartqa_16_v1.json",
+      "config_sha256": "2e84fb8dd03b5d31bac3c9f729fba9cfec1dd2d0d32aa23d175711a20755328c",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/R7high_chartqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "chartqa",
+      "mode": "R7high",
+      "GPU": "1"
+    },
+    {
+      "name": "FP16_docvqa_16_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/FP16_docvqa_16_v1.json",
+      "config_sha256": "af88327c28f1475afd74a5728b84845f1cb66e06bda84cbb9ed5ae7506db2a25",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/FP16_docvqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "docvqa",
+      "mode": "FP16",
+      "GPU": "1"
+    },
+    {
+      "name": "R7low_docvqa_16_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/R7low_docvqa_16_v1.json",
+      "config_sha256": "fab7849de11d4b689cb16c157c2731b68eb6e8fe427db8453def2db119b4c614",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/R7low_docvqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "docvqa",
+      "mode": "R7low",
+      "GPU": "1"
+    },
+    {
+      "name": "R7high_docvqa_16_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/R7high_docvqa_16_v1.json",
+      "config_sha256": "28ffd299f2220e199ff0e6c4d8c2a6ac2a25dceb1c650fb14ce2d09b32b14c1a",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/R7high_docvqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "docvqa",
+      "mode": "R7high",
+      "GPU": "1"
+    },
+    {
+      "name": "FP16_textvqa_64_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/FP16_textvqa_64_v1.json",
+      "config_sha256": "b6401ccc38157e84cbe50391d472b2cbec52e1e52a7b7ec75691e494dfbd88f0",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/FP16_textvqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "FP16",
+      "GPU": "1"
+    },
+    {
+      "name": "R7low_textvqa_64_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/R7low_textvqa_64_v1.json",
+      "config_sha256": "b496b0ab33d05da817ee4c04497de1e1fd69a0262c6e0c4e59ff905e7e73c591",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/R7low_textvqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "R7low",
+      "GPU": "1"
+    },
+    {
+      "name": "R7high_textvqa_64_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/R7high_textvqa_64_v1.json",
+      "config_sha256": "b26a68dab6c221a72164d37e0b8df3734df1d852be885287a49d02d3ccda3b16",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/R7high_textvqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "R7high",
+      "GPU": "1"
+    },
+    {
+      "name": "FP16_infovqa_64_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/FP16_infovqa_64_v1.json",
+      "config_sha256": "590f30649f777478f0c4db0439c084c71e9576c807cc5f167a270a556317de34",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/FP16_infovqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "FP16",
+      "GPU": "1"
+    },
+    {
+      "name": "R7low_infovqa_64_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/R7low_infovqa_64_v1.json",
+      "config_sha256": "9bfe5f49dc3a262293264c27bbf5bc0ffcafcb344384213155b4e82340dd2b4d",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/R7low_infovqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "R7low",
+      "GPU": "1"
+    },
+    {
+      "name": "R7high_infovqa_64_v1",
+      "script": "code/round10_runner_v1.py",
+      "script_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "config": "${DATA_ROOT}/configs/round10_v1/R7high_infovqa_64_v1.json",
+      "config_sha256": "f65c409029fd8beb2b4496b0be1adef3c0c7f04e19f6bcafe7dc669999c2e2fd",
+      "output": "${DATA_ROOT}/results/round10_v1/dev_v1/R7high_infovqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "R7high",
+      "GPU": "1"
+    }
+  ],
+  "planned_free_answers": 480,
+  "new_GPU_jobs_started_by_this_preparer": false
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "trajkv.round10.job_plan.v1",
+  "phase": "middle",
+  "status": "FROZEN_PRE_LAUNCH",
+  "version": "v1",
+  "input_manifest_path": "${EVIDENCE_ROOT}\\results\\round10\\input_preparation_v1\\inputs\\INPUT_MANIFEST.json",
+  "input_manifest_sha256": "b2ba5f54516abf96344e02356c7cee079b4ff48e2a270ea8fc61ea1c78baaecf",
+  "jobs": [
+    {
+      "name": "bm_R10_middle_gpu0_v1",
+      "job": "configs/jobs/bm_R10_middle_gpu0_v1.json",
+      "job_sha256": "c1bf8285f264ef31e441d356ffa556e308d0dc55ee0bae57ad5be3c241b03f46",
+      "output": "results/round10_middle_v1/queues/middle_gpu0_v1",
+      "GPU": "0"
+    }
+  ],
+  "cells": [
+    {
+      "name": "AddOldOrder_chartqa_16_v1",
+      "script": "code/round10_middle_runner_v1.py",
+      "script_sha256": "6dcf3fa5865915271b7c7074bc987aee74625ce41cc9d70ac4c56e268e7f86ac",
+      "config": "${DATA_ROOT}/configs/round10_middle_v1/AddOldOrder_chartqa_16_v1.json",
+      "config_sha256": "4b3c98778cfc2bbafb1003a64e1bb00ef40f79801a626d1bf6df87fdf849574f",
+      "output": "${DATA_ROOT}/results/round10_middle_v1/dev/AddOldOrder_chartqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "chartqa",
+      "mode": "AddOldOrder",
+      "GPU": "0"
+    },
+    {
+      "name": "V128_R43_chartqa_16_v1",
+      "script": "code/round10_middle_runner_v1.py",
+      "script_sha256": "6dcf3fa5865915271b7c7074bc987aee74625ce41cc9d70ac4c56e268e7f86ac",
+      "config": "${DATA_ROOT}/configs/round10_middle_v1/V128_R43_chartqa_16_v1.json",
+      "config_sha256": "e51b1438ad42a0d8b603980685303ee417ae20a358a257474a76b1fd0c70ea29",
+      "output": "${DATA_ROOT}/results/round10_middle_v1/dev/V128_R43_chartqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "chartqa",
+      "mode": "V128-R43",
+      "GPU": "0"
+    },
+    {
+      "name": "AddOldOrder_docvqa_16_v1",
+      "script": "code/round10_middle_runner_v1.py",
+      "script_sha256": "6dcf3fa5865915271b7c7074bc987aee74625ce41cc9d70ac4c56e268e7f86ac",
+      "config": "${DATA_ROOT}/configs/round10_middle_v1/AddOldOrder_docvqa_16_v1.json",
+      "config_sha256": "02cd8714a99d99abad2e898650e454c1c4feaf3aca961a75446699e9869a2ccb",
+      "output": "${DATA_ROOT}/results/round10_middle_v1/dev/AddOldOrder_docvqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "docvqa",
+      "mode": "AddOldOrder",
+      "GPU": "0"
+    },
+    {
+      "name": "V128_R43_docvqa_16_v1",
+      "script": "code/round10_middle_runner_v1.py",
+      "script_sha256": "6dcf3fa5865915271b7c7074bc987aee74625ce41cc9d70ac4c56e268e7f86ac",
+      "config": "${DATA_ROOT}/configs/round10_middle_v1/V128_R43_docvqa_16_v1.json",
+      "config_sha256": "0c36bb4d887dee3dea826419c781f8c4662ee2cdf6113431ccb7908d0fd94fc5",
+      "output": "${DATA_ROOT}/results/round10_middle_v1/dev/V128_R43_docvqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "docvqa",
+      "mode": "V128-R43",
+      "GPU": "0"
+    },
+    {
+      "name": "AddOldOrder_textvqa_64_v1",
+      "script": "code/round10_middle_runner_v1.py",
+      "script_sha256": "6dcf3fa5865915271b7c7074bc987aee74625ce41cc9d70ac4c56e268e7f86ac",
+      "config": "${DATA_ROOT}/configs/round10_middle_v1/AddOldOrder_textvqa_64_v1.json",
+      "config_sha256": "c166706835955cd462e053473996472fda725844f97228d3031d736f356113c3",
+      "output": "${DATA_ROOT}/results/round10_middle_v1/dev/AddOldOrder_textvqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "AddOldOrder",
+      "GPU": "0"
+    },
+    {
+      "name": "V128_R43_textvqa_64_v1",
+      "script": "code/round10_middle_runner_v1.py",
+      "script_sha256": "6dcf3fa5865915271b7c7074bc987aee74625ce41cc9d70ac4c56e268e7f86ac",
+      "config": "${DATA_ROOT}/configs/round10_middle_v1/V128_R43_textvqa_64_v1.json",
+      "config_sha256": "e581fbe66a589ba880f9bedadc48f6eed7fb464b4ace8c8e0c687f7ff8fb4ede",
+      "output": "${DATA_ROOT}/results/round10_middle_v1/dev/V128_R43_textvqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "V128-R43",
+      "GPU": "0"
+    },
+    {
+      "name": "AddOldOrder_infovqa_64_v1",
+      "script": "code/round10_middle_runner_v1.py",
+      "script_sha256": "6dcf3fa5865915271b7c7074bc987aee74625ce41cc9d70ac4c56e268e7f86ac",
+      "config": "${DATA_ROOT}/configs/round10_middle_v1/AddOldOrder_infovqa_64_v1.json",
+      "config_sha256": "6f30ac09bc2372370d84229d173a2db1799b575745efa01eae9ae1c33b8344ec",
+      "output": "${DATA_ROOT}/results/round10_middle_v1/dev/AddOldOrder_infovqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "AddOldOrder",
+      "GPU": "0"
+    },
+    {
+      "name": "V128_R43_infovqa_64_v1",
+      "script": "code/round10_middle_runner_v1.py",
+      "script_sha256": "6dcf3fa5865915271b7c7074bc987aee74625ce41cc9d70ac4c56e268e7f86ac",
+      "config": "${DATA_ROOT}/configs/round10_middle_v1/V128_R43_infovqa_64_v1.json",
+      "config_sha256": "2314c3f8d0424fe0de3b06d2835e6a5b8310c5147dc9b9b336f66d9f69ec1c1c",
+      "output": "${DATA_ROOT}/results/round10_middle_v1/dev/V128_R43_infovqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "V128-R43",
+      "GPU": "0"
+    }
+  ],
+  "planned_free_answers": 320,
+  "reference_answer_events_reused": 480,
+  "new_GPU_jobs_started_by_this_preparer": false
+}

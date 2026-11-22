@@ -1,0 +1,177 @@
+{
+  "schema": "baseline_matrix.offline_score.v1",
+  "status": "PASS_SCORED_COMPLETE",
+  "dataset": "chartqa",
+  "model_id": "M1",
+  "method": "Round10_R7high_v1",
+  "metric_contract_version": "matrix_v3_metrics_v1",
+  "metric_ids": [
+    "chartqa_pix2struct_relaxed_5pct_v1"
+  ],
+  "metric_provenance": [
+    "Google Pix2Struct primary relaxed-correctness implementation"
+  ],
+  "groups": {
+    "overall": {
+      "expected_questions": 48,
+      "scored_pass_questions": 48,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 0.8333333333333334,
+        "questions": 48,
+        "source_clusters": 48,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.7291666666666666,
+          0.9375
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 0.8333333333333334,
+        "questions": 48,
+        "source_clusters": 48,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.7291666666666666,
+          0.9375
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    },
+    "human": {
+      "expected_questions": 17,
+      "scored_pass_questions": 17,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 0.7058823529411765,
+        "questions": 17,
+        "source_clusters": 17,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.47058823529411764,
+          0.8823529411764706
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 0.7058823529411765,
+        "questions": 17,
+        "source_clusters": 17,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.47058823529411764,
+          0.8823529411764706
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    },
+    "aug": {
+      "expected_questions": 31,
+      "scored_pass_questions": 31,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 0.9032258064516129,
+        "questions": 31,
+        "source_clusters": 31,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.7741935483870968,
+          1.0
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 0.9032258064516129,
+        "questions": 31,
+        "source_clusters": 31,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.7741935483870968,
+          1.0
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    }
+  },
+  "primary_mean": 0.8333333333333334,
+  "primary_ci95": [
+    0.7291666666666666,
+    0.9375
+  ],
+  "primary_mean_percent": 83.33333333333334,
+  "primary_ci95_percent": [
+    72.91666666666666,
+    93.75
+  ],
+  "diagnostic_metrics_not_selected_by_score": {},
+  "raw_status_counts": {
+    "PASS": 48
+  },
+  "score_status_counts": {
+    "SCORED_PASS": 48
+  },
+  "expected_run_questions": 48,
+  "reference_cohort_questions": 48,
+  "entire_reference_cohort_selected": true,
+  "expected_ids_sha256": "3d5ad85040492bbda4af024742302be2c760aa4ad2cf279a02dd234b66944e2f",
+  "coverage_rule": "Any raw/scoring failure makes primary full-run mean/CI null; successful conditional mean is separately labeled, no fake zero or success-subset primary",
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261119,
+    "type": "percentile source-cluster resampling with replacement, question-weighted ratio",
+    "scale": "0..1"
+  },
+  "integrity": {
+    "status": "PASS_ALL_SHA_AND_EXPECTED_ID_CHECKS",
+    "raw_files": {
+      "manifest.json": "882c989177509a31de3176c01a3bf9edfaf26b87e574237d8d0bfd5dbc816ab2",
+      "records.jsonl": "4dff76a1a6bd8c13246268fe1461c6f13deb956e74e4a2c8eee0aea15d9ac4b6",
+      "complete.json": "b6116b6280d5463e043ea86bc371cc8cfb2a9349941e7be53377252a8393ceae"
+    },
+    "retrieval_receipt_sha256": "4c33fc19eb8b06538050593d45e542de7b4c79cf75b47aecc7e22f03cb9b9fd2",
+    "derived_source_provenance": null,
+    "refs_sha256": "b77b58f6278efb843d737c1e583ece7e91272ba4dd7cbcf3af99b42611a92165",
+    "inputs_sha256": "a06fb011ec35647774813557e7b513e31cfdffc94db4a531fe7f7cff86c60783",
+    "dataset_source_lock_sha256": "6e04a59609e915d809304463e501fbe90a166a7d60c7be79a12893d2a5afd1e7",
+    "metric_source_lock_sha256": "4ec78ff4f807843e358914afcf3e60e1a7eaf6f3013575a1f63787016da788e3",
+    "metric_code_hashes": {
+      "code/gates/metrics_gate.py": "e91887b55561759c2349860cf9a5acb2ed9284be99d6b3ae6469e8f2c4731606",
+      "code/metrics.py": "98b260c766e095f2b629d603de5cfd6519a91dccaaee471f02486955bb590d47",
+      "code/vendor_textvqa_metric.py": "b1a8e90abbf35e32e1e6c146c36c4a47ad72b71e73011f97cc3729aa1402b4c5"
+    },
+    "scorer_sha256": "72b5182eeb97e930403a970feebb4f1fadac23d04544c9646c6c9fd6b34bfba6",
+    "raw_dir": "${EVIDENCE_ROOT}\\results\\round10\\extension_harvest_v1\\raw\\Extension_R7high_chartqa_48_vg_v1",
+    "refs_path": "${EVIDENCE_ROOT}\\results\\round10\\input_preparation_v1\\inputs\\chartqa_reserve48_refs.jsonl",
+    "fixture_only": false
+  },
+  "created_unix": 1795353232.7961574,
+  "scoring_uses_GPU": false,
+  "prediction_provenance": {
+    "type": "original_raw_inference",
+    "inference_run": true,
+    "origin_counts": {
+      "fresh": 48,
+      "reused": 0
+    }
+  },
+  "derived_file_hashes": {
+    "scored_records.jsonl": "6fe3f27ee17bec31be69969f956997a88a3c8828c6d0d10c5b5c5c6d72ca6b63",
+    "scores.csv": "12accdb132299d944f9397fee02de7f41f443548b2802e512564c3fc779c6016"
+  }
+}

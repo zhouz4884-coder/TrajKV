@@ -1,0 +1,74 @@
+{
+  "schema": "trajkv.round10.replication_selection_freeze.v1",
+  "created_utc": "2026-11-22T12:34:36.949333+00:00",
+  "decision": "V128-R43_ONLY; NO_KRA1_EXTENSION",
+  "selected_modes": [
+    "V128-R43"
+  ],
+  "KRA1_disposition": "NOT_SELECTED_ZERO_TASK_GAIN_IN_BOUNDED_D160",
+  "reason": "KRA1 adds5980B and all four domain task means match originalR7low; no observed task gain supports additional224QA. This is not a proof of model/distribution equivalence.",
+  "D160_source": {
+    "path": "${EVIDENCE_ROOT}\\results\\round10\\kra_watch_snapshot_v3\\summary.json",
+    "sha256": "c76751e9465c238eec4fc203a12a9e2adcaa90def13a2cd89ec90324f56a158d"
+  },
+  "KRA1_vs_R7low": [
+    {
+      "dataset": "textvqa",
+      "QA": 64,
+      "delta_pp": 0.0,
+      "CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "same_raw_prediction_count": 64,
+      "same_output_token_ids_count": 64
+    },
+    {
+      "dataset": "infovqa",
+      "QA": 64,
+      "delta_pp": 0.0,
+      "CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "same_raw_prediction_count": 64,
+      "same_output_token_ids_count": 64
+    },
+    {
+      "dataset": "docvqa",
+      "QA": 16,
+      "delta_pp": 0.0,
+      "CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "same_raw_prediction_count": 16,
+      "same_output_token_ids_count": 16
+    },
+    {
+      "dataset": "chartqa",
+      "QA": 16,
+      "delta_pp": 0.0,
+      "CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "same_raw_prediction_count": 16,
+      "same_output_token_ids_count": 16
+    }
+  ],
+  "V128_selection_evidence": {
+    "path": "${EVIDENCE_ROOT}\\results\\round10\\middle_watch_snapshot_v2\\summary.json",
+    "sha256": "10361fe04aaa3425ef24bb5103515fe98d0df1d00ac349ac2cea49bc783760f4"
+  },
+  "replication_plan": {
+    "path": "${EVIDENCE_ROOT}\\results\\round10\\bootstrap_v1\\EXTENSION_V128_JOB_PLAN_v1.json",
+    "sha256": "0d52399e3ff4159c75134e45469bfd69ac5547baedda3436d8f41972a760795f"
+  },
+  "selection_used_only_calibration_and_D160": true,
+  "reserved224_model_outputs_read_at_freeze": false,
+  "parameters_and_method_frozen_for_replication": true,
+  "reserve_predictions_may_now_be_retrieved_for_fixed_candidate_reporting": true,
+  "new_algorithm_families_this_stage_closed": true,
+  "whole_goal_complete": false
+}

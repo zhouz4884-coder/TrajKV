@@ -1,0 +1,430 @@
+{
+  "schema": "trajkv.round10.kra_reaggregate_receipt.v1",
+  "status": "PASS_EXISTING_RAW_SOURCE_EQUAL_AGGREGATES_RECOMPUTED",
+  "expected_actual_opened_file_sha256": "6b11aa7f36b004c9a5eb1e9431952f8a4f08342bcab80cb512211add66ff05f2",
+  "reaggregation_source_sha256": "27e9540ee23b0ec70cfa9edd28c492319f1e80311dc06b10419aae57939f67cf",
+  "sources": [
+    {
+      "member_relative_to_harvest_root": "raw/KRA1_textvqa_64_v1/records.jsonl",
+      "role": "KRA1",
+      "dataset": "textvqa",
+      "rows": 64,
+      "actual_opened_file_bytes": 23818252,
+      "actual_opened_file_sha256": "bae79b518778ae7441d64ae7fc8155525663d3ac4854dff939366f3201bb0e85"
+    },
+    {
+      "member_relative_to_harvest_root": "raw/R7low_textvqa_64_v1/records.jsonl",
+      "role": "R7low",
+      "dataset": "textvqa",
+      "rows": 64,
+      "actual_opened_file_bytes": 19558391,
+      "actual_opened_file_sha256": "60d1ba8bef04b3b1de8bfc263e555fbd9c454349d7fd463ed2aaca5850de2fe1"
+    },
+    {
+      "member_relative_to_harvest_root": "raw/KRA1_infovqa_64_v1/records.jsonl",
+      "role": "KRA1",
+      "dataset": "infovqa",
+      "rows": 64,
+      "actual_opened_file_bytes": 23763870,
+      "actual_opened_file_sha256": "21246c35b175a626a53ef2a9fee7880088f18149423d2e818063140feb5e7ff4"
+    },
+    {
+      "member_relative_to_harvest_root": "raw/R7low_infovqa_64_v1/records.jsonl",
+      "role": "R7low",
+      "dataset": "infovqa",
+      "rows": 64,
+      "actual_opened_file_bytes": 19505146,
+      "actual_opened_file_sha256": "94eb84938e20d46debe6f02833aacf2af81d37a0796863a9594e13cb1e029006"
+    },
+    {
+      "member_relative_to_harvest_root": "raw/KRA1_docvqa_16_v1/records.jsonl",
+      "role": "KRA1",
+      "dataset": "docvqa",
+      "rows": 16,
+      "actual_opened_file_bytes": 5993633,
+      "actual_opened_file_sha256": "97d51fdceb42d99a21f5f4d1f44a38e03a666327d6516a19313a3f0fe050a23b"
+    },
+    {
+      "member_relative_to_harvest_root": "raw/R7low_docvqa_16_v1/records.jsonl",
+      "role": "R7low",
+      "dataset": "docvqa",
+      "rows": 16,
+      "actual_opened_file_bytes": 4928927,
+      "actual_opened_file_sha256": "a434c1cbd1907c023bc7d500aa788732a925173691e05283c81035a0a459c888"
+    },
+    {
+      "member_relative_to_harvest_root": "raw/KRA1_chartqa_16_v1/records.jsonl",
+      "role": "KRA1",
+      "dataset": "chartqa",
+      "rows": 16,
+      "actual_opened_file_bytes": 5977197,
+      "actual_opened_file_sha256": "3fd609d6919fc7240878d7df7a22bc044b74d8c96a057e65167d3508a981a854"
+    },
+    {
+      "member_relative_to_harvest_root": "raw/R7low_chartqa_16_v1/records.jsonl",
+      "role": "R7low",
+      "dataset": "chartqa",
+      "rows": 16,
+      "actual_opened_file_bytes": 4912419,
+      "actual_opened_file_sha256": "a1edd6ebfad52a64a93fe95dd4d51247fa4e79c4aaf508ebd7f936c2309c594c"
+    }
+  ],
+  "candidate_rows": 160,
+  "control_rows": 160,
+  "source_equal_units": 160,
+  "statistics_checked": 70,
+  "absolute_tolerance": 1e-12,
+  "relative_tolerance": 0.0,
+  "checks": [
+    {
+      "field": "all_sources_equal_weighted.sources",
+      "exact_integer_match": true
+    },
+    {
+      "field": "all_sources_equal_weighted.sources_with_changed_alpha",
+      "exact_integer_match": true
+    },
+    {
+      "field": "all_sources_equal_weighted.changed_K_alpha_elements_total",
+      "exact_integer_match": true
+    },
+    {
+      "field": "all_sources_equal_weighted.changed_K_alpha_elements_mean_per_source",
+      "expected": 32892.65,
+      "recomputed": 32892.65,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "all_sources_equal_weighted.source_equal_mean_changed_fraction",
+      "expected": 0.8408118366586331,
+      "recomputed": 0.8408118366586331,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "all_sources_equal_weighted.source_equal_mean_H_error_relative_decrease",
+      "expected": 0.003247140516822407,
+      "recomputed": 0.003247140516822407,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "all_sources_equal_weighted.min_source_H_error_relative_decrease",
+      "expected": 0.0030950909303151253,
+      "recomputed": 0.0030950909303151253,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "all_sources_equal_weighted.max_source_H_error_relative_decrease",
+      "expected": 0.003548179438980781,
+      "recomputed": 0.003548179438980781,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "all_sources_equal_weighted.actual_H_after_worse_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "all_sources_equal_weighted.sources_with_identical_task_output_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "all_sources_equal_weighted.sources_with_identical_raw_predictions",
+      "exact_integer_match": true
+    },
+    {
+      "field": "all_sources_equal_weighted.metric_bytes_increment_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "all_sources_equal_weighted.active_metric_units_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "all_sources_equal_weighted.actual_nonzero_gamma_values_unique[0]",
+      "expected": 8.0,
+      "recomputed": 8.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.textvqa.sources",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.textvqa.sources_with_changed_alpha",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.textvqa.changed_K_alpha_elements_total",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.textvqa.changed_K_alpha_elements_mean_per_source",
+      "expected": 33063.609375,
+      "recomputed": 33063.609375,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.textvqa.source_equal_mean_changed_fraction",
+      "expected": 0.8416191401195329,
+      "recomputed": 0.8416191401195329,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.textvqa.source_equal_mean_H_error_relative_decrease",
+      "expected": 0.0033031438241452413,
+      "recomputed": 0.0033031438241452413,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.textvqa.min_source_H_error_relative_decrease",
+      "expected": 0.0030966534601503115,
+      "recomputed": 0.0030966534601503115,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.textvqa.max_source_H_error_relative_decrease",
+      "expected": 0.0034931944753398003,
+      "recomputed": 0.0034931944753398003,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.textvqa.actual_H_after_worse_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.textvqa.sources_with_identical_task_output_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.textvqa.sources_with_identical_raw_predictions",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.textvqa.metric_bytes_increment_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.textvqa.active_metric_units_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.textvqa.actual_nonzero_gamma_values_unique[0]",
+      "expected": 8.0,
+      "recomputed": 8.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.infovqa.sources",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.infovqa.sources_with_changed_alpha",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.infovqa.changed_K_alpha_elements_total",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.infovqa.changed_K_alpha_elements_mean_per_source",
+      "expected": 31985.46875,
+      "recomputed": 31985.46875,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.infovqa.source_equal_mean_changed_fraction",
+      "expected": 0.839775640410008,
+      "recomputed": 0.839775640410008,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.infovqa.source_equal_mean_H_error_relative_decrease",
+      "expected": 0.0031828532104513658,
+      "recomputed": 0.0031828532104513658,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.infovqa.min_source_H_error_relative_decrease",
+      "expected": 0.0030950909303151253,
+      "recomputed": 0.0030950909303151253,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.infovqa.max_source_H_error_relative_decrease",
+      "expected": 0.003277878156245695,
+      "recomputed": 0.003277878156245695,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.infovqa.actual_H_after_worse_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.infovqa.sources_with_identical_task_output_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.infovqa.sources_with_identical_raw_predictions",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.infovqa.metric_bytes_increment_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.infovqa.active_metric_units_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.infovqa.actual_nonzero_gamma_values_unique[0]",
+      "expected": 8.0,
+      "recomputed": 8.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.docvqa.sources",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.docvqa.sources_with_changed_alpha",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.docvqa.changed_K_alpha_elements_total",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.docvqa.changed_K_alpha_elements_mean_per_source",
+      "expected": 34655.0625,
+      "recomputed": 34655.0625,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.docvqa.source_equal_mean_changed_fraction",
+      "expected": 0.8408157632958074,
+      "recomputed": 0.8408157632958074,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.docvqa.source_equal_mean_H_error_relative_decrease",
+      "expected": 0.0032318517462157775,
+      "recomputed": 0.0032318517462157775,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.docvqa.min_source_H_error_relative_decrease",
+      "expected": 0.003108343267276048,
+      "recomputed": 0.003108343267276048,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.docvqa.max_source_H_error_relative_decrease",
+      "expected": 0.003548179438980781,
+      "recomputed": 0.003548179438980781,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.docvqa.actual_H_after_worse_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.docvqa.sources_with_identical_task_output_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.docvqa.sources_with_identical_raw_predictions",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.docvqa.metric_bytes_increment_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.docvqa.active_metric_units_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.docvqa.actual_nonzero_gamma_values_unique[0]",
+      "expected": 8.0,
+      "recomputed": 8.0,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.chartqa.sources",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.chartqa.sources_with_changed_alpha",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.chartqa.changed_K_alpha_elements_total",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.chartqa.changed_K_alpha_elements_mean_per_source",
+      "expected": 34075.125,
+      "recomputed": 34075.125,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.chartqa.source_equal_mean_changed_fraction",
+      "expected": 0.8417234811723603,
+      "recomputed": 0.8417234811723603,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.chartqa.source_equal_mean_H_error_relative_decrease",
+      "expected": 0.0032955652836218624,
+      "recomputed": 0.0032955652836218624,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.chartqa.min_source_H_error_relative_decrease",
+      "expected": 0.0031837879797843582,
+      "recomputed": 0.0031837879797843582,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.chartqa.max_source_H_error_relative_decrease",
+      "expected": 0.003419615307588053,
+      "recomputed": 0.003419615307588053,
+      "absolute_difference": 0.0
+    },
+    {
+      "field": "per_domain.chartqa.actual_H_after_worse_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.chartqa.sources_with_identical_task_output_tokens",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.chartqa.sources_with_identical_raw_predictions",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.chartqa.metric_bytes_increment_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.chartqa.active_metric_units_unique[0]",
+      "exact_integer_match": true
+    },
+    {
+      "field": "per_domain.chartqa.actual_nonzero_gamma_values_unique[0]",
+      "expected": 8.0,
+      "recomputed": 8.0,
+      "absolute_difference": 0.0
+    }
+  ],
+  "recomputed_aggregate_sha256": "f3514e9b1c65fb47ff99c81ce15ed0e01ee6f869c7c04936d76d1496c93f33a7",
+  "recomputed_per_source_sha256": "09f1f31953f9753dc46c895a20fb4511155744939cb9a4a2cda223117c7c1393",
+  "portable_numeric_replay_requires_original_E_paths_or_original_raw_byte_SHA": false,
+  "recorded_input_hashes_describe_actual_opened_bodies_not_original_public_fingerprints": true,
+  "prior_inline_analysis_was_not_a_saved_script": true,
+  "new_GPU_jobs_started": 0,
+  "new_model_forwards": 0,
+  "task_scoring_performed": false,
+  "native_PT_WO_images_or_weights_opened": false,
+  "original_expected_file_modified": false
+}

@@ -1,0 +1,2922 @@
+{
+  "schema": "trajkv.round10.development_summary.v1",
+  "status": "PASS_ALL28_D160_CUSTOM_SOURCE_SCORE_PHYSICAL",
+  "expected_cells": 28,
+  "closed_cells": 28,
+  "expected_answer_events": 1120,
+  "closed_answer_events": 1120,
+  "expected_distinct_development_sources": 160,
+  "actual_closed_unique_IDs": 160,
+  "plan_sources": [
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round10\\bootstrap_v1\\REFERENCE_JOB_PLAN_v1.json",
+      "sha256": "4fad005dd53e46bdd810587e7cf62d2fcd39d24f6f98e2c7d43744bdd165c983"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round10\\bootstrap_v1\\CANDIDATE_JOB_PLAN_v1.json",
+      "sha256": "44d6b995fef9a8d804e4830182ab322f124bdc21a5cf366c2521fb019dc27b44"
+    }
+  ],
+  "points": [
+    {
+      "dataset": "textvqa",
+      "mode": "FP16",
+      "name": "FP16_textvqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.7828125,
+      "ci95": [
+        0.6843359375,
+        0.8734375000000001
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 97957216.0,
+          "median": 102774784.0,
+          "min": 44046336,
+          "max": 102774784,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 16.002232142857142,
+          "median": 16.002232142857142,
+          "min": 16.002232142857142,
+          "max": 16.002232142857142,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": false
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 496.51339107731474,
+          "median": 513.3143525163177,
+          "min": 234.24993100343272,
+          "max": 818.7513370066881,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 295.84064185655734,
+          "median": 295.79166299663484,
+          "min": 263.71567900059745,
+          "max": 391.6540619684383,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 53.873701356678794,
+          "median": 52.798094984609634,
+          "min": 52.343655028380454,
+          "max": 75.80804801546037,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 1117.1634489201097,
+          "median": 1122.6881319889799,
+          "min": 787.5330040114932,
+          "max": 2058.110965997912,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 1256.8161529106874,
+          "median": 1243.7775910366327,
+          "min": 889.8805340286344,
+          "max": 2289.3597870133817,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 3.734375,
+          "median": 3.0,
+          "min": 2,
+          "max": 11,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16272665680.0,
+          "median": 16290987520.0,
+          "min": 16067320320,
+          "max": 16290987520,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16460742656.0,
+          "median": 16456351744.0,
+          "min": 16456351744,
+          "max": 16567500800,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 48.818648310843855,
+          "median": 48.16265503177419,
+          "min": 47.55541600752622,
+          "max": 79.59773601032794,
+          "count": 175
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FP16_textvqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FP16_textvqa_64_v1",
+      "summary_sha256": "ca8299ec33fa1cd2022a273b8c65b950fa2757d73023c807454b24ef9ecbd8dd",
+      "source_receipt_sha256": "779bc51d2320ddf5f54a3f05879a53b0262218c1a3c5b49660929607770f97fa",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "R7low",
+      "name": "R7low_textvqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.796875,
+      "ci95": [
+        0.7030859375,
+        0.8844140624999999
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7929453.0,
+          "median": 8315013.0,
+          "min": 3614853,
+          "max": 8315013,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.2958460577896664,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.3132923671177454,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 501.7978981422857,
+          "median": 521.2066035019234,
+          "min": 235.68567499751225,
+          "max": 822.5961570278741,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5569.742895389936,
+          "median": 5562.307295476785,
+          "min": 5442.513926012907,
+          "max": 6036.545948009007,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 170.39019301319058,
+          "median": 62.725649506319314,
+          "min": 61.44986499566585,
+          "max": 1770.6903939833865,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6506.822888743045,
+          "median": 6418.834112497279,
+          "min": 6040.484155993909,
+          "max": 9198.805073974654,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 6918.73783655592,
+          "median": 6577.861896977993,
+          "min": 6313.932961958926,
+          "max": 16088.006162957754,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 3.765625,
+          "median": 3.5,
+          "min": 2,
+          "max": 11,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16272665680.0,
+          "median": 16290987520.0,
+          "min": 16067320320,
+          "max": 16290987520,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16500195328.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16598958080,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 145.5985048603619,
+          "median": 59.0301770134829,
+          "min": 57.91940004564822,
+          "max": 1760.3475470095873,
+          "count": 177
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\R7low_textvqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\R7low_textvqa_64_v1",
+      "summary_sha256": "da242b16aac2d409f028b7cef76901cb42b3c10952e48f2eb7d1cabaeafa69f3",
+      "source_receipt_sha256": "84331a838ee02264a3c94ece29c02285a461ab9683d4ba9168b9e4fa054f11a2",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "R7high",
+      "name": "R7high_textvqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.775,
+      "ci95": [
+        0.6765625,
+        0.8671875
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 11016661.0,
+          "median": 11560453.0,
+          "min": 4951557,
+          "max": 11560453,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.799544679267066,
+          "median": 1.799984834632095,
+          "min": 1.7956207820347376,
+          "max": 1.799984834632095,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 501.04434890727134,
+          "median": 519.9688124994282,
+          "min": 235.67150003509596,
+          "max": 755.7318969629705,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5662.228064090414,
+          "median": 5637.1473534964025,
+          "min": 5581.551815965213,
+          "max": 6131.269217992667,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 247.91165095575707,
+          "median": 63.423394021810964,
+          "min": 62.10365402512252,
+          "max": 1813.9701790059917,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6685.584399768231,
+          "median": 6505.094219523016,
+          "min": 6212.906147004105,
+          "max": 9284.3266169657,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 7362.644421923505,
+          "median": 6674.71437851782,
+          "min": 6465.98122199066,
+          "max": 18721.61995404167,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 3.8125,
+          "median": 4.0,
+          "min": 2,
+          "max": 11,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16422009152.0,
+          "median": 16434170880.0,
+          "min": 16264287232,
+          "max": 16434170880,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16560750592.0,
+          "median": 16565403648.0,
+          "min": 16492003328,
+          "max": 16598958080,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 237.51213642050666,
+          "median": 59.60703402524814,
+          "min": 58.749603980686516,
+          "max": 1815.085654030554,
+          "count": 180
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\R7high_textvqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\R7high_textvqa_64_v1",
+      "summary_sha256": "4724f7c9fa28da98cbefd47ed5bc8340ceedee870d92d6cffe7f99ce79ca803d",
+      "source_receipt_sha256": "19c6e3b7e8243db653c0d3ba7238945ca59e81de134c3dd590623dc41d832b32",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "LS-FZ",
+      "name": "LS_FZ_textvqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.796875,
+      "ci95": [
+        0.6999609375,
+        0.8859375
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7930349.0,
+          "median": 8315909.0,
+          "min": 3615749,
+          "max": 8315909,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.295997374114536,
+          "median": 1.2948030744280135,
+          "min": 1.2948030744280135,
+          "max": 1.313617887951079,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 506.47300023319985,
+          "median": 524.5647534902673,
+          "min": 236.0602100379765,
+          "max": 843.5951370047405,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5587.860544676914,
+          "median": 5576.504570519319,
+          "min": 5466.094744042493,
+          "max": 6123.696567025036,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 63.96348372709326,
+          "median": 61.9322414859198,
+          "min": 61.336632003076375,
+          "max": 86.04922995436937,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6413.411366089349,
+          "median": 6399.394716980169,
+          "min": 6015.91139199445,
+          "max": 7680.097253003623,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 6589.215416105617,
+          "median": 6574.495232489426,
+          "min": 6239.019735949114,
+          "max": 7968.322547036223,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 3.75,
+          "median": 3.0,
+          "min": 2,
+          "max": 11,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16272665680.0,
+          "median": 16290987520.0,
+          "min": 16067320320,
+          "max": 16290987520,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16501571584.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16628318208,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 60.402660079324214,
+          "median": 58.899285504594445,
+          "min": 58.40943998191506,
+          "max": 87.34388399170712,
+          "count": 176
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\LS_FZ_textvqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\LS_FZ_textvqa_64_v1",
+      "summary_sha256": "51472540261d17fcfe5432fac7dcf766c93ddb6dc39e4872857a41f1e811e8b9",
+      "source_receipt_sha256": "cd1163cc4ff16dad77b1b6c1d8335ae18525bd94b258063f8ca8b0cfe48d4594",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "LS-RE",
+      "name": "LS_RE_textvqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.796875,
+      "ci95": [
+        0.6999609375,
+        0.8859375
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7930349.0,
+          "median": 8315909.0,
+          "min": 3615749,
+          "max": 8315909,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.295997374114536,
+          "median": 1.2948030744280135,
+          "min": 1.2948030744280135,
+          "max": 1.313617887951079,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 505.60391146791517,
+          "median": 520.5756404902786,
+          "min": 237.39013203885406,
+          "max": 816.203920985572,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5690.6023018727865,
+          "median": 5678.728830476757,
+          "min": 5590.796976990532,
+          "max": 6184.333934041206,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 63.48171954778081,
+          "median": 62.13420748827048,
+          "min": 61.436554009560496,
+          "max": 84.78642499540001,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6506.224668385585,
+          "median": 6504.884029011009,
+          "min": 6101.639906002674,
+          "max": 7735.129057022277,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 6680.2294561503,
+          "median": 6654.794461501297,
+          "min": 6318.511590012349,
+          "max": 8028.335576003883,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 3.734375,
+          "median": 3.0,
+          "min": 2,
+          "max": 11,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16272665680.0,
+          "median": 16290987520.0,
+          "min": 16067320320,
+          "max": 16290987520,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16501571584.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16628318208,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 60.24721554813108,
+          "median": 59.26028697285801,
+          "min": 58.23202902683988,
+          "max": 92.53050200641155,
+          "count": 175
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\LS_RE_textvqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\LS_RE_textvqa_64_v1",
+      "summary_sha256": "15d964db1302d1fd5a83fc977736ccfb86ca67d09dfcb4c11a927ec36ef50244",
+      "source_receipt_sha256": "9fed32d2e5916d447727dbaf9a08854a2a3db6b27c7bcbc028e921f6a470b7fe",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "FB0",
+      "name": "FB0_textvqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.796875,
+      "ci95": [
+        0.7030859375,
+        0.8844140624999999
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7929453.0,
+          "median": 8315013.0,
+          "min": 3614853,
+          "max": 8315013,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.2958460577896664,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.3132923671177454,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 498.31644990808854,
+          "median": 517.1529534854926,
+          "min": 242.7510209963657,
+          "max": 794.1064659971744,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5920.958285357301,
+          "median": 5906.367307994515,
+          "min": 5826.643912005238,
+          "max": 6335.436680994462,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 64.3286961276317,
+          "median": 62.88931748713367,
+          "min": 62.196012993808836,
+          "max": 85.56261303601786,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6772.946170414798,
+          "median": 6772.688911500154,
+          "min": 6416.894070978742,
+          "max": 7873.789331992157,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 6949.645559156124,
+          "median": 6921.88283597352,
+          "min": 6610.936213983223,
+          "max": 8164.745885005686,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 3.765625,
+          "median": 3.5,
+          "min": 2,
+          "max": 11,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16272665680.0,
+          "median": 16290987520.0,
+          "min": 16067320320,
+          "max": 16290987520,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16501571584.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16628318208,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 60.70798800799122,
+          "median": 59.68149099498987,
+          "min": 58.81189095089212,
+          "max": 87.42051897570491,
+          "count": 177
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FB0_textvqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FB0_textvqa_64_v1",
+      "summary_sha256": "6fb800fc5ad754f7656beb3a062c0f37df60287b0d0f7908c11810a25d3d0f3d",
+      "source_receipt_sha256": "46917afa901d3d504e6794d886d88d1bdac95d923b6c30aabb81e2a146c491bb",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "FB-W",
+      "name": "FB_W_textvqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.7859375,
+      "ci95": [
+        0.6843359375,
+        0.8734375
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7929453.0,
+          "median": 8315013.0,
+          "min": 3614853,
+          "max": 8315013,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.2958460577896664,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.3132923671177454,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 500.48183799663093,
+          "median": 517.6989399769809,
+          "min": 235.6499350280501,
+          "max": 811.5435970248654,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5726.455306893513,
+          "median": 5708.102379518095,
+          "min": 5652.484555030242,
+          "max": 6245.657966006547,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 63.86711561845004,
+          "median": 62.08677604445256,
+          "min": 61.674571014009416,
+          "max": 93.61076500499621,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6562.994039595651,
+          "median": 6553.68560453644,
+          "min": 6181.848668027669,
+          "max": 7814.756184001453,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 6739.610982171143,
+          "median": 6708.813918492524,
+          "min": 6446.9822170212865,
+          "max": 8111.271496978588,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 3.796875,
+          "median": 3.5,
+          "min": 2,
+          "max": 11,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16272665680.0,
+          "median": 16290987520.0,
+          "min": 16067320320,
+          "max": 16290987520,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16501571584.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16628318208,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 60.03798587558604,
+          "median": 58.88867698376998,
+          "min": 58.278935961425304,
+          "max": 91.27867798088118,
+          "count": 179
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FB_W_textvqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FB_W_textvqa_64_v1",
+      "summary_sha256": "31aa741e995409314b5fc723cbf63c1c555cfce7b0c49cd0e3f95e14b921ade3",
+      "source_receipt_sha256": "a699776bcfb2b9f22c25d1dd0123a4994b2f044425f7f70df9fd1d95c2e7ee22",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "FP16",
+      "name": "FP16_infovqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.9015758547008548,
+      "ci95": [
+        0.8246527777777778,
+        0.9652777777777778
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 94974912.0,
+          "median": 102774784.0,
+          "min": 44046336,
+          "max": 132139008,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 16.002232142857142,
+          "median": 16.002232142857142,
+          "min": 16.002232142857142,
+          "max": 16.002232142857142,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": false
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 483.231071641967,
+          "median": 512.4821379722562,
+          "min": 233.5060829645954,
+          "max": 957.5079089845531,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 342.0618703266882,
+          "median": 322.3579165060073,
+          "min": 272.38577598473057,
+          "max": 709.6810980001464,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 57.99898690383998,
+          "median": 54.356467531761155,
+          "min": 50.81701901508495,
+          "max": 105.01388198463246,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 1257.9311785966638,
+          "median": 1239.3301675037947,
+          "min": 758.1875100149773,
+          "max": 2189.1185789718293,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 1474.9121381701116,
+          "median": 1413.807219505543,
+          "min": 859.864597034175,
+          "max": 2400.3626059857197,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 5.046875,
+          "median": 4.0,
+          "min": 2,
+          "max": 16,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16260532672.0,
+          "median": 16289809920.0,
+          "min": 16067314176,
+          "max": 16399978496,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16472702976.0,
+          "median": 16456351744.0,
+          "min": 16456351744,
+          "max": 16567500800,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 52.046647629319445,
+          "median": 49.65448996517807,
+          "min": 46.75360000692308,
+          "max": 92.59280003607273,
+          "count": 259
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FP16_infovqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FP16_infovqa_64_v1",
+      "summary_sha256": "d7e79eeec98f70c070ec9ee9999c15e05649fcca0204ae0d60005696d747fd97",
+      "source_receipt_sha256": "b6f3c1af7e7fea2b022662e87094a4abd2408ce1ce202092f3dec62f18578af5",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "R7low",
+      "name": "R7low_infovqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.8299084332032702,
+      "ci95": [
+        0.7405589595526756,
+        0.9101948915366035
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7690773.0,
+          "median": 8315013.0,
+          "min": 3614853,
+          "max": 10665093,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.297454853710674,
+          "median": 1.294663565499442,
+          "min": 1.2915587652297247,
+          "max": 1.3132923671177454,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 491.30113531373354,
+          "median": 516.4050500025041,
+          "min": 233.4170079557225,
+          "max": 989.5818580407649,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5656.374375046653,
+          "median": 5581.257422512863,
+          "min": 5426.647943037096,
+          "max": 6740.2495390269905,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 818.8785030915824,
+          "median": 74.48383601149544,
+          "min": 62.195133010391146,
+          "max": 2291.7048030067235,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 7339.959778659249,
+          "median": 6783.80884998478,
+          "min": 6093.591241980903,
+          "max": 9451.667146990076,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 8880.186608624172,
+          "median": 7450.838492513867,
+          "min": 6275.09490295779,
+          "max": 18689.92077501025,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 4.765625,
+          "median": 4.0,
+          "min": 2,
+          "max": 16,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16260532672.0,
+          "median": 16289809920.0,
+          "min": 16067314176,
+          "max": 16399978496,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16513957888.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16598958080,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 406.57861733444895,
+          "median": 62.023815989959985,
+          "min": 58.84327302919701,
+          "max": 2054.8662029905245,
+          "count": 241
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\R7low_infovqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\R7low_infovqa_64_v1",
+      "summary_sha256": "d4fbd1d06b9fc14106b5a11d08ce9d5d3794bbec7b17da61715f14d221823b5f",
+      "source_receipt_sha256": "7d7c2bb8d15a9d6a71a5ec82d129b96679c0fafe9907eab60efebcb97a12545f",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "R7high",
+      "name": "R7high_infovqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.916453572092159,
+      "ci95": [
+        0.850080955615942,
+        0.9740452840486807
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 10669893.0,
+          "median": 11560453.0,
+          "min": 4951557,
+          "max": 14837253,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.7975781047628039,
+          "median": 1.7968136015392484,
+          "min": 1.7956207820347376,
+          "max": 1.799984834632095,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 490.0743590978891,
+          "median": 513.2725999865215,
+          "min": 234.20815804274753,
+          "max": 928.4901070059277,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5580.247278958268,
+          "median": 5574.45087749511,
+          "min": 5482.972686004359,
+          "max": 5994.227618037257,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 841.910846720566,
+          "median": 78.93713749945164,
+          "min": 62.67619604477659,
+          "max": 1886.4770820364356,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 7267.532936626594,
+          "median": 7235.386291984469,
+          "min": 6174.866217013914,
+          "max": 8431.775959965307,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 9085.860322361441,
+          "median": 7845.117506018141,
+          "min": 6304.229611007031,
+          "max": 21809.380118036643,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 4.953125,
+          "median": 4.0,
+          "min": 2,
+          "max": 16,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16414338112.0,
+          "median": 16432964608.0,
+          "min": 16264287232,
+          "max": 16499039232,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16571924480.0,
+          "median": 16567500800.0,
+          "min": 16492003328,
+          "max": 16630415360,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 457.5977279765995,
+          "median": 60.23944902699441,
+          "min": 59.14207699242979,
+          "max": 1757.6937319827266,
+          "count": 253
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\R7high_infovqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\R7high_infovqa_64_v1",
+      "summary_sha256": "d7ea91638aa21272010f32a524c7ff12a0576c051b9bad0d249a8bdd8c89ff39",
+      "source_receipt_sha256": "328bec853cd116b226cf331e546f93b14185edb2a82c9dec2d9ad960ed065554",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "LS-FZ",
+      "name": "LS_FZ_infovqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.8299084332032702,
+      "ci95": [
+        0.7405589595526756,
+        0.9101948915366035
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7691669.0,
+          "median": 8315909.0,
+          "min": 3615749,
+          "max": 10665989,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.2976222341495847,
+          "median": 1.2948030744280135,
+          "min": 1.291667272174169,
+          "max": 1.313617887951079,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 490.95268878500065,
+          "median": 519.5617224962916,
+          "min": 234.27919100504369,
+          "max": 959.0984369860962,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5848.004458921423,
+          "median": 5814.63581052958,
+          "min": 5645.901788957417,
+          "max": 7317.064279981423,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 68.18915648545953,
+          "median": 67.06381402909756,
+          "min": 62.323944992385805,
+          "max": 127.13642098242417,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6767.646148739914,
+          "median": 6707.387878006557,
+          "min": 6184.399568010122,
+          "max": 8518.798417004291,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 7011.006406631168,
+          "median": 6944.585140037816,
+          "min": 6321.182187006343,
+          "max": 8728.851003979798,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 4.734375,
+          "median": 4.0,
+          "min": 2,
+          "max": 16,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16260532672.0,
+          "median": 16289809920.0,
+          "min": 16067314176,
+          "max": 16399978496,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16521297920.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16628318208,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 62.64218016285021,
+          "median": 60.95188402105123,
+          "min": 58.80424001952633,
+          "max": 106.92945896880701,
+          "count": 239
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\LS_FZ_infovqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\LS_FZ_infovqa_64_v1",
+      "summary_sha256": "15d30e9d57ac9059a4ea6bfbb7621e85a3c2b8c21871fedbe9ce03d38a7786ea",
+      "source_receipt_sha256": "535af3dece709026084caa72ccc64755664940175213cfb4f288a29ad34c0158",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "LS-RE",
+      "name": "LS_RE_infovqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.8174084332032702,
+      "ci95": [
+        0.7247403454222408,
+        0.8991430419105351
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7691669.0,
+          "median": 8315909.0,
+          "min": 3615749,
+          "max": 10665989,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.2976222341495847,
+          "median": 1.2948030744280135,
+          "min": 1.291667272174169,
+          "max": 1.313617887951079,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 490.10216896749625,
+          "median": 519.6440924773924,
+          "min": 235.39838602300733,
+          "max": 935.3351850295439,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5657.247776812255,
+          "median": 5630.019678472308,
+          "min": 5552.459302998614,
+          "max": 6108.010595024098,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 65.87393068548408,
+          "median": 66.34704497992061,
+          "min": 61.76527601201087,
+          "max": 88.07806600816548,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6544.039371840881,
+          "median": 6538.525743497303,
+          "min": 6096.545636013616,
+          "max": 7882.82578100916,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 6781.109215447941,
+          "median": 6754.773490480147,
+          "min": 6232.375824998599,
+          "max": 7981.682792014908,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 4.734375,
+          "median": 4.0,
+          "min": 2,
+          "max": 16,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16260532672.0,
+          "median": 16289809920.0,
+          "min": 16067314176,
+          "max": 16399978496,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16521297920.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16628318208,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 61.064163313508345,
+          "median": 59.19958301819861,
+          "min": 58.36481199366972,
+          "max": 88.31586001906544,
+          "count": 239
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\LS_RE_infovqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\LS_RE_infovqa_64_v1",
+      "summary_sha256": "17c339d107e99f65cacb78a394e6836fda0bc97066b89bcfc93509d798c8dd41",
+      "source_receipt_sha256": "2f31f948cb517a5032904a06a2060e6a713a92c32bc6d78ac872ee5c9ec1c7ca",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "FB0",
+      "name": "FB0_infovqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.8275936183884554,
+      "ci95": [
+        0.7364535212862318,
+        0.9067637761481169
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7690773.0,
+          "median": 8315013.0,
+          "min": 3614853,
+          "max": 10665093,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.297454853710674,
+          "median": 1.294663565499442,
+          "min": 1.2915587652297247,
+          "max": 1.3132923671177454,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 486.0394556717438,
+          "median": 510.67969101131894,
+          "min": 232.53488901536912,
+          "max": 938.2441150373779,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5809.481833747668,
+          "median": 5801.709113497054,
+          "min": 5710.476312029641,
+          "max": 6240.613779984415,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 66.02487390864553,
+          "median": 66.78487249882892,
+          "min": 62.214653997216374,
+          "max": 85.11377801187336,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6732.346158154542,
+          "median": 6710.653972520959,
+          "min": 6295.4180429806,
+          "max": 8084.142064966727,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 7071.190331546859,
+          "median": 6939.3046445038635,
+          "min": 6431.259973032866,
+          "max": 13996.349076973274,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 4.78125,
+          "median": 4.0,
+          "min": 2,
+          "max": 20,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16260532672.0,
+          "median": 16289809920.0,
+          "min": 16067314176,
+          "max": 16399978496,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16521297920.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16628318208,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 87.25219914855143,
+          "median": 59.415825468022376,
+          "min": 58.58158599585295,
+          "max": 1661.5591109730303,
+          "count": 242
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FB0_infovqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FB0_infovqa_64_v1",
+      "summary_sha256": "e7b1e9d3ab053fa3dd29321da0e3c22e43f63b6a130317ab7aa797c1fd81c0de",
+      "source_receipt_sha256": "8fb235465675daae48381e2ab529ea7cbf31979f3c35374e2889735138dd8eb4",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "FB-W",
+      "name": "FB_W_infovqa_64_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 64,
+      "primary_mean": 0.7944917665366035,
+      "ci95": [
+        0.6979891304347825,
+        0.8780005472524154
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 7690773.0,
+          "median": 8315013.0,
+          "min": 3614853,
+          "max": 10665093,
+          "count": 64
+        },
+        "actual_complete_bits": {
+          "mean": 1.297454853710674,
+          "median": 1.294663565499442,
+          "min": 1.2915587652297247,
+          "max": 1.3132923671177454,
+          "count": 64
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 484.9715949876554,
+          "median": 511.0664339736104,
+          "min": 232.48415999114513,
+          "max": 935.2456390042789,
+          "count": 64
+        },
+        "encode_ms": {
+          "mean": 5770.01039440529,
+          "median": 5744.179951987462,
+          "min": 5675.282359006815,
+          "max": 6569.572952983435,
+          "count": 64
+        },
+        "question_prefill_ms": {
+          "mean": 65.67044795610855,
+          "median": 66.29038901883177,
+          "min": 61.74849101807922,
+          "max": 84.89365200512111,
+          "count": 64
+        },
+        "ttft_ms": {
+          "mean": 6671.497190217451,
+          "median": 6607.710265991045,
+          "min": 6202.333205961622,
+          "max": 7959.50531901326,
+          "count": 64
+        },
+        "wall_ms": {
+          "mean": 6907.334252297005,
+          "median": 6871.811715973308,
+          "min": 6337.625224958174,
+          "max": 8056.823735008948,
+          "count": 64
+        },
+        "output_tokens": {
+          "mean": 4.71875,
+          "median": 4.0,
+          "min": 2,
+          "max": 16,
+          "count": 64
+        },
+        "peak_allocated_bytes": {
+          "mean": 16260532672.0,
+          "median": 16289809920.0,
+          "min": 16067314176,
+          "max": 16399978496,
+          "count": 64
+        },
+        "peak_reserved_bytes": {
+          "mean": 16521297920.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16628318208,
+          "count": 64
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 61.02382155045272,
+          "median": 59.07785348244943,
+          "min": 58.17353696329519,
+          "max": 109.98124704929069,
+          "count": 238
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FB_W_infovqa_64_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FB_W_infovqa_64_v1",
+      "summary_sha256": "bd9846291ed83455b32454ef7e1a8ba98b4f29e101920df1e47b652edd8bec37",
+      "source_receipt_sha256": "a57a552c2207577998422b1d959075ec7cbf1dafc1ff962c1b5de277d1ba24c9",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "FP16",
+      "name": "FP16_docvqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 102774784.0,
+          "median": 102774784.0,
+          "min": 102774784,
+          "max": 102774784,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 16.002232142857142,
+          "median": 16.002232142857142,
+          "min": 16.002232142857142,
+          "max": 16.002232142857142,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": false
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 543.5418396918976,
+          "median": 511.02821351378225,
+          "min": 507.9692589933984,
+          "max": 1025.436052994337,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 279.48337155248737,
+          "median": 273.97326147183776,
+          "min": 264.94913297938183,
+          "max": 355.54852499626577,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 54.40551225547097,
+          "median": 52.53558050026186,
+          "min": 51.536618964746594,
+          "max": 73.76304402714595,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 1249.4043978695117,
+          "median": 1182.0917584991548,
+          "min": 1148.4506289707497,
+          "max": 2265.3263209504075,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 1615.3584194944415,
+          "median": 1443.6856679967605,
+          "min": 1252.116905990988,
+          "max": 2636.686595971696,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 8.375,
+          "median": 6.5,
+          "min": 2,
+          "max": 27,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16289809920.0,
+          "median": 16289809920.0,
+          "min": 16289809920,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16456482816.0,
+          "median": 16456351744.0,
+          "min": 16456351744,
+          "max": 16458448896,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 48.77933764473093,
+          "median": 47.8800899873022,
+          "min": 47.24059300497174,
+          "max": 76.29233703482896,
+          "count": 118
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FP16_docvqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FP16_docvqa_16_v1",
+      "summary_sha256": "cc6b8e3b66a6da18e275f2e219ee7159d50b64e224091da9f6d7411453286394",
+      "source_receipt_sha256": "903e48f085364c15dbe355b5213e5f0bed50af515a3db33bfcaca4a5a257e46e",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "R7low",
+      "name": "R7low_docvqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.9791666666666667,
+      "ci95": [
+        0.9375,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8315013.0,
+          "median": 8315013.0,
+          "min": 8315013,
+          "max": 8315013,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.294663565499442,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.294663565499442,
+          "count": 16
+        },
+        "strict_all_QA_1p3": true,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 546.5966938027123,
+          "median": 517.6537494990043,
+          "min": 512.173224997241,
+          "max": 984.3639960163273,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5655.13563794957,
+          "median": 5609.021837997716,
+          "min": 5566.536094003823,
+          "max": 6335.478403023444,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 187.49533581285505,
+          "median": 91.77168950554915,
+          "min": 62.96500697499141,
+          "max": 1665.7197439926676,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 6762.141822939157,
+          "median": 6560.7047865050845,
+          "min": 6491.041070024949,
+          "max": 8229.23295100918,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7671.085954250884,
+          "median": 6912.110466510057,
+          "min": 6632.879812037572,
+          "max": 16502.37127399305,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 8.375,
+          "median": 6.5,
+          "min": 2,
+          "max": 27,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16289809920.0,
+          "median": 16289809920.0,
+          "min": 16289809920,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16496197632.0,
+          "median": 16496197632.0,
+          "min": 16496197632,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 121.80544492508427,
+          "median": 60.62748949625529,
+          "min": 59.221366012934595,
+          "max": 1796.7428310075775,
+          "count": 118
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\R7low_docvqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\R7low_docvqa_16_v1",
+      "summary_sha256": "ce4ec4f9a88461a31b5a6dfa32f537e807ebbbcf7a931592c67efb3b4ae58842",
+      "source_receipt_sha256": "eacac7da1f647c0cac1de6040f8db457bc9b2b3e55a61f0985bc2ebb33020d0b",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "R7high",
+      "name": "R7high_docvqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.9791666666666667,
+      "ci95": [
+        0.9375,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 11560453.0,
+          "median": 11560453.0,
+          "min": 11560453,
+          "max": 11560453,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.799984834632095,
+          "median": 1.799984834632095,
+          "min": 1.799984834632095,
+          "max": 1.799984834632095,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 545.2912226282933,
+          "median": 517.3496119969059,
+          "min": 511.46156300092116,
+          "max": 963.7698329752311,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5632.564948933577,
+          "median": 5596.518079517409,
+          "min": 5546.59865697613,
+          "max": 6142.149503983092,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 808.35937718075,
+          "median": 69.9644030246418,
+          "min": 63.09997395146638,
+          "max": 1828.206242993474,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 7374.710101808887,
+          "median": 6604.686036007479,
+          "min": 6508.365968009457,
+          "max": 9613.1729419576,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 8876.543393060274,
+          "median": 7368.778039497556,
+          "min": 6597.727995016612,
+          "max": 19891.136973979883,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 8.375,
+          "median": 6.5,
+          "min": 2,
+          "max": 27,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16432964608.0,
+          "median": 16432964608.0,
+          "min": 16432964608,
+          "max": 16432964608,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16565403648.0,
+          "median": 16565403648.0,
+          "min": 16565403648,
+          "max": 16565403648,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 202.38728225537008,
+          "median": 60.36658852826804,
+          "min": 59.282289003022015,
+          "max": 1749.7911349637434,
+          "count": 118
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\R7high_docvqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\R7high_docvqa_16_v1",
+      "summary_sha256": "598d2568d08022129459347ce340ae3a74f2c912d58415dbfe574dd41349c939",
+      "source_receipt_sha256": "f8d5f1a90f623229c5aeab40a47f662b2d104a5f2e4b122602ebb6c01e31d9c4",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "LS-FZ",
+      "name": "LS_FZ_docvqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.9791666666666667,
+      "ci95": [
+        0.9375,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8315909.0,
+          "median": 8315909.0,
+          "min": 8315909,
+          "max": 8315909,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.2948030744280135,
+          "median": 1.2948030744280135,
+          "min": 1.2948030744280135,
+          "max": 1.2948030744280135,
+          "count": 16
+        },
+        "strict_all_QA_1p3": true,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 546.8553307509865,
+          "median": 520.1182459713891,
+          "min": 515.6135109718889,
+          "max": 939.6705349790864,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5621.686033817241,
+          "median": 5596.442117996048,
+          "min": 5544.639716972597,
+          "max": 6019.831184006762,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 66.10729375825031,
+          "median": 65.87867549387738,
+          "min": 61.26985896844417,
+          "max": 89.6692190435715,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 6586.187389380939,
+          "median": 6504.295955994166,
+          "min": 6401.835486991331,
+          "max": 7759.266679000575,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7048.864422751649,
+          "median": 6871.550413488876,
+          "min": 6555.168638005853,
+          "max": 8241.353507968597,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 8.375,
+          "median": 6.5,
+          "min": 2,
+          "max": 27,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16289809920.0,
+          "median": 16289809920.0,
+          "min": 16289809920,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16496197632.0,
+          "median": 16496197632.0,
+          "min": 16496197632,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 61.43151098365059,
+          "median": 59.36588751501404,
+          "min": 58.2981490297243,
+          "max": 87.90884696645662,
+          "count": 118
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\LS_FZ_docvqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\LS_FZ_docvqa_16_v1",
+      "summary_sha256": "96bbb23e2dccc2db4307b791fbdc69e366009ae3b629b09fd39ea939e6bd769e",
+      "source_receipt_sha256": "ad3fa8e6b8d5f8b9275de12f0efa6ade06d34282774033066d1dec30c1077343",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "LS-RE",
+      "name": "LS_RE_docvqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.9791666666666667,
+      "ci95": [
+        0.9375,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8315909.0,
+          "median": 8315909.0,
+          "min": 8315909,
+          "max": 8315909,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.2948030744280135,
+          "median": 1.2948030744280135,
+          "min": 1.2948030744280135,
+          "max": 1.2948030744280135,
+          "count": 16
+        },
+        "strict_all_QA_1p3": true,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 549.7644567549287,
+          "median": 519.898465485312,
+          "min": 517.23460102221,
+          "max": 977.6496960548684,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5845.713940183487,
+          "median": 5812.608380976599,
+          "min": 5740.1263489737175,
+          "max": 6239.287825010251,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 69.12865981212235,
+          "median": 67.52747902646661,
+          "min": 62.879904988221824,
+          "max": 85.8639320358634,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 6811.567036940687,
+          "median": 6739.609084004769,
+          "min": 6631.442887999583,
+          "max": 8028.53899699403,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7289.18737524873,
+          "median": 7116.327701485716,
+          "min": 6740.956905006897,
+          "max": 8512.71776604699,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 8.375,
+          "median": 6.5,
+          "min": 2,
+          "max": 27,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16289809920.0,
+          "median": 16289809920.0,
+          "min": 16289809920,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16496197632.0,
+          "median": 16496197632.0,
+          "min": 16496197632,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 63.479057067740804,
+          "median": 60.549230489414185,
+          "min": 59.42545202560723,
+          "max": 87.36927201971412,
+          "count": 118
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\LS_RE_docvqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\LS_RE_docvqa_16_v1",
+      "summary_sha256": "8215958887cecfbd3b1a94e51e60dfe8289fa88808e828c0318c0ece01ce24fa",
+      "source_receipt_sha256": "d96ee89d7133994f0b98c2b06feedda17b0d76b39e22e12e6a2033148d909916",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "FB0",
+      "name": "FB0_docvqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.9791666666666667,
+      "ci95": [
+        0.9375,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8315013.0,
+          "median": 8315013.0,
+          "min": 8315013,
+          "max": 8315013,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.294663565499442,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.294663565499442,
+          "count": 16
+        },
+        "strict_all_QA_1p3": true,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 543.0694143142318,
+          "median": 512.6025034696795,
+          "min": 509.01415600674227,
+          "max": 975.5416139960289,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 6050.03168687108,
+          "median": 6018.404918519082,
+          "min": 5919.874624989461,
+          "max": 6524.139416986145,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 69.32722181954887,
+          "median": 69.09587449626997,
+          "min": 63.29381599789485,
+          "max": 88.9816980343312,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 7051.694572754059,
+          "median": 6972.862450988032,
+          "min": 6864.004061033484,
+          "max": 8392.719752038829,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7527.451393507363,
+          "median": 7283.751647017198,
+          "min": 7028.177396045066,
+          "max": 8893.891098035965,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 8.3125,
+          "median": 6.5,
+          "min": 2,
+          "max": 27,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16289809920.0,
+          "median": 16289809920.0,
+          "min": 16289809920,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16496197632.0,
+          "median": 16496197632.0,
+          "min": 16496197632,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 63.77202840163731,
+          "median": 61.94366101408377,
+          "min": 59.499655035324395,
+          "max": 90.57790198130533,
+          "count": 117
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FB0_docvqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FB0_docvqa_16_v1",
+      "summary_sha256": "d66a0add2733d6885d30802e5e0d52f20dceb3f41d9fe722fc3f5e502f2e64a1",
+      "source_receipt_sha256": "83fc83768ed0c99f1b9a5e118d3c6dafe0233897f054a242a3ceda5c8671825f",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "FB-W",
+      "name": "FB_W_docvqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.9166666666666667,
+      "ci95": [
+        0.7708333333333334,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8315013.0,
+          "median": 8315013.0,
+          "min": 8315013,
+          "max": 8315013,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.294663565499442,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.294663565499442,
+          "count": 16
+        },
+        "strict_all_QA_1p3": true,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 537.8444920606853,
+          "median": 508.7431275169365,
+          "min": 507.3224990046583,
+          "max": 930.930565984454,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5779.116330377292,
+          "median": 5721.331837004982,
+          "min": 5657.034082978498,
+          "max": 6194.779472949449,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 67.84763044197462,
+          "median": 67.465391010046,
+          "min": 62.66741699073464,
+          "max": 86.62366698263213,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 6766.027512436267,
+          "median": 6657.628184009809,
+          "min": 6591.275370970834,
+          "max": 7962.195140949916,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7151.604971561028,
+          "median": 6960.128281003563,
+          "min": 6703.032975026872,
+          "max": 8456.366112979595,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 7.125,
+          "median": 6.0,
+          "min": 2,
+          "max": 15,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16289809920.0,
+          "median": 16289809920.0,
+          "min": 16289809920,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16496197632.0,
+          "median": 16496197632.0,
+          "min": 16496197632,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 61.297137795695654,
+          "median": 60.03543399856426,
+          "min": 59.30237896973267,
+          "max": 87.84496504813433,
+          "count": 98
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FB_W_docvqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FB_W_docvqa_16_v1",
+      "summary_sha256": "c375657d6976678519bd15007b67a8b526371293ac2c1b215c70ca4592b8c847",
+      "source_receipt_sha256": "452e064346e176f6e6bd5f1e86687b6bc90c6dd21fc33ca4ea8c9efbec9758a3",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "FP16",
+      "name": "FP16_chartqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.75,
+      "ci95": [
+        0.5,
+        0.9375
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 100939520.0,
+          "median": 102774784.0,
+          "min": 73410560,
+          "max": 102774784,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 16.002232142857142,
+          "median": 16.002232142857142,
+          "min": 16.002232142857142,
+          "max": 16.002232142857142,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": false
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 524.6027796201815,
+          "median": 505.39629050763324,
+          "min": 355.3478629910387,
+          "max": 951.9534049904905,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 261.58803337602876,
+          "median": 255.22996552172117,
+          "min": 246.88554200110957,
+          "max": 325.08649496594444,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 52.099207940045744,
+          "median": 50.96669102204032,
+          "min": 49.800772045273334,
+          "max": 69.34669299516827,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 1082.9445996860159,
+          "median": 1027.5397860095836,
+          "min": 881.1233679880388,
+          "max": 2032.747196033597,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 1242.7864460587443,
+          "median": 1188.727881963132,
+          "min": 1058.6645180010237,
+          "max": 2249.66673302697,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 4.25,
+          "median": 4.5,
+          "min": 2,
+          "max": 7,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16282896352.0,
+          "median": 16289809920.0,
+          "min": 16179192832,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16456482816.0,
+          "median": 16456351744.0,
+          "min": 16456351744,
+          "max": 16458448896,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 47.2878660970869,
+          "median": 46.52894250466488,
+          "min": 46.049872995354235,
+          "max": 70.72725001489744,
+          "count": 52
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FP16_chartqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FP16_chartqa_16_v1",
+      "summary_sha256": "da4070c4e9917a32c318670ae11cb2987c9894f3c81fc894b10ce117fbdb2c5b",
+      "source_receipt_sha256": "101be924d3aaa61dd8fd8093942398d2b7df56fb416f6e758b05ff906c274634",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "R7low",
+      "name": "R7low_chartqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.8125,
+      "ci95": [
+        0.625,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8168133.0,
+          "median": 8315013.0,
+          "min": 5964933,
+          "max": 8315013,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.2950128555297853,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.300252205984933,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 533.8874596236565,
+          "median": 518.4086835070048,
+          "min": 376.6545739490539,
+          "max": 941.4865369908512,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5624.604551430821,
+          "median": 5534.859803505242,
+          "min": 5480.595448985696,
+          "max": 6464.909302012529,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 810.4081514284189,
+          "median": 193.0373579962179,
+          "min": 62.39100097445771,
+          "max": 1768.5958079528064,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 7224.103408738301,
+          "median": 6532.732509513153,
+          "min": 6286.388479988091,
+          "max": 9829.692114959471,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 9011.722610866855,
+          "median": 6755.0179429817945,
+          "min": 6414.003660960589,
+          "max": 15530.434741987847,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 4.25,
+          "median": 4.0,
+          "min": 2,
+          "max": 7,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16282896352.0,
+          "median": 16289809920.0,
+          "min": 16179192832,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16495935488.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 547.294587597627,
+          "median": 63.753371010534465,
+          "min": 58.80675098160282,
+          "max": 1926.5337419928983,
+          "count": 52
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\R7low_chartqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\R7low_chartqa_16_v1",
+      "summary_sha256": "953cf605e38b4206c60047fd4319e05f3bf8a32a5a7f9c4807aad84a78959ca6",
+      "source_receipt_sha256": "f6bb1ad839389903fc9f3ceee86888f47f53cff2dad2bfdf3ebf18b7dbd69dd2",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "R7high",
+      "name": "R7high_chartqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.8125,
+      "ci95": [
+        0.625,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 11352773.0,
+          "median": 11560453.0,
+          "min": 8237573,
+          "max": 11560453,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.7997138081764688,
+          "median": 1.799984834632095,
+          "min": 1.7956484113420759,
+          "max": 1.799984834632095,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 541.7411689377332,
+          "median": 519.198226480512,
+          "min": 370.56330300401896,
+          "max": 1056.4579700003378,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5609.66397856464,
+          "median": 5453.207970014773,
+          "min": 5414.533744973596,
+          "max": 7828.237301961053,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 1314.0244526985043,
+          "median": 1716.1523415124975,
+          "min": 62.024610000662506,
+          "max": 1816.874539013952,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 7757.915595124359,
+          "median": 7916.030397493159,
+          "min": 6247.600893024355,
+          "max": 11437.65901203733,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 10618.501936060056,
+          "median": 9696.299011469819,
+          "min": 6374.1460390156135,
+          "max": 18175.047631026246,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 4.25,
+          "median": 4.0,
+          "min": 2,
+          "max": 7,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16428810752.0,
+          "median": 16432964608.0,
+          "min": 16366502912,
+          "max": 16432964608,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16560816128.0,
+          "median": 16565403648.0,
+          "min": 16492003328,
+          "max": 16565403648,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 877.308544229331,
+          "median": 852.6024354796391,
+          "min": 58.525303029455245,
+          "max": 1776.7526269890368,
+          "count": 52
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\R7high_chartqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\R7high_chartqa_16_v1",
+      "summary_sha256": "23382def8bb749de7283cb8142e5060ed06379ebe48277458a5eea66019ce7c6",
+      "source_receipt_sha256": "0443cbe9bc5717bdcdd6af791dc163588db9a23f3b39eae93aeb7012d13fd4de",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "LS-FZ",
+      "name": "LS_FZ_chartqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.8125,
+      "ci95": [
+        0.625,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8169029.0,
+          "median": 8315909.0,
+          "min": 5965829,
+          "max": 8315909,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.295155852181571,
+          "median": 1.2948030744280135,
+          "min": 1.2948030744280135,
+          "max": 1.3004475184849331,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 540.8845474921691,
+          "median": 524.5878119894769,
+          "min": 371.0248919669539,
+          "max": 959.9852429819293,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 6181.316508747841,
+          "median": 6141.029994993005,
+          "min": 5648.29483802896,
+          "max": 7673.657528008334,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 96.08801194553962,
+          "median": 86.42835554201156,
+          "min": 66.79524295032024,
+          "max": 144.6361289708875,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 7155.465058305708,
+          "median": 7032.027056993684,
+          "min": 6566.188449971378,
+          "max": 8988.449845986906,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7410.259779942862,
+          "median": 7305.288274510531,
+          "min": 6759.650514984969,
+          "max": 9291.228618007153,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 4.25,
+          "median": 4.0,
+          "min": 2,
+          "max": 7,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16282896352.0,
+          "median": 16289809920.0,
+          "min": 16179192832,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16495935488.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 74.8236001762472,
+          "median": 69.69163651228882,
+          "min": 58.80649603204802,
+          "max": 137.25369004532695,
+          "count": 52
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\LS_FZ_chartqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\LS_FZ_chartqa_16_v1",
+      "summary_sha256": "49e568dfeee90ea61d7499ce4b181ff9a9cbb19d979abbb1481673f592fabd1f",
+      "source_receipt_sha256": "aca70ef91d34ab3cf57c022aef64c408906e9bcdfd7cb333beb709f28cd414c4",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "LS-RE",
+      "name": "LS_RE_chartqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.8125,
+      "ci95": [
+        0.625,
+        1.0
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8169029.0,
+          "median": 8315909.0,
+          "min": 5965829,
+          "max": 8315909,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.295155852181571,
+          "median": 1.2948030744280135,
+          "min": 1.2948030744280135,
+          "max": 1.3004475184849331,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 544.9121293677308,
+          "median": 525.3206364868674,
+          "min": 365.6286589684896,
+          "max": 1018.5515980119817,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5962.592915238929,
+          "median": 5940.526008984307,
+          "min": 5830.333238001913,
+          "max": 6452.987615019083,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 71.32938456561533,
+          "median": 70.74371448834427,
+          "min": 63.673450029455125,
+          "max": 90.4973809956573,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 6949.412985693925,
+          "median": 6858.313032484148,
+          "min": 6669.7899650316685,
+          "max": 8413.462414988317,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7179.7094198882405,
+          "median": 7059.7239910275675,
+          "min": 6880.178151011933,
+          "max": 8661.197672015987,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 4.25,
+          "median": 4.0,
+          "min": 2,
+          "max": 7,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16282896352.0,
+          "median": 16289809920.0,
+          "min": 16179192832,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16495935488.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 67.40229813350687,
+          "median": 65.91062448569573,
+          "min": 59.95228502433747,
+          "max": 93.8414410338737,
+          "count": 52
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\LS_RE_chartqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\LS_RE_chartqa_16_v1",
+      "summary_sha256": "1519c9101e2c59d7227b5c68817dce2bd014b7ce56ad06043ec24fa5c4e6dd73",
+      "source_receipt_sha256": "0ccf52243bbf4fa3a75321766a037de11193a51507bbc07aae3e7cb9410f787c",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "FB0",
+      "name": "FB0_chartqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.75,
+      "ci95": [
+        0.5,
+        0.9375
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8168133.0,
+          "median": 8315013.0,
+          "min": 5964933,
+          "max": 8315013,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.2950128555297853,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.300252205984933,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 531.0993973180302,
+          "median": 512.3463315248955,
+          "min": 364.57683198386803,
+          "max": 931.9627649965696,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5968.415757444745,
+          "median": 5871.902386017609,
+          "min": 5815.016893029679,
+          "max": 6981.2707580276765,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 69.13955261916271,
+          "median": 68.06975102517754,
+          "min": 63.49811697145924,
+          "max": 90.07503394968808,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 6853.274701876217,
+          "median": 6710.916616983013,
+          "min": 6493.226377991959,
+          "max": 8187.68051895313,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7072.917380130093,
+          "median": 6890.050579997478,
+          "min": 6732.153703982476,
+          "max": 8418.97555498872,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 4.25,
+          "median": 4.0,
+          "min": 2,
+          "max": 7,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16282896352.0,
+          "median": 16289809920.0,
+          "min": 16179192832,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16495935488.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 64.71846807779421,
+          "median": 64.37792399083264,
+          "min": 59.42534998757765,
+          "max": 90.15237004496157,
+          "count": 52
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FB0_chartqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FB0_chartqa_16_v1",
+      "summary_sha256": "383b3e457153a9fed389986df8d9c3b2e4711f63bf24e349148a6fbbebb7c880",
+      "source_receipt_sha256": "b9cb845019a758bd1e97f9204cc918958290f0f17598b9569e8ea6f1f9597276",
+      "SourceRun_admission_established": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "FB-W",
+      "name": "FB_W_chartqa_16_v1",
+      "status": "CLOSED_FULL_DOMAIN_CUSTOM_SOURCE_SCORE_PHYSICAL",
+      "expected_QA": 16,
+      "primary_mean": 0.6875,
+      "ci95": [
+        0.4375,
+        0.875
+      ],
+      "resources": {
+        "complete_bytes": {
+          "mean": 8168133.0,
+          "median": 8315013.0,
+          "min": 5964933,
+          "max": 8315013,
+          "count": 16
+        },
+        "actual_complete_bits": {
+          "mean": 1.2950128555297853,
+          "median": 1.294663565499442,
+          "min": 1.294663565499442,
+          "max": 1.300252205984933,
+          "count": 16
+        },
+        "strict_all_QA_1p3": false,
+        "strict_all_QA_1p8": true
+      },
+      "timing": {
+        "prefill_ms": {
+          "mean": 533.1539322542085,
+          "median": 513.1632270058617,
+          "min": 361.33886297466233,
+          "max": 936.880488996394,
+          "count": 16
+        },
+        "encode_ms": {
+          "mean": 5914.506843437266,
+          "median": 5909.166250494309,
+          "min": 5695.504161005374,
+          "max": 6275.513037981,
+          "count": 16
+        },
+        "question_prefill_ms": {
+          "mean": 69.27189706038916,
+          "median": 68.34854101180099,
+          "min": 62.94451700523496,
+          "max": 88.0924349767156,
+          "count": 16
+        },
+        "ttft_ms": {
+          "mean": 6800.211232253787,
+          "median": 6750.266688497504,
+          "min": 6513.021128019318,
+          "max": 8009.612724999897,
+          "count": 16
+        },
+        "wall_ms": {
+          "mean": 7021.4257409425045,
+          "median": 6896.166433027247,
+          "min": 6739.9687800207175,
+          "max": 8235.37147801835,
+          "count": 16
+        },
+        "output_tokens": {
+          "mean": 4.3125,
+          "median": 4.0,
+          "min": 2,
+          "max": 8,
+          "count": 16
+        },
+        "peak_allocated_bytes": {
+          "mean": 16282896352.0,
+          "median": 16289809920.0,
+          "min": 16179192832,
+          "max": 16289809920,
+          "count": 16
+        },
+        "peak_reserved_bytes": {
+          "mean": 16495935488.0,
+          "median": 16496197632.0,
+          "min": 16492003328,
+          "max": 16496197632,
+          "count": 16
+        },
+        "pooled_natural_inter_token_ms": {
+          "mean": 63.92142699947932,
+          "median": 63.81981400772929,
+          "min": 59.26638201344758,
+          "max": 87.2614579857327,
+          "count": 53
+        }
+      },
+      "missing": [],
+      "raw": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\raw\\FB_W_chartqa_16_v1",
+      "scored": "${EVIDENCE_ROOT}\\results\\round10\\harvest_v1\\scored\\FB_W_chartqa_16_v1",
+      "summary_sha256": "22772b1d096b6096a9903eb800f2a7b7e3229209847f6a455c6a308dd2826f2f",
+      "source_receipt_sha256": "95e311bd985a349f3f35ea9caaf3917aee6de5e8a2491237e9c8ffecdef19451",
+      "SourceRun_admission_established": false
+    }
+  ],
+  "paired_contrasts": [
+    "textvqa__LS-FZ_minus_FP16",
+    "textvqa__LS-FZ_minus_R7low",
+    "textvqa__LS-FZ_minus_R7high",
+    "textvqa__LS-RE_minus_FP16",
+    "textvqa__LS-RE_minus_R7low",
+    "textvqa__LS-RE_minus_R7high",
+    "textvqa__FB0_minus_FP16",
+    "textvqa__FB0_minus_R7low",
+    "textvqa__FB0_minus_R7high",
+    "textvqa__FB-W_minus_FP16",
+    "textvqa__FB-W_minus_R7low",
+    "textvqa__FB-W_minus_R7high",
+    "textvqa__LS-RE_minus_LS-FZ",
+    "textvqa__FB-W_minus_FB0",
+    "infovqa__LS-FZ_minus_FP16",
+    "infovqa__LS-FZ_minus_R7low",
+    "infovqa__LS-FZ_minus_R7high",
+    "infovqa__LS-RE_minus_FP16",
+    "infovqa__LS-RE_minus_R7low",
+    "infovqa__LS-RE_minus_R7high",
+    "infovqa__FB0_minus_FP16",
+    "infovqa__FB0_minus_R7low",
+    "infovqa__FB0_minus_R7high",
+    "infovqa__FB-W_minus_FP16",
+    "infovqa__FB-W_minus_R7low",
+    "infovqa__FB-W_minus_R7high",
+    "infovqa__LS-RE_minus_LS-FZ",
+    "infovqa__FB-W_minus_FB0",
+    "docvqa__LS-FZ_minus_FP16",
+    "docvqa__LS-FZ_minus_R7low",
+    "docvqa__LS-FZ_minus_R7high",
+    "docvqa__LS-RE_minus_FP16",
+    "docvqa__LS-RE_minus_R7low",
+    "docvqa__LS-RE_minus_R7high",
+    "docvqa__FB0_minus_FP16",
+    "docvqa__FB0_minus_R7low",
+    "docvqa__FB0_minus_R7high",
+    "docvqa__FB-W_minus_FP16",
+    "docvqa__FB-W_minus_R7low",
+    "docvqa__FB-W_minus_R7high",
+    "docvqa__LS-RE_minus_LS-FZ",
+    "docvqa__FB-W_minus_FB0",
+    "chartqa__LS-FZ_minus_FP16",
+    "chartqa__LS-FZ_minus_R7low",
+    "chartqa__LS-FZ_minus_R7high",
+    "chartqa__LS-RE_minus_FP16",
+    "chartqa__LS-RE_minus_R7low",
+    "chartqa__LS-RE_minus_R7high",
+    "chartqa__FB0_minus_FP16",
+    "chartqa__FB0_minus_R7low",
+    "chartqa__FB0_minus_R7high",
+    "chartqa__FB-W_minus_FP16",
+    "chartqa__FB-W_minus_R7low",
+    "chartqa__FB-W_minus_R7high",
+    "chartqa__LS-RE_minus_LS-FZ",
+    "chartqa__FB-W_minus_FB0"
+  ],
+  "no_cross_dataset_quality_average": true,
+  "D160_is_development_not_independent_confirmation": true,
+  "paired_CI_and_signflip_unadjusted_not_equivalence_or_algorithm_winner": true,
+  "quality_resource_and_timing_are_separate": "All-QA complete bytes; instrumented quality-run host timing with natural output lengths, not controlled speed or HBM traffic.",
+  "SourceRun_admission_established": false,
+  "new_GPU_jobs_started": 0,
+  "source_sha256": "1401b56ff23d28d5a88f9fd81514ee4633f5c28bdb90b16dc9627e1cc239f789",
+  "frozen_helper_sha256": {
+    "code/score.py": "72b5182eeb97e930403a970feebb4f1fadac23d04544c9646c6c9fd6b34bfba6",
+    "code/compare_runs.py": "ce73705f17cfcbfe66358f3525eb3121e2e141056bc9a043e7423546878d15a1",
+    "ops/prepare_remaining_phase_delivery_v1.py": "621b9a3bf29811e3b11292397c1248b19046154a8924dee87cd2fa1ae10c0650",
+    "code/round10_runner_v1.py": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+    "code/round10_value_bank_v2.py": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c"
+  }
+}

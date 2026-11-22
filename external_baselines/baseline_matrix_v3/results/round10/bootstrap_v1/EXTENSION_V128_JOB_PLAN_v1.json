@@ -1,0 +1,228 @@
+{
+  "schema": "trajkv.round10.job_plan.v1",
+  "phase": "extension",
+  "selected_modes": [
+    "V128-R43"
+  ],
+  "status": "FROZEN_PRE_LAUNCH",
+  "input_manifest_path": "${EVIDENCE_ROOT}\\results\\round10\\input_preparation_v1\\inputs\\INPUT_MANIFEST.json",
+  "input_manifest_sha256": "b2ba5f54516abf96344e02356c7cee079b4ff48e2a270ea8fc61ea1c78baaecf",
+  "jobs": [
+    {
+      "name": "bm_R10_extension_gpu0_vg_v1",
+      "job": "configs/jobs/bm_R10_extension_gpu0_vg_v1.json",
+      "job_sha256": "9a328b51f49f26e1fd76e56de901d2f535c99b9a782623ac05bcd690634d9f5f",
+      "output": "results/round10_extension_v1/queues/extension_gpu0_vg_v1",
+      "GPU": "0"
+    },
+    {
+      "name": "bm_R10_extension_gpu1_vg_v1",
+      "job": "configs/jobs/bm_R10_extension_gpu1_vg_v1.json",
+      "job_sha256": "5d49e7d0cc9267607e8cbf1e93d7bcb32c64e0f437ae8342e55be59219288444",
+      "output": "results/round10_extension_v1/queues/extension_gpu1_vg_v1",
+      "GPU": "1"
+    }
+  ],
+  "cells": [
+    {
+      "name": "Extension_FP16_textvqa_64_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_FP16_textvqa_64_vg_v1.json",
+      "config_sha256": "dff273d268fdeaac94080521a7d3fbd8b499ce26f7f2b9cff8ab948fdd82dc9d",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_FP16_textvqa_64_vg_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "FP16",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_R7low_textvqa_64_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_R7low_textvqa_64_vg_v1.json",
+      "config_sha256": "18676ec00e7f5525b80440311c7fc884e45ee988a3dacd18825f9230594cf4e3",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_R7low_textvqa_64_vg_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "R7low",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_R7high_textvqa_64_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_R7high_textvqa_64_vg_v1.json",
+      "config_sha256": "38a202d80b480ffae1f4100a39eab377707b3b4a13c9ed5e198b8e0c4446a4ec",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_R7high_textvqa_64_vg_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "R7high",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_V128_R43_textvqa_64_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_V128_R43_textvqa_64_vg_v1.json",
+      "config_sha256": "3d56597d227e46042c09da854cc7a1e608a21bf07fe87bd8b0954f61715b6e5f",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_V128_R43_textvqa_64_vg_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "V128-R43",
+      "GPU": "1"
+    },
+    {
+      "name": "Extension_FP16_infovqa_64_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_FP16_infovqa_64_vg_v1.json",
+      "config_sha256": "1a36592bfd4f35349857fcb0b2b6d29a45c915b05cf7078dbc9c50e62785260c",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_FP16_infovqa_64_vg_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "FP16",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_R7low_infovqa_64_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_R7low_infovqa_64_vg_v1.json",
+      "config_sha256": "9e89f29499c793471c90334c98d6b82be209eb9bcb10e250944edfbc8070ca71",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_R7low_infovqa_64_vg_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "R7low",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_R7high_infovqa_64_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_R7high_infovqa_64_vg_v1.json",
+      "config_sha256": "c4a375dbc45ecbbc253ac3c92899c4faa02bc7008610f2c1f1c7094448b064de",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_R7high_infovqa_64_vg_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "R7high",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_V128_R43_infovqa_64_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_V128_R43_infovqa_64_vg_v1.json",
+      "config_sha256": "c70df0c36426c04357e924fd5c0d0ac100fe8f1155cf3f0bd2ba8ca2746cbe2d",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_V128_R43_infovqa_64_vg_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "V128-R43",
+      "GPU": "1"
+    },
+    {
+      "name": "Extension_FP16_docvqa_48_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_FP16_docvqa_48_vg_v1.json",
+      "config_sha256": "14afa1c25681cfb6e242040f3f2e6b6f60ba8940bf9bf91c98f49204e565d06f",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_FP16_docvqa_48_vg_v1",
+      "expected_QA": 48,
+      "dataset": "docvqa",
+      "mode": "FP16",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_R7low_docvqa_48_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_R7low_docvqa_48_vg_v1.json",
+      "config_sha256": "2da67a27fb9aa075b0b912f5a7a7192d9c8f73ed2715d978b3b78242562c3924",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_R7low_docvqa_48_vg_v1",
+      "expected_QA": 48,
+      "dataset": "docvqa",
+      "mode": "R7low",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_R7high_docvqa_48_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_R7high_docvqa_48_vg_v1.json",
+      "config_sha256": "a562e7eab2ff8311c999d814544536ccf649933921910b2d58a5f3165f1c1be4",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_R7high_docvqa_48_vg_v1",
+      "expected_QA": 48,
+      "dataset": "docvqa",
+      "mode": "R7high",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_V128_R43_docvqa_48_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_V128_R43_docvqa_48_vg_v1.json",
+      "config_sha256": "40954fa546b4761f730f6cb722df8189ba6ba9ab90fa23910dc71a214f32bf52",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_V128_R43_docvqa_48_vg_v1",
+      "expected_QA": 48,
+      "dataset": "docvqa",
+      "mode": "V128-R43",
+      "GPU": "1"
+    },
+    {
+      "name": "Extension_FP16_chartqa_48_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_FP16_chartqa_48_vg_v1.json",
+      "config_sha256": "b3b09afba71a9281ff441eacadf4c601760baeeee34b3edcbec7bf8ec3a78fcb",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_FP16_chartqa_48_vg_v1",
+      "expected_QA": 48,
+      "dataset": "chartqa",
+      "mode": "FP16",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_R7low_chartqa_48_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_R7low_chartqa_48_vg_v1.json",
+      "config_sha256": "0822a2b117d426d4b9ab2b42c22dcb3298a8f89abed1c6666ae296d157b65556",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_R7low_chartqa_48_vg_v1",
+      "expected_QA": 48,
+      "dataset": "chartqa",
+      "mode": "R7low",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_R7high_chartqa_48_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_R7high_chartqa_48_vg_v1.json",
+      "config_sha256": "c23e3428ad8f7cb3c8fcb081a4f76dd69425be8c182072a12e5ee7a3ccad8200",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_R7high_chartqa_48_vg_v1",
+      "expected_QA": 48,
+      "dataset": "chartqa",
+      "mode": "R7high",
+      "GPU": "0"
+    },
+    {
+      "name": "Extension_V128_R43_chartqa_48_vg_v1",
+      "script": "code/round10_extension_runner_v1.py",
+      "script_sha256": "83b8c5003f891b92cd33ed7d3387852c50090709c7f5a0bfd0196f02d01007f1",
+      "config": "${DATA_ROOT}/configs/round10_v1/Extension_V128_R43_chartqa_48_vg_v1.json",
+      "config_sha256": "7aba68d6f75afd8815293a0dc7aaf17f024b160bf61944506625f2d1c46df49b",
+      "output": "${DATA_ROOT}/results/round10_extension_v1/Extension_V128_R43_chartqa_48_vg_v1",
+      "expected_QA": 48,
+      "dataset": "chartqa",
+      "mode": "V128-R43",
+      "GPU": "1"
+    }
+  ],
+  "planned_free_answers": 896,
+  "reserved_predictions_must_not_be_used_for_candidate_selection": true,
+  "selection_evidence": {
+    "path": "${EVIDENCE_ROOT}\\results\\round10\\middle_watch_snapshot_v2\\summary.json",
+    "sha256": "10361fe04aaa3425ef24bb5103515fe98d0df1d00ac349ac2cea49bc783760f4"
+  },
+  "source_for_selection": "D160_development_and_calibration_only",
+  "new_GPU_jobs_started_by_this_preparer": false
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "trajkv.round10.job_plan.v1",
+  "phase": "kra",
+  "status": "FROZEN_PRE_LAUNCH",
+  "input_manifest_path": "${EVIDENCE_ROOT}\\results\\round10\\input_preparation_v1\\inputs\\INPUT_MANIFEST.json",
+  "input_manifest_sha256": "b2ba5f54516abf96344e02356c7cee079b4ff48e2a270ea8fc61ea1c78baaecf",
+  "jobs": [
+    {
+      "name": "bm_R10_KRA_dev_gpu1_v1",
+      "job": "configs/jobs/bm_R10_KRA_dev_gpu1_v1.json",
+      "job_sha256": "914f79816aa3857eb08cfecb873d731a2765777af283b41d59a2df6cd591fe3a",
+      "output": "results/round10_kra_v1/queues/kra_gpu1_v1",
+      "GPU": "1"
+    }
+  ],
+  "cells": [
+    {
+      "name": "KRA1_chartqa_16_v1",
+      "script": "code/round10_kra_runner_v1.py",
+      "script_sha256": "0980c601a8aa343877880163169a76acbc0b147920eafef28f68d6d6386df982",
+      "config": "${DATA_ROOT}/configs/round10_v1/KRA1_chartqa_16_v1.json",
+      "config_sha256": "33c16c0de0924693074080abd0d793984443417e02087931c4ab3ec8713d43ff",
+      "output": "${DATA_ROOT}/results/round10_kra_v1/dev/KRA1_chartqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "chartqa",
+      "mode": "KRA1",
+      "GPU": "1"
+    },
+    {
+      "name": "KRA1_docvqa_16_v1",
+      "script": "code/round10_kra_runner_v1.py",
+      "script_sha256": "0980c601a8aa343877880163169a76acbc0b147920eafef28f68d6d6386df982",
+      "config": "${DATA_ROOT}/configs/round10_v1/KRA1_docvqa_16_v1.json",
+      "config_sha256": "0db9e968c301d55466d8182271e9082bb935999a37881bd0a11e06a8006ade74",
+      "output": "${DATA_ROOT}/results/round10_kra_v1/dev/KRA1_docvqa_16_v1",
+      "expected_QA": 16,
+      "dataset": "docvqa",
+      "mode": "KRA1",
+      "GPU": "1"
+    },
+    {
+      "name": "KRA1_textvqa_64_v1",
+      "script": "code/round10_kra_runner_v1.py",
+      "script_sha256": "0980c601a8aa343877880163169a76acbc0b147920eafef28f68d6d6386df982",
+      "config": "${DATA_ROOT}/configs/round10_v1/KRA1_textvqa_64_v1.json",
+      "config_sha256": "1391ac435695fb1a23b6a4bc053b6429b7c8638bbff5bd4eb37fdfd5d2525a7d",
+      "output": "${DATA_ROOT}/results/round10_kra_v1/dev/KRA1_textvqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "textvqa",
+      "mode": "KRA1",
+      "GPU": "1"
+    },
+    {
+      "name": "KRA1_infovqa_64_v1",
+      "script": "code/round10_kra_runner_v1.py",
+      "script_sha256": "0980c601a8aa343877880163169a76acbc0b147920eafef28f68d6d6386df982",
+      "config": "${DATA_ROOT}/configs/round10_v1/KRA1_infovqa_64_v1.json",
+      "config_sha256": "4698161b98a4c8d085b11879bf50d5df970ea44ee3a857b317724c91b9b8aebc",
+      "output": "${DATA_ROOT}/results/round10_kra_v1/dev/KRA1_infovqa_64_v1",
+      "expected_QA": 64,
+      "dataset": "infovqa",
+      "mode": "KRA1",
+      "GPU": "1"
+    }
+  ],
+  "planned_free_answers": 160,
+  "reference_answer_events_reused": 480,
+  "new_GPU_jobs_started_by_this_preparer": false,
+  "calibration_complete_sha256": "b2e8e200fc504a4dd0938ce02f5cfbba417d87f6b6cdec0cb45ec670379b5b41"
+}
