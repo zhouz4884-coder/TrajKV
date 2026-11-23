@@ -1,0 +1,1022 @@
+{
+  "schema": "trajkv.round11.fresh_cohort_per_domain_report.v1",
+  "status": "PASS_SOURCE_BOUND_TASK_AND_PAIR_REPORT_NO_SELECTION",
+  "cohort": "original128",
+  "distinct_sources": 128,
+  "actual_fresh_QA": 640,
+  "reused_reference_views": 0,
+  "failed_setup_v2_QA_accounted_here": 0,
+  "other_cohort_inference_events_accounted_here": 0,
+  "quality_by_domain": [
+    {
+      "dataset": "textvqa",
+      "sources": 48,
+      "FP16_percent": 80.83333333333333,
+      "R7low_percent": 79.79166666666666,
+      "R7high_percent": 84.79166666666667,
+      "JointV_percent": 77.70833333333333,
+      "JointSpatialWO_percent": 77.70833333333333
+    },
+    {
+      "dataset": "infovqa",
+      "sources": 48,
+      "FP16_percent": 93.05555555555557,
+      "R7low_percent": 82.93040283989941,
+      "R7high_percent": 86.79051459293396,
+      "JointV_percent": 79.50298348506068,
+      "JointSpatialWO_percent": 80.84706950656609
+    },
+    {
+      "dataset": "docvqa",
+      "sources": 16,
+      "FP16_percent": 100.0,
+      "R7low_percent": 97.91666666666667,
+      "R7high_percent": 100.0,
+      "JointV_percent": 97.91666666666667,
+      "JointSpatialWO_percent": 97.91666666666667
+    },
+    {
+      "dataset": "chartqa",
+      "sources": 16,
+      "FP16_percent": 81.25,
+      "R7low_percent": 81.25,
+      "R7high_percent": 81.25,
+      "JointV_percent": 81.25,
+      "JointSpatialWO_percent": 81.25
+    }
+  ],
+  "candidate_contrasts": [
+    {
+      "dataset": "textvqa",
+      "candidate": "JointV",
+      "reference": "FP16",
+      "sources": 48,
+      "delta_pp": -3.125,
+      "paired_CI95_pp": [
+        -11.25,
+        4.166666666666666
+      ],
+      "improved": 3,
+      "degraded": 3,
+      "equal": 42,
+      "raw_string_changed": 10,
+      "output_token_sequence_changed": 12,
+      "stored_first_logits_argmax_changed": 10,
+      "per_request_delta_complete_bytes": [
+        -94459771,
+        -67445627
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "textvqa",
+      "candidate": "JointV",
+      "reference": "R7low",
+      "sources": 48,
+      "delta_pp": -2.083333333333333,
+      "paired_CI95_pp": [
+        -6.25,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 1,
+      "equal": 47,
+      "raw_string_changed": 3,
+      "output_token_sequence_changed": 4,
+      "stored_first_logits_argmax_changed": 3,
+      "per_request_delta_complete_bytes": [
+        0
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "textvqa",
+      "candidate": "JointV",
+      "reference": "R7high",
+      "sources": 48,
+      "delta_pp": -7.083333333333333,
+      "paired_CI95_pp": [
+        -16.666666666666664,
+        1.2500000000000002
+      ],
+      "improved": 1,
+      "degraded": 5,
+      "equal": 42,
+      "raw_string_changed": 9,
+      "output_token_sequence_changed": 10,
+      "stored_first_logits_argmax_changed": 7,
+      "per_request_delta_complete_bytes": [
+        -3245440,
+        -2272640
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "textvqa",
+      "candidate": "JointSpatialWO",
+      "reference": "FP16",
+      "sources": 48,
+      "delta_pp": -3.125,
+      "paired_CI95_pp": [
+        -11.25,
+        4.166666666666666
+      ],
+      "improved": 3,
+      "degraded": 3,
+      "equal": 42,
+      "raw_string_changed": 10,
+      "output_token_sequence_changed": 11,
+      "stored_first_logits_argmax_changed": 8,
+      "per_request_delta_complete_bytes": [
+        -94459771,
+        -67445627
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "textvqa",
+      "candidate": "JointSpatialWO",
+      "reference": "R7low",
+      "sources": 48,
+      "delta_pp": -2.083333333333333,
+      "paired_CI95_pp": [
+        -6.25,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 1,
+      "equal": 47,
+      "raw_string_changed": 4,
+      "output_token_sequence_changed": 4,
+      "stored_first_logits_argmax_changed": 3,
+      "per_request_delta_complete_bytes": [
+        0
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "textvqa",
+      "candidate": "JointSpatialWO",
+      "reference": "R7high",
+      "sources": 48,
+      "delta_pp": -7.083333333333333,
+      "paired_CI95_pp": [
+        -16.666666666666664,
+        1.2500000000000002
+      ],
+      "improved": 1,
+      "degraded": 5,
+      "equal": 42,
+      "raw_string_changed": 9,
+      "output_token_sequence_changed": 9,
+      "stored_first_logits_argmax_changed": 5,
+      "per_request_delta_complete_bytes": [
+        -3245440,
+        -2272640
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "infovqa",
+      "candidate": "JointV",
+      "reference": "FP16",
+      "sources": 48,
+      "delta_pp": -13.552572070494865,
+      "paired_CI95_pp": [
+        -24.10983729429272,
+        -4.209631769374418
+      ],
+      "improved": 1,
+      "degraded": 12,
+      "equal": 35,
+      "raw_string_changed": 13,
+      "output_token_sequence_changed": 13,
+      "stored_first_logits_argmax_changed": 3,
+      "per_request_delta_complete_bytes": [
+        -121473915,
+        -107966843,
+        -94459771,
+        -80952699,
+        -67445627,
+        -53938555,
+        -40431483,
+        -13417339
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "infovqa",
+      "candidate": "JointV",
+      "reference": "R7low",
+      "sources": 48,
+      "delta_pp": -3.4274193548387095,
+      "paired_CI95_pp": [
+        -8.938172043010752,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 2,
+      "equal": 46,
+      "raw_string_changed": 2,
+      "output_token_sequence_changed": 2,
+      "stored_first_logits_argmax_changed": 1,
+      "per_request_delta_complete_bytes": [
+        0
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "infovqa",
+      "candidate": "JointV",
+      "reference": "R7high",
+      "sources": 48,
+      "delta_pp": -7.287531107873256,
+      "paired_CI95_pp": [
+        -14.316466547976717,
+        -1.6265966021825455
+      ],
+      "improved": 1,
+      "degraded": 7,
+      "equal": 40,
+      "raw_string_changed": 11,
+      "output_token_sequence_changed": 11,
+      "stored_first_logits_argmax_changed": 2,
+      "per_request_delta_complete_bytes": [
+        -4172160,
+        -3708800,
+        -3245440,
+        -2754432,
+        -2272640,
+        -1800064,
+        -1336704,
+        -382336
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "infovqa",
+      "candidate": "JointSpatialWO",
+      "reference": "FP16",
+      "sources": 48,
+      "delta_pp": -12.208486048989489,
+      "paired_CI95_pp": [
+        -21.990965539441582,
+        -3.4824081976540646
+      ],
+      "improved": 1,
+      "degraded": 12,
+      "equal": 35,
+      "raw_string_changed": 13,
+      "output_token_sequence_changed": 13,
+      "stored_first_logits_argmax_changed": 3,
+      "per_request_delta_complete_bytes": [
+        -121473915,
+        -107966843,
+        -94459771,
+        -80952699,
+        -67445627,
+        -53938555,
+        -40431483,
+        -13417339
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "infovqa",
+      "candidate": "JointSpatialWO",
+      "reference": "R7low",
+      "sources": 48,
+      "delta_pp": -2.083333333333333,
+      "paired_CI95_pp": [
+        -6.25,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 1,
+      "equal": 47,
+      "raw_string_changed": 1,
+      "output_token_sequence_changed": 1,
+      "stored_first_logits_argmax_changed": 1,
+      "per_request_delta_complete_bytes": [
+        0
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "infovqa",
+      "candidate": "JointSpatialWO",
+      "reference": "R7high",
+      "sources": 48,
+      "delta_pp": -5.9434450863678805,
+      "paired_CI95_pp": [
+        -12.147534795168067,
+        -0.7409474206349205
+      ],
+      "improved": 1,
+      "degraded": 6,
+      "equal": 41,
+      "raw_string_changed": 10,
+      "output_token_sequence_changed": 10,
+      "stored_first_logits_argmax_changed": 2,
+      "per_request_delta_complete_bytes": [
+        -4172160,
+        -3708800,
+        -3245440,
+        -2754432,
+        -2272640,
+        -1800064,
+        -1336704,
+        -382336
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "docvqa",
+      "candidate": "JointV",
+      "reference": "FP16",
+      "sources": 16,
+      "delta_pp": -2.083333333333333,
+      "paired_CI95_pp": [
+        -6.249999999999998,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 1,
+      "equal": 15,
+      "raw_string_changed": 3,
+      "output_token_sequence_changed": 3,
+      "stored_first_logits_argmax_changed": 3,
+      "per_request_delta_complete_bytes": [
+        -94459771
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "docvqa",
+      "candidate": "JointV",
+      "reference": "R7low",
+      "sources": 16,
+      "delta_pp": 0.0,
+      "paired_CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 0,
+      "equal": 16,
+      "raw_string_changed": 0,
+      "output_token_sequence_changed": 0,
+      "stored_first_logits_argmax_changed": 0,
+      "per_request_delta_complete_bytes": [
+        0
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "docvqa",
+      "candidate": "JointV",
+      "reference": "R7high",
+      "sources": 16,
+      "delta_pp": -2.083333333333333,
+      "paired_CI95_pp": [
+        -6.249999999999998,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 1,
+      "equal": 15,
+      "raw_string_changed": 4,
+      "output_token_sequence_changed": 4,
+      "stored_first_logits_argmax_changed": 3,
+      "per_request_delta_complete_bytes": [
+        -3245440
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "docvqa",
+      "candidate": "JointSpatialWO",
+      "reference": "FP16",
+      "sources": 16,
+      "delta_pp": -2.083333333333333,
+      "paired_CI95_pp": [
+        -6.249999999999998,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 1,
+      "equal": 15,
+      "raw_string_changed": 3,
+      "output_token_sequence_changed": 3,
+      "stored_first_logits_argmax_changed": 3,
+      "per_request_delta_complete_bytes": [
+        -94459771
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "docvqa",
+      "candidate": "JointSpatialWO",
+      "reference": "R7low",
+      "sources": 16,
+      "delta_pp": 0.0,
+      "paired_CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 0,
+      "equal": 16,
+      "raw_string_changed": 0,
+      "output_token_sequence_changed": 0,
+      "stored_first_logits_argmax_changed": 0,
+      "per_request_delta_complete_bytes": [
+        0
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "docvqa",
+      "candidate": "JointSpatialWO",
+      "reference": "R7high",
+      "sources": 16,
+      "delta_pp": -2.083333333333333,
+      "paired_CI95_pp": [
+        -6.249999999999998,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 1,
+      "equal": 15,
+      "raw_string_changed": 4,
+      "output_token_sequence_changed": 4,
+      "stored_first_logits_argmax_changed": 3,
+      "per_request_delta_complete_bytes": [
+        -3245440
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "chartqa",
+      "candidate": "JointV",
+      "reference": "FP16",
+      "sources": 16,
+      "delta_pp": 0.0,
+      "paired_CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 0,
+      "equal": 16,
+      "raw_string_changed": 2,
+      "output_token_sequence_changed": 2,
+      "stored_first_logits_argmax_changed": 2,
+      "per_request_delta_complete_bytes": [
+        -94459771
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "chartqa",
+      "candidate": "JointV",
+      "reference": "R7low",
+      "sources": 16,
+      "delta_pp": 0.0,
+      "paired_CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 0,
+      "equal": 16,
+      "raw_string_changed": 0,
+      "output_token_sequence_changed": 0,
+      "stored_first_logits_argmax_changed": 0,
+      "per_request_delta_complete_bytes": [
+        0
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "chartqa",
+      "candidate": "JointV",
+      "reference": "R7high",
+      "sources": 16,
+      "delta_pp": 0.0,
+      "paired_CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 0,
+      "equal": 16,
+      "raw_string_changed": 2,
+      "output_token_sequence_changed": 2,
+      "stored_first_logits_argmax_changed": 1,
+      "per_request_delta_complete_bytes": [
+        -3245440
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "chartqa",
+      "candidate": "JointSpatialWO",
+      "reference": "FP16",
+      "sources": 16,
+      "delta_pp": 0.0,
+      "paired_CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 0,
+      "equal": 16,
+      "raw_string_changed": 2,
+      "output_token_sequence_changed": 2,
+      "stored_first_logits_argmax_changed": 2,
+      "per_request_delta_complete_bytes": [
+        -94459771
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "chartqa",
+      "candidate": "JointSpatialWO",
+      "reference": "R7low",
+      "sources": 16,
+      "delta_pp": 0.0,
+      "paired_CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 0,
+      "equal": 16,
+      "raw_string_changed": 1,
+      "output_token_sequence_changed": 1,
+      "stored_first_logits_argmax_changed": 0,
+      "per_request_delta_complete_bytes": [
+        0
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    },
+    {
+      "dataset": "chartqa",
+      "candidate": "JointSpatialWO",
+      "reference": "R7high",
+      "sources": 16,
+      "delta_pp": 0.0,
+      "paired_CI95_pp": [
+        0.0,
+        0.0
+      ],
+      "improved": 0,
+      "degraded": 0,
+      "equal": 16,
+      "raw_string_changed": 2,
+      "output_token_sequence_changed": 2,
+      "stored_first_logits_argmax_changed": 1,
+      "per_request_delta_complete_bytes": [
+        -3245440
+      ],
+      "full_vocabulary_logit_identity_compared": false,
+      "paired_intervals_descriptive_unadjusted": true
+    }
+  ],
+  "resources": [
+    {
+      "dataset": "textvqa",
+      "mode": "FP16",
+      "sources": 48,
+      "mean_complete_visual_bytes": 98492501.33333333,
+      "mean_actual_complete_bits": 16.002232142857142,
+      "prototype_encode_median_seconds": 0.32268685099552386,
+      "prototype_ttft_median_seconds": 1.1654578075103927,
+      "prototype_wall_median_seconds": 1.3091242735099513,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "R7low",
+      "sources": 48,
+      "mean_complete_visual_bytes": 7972293,
+      "mean_actual_complete_bits": 1.295478575570243,
+      "prototype_encode_median_seconds": 5.550728020985844,
+      "prototype_ttft_median_seconds": 6.409880620019976,
+      "prototype_wall_median_seconds": 6.572126473009121,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "R7high",
+      "sources": 48,
+      "mean_complete_visual_bytes": 11075866.333333334,
+      "mean_actual_complete_bits": 1.7993524395689673,
+      "prototype_encode_median_seconds": 5.456880365003599,
+      "prototype_ttft_median_seconds": 6.351545272482326,
+      "prototype_wall_median_seconds": 6.584109565010294,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "JointV",
+      "sources": 48,
+      "mean_complete_visual_bytes": 7972293,
+      "mean_actual_complete_bits": 1.295478575570243,
+      "prototype_encode_median_seconds": 13.843435322516598,
+      "prototype_ttft_median_seconds": 14.701548005978111,
+      "prototype_wall_median_seconds": 14.892298855498666,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "textvqa",
+      "mode": "JointSpatialWO",
+      "sources": 48,
+      "mean_complete_visual_bytes": 7972293,
+      "mean_actual_complete_bits": 1.295478575570243,
+      "prototype_encode_median_seconds": 31.136053736001486,
+      "prototype_ttft_median_seconds": 32.007089087506756,
+      "prototype_wall_median_seconds": 32.22729667101521,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "FP16",
+      "sources": 48,
+      "mean_complete_visual_bytes": 89316181.33333333,
+      "mean_actual_complete_bits": 16.002232142857142,
+      "prototype_encode_median_seconds": 0.3112147680076305,
+      "prototype_ttft_median_seconds": 1.1266683164867572,
+      "prototype_wall_median_seconds": 1.2995823654928245,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "R7low",
+      "sources": 48,
+      "mean_complete_visual_bytes": 7237893,
+      "mean_actual_complete_bits": 1.2996724815595717,
+      "prototype_encode_median_seconds": 5.765341260004789,
+      "prototype_ttft_median_seconds": 6.828120627527824,
+      "prototype_wall_median_seconds": 7.251672436483204,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "R7high",
+      "sources": 48,
+      "mean_complete_visual_bytes": 10036314.333333334,
+      "mean_actual_complete_bits": 1.7978813384665924,
+      "prototype_encode_median_seconds": 5.484644643001957,
+      "prototype_ttft_median_seconds": 7.684397687466117,
+      "prototype_wall_median_seconds": 8.89616558997659,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "JointV",
+      "sources": 48,
+      "mean_complete_visual_bytes": 7237893,
+      "mean_actual_complete_bits": 1.2996724815595717,
+      "prototype_encode_median_seconds": 14.0483695945004,
+      "prototype_ttft_median_seconds": 14.900847168028122,
+      "prototype_wall_median_seconds": 15.100539817969548,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "infovqa",
+      "mode": "JointSpatialWO",
+      "sources": 48,
+      "mean_complete_visual_bytes": 7237893,
+      "mean_actual_complete_bits": 1.2996724815595717,
+      "prototype_encode_median_seconds": 31.01601900247624,
+      "prototype_ttft_median_seconds": 31.886693176988047,
+      "prototype_wall_median_seconds": 32.203466000501066,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "FP16",
+      "sources": 16,
+      "mean_complete_visual_bytes": 102774784,
+      "mean_actual_complete_bits": 16.002232142857142,
+      "prototype_encode_median_seconds": 0.2757465174945537,
+      "prototype_ttft_median_seconds": 1.216834028979065,
+      "prototype_wall_median_seconds": 1.5144768269965425,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "R7low",
+      "sources": 16,
+      "mean_complete_visual_bytes": 8315013,
+      "mean_actual_complete_bits": 1.294663565499442,
+      "prototype_encode_median_seconds": 5.417028867988847,
+      "prototype_ttft_median_seconds": 6.353564599499805,
+      "prototype_wall_median_seconds": 6.738213748001726,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "R7high",
+      "sources": 16,
+      "mean_complete_visual_bytes": 11560453,
+      "mean_actual_complete_bits": 1.799984834632095,
+      "prototype_encode_median_seconds": 5.689718728972366,
+      "prototype_ttft_median_seconds": 6.652836112451041,
+      "prototype_wall_median_seconds": 7.0887527794984635,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "JointV",
+      "sources": 16,
+      "mean_complete_visual_bytes": 8315013,
+      "mean_actual_complete_bits": 1.294663565499442,
+      "prototype_encode_median_seconds": 13.940692291478626,
+      "prototype_ttft_median_seconds": 14.884252941497834,
+      "prototype_wall_median_seconds": 15.204374534485396,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "docvqa",
+      "mode": "JointSpatialWO",
+      "sources": 16,
+      "mean_complete_visual_bytes": 8315013,
+      "mean_actual_complete_bits": 1.294663565499442,
+      "prototype_encode_median_seconds": 30.789862959005404,
+      "prototype_ttft_median_seconds": 31.725470858014887,
+      "prototype_wall_median_seconds": 32.143322300951695,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "FP16",
+      "sources": 16,
+      "mean_complete_visual_bytes": 102774784,
+      "mean_actual_complete_bits": 16.002232142857142,
+      "prototype_encode_median_seconds": 0.2859010474930983,
+      "prototype_ttft_median_seconds": 1.0869253470154945,
+      "prototype_wall_median_seconds": 1.3056807764805853,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "R7low",
+      "sources": 16,
+      "mean_complete_visual_bytes": 8315013,
+      "mean_actual_complete_bits": 1.294663565499442,
+      "prototype_encode_median_seconds": 5.622275152010843,
+      "prototype_ttft_median_seconds": 6.449710098502692,
+      "prototype_wall_median_seconds": 6.769799889501883,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "R7high",
+      "sources": 16,
+      "mean_complete_visual_bytes": 11560453,
+      "mean_actual_complete_bits": 1.799984834632095,
+      "prototype_encode_median_seconds": 5.515134158486035,
+      "prototype_ttft_median_seconds": 6.353570312523516,
+      "prototype_wall_median_seconds": 6.67885332647711,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "JointV",
+      "sources": 16,
+      "mean_complete_visual_bytes": 8315013,
+      "mean_actual_complete_bits": 1.294663565499442,
+      "prototype_encode_median_seconds": 13.999582993477816,
+      "prototype_ttft_median_seconds": 14.83219263551291,
+      "prototype_wall_median_seconds": 15.156640232511563,
+      "timing_is_controlled_speed_comparison": false
+    },
+    {
+      "dataset": "chartqa",
+      "mode": "JointSpatialWO",
+      "sources": 16,
+      "mean_complete_visual_bytes": 8315013,
+      "mean_actual_complete_bits": 1.294663565499442,
+      "prototype_encode_median_seconds": 31.539732512494083,
+      "prototype_ttft_median_seconds": 32.4036165784928,
+      "prototype_wall_median_seconds": 32.577393181971274,
+      "timing_is_controlled_speed_comparison": false
+    }
+  ],
+  "heterogeneous_domain_scores_pooled": false,
+  "method_selection_or_tuning_performed": false,
+  "source_hashes": {
+    "plan": "ca236c70452946206ee51a6ecd323e7d768ee5f61dae84ea8e035e4ece3e1df5",
+    "summary": "1f0ed29c8bbf34f73c2e69c869241cfff5042d82ed53140d0dd6d1fa509c5329",
+    "pairs": "346073c828017da8105dfd607e5fa129febf8fb14d69f94e9400ccd7d1968f4a",
+    "report_script": "4488fe21445e76274e01a927554c97cbdba156e11e960ee47268235351700006"
+  },
+  "cell_provenance": {
+    "textvqa__FP16": {
+      "raw3": {
+        "manifest.json": "acd0ebf4ab1e1531ee8b466eecc67f9aae876b498a14a42a04a170cb4ae0baa2",
+        "records.jsonl": "7eef7837abcde6ad2007610e291d873b820a7efeed71278827053a36e6d090fe",
+        "complete.json": "20fa3fad91b6fb1a72a7dfc856f35384c1ae3dcbbfc345aadc234dc50961f140"
+      },
+      "source_proof": "495b3209a1c3a2cc0902684797ab93bd7209b87c9f6ad46cdd67959a9a0a754d",
+      "scored_records": "8653179cefcdbbb09f68fbe2a953f8c43c00b16bbe27de1079e9a32b227b4f39"
+    },
+    "textvqa__R7low": {
+      "raw3": {
+        "manifest.json": "2070a1406a76dbc66b0d2a6888a7bffd7d136b0bcdc197b6dbe8c8b29e974148",
+        "records.jsonl": "2fe2a46b41db1dbeb65f6a1d79a73bc543b36d59428215f9d3269c857b4fa1db",
+        "complete.json": "537ae22054884c5eab325775f786667fa488bcbb341d6217fbcb886c335c604d"
+      },
+      "source_proof": "c3974f5e4e2200099902de61d92ba008f29d20ef962cf25baf05b5a6d49a9bf0",
+      "scored_records": "9120093430d6427b3a242587caa7becfcf6d3248cf6ea85e5277368d9cf07055"
+    },
+    "textvqa__R7high": {
+      "raw3": {
+        "manifest.json": "9c75ad4a50b43c35147a3f5d21552b29f9505816f7386d92245c8bfcc6709cd9",
+        "records.jsonl": "b8166cde24544797ce8f0f8e17228cde0cb1bbc59651ddc10422fcdf4c4ad70b",
+        "complete.json": "ea4ec13f11fee1b68ef731d4bc6c0569d7ce7ebc5ea152fb2cefc781fee947f8"
+      },
+      "source_proof": "a5c187b3fbb143713e090c3d8b63e09c7aacb4c9e337ff9573abecd045c47310",
+      "scored_records": "4b567705555aed07688371fbf012f754b33dae4840dc5a2b7755a12afb500f1b"
+    },
+    "textvqa__JointV": {
+      "raw3": {
+        "manifest.json": "b047cc3f42873f10cc51b9a8db0d202e81c8bd4243b9f56511cb35487cbe33cb",
+        "records.jsonl": "44f4237c028e570f90eae2132cf6b4ef48029b7e14c4b89ce67580d62f2dc285",
+        "complete.json": "2c3867715f4429190708ebd0ecec944a55fc97121b511fcb26eb880e15a9b1c9"
+      },
+      "source_proof": "4fc4bcd4330b4d6143f761af52a29a6ac4c6009523d420e110615a7ac1853373",
+      "scored_records": "9b802e194db74df878919df109ece1b76c71d3a8d8687de1206ddc093b9dbe7c"
+    },
+    "textvqa__JointSpatialWO": {
+      "raw3": {
+        "manifest.json": "8b59a1f9708d2ea0e32ee791d489a6bfd82f7b483c8b5cff7d6f87c6369507a3",
+        "records.jsonl": "38b189682488d60ec960a5148bc763620897756743d877c78e55786abf61b68c",
+        "complete.json": "591112c95fabfc0e93e8cf299742d2afff1c13cb2ed76feadf6db78f20660c72"
+      },
+      "source_proof": "a8ec10f5be916e057fb39001879f76f4e38d9d686b5d8df49c1f2be3dd85af39",
+      "scored_records": "5ac7ddbcc2d8cc3fd3152876229e4a76f0d99f587ef0a867e5788d99d72b3ff7"
+    },
+    "infovqa__FP16": {
+      "raw3": {
+        "manifest.json": "bc70ec18a155330b7712d15884eb3ecb2829da636f327a7b6fc9f27fff9492c0",
+        "records.jsonl": "7efbd3f482a50147fb99d8c44d9394a6c6bbbfc5da17a712af97b57e849c5d5a",
+        "complete.json": "3de3ee170bc4c0b1fdd69fad9b83c2843799e13c896368ac9c5bc506cc6e6d88"
+      },
+      "source_proof": "93ec3658ea7ea373c854cae3243433150809cd69a65c19d6bf623920932e7e0f",
+      "scored_records": "2179f293ab50ca87f055198f1084793e90427b4e320417811e6d3ca690ea5fa1"
+    },
+    "infovqa__R7low": {
+      "raw3": {
+        "manifest.json": "9eab160a27c37c247c4e065390290a77ec2b6706545225dfd99dbbde22b5b84e",
+        "records.jsonl": "8f749a04383d6bdb820a6102bb4bb27e9a96f1563e8edddcbd75f8cb22778875",
+        "complete.json": "d85fb0f5f1079f82a0aa5564096660eb160634f25639301fcc59ca405a8f13db"
+      },
+      "source_proof": "fb1f68f7bed4ce9acb830989112a5f6005d9f6094bff549c00e3c4bcbc1c81ca",
+      "scored_records": "56a5fa42b516b407a82d05dc7b64d39103292db2db3f4710f282cb6d8d079f21"
+    },
+    "infovqa__R7high": {
+      "raw3": {
+        "manifest.json": "a57736725453e981b4944a7523368978c637a16964e21ad4ca58390566a56c6c",
+        "records.jsonl": "0a90ddd7b5a55e390829d266a55f8f5da18137f8c5f6f96f483647fdcc928180",
+        "complete.json": "585c2bed14ae68d16fd08b7c1a5a9e9b484821b90c504670abc154d9350a46fa"
+      },
+      "source_proof": "f6a409dd62f9c9b8edfc887240f118ce215a84b46282f3d38c0450afbb363c23",
+      "scored_records": "2ecfefc98bb2ff33d8d9b2c422f5a83784bd8dd785e421c129c6a7b5472f3d33"
+    },
+    "infovqa__JointV": {
+      "raw3": {
+        "manifest.json": "bc9dfa3bdac38988160fa912614769fdb4e68cf9fd3f3474436d57f31f736f20",
+        "records.jsonl": "dde11ab161f392b3a180cf63c1734cbd13e9dfc3fcb74d306725717c6b2ac8c9",
+        "complete.json": "d27b86f6448a511b0d3570c99b26bfddc873ec7fb9a6bdee5e32887a59c0d936"
+      },
+      "source_proof": "b2e4c4e58796153a4a67e3b0d52743886b16851b32f8ebf990dca9f96216a046",
+      "scored_records": "7d96690a78c97a0caf99704fb12e1fb26190b2395885f574e7eaea3c46f55ca8"
+    },
+    "infovqa__JointSpatialWO": {
+      "raw3": {
+        "manifest.json": "a6d34a0926c6d493c863bdd65a94a433a8d026414ddcc2c6c5ba9af6b78b20a7",
+        "records.jsonl": "e7f6dedb0e273536f2ed2bf14a676f76536cd241b7e281230002805ff2b2cbe1",
+        "complete.json": "70944759ecbc3ac3142155259cf58e5065e9a6e39b94f122560350c6268e1836"
+      },
+      "source_proof": "c12c86aace2979fcee7a80c4edac1cc4eb05d7b441c63acb71e719b300c2977f",
+      "scored_records": "4619f2981ccce490ca4b192c7f0c1de283a7e562c0125a57d60fef72b79e93a5"
+    },
+    "docvqa__FP16": {
+      "raw3": {
+        "manifest.json": "c135e4a13acd21bbca8bf07ddde86ccbd6a4c344dbf734ec490fd2bab0296cbf",
+        "records.jsonl": "b97e0ff3c162e738011873c775f7eaa6e2a227b396cb892af41c85bdbb3ed5b6",
+        "complete.json": "a2215af01ca163abefee4ba7f2168366a10a6c8a65273ff9e86ef48a5678efe7"
+      },
+      "source_proof": "bf289794ab37e29a809e30336de2ce19d1d004bc50bbeb7a5cef8f04745277fe",
+      "scored_records": "3d4e014c4c5cd336ff505fd45b3831d32414c6e87189fb140e84b95d87af0db1"
+    },
+    "docvqa__R7low": {
+      "raw3": {
+        "manifest.json": "346c8c2ecdc0963952ac4540417f76b1467236c063cfb1b69222b00c9b424f03",
+        "records.jsonl": "7636556331c9c2cd68bfef23478386427b6fb2b655b56541eb51f443fffbcccb",
+        "complete.json": "817da3a203f792405bb06bacbdebd391ee3020e00c3c29d4acd95549c2318dde"
+      },
+      "source_proof": "517a8a42f2db20054607ea241788dcc5af296d176585e7b9f55e92ef1242ff01",
+      "scored_records": "1f68450b0c7dcdd4d9c24882591a7c728aecf7677d79437022f3bbdec8fa96ef"
+    },
+    "docvqa__R7high": {
+      "raw3": {
+        "manifest.json": "135707934f36f6ed91f26bfd2802838fdc1e13ce094041a5210939f9323faa94",
+        "records.jsonl": "277876d4fa68f35e9d7c817f1d2b8de71789b6327ad48296ac0fff9fdf7d5775",
+        "complete.json": "fe8ed5a11693733d8fc991d4ecda94ef2aa0ec517d0dde31b832e947fdf5ae03"
+      },
+      "source_proof": "93c94070b8cc38519089e9b3b29caf3430ff8b51e7790623aa69b3b48c2e80c3",
+      "scored_records": "16dadcfdbaadcf48c86a6d0f2933144ffadfed5f36b95762b4b718b6ccc0b6c2"
+    },
+    "docvqa__JointV": {
+      "raw3": {
+        "manifest.json": "8e4d1ac599c8ead436ef8c6bcb5469fd4dea421246cb16e200a1bfa695ef81a5",
+        "records.jsonl": "727674732aecb96be16b8201ecf2fa558ce53bd6429c76f2dde7f74a93dab4e8",
+        "complete.json": "38edd9747a6495a0c2b08156dc27914eee65d20e6cb800045138666e8833e2f9"
+      },
+      "source_proof": "fa48169fdc20ce8774bc459040cb0ab0593f5cf4823dd3b2a9864f08dfab8fe6",
+      "scored_records": "d546f42ed8b6397bcdd0d7c9a18c269791e145f5a26f1c7329b0ab6823812e59"
+    },
+    "docvqa__JointSpatialWO": {
+      "raw3": {
+        "manifest.json": "ed89fa9dfe3bf621436af1165e4482adf6c6ac3b03538a3c12196c91969bad69",
+        "records.jsonl": "f502eaee9fb489c70a80b66fe2813f7cffb7e2b125b7395e9e717010f3b1129b",
+        "complete.json": "3b1c8d90d90f1f5dd2d41f40cce9ab1e4fca84c6d24b1d153ee370ffab4d3d6a"
+      },
+      "source_proof": "0c36962d5c2ff65047e04699d8c96ab946e6eb112b7406959a4c6311a51056c4",
+      "scored_records": "bb67c8b23fbed7b53bc44efe60308ad050bddd3320559af5d37db163f1b99105"
+    },
+    "chartqa__FP16": {
+      "raw3": {
+        "manifest.json": "3572a770b035ddd54166859cd0f8b80290f6d30146bf8663c778e8f7bc943aa7",
+        "records.jsonl": "dd7568a6a41351c0533e53c3a69385d901e81d065b95839c58bd143ae49b741a",
+        "complete.json": "1a27205091a74a88b843357644bbae37979bba40cef1e15a77cf5045c9500d33"
+      },
+      "source_proof": "6f858c5a09c48f9f08f2e9b2888f29df659f0270f547712504ad934fca102547",
+      "scored_records": "b72c8da3cb2a746246aba5269c40c659755b473fdc5740462755555f69b41e18"
+    },
+    "chartqa__R7low": {
+      "raw3": {
+        "manifest.json": "3beceb84092a0545b0026e8aca3c98101d0a5fe949d05c932ce0ea139f9c9701",
+        "records.jsonl": "e10083e5b848ac3e104faf00c93da49f473cd182fb02e5273230415487ad0d73",
+        "complete.json": "dbffbd834ca11646409746bbd43635e451c3e4168bff94906076ab9626dec62f"
+      },
+      "source_proof": "384a38a2cbba82f264647e2428e11efab0220548db7eea46cb472b6f48dfdf70",
+      "scored_records": "c1cb0a18883f20cd4a183624de3b0b94428362419e8cb993710d9a426b12d664"
+    },
+    "chartqa__R7high": {
+      "raw3": {
+        "manifest.json": "2d3bbe1d0e7c37b22c248adf211de5a77ee6b0114d44c5f22feca21f57894496",
+        "records.jsonl": "8d1b10910ad231c9188401a372342710785d41b717ecb6da18361f209cd697d8",
+        "complete.json": "0011510ac99c43f35d48b0add0aa8a7b4abeefd6340e517227635fa5ab0cd96a"
+      },
+      "source_proof": "23ad2435d03c06b05d9835edae2eb12fbed7c910b9fb0e786d41ce5ddd661a3b",
+      "scored_records": "bc409c3a2c807f1a9ce314f3c4f339635bfeb563cb5f43c28934c3aede643266"
+    },
+    "chartqa__JointV": {
+      "raw3": {
+        "manifest.json": "4c5c8214499a35db9f3e5c18082220ffab5004a069fe6c33c2cf2535e35a6c20",
+        "records.jsonl": "320e91b46bfb42bb0882d1ff3d0e25d32101389b7248dcbe8721dfd9a83f1c9e",
+        "complete.json": "454fb1cefaf7a17b1522d64d1bb7b9baa75ea713820b78b065ce30b91b8fc089"
+      },
+      "source_proof": "0ad7c759db4a50c59c335adfa475581dddd24587ffc13ad33a8188f0f0cad79f",
+      "scored_records": "4cabb1c2ef9ff9ef89cdeebd591c2200f304eef3430bd9bfcc037577e6e3935b"
+    },
+    "chartqa__JointSpatialWO": {
+      "raw3": {
+        "manifest.json": "17dec698298b5216e4a5064d67b1f857bd38157fc30d165195bb1d02988ebc8f",
+        "records.jsonl": "39b87826451e7a39b1d50a5a12e5ff873509e7768a9676e9c04d48aa26444b3f",
+        "complete.json": "ff5e4bef5723ba232d4b5bfd7dfb05702924edc3636bcdd296a05197668c4659"
+      },
+      "source_proof": "cb66b10206605973e64959322b2fa04687f7b056bddc7a539111f06ca040e3f8",
+      "scored_records": "17703d8783a90f596b85d8ac3260fd4bd8c4fdbf6ea1f56f9a9a826bc52a607c"
+    }
+  }
+}

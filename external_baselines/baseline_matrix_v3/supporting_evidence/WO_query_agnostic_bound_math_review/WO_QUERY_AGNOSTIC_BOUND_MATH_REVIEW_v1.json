@@ -1,0 +1,24 @@
+{
+  "GPU_model_tests_or_literature_used": false,
+  "analysis_tool_status": "driver already received final WO stage-analysis SHA8ba034226b82ef75ed1cf50a9f18c2e4b0933ba847c6d5ed8f79538b49bff2e6; no duplicate implementation",
+  "checks": {
+    "Cauchy": "Flatten(j,i): norm(sum a_ji W_j e_gi)^2 <=sum a_ji^2 *sum norm(W_j e_gi)^2. For each head, nonnegative normalized all-visible attention gives sum_visual a_ji^2 <=(sum_visual a_ji)^2<=1. Summing28 heads yields the factor28. The projection-energy sum equals sum_gi e_gi^T H_g e_gi.",
+    "FP64_scope": "Revised paragraph correctly separates exact-Gram theorem from finite FP64 Gram/quadratic acceptance. Current records establish only their evaluated objective floor; no exact native-W roundoff certificate is claimed. Attention accumulation/projection rounding is also excluded.",
+    "causal_or_task_claim": "The document correctly avoids full-model KL/ANLS/accuracy, actual direct component monotonicity, exact global optimum and trajectory guarantees.",
+    "dimensions": "M1 W_j is3584x128, e_gi is128x1, H_g is128x128; g(j)=floor(j/7),28query heads/4KV heads. H already sums all7 W_j blocks, so no extra7 factor is missing.",
+    "per_token_floor": "With exact real native-W Gram and exact evaluation, every covered V20 token energy nonincrease plus unchanged other V units implies each-layer common envelope target nonincrease. Error sign decoded-minus-native versus encoder native-minus-decoded does not change the quadratic. This does not prove actual direct error or exact worst-attention loss decreases.",
+    "readout_decomposition": "Revised column-vector routing+visual-value+text-value identity is dimensionally correct for same history/index and attention readout only. Text residual may be nonzero under changed lower-layer states; diverged free-generation histories are not covered by this aligned local comparison."
+  },
+  "finite_precision_reference_formula": {
+    "definition": "If ||H_g-Htilde_g||2<=epsilon_g and |q64(e)-e^T Htilde_g e|<=eta(e),",
+    "ordering_note": "A sufficient exact-energy comparison needs the new-minus-old computed margin to dominate both evaluation errors and epsilon_g*(||e_new||2^2+||e_old||2^2). The implementation does not compute that certificate.",
+    "upper_bound": "||Delta_y_visual(a)||2^2 <=28*sum_gi [q64(e_gi)+eta(e_gi)+epsilon_g*||e_gi||2^2]."
+  },
+  "optional_K_paragraph_not_part_of_WO_theorem": "For a fixed/conditioned e_K, Sigma_q must mean the non-centered second moment E[qq^T], or Cov(q)+E[q]E[q]^T. If Sigma_q means centered covariance alone, the stated logit-square identity additionally needs zero query mean. This is a notation clarification for the unexecuted future paragraph, not a WO runtime gate.",
+  "reviewed_utc": "2026-11-23T10:16:13.320379+00:00",
+  "runtime_code_plan_or_doc_modified_by_reviewer": false,
+  "schema": "trajkv.round11.WO_query_agnostic_bound_math_review.v1",
+  "source_doc": "${PROJECT_ROOT}\\docs\\THEORY_2026-11-23_WO_QUERY_AGNOSTIC_BOUND_v1.md",
+  "source_doc_sha256": "0c7a2856f2f2028416b55ac5d3af32ff2f3cf62a57e33d4929f2e20e6b35e2b1",
+  "status": "PASS_CORE_BOUND_AND_REVISED_SCOPE"
+}

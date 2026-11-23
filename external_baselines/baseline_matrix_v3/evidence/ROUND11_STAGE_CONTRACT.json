@@ -1,0 +1,3281 @@
+{
+  "schema": "trajkv.round11.public_stage_contract.v5",
+  "phase_label": "ROUND11_FINAL_DEV576_ORIGINAL128_ADDITIONAL384",
+  "stage_state": "ROOT_SEALED",
+  "root_seal": {
+    "path": "${EVIDENCE_ROOT}\\results\\round11\\final_contract_candidate_v1\\ROOT_FINAL_SCOPE_SEAL_v1.json",
+    "sha256": "8107aca349c9b80876a2e4ef4851405cb78f0d127827bb431857345ad0b71598"
+  },
+  "SourceRun_admission": false,
+  "whole_external_library_completion_claimed": false,
+  "base_public_commit": "43d03af0e8938aeb5f73ffc0c104093a7bd14d73",
+  "history_and_all_previous_namespaces_releases_must_be_preserved": true,
+  "source_public_Git_LF_archive_identities_separate": true,
+  "no_private_tensors_images_weights_parquet_chat_or_credentials": true,
+  "packager_transport_dependencies_publicly_rerunnable": false,
+  "groups": [
+    {
+      "group_id": "primary",
+      "kind": "development",
+      "execution_disposition": "EXECUTED",
+      "cohort_label": "SourceGroupD96 primary development",
+      "plan": {
+        "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\HARVEST_PLAN_v2.json",
+        "sha256": "caecf7efc9783af23d83712190fa15ced3c56bbd42053224136e5a5fb6ae7fab"
+      },
+      "adapter": {
+        "path": "${PROJECT_ROOT}\\ops\\round11_harvest_v4.py",
+        "sha256": "97891891fc054df918f5d43a00bb9c6f818fb586f6e06efcd1f47977243f8afd"
+      },
+      "counts": {
+        "textvqa": 32,
+        "infovqa": 32,
+        "docvqa": 16,
+        "chartqa": 16
+      },
+      "modes": [
+        "FP16",
+        "R7low",
+        "R7high",
+        "JointV",
+        "Spatial",
+        "JointSpatial",
+        "Shuffled"
+      ],
+      "harvest_root": "${EVIDENCE_ROOT}\\results\\round11\\harvest_v4",
+      "summary_root": "${EVIDENCE_ROOT}\\results\\round11\\summary_final_primary_v4",
+      "cells": [
+        {
+          "dataset": "textvqa",
+          "mode": "FP16",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "R7low",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "R7high",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "FP16",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "R7low",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "R7high",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "FP16",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "R7low",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "R7high",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "FP16",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "R7low",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "R7high",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "JointV",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "Spatial",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "JointV",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "Spatial",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "JointV",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "Spatial",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "JointV",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "Spatial",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "JointSpatial",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "Shuffled",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "JointSpatial",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "Shuffled",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "JointSpatial",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "Shuffled",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "JointSpatial",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "Shuffled",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        }
+      ],
+      "paired_contrasts": [
+        [
+          "JointSpatial",
+          "FP16"
+        ],
+        [
+          "JointSpatial",
+          "JointV"
+        ],
+        [
+          "JointSpatial",
+          "R7high"
+        ],
+        [
+          "JointSpatial",
+          "R7low"
+        ],
+        [
+          "JointSpatial",
+          "Spatial"
+        ],
+        [
+          "JointV",
+          "FP16"
+        ],
+        [
+          "JointV",
+          "R7high"
+        ],
+        [
+          "JointV",
+          "R7low"
+        ],
+        [
+          "Shuffled",
+          "FP16"
+        ],
+        [
+          "Shuffled",
+          "JointSpatial"
+        ],
+        [
+          "Shuffled",
+          "R7high"
+        ],
+        [
+          "Shuffled",
+          "R7low"
+        ],
+        [
+          "Shuffled",
+          "Spatial"
+        ],
+        [
+          "Spatial",
+          "FP16"
+        ],
+        [
+          "Spatial",
+          "R7high"
+        ],
+        [
+          "Spatial",
+          "R7low"
+        ]
+      ]
+    },
+    {
+      "group_id": "wo",
+      "kind": "bounded_development",
+      "execution_disposition": "EXECUTED",
+      "cohort_label": "SourceGroupD96 bounded full-H WO development",
+      "plan": {
+        "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\WO_HARVEST_PLAN_v1.json",
+        "sha256": "6e45d4d2bf379a85008414ba0c89c659a773ed16d3b69d5defe1941b0ea39e90"
+      },
+      "adapter": {
+        "path": "${PROJECT_ROOT}\\ops\\round11_wo_harvest_v1.py",
+        "sha256": "d53152f6e8986c4ec2686f2d499689bee116389541434151391b845071544c79"
+      },
+      "counts": {
+        "textvqa": 32,
+        "infovqa": 32,
+        "docvqa": 16,
+        "chartqa": 16
+      },
+      "modes": [
+        "FP16",
+        "R7low",
+        "R7high",
+        "SpatialWO",
+        "JointSpatialWO"
+      ],
+      "harvest_root": "${EVIDENCE_ROOT}\\results\\round11\\wo_harvest_v1",
+      "summary_root": "${EVIDENCE_ROOT}\\results\\round11\\wo_summary_final_v1",
+      "cells": [
+        {
+          "dataset": "textvqa",
+          "mode": "FP16",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "R7low",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "R7high",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "FP16",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "R7low",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "R7high",
+          "expected_QA": 32,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "FP16",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "R7low",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "R7high",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "FP16",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "R7low",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "R7high",
+          "expected_QA": 16,
+          "kind": "reused",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "SpatialWO",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "SpatialWO",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "SpatialWO",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "SpatialWO",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 32,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        }
+      ],
+      "paired_contrasts": [
+        [
+          "JointSpatialWO",
+          "FP16"
+        ],
+        [
+          "JointSpatialWO",
+          "R7high"
+        ],
+        [
+          "JointSpatialWO",
+          "R7low"
+        ],
+        [
+          "JointSpatialWO",
+          "SpatialWO"
+        ],
+        [
+          "SpatialWO",
+          "FP16"
+        ],
+        [
+          "SpatialWO",
+          "R7high"
+        ],
+        [
+          "SpatialWO",
+          "R7low"
+        ]
+      ]
+    },
+    {
+      "group_id": "confirm128",
+      "kind": "fresh_confirmation",
+      "execution_disposition": "EXECUTED",
+      "cohort_label": "Original128 fresh confirmation; methods selected on full D96 before original outcomes",
+      "plan": {
+        "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\CONFIRM_HARVEST_PLAN_v3.json",
+        "sha256": "ca236c70452946206ee51a6ecd323e7d768ee5f61dae84ea8e035e4ece3e1df5"
+      },
+      "adapter": {
+        "path": "${PROJECT_ROOT}\\ops\\round11_confirmation_harvest_v2.py",
+        "sha256": "6435fee9fffc38b873c73b82d9dcc82010c73c1acb123c2d7f6c47f46ea4ba9e"
+      },
+      "counts": {
+        "textvqa": 48,
+        "infovqa": 48,
+        "docvqa": 16,
+        "chartqa": 16
+      },
+      "modes": [
+        "FP16",
+        "R7low",
+        "R7high",
+        "JointV",
+        "JointSpatialWO"
+      ],
+      "harvest_root": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_harvest_v3",
+      "summary_root": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_summary_final_v3",
+      "cells": [
+        {
+          "dataset": "textvqa",
+          "mode": "FP16",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "R7low",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "R7high",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "JointV",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "FP16",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "R7low",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "R7high",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "JointV",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "FP16",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "R7low",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "R7high",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "JointV",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "FP16",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "R7low",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "R7high",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "JointV",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 16,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        }
+      ],
+      "paired_contrasts": [
+        [
+          "JointV",
+          "FP16"
+        ],
+        [
+          "JointV",
+          "R7low"
+        ],
+        [
+          "JointV",
+          "R7high"
+        ],
+        [
+          "JointSpatialWO",
+          "FP16"
+        ],
+        [
+          "JointSpatialWO",
+          "R7low"
+        ],
+        [
+          "JointSpatialWO",
+          "R7high"
+        ]
+      ],
+      "selection_basis": {
+        "primary": {
+          "group_id": "primary",
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\summary_final_primary_v4\\summary.json",
+          "sha256": "f95a451ed652f2136efe73de99ce2fe04e53a16cb2f144f186d2fd7ab8ae6b67"
+        },
+        "wo": {
+          "group_id": "wo",
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\wo_summary_final_v1\\summary.json",
+          "sha256": "92c8d97edfa97d0aa34c25b1009c0e92cfdce4d0c84ae42484ab9b383c1c2be4"
+        }
+      },
+      "confirmation_data": {
+        "fetch_inventory": {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\LOCAL_FETCH_RECORDS_v2.json",
+          "sha256": "8db8769bafdd27154382d469da6b44576f812993ed305f3315b233e75b124b00"
+        },
+        "remote_sha_receipt": {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\INDEPENDENT_REMOTE_SHA_v1.json",
+          "sha256": "de0990f305561e6192c4b7eae845a76197b6a1b91ba94d5e8c87c820cd73105a"
+        }
+      }
+    },
+    {
+      "group_id": "expand384",
+      "kind": "fresh_fixed_extension",
+      "execution_disposition": "EXECUTED",
+      "cohort_label": "Additional384 fixed after partial original128 observation; primary new replication; original/additional/combined separate",
+      "plan": {
+        "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\EXPAND384_HARVEST_PLAN_v1.json",
+        "sha256": "9e04a9305fe5572252cbc7c986e7f9ccc856f2fcdebf2c440d0070d77e20272a"
+      },
+      "adapter": {
+        "path": "${PROJECT_ROOT}\\ops\\round11_expand_harvest_v1.py",
+        "sha256": "70a134f4343e58a170ba52d0e4603da2247221c09e1370038cf18dc296f5b2ba"
+      },
+      "counts": {
+        "textvqa": 144,
+        "infovqa": 144,
+        "docvqa": 48,
+        "chartqa": 48
+      },
+      "modes": [
+        "FP16",
+        "R7low",
+        "R7high",
+        "JointV",
+        "JointSpatialWO"
+      ],
+      "harvest_root": "${EVIDENCE_ROOT}\\results\\round11\\expand_harvest_v1",
+      "summary_root": "${EVIDENCE_ROOT}\\results\\round11\\expand_summary_final_v1",
+      "cells": [
+        {
+          "dataset": "textvqa",
+          "mode": "FP16",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "R7low",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "R7high",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "JointV",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "textvqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "FP16",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "R7low",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "R7high",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "JointV",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "docvqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "FP16",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "R7low",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "R7high",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "JointV",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "infovqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 144,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "FP16",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "R7low",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "R7high",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "JointV",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        },
+        {
+          "dataset": "chartqa",
+          "mode": "JointSpatialWO",
+          "expected_QA": 48,
+          "kind": "fresh",
+          "disposition": "CLOSED_COMPLETE"
+        }
+      ],
+      "paired_contrasts": [
+        [
+          "JointV",
+          "FP16"
+        ],
+        [
+          "JointV",
+          "R7low"
+        ],
+        [
+          "JointV",
+          "R7high"
+        ],
+        [
+          "JointSpatialWO",
+          "FP16"
+        ],
+        [
+          "JointSpatialWO",
+          "R7low"
+        ],
+        [
+          "JointSpatialWO",
+          "R7high"
+        ]
+      ],
+      "selection_basis": {
+        "primary": {
+          "group_id": "primary",
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\summary_final_primary_v4\\summary.json",
+          "sha256": "f95a451ed652f2136efe73de99ce2fe04e53a16cb2f144f186d2fd7ab8ae6b67"
+        },
+        "wo": {
+          "group_id": "wo",
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\wo_summary_final_v1\\summary.json",
+          "sha256": "92c8d97edfa97d0aa34c25b1009c0e92cfdce4d0c84ae42484ab9b383c1c2be4"
+        }
+      },
+      "expansion_data": {
+        "fetch_inventory": {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\expand384_inputs_v1\\remote_materialization_v1\\LOCAL_FETCH_RECORDS_v2.json",
+          "sha256": "c4f752a5722a7871a6cb5732272a1098eb22188a912a15560f2e9afac14afdb7"
+        },
+        "remote_sha_receipt": {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\expand384_inputs_v1\\remote_materialization_v1\\INDEPENDENT_REMOTE_SHA_v1.json",
+          "sha256": "eb99184cf0d6afd996c9469ea087d0f066b1fd24f389bd7824153ccdeecf3116"
+        }
+      }
+    }
+  ],
+  "supporting_evidence": [
+    {
+      "disposition": "CLOSED_WITH_FAILURES",
+      "evidence_id": "actual_model_QA0_v1_preserved_failure",
+      "files": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\technical_failure.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/technical_failure.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "c95bc068f3de46a4d7296fa33dfc500fff68354699ee9892f2473f43a85a2fa5"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\CPU_REVERIFICATION.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/CPU_REVERIFICATION.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "7a550fc8294a3cd4df4e3701ea8b9248be0accb03bde0f4986bf79210f9bfb26"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\REMOTE_EXACT_RETRIEVAL.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/REMOTE_EXACT_RETRIEVAL.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "065ec04b443d873bbc517f52b6aedf13c24d5e2762a25ee03857ffe5265b6e60"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\manifest.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/manifest.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ef3468e2348db6d6e0c11365444fc752b67baa80cf4343849adac3ea625c1e3e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_config.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_config.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "06778966a141b5c7eee020fcb80f1d0de4b6ef595264497f04b1966a4f5e3b91"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_inventory.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_inventory.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ebf694a43aefda96b80b45582fe73f870fd9203d9717022c0d4de48fd157c070"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_job.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_job.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "58aa249cff2fce1dd84270e7e4fbc84c19a5af4476b18e87777d95e6658ae0cd"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\launch_receipt.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/launch_receipt.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "c4581532e6ac5dc5349897151a4827320a4c7f2a09a537b66787d24ecc9ff1df"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\runtime_log.txt",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/runtime_log.txt",
+          "role": "supporting_scalar_or_source",
+          "sha256": "22747d6ece1487b8bbf20c99a0d213110f4570c18205a9a9ea42560174247d4b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\controls\\mode0_JointSpatial.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/controls/mode0_JointSpatial.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "d5cd43384ac2fd1fb3ec5fc2f52fa3c85dbe2901616dd773823e23fd51080d19"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\controls\\mode0_JointV.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/controls/mode0_JointV.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "df23c37f53cf46918c8a623b46294a152e61d42d1fae5e36dc1b0712d6e49beb"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\controls\\mode0_Shuffled.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/controls/mode0_Shuffled.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "2e066903e5c793e1014a500977623bb48c56b2e59b7cdb0fa9eaaec861119f5c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\controls\\mode0_Spatial.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/controls/mode0_Spatial.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "d0ede4ea82e2233647f938d810ee72c59492946e03fdb529fbbf800ac5e9aa25"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\attention_bridge.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/attention_bridge.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\cache_bridge.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/cache_bridge.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\dataset_registry.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/dataset_registry.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\evaluate.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/evaluate.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\m1_protocol.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/m1_protocol.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\model_registry.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/model_registry.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\ownership.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/ownership.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\r7_frozen_pilot_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/r7_frozen_pilot_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "3ff896405be5ac91067bdbe8d736c0552e46f835dea90a93c9835ceeb8fd3a91"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\r7_legacy_bridge_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/r7_legacy_bridge_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\r7_legacy_bridge_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/r7_legacy_bridge_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round10_calibrate_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round10_calibrate_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "abbc45f07e5899ff6018e0a22c5bba94c8764b03cd518e764de1949d9df87a8a"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round10_inputs_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round10_inputs_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round10_runner_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round10_runner_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round10_value_bank_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round10_value_bank_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round10_value_bank_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round10_value_bank_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round11_attention_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round11_attention_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round11_joint_value_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round11_joint_value_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round11_runner_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round11_runner_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "aa3f456cf2361ddc34bd6df1f6a92bda750c9b9afe6e769189e7130b42c96f41"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round11_technical_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round11_technical_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "7e298cda7eea682762b8c91c06ade493177db0c78702932f18b943fb60548777"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round11_value_bank_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round11_value_bank_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "59088f311564ccd269b6b7d6cf75398d90141c9eb6633e99958588962cfa6dfa"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round9_calibration_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round9_calibration_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "757cc51740ad2f92d8ebd9ad9adadf2719131ae634b16b24052363f8e45ba84f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\source_files\\code\\round9_value_bank_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/source_files/code/round9_value_bank_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\00625b902a290270_bytes.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/00625b902a290270_bytes.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\0ee57d34ba74dd42_learned_direction_bank.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/0ee57d34ba74dd42_learned_direction_bank.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "0ee57d34ba74dd426aecb51e985efe3df50852a5e67b624122789719b7547c40"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\0f3b78a14cf62468_fused_learned_direction.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/0f3b78a14cf62468_fused_learned_direction.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "0f3b78a14cf62468b2a3ba3a60ece3e37a010eed454ecf82bef5a88f198295b3"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\1c278ebd1f648170_p176_kivi_codec.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/1c278ebd1f648170_p176_kivi_codec.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "1c278ebd1f648170696208ffed89a01e96960c18670610948d742262ad6b7cbb"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\1c46ceb968e679f9_fused_masked.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/1c46ceb968e679f9_fused_masked.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "1c46ceb968e679f9b9c66c79ba9ab92bde61944df431be3928bfd13009f1c8f9"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\292aca3d0f793c16_p202_refinement.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/292aca3d0f793c16_p202_refinement.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "292aca3d0f793c164b1d4204af21573cd4092597eb3f25055ded6d879afa04aa"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\314bc458c9c2d845_quantizers.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/314bc458c9c2d845_quantizers.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\333ef93165fd786b_round6_depth_codec.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/333ef93165fd786b_round6_depth_codec.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\38b6e0ea2486a900_round7_key_bank.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/38b6e0ea2486a900_round7_key_bank.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "38b6e0ea2486a900e404fa6347c91972198795f8972dc7ab2bf90527fbc1cdc5"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\437dbb5e9bd34e69_p185_model_state.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/437dbb5e9bd34e69_p185_model_state.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "437dbb5e9bd34e699ddc1f589834d207248074e214dfa821143781cd4fe3c4af"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\58e036a878966aa6_fused_rates.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/58e036a878966aa6_fused_rates.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "58e036a878966aa6813ffe9c13d64a11f7dbc8c86785d9234517f420e3659b63"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\7b9773f65103062d_round7_key_layout.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/7b9773f65103062d_round7_key_layout.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "7b9773f65103062dd51c8ccc64d9b5047f88112d951b6eb10e7938f8fc3f5a04"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\7c313fddfdadc819_masked_bank.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/7c313fddfdadc819_masked_bank.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "7c313fddfdadc81939235b0a4fd843540961f8841c69d7400101b33a66737d9d"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\8090240cd1ee5edd_affine_rate_bank.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/8090240cd1ee5edd_affine_rate_bank.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\80c2c16220097242_round7_key_codec.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/80c2c16220097242_round7_key_codec.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "80c2c16220097242b25d3f843a3b57569590131c02618e766e35f0f0791ab651"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\9dc73998f66d5b7b_fast_wht.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/9dc73998f66d5b7b_fast_wht.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\a1b8b84b9dbc655c_p201_refinement.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/a1b8b84b9dbc655c_p201_refinement.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "a1b8b84b9dbc655c21ead0bffa032be1ae4af97b5da4768112fe2a6106e58afb"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\b054e8629083b768_round7_key_attention.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/b054e8629083b768_round7_key_attention.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b054e8629083b7685ad9e02289b500008b45fbeadbd2bc48455f91d0b6a728a0"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\b7578afafcb4bc52_check_fused_progressive.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/b7578afafcb4bc52_check_fused_progressive.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\bea958a75c8df847_metadata_direction_bank.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/bea958a75c8df847_metadata_direction_bank.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "bea958a75c8df84702b20ba32836ae6f4f7ffaae8f6a1024ea6de3c18659ff61"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\bf09b996f098aea5_p185_segmented_kernel.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/bf09b996f098aea5_p185_segmented_kernel.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "bf09b996f098aea5027f25de54b50aef78f305225de105d9b8c9343751eb3f64"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\ca4bce75c1e80c0a_p185_single_state.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/ca4bce75c1e80c0a_p185_single_state.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ca4bce75c1e80c0a99eb18451323f2d0c2a07a8c707a3238f1a4e8d5d9114b3c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\d0130e31d055f2c2_fused_progressive.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/d0130e31d055f2c2_fused_progressive.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\ef30a5a6f14d5b71_rate_bank.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/ef30a5a6f14d5b71_rate_bank.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ef30a5a6f14d5b71c950a9ec12f05c5f1925ee01c6a6cefb3bb384852c587b20"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\f1ab22bf04f59226_bank.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/f1ab22bf04f59226_bank.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\f429aa502dae27b7_round7_key_artifacts.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/legacy_sources/f429aa502dae27b7_round7_key_artifacts.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f429aa502dae27b7616e8dfca63ac6d498d16f18d8bf2db4ad674b5039760485"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\assets\\direction_book_path.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/assets/direction_book_path.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\assets\\metadata_factor_path.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/assets/metadata_factor_path.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\assets\\original_profile.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/assets/original_profile.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\assets\\round7_policy_path.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v1_preserved_failure/assets/round7_policy_path.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f"
+        }
+      ],
+      "measurement_scope": {
+        "actual_native_teacher_tokens": 4,
+        "checkpoint_header_numel": 7944373760,
+        "checkpoint_header_shape_is_not_in_model_parameter_counter": true,
+        "encoded_TF": 0,
+        "instrumented_model_loader_counter": null,
+        "mode0_TF": 4,
+        "original_R7_TF": 1,
+        "packed_TF_source_evaluations_artifact_backed_lower_bound": 5,
+        "private_logit_payloads_published": false,
+        "required_complete_TF": 9,
+        "runtime_in_model_parameter_counter": null
+      },
+      "primary_mean": null,
+      "reason": "Actual first model job failed at unsupported Half nextafter_cuda after originalR7+four mode0 TFs; frozen failure is not overwritten.",
+      "scalar_assertions": [
+        {
+          "keys": [
+            "status"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\technical_failure.json",
+          "value": "FAIL_TECHNICAL_NO_QUALITY_ADMISSION"
+        },
+        {
+          "keys": [
+            "QA_events"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\technical_failure.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "actual_completed_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\CPU_REVERIFICATION.json",
+          "value": 5
+        },
+        {
+          "keys": [
+            "mode0_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\CPU_REVERIFICATION.json",
+          "value": 4
+        },
+        {
+          "keys": [
+            "encoded_mode_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\CPU_REVERIFICATION.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "all_four_noop_all_TF_bitwise_identity"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\CPU_REVERIFICATION.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "checkpoint_shape_count_is_not_an_in_model_counter"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\CPU_REVERIFICATION.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "runtime_manifest_in_model_parameter_count"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\CPU_REVERIFICATION.json",
+          "value": null
+        },
+        {
+          "keys": [
+            "technical_admission_passed"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\CPU_REVERIFICATION.json",
+          "value": false
+        }
+      ],
+      "scope": "Actual model technical QA0; no encoded-mode acceptance or task-answer quality admission.",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false
+    },
+    {
+      "disposition": "CLOSED_COMPLETE",
+      "evidence_id": "actual_model_QA0_v2_success9TF",
+      "files": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\manifest.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/manifest.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "175a4cf5a436a8fde33cfd0fd0f26ada7406ece4686b676bd443599bbe73490f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/technical_result.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "23743fc104c4bd2e5c25cd47a42ddee2d7215541ac053654145c791a67bc7a8f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\complete.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/complete.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "5bf7c9cb7bc46027ec7056a03ec3bfbc5984392bcb5f953eef0b1b726bd75860"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\controls\\encoded_JointSpatial.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/controls/encoded_JointSpatial.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "c3b437ae840585f208dbcaece1bcb6250a6981486dfe2721aab9ec25b32753aa"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\controls\\encoded_JointV.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/controls/encoded_JointV.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4e0ff364cab025a0c7021ff57e90fc935ef27b8f996a3d0941c494442334e247"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\controls\\encoded_Shuffled.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/controls/encoded_Shuffled.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "6c4a1d50231550f733c07c91bc032c0edc0ac1dbc13ed0607547b5ec2ca0d68e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\controls\\encoded_Spatial.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/controls/encoded_Spatial.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "93bfa10c56774163e6c8198f482ddd8ab639163462bcb69c2d2738281c441c81"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\controls\\mode0_JointSpatial.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/controls/mode0_JointSpatial.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "5bcdda091baa785466ffad0c94a0339344e2f6d0f3dd08bd9cebd11aa87c54ad"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\controls\\mode0_JointV.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/controls/mode0_JointV.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "c9fb2c25b2560731bdd74dd4476ea14868b35aeec2f88fe03dca71b28fc7391e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\controls\\mode0_Shuffled.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/controls/mode0_Shuffled.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "0620b6a8950e99f63ccd1b8f21c8e59e2551e0f2f071146802e86b9b32903f4a"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\controls\\mode0_Spatial.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/output/controls/mode0_Spatial.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "5fd78deedf8ddaf1a0e8f80a921bda3990ba23167ce7f5dd8872cf8868120933"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\job.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/job.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b791bef10e83b2502915685d814c8cb21a1214efa2d30a15f3f312e2bb430a37"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\launch.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/launch.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b0accbfe960a6e1506341f5e64082fee1a2ea9155bc2c2d11134fb27be4e6ad8"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\technical_config.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/technical_config.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "8a7b6c1fadcc79744f02033cf148ef6302458bd3a18ddfa94d785ddcf2455da1"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\sha256.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/sha256.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4e575987b77601a08281142fc803c17f99634b40ead034894e992f27bd86d003"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\attention_bridge.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/attention_bridge.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\cache_bridge.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/cache_bridge.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\dataset_registry.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/dataset_registry.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\evaluate.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/evaluate.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\m1_protocol.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/m1_protocol.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\model_registry.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/model_registry.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\ownership.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/ownership.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\r7_frozen_pilot_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/r7_frozen_pilot_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "3ff896405be5ac91067bdbe8d736c0552e46f835dea90a93c9835ceeb8fd3a91"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\r7_legacy_bridge_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/r7_legacy_bridge_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\r7_legacy_bridge_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/r7_legacy_bridge_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round10_calibrate_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round10_calibrate_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "abbc45f07e5899ff6018e0a22c5bba94c8764b03cd518e764de1949d9df87a8a"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round10_inputs_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round10_inputs_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round10_runner_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round10_runner_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round10_value_bank_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round10_value_bank_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round10_value_bank_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round10_value_bank_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round11_attention_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round11_attention_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round11_joint_value_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round11_joint_value_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round11_joint_value_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round11_joint_value_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b819a540f9a07dba153513b45a248f7b56cbe3b46f0115b6e2c7671260f5ea82"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round11_runner_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round11_runner_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ec87b1270bfae11d4a2d98fcafc544fcf42a3c132c72bc30d41fe4176ee73ce1"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round11_technical_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round11_technical_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f5664886ca629f5f4b54744917459653770c96f7d60eb9e92182cf74945cef83"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round11_value_bank_v2.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round11_value_bank_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f65273b2f69c39e6ca9271a62f337b3e57b808d0f9e59325c6ef055456985e16"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round9_calibration_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round9_calibration_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "757cc51740ad2f92d8ebd9ad9adadf2719131ae634b16b24052363f8e45ba84f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\source\\code\\round9_value_bank_v1.py",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/source/code/round9_value_bank_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\INDEPENDENT_ACCEPTANCE_SUMMARY_v1.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/independent/INDEPENDENT_ACCEPTANCE_SUMMARY_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "11fdc6192c455925fec73bb70d1d44d26fc493ab102fd041e4e59bebaf492aca"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\INDEPENDENT_REMOTE_CHECKS_v1.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/independent/INDEPENDENT_REMOTE_CHECKS_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "bf034c91cd95211e9b686114e9dc29ab15b39743cda64fc98080424f76bcbd04"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\INDEPENDENT_REMOTE_TENSOR_BINDINGS_v1.json",
+          "public_path": "supporting_evidence/actual_model_QA0_v2_success9TF/independent/INDEPENDENT_REMOTE_TENSOR_BINDINGS_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f29ad0e62fd073a57b9d4a2cb7f94faccd9ed5843371a5e06ba55b051032ebb3"
+        }
+      ],
+      "measurement_scope": {
+        "actual_TF_source_evaluations": 9,
+        "encoded_TF": 4,
+        "instrumented_model_loader_counter": null,
+        "mode0_TF": 4,
+        "one_loader_sequence_is_source_log_evidence_not_a_runtime_counter": true,
+        "original_R7_TF": 1,
+        "private_logit_payloads_published": false,
+        "runtime_manifest_parameter_numel": 7944373760,
+        "teacher_tokens": 4
+      },
+      "primary_mean": null,
+      "reason": "Equivalent supported Half-neighbor operator was executed in a new version/run; failed v1 remains preserved.",
+      "scalar_assertions": [
+        {
+          "keys": [
+            "status"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": "PASS_ACTUAL_MODEL_PACKED_TECHNICAL_QA0"
+        },
+        {
+          "keys": [
+            "actual_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": 9
+        },
+        {
+          "keys": [
+            "mode0_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": 4
+        },
+        {
+          "keys": [
+            "new_encoded_mode_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": 4
+        },
+        {
+          "keys": [
+            "QA_events"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "new_free_generation_task_answers"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "native_weight_versions_storage_unchanged"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "controls",
+            0,
+            "all_TF_logits_equal_original_R7"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "controls",
+            1,
+            "all_TF_logits_equal_original_R7"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "controls",
+            2,
+            "all_TF_logits_equal_original_R7"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "controls",
+            3,
+            "all_TF_logits_equal_original_R7"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_model_technical_gpu0_v2\\output\\technical_result.json",
+          "value": true
+        }
+      ],
+      "scope": "Actual full-model packed technical acceptance only: original1+mode0four+encodedfour, teacher cap4; zero free task QA.",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false
+    },
+    {
+      "disposition": "CLOSED_COMPLETE",
+      "evidence_id": "actual_WO_model_QA0_success5TF",
+      "files": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\manifest.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/manifest.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "edb4be1987657b8c6e83b0bb582fdaa6ab4d8cd042eff5e3e46dd71f493b5b75"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/technical_result.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "bbd040cf7e5d44fd3e338466d227747d7475c93376af4cdff01a4097edc068a4"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\complete.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/complete.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b630a77353bf410fe6619458f005e19f8a8ddb2604ce8178818ccf5d9340709b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_config.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_config.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "027029d0b3bcfcba49bcc692b7a1674f0c99f6d8aa7a49435e472c45e3862cf1"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_job.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_job.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "9d9caf8c3e89a2aba56f368725afcb13524116d01095a3c8bfb40f1e8e8d8dc1"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\launch_receipt.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/launch_receipt.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "606cdc03504198648838e9af67e6041b51c4daacf11d82bc99489f0efd2de2bb"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_inventory.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_inventory.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b4a1f8cd3c4d67711345d2d92f80df5b44d9fac9d0f660bc5065d34e6a702945"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\INDEPENDENT_REMOTE_CHECKS_v1.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/INDEPENDENT_REMOTE_CHECKS_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "cacce4559ae408a93f8c419815360469580d42857b29e0f656edd198e59c3605"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\INDEPENDENT_ACCEPTANCE_SUMMARY_v1.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/INDEPENDENT_ACCEPTANCE_SUMMARY_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "3ac8c342163511e682d07f30c3261dc58b0b46e98e59c7d087cbf963bd743725"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\controls\\encoded_JointSpatialWO.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/controls/encoded_JointSpatialWO.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "5d37f55287490432f51545e84ff84d765a08a02e2850705068ecb84fd518a937"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\controls\\encoded_SpatialWO.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/controls/encoded_SpatialWO.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "fe44c6cfe79a507652400ccb9b4f3e1b39e380e41c7a07ac0bfe5c4a9e33ae85"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\controls\\mode0_JointSpatialWO.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/controls/mode0_JointSpatialWO.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f5ad0b4d77f5110e25e98cd130a1027d15a473675b264bf6d966704bbe04a1a4"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\controls\\mode0_SpatialWO.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/controls/mode0_SpatialWO.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "657ec83b9dc5e2bbcebf5394c388a9f730f8a78f6ce339197e5c20e5ee72943b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\attention_bridge.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/attention_bridge.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\cache_bridge.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/cache_bridge.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\dataset_registry.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/dataset_registry.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\evaluate.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/evaluate.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\m1_protocol.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/m1_protocol.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\model_registry.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/model_registry.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\ownership.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/ownership.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\r7_frozen_pilot_v2.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/r7_frozen_pilot_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "3ff896405be5ac91067bdbe8d736c0552e46f835dea90a93c9835ceeb8fd3a91"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\r7_legacy_bridge_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/r7_legacy_bridge_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\r7_legacy_bridge_v2.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/r7_legacy_bridge_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round10_calibrate_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round10_calibrate_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "abbc45f07e5899ff6018e0a22c5bba94c8764b03cd518e764de1949d9df87a8a"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round10_inputs_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round10_inputs_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round10_runner_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round10_runner_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round10_value_bank_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round10_value_bank_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round10_value_bank_v2.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round10_value_bank_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round11_attention_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round11_attention_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round11_joint_value_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round11_joint_value_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round11_joint_value_v2.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round11_joint_value_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b819a540f9a07dba153513b45a248f7b56cbe3b46f0115b6e2c7671260f5ea82"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round11_value_bank_v2.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round11_value_bank_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f65273b2f69c39e6ca9271a62f337b3e57b808d0f9e59325c6ef055456985e16"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round11_wo_runner_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round11_wo_runner_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "c83846fce9e41ef4308160e9e48dae78ba143c0ef9843e387e041ec632907517"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round11_wo_technical_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round11_wo_technical_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "2b02b9384357c67fb57ccdd741e06658a9586d9e27932283053a2d4258a511c0"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round11_wo_value_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round11_wo_value_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b0f62f1c8ddbad41336b161891cf0943876a0087e9dcdec63e9bc6e312aaf69e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round9_calibration_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round9_calibration_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "757cc51740ad2f92d8ebd9ad9adadf2719131ae634b16b24052363f8e45ba84f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\source_files\\code\\round9_value_bank_v1.py",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/source_files/code/round9_value_bank_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\WO_SOURCE_LOCK_v1.json",
+          "public_path": "supporting_evidence/actual_WO_model_QA0_success5TF/WO_SOURCE_LOCK_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "980da29bfdca806541d998115cb4f30148c8986c306b70db327f68ba54335570"
+        }
+      ],
+      "measurement_scope": {
+        "actual_TF_source_evaluations": 5,
+        "captured_in_model_parameter_numel": 7944373760,
+        "encoded_TF": 2,
+        "full_B0_at_1792_visual_tokens_bytes": 8315013,
+        "full_H_or_private_logit_payloads_published": false,
+        "instrumented_from_pretrained_calls": 1,
+        "mode0_TF": 2,
+        "original_R7_TF": 1,
+        "persistent_derived_H_bytes": 0,
+        "teacher_tokens": 4
+      },
+      "primary_mean": null,
+      "reason": "Frozen WO source-lock actual model technical job passed; this is supporting evidence separate from WO192 task generation.",
+      "scalar_assertions": [
+        {
+          "keys": [
+            "status"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": "PASS_ACTUAL_MODEL_WO_PACKED_TECHNICAL_QA0"
+        },
+        {
+          "keys": [
+            "actual_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 5
+        },
+        {
+          "keys": [
+            "mode0_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 2
+        },
+        {
+          "keys": [
+            "new_encoded_mode_TF_source_evaluations"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 2
+        },
+        {
+          "keys": [
+            "model_capture",
+            "actual_from_pretrained_calls"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 1
+        },
+        {
+          "keys": [
+            "model_capture",
+            "actual_model_parameter_count"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 7944373760
+        },
+        {
+          "keys": [
+            "native_weight_versions_storage_unchanged"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "QA_events"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "new_free_generation_task_answers"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "controls",
+            0,
+            "all_TF_logits_equal_original_R7"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "controls",
+            1,
+            "all_TF_logits_equal_original_R7"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "controls",
+            2,
+            "metadata",
+            "round11_wo_candidate",
+            "persistent_derived_metric_tensor_bytes"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "controls",
+            3,
+            "metadata",
+            "round11_wo_candidate",
+            "persistent_derived_metric_tensor_bytes"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_model_technical_retrieved_v1\\technical_result.json",
+          "value": 0
+        }
+      ],
+      "scope": "Actual original1+mode0two+encodedtwo teacher-forced controls; derived H is transient, with no whole-model/task-loss claim.",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false
+    },
+    {
+      "disposition": "CLOSED_COMPLETE",
+      "evidence_id": "packed_reader_GPU_synthetic64",
+      "files": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\kernel_technical_v1.json",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/kernel_technical_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "c45141f1a8490bff8e940a14ff3454529a13343f5914c8437f779386cb95a358"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\RETRIEVAL_VERIFICATION_v2.json",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/RETRIEVAL_VERIFICATION_v2.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "78e9e67d74f7b3d302167c66f1f99110f27ee4acaac6bb9ca97df1b15ca13425"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\REMOTE_SHA256.json",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/REMOTE_SHA256.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "bd41834a58d718d38fe84b3286175d1123e895629f12fb3abe39dd1932b58e5e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\job.json",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/job.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "0574ff6cfd21cc561063b1de1b30e605ebb6c42a6a1cf323f1d6e3a9402d7f76"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\launch.json",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/launch.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "80696111f0ddec7b4f34d181ad878df70ed3f2f106e65f77b4d79e62cb91b875"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\source\\sha256.json",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/source/sha256.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "44236f5020866648e70718757f315064bbdf491d2d89c5ee52ac9a1f15b34db2"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\source\\code\\round11_attention_v1.py",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/source/code/round11_attention_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\source\\code\\round11_joint_value_v1.py",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/source/code/round11_joint_value_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\source\\code\\round11_kernel_technical_v1.py",
+          "public_path": "supporting_evidence/packed_reader_GPU_synthetic64/source/code/round11_kernel_technical_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "0d62665c25c0ce15b9d1e299232e469df8739d85a6287f14ba01fe87453c1485"
+        }
+      ],
+      "primary_mean": null,
+      "reason": "Canonical v2 retrieval verification corrects the earlier digest-only inventory interpretation without changing actual GPU evidence.",
+      "scalar_assertions": [
+        {
+          "keys": [
+            "status"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\kernel_technical_v1.json",
+          "value": "PASS_GPU_SYNTHETIC_QA0"
+        },
+        {
+          "keys": [
+            "model_loaded"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\kernel_technical_v1.json",
+          "value": false
+        },
+        {
+          "keys": [
+            "QA_events"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\kernel_technical_v1.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "gpu_cases"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\RETRIEVAL_VERIFICATION_v2.json",
+          "value": 64
+        },
+        {
+          "keys": [
+            "launcher_source_inventory_sha256_matches_receipt"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\RETRIEVAL_VERIFICATION_v2.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "mode0_bitwise_old_cases"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\kernel_technical_retrieved_v1\\RETRIEVAL_VERIFICATION_v2.json",
+          "value": 16
+        }
+      ],
+      "scope": "Synthetic CUDA packed-reader/kernel acceptance,64cases; no model and no task answers.",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false
+    },
+    {
+      "disposition": "CLOSED_COMPLETE",
+      "evidence_id": "CUDA_Half_neighbor_v2_actual",
+      "files": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\output\\NUMERICAL_CUDA_V2.json",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/output/NUMERICAL_CUDA_V2.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "7d35762e926a331c38d8d0449ba44747ed5d31e05e07bf0db8d4e2af60d13e6b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\job.json",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/job.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "bd520d2f13e9c624e7c0e630eedd1e962074b8694fbfbbac9a7292488c5fb3f2"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\launch.json",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/launch.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "be3f66e7cd6bcd4f14f193c33777381f30d388726fe7be03ad8816a8f2e06bc4"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\source\\sha256.json",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/source/sha256.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "4e575987b77601a08281142fc803c17f99634b40ead034894e992f27bd86d003"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\source\\code\\round11_joint_value_v1.py",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/source/code/round11_joint_value_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\source\\code\\round11_joint_value_v2.py",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/source/code/round11_joint_value_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b819a540f9a07dba153513b45a248f7b56cbe3b46f0115b6e2c7671260f5ea82"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\source\\code\\round11_numerical_cuda_v2.py",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/source/code/round11_numerical_cuda_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "c177eb9668d1f5fd7f82f87fd6c5e0f7a1f1d36f8070fc2ad17979e83d3d91dd"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\source\\code\\round11_value_bank_v1.py",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/source/code/round11_value_bank_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "59088f311564ccd269b6b7d6cf75398d90141c9eb6633e99958588962cfa6dfa"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\source\\code\\round11_value_bank_v2.py",
+          "public_path": "supporting_evidence/CUDA_Half_neighbor_v2_actual/source/code/round11_value_bank_v2.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f65273b2f69c39e6ca9271a62f337b3e57b808d0f9e59325c6ef055456985e16"
+        }
+      ],
+      "primary_mean": null,
+      "reason": "New CUDA-compatible FP16 integer adjacency is byte-equivalent to CPU nextafter; v1 sources remain unchanged.",
+      "scalar_assertions": [
+        {
+          "keys": [
+            "status"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\output\\NUMERICAL_CUDA_V2.json",
+          "value": "PASS_ACTUAL_CUDA_NUMERICAL_V2"
+        },
+        {
+          "keys": [
+            "actual_cuda_executed"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\output\\NUMERICAL_CUDA_V2.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "no_model_calls"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\output\\NUMERICAL_CUDA_V2.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "neighbor_checks",
+            "all65536_patterns_both_directions_bit_exact"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\output\\NUMERICAL_CUDA_V2.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "neighbor_checks",
+            "all196609_CPU_candidate_elements_bit_exact"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\actual_v2_evidence_v1\\bm_R11_numerical_gpu1_v2\\output\\NUMERICAL_CUDA_V2.json",
+          "value": true
+        }
+      ],
+      "scope": "Actual CUDA numerical/operator harness, no model/task answers; this replaces unsupported primitive, not algorithm/budget.",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false
+    },
+    {
+      "disposition": "CLOSED_COMPLETE",
+      "evidence_id": "native_grid_CPU_corrected_v2",
+      "files": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\native_grid_cpu_v1.json",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/native_grid_cpu_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "9e1b98fcc310f3c3849b8f893f927d00c0ae9c2d7c71c33625f79e23e7365a0c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\CPU_REVERIFICATION.json",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/CPU_REVERIFICATION.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "57a2bee5d7ed1145496fc79a65f95425eca4107e57c2f3a63577cee1d091aa79"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\REMOTE_EXACT_RETRIEVAL.json",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/REMOTE_EXACT_RETRIEVAL.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "9b4a1909323cee6e092cd75143a13f5223ee5bc6b72e31837d9eefaa4dd03427"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\RETRIEVAL_METADATA_CORRECTION.json",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/RETRIEVAL_METADATA_CORRECTION.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "6e243f52b81ed17c70603056feec7a7d5c008cc0b5c51ad21df5b905b9ca5baf"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\job.json",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/job.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "a58fb0b3c4a0c47e0fc8c827cea3271014b20e83a0e32165de253b5f2dd13fb5"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\launch_receipt.json",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/launch_receipt.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "9b250a8d6bda12beaffb2096ce7fac94630d9ae735aaf1e14eb72cb2b9fb3599"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\source_inventory.json",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/source_inventory.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ebf694a43aefda96b80b45582fe73f870fd9203d9717022c0d4de48fd157c070"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\source_driver.py",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/source_driver.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "9f26dc1ad681f201f336022c8bf5fca386f761207409cd8991fe9a5329c50e66"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\assets\\model_config.json",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/assets/model_config.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\sources\\modeling_internvl.py",
+          "public_path": "supporting_evidence/native_grid_CPU_corrected_v2/sources/modeling_internvl.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "fec9f18a83dea42dd32730555cac5a66ece67ef5f236f32967fed1f296d42bd6"
+        }
+      ],
+      "primary_mean": null,
+      "reason": "Use corrected job-name metadata and canonical fresh independent retrieval; original eight byte identities remain preserved.",
+      "scalar_assertions": [
+        {
+          "keys": [
+            "actual_CPU_patch_groups_verified"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\native_grid_cpu_v1.json",
+          "value": 256
+        },
+        {
+          "keys": [
+            "flatten_is_row_major"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\native_grid_cpu_v1.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "two_rows_per_32token_word"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\native_grid_cpu_v1.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "new_GPU_calls"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\native_grid_cpu_v1.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "coordinates_verified"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\CPU_REVERIFICATION.json",
+          "value": 256
+        },
+        {
+          "keys": [
+            "all_eight_original_source_bytes_match"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\RETRIEVAL_METADATA_CORRECTION.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "prior_evidence_overwritten"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\native_grid_retrieved_v2\\RETRIEVAL_METADATA_CORRECTION.json",
+          "value": false
+        }
+      ],
+      "scope": "Pinned native pixel_shuffle/flatten CPU witness and independent AST replay; not a GPU model grid test or quality evidence.",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false
+    },
+    {
+      "deferred_payload_scope": {
+        "R128_inference_predictions_and_scores_not_invented_or_included": true,
+        "R128_noanswer_inputs_and_gold_refs_not_duplicated_in_supporting_fragment": true,
+        "final_confirmation_group_and_outcomes_decided_by_Root": true,
+        "known_history_scope_is_not_absolute_pretraining_unseen": true,
+        "original_images_and_parquet_bytes_published": false
+      },
+      "disposition": "CLOSED_COMPLETE",
+      "evidence_id": "R128_frozen_CPU_data_provenance",
+      "files": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\COMPLETE.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/COMPLETE.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "509446ba0ae8ce5347f5b16039ff208eef64261db19e86bffb4f83775e5d7bac"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\INDEPENDENT_LOCAL_AUDIT_v1.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/INDEPENDENT_LOCAL_AUDIT_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "557e49c5454d0a6bc66d480bbf54a8dc45243572604c8951ef3a177b16183a62"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\INDEPENDENT_REMOTE_SHA_v1.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/INDEPENDENT_REMOTE_SHA_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "de0990f305561e6192c4b7eae845a76197b6a1b91ba94d5e8c87c820cd73105a"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\FROZEN_PLAN.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/proofs/FROZEN_PLAN.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "1fb32c89011cb013238358bb64db6ebb5ff775e38903e0be54bd2cc444ea1137"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\BUILDER_IDENTITY.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/proofs/BUILDER_IDENTITY.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f742e69d967ce42730f35ac6e19815e201ca1a7e20812ae3058a99f252398d39"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\SOURCE_DISJOINT_PROOF.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/proofs/SOURCE_DISJOINT_PROOF.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "1ae3a6217980df52d49c83a58e716eaf712060052683ea154cf819c87c5c85d6"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\RAW_SOURCE_PROOF.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/proofs/RAW_SOURCE_PROOF.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "e55bc0b4a38b212140d559e6eb35f7d1f12a242d7b85d237dfc95382aec23016"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\SELECTION_FROZEN_BEFORE_REFERENCES.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/proofs/SELECTION_FROZEN_BEFORE_REFERENCES.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "6c4ab2e3c716df5e39d36004370e51b5dacbfbebe5200e996829dab0e5d9156c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\SELECTED_SOURCE_LOCATORS.jsonl",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/proofs/SELECTED_SOURCE_LOCATORS.jsonl",
+          "role": "supporting_scalar_or_source",
+          "sha256": "7740a764a22e4b122e4beaafcc46cd51ee75181d977f89510a794ff6a6bb05e6"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\IMAGE_MATERIALIZATION.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/proofs/IMAGE_MATERIALIZATION.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ed1f3707219cf95c1de1196832e6fdc4d648faedb30fa609f736b85d4c4a667e"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\CONFIRM128_INPUT_MANIFEST_v1.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/inputs/CONFIRM128_INPUT_MANIFEST_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\confirm128_source_lock_v1.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/inputs/confirm128_source_lock_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "b1a8da4b05c65d367cd49c934dc0f4878c7ccc24cefd018243408324cb441d50"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\job\\confirm128_data_plan_v1.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/job/confirm128_data_plan_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "cd20a81e6551b83cc4d6fb84f1890a751699d29dcc059f0913b3bdc64ffe4d8c"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\job\\bm_R11_confirm128_data_cpu_v1.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/job/bm_R11_confirm128_data_cpu_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "97b1e161475ed454460969d0ca5ad24438ffff8f8ecba795532d818d382788d8"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\job\\bm_R11_confirm128_data_cpu_v1.launch.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/job/bm_R11_confirm128_data_cpu_v1.launch.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "f78665d5d5022862bc73da67f4328def3abce28ae515ab445fecaf42fb14638f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\job\\source\\sha256.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/job/source/sha256.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ebf694a43aefda96b80b45582fe73f870fd9203d9717022c0d4de48fd157c070"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\job\\source\\code\\round10_data_builder_v1.py",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/source/code/round10_data_builder_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "914dfa258e6fbcfc00c709df6e78cfba6cba5c385db7c51f1e15ebb5d0f59936"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\job\\source\\code\\round10_inputs_v1.py",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/source/code/round10_inputs_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\job\\source\\code\\round11_confirmation_data_v1.py",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/source/code/round11_confirmation_data_v1.py",
+          "role": "supporting_scalar_or_source",
+          "sha256": "44297a3c58a493c26a17084a72c4800303b0b70143543217fe0ede3db02548cf"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\READONLY_SOURCE_PREFLIGHT_v1.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/preparation/READONLY_SOURCE_PREFLIGHT_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "ecb7c276859a4cb1acbc2b45c78f575f75b48958c458cec4f5fddd39ba48958f"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\REVIEW_FREEZE_v1.json",
+          "public_path": "supporting_evidence/R128_frozen_CPU_data_provenance/preparation/REVIEW_FREEZE_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "5fba84fdfa3ad5d7bd56361cee95539467fbdc845051081f3e83e1bee45ac003"
+        }
+      ],
+      "primary_mean": null,
+      "reason": "Preparation/source-exclusion/materialization receipts are frozen independently of later inference outcomes. Final R128 execution/outcome scope is deferred to Root.",
+      "scalar_assertions": [
+        {
+          "keys": [
+            "status"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\COMPLETE.json",
+          "value": "PASS_ROUND11_CONFIRM128_FROZEN_CPU_DATA"
+        },
+        {
+          "keys": [
+            "total"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\COMPLETE.json",
+          "value": 128
+        },
+        {
+          "keys": [
+            "unique_sources"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\COMPLETE.json",
+          "value": 128
+        },
+        {
+          "keys": [
+            "actual_model_or_GPU_calls"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\COMPLETE.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "passed"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\INDEPENDENT_LOCAL_AUDIT_v1.json",
+          "value": true
+        },
+        {
+          "keys": [
+            "independently_recomputed_known_exclusion_overlap",
+            "question_ids"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\INDEPENDENT_LOCAL_AUDIT_v1.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "independently_recomputed_known_exclusion_overlap",
+            "dataset_source_ids"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\INDEPENDENT_LOCAL_AUDIT_v1.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "independently_recomputed_known_exclusion_overlap",
+            "source_or_Doc_parent_clusters"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\INDEPENDENT_LOCAL_AUDIT_v1.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "independently_recomputed_known_exclusion_overlap",
+            "original_or_historical_image_SHA"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\INDEPENDENT_LOCAL_AUDIT_v1.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "known_history_and_used_and_formal500_overlap"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\SOURCE_DISJOINT_PROOF.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "Round10_all_cal64_D160_reserve224_overlap"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\SOURCE_DISJOINT_PROOF.json",
+          "value": 0
+        },
+        {
+          "keys": [
+            "reference_text_not_opened"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\proofs\\SELECTION_FROZEN_BEFORE_REFERENCES.json",
+          "value": true
+        }
+      ],
+      "scope": "128source questions48Text/48Info/16Doc/16Chart; source lists selected before references; CPU data preparation only, no generated QA.",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false
+    },
+    {
+      "disposition": "CLOSED_COMPLETE",
+      "evidence_id": "WO_query_agnostic_bound_math_review",
+      "files": [
+        {
+          "path": "${PROJECT_ROOT}\\docs\\THEORY_2026-11-23_WO_QUERY_AGNOSTIC_BOUND_v1.md",
+          "public_path": "supporting_evidence/WO_query_agnostic_bound_math_review/THEORY_WO_QUERY_AGNOSTIC_BOUND_v1.md",
+          "role": "supporting_scalar_or_source",
+          "sha256": "0c7a2856f2f2028416b55ac5d3af32ff2f3cf62a57e33d4929f2e20e6b35e2b1"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_QUERY_AGNOSTIC_BOUND_MATH_REVIEW_v1.json",
+          "public_path": "supporting_evidence/WO_query_agnostic_bound_math_review/WO_QUERY_AGNOSTIC_BOUND_MATH_REVIEW_v1.json",
+          "role": "supporting_scalar_or_source",
+          "sha256": "005a1d03a7a57af98ec927e253e698657537242e47ba30ed770944457c4e84c3"
+        }
+      ],
+      "primary_mean": null,
+      "reason": "Exact real-Gram theorem and finite-FP64/attention-readout/history limitations are explicitly separated.",
+      "scalar_assertions": [
+        {
+          "keys": [
+            "status"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_QUERY_AGNOSTIC_BOUND_MATH_REVIEW_v1.json",
+          "value": "PASS_CORE_BOUND_AND_REVISED_SCOPE"
+        },
+        {
+          "keys": [
+            "source_doc_sha256"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_QUERY_AGNOSTIC_BOUND_MATH_REVIEW_v1.json",
+          "value": "0c7a2856f2f2028416b55ac5d3af32ff2f3cf62a57e33d4929f2e20e6b35e2b1"
+        },
+        {
+          "keys": [
+            "runtime_code_plan_or_doc_modified_by_reviewer"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_QUERY_AGNOSTIC_BOUND_MATH_REVIEW_v1.json",
+          "value": false
+        },
+        {
+          "keys": [
+            "GPU_model_tests_or_literature_used"
+          ],
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_QUERY_AGNOSTIC_BOUND_MATH_REVIEW_v1.json",
+          "value": false
+        }
+      ],
+      "scope": "Mathematical interpretation only; no numerical certificate, task guarantee, GPU gate or additional experiment.",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false
+    },
+    {
+      "evidence_id": "confirmation_setup_failed_v2",
+      "disposition": "CLOSED_WITH_FAILURES",
+      "task_quality_QA": 0,
+      "teacher_TF_or_technical_is_free_answer_QA": false,
+      "primary_mean": null,
+      "scope": "Two original setup-v2 parents failed before START_CELL/model child; later successful v3 outputs are separate",
+      "files": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "sha256": "a773d93c3457f1ce070cb63fbccac55054776652cf3945df9ac5acc59dd438cf",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/EXACT_RETRIEVAL_AND_QA0_PROOF.json"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu0\\source_job.json",
+          "sha256": "5ea4cb9744b909a3893a0bd330c948f241d3cd7dc5a017555905a1c6f57d7932",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu0/source_job.json",
+          "source_aliases": [
+            "${DATA_ROOT}/jobs/bm_R11_confirm_gpu0_v2.json"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu0\\launch_receipt.json",
+          "sha256": "d6981bcecbd834453cca93670059773a69e10c167f7cf748fccd4c85f5668068",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu0/launch_receipt.json",
+          "source_aliases": [
+            "${DATA_ROOT}/jobs/bm_R11_confirm_gpu0_v2.launch.json"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu0\\source_inventory.json",
+          "sha256": "add487b9e57eceed0abf22ba785a5841a9ab688dea910375c1b972ba3237d0a2",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu0/source_inventory.json",
+          "source_aliases": [
+            "${DATA_ROOT}/jobs/bm_R11_confirm_gpu0_v2.source/sha256.json"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu0\\source_parent_driver.py",
+          "sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu0/source_parent_driver.py",
+          "source_aliases": [
+            "${DATA_ROOT}/jobs/bm_R11_confirm_gpu0_v2.source/code/round10_sequence_v1.py"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu0\\runtime_log.txt",
+          "sha256": "58c5cea8027cfc3db35f2f0aa2409e314e94cf54ddf95b35fe299d6d499a2c98",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu0/runtime_log.txt",
+          "source_aliases": [
+            "${DATA_ROOT}/logs/bm_R11_confirm_gpu0_v2.log"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu1\\source_job.json",
+          "sha256": "3105cac1c0dae9ace95c1b2fc43e7f77c0217a5e6dfbde5b4c0d31d62b83e282",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu1/source_job.json",
+          "source_aliases": [
+            "${DATA_ROOT}/jobs/bm_R11_confirm_gpu1_v2.json"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu1\\launch_receipt.json",
+          "sha256": "b752090deb7d45f7b557e932051428d9281b0a0189ffb0ea6b665507dee57388",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu1/launch_receipt.json",
+          "source_aliases": [
+            "${DATA_ROOT}/jobs/bm_R11_confirm_gpu1_v2.launch.json"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu1\\source_inventory.json",
+          "sha256": "52ec6c06a8f10835986b3b8aa1495329e4cdeb7baae8c5f1ca2c410dc3069bca",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu1/source_inventory.json",
+          "source_aliases": [
+            "${DATA_ROOT}/jobs/bm_R11_confirm_gpu1_v2.source/sha256.json"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu1\\source_parent_driver.py",
+          "sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu1/source_parent_driver.py",
+          "source_aliases": [
+            "${DATA_ROOT}/jobs/bm_R11_confirm_gpu1_v2.source/code/round10_sequence_v1.py"
+          ]
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\gpu1\\runtime_log.txt",
+          "sha256": "76ad83b563c62750c8c9f41a4fc93c987b475caadb26b9ca9c54a6b42f4166fa",
+          "public_path": "supporting_evidence/confirmation_setup_failed_v2/gpu1/runtime_log.txt",
+          "source_aliases": [
+            "${DATA_ROOT}/logs/bm_R11_confirm_gpu1_v2.log"
+          ]
+        }
+      ],
+      "scalar_assertions": [
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "keys": [
+            "status"
+          ],
+          "value": "PASS_PROVEN_FAILED_SETUP_BEFORE_ANY_MODEL_CHILD"
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "keys": [
+            "actual_model_forward_calls"
+          ],
+          "value": 0
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "keys": [
+            "actual_GPU_forward_calls"
+          ],
+          "value": 0
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "keys": [
+            "actual_new_free_QA"
+          ],
+          "value": 0
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "keys": [
+            "independent_remote_hashes"
+          ],
+          "value": true
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "keys": [
+            "old_setup_parents_only"
+          ],
+          "value": true
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "keys": [
+            "readback_reverified_twice"
+          ],
+          "value": true
+        },
+        {
+          "path": "${EVIDENCE_ROOT}\\results\\round11\\confirm_preflight_failed_v2\\EXACT_RETRIEVAL_AND_QA0_PROOF.json",
+          "keys": [
+            "successful_confirmation_QA_accounted_separately"
+          ],
+          "value": true
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "${PROJECT_ROOT}\\docs\\REPORT_2026-11-23_ROUND11_FINAL.zh.md",
+      "sha256": "a7d10cf03cf8395ef9e718694f03463ee07f2618285c57e7eaffa890cc0351a1",
+      "role": "scope_report",
+      "public_path": "docs/ROUND11_FINAL_REPORT.md"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\final_report_v1\\QUALITY_COMPLETE_BYTES_88.csv",
+      "sha256": "3bd59e428bc664db1d79dee84d570256cc5cd7847238bdfc6fe2e242f1cf0702",
+      "role": "quality_bytes_table",
+      "public_path": "results/round11/final/QUALITY_BYTES.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\combined512_prepackaging_v1\\combined512.json",
+      "sha256": "feb1b72c5759ac844edfff304542fea0de489acd69f09c6447a3c1502db32801",
+      "role": "separate_combined512_derived_report",
+      "public_path": "results/round11/final/COMBINED512_SOURCE_DERIVED.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\SUPPORTING_EVIDENCE_CANDIDATE_v1.json",
+      "sha256": "aa4cef41a9e2ed1ab7da5078d6f0c1e7706c23bdb9c37a089e705c5d8bf27e43",
+      "role": "supporting_candidate_inventory",
+      "public_path": "evidence/ROUND11_SUPPORTING_EVIDENCE_CANDIDATE_v1.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\public_v5_prepare_v1\\FROZEN_FOR_ROOT_LOCAL_QA_v1.json",
+      "sha256": "db21e6d3fb879dc75a0f8ec4e557591e114fe111a0c2fafd65572d79c9bc0617",
+      "role": "frozen_public5_source_lock",
+      "public_path": "evidence/ROUND11_PUBLIC5_SOURCE_LOCK.json"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\code\\round11_confirmation_data_v1.py",
+      "sha256": "44297a3c58a493c26a17084a72c4800303b0b70143543217fe0ede3db02548cf",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "code/round11_confirmation_data_v1.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\code\\round11_expand384_data_v1.py",
+      "sha256": "1fd95c1515237617c0a1eb26fa3d522d224d7b6218defaca2f125354c70b8778",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "code/round11_expand384_data_v1.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\round11_prepare_primary_v2.py",
+      "sha256": "76ca936190783d3f118a35218c28c448c6191fb8fee3f0ddedacadbf896ee695",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "ops/round11_prepare_primary_v2.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\round11_prepare_wo_v1.py",
+      "sha256": "54ffe278afc27f373bbcb9c2c07bd0583631845a1db80b7a6d9812801021d4c1",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "ops/round11_prepare_wo_v1.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\round11_prepare_confirmation_v2.py",
+      "sha256": "4f80e0509a5758197ac0e986d401c146dceea42f0d9d8c55ede841d50db5936d",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "ops/round11_prepare_confirmation_v2.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\round11_prepare_expand384_v1.py",
+      "sha256": "18b055d18092283c5effd310676d06c1775c40e60c5f74305e650df3b48ff942",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "ops/round11_prepare_expand384_v1.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\round11_combine_holdouts_v1.py",
+      "sha256": "4a99367b870faf2af1561087eb44df703adc20be6b8d77472452ad90af1a67a6",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "ops/round11_combine_holdouts_v1.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\round11_wo_stage_analysis_v1.py",
+      "sha256": "8ba034226b82ef75ed1cf50a9f18c2e4b0933ba847c6d5ed8f79538b49bff2e6",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "ops/round11_wo_stage_analysis_v1.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\round11_assemble_final_contract_v1.py",
+      "sha256": "dea9bc5077d094bb294442c3ca0c9ef6dca193e7959d259b8b20577685e54bf9",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "ops/round11_assemble_final_contract_v1.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\configs\\round11_v1\\confirm128_data_plan_v1.json",
+      "sha256": "cd20a81e6551b83cc4d6fb84f1890a751699d29dcc059f0913b3bdc64ffe4d8c",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "configs/round11_v1/confirm128_data_plan_v1.json"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\configs\\round11_v1\\expand384_data_plan_v1.json",
+      "sha256": "93ec001869c9e698c3ca3ecf2323a0f32d42969b44be416e9b97d3a9d33fd39e",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "configs/round11_v1/expand384_data_plan_v1.json"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\PLAN_2026-11-23_ROUND11_SPATIAL_JOINT_v1.md",
+      "sha256": "39c334d5bd05efc66b30fbb8806be86560d26b91a27bfd30d789eee905c8764e",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "docs/PLAN_2026-11-23_ROUND11_SPATIAL_JOINT_v1.md"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\MATH_2026-11-23_ROUND11_CONDITIONAL_CODE_v1.md",
+      "sha256": "d6936f39742c9751ba3f900b2712cb4dccf6f48631252e2d709ea0b23637be44",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "docs/MATH_2026-11-23_ROUND11_CONDITIONAL_CODE_v1.md"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\PLAN_2026-11-23_ROUND11_WO_ADDENDUM_v1.md",
+      "sha256": "6d7317cff1093b57f5e3238573b05e38ccf61386f41045f956d795ad80fac9b5",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "docs/PLAN_2026-11-23_ROUND11_WO_ADDENDUM_v1.md"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\PLAN_2026-11-23_ROUND11_EXPAND512_v1.md",
+      "sha256": "8621ed045c5ade6fa92b12f9931724dca669d1622e2c00611a763af6c34a83b1",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "docs/PLAN_2026-11-23_ROUND11_EXPAND512_v1.md"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\THEORY_2026-11-23_WO_QUERY_AGNOSTIC_BOUND_v1.md",
+      "sha256": "0c7a2856f2f2028416b55ac5d3af32ff2f3cf62a57e33d4929f2e20e6b35e2b1",
+      "role": "explicit_stage_source_or_plan",
+      "public_path": "docs/THEORY_2026-11-23_WO_QUERY_AGNOSTIC_BOUND_v1.md"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\EXPANSION_DESIGN_v1.json",
+      "sha256": "ebe818bbc67b1d189b4e27b15e2fdd4af59c0a7e5633c5b1125add1ccfac0c19",
+      "role": "fixed_expansion_design",
+      "public_path": "evidence/EXPANSION_DESIGN_v1.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\expand384_inputs_v1\\remote_materialization_v1\\INDEPENDENT_LOCAL_AUDIT_v1.json",
+      "sha256": "73cf59755a66c0c12dd04baeb214dd9885d67a80567374e2a71c9b45d2ffa136",
+      "role": "supporting_independent_review",
+      "public_path": "results/round11/expand384_inputs_v1/remote_materialization_v1/INDEPENDENT_LOCAL_AUDIT_v1.json"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\ops\\round11_report_v1.py",
+      "sha256": "761a6d3d056a50b42d78a16fba1d1345014ae20660fb8079e64d2c9d7bc79bb0",
+      "role": "supplementary_research_analysis",
+      "public_path": "ops/round11_report_v1.py"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\PLAN_2026-11-23_ROUND11_SPATIAL_JOINT_v1.md",
+      "sha256": "39c334d5bd05efc66b30fbb8806be86560d26b91a27bfd30d789eee905c8764e",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/PLAN_2026-11-23_ROUND11_SPATIAL_JOINT_v1.md"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\MATH_2026-11-23_ROUND11_CONDITIONAL_CODE_v1.md",
+      "sha256": "d6936f39742c9751ba3f900b2712cb4dccf6f48631252e2d709ea0b23637be44",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/MATH_2026-11-23_ROUND11_CONDITIONAL_CODE_v1.md"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\PLAN_2026-11-23_ROUND11_WO_ADDENDUM_v1.md",
+      "sha256": "6d7317cff1093b57f5e3238573b05e38ccf61386f41045f956d795ad80fac9b5",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/PLAN_2026-11-23_ROUND11_WO_ADDENDUM_v1.md"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\PLAN_2026-11-23_ROUND11_EXPAND512_v1.md",
+      "sha256": "8621ed045c5ade6fa92b12f9931724dca669d1622e2c00611a763af6c34a83b1",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/PLAN_2026-11-23_ROUND11_EXPAND512_v1.md"
+    },
+    {
+      "path": "${PROJECT_ROOT}\\docs\\THEORY_2026-11-23_WO_QUERY_AGNOSTIC_BOUND_v1.md",
+      "sha256": "0c7a2856f2f2028416b55ac5d3af32ff2f3cf62a57e33d4929f2e20e6b35e2b1",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/THEORY_2026-11-23_WO_QUERY_AGNOSTIC_BOUND_v1.md"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\final_report_v1\\FINAL_FINDINGS.json",
+      "sha256": "6177d8d1ae61d7c14a3401613a140edcf860313b337607c6556c6f4a6bbf288a",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/final/FINAL_FINDINGS.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\final_report_v1\\COMBINED512_QUALITY.csv",
+      "sha256": "296b3d1d2532bbe36f370763be36c457d358f8ab12587b2caca2290e3a26d8d8",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/final/COMBINED512_QUALITY.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\final_report_v1\\COMBINED512_PRIMARY_CONTRASTS.json",
+      "sha256": "013d5e9df6e64c7da41a429705cc5a8a659f0833f0c32e4acfbc34d6b1aab975",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/final/COMBINED512_PRIMARY_CONTRASTS.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\original128_per_domain_report_v1\\report.json",
+      "sha256": "bf307b6a7cd9666bd7aa8423334c53c143e561285f64926e349abfc2ca68acaa",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/original128_per_domain_report_v1/report.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\original128_per_domain_report_v1\\quality_by_domain.csv",
+      "sha256": "ca3808e31eebdb6c928736d557fbf668573d11872e809745c1c70e88a2457964",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/original128_per_domain_report_v1/quality_by_domain.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\original128_per_domain_report_v1\\candidate_contrasts.csv",
+      "sha256": "fc8cfd4c5e5e0f5a2ab334e7c7fe4b94e7d83318c8ad7ea9b756fc2717d2eb3e",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/original128_per_domain_report_v1/candidate_contrasts.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\original128_per_domain_report_v1\\prototype_resources.csv",
+      "sha256": "dddb2ff89bde72f703cee6d8407573d523ad27e2a266b6585f1450b63b6c19df",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/original128_per_domain_report_v1/prototype_resources.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\additional384_per_domain_report_v1\\report.json",
+      "sha256": "32c47f79ab5b1bd276b55466b5fb678818048d144c078b042b412874dca6c631",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/additional384_per_domain_report_v1/report.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\additional384_per_domain_report_v1\\quality_by_domain.csv",
+      "sha256": "be629ae59b3324880792cfd16acb7821eb584f5b732d2cd4897ddbdd425d88c3",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/additional384_per_domain_report_v1/quality_by_domain.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\additional384_per_domain_report_v1\\candidate_contrasts.csv",
+      "sha256": "93ec59f855019a728980a8bc35c4ff530b128d9a0331b98c73a7305cf62ce2cd",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/additional384_per_domain_report_v1/candidate_contrasts.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\additional384_per_domain_report_v1\\prototype_resources.csv",
+      "sha256": "c4afa4b1f4aa1e5865b40346c23ef3eb33de774a12461d80996fdbb8724d3b78",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/additional384_per_domain_report_v1/prototype_resources.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\primary_per_domain_report_v1\\REPORT_PRIMARY_BY_DOMAIN.md",
+      "sha256": "214a1ac98a0dc4415ca47783343f75e8e2e15e1cb1d44896ab33d2d2a32a6afa",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/primary_per_domain_report_v1/REPORT_PRIMARY_BY_DOMAIN.md"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\primary_per_domain_report_v1\\candidate_vs_R7low.csv",
+      "sha256": "38c6ec818f65c63d8ad9288ea21442e6c5b6011e5364f4487639c5f883c8fd4b",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/primary_per_domain_report_v1/candidate_vs_R7low.csv"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\wo_quality_report_v1\\report.json",
+      "sha256": "94bab10a4324f64eb82d7a9cb6af766b9149897347fdf7d350b895f3562ac54d",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/wo_quality_report_v1/report.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\wo_quality_report_v1\\cross_primary_paired.json",
+      "sha256": "bd82d32ce16c51bfd0a1622dc7f2513455f196641378964e2c6b7802d6cf9776",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/wo_quality_report_v1/cross_primary_paired.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\wo_stage_analysis_v1\\analysis.json",
+      "sha256": "60eb820930efc919effd886875adb0c4391a9a968247749d5570586cd55f6de9",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/wo_stage_analysis_v1/analysis.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\PRIMARY_PARENT_FINAL_CLOSURE_v1.json",
+      "sha256": "69593d4ee38ec5874a0adfaf49fd54fe8ca3d285bb0d6e106bc910217df685d7",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/PRIMARY_PARENT_FINAL_CLOSURE_v1.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\ORIGINAL128_FINAL_PARENT_CLOSURE_v1.json",
+      "sha256": "d4cf510f4d76c9c8130a7fac2f37180a5a0bd12a0fdb6f43bd7b46778530b058",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/ORIGINAL128_FINAL_PARENT_CLOSURE_v1.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\ADDITIONAL384_FINAL_PARENT_CLOSURE_v1.json",
+      "sha256": "fce7283e5bc5df8bb3fd1850fc498f4f50fa484bddb24e7a8d376cf8f4b436af",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/ADDITIONAL384_FINAL_PARENT_CLOSURE_v1.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\WO_PARENT_FINAL_CLOSURE_v1.json",
+      "sha256": "ecffd7f667f5ffd5103b65024de4ac794621d88cc32a9bf4d26ecfbabeac482c",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/WO_PARENT_FINAL_CLOSURE_v1.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\LITERATURE_INSPIRATION_NEXT_v1.md",
+      "sha256": "1a6c52e7b20e3208705fbb649dc3d213bc838e7990c14e1a897f07b0025e6b80",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/round11/LITERATURE_INSPIRATION_NEXT_v1.md"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\NEXT_IDEAS_NOT_RUN_v3.md",
+      "sha256": "400b6c3a79f556775fb640418e5700d661f2fb6019cb6a5a513e1e524f70c326",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/round11/NEXT_IDEAS_NOT_RUN_v3.md"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\NEXT_UNTESTED_KERNEL_COMPOSITION_v1.md",
+      "sha256": "dd6d16a74513890dc09a343f3afa026eaff56e90faf248fee434735692d0f651",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/round11/NEXT_UNTESTED_KERNEL_COMPOSITION_v1.md"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\NEXT_IDEAS_V2_STATIC_MATH_REVIEW_v1.json",
+      "sha256": "f622391bff43e3fe7b818997607127aa381ba153772eb9fd490ed521616d8017",
+      "role": "supplementary_research_analysis",
+      "public_path": "results/round11/NEXT_IDEAS_V2_STATIC_MATH_REVIEW_v1.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\NEXT_IDEAS_NOT_RUN_v2.md",
+      "sha256": "1adb636616c9d1a5a7be354b4be49a2459e497c3ef34ac14497fe32615bdf7ff",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/round11/NEXT_IDEAS_NOT_RUN_v2_falsified_diagonal_claim.md"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\literature_inspiration_next_v1\\PRIMARY_SOURCE_METADATA_v1.json",
+      "sha256": "13df71c0c3e5ac8081a461c77db2d959eac26588df3083b061071315f2608388",
+      "role": "supplementary_research_analysis",
+      "public_path": "docs/round11/PRIMARY_LITERATURE_METADATA_v1.json"
+    },
+    {
+      "path": "${EVIDENCE_ROOT}\\results\\round11\\bootstrap_v1\\FINAL_SCIENTIFIC_REPORT_INDEPENDENT_REVIEW_v1.json",
+      "sha256": "590f4ea0a8a9f91208d4ca0d662e40730e3d65abff7ec3b377938517be1a8efe",
+      "role": "independent_scientific_report_review",
+      "public_path": "results/round11/final/INDEPENDENT_SCIENTIFIC_REPORT_REVIEW.json"
+    }
+  ],
+  "final_four_cohort_unsealed_candidate": true,
+  "final_research_stage_completion_claimed": false,
+  "publication_authorized_by_this_candidate": false,
+  "expected_final_accounting": {
+    "view_cells": 88,
+    "actual_fresh_answer_events": 3136,
+    "actual_view_answer_events": 3712,
+    "reused_reference_view_events": 576,
+    "unique_reused_reference_view_events": 288,
+    "repeated_reused_reference_view_events": 288,
+    "unique_reused_reference_producer_views": 12,
+    "fresh_producer_cells": 64,
+    "paired_comparisons": 140,
+    "combined512_new_inference_events": 0
+  },
+  "combined512_derived_only": {
+    "path": "${EVIDENCE_ROOT}\\results\\round11\\combined512_prepackaging_v1\\combined512.json",
+    "sha256": "feb1b72c5759ac844edfff304542fea0de489acd69f09c6447a3c1502db32801",
+    "new_inference_events": 0,
+    "original_additional_combined_reported_separately": true,
+    "combined512_preregistered_before_original128_claimed": false
+  }
+}

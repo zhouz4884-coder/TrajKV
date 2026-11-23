@@ -1,0 +1,3277 @@
+{
+  "schema": "baseline_matrix.raw_inference.v1",
+  "runner_schema": "trajkv.round11_research.raw.v1",
+  "config": {
+    "schema": "trajkv.round11_research.raw.v1",
+    "model_id": "M1",
+    "model_revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "model_path": "${DATA_ROOT}/models/M1_259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "model_source_lock": "${DATA_ROOT}/configs/models/M1_hf_reference_lock_v1.json",
+    "inputs": "${DATA_ROOT}/configs/round10_inputs_v1/infovqa_dev64_inputs.jsonl",
+    "start": 0,
+    "count": 32,
+    "max_new_tokens": 64,
+    "question_suffix": "\nAnswer the question using a single word or phrase.",
+    "preprocessing": {
+      "max_patches": 8
+    },
+    "method": {
+      "id": "Round11_Shuffled_D96_v2",
+      "family": "trajkv_round11_research",
+      "encode_scope": "visual",
+      "information_condition": "query_unknown"
+    },
+    "scope": "Round11 SourceGroupD96 development; fixed first32 Text/Info and16 Doc/Chart; no source-quality claim from QA0",
+    "seed": 0,
+    "inputs_sha256": "a8e3cae01c7dbc42ca11e531a6a82f3ed908c5458f5f277603dee6d15e09a49a",
+    "variant_source": {
+      "path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/confirm_doc128_s0.json",
+      "sha256": "aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4",
+      "name": "r7_joint_k1_gt_cond"
+    },
+    "variant": {
+      "method": "round7_key",
+      "bits_v": 1,
+      "v_layout": "channel",
+      "v_encoder": "lloyd",
+      "cap": 8,
+      "selector": "none",
+      "store_selector_meta": false,
+      "direction_book_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/gaussian_vq_g4_16.json",
+      "name": "r7_joint_k1_gt_cond",
+      "v_group_size": "all",
+      "metadata_factor_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/factors_for_book16_inherited.json",
+      "budget_bits": 1.8,
+      "selection_calibration_sha256": "202f92d618c41769f8344c584e6bd00e29300e171bea7dbf8721191d4a262e18",
+      "key_amplitude": "norm",
+      "selected_stages": [
+        [
+          "k",
+          24,
+          3,
+          0
+        ],
+        [
+          "v",
+          19,
+          2,
+          0
+        ],
+        [
+          "k",
+          23,
+          2,
+          0
+        ],
+        [
+          "k",
+          22,
+          1,
+          0
+        ],
+        [
+          "k",
+          19,
+          2,
+          0
+        ],
+        [
+          "v",
+          19,
+          3,
+          0
+        ],
+        [
+          "k",
+          23,
+          1,
+          0
+        ],
+        [
+          "k",
+          22,
+          3,
+          0
+        ],
+        [
+          "k",
+          20,
+          3,
+          0
+        ],
+        [
+          "k",
+          14,
+          0,
+          0
+        ],
+        [
+          "k",
+          19,
+          3,
+          0
+        ],
+        [
+          "v",
+          22,
+          3,
+          0
+        ],
+        [
+          "k",
+          25,
+          1,
+          0
+        ],
+        [
+          "v",
+          22,
+          0,
+          0
+        ],
+        [
+          "k",
+          22,
+          0,
+          0
+        ],
+        [
+          "k",
+          15,
+          2,
+          0
+        ],
+        [
+          "v",
+          15,
+          2,
+          0
+        ],
+        [
+          "v",
+          24,
+          3,
+          0
+        ],
+        [
+          "k",
+          16,
+          1,
+          0
+        ],
+        [
+          "v",
+          20,
+          3,
+          0
+        ],
+        [
+          "k",
+          27,
+          2,
+          0
+        ],
+        [
+          "v",
+          23,
+          1,
+          0
+        ],
+        [
+          "k",
+          27,
+          3,
+          0
+        ],
+        [
+          "v",
+          16,
+          0,
+          0
+        ],
+        [
+          "k",
+          23,
+          0,
+          0
+        ],
+        [
+          "k",
+          21,
+          2,
+          0
+        ],
+        [
+          "v",
+          14,
+          0,
+          0
+        ],
+        [
+          "k",
+          16,
+          0,
+          0
+        ],
+        [
+          "v",
+          22,
+          1,
+          0
+        ],
+        [
+          "v",
+          23,
+          2,
+          0
+        ],
+        [
+          "k",
+          26,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          2,
+          0
+        ],
+        [
+          "v",
+          26,
+          2,
+          0
+        ],
+        [
+          "k",
+          21,
+          0,
+          0
+        ],
+        [
+          "v",
+          14,
+          1,
+          0
+        ],
+        [
+          "v",
+          20,
+          2,
+          0
+        ],
+        [
+          "v",
+          17,
+          2,
+          0
+        ],
+        [
+          "k",
+          21,
+          1,
+          0
+        ],
+        [
+          "k",
+          25,
+          3,
+          0
+        ],
+        [
+          "v",
+          18,
+          2,
+          0
+        ],
+        [
+          "k",
+          17,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          3,
+          0
+        ],
+        [
+          "v",
+          21,
+          0,
+          0
+        ],
+        [
+          "v",
+          27,
+          2,
+          0
+        ],
+        [
+          "v",
+          8,
+          3,
+          0
+        ],
+        [
+          "k",
+          8,
+          3,
+          0
+        ],
+        [
+          "v",
+          25,
+          1,
+          0
+        ],
+        [
+          "k",
+          26,
+          3,
+          0
+        ],
+        [
+          "v",
+          16,
+          1,
+          0
+        ],
+        [
+          "k",
+          14,
+          1,
+          0
+        ],
+        [
+          "v",
+          17,
+          3,
+          0
+        ],
+        [
+          "k",
+          16,
+          2,
+          0
+        ],
+        [
+          "k",
+          17,
+          3,
+          0
+        ],
+        [
+          "k",
+          20,
+          2,
+          0
+        ],
+        [
+          "k",
+          12,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          0,
+          0
+        ],
+        [
+          "v",
+          26,
+          0,
+          0
+        ],
+        [
+          "k",
+          11,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          2,
+          0
+        ],
+        [
+          "v",
+          18,
+          1,
+          0
+        ],
+        [
+          "v",
+          16,
+          2,
+          0
+        ],
+        [
+          "k",
+          27,
+          0,
+          0
+        ],
+        [
+          "k",
+          26,
+          0,
+          0
+        ],
+        [
+          "k",
+          18,
+          1,
+          0
+        ],
+        [
+          "v",
+          25,
+          3,
+          0
+        ],
+        [
+          "v",
+          17,
+          1,
+          0
+        ],
+        [
+          "v",
+          26,
+          3,
+          0
+        ],
+        [
+          "k",
+          17,
+          1,
+          0
+        ],
+        [
+          "k",
+          22,
+          2,
+          0
+        ],
+        [
+          "v",
+          20,
+          1,
+          0
+        ],
+        [
+          "v",
+          15,
+          0,
+          0
+        ],
+        [
+          "k",
+          20,
+          0,
+          0
+        ],
+        [
+          "k",
+          20,
+          1,
+          0
+        ],
+        [
+          "k",
+          26,
+          1,
+          0
+        ],
+        [
+          "k",
+          15,
+          0,
+          0
+        ],
+        [
+          "k",
+          14,
+          2,
+          0
+        ],
+        [
+          "v",
+          21,
+          1,
+          0
+        ],
+        [
+          "v",
+          12,
+          3,
+          0
+        ],
+        [
+          "v",
+          23,
+          0,
+          0
+        ],
+        [
+          "v",
+          19,
+          0,
+          0
+        ],
+        [
+          "v",
+          11,
+          3,
+          0
+        ],
+        [
+          "k",
+          4,
+          1,
+          0
+        ],
+        [
+          "k",
+          21,
+          3,
+          0
+        ],
+        [
+          "v",
+          12,
+          1,
+          0
+        ],
+        [
+          "k",
+          12,
+          1,
+          0
+        ],
+        [
+          "k",
+          9,
+          0,
+          0
+        ],
+        [
+          "v",
+          22,
+          2,
+          0
+        ],
+        [
+          "k",
+          9,
+          3,
+          0
+        ],
+        [
+          "v",
+          3,
+          1,
+          0
+        ],
+        [
+          "k",
+          19,
+          0,
+          0
+        ],
+        [
+          "k",
+          9,
+          1,
+          0
+        ],
+        [
+          "v",
+          15,
+          3,
+          0
+        ],
+        [
+          "v",
+          26,
+          1,
+          0
+        ],
+        [
+          "v",
+          14,
+          2,
+          0
+        ],
+        [
+          "k",
+          15,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          3,
+          0
+        ],
+        [
+          "k",
+          3,
+          1,
+          0
+        ],
+        [
+          "v",
+          9,
+          3,
+          0
+        ],
+        [
+          "v",
+          9,
+          0,
+          0
+        ],
+        [
+          "v",
+          14,
+          3,
+          0
+        ],
+        [
+          "k",
+          13,
+          2,
+          0
+        ],
+        [
+          "k",
+          24,
+          1,
+          0
+        ],
+        [
+          "k",
+          14,
+          3,
+          0
+        ],
+        [
+          "v",
+          20,
+          0,
+          0
+        ],
+        [
+          "v",
+          9,
+          1,
+          0
+        ],
+        [
+          "v",
+          18,
+          3,
+          0
+        ],
+        [
+          "v",
+          13,
+          2,
+          0
+        ],
+        [
+          "v",
+          24,
+          1,
+          0
+        ],
+        [
+          "k",
+          11,
+          0,
+          0
+        ],
+        [
+          "v",
+          17,
+          0,
+          0
+        ],
+        [
+          "v",
+          9,
+          2,
+          0
+        ],
+        [
+          "k",
+          8,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          2,
+          0
+        ],
+        [
+          "v",
+          13,
+          0,
+          0
+        ],
+        [
+          "k",
+          5,
+          0,
+          0
+        ],
+        [
+          "k",
+          11,
+          1,
+          0
+        ],
+        [
+          "k",
+          10,
+          0,
+          0
+        ],
+        [
+          "k",
+          24,
+          2,
+          0
+        ],
+        [
+          "v",
+          4,
+          1,
+          0
+        ],
+        [
+          "k",
+          13,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          3,
+          0
+        ],
+        [
+          "v",
+          12,
+          2,
+          0
+        ],
+        [
+          "v",
+          16,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          0,
+          0
+        ],
+        [
+          "k",
+          17,
+          0,
+          0
+        ],
+        [
+          "v",
+          5,
+          2,
+          0
+        ],
+        [
+          "k",
+          12,
+          2,
+          0
+        ],
+        [
+          "v",
+          11,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          3,
+          0
+        ],
+        [
+          "k",
+          8,
+          0,
+          0
+        ],
+        [
+          "k",
+          10,
+          2,
+          0
+        ],
+        [
+          "k",
+          9,
+          2,
+          0
+        ],
+        [
+          "v",
+          1,
+          3,
+          0
+        ],
+        [
+          "k",
+          15,
+          1,
+          0
+        ],
+        [
+          "v",
+          8,
+          1,
+          0
+        ],
+        [
+          "k",
+          16,
+          3,
+          0
+        ],
+        [
+          "v",
+          5,
+          0,
+          0
+        ],
+        [
+          "v",
+          24,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          3,
+          0
+        ],
+        [
+          "k",
+          4,
+          0,
+          0
+        ],
+        [
+          "v",
+          2,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          0,
+          0
+        ],
+        [
+          "v",
+          11,
+          1,
+          0
+        ],
+        [
+          "v",
+          4,
+          0,
+          0
+        ],
+        [
+          "k",
+          13,
+          1,
+          0
+        ],
+        [
+          "k",
+          13,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          2,
+          0
+        ],
+        [
+          "k",
+          2,
+          0,
+          0
+        ],
+        [
+          "v",
+          13,
+          3,
+          0
+        ],
+        [
+          "v",
+          8,
+          0,
+          0
+        ],
+        [
+          "v",
+          15,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          3,
+          0
+        ],
+        [
+          "v",
+          6,
+          1,
+          0
+        ],
+        [
+          "v",
+          2,
+          2,
+          0
+        ],
+        [
+          "v",
+          1,
+          0,
+          0
+        ],
+        [
+          "v",
+          3,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          0,
+          0
+        ],
+        [
+          "k",
+          7,
+          1,
+          0
+        ],
+        [
+          "k",
+          6,
+          1,
+          0
+        ],
+        [
+          "v",
+          13,
+          1,
+          0
+        ],
+        [
+          "k",
+          3,
+          2,
+          0
+        ],
+        [
+          "v",
+          7,
+          2,
+          0
+        ],
+        [
+          "k",
+          7,
+          2,
+          0
+        ],
+        [
+          "v",
+          0,
+          2,
+          0
+        ],
+        [
+          "v",
+          5,
+          1,
+          0
+        ],
+        [
+          "v",
+          12,
+          0,
+          0
+        ],
+        [
+          "k",
+          12,
+          0,
+          0
+        ],
+        [
+          "v",
+          7,
+          1,
+          0
+        ],
+        [
+          "k",
+          5,
+          1,
+          0
+        ],
+        [
+          "k",
+          2,
+          2,
+          0
+        ],
+        [
+          "k",
+          10,
+          1,
+          0
+        ],
+        [
+          "v",
+          2,
+          3,
+          0
+        ],
+        [
+          "v",
+          10,
+          1,
+          0
+        ],
+        [
+          "v",
+          5,
+          3,
+          0
+        ],
+        [
+          "v",
+          0,
+          0,
+          0
+        ],
+        [
+          "k",
+          4,
+          2,
+          0
+        ],
+        [
+          "k",
+          0,
+          2,
+          0
+        ],
+        [
+          "k",
+          8,
+          2,
+          0
+        ],
+        [
+          "k",
+          6,
+          0,
+          0
+        ],
+        [
+          "v",
+          0,
+          1,
+          0
+        ],
+        [
+          "v",
+          4,
+          2,
+          0
+        ],
+        [
+          "k",
+          25,
+          0,
+          0
+        ],
+        [
+          "k",
+          2,
+          3,
+          0
+        ],
+        [
+          "k",
+          10,
+          3,
+          0
+        ],
+        [
+          "k",
+          0,
+          0,
+          0
+        ],
+        [
+          "k",
+          4,
+          3,
+          0
+        ],
+        [
+          "k",
+          18,
+          0,
+          0
+        ],
+        [
+          "k",
+          23,
+          3,
+          0
+        ],
+        [
+          "v",
+          8,
+          2,
+          0
+        ],
+        [
+          "v",
+          3,
+          0,
+          0
+        ],
+        [
+          "v",
+          25,
+          0,
+          0
+        ],
+        [
+          "k",
+          6,
+          2,
+          0
+        ],
+        [
+          "k",
+          3,
+          0,
+          0
+        ],
+        [
+          "v",
+          18,
+          0,
+          0
+        ],
+        [
+          "v",
+          2,
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          2,
+          0
+        ],
+        [
+          "k",
+          0,
+          1,
+          0
+        ],
+        [
+          "v",
+          1,
+          1,
+          0
+        ],
+        [
+          "k",
+          11,
+          2,
+          0
+        ],
+        [
+          "k",
+          1,
+          2,
+          0
+        ],
+        [
+          "k",
+          6,
+          3,
+          0
+        ],
+        [
+          "k",
+          2,
+          1,
+          0
+        ],
+        [
+          "v",
+          0,
+          3,
+          0
+        ],
+        [
+          "k",
+          19,
+          1,
+          0
+        ],
+        [
+          "v",
+          10,
+          3,
+          0
+        ],
+        [
+          "v",
+          6,
+          2,
+          0
+        ],
+        [
+          "v",
+          3,
+          3,
+          0
+        ],
+        [
+          "k",
+          1,
+          1,
+          0
+        ],
+        [
+          "k",
+          25,
+          2,
+          0
+        ],
+        [
+          "v",
+          23,
+          3,
+          0
+        ],
+        [
+          "v",
+          11,
+          2,
+          0
+        ],
+        [
+          "v",
+          6,
+          3,
+          0
+        ],
+        [
+          "k",
+          3,
+          3,
+          0
+        ],
+        [
+          "v",
+          19,
+          1,
+          0
+        ],
+        [
+          "k",
+          24,
+          0,
+          0
+        ],
+        [
+          "v",
+          4,
+          3,
+          0
+        ],
+        [
+          "v",
+          27,
+          1,
+          0
+        ],
+        [
+          "v",
+          6,
+          0,
+          0
+        ],
+        [
+          "v",
+          25,
+          2,
+          0
+        ],
+        [
+          "k",
+          27,
+          1,
+          0
+        ],
+        [
+          "k",
+          0,
+          3,
+          0
+        ],
+        [
+          "v",
+          24,
+          0,
+          0
+        ]
+      ],
+      "residual_layout_reference": "actual",
+      "res_stages_limit": 43,
+      "round7_policy_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/policy_k1_cond.json"
+    },
+    "expected_asset_sha256": {
+      "direction_book_path": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+      "metadata_factor_path": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+      "round7_policy_path": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f"
+    },
+    "legacy_a2": "${DATA_DISK}/VLAtest/TrajKV/code/a2",
+    "legacy_experiments": "${DATA_DISK}/VLAtest/TrajKV/code/experiments",
+    "legacy_scripts": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts",
+    "kivi_source": "${DATA_DISK}/VLAtest/VisContract_P14_2/third_party/KIVI/quant/new_pack.py",
+    "evaluation_contract": {
+      "version": "matrix_v3_metrics_v1",
+      "primary_metric_id": "infovqa_anls_qwenvl_vendor_rawlen_ge0p5_v1",
+      "legacy_aux_only": "author_strip_ge0p5 and normalized_length are auxiliary for Doc/Info, not primary",
+      "source_scoring_file": "code/score.py"
+    },
+    "position_owner_layout": "single_shared_visual_position_map",
+    "input_manifest_path": "${DATA_ROOT}/configs/round10_inputs_v1/INPUT_MANIFEST.json",
+    "input_role": "development",
+    "input_count": 64,
+    "cohort_kind": "development",
+    "candidate": {
+      "mode": "Shuffled"
+    },
+    "expected_source_hashes": {
+      "code/round10_runner_v1.py": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "code/round10_value_bank_v2.py": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c",
+      "code/round10_value_bank_v1.py": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c",
+      "code/round9_value_bank_v1.py": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e",
+      "code/r7_legacy_bridge_v1.py": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b",
+      "code/r7_legacy_bridge_v2.py": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad",
+      "code/m1_protocol.py": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+      "code/model_registry.py": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+      "code/dataset_registry.py": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+      "code/evaluate.py": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+      "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+      "code/attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+      "code/ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+      "code/round10_inputs_v1.py": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77",
+      "code/round11_runner_v2.py": "ec87b1270bfae11d4a2d98fcafc544fcf42a3c132c72bc30d41fe4176ee73ce1",
+      "code/round11_value_bank_v2.py": "f65273b2f69c39e6ca9271a62f337b3e57b808d0f9e59325c6ef055456985e16",
+      "code/round11_joint_value_v2.py": "b819a540f9a07dba153513b45a248f7b56cbe3b46f0115b6e2c7671260f5ea82",
+      "code/round11_joint_value_v1.py": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b",
+      "code/round11_attention_v1.py": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f"
+    },
+    "input_manifest_sha256": "b2ba5f54516abf96344e02356c7cee079b4ff48e2a270ea8fc61ea1c78baaecf",
+    "source_group_manifest_path": "${DATA_ROOT}/configs/round11_v1/SOURCE_GROUP_MANIFEST.json",
+    "source_group_manifest_sha256": "663076f21fc7df7d00253d06604e9f46da06ffe9d62532cd66d82794c05fa9b4"
+  },
+  "config_sha256": "2a3ac26c9c15ab8c64175684065be797655f638bace6070f3c42991de7e9ebbe",
+  "inputs_sha256": "a8e3cae01c7dbc42ca11e531a6a82f3ed908c5458f5f277603dee6d15e09a49a",
+  "expected_ids": [
+    "infovqa:train:83527",
+    "infovqa:train:85475",
+    "infovqa:train:84225",
+    "infovqa:train:70610",
+    "infovqa:train:77770",
+    "infovqa:train:88798",
+    "infovqa:train:77546",
+    "infovqa:train:85545",
+    "infovqa:train:70409",
+    "infovqa:train:84560",
+    "infovqa:train:83514",
+    "infovqa:train:68003",
+    "infovqa:train:82922",
+    "infovqa:train:79956",
+    "infovqa:train:87400",
+    "infovqa:train:83891",
+    "infovqa:train:85379",
+    "infovqa:train:69335",
+    "infovqa:train:69501",
+    "infovqa:train:90038",
+    "infovqa:train:66482",
+    "infovqa:train:68339",
+    "infovqa:train:87048",
+    "infovqa:train:82496",
+    "infovqa:train:86238",
+    "infovqa:train:71320",
+    "infovqa:train:77456",
+    "infovqa:train:71313",
+    "infovqa:train:76454",
+    "infovqa:train:76699",
+    "infovqa:train:87297",
+    "infovqa:train:80514"
+  ],
+  "expected_QA": 32,
+  "model_spec": {
+    "model_id": "M1",
+    "hf_id": "OpenGVLab/InternVL3-8B-hf",
+    "architecture": "InternVLForConditionalGeneration",
+    "layers": 28,
+    "query_heads": 28,
+    "kv_heads": 4,
+    "head_dim": 128,
+    "image_token_id": 151667,
+    "deepstack_visual_indexes": [],
+    "sliding_attention": false,
+    "native_adapter": "internvl3",
+    "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "revision_status": "EXACT_REQUIRED_TREE_VERIFIED_LFS_AWARE"
+  },
+  "references_read": false,
+  "prediction_cache_used": false,
+  "runtime_source_root": "${DATA_ROOT}/jobs/bm_R11_primary_gpu1_v2.source",
+  "runtime_executable": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+  "started_unix": 1795426303.72897,
+  "source_hashes": {
+    "code/round10_runner_v1.py": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+    "code/round10_value_bank_v2.py": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c",
+    "code/round10_value_bank_v1.py": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c",
+    "code/round9_value_bank_v1.py": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e",
+    "code/r7_legacy_bridge_v1.py": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b",
+    "code/r7_legacy_bridge_v2.py": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad",
+    "code/m1_protocol.py": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+    "code/model_registry.py": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+    "code/dataset_registry.py": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+    "code/evaluate.py": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+    "code/cache_bridge.py": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+    "code/attention_bridge.py": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+    "code/ownership.py": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+    "code/round10_inputs_v1.py": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77",
+    "code/round11_runner_v2.py": "ec87b1270bfae11d4a2d98fcafc544fcf42a3c132c72bc30d41fe4176ee73ce1",
+    "code/round11_value_bank_v2.py": "f65273b2f69c39e6ca9271a62f337b3e57b808d0f9e59325c6ef055456985e16",
+    "code/round11_joint_value_v2.py": "b819a540f9a07dba153513b45a248f7b56cbe3b46f0115b6e2c7671260f5ea82",
+    "code/round11_joint_value_v1.py": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b",
+    "code/round11_attention_v1.py": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f"
+  },
+  "frozen_variant": {
+    "method": "round7_key",
+    "bits_v": 1,
+    "v_layout": "channel",
+    "v_encoder": "lloyd",
+    "cap": 8,
+    "selector": "none",
+    "store_selector_meta": false,
+    "direction_book_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/gaussian_vq_g4_16.json",
+    "name": "r7_joint_k1_gt_cond",
+    "v_group_size": "all",
+    "metadata_factor_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/factors_for_book16_inherited.json",
+    "budget_bits": 1.8,
+    "selection_calibration_sha256": "202f92d618c41769f8344c584e6bd00e29300e171bea7dbf8721191d4a262e18",
+    "key_amplitude": "norm",
+    "selected_stages": [
+      [
+        "k",
+        24,
+        3,
+        0
+      ],
+      [
+        "v",
+        19,
+        2,
+        0
+      ],
+      [
+        "k",
+        23,
+        2,
+        0
+      ],
+      [
+        "k",
+        22,
+        1,
+        0
+      ],
+      [
+        "k",
+        19,
+        2,
+        0
+      ],
+      [
+        "v",
+        19,
+        3,
+        0
+      ],
+      [
+        "k",
+        23,
+        1,
+        0
+      ],
+      [
+        "k",
+        22,
+        3,
+        0
+      ],
+      [
+        "k",
+        20,
+        3,
+        0
+      ],
+      [
+        "k",
+        14,
+        0,
+        0
+      ],
+      [
+        "k",
+        19,
+        3,
+        0
+      ],
+      [
+        "v",
+        22,
+        3,
+        0
+      ],
+      [
+        "k",
+        25,
+        1,
+        0
+      ],
+      [
+        "v",
+        22,
+        0,
+        0
+      ],
+      [
+        "k",
+        22,
+        0,
+        0
+      ],
+      [
+        "k",
+        15,
+        2,
+        0
+      ],
+      [
+        "v",
+        15,
+        2,
+        0
+      ],
+      [
+        "v",
+        24,
+        3,
+        0
+      ],
+      [
+        "k",
+        16,
+        1,
+        0
+      ],
+      [
+        "v",
+        20,
+        3,
+        0
+      ],
+      [
+        "k",
+        27,
+        2,
+        0
+      ],
+      [
+        "v",
+        23,
+        1,
+        0
+      ],
+      [
+        "k",
+        27,
+        3,
+        0
+      ],
+      [
+        "v",
+        16,
+        0,
+        0
+      ],
+      [
+        "k",
+        23,
+        0,
+        0
+      ],
+      [
+        "k",
+        21,
+        2,
+        0
+      ],
+      [
+        "v",
+        14,
+        0,
+        0
+      ],
+      [
+        "k",
+        16,
+        0,
+        0
+      ],
+      [
+        "v",
+        22,
+        1,
+        0
+      ],
+      [
+        "v",
+        23,
+        2,
+        0
+      ],
+      [
+        "k",
+        26,
+        2,
+        0
+      ],
+      [
+        "v",
+        21,
+        2,
+        0
+      ],
+      [
+        "v",
+        26,
+        2,
+        0
+      ],
+      [
+        "k",
+        21,
+        0,
+        0
+      ],
+      [
+        "v",
+        14,
+        1,
+        0
+      ],
+      [
+        "v",
+        20,
+        2,
+        0
+      ],
+      [
+        "v",
+        17,
+        2,
+        0
+      ],
+      [
+        "k",
+        21,
+        1,
+        0
+      ],
+      [
+        "k",
+        25,
+        3,
+        0
+      ],
+      [
+        "v",
+        18,
+        2,
+        0
+      ],
+      [
+        "k",
+        17,
+        2,
+        0
+      ],
+      [
+        "v",
+        21,
+        3,
+        0
+      ],
+      [
+        "v",
+        27,
+        3,
+        0
+      ],
+      [
+        "v",
+        21,
+        0,
+        0
+      ],
+      [
+        "v",
+        27,
+        2,
+        0
+      ],
+      [
+        "v",
+        8,
+        3,
+        0
+      ],
+      [
+        "k",
+        8,
+        3,
+        0
+      ],
+      [
+        "v",
+        25,
+        1,
+        0
+      ],
+      [
+        "k",
+        26,
+        3,
+        0
+      ],
+      [
+        "v",
+        16,
+        1,
+        0
+      ],
+      [
+        "k",
+        14,
+        1,
+        0
+      ],
+      [
+        "v",
+        17,
+        3,
+        0
+      ],
+      [
+        "k",
+        16,
+        2,
+        0
+      ],
+      [
+        "k",
+        17,
+        3,
+        0
+      ],
+      [
+        "k",
+        20,
+        2,
+        0
+      ],
+      [
+        "k",
+        12,
+        3,
+        0
+      ],
+      [
+        "v",
+        27,
+        0,
+        0
+      ],
+      [
+        "v",
+        26,
+        0,
+        0
+      ],
+      [
+        "k",
+        11,
+        3,
+        0
+      ],
+      [
+        "k",
+        18,
+        2,
+        0
+      ],
+      [
+        "v",
+        18,
+        1,
+        0
+      ],
+      [
+        "v",
+        16,
+        2,
+        0
+      ],
+      [
+        "k",
+        27,
+        0,
+        0
+      ],
+      [
+        "k",
+        26,
+        0,
+        0
+      ],
+      [
+        "k",
+        18,
+        1,
+        0
+      ],
+      [
+        "v",
+        25,
+        3,
+        0
+      ],
+      [
+        "v",
+        17,
+        1,
+        0
+      ],
+      [
+        "v",
+        26,
+        3,
+        0
+      ],
+      [
+        "k",
+        17,
+        1,
+        0
+      ],
+      [
+        "k",
+        22,
+        2,
+        0
+      ],
+      [
+        "v",
+        20,
+        1,
+        0
+      ],
+      [
+        "v",
+        15,
+        0,
+        0
+      ],
+      [
+        "k",
+        20,
+        0,
+        0
+      ],
+      [
+        "k",
+        20,
+        1,
+        0
+      ],
+      [
+        "k",
+        26,
+        1,
+        0
+      ],
+      [
+        "k",
+        15,
+        0,
+        0
+      ],
+      [
+        "k",
+        14,
+        2,
+        0
+      ],
+      [
+        "v",
+        21,
+        1,
+        0
+      ],
+      [
+        "v",
+        12,
+        3,
+        0
+      ],
+      [
+        "v",
+        23,
+        0,
+        0
+      ],
+      [
+        "v",
+        19,
+        0,
+        0
+      ],
+      [
+        "v",
+        11,
+        3,
+        0
+      ],
+      [
+        "k",
+        4,
+        1,
+        0
+      ],
+      [
+        "k",
+        21,
+        3,
+        0
+      ],
+      [
+        "v",
+        12,
+        1,
+        0
+      ],
+      [
+        "k",
+        12,
+        1,
+        0
+      ],
+      [
+        "k",
+        9,
+        0,
+        0
+      ],
+      [
+        "v",
+        22,
+        2,
+        0
+      ],
+      [
+        "k",
+        9,
+        3,
+        0
+      ],
+      [
+        "v",
+        3,
+        1,
+        0
+      ],
+      [
+        "k",
+        19,
+        0,
+        0
+      ],
+      [
+        "k",
+        9,
+        1,
+        0
+      ],
+      [
+        "v",
+        15,
+        3,
+        0
+      ],
+      [
+        "v",
+        26,
+        1,
+        0
+      ],
+      [
+        "v",
+        14,
+        2,
+        0
+      ],
+      [
+        "k",
+        15,
+        3,
+        0
+      ],
+      [
+        "k",
+        18,
+        3,
+        0
+      ],
+      [
+        "k",
+        3,
+        1,
+        0
+      ],
+      [
+        "v",
+        9,
+        3,
+        0
+      ],
+      [
+        "v",
+        9,
+        0,
+        0
+      ],
+      [
+        "v",
+        14,
+        3,
+        0
+      ],
+      [
+        "k",
+        13,
+        2,
+        0
+      ],
+      [
+        "k",
+        24,
+        1,
+        0
+      ],
+      [
+        "k",
+        14,
+        3,
+        0
+      ],
+      [
+        "v",
+        20,
+        0,
+        0
+      ],
+      [
+        "v",
+        9,
+        1,
+        0
+      ],
+      [
+        "v",
+        18,
+        3,
+        0
+      ],
+      [
+        "v",
+        13,
+        2,
+        0
+      ],
+      [
+        "v",
+        24,
+        1,
+        0
+      ],
+      [
+        "k",
+        11,
+        0,
+        0
+      ],
+      [
+        "v",
+        17,
+        0,
+        0
+      ],
+      [
+        "v",
+        9,
+        2,
+        0
+      ],
+      [
+        "k",
+        8,
+        1,
+        0
+      ],
+      [
+        "k",
+        5,
+        2,
+        0
+      ],
+      [
+        "v",
+        13,
+        0,
+        0
+      ],
+      [
+        "k",
+        5,
+        0,
+        0
+      ],
+      [
+        "k",
+        11,
+        1,
+        0
+      ],
+      [
+        "k",
+        10,
+        0,
+        0
+      ],
+      [
+        "k",
+        24,
+        2,
+        0
+      ],
+      [
+        "v",
+        4,
+        1,
+        0
+      ],
+      [
+        "k",
+        13,
+        0,
+        0
+      ],
+      [
+        "k",
+        7,
+        3,
+        0
+      ],
+      [
+        "v",
+        12,
+        2,
+        0
+      ],
+      [
+        "v",
+        16,
+        3,
+        0
+      ],
+      [
+        "v",
+        10,
+        0,
+        0
+      ],
+      [
+        "k",
+        17,
+        0,
+        0
+      ],
+      [
+        "v",
+        5,
+        2,
+        0
+      ],
+      [
+        "k",
+        12,
+        2,
+        0
+      ],
+      [
+        "v",
+        11,
+        0,
+        0
+      ],
+      [
+        "v",
+        7,
+        3,
+        0
+      ],
+      [
+        "k",
+        8,
+        0,
+        0
+      ],
+      [
+        "k",
+        10,
+        2,
+        0
+      ],
+      [
+        "k",
+        9,
+        2,
+        0
+      ],
+      [
+        "v",
+        1,
+        3,
+        0
+      ],
+      [
+        "k",
+        15,
+        1,
+        0
+      ],
+      [
+        "v",
+        8,
+        1,
+        0
+      ],
+      [
+        "k",
+        16,
+        3,
+        0
+      ],
+      [
+        "v",
+        5,
+        0,
+        0
+      ],
+      [
+        "v",
+        24,
+        2,
+        0
+      ],
+      [
+        "k",
+        1,
+        3,
+        0
+      ],
+      [
+        "k",
+        4,
+        0,
+        0
+      ],
+      [
+        "v",
+        2,
+        0,
+        0
+      ],
+      [
+        "k",
+        7,
+        0,
+        0
+      ],
+      [
+        "v",
+        7,
+        0,
+        0
+      ],
+      [
+        "v",
+        11,
+        1,
+        0
+      ],
+      [
+        "v",
+        4,
+        0,
+        0
+      ],
+      [
+        "k",
+        13,
+        1,
+        0
+      ],
+      [
+        "k",
+        13,
+        3,
+        0
+      ],
+      [
+        "v",
+        10,
+        2,
+        0
+      ],
+      [
+        "k",
+        2,
+        0,
+        0
+      ],
+      [
+        "v",
+        13,
+        3,
+        0
+      ],
+      [
+        "v",
+        8,
+        0,
+        0
+      ],
+      [
+        "v",
+        15,
+        1,
+        0
+      ],
+      [
+        "k",
+        5,
+        3,
+        0
+      ],
+      [
+        "v",
+        6,
+        1,
+        0
+      ],
+      [
+        "v",
+        2,
+        2,
+        0
+      ],
+      [
+        "v",
+        1,
+        0,
+        0
+      ],
+      [
+        "v",
+        3,
+        2,
+        0
+      ],
+      [
+        "k",
+        1,
+        0,
+        0
+      ],
+      [
+        "k",
+        7,
+        1,
+        0
+      ],
+      [
+        "k",
+        6,
+        1,
+        0
+      ],
+      [
+        "v",
+        13,
+        1,
+        0
+      ],
+      [
+        "k",
+        3,
+        2,
+        0
+      ],
+      [
+        "v",
+        7,
+        2,
+        0
+      ],
+      [
+        "k",
+        7,
+        2,
+        0
+      ],
+      [
+        "v",
+        0,
+        2,
+        0
+      ],
+      [
+        "v",
+        5,
+        1,
+        0
+      ],
+      [
+        "v",
+        12,
+        0,
+        0
+      ],
+      [
+        "k",
+        12,
+        0,
+        0
+      ],
+      [
+        "v",
+        7,
+        1,
+        0
+      ],
+      [
+        "k",
+        5,
+        1,
+        0
+      ],
+      [
+        "k",
+        2,
+        2,
+        0
+      ],
+      [
+        "k",
+        10,
+        1,
+        0
+      ],
+      [
+        "v",
+        2,
+        3,
+        0
+      ],
+      [
+        "v",
+        10,
+        1,
+        0
+      ],
+      [
+        "v",
+        5,
+        3,
+        0
+      ],
+      [
+        "v",
+        0,
+        0,
+        0
+      ],
+      [
+        "k",
+        4,
+        2,
+        0
+      ],
+      [
+        "k",
+        0,
+        2,
+        0
+      ],
+      [
+        "k",
+        8,
+        2,
+        0
+      ],
+      [
+        "k",
+        6,
+        0,
+        0
+      ],
+      [
+        "v",
+        0,
+        1,
+        0
+      ],
+      [
+        "v",
+        4,
+        2,
+        0
+      ],
+      [
+        "k",
+        25,
+        0,
+        0
+      ],
+      [
+        "k",
+        2,
+        3,
+        0
+      ],
+      [
+        "k",
+        10,
+        3,
+        0
+      ],
+      [
+        "k",
+        0,
+        0,
+        0
+      ],
+      [
+        "k",
+        4,
+        3,
+        0
+      ],
+      [
+        "k",
+        18,
+        0,
+        0
+      ],
+      [
+        "k",
+        23,
+        3,
+        0
+      ],
+      [
+        "v",
+        8,
+        2,
+        0
+      ],
+      [
+        "v",
+        3,
+        0,
+        0
+      ],
+      [
+        "v",
+        25,
+        0,
+        0
+      ],
+      [
+        "k",
+        6,
+        2,
+        0
+      ],
+      [
+        "k",
+        3,
+        0,
+        0
+      ],
+      [
+        "v",
+        18,
+        0,
+        0
+      ],
+      [
+        "v",
+        2,
+        1,
+        0
+      ],
+      [
+        "v",
+        1,
+        2,
+        0
+      ],
+      [
+        "k",
+        0,
+        1,
+        0
+      ],
+      [
+        "v",
+        1,
+        1,
+        0
+      ],
+      [
+        "k",
+        11,
+        2,
+        0
+      ],
+      [
+        "k",
+        1,
+        2,
+        0
+      ],
+      [
+        "k",
+        6,
+        3,
+        0
+      ],
+      [
+        "k",
+        2,
+        1,
+        0
+      ],
+      [
+        "v",
+        0,
+        3,
+        0
+      ],
+      [
+        "k",
+        19,
+        1,
+        0
+      ],
+      [
+        "v",
+        10,
+        3,
+        0
+      ],
+      [
+        "v",
+        6,
+        2,
+        0
+      ],
+      [
+        "v",
+        3,
+        3,
+        0
+      ],
+      [
+        "k",
+        1,
+        1,
+        0
+      ],
+      [
+        "k",
+        25,
+        2,
+        0
+      ],
+      [
+        "v",
+        23,
+        3,
+        0
+      ],
+      [
+        "v",
+        11,
+        2,
+        0
+      ],
+      [
+        "v",
+        6,
+        3,
+        0
+      ],
+      [
+        "k",
+        3,
+        3,
+        0
+      ],
+      [
+        "v",
+        19,
+        1,
+        0
+      ],
+      [
+        "k",
+        24,
+        0,
+        0
+      ],
+      [
+        "v",
+        4,
+        3,
+        0
+      ],
+      [
+        "v",
+        27,
+        1,
+        0
+      ],
+      [
+        "v",
+        6,
+        0,
+        0
+      ],
+      [
+        "v",
+        25,
+        2,
+        0
+      ],
+      [
+        "k",
+        27,
+        1,
+        0
+      ],
+      [
+        "k",
+        0,
+        3,
+        0
+      ],
+      [
+        "v",
+        24,
+        0,
+        0
+      ]
+    ],
+    "residual_layout_reference": "actual",
+    "res_stages_limit": 43,
+    "round7_policy_path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/policy_k1_cond.json"
+  },
+  "frozen_variant_sha256": "31fead66de6df98ef3572996218dd1249d8e6f83d7a90bcd329d2f8c7b77b1fc",
+  "asset_sha256": {
+    "direction_book_path": "af29f26ddcbdf4ac6f098c3df497d2d741f0e7909c13ecc090194446846c9589",
+    "metadata_factor_path": "8f47c56af5fe5e4da99bae05b83084173c5a55601c46c91130894075907e9cea",
+    "round7_policy_path": "505dbbbc67d50023ec0f60fb31ab9a31b0a27212fe7c3e8a2e72de0307b3f38f"
+  },
+  "variant_original_source": {
+    "path": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/confirm_doc128_s0.json",
+    "sha256": "aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4",
+    "name": "r7_joint_k1_gt_cond"
+  },
+  "base_profile_numeric_fields_unchanged": false,
+  "candidate": {
+    "mode": "Shuffled"
+  },
+  "scope": "Round11 SourceGroupD96 development; fixed first32 Text/Info and16 Doc/Chart; no source-quality claim from QA0",
+  "parameter_fit_or_new_algorithm": true,
+  "native_FP16_visual_source_retained_for_serving": false,
+  "timing_scope": "instrumented quality-run prototype; not controlled speed or HBM traffic benchmark",
+  "first_logits_evidence": "one actual raw last-position logits vector before HF logits processors, saved on data disk",
+  "technical_only": false,
+  "source_driver_contract": "Round11 custom packed inference; canonical SourceRun admission not claimed",
+  "model_identity": {
+    "status": "PASS_EXACT_HF_REQUIRED_TREE",
+    "revision": "259a3b64a14623c0ec91a045cb43f7c5af5fa6af",
+    "source_lock_sha256": "9d6ad47a69be644749017026e732ed8d08bca4967985287ed62a245fbf678d67",
+    "files": [
+      {
+        "file": "added_tokens.json",
+        "bytes": 811,
+        "sha256": "222d504fd2fb42e08a43b7ef6383a130483d34233f506b6ccc799655de48dff8"
+      },
+      {
+        "file": "chat_template.jinja",
+        "bytes": 481,
+        "sha256": "b3e3fa7cdeceec1d3dfe0d17b77724baf3857714e688f3a700261567e96140eb"
+      },
+      {
+        "file": "config.json",
+        "bytes": 1960,
+        "sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637"
+      },
+      {
+        "file": "generation_config.json",
+        "bytes": 126,
+        "sha256": "c142bebeae7dfc9ef119d3f12fb03022261ceef51320c75ead103af4d8e150c2"
+      },
+      {
+        "file": "merges.txt",
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      {
+        "file": "model-00001-of-00004.safetensors",
+        "bytes": 4877374576,
+        "sha256": "7a34fa2f58c41aa1e6dbf28e9f4e43be590fb6077d33e4befe54a8413db03641"
+      },
+      {
+        "file": "model-00002-of-00004.safetensors",
+        "bytes": 4991497800,
+        "sha256": "11a0e1a80e29b9451771e03b9b2da118cfd8da0912631b6de0d4e1137f63dffc"
+      },
+      {
+        "file": "model-00003-of-00004.safetensors",
+        "bytes": 4932774744,
+        "sha256": "8b578604029b9046396b61bf4ae223e0e85c9e89e138da067505bc6f7f9de921"
+      },
+      {
+        "file": "model-00004-of-00004.safetensors",
+        "bytes": 1087199376,
+        "sha256": "6814f162cc1ca061db92cb8808c7202876d8c1a56a0e7e856db12b21cba23a28"
+      },
+      {
+        "file": "model.safetensors.index.json",
+        "bytes": 73875,
+        "sha256": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4"
+      },
+      {
+        "file": "preprocessor_config.json",
+        "bytes": 666,
+        "sha256": "af09ffbe57900d5ae07f93f4c20693559a272e32fa6c5f816132cb71985aac98"
+      },
+      {
+        "file": "processor_config.json",
+        "bytes": 72,
+        "sha256": "3511f4ae65c2fa5c1ab6a0fb2bb2fe767d6f0ee53ba412953b33acc892327c2a"
+      },
+      {
+        "file": "special_tokens_map.json",
+        "bytes": 877,
+        "sha256": "e847a86633f2470a0d9fed41b5a36ff1f4435050929aa80b28c41d28420501b2"
+      },
+      {
+        "file": "tokenizer.json",
+        "bytes": 11423732,
+        "sha256": "7cc80b7e20adf8bf6f6ca442bf1abfac8056bb3b7d3e0b11c9d497d3e79398c9"
+      },
+      {
+        "file": "tokenizer_config.json",
+        "bytes": 6861,
+        "sha256": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f"
+      },
+      {
+        "file": "vocab.json",
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      }
+    ],
+    "verification_audit": {
+      "binding_status": "SHA_LOCKED_PRIOR_FULL_HASH_AND_STAT_BINDING",
+      "binding_sha256": "8d8a651bc0a865551aaeb8fb9b8306c6e7c12b53a09d9bc1d46151109f050bb2",
+      "prior_full_hash_proof": "${DATA_ROOT}/audit/M1_official_identity_verification_v2.json",
+      "prior_full_hash_proof_sha256": "b980d54185173da02d2aee744e24355e8c5a53338e1d620ff495a85eae3d26ab",
+      "checks": [
+        {
+          "file": "added_tokens.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "chat_template.jinja",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "generation_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "merges.txt",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "model-00001-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00002-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00003-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model-00004-of-00004.safetensors",
+          "content_hash_recomputed_now": false,
+          "mode": "PRIOR_FULL_SHA_EXACT_UNCHANGED_STAT"
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "preprocessor_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "processor_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "special_tokens_map.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "tokenizer.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        },
+        {
+          "file": "vocab.json",
+          "content_hash_recomputed_now": true,
+          "mode": "FRESH_FULL_CONTENT_HASH"
+        }
+      ]
+    }
+  },
+  "torch_version": "2.4.1+cu121",
+  "transformers_version": "5.12.0",
+  "CUDA_version": "12.1",
+  "hardware": "NVIDIA GeForce RTX 3090",
+  "python_version": "3.10.20",
+  "weight_dtype": "float16",
+  "tf32": false,
+  "seed": 0,
+  "attention_implementation": "sdpa",
+  "model_residency": {
+    "weight_resident_bytes": 15888747520,
+    "all_model_tensor_bytes": 15888748032,
+    "buffer_bytes_incremental": 512
+  },
+  "processor_id": "OpenGVLab/InternVL3-8B-hf",
+  "processor_version": "5.12.0",
+  "processor_file_hashes": {
+    "added_tokens.json": "222d504fd2fb42e08a43b7ef6383a130483d34233f506b6ccc799655de48dff8",
+    "chat_template.jinja": "b3e3fa7cdeceec1d3dfe0d17b77724baf3857714e688f3a700261567e96140eb",
+    "config.json": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637",
+    "generation_config.json": "c142bebeae7dfc9ef119d3f12fb03022261ceef51320c75ead103af4d8e150c2",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "model.safetensors.index.json": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4",
+    "preprocessor_config.json": "af09ffbe57900d5ae07f93f4c20693559a272e32fa6c5f816132cb71985aac98",
+    "processor_config.json": "3511f4ae65c2fa5c1ab6a0fb2bb2fe767d6f0ee53ba412953b33acc892327c2a",
+    "special_tokens_map.json": "e847a86633f2470a0d9fed41b5a36ff1f4435050929aa80b28c41d28420501b2",
+    "tokenizer.json": "7cc80b7e20adf8bf6f6ca442bf1abfac8056bb3b7d3e0b11c9d497d3e79398c9",
+    "tokenizer_config.json": "b336af8282760f5e596726eb9834ce20dd6625d55aa7df73030ef4c59028567f",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "generation_native": {
+    "max_length": null,
+    "max_new_tokens": null,
+    "min_length": null,
+    "min_new_tokens": null,
+    "early_stopping": null,
+    "max_time": null,
+    "stop_strings": null,
+    "do_sample": null,
+    "num_beams": null,
+    "use_cache": null,
+    "cache_implementation": null,
+    "cache_config": null,
+    "temperature": null,
+    "top_k": null,
+    "top_p": null,
+    "min_p": null,
+    "top_h": null,
+    "typical_p": null,
+    "epsilon_cutoff": null,
+    "eta_cutoff": null,
+    "repetition_penalty": null,
+    "encoder_repetition_penalty": null,
+    "length_penalty": null,
+    "no_repeat_ngram_size": null,
+    "bad_words_ids": null,
+    "renormalize_logits": null,
+    "forced_bos_token_id": null,
+    "forced_eos_token_id": null,
+    "remove_invalid_values": null,
+    "exponential_decay_length_penalty": null,
+    "suppress_tokens": null,
+    "begin_suppress_tokens": null,
+    "sequence_bias": null,
+    "token_healing": null,
+    "guidance_scale": null,
+    "watermarking_config": null,
+    "num_return_sequences": null,
+    "output_attentions": null,
+    "output_hidden_states": null,
+    "output_scores": null,
+    "output_logits": null,
+    "return_dict_in_generate": null,
+    "pad_token_id": null,
+    "bos_token_id": 151643,
+    "eos_token_id": 151645,
+    "encoder_no_repeat_ngram_size": null,
+    "decoder_start_token_id": null,
+    "is_assistant": null,
+    "num_assistant_tokens": null,
+    "num_assistant_tokens_schedule": null,
+    "assistant_confidence_threshold": null,
+    "prompt_lookup_num_tokens": null,
+    "max_matching_ngram_size": null,
+    "assistant_early_exit": null,
+    "assistant_lookbehind": null,
+    "target_lookbehind": null,
+    "compile_config": null,
+    "disable_compile": null,
+    "continuous_batching_config": null,
+    "low_memory": null,
+    "penalty_alpha": null,
+    "dola_layers": null,
+    "diversity_penalty": null,
+    "num_beam_groups": null,
+    "constraints": null,
+    "force_words_ids": null,
+    "prefill_chunk_size": null,
+    "_from_model_config": true,
+    "transformers_version": "5.12.0"
+  },
+  "generation_overrides": {
+    "do_sample": false,
+    "max_new_tokens": 64,
+    "use_cache": true,
+    "return_dict_in_generate": false
+  },
+  "tokenizer_class": "transformers.models.qwen2.tokenization_qwen2.Qwen2Tokenizer",
+  "tokenizer_is_fast": true,
+  "tokenizers_version": "0.22.2",
+  "decode_overrides": {
+    "clean_up_tokenization_spaces": false,
+    "skip_special_tokens": true
+  },
+  "runtime_library_source_sha256": {
+    "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/internvl/modeling_internvl.py": "fec9f18a83dea42dd32730555cac5a66ece67ef5f236f32967fed1f296d42bd6",
+    "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/internvl/processing_internvl.py": "1f2e8fccfa29a105bff6253500bdfdb4c6ecbc5cae90fddcdeada3db3afaf47b",
+    "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/transformers/models/qwen2/tokenization_qwen2.py": "fac4e6576bfe2369731be147a4e530f262bdf32f2ac50436f96f0d8bdd2fc628"
+  },
+  "source_group_identity": {
+    "schema": "trajkv.round11.source_group.v1",
+    "manifest_sha256": "663076f21fc7df7d00253d06604e9f46da06ffe9d62532cd66d82794c05fa9b4",
+    "dataset": "infovqa",
+    "input_sha256": "a8e3cae01c7dbc42ca11e531a6a82f3ed908c5458f5f277603dee6d15e09a49a",
+    "input_count": 64,
+    "start": 0,
+    "count": 32,
+    "ids": [
+      "infovqa:train:83527",
+      "infovqa:train:85475",
+      "infovqa:train:84225",
+      "infovqa:train:70610",
+      "infovqa:train:77770",
+      "infovqa:train:88798",
+      "infovqa:train:77546",
+      "infovqa:train:85545",
+      "infovqa:train:70409",
+      "infovqa:train:84560",
+      "infovqa:train:83514",
+      "infovqa:train:68003",
+      "infovqa:train:82922",
+      "infovqa:train:79956",
+      "infovqa:train:87400",
+      "infovqa:train:83891",
+      "infovqa:train:85379",
+      "infovqa:train:69335",
+      "infovqa:train:69501",
+      "infovqa:train:90038",
+      "infovqa:train:66482",
+      "infovqa:train:68339",
+      "infovqa:train:87048",
+      "infovqa:train:82496",
+      "infovqa:train:86238",
+      "infovqa:train:71320",
+      "infovqa:train:77456",
+      "infovqa:train:71313",
+      "infovqa:train:76454",
+      "infovqa:train:76699",
+      "infovqa:train:87297",
+      "infovqa:train:80514"
+    ],
+    "selection_rule": "first32 Text/Info and first16 Doc/Chart of frozen D160; no answer selection"
+  },
+  "runtime_process": {
+    "PID": 257584,
+    "parent_PID": 241710,
+    "source_snapshot_root": "${DATA_ROOT}/jobs/bm_R11_primary_gpu1_v2.source"
+  },
+  "frozen_base_lineage_numeric_fields_unchanged": true,
+  "frozen_low43_profile_is_current_deployment_proof": false,
+  "round11_candidate_assets": {
+    "schema": "trajkv.round11.deployment.v1",
+    "mode": "Shuffled",
+    "encoding_applied": true,
+    "base_lineage": "original_r7_joint_k1_gt_cond_K23_V20_43",
+    "new_parameter_fit": false,
+    "fixed_mechanism_tile_tokens": 128,
+    "fixed_candidate_chunk": 32,
+    "same_complete_B0_bytes": true,
+    "new_frame_is_deployment_change": true,
+    "frozen_low43_profile_is_current_deployment_proof": false
+  },
+  "round11_deployment_contract": {
+    "schema": "trajkv.round11.deployment.v1",
+    "base_driver_sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+    "base_variant_is_encoding_lineage_only": true,
+    "physical_budget": "B0=4590*N+89733 complete persistent owner bytes",
+    "actual_factory_and_flags": "records.jsonl r7_bridge.round11_value_candidate",
+    "fresh_free_generation_QA_for_complete_stage": 384,
+    "reused_reference_views_for_complete_stage": 288,
+    "QA0_is_not_task_quality": true
+  }
+}

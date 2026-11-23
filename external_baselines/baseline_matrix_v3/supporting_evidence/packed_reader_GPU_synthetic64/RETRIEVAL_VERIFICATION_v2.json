@@ -1,0 +1,88 @@
+{
+  "schema": "trajkv.round11.kernel_retrieval_verification.v1",
+  "status": "PASS_REMOTE_SNAPSHOT_OUTPUT_INDEPENDENT_SHA",
+  "QA_events": 0,
+  "actual_model_calls": 0,
+  "gpu_cases": 64,
+  "cpu_cases": 32,
+  "scalar_half_checks": 8960,
+  "mode0_bitwise_old_cases": 16,
+  "max_abs_dense": 0.0002728104591369629,
+  "max_abs_blockwise": 0.00026553869247436523,
+  "device": "NVIDIA GeForce RTX 3090",
+  "torch": "2.4.1+cu121",
+  "launch_pid": 234299,
+  "actual_launcher_harness_is_snapshot": true,
+  "stage_local_remote_snapshot_sources": {
+    "round11_attention_v1.py": {
+      "stage_sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f",
+      "local_sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f",
+      "remote_snapshot_sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f",
+      "all_match": true
+    },
+    "round11_joint_value_v1.py": {
+      "stage_sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b",
+      "local_sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b",
+      "remote_snapshot_sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b",
+      "all_match": true
+    },
+    "round11_kernel_technical_v1.py": {
+      "stage_sha256": "0d62665c25c0ce15b9d1e299232e469df8739d85a6287f14ba01fe87453c1485",
+      "local_sha256": "0d62665c25c0ce15b9d1e299232e469df8739d85a6287f14ba01fe87453c1485",
+      "remote_snapshot_sha256": "0d62665c25c0ce15b9d1e299232e469df8739d85a6287f14ba01fe87453c1485",
+      "all_match": true
+    }
+  },
+  "output_sha256": "c45141f1a8490bff8e940a14ff3454529a13343f5914c8437f779386cb95a358",
+  "retrieved_files": {
+    "launch.json": {
+      "sha256": "80696111f0ddec7b4f34d181ad878df70ed3f2f106e65f77b4d79e62cb91b875",
+      "bytes": 2986,
+      "remote_sha256_match": true
+    },
+    "job.json": {
+      "sha256": "0574ff6cfd21cc561063b1de1b30e605ebb6c42a6a1cf323f1d6e3a9402d7f76",
+      "bytes": 2610,
+      "remote_sha256_match": true
+    },
+    "worker.log": {
+      "sha256": "fac77fc5ab76f7cbdc6290aad815d3362154356d77eac2796ad4f197c99d5bdb",
+      "bytes": 572,
+      "remote_sha256_match": true
+    },
+    "kernel_technical_v1.json": {
+      "sha256": "c45141f1a8490bff8e940a14ff3454529a13343f5914c8437f779386cb95a358",
+      "bytes": 36783,
+      "remote_sha256_match": true
+    },
+    "source/code/round11_attention_v1.py": {
+      "sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f",
+      "bytes": 9771,
+      "remote_sha256_match": true
+    },
+    "source/code/round11_joint_value_v1.py": {
+      "sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b",
+      "bytes": 12630,
+      "remote_sha256_match": true
+    },
+    "source/code/round11_kernel_technical_v1.py": {
+      "sha256": "0d62665c25c0ce15b9d1e299232e469df8739d85a6287f14ba01fe87453c1485",
+      "bytes": 20305,
+      "remote_sha256_match": true
+    },
+    "source/sha256.json": {
+      "sha256": "44236f5020866648e70718757f315064bbdf491d2d89c5ee52ac9a1f15b34db2",
+      "bytes": 44485,
+      "remote_sha256_match": true
+    }
+  },
+  "launcher_source_inventory_sha256": "44236f5020866648e70718757f315064bbdf491d2d89c5ee52ac9a1f15b34db2",
+  "single_softmax_GQA7_text37": true,
+  "frozen_R7_K_text_online_math_identical": true,
+  "new_GPU_or_model_job_started_by_retrieval": false,
+  "launcher_source_inventory_entry_count": 368,
+  "launcher_source_inventory_sha256_matches_receipt": true,
+  "launcher_source_inventory_covers_three_R11_sources": true,
+  "verification_revision": "v2 corrects v1 digest-only empty-inventory misidentification after reading the complete retrieved inventory",
+  "supersedes": "RETRIEVAL_VERIFICATION.json"
+}

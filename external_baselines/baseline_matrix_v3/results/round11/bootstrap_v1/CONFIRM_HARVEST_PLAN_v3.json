@@ -1,0 +1,1295 @@
+{
+  "schema": "trajkv.round11.confirmation_harvest_plan.v2",
+  "input_manifest_path": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\CONFIRM128_INPUT_MANIFEST_v1.json",
+  "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+  "selection_manifest_path": "${PROJECT_ROOT}\\configs\\round11_v1\\CONF2_SELECTION_MANIFEST_v2.json",
+  "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915",
+  "domains": {
+    "textvqa": {
+      "inputs": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\textvqa_confirm48_inputs.jsonl",
+      "inputs_sha256": "d285943e033ad12765bdaf1de43b9fc0992dc15618bd968de51d4abdebd327e2",
+      "refs": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\textvqa_confirm48_refs.jsonl",
+      "refs_sha256": "b079131c2d7788f49717631580f8dfc68079d37b9a056b0d6bf66cfaf2350de6",
+      "source_lock": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\confirm128_source_lock_v1.json",
+      "source_lock_sha256": "b1a8da4b05c65d367cd49c934dc0f4878c7ccc24cefd018243408324cb441d50"
+    },
+    "infovqa": {
+      "inputs": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\infovqa_confirm48_inputs.jsonl",
+      "inputs_sha256": "ada5b52c51111fa1fa8e20297b0f6da110cb4dc9e21b200324cd081d0d0c928c",
+      "refs": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\infovqa_confirm48_refs.jsonl",
+      "refs_sha256": "84c897f68a7cd963fe21b09d923b07238bfd8e330e91c6ec11bebafd56059940",
+      "source_lock": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\confirm128_source_lock_v1.json",
+      "source_lock_sha256": "b1a8da4b05c65d367cd49c934dc0f4878c7ccc24cefd018243408324cb441d50"
+    },
+    "docvqa": {
+      "inputs": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\docvqa_confirm16_inputs.jsonl",
+      "inputs_sha256": "0134e4050a69107a3a92a3c8ea14dbf6ec090fc6ace7aee27f5488eae5661d1d",
+      "refs": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\docvqa_confirm16_refs.jsonl",
+      "refs_sha256": "cdb54d921a4518a7d7d6c67c62d6f6e047ac93be913e3a525e39bb18c0b4bd0b",
+      "source_lock": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\confirm128_source_lock_v1.json",
+      "source_lock_sha256": "b1a8da4b05c65d367cd49c934dc0f4878c7ccc24cefd018243408324cb441d50"
+    },
+    "chartqa": {
+      "inputs": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\chartqa_confirm16_inputs.jsonl",
+      "inputs_sha256": "7c7d55ac72ede72fcc672b41f7ba01ca9b37ba56346b0d0b83e838955a7c73d0",
+      "refs": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\chartqa_confirm16_refs.jsonl",
+      "refs_sha256": "1749f230f52b3c11959964d1380ef690f920caf26a39a4a1e07c5e31a50e25d1",
+      "source_lock": "${EVIDENCE_ROOT}\\results\\round11\\confirmation_inputs_v1\\remote_materialization_v1\\inputs\\confirm128_source_lock_v1.json",
+      "source_lock_sha256": "b1a8da4b05c65d367cd49c934dc0f4878c7ccc24cefd018243408324cb441d50"
+    }
+  },
+  "entries": [
+    {
+      "kind": "fresh",
+      "dataset": "textvqa",
+      "mode": "FP16",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_FP16_textvqa_v1",
+          "dataset": "textvqa",
+          "mode": "FP16",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_FP16_textvqa_v1.json",
+          "config_sha256": "c80baedead10b1abe210f506190259a26b03cadbcdface88e78bf2556782b203",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_FP16_textvqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "textvqa",
+      "mode": "R7low",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_R7low_textvqa_v1",
+          "dataset": "textvqa",
+          "mode": "R7low",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_R7low_textvqa_v1.json",
+          "config_sha256": "c9efaf2478c80edeabd33a5fcae0694965f495881041f40fedc79432118aaa6c",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_R7low_textvqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "textvqa",
+      "mode": "R7high",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_R7high_textvqa_v1",
+          "dataset": "textvqa",
+          "mode": "R7high",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_R7high_textvqa_v1.json",
+          "config_sha256": "7ddf320a5fef09285492d352bb687e986e69d07a61968159f4b71e85c1fba7cf",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_R7high_textvqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "textvqa",
+      "mode": "JointV",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_JointV_textvqa_v1",
+          "dataset": "textvqa",
+          "mode": "JointV",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_JointV_textvqa_v1.json",
+          "config_sha256": "db29c5670848d99791d54e4a8f29723a95f93be6ffd6428aeb8fca9d3bd02106",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_JointV_textvqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "textvqa",
+      "mode": "JointSpatialWO",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_JointSpatialWO_textvqa_v1",
+          "dataset": "textvqa",
+          "mode": "JointSpatialWO",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_JointSpatialWO_textvqa_v1.json",
+          "config_sha256": "c3851e90532631cc974be208c9f1d445028f20cabffce003aee12e6f9bfe109d",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_JointSpatialWO_textvqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "docvqa",
+      "mode": "FP16",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_FP16_docvqa_v1",
+          "dataset": "docvqa",
+          "mode": "FP16",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_FP16_docvqa_v1.json",
+          "config_sha256": "1f7a074b36c21a16efaa280e170500a27b90fde662d2b46fc212eaf40d7a01ed",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_FP16_docvqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "docvqa",
+      "mode": "R7low",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_R7low_docvqa_v1",
+          "dataset": "docvqa",
+          "mode": "R7low",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_R7low_docvqa_v1.json",
+          "config_sha256": "9911bd5caafba1b20e87ebb4d32b05360b016c8f0a986b57eee4c8b143d1bcfb",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_R7low_docvqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "docvqa",
+      "mode": "R7high",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_R7high_docvqa_v1",
+          "dataset": "docvqa",
+          "mode": "R7high",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_R7high_docvqa_v1.json",
+          "config_sha256": "c96cb2c87612a30216a9b3dc19da145acdc502a6766c430e876ff45826a80f9f",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_R7high_docvqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "docvqa",
+      "mode": "JointV",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_JointV_docvqa_v1",
+          "dataset": "docvqa",
+          "mode": "JointV",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_JointV_docvqa_v1.json",
+          "config_sha256": "4eb12b5273958d4991e1c27b8ca1bf35e8d10e2c4de2362619bed1805a8e1d2c",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_JointV_docvqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "docvqa",
+      "mode": "JointSpatialWO",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu0_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "0",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu0_v3"
+          ]
+        },
+        "job_sha256": "1253dc20b16963ce03e4c6537b79937750b26af755b17ab365aa3af6d58b788c",
+        "cell": {
+          "name": "CONF2_JointSpatialWO_docvqa_v1",
+          "dataset": "docvqa",
+          "mode": "JointSpatialWO",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_JointSpatialWO_docvqa_v1.json",
+          "config_sha256": "6302075ad4cf379e8e0dd1059387e0039cb527a5342d98cd117d8a02dce6c5df",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_JointSpatialWO_docvqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "0dad5a8609262f2dba3ecb389b473a9339f065bf4e9118673e8daa23f3d30669",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "infovqa",
+      "mode": "FP16",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_FP16_infovqa_v1",
+          "dataset": "infovqa",
+          "mode": "FP16",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_FP16_infovqa_v1.json",
+          "config_sha256": "8a129ca84466126261cadf2cf8593f9983e90ca423a34cf012f4de6b5b5b60e5",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_FP16_infovqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "infovqa",
+      "mode": "R7low",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_R7low_infovqa_v1",
+          "dataset": "infovqa",
+          "mode": "R7low",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_R7low_infovqa_v1.json",
+          "config_sha256": "61c038f46f515206bb102d1ae04a300b66085d224dca3867f0efa1c9330918e1",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_R7low_infovqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "infovqa",
+      "mode": "R7high",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_R7high_infovqa_v1",
+          "dataset": "infovqa",
+          "mode": "R7high",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_R7high_infovqa_v1.json",
+          "config_sha256": "0d607549d0642ec68b22ae995d526a5402ddd86126010706552d7361439c66c8",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_R7high_infovqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "infovqa",
+      "mode": "JointV",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_JointV_infovqa_v1",
+          "dataset": "infovqa",
+          "mode": "JointV",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_JointV_infovqa_v1.json",
+          "config_sha256": "7ff4df7e48ee11a0fdada0b27ab59d088ca9c31f8f02c51274b637a5826ba2c2",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_JointV_infovqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "infovqa",
+      "mode": "JointSpatialWO",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_JointSpatialWO_infovqa_v1",
+          "dataset": "infovqa",
+          "mode": "JointSpatialWO",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_JointSpatialWO_infovqa_v1.json",
+          "config_sha256": "87045e13f64e183fb363ed0f3560b6575652b0b025af5b26a6973bf8a15007fa",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_JointSpatialWO_infovqa_v1",
+          "expected_QA": 48
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "chartqa",
+      "mode": "FP16",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_FP16_chartqa_v1",
+          "dataset": "chartqa",
+          "mode": "FP16",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_FP16_chartqa_v1.json",
+          "config_sha256": "efa4fdebed44e74474fe12f708e1d708bec177e7c424559992d97a4dd1d02a7b",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_FP16_chartqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "chartqa",
+      "mode": "R7low",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_R7low_chartqa_v1",
+          "dataset": "chartqa",
+          "mode": "R7low",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_R7low_chartqa_v1.json",
+          "config_sha256": "5a51a50146b3122cef5d2e166dcce7895ff51827cdaeb04e42803f5918e9af13",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_R7low_chartqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "chartqa",
+      "mode": "R7high",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_R7high_chartqa_v1",
+          "dataset": "chartqa",
+          "mode": "R7high",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_R7high_chartqa_v1.json",
+          "config_sha256": "974e8c042ce826117d49769b6edafdf3e56b0dbeabd81cdff2da5cb83cf05824",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_R7high_chartqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "chartqa",
+      "mode": "JointV",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_JointV_chartqa_v1",
+          "dataset": "chartqa",
+          "mode": "JointV",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_JointV_chartqa_v1.json",
+          "config_sha256": "23a8c7779bd43390a23e19da0e790b81bafa6512c3f8c8e3ba327e456b485398",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_JointV_chartqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    },
+    {
+      "kind": "fresh",
+      "dataset": "chartqa",
+      "mode": "JointSpatialWO",
+      "item": {
+        "root": "${DATA_ROOT}",
+        "job": {
+          "name": "bm_R11_confirm_gpu1_v3",
+          "env": {
+            "CUDA_VISIBLE_DEVICES": "1",
+            "HF_HUB_OFFLINE": "1",
+            "TRANSFORMERS_OFFLINE": "1",
+            "TOKENIZERS_PARALLELISM": "false",
+            "OMP_NUM_THREADS": "4",
+            "MKL_NUM_THREADS": "4",
+            "PYTHONUTF8": "1",
+            "PYTHONIOENCODING": "utf-8",
+            "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+            "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+            "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+            "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+            "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+            "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+            "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+            "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+            "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+            "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+            "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+            "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg",
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "CUDA_CACHE_MAXSIZE": "1073741824"
+          },
+          "argv": [
+            "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+            "-B",
+            "${DATA_ROOT}/code/round10_sequence_v1.py",
+            "--config",
+            "${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu1_v2.json",
+            "--output",
+            "${DATA_ROOT}/results/round11_v1/queues/confirm_gpu1_v3"
+          ]
+        },
+        "job_sha256": "a226b8c14dbc4fdc1b8df8bb15c60c8012f9f6565854fbfe13498996f714acf2",
+        "cell": {
+          "name": "CONF2_JointSpatialWO_chartqa_v1",
+          "dataset": "chartqa",
+          "mode": "JointSpatialWO",
+          "script": "code/round11_confirmation_runner_v2.py",
+          "script_sha256": "3db28f74add8ba98b5ea1cff928b4aada775408cde69c5629dbe0b2b75e25aca",
+          "config": "${DATA_ROOT}/configs/round11_v1/CONF2_JointSpatialWO_chartqa_v1.json",
+          "config_sha256": "7942a9ea88fd6e9ef6d924bab9d8fbd3c6ee5f93ccada71ef27e8c3926e809f5",
+          "output": "${DATA_ROOT}/results/round11_v1/confirmation/CONF2_JointSpatialWO_chartqa_v1",
+          "expected_QA": 16
+        },
+        "sequence_sha256": "10cb88a1c895902eb2722b856a809887578cf62bd67894de48d105c286496e7e",
+        "sequence_script_sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+        "input_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+        "selection_manifest_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+      }
+    }
+  ],
+  "expected_fresh_reference_QA": 384,
+  "expected_total_new_QA": 640,
+  "reused_reference_views": 0,
+  "setup_recovery": {
+    "failed_job_names": [
+      "bm_R11_confirm_gpu0_v2",
+      "bm_R11_confirm_gpu1_v2"
+    ],
+    "failure_stage": "missing_sequence_config_before_output_creation_or_START_CELL",
+    "new_free_QA_before_recovery": 0,
+    "selected_methods_inputs_algorithms_unchanged": true
+  }
+}

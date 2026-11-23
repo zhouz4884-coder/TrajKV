@@ -1,0 +1,142 @@
+{
+  "CUDA_version": "12.1",
+  "GPU_name": "NVIDIA GeForce RTX 3090",
+  "actual_cuda_executed": true,
+  "elapsed_seconds": 1.2917204390396364,
+  "encoder_checks": [
+    {
+      "JointSpatial_fields_bit_exact_to_v1_CPU": true,
+      "joint_after_sse": 762.1276009063123,
+      "joint_before_sse": 1802.5809997453007,
+      "joint_fields_bit_exact_to_v1_CPU": true,
+      "name": "normal",
+      "shuffled": {
+        "after_sse": 1669.4330564186503,
+        "before_sse": 1802.5809997453007,
+        "fields_bit_exact_to_v1_CPU": true,
+        "mode1_tokens": 30
+      },
+      "spatial": {
+        "after_sse": 1674.0068283775881,
+        "before_sse": 1802.5809997453007,
+        "fields_bit_exact_to_v1_CPU": true,
+        "mode1_tokens": 31
+      }
+    },
+    {
+      "JointSpatial_fields_bit_exact_to_v1_CPU": true,
+      "joint_after_sse": 8.898837222659495e-11,
+      "joint_before_sse": 3.491038569336524e-10,
+      "joint_fields_bit_exact_to_v1_CPU": true,
+      "name": "subnormal_alpha",
+      "shuffled": {
+        "after_sse": 8.898837222659495e-11,
+        "before_sse": 3.491038569336524e-10,
+        "fields_bit_exact_to_v1_CPU": true,
+        "mode1_tokens": 32
+      },
+      "spatial": {
+        "after_sse": 8.898837222659495e-11,
+        "before_sse": 3.491038569336524e-10,
+        "fields_bit_exact_to_v1_CPU": true,
+        "mode1_tokens": 32
+      }
+    },
+    {
+      "JointSpatial_fields_bit_exact_to_v1_CPU": true,
+      "joint_after_sse": 0.0,
+      "joint_before_sse": 0.0,
+      "joint_fields_bit_exact_to_v1_CPU": true,
+      "name": "maxfinite_cancellation_overflow_rejection",
+      "shuffled": {
+        "after_sse": 0.0,
+        "before_sse": 0.0,
+        "fields_bit_exact_to_v1_CPU": true,
+        "mode1_tokens": 0
+      },
+      "spatial": {
+        "after_sse": 0.0,
+        "before_sse": 0.0,
+        "fields_bit_exact_to_v1_CPU": true,
+        "mode1_tokens": 0
+      }
+    },
+    {
+      "JointSpatial_fields_bit_exact_to_v1_CPU": true,
+      "joint_after_sse": 4.494144439697266,
+      "joint_before_sse": 17.0,
+      "joint_fields_bit_exact_to_v1_CPU": true,
+      "name": "spatial_negative_zero_new_point",
+      "shuffled": {
+        "after_sse": 0.4990243911743164,
+        "before_sse": 17.0,
+        "fields_bit_exact_to_v1_CPU": true,
+        "mode1_tokens": 1
+      },
+      "spatial": {
+        "after_sse": 0.0,
+        "before_sse": 17.0,
+        "fields_bit_exact_to_v1_CPU": true,
+        "mode1_tokens": 1
+      }
+    }
+  ],
+  "frozen_v1_sha256": {
+    "round11_joint_value_v1.py": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b",
+    "round11_value_bank_v1.py": "59088f311564ccd269b6b7d6cf75398d90141c9eb6633e99958588962cfa6dfa"
+  },
+  "neighbor_checks": {
+    "admitted_candidate_bytes_match_v1_CPU": true,
+    "all196609_CPU_candidate_elements_bit_exact": true,
+    "all65536_patterns_both_directions_bit_exact": true,
+    "edge_down_bits": [
+      32769,
+      32769,
+      0,
+      1022,
+      1023,
+      31742,
+      31743,
+      64512,
+      32257,
+      32767
+    ],
+    "edge_input_bits": [
+      0,
+      32768,
+      1,
+      1023,
+      1024,
+      31743,
+      31744,
+      64512,
+      31745,
+      32767
+    ],
+    "edge_up_bits": [
+      1,
+      1,
+      2,
+      1024,
+      1025,
+      31744,
+      31744,
+      64511,
+      32257,
+      32767
+    ],
+    "signaling_NaN_quiet_payloads_preserved": true,
+    "unsupported_Half_CUDA_nextafter_calls": 0
+  },
+  "no_model_calls": true,
+  "no_task_quality_evidence": true,
+  "operator_change": "equivalent FP16 bit-neighbor replacement only; algorithm/candidate set/format/budget unchanged",
+  "schema": "trajkv.round11.numerical_cuda.v2",
+  "source_sha256": {
+    "round11_joint_value_v2.py": "b819a540f9a07dba153513b45a248f7b56cbe3b46f0115b6e2c7671260f5ea82",
+    "round11_numerical_cuda_v2.py": "c177eb9668d1f5fd7f82f87fd6c5e0f7a1f1d36f8070fc2ad17979e83d3d91dd",
+    "round11_value_bank_v2.py": "f65273b2f69c39e6ca9271a62f337b3e57b808d0f9e59325c6ef055456985e16"
+  },
+  "status": "PASS_ACTUAL_CUDA_NUMERICAL_V2",
+  "torch_version": "2.4.1+cu121"
+}

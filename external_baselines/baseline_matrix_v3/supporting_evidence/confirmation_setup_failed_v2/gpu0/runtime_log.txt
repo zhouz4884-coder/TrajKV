@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "${DATA_ROOT}/jobs/bm_R11_confirm_gpu0_v2.source/code/round10_sequence_v1.py", line 106, in <module>
+    main()
+  File "${DATA_ROOT}/jobs/bm_R11_confirm_gpu0_v2.source/code/round10_sequence_v1.py", line 36, in main
+    plan_sha = sha(a.config)
+  File "${DATA_ROOT}/jobs/bm_R11_confirm_gpu0_v2.source/code/round10_sequence_v1.py", line 16, in sha
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/pathlib.py", line 1126, in read_bytes
+    with self.open(mode='rb') as f:
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '${DATA_ROOT}/configs/round10_v1/R11_confirm_gpu0_v2.json'

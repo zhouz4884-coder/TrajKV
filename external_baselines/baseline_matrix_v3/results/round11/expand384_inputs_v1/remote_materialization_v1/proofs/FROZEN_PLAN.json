@@ -1,0 +1,462 @@
+{
+  "additional_fresh_free_QA_if_all5_executed": 1920,
+  "allow_pinned_public_download": false,
+  "base_R128_manifest": {
+    "bytes": 6512,
+    "path": "${DATA_ROOT}/configs/round11_inputs_v1/CONFIRM128_INPUT_MANIFEST_v1.json",
+    "sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380"
+  },
+  "cache_root": "${DATA_ROOT}/results/round11_v1/data_expand384_v1/cache",
+  "canonical_pools": [
+    {
+      "dataset": "textvqa",
+      "inputs": {
+        "inherited_path": "${DATA_ROOT}/configs/datasets/v3/textvqa_full_inputs.jsonl",
+        "path": "${DATA_ROOT}/data/registry/v3/textvqa_full_inputs.jsonl",
+        "path_rebinding": "same-content registry relocation; original SHA retained",
+        "sha256": "1597366e6eb680e442ed5b3a7a1071e6c2442b4de98d897bc0c931adc9ecd009"
+      },
+      "refs": {
+        "inherited_path": "${DATA_ROOT}/configs/datasets/v3/textvqa_full_refs.jsonl",
+        "path": "${DATA_ROOT}/data/refs/v3/textvqa_full_refs.jsonl",
+        "path_rebinding": "same-content registry relocation; original SHA retained",
+        "sha256": "aef61abdd3c73ff548b61a8497fe2497713a92b031dff60e92f5e6461fdaed0c"
+      }
+    },
+    {
+      "dataset": "chartqa",
+      "inputs": {
+        "inherited_path": "${DATA_ROOT}/configs/datasets/v3/chartqa_full_inputs.jsonl",
+        "path": "${DATA_ROOT}/data/registry/v3/chartqa_full_inputs.jsonl",
+        "path_rebinding": "same-content registry relocation; original SHA retained",
+        "sha256": "f1501ac89974c216271e81faaab23305844b2b20b185149660475724da027e26"
+      },
+      "refs": {
+        "inherited_path": "${DATA_ROOT}/configs/datasets/v3/chartqa_full_refs.jsonl",
+        "path": "${DATA_ROOT}/data/refs/v3/chartqa_full_refs.jsonl",
+        "path_rebinding": "same-content registry relocation; original SHA retained",
+        "sha256": "d5639de12ade4d4a6a52b7708d568d194c1a5e31e42a5853b00a7f06eaebb467"
+      }
+    }
+  ],
+  "combined_source_counts": {
+    "chartqa": 64,
+    "docvqa": 64,
+    "infovqa": 192,
+    "textvqa": 192
+  },
+  "confirmation_counts": {
+    "chartqa": 48,
+    "docvqa": 48,
+    "infovqa": 144,
+    "textvqa": 144
+  },
+  "current_R128_outcomes_read_by_data_selection": false,
+  "entire_stage_expected_new_free_QA": 3136,
+  "existing_source_access": "read-only; verify original pinned SHA/size; fail on missing source; no model or bulk source download",
+  "expanded_size_fixed_after_partially_observed_R128": true,
+  "expansion_design_sha256": "ebe818bbc67b1d189b4e27b15e2fdd4af59c0a7e5633c5b1125add1ccfac0c19",
+  "frozen_before_additional_model_outputs": true,
+  "historical_coverage_limits": [
+    "Known frozen64 historical sample-list inventories and272 recorded old manifest/capture observations as audited in history_v5; not a claim of exhaustive all-project/unknown history independence.",
+    "History_v5 has3860 excluded identity records; recovered source/doc identities are complete within this inventory (0 unresolved); original re-encoded SHA aliases remain separately recorded.",
+    "Native full-FP16 benchmark exposure is disclosed separately and not treated as compressed method tuning.",
+    "Doc validation only34 fresh parent documents remain after known exclusions; new Doc development/reserve use explicitly restricted official TRAIN first-shard pool, not full-train random/validation.",
+    "Chart calibration is true official val; Chart development/reserve are true test sources outside used500, regarded as observed development once evaluated.",
+    "All original Round10 calibration64, D160 and reserve224 questions, image sources/Doc parents and original-image SHA are excluded regardless of later use.",
+    "Known-history exclusion scope is inherited from frozen history_v5; no absolute all-project or model-pretraining-unseen claim.",
+    "All original R128128source identities/Doc parents/original image SHA excluded; original R128data bytes remain frozen.",
+    "Additional384 size/methods were fixed after partially observed initial R128. Report original128, additional384 primary replication, combined512 separately; this was not preregistered before initial128.",
+    "Prior native full-FP16 benchmark exposure remains disclosed; this is not a claim of zero native exposure, pretraining-unseen data or exhaustive unknown-history independence."
+  ],
+  "history_exclusions": [
+    {
+      "path": "${DATA_ROOT}/audit/round10_inputs_v1/HISTORY_EXCLUSION_IDENTITIES_v5.jsonl",
+      "sha256": "25b8829e4b5410c87501f309da76731f0188f40f0f94edd6bef92cfc68d4cac0"
+    }
+  ],
+  "images_root": "${DATA_ROOT}/results/round11_v1/data_expand384_v1/images",
+  "inherited_R128_counts": {
+    "chartqa": 16,
+    "docvqa": 16,
+    "infovqa": 48,
+    "textvqa": 48
+  },
+  "inherited_R128_plan_sha256": "cd20a81e6551b83cc4d6fb84f1890a751699d29dcc059f0913b3bdc64ffe4d8c",
+  "inherited_round10_manifest": {
+    "path": "${DATA_ROOT}/configs/round10_inputs_v1/INPUT_MANIFEST.json",
+    "sha256": "b2ba5f54516abf96344e02356c7cee079b4ff48e2a270ea8fc61ea1c78baaecf"
+  },
+  "inherited_round10_plan_sha256": "d092e256b76a2ffaeceb49d70bb2e08a73749a796678771c20ae437287d11583",
+  "input_reference_contract": {
+    "images": "original bytes; no preprocessing or resizing in this materializer",
+    "input_rows": "same frozen no-answer per-row identity/image/question fields as current pipeline; role confirmation_expansion_holdout; no prediction or score fields",
+    "reference_rows": "separate CPU_SCORING_ONLY files, never model/encoder inputs"
+  },
+  "inputs_root": "${DATA_ROOT}/configs/round11_expand384_inputs_v1",
+  "local_delivery_root": "${EVIDENCE_ROOT}/results/round11/expand384_inputs_v1",
+  "no_algorithm_retune_or_sample_stopping": true,
+  "non_scientific_CPU_materialization_only": true,
+  "on_insufficient_pool": "fail and freeze actual insufficiency evidence, especially strict Info144; do not relax identities/source/SHA exclusion or reuse old sources; preserve v1 and use a new version for approved changes",
+  "original_selection": {
+    "path": "${DATA_ROOT}/configs/round11_v1/CONF2_SELECTION_MANIFEST_v2.json",
+    "sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915"
+  },
+  "output_root": "${DATA_ROOT}/results/round11_v1/data_expand384_v1",
+  "parquet_sources": [
+    {
+      "bytes": 78923135,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "11bdf0477b3f6b4f8e6369225769d68b1ed31fb4be2cdffdca510a2797533cd0",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00000-of-00024.parquet"
+    },
+    {
+      "bytes": 105851200,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "268be504c99caf8446e4f10c575e0afb07d55b1cddb96cd7c921b68090e9a61e",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00001-of-00024.parquet"
+    },
+    {
+      "bytes": 90666039,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "10e85f8868049785c25e516c3fd98dcdc62e4c9c27dc2d13742f071a6e74c894",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00002-of-00024.parquet"
+    },
+    {
+      "bytes": 92779539,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "1ae4e5ff1369d850a812692ec059bee94cb855aa15e5556b4368464756b461dc",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00003-of-00024.parquet"
+    },
+    {
+      "bytes": 75215119,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "e330d8914dc324c9766bca59192f411d26d99cf6483c8c1a768653fc10987d5d",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00004-of-00024.parquet"
+    },
+    {
+      "bytes": 84792967,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "9b916ddb13ba3e81f4eae4b666863bf2fd524ba4f337e638ef5f038d229e5dc8",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00005-of-00024.parquet"
+    },
+    {
+      "bytes": 86871259,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "add807c68dc527538e886518aaca72e5c22bc66ee7d5a0c3efa8a60cfc422ec2",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00006-of-00024.parquet"
+    },
+    {
+      "bytes": 81032752,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "549cdafd43c28939c197ed09116406165f41e1e7ded507dd4a4145b385e8559a",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00007-of-00024.parquet"
+    },
+    {
+      "bytes": 67232602,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "4edff0be4be9e4c18fe1c3c8cdab21f344a5ef705443f06a8999dceafcd338af",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00008-of-00024.parquet"
+    },
+    {
+      "bytes": 92541246,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "792bb5df7dfb832fea6d10d30a4118120d13a419848a4e5f9c2b7e20ce05d472",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00009-of-00024.parquet"
+    },
+    {
+      "bytes": 85740484,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "ecca0664529d4b8b36b54567ea455d36840a6d7fc84df790ff19d7f429441b31",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00010-of-00024.parquet"
+    },
+    {
+      "bytes": 74322213,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "d90d853083e4604fa70737566fdb7645b11ecf4c29e9d6c8ddb8ba335c96e3c6",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00011-of-00024.parquet"
+    },
+    {
+      "bytes": 45463634,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "ac02e813ba66763682c9367aec0353d8c71c214cf176622c33965cee9f9dd4f2",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00012-of-00024.parquet"
+    },
+    {
+      "bytes": 85924828,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "0ea21b9afdb930bf250777d1a6bf3a3711b4ae6aa9a3fae68244870face9fa9f",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00013-of-00024.parquet"
+    },
+    {
+      "bytes": 77161679,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "e38ab4079defa1254ccc54c5ab3ff79be25b4a17b4cede02ea34a3dec3d80368",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00014-of-00024.parquet"
+    },
+    {
+      "bytes": 91801097,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "629714b039c6e7ef970adcdccb64fd505d9639d3b03149f6a0672520faf8e14f",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00015-of-00024.parquet"
+    },
+    {
+      "bytes": 79160813,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "61826bacdc28feb16302112bf7ccd4e978a9a055bdbb405708f4249f9d138cb3",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00016-of-00024.parquet"
+    },
+    {
+      "bytes": 86112817,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "c0d6ded8a027a646fa3773d3810bacb2e7495db79b58d0cd5cd31bad5766c275",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00017-of-00024.parquet"
+    },
+    {
+      "bytes": 85014656,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "a84027a7b43736dc3de97e0f64ec664b47bf237c1864738c2fdf3a8d8b4bf3ed",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00018-of-00024.parquet"
+    },
+    {
+      "bytes": 96240363,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "7d47c3d4d504540f8d82376d238014bf42642b7947a0fe4997b28479dceefb27",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00019-of-00024.parquet"
+    },
+    {
+      "bytes": 103078380,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "fced4c9af8d5fd52ec9439b5a8393e8856dc185e872d1d66af23ddd5820a7f5a",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00020-of-00024.parquet"
+    },
+    {
+      "bytes": 72435118,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "484ca7d1eaf92cadb24c8af88d680fb70b574839c4b1619d9ecb62daae103605",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00021-of-00024.parquet"
+    },
+    {
+      "bytes": 71810377,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "686402ec6da3a42cc52031c6bf86fc73b501fbbd66c32f6559e33a870aeb7f53",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00022-of-00024.parquet"
+    },
+    {
+      "bytes": 71079339,
+      "dataset": "infovqa",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "976b84e517bbb0ba66db37b25a1149dfdde72428c2e50b620a90f9267929952b",
+      "split": "train",
+      "upstream_path": "InfographicVQA/train-00023-of-00024.parquet"
+    },
+    {
+      "bytes": 616602754,
+      "calibration_only": false,
+      "dataset": "docvqa",
+      "official_metadata_sha256": "74f5f7b610b1233c207b1ec17d529ec4e181605c6272a02f81b7e17bc31ce20b",
+      "repo": "lmms-lab-encoder/DocVQA",
+      "restricted_pool": "single_first_official_train_shard_not_full_train_random",
+      "revision": "539088ef8a8ada01ac8e2e6d4e372586748a265e",
+      "sha256": "37bde9b3f93add0cf47c980897eee7971cbf6b661b632a168359e35ff3c136f4",
+      "split": "train",
+      "upstream_path": "DocVQA/train-00000-of-00012.parquet"
+    },
+    {
+      "bytes": 50238778,
+      "calibration_only": true,
+      "dataset": "chartqa",
+      "official_metadata_sha256": "78dfb4896b1e469b9e1e00ec40709b03637368db4afa8706badbeb0b647363b2",
+      "repo": "ahmed-masry/ChartQA",
+      "restricted_pool": "complete_official_val_split",
+      "revision": "af8b6f5c08c95085271561c2a3f9d15f2b5a9031",
+      "sha256": "46ee830d03a1f288ef21be3d8d149d307cbf09404f9e056906169e617679fb09",
+      "split": "val",
+      "upstream_path": "data/val-00000-of-00001.parquet"
+    }
+  ],
+  "project_root": "${DATA_ROOT}",
+  "reference_text_decoded_only_after_source_selection": true,
+  "repeated_source_measurements_added": 0,
+  "runtime_project_root": "${DATA_ROOT}",
+  "schema": "trajkv.round11.expand384_data_plan.v1",
+  "seed": "Round11_expand384_20261123_v1",
+  "selected_methods_fixed": [
+    "FP16",
+    "R7low",
+    "R7high",
+    "JointV",
+    "JointSpatialWO"
+  ],
+  "selection_reads_model_predictions_or_correctness": false,
+  "selection_reads_question_text": false,
+  "selection_rule": {
+    "acceptance": "reject known question/source/parent-cluster/original-image-SHA overlap, including all original R128; first required count; no outcome/answer filters; no replacement or relaxed Info independence",
+    "one_question_per_source_cluster": true,
+    "question_order": "within each ordered source choose min SHA256(seed NUL question:dataset NUL source_cluster_id NUL question_id), tie question_id",
+    "source_order": "ascending SHA256(seed NUL expand384:source:dataset NUL source_cluster_id), tie source_cluster_id"
+  },
+  "source_split_note": "Preserve actual pinned splits: Text validation, Info train across all24 existing shards, Doc restricted first official train shard only, Chart canonical official test; no relabelling.",
+  "sources_root": "${DATA_ROOT}/cache/round10_v1/sources",
+  "total_count": 384,
+  "used_inputs": [
+    {
+      "inherited_path": "${DATA_ROOT}/configs/datasets/v3/textvqa_p2_inputs.jsonl",
+      "path": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "path_rebinding": "same-content registry relocation; original SHA retained",
+      "role": "formal500",
+      "sha256": "9891e84b7589cce22ff398bab28b25ff94b0db92a4db63751a11e368fe3c18d8"
+    },
+    {
+      "inherited_path": "${DATA_ROOT}/configs/datasets/v3/infovqa_p2_inputs.jsonl",
+      "path": "${DATA_ROOT}/data/registry/v3/infovqa_p2_inputs.jsonl",
+      "path_rebinding": "same-content registry relocation; original SHA retained",
+      "role": "formal500",
+      "sha256": "353dba9f703dce8269e3653fe54106518e7b564a809bb8ced501643a78970969"
+    },
+    {
+      "inherited_path": "${DATA_ROOT}/configs/datasets/v3/docvqa_p2_inputs.jsonl",
+      "path": "${DATA_ROOT}/data/registry/v3/docvqa_p2_inputs.jsonl",
+      "path_rebinding": "same-content registry relocation; original SHA retained",
+      "role": "formal500",
+      "sha256": "f04642bccfe6f08027369cf4f21aff1782227371c120d7fff42888b8d92203b7"
+    },
+    {
+      "inherited_path": "${DATA_ROOT}/configs/datasets/v3/chartqa_p2_inputs.jsonl",
+      "path": "${DATA_ROOT}/data/registry/v3/chartqa_p2_inputs.jsonl",
+      "path_rebinding": "same-content registry relocation; original SHA retained",
+      "role": "formal500",
+      "sha256": "50c32cde2817abdc01fc1406a8e6899339e6ac9ab927d2e71d0d869a87d22282"
+    },
+    {
+      "path": "${DATA_ROOT}/configs/round9_inputs_v1/calibration32_inputs.jsonl",
+      "role": "old_calibration",
+      "sha256": "2de0d5308892ee86bee48c3205c6eb49eee196ffee32ef6f8bcab19a30b6c216"
+    },
+    {
+      "path": "${DATA_ROOT}/configs/round9_inputs_v1/textvqa_dev64_inputs.jsonl",
+      "role": "observed_round9_development",
+      "sha256": "3d60486933f8302a2c920241d325c4fb13043517475f9942bb49306fc78932cf"
+    },
+    {
+      "path": "${DATA_ROOT}/configs/round9_inputs_v1/infovqa_dev64_inputs.jsonl",
+      "role": "observed_round9_development",
+      "sha256": "129d68470ffc73f79a5b691fe3525e838a1a126c3e9e9e446d7200f42553ae22"
+    },
+    {
+      "path": "${DATA_ROOT}/configs/round9_confirm_reserve_v1/textvqa_confirm32_inputs.jsonl",
+      "role": "observed_round9_replication_selection",
+      "sha256": "8160812000349eaeb38a315c89916ac211dbcb012d6c010a7ab72b61e7acd233"
+    },
+    {
+      "path": "${DATA_ROOT}/configs/round9_confirm_reserve_v1/infovqa_confirm32_inputs.jsonl",
+      "role": "observed_round9_replication_selection",
+      "sha256": "dd65980b1b9ec247d048b9e87d971a29ec8af0cd40ef6c9e0950332a8b067c24"
+    },
+    {
+      "bytes": 48548,
+      "count": 64,
+      "path": "${DATA_ROOT}/configs/round10_inputs_v1/calibration64_inputs.jsonl",
+      "role": "Round10_all_cal64_exclusion",
+      "sha256": "f5d954d2b8625aa4d6fbda53cacfd21e57d10a341e44328b8d32d1e974fa1051"
+    },
+    {
+      "bytes": 121273,
+      "count": 160,
+      "path": "${DATA_ROOT}/configs/round10_inputs_v1/D160_inputs.jsonl",
+      "role": "Round10_all_D160_exclusion",
+      "sha256": "cc822214db28a556e6b7ab7dc4a6e7f8c9db69b00430500e91fa19f5c51e9926"
+    },
+    {
+      "bytes": 169977,
+      "count": 224,
+      "path": "${DATA_ROOT}/configs/round10_inputs_v1/reserve224_inputs.jsonl",
+      "role": "Round10_all_reserve224_exclusion",
+      "sha256": "f470f70ea377eb0bfb1248e68674d9a1ce40737329223d7ec17750b28b609164"
+    },
+    {
+      "answers_included": false,
+      "bytes": 97663,
+      "count": 128,
+      "domains": {
+        "chartqa": 16,
+        "docvqa": 16,
+        "infovqa": 48,
+        "textvqa": 48
+      },
+      "path": "${DATA_ROOT}/configs/round11_inputs_v1/R128_inputs.jsonl",
+      "role": "base_R128_all128_source_exclusion",
+      "sha256": "c71146cd0f753e8c34e3acc8941e6905f7eae0ecb8b6efb1f09aa512fb86904c"
+    }
+  ]
+}

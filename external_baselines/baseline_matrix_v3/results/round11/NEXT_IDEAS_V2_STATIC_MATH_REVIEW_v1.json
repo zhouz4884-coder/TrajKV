@@ -1,0 +1,87 @@
+{
+  "R128_outcomes_read": false,
+  "architecture_verified_from_cached_code_config_index": {
+    "KV_heads": 4,
+    "W_Q_head_slice": "rows j*128:(j+1)*128 of q_proj.weight, with the corresponding bias slice; unlike W_O column blocks",
+    "all28_norm_gamma_q_weight_q_bias_checkpoint_names_exist": true,
+    "configured_RoPE": {
+      "factor": 2.0,
+      "rope_type": "dynamic",
+      "type": "dynamic"
+    },
+    "head_dim": 128,
+    "hidden_size": 3584,
+    "layers": 28,
+    "post_Q_q_norm": "absent in cached Qwen2Attention dataflow and no language q_norm checkpoint keys",
+    "pre_Q_RMSNorm": "decoder.input_layernorm Qwen2RMSNorm, learned gamma, epsilon1e-6; before q/k/v projections",
+    "q_proj_bias": true,
+    "query_heads": 28,
+    "rotate_half_pairs": "(c,c+64), c0..63 for D128, not adjacent coordinate pairs; cos/sin duplicate the64 frequencies"
+  },
+  "current_Round11_stage_unchanged": true,
+  "implementation_experiment_GPU_model_weights_network_or_delivery_changes": false,
+  "material_codec_frame_correction": {
+    "diagonal_collapse": "Normalized WHT has U_ic^2=1/128, hence every diagonal entry of U T U^T equals trace(T)/128. Dropping off-diagonal terms therefore reduces to Euclidean assignment up to a scalar, losing the proposed channel heterogeneity.",
+    "exact_counterexample": "For standard Hadamard128, choose native diagonal T_jj=1 when bit2(j)=0 and2 otherwise. This respects Qwen rotary pairing because j and j+64 have equal T. Then U T U^T=1.5I-0.5P_xor4, coupling coordinate0 to4 across distinct4D product-code blocks.",
+    "exact_real_pullback": "A native post-RoPE metric H_native becomes C=U H_native U^T for codec error coordinates. Native diagonal T generally gives dense C, so independent diagonal-weighted4D nearest-word assignment does not follow.",
+    "observed_current_R7_frame": "Frozen key bank applies centered normalized WHT before encode_key; frozen reader applies WHT(q) and adds the native mean bias. Existing G4 codewords are in this WHT frame.",
+    "residual_floor_requirement": "Re-encoding K23 does not by itself prove metric nonincrease; retain the entire old base/gain/mean/sign/alpha point as a feasible candidate and evaluate the same actual decode objective. A matched H=I search control must share the search/residual rules.",
+    "valid_NOT_RUN_corrections": [
+      "Keep dense C and perform bounded block-coordinate legal G4 index search with original reader/mean/gain preserved.",
+      "Or derive a4x4 block-diagonal envelope: B_aa=C_aa+(sum_{b!=a}||C_ab||2)I4, which satisfies C<=B. It can retain within-block correlations, but useful nonisotropy and actual cost are unmeasured."
+    ]
+  },
+  "mathematical_checks": {
+    "GQA_scope": "K is shared across7 query heads. S must be explicitly per-head, or the7 per-head S matrices must be combined into a declared KV-head metric/envelope; using full3584-row q_proj as a128-dimensional S is dimensionally wrong.",
+    "RMSNorm": "For real u=x/sqrt(||x||2^2/d+epsilon), ||u||2^2=d||x||2^2/(||x||2^2+d epsilon)<=d. Learned Gamma belongs inside W_Q Gamma.",
+    "bias_augmentation": "Per query head, A=[W_Q Gamma,b_Q] is128x3585; S=A A^T is128x128. q=R A[u;1] yields (q^T e)^2/d_key <=(d_hidden+1)/d_key * e^T R S R^T e; factor3585/128=28.0078125.",
+    "diagonal_V_joint": "For frozen native V endpoints and positive diagonal channel weights, weights cancel in each branch crossing, so thresholds(u+v)/2 are unchanged. Each interval minimizes at the clipped weighted residual-magnitude mean; at most129 intervals. Half candidate acceptance still needs the old full point and is not Half-global or task-optimal.",
+    "noncentered_second_moment": "M_q=E[qq^T] is correctly noncentered. A covariance-only expression needs mean(q)mean(q)^T, conditional on a fixed error/prefix when appropriate.",
+    "rotary_envelope": "After permuting into true2D pairs, c_ab=||S_ab||2 is symmetric. Unit block rotations preserve r_a=||e_a||. Sum_ab c_ab r_a r_b<=sum_a(sum_b c_ab)r_a^2 by2r_a r_b<=r_a^2+r_b^2. Thus R S R^T<=blockdiag(row_sum(c)*I2). Frobenius block norms give a looser valid envelope."
+  },
+  "note_sha256": "1adb636616c9d1a5a7be354b4be49a2459e497c3ef34ac14497fe32615bdf7ff",
+  "pinned_sources": {
+    "${PROJECT_ROOT}\\audit\\M1_config.json": {
+      "bytes": 1960,
+      "sha256": "2f651cf5dcad81635fcd688dc8aa569797a3d829b9d0644f489e1c7272b1c637"
+    },
+    "${EVIDENCE_ROOT}\\results\\round11\\NEXT_IDEAS_NOT_RUN_v2.md": {
+      "bytes": 3591,
+      "sha256": "1adb636616c9d1a5a7be354b4be49a2459e497c3ef34ac14497fe32615bdf7ff"
+    },
+    "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\38b6e0ea2486a900_round7_key_bank.py": {
+      "bytes": 18636,
+      "sha256": "38b6e0ea2486a900e404fa6347c91972198795f8972dc7ab2bf90527fbc1cdc5"
+    },
+    "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\80c2c16220097242_round7_key_codec.py": {
+      "bytes": 7718,
+      "sha256": "80c2c16220097242b25d3f843a3b57569590131c02618e766e35f0f0791ab651"
+    },
+    "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\9dc73998f66d5b7b_fast_wht.py": {
+      "bytes": 1595,
+      "sha256": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3"
+    },
+    "${EVIDENCE_ROOT}\\results\\round11\\model_technical_retrieved_v1\\legacy_sources\\b054e8629083b768_round7_key_attention.py": {
+      "bytes": 6514,
+      "sha256": "b054e8629083b7685ad9e02289b500008b45fbeadbd2bc48455f91d0b6a728a0"
+    },
+    "${EVIDENCE_ROOT}\\results\\round11\\wo_static_integration_review_v1\\model.safetensors.index.json": {
+      "bytes": 73875,
+      "sha256": "5551d292e2be31ed9c4fd016d99389127e55a6f2316519c7621cd2fdd9b0dfd4"
+    },
+    "${EVIDENCE_ROOT}\\results\\round11\\wo_static_integration_review_v1\\modeling_qwen2.py": {
+      "bytes": 21922,
+      "sha256": "99fa98c5676604cf6ef505892b70fda5c1c4cd835971459f38d61090cccab1e4"
+    }
+  },
+  "reviewed_utc": "2026-11-23T11:02:43.785685+00:00",
+  "schema": "trajkv.round11.next_ideas_v2_static_math_review.v1",
+  "status": "OPERATOR_AND_ROTARY_LEMMAS_CONDITIONALLY_VALID_CHEAP_NATIVE_DIAGONAL_TO_R7_G4_CLAIM_FALSIFIED",
+  "unverified_or_excluded": {
+    "dynamic_attention_scaling": "Pinned config is dynamic RoPE factor2, not default. Cached default routine returns attention_scaling1, but the dynamic ROPE_INIT_FUNCTIONS implementation/config normalization source was not cached. Do not assume its scale; if |scale_t|<=s_max, multiply the unit-rotation envelope by s_max^2.",
+    "finite_precision": "RMSNorm casts, projection, rotary and Gram/score rounding need separate terms; real algebra is not an exact FP16/FP64 numerical certificate.",
+    "numeric_values": "No W_Q/gamma/bias weights, actual S/T/C matrices, spectra or metric nonisotropy were loaded/computed.",
+    "performance_quality": "No K codec was changed/run; no timing, accuracy, routing optimality, whole-model or trajectory claim is established.",
+    "runtime_dispatch": "Optional fused/kernel dispatch of RMSNorm/rotary was not dynamically inspected."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "trajkv.round10.sequence.v1",
+  "scope": "Round11 bounded W_O D96 followup; Root-approved after complete primary",
+  "expected_QA": 96,
+  "entries": [
+    {
+      "name": "WO_JointSpatialWO_textvqa_v1",
+      "dataset": "textvqa",
+      "mode": "JointSpatialWO",
+      "script": "code/round11_wo_runner_v1.py",
+      "script_sha256": "c83846fce9e41ef4308160e9e48dae78ba143c0ef9843e387e041ec632907517",
+      "config": "${DATA_ROOT}/configs/round11_v1/WO_JointSpatialWO_textvqa_v1.json",
+      "config_sha256": "2fae5d75d828001339969a6609c592543f2341098666da164d43fa7b5245f913",
+      "output": "${DATA_ROOT}/results/round11_v1/wo_dev/WO_JointSpatialWO_textvqa_v1",
+      "expected_QA": 32
+    },
+    {
+      "name": "WO_JointSpatialWO_infovqa_v1",
+      "dataset": "infovqa",
+      "mode": "JointSpatialWO",
+      "script": "code/round11_wo_runner_v1.py",
+      "script_sha256": "c83846fce9e41ef4308160e9e48dae78ba143c0ef9843e387e041ec632907517",
+      "config": "${DATA_ROOT}/configs/round11_v1/WO_JointSpatialWO_infovqa_v1.json",
+      "config_sha256": "e28e249ae7f54b3379ed7ea522d93eb88fe223a7889b5cf3c792cb4b8eec3ce6",
+      "output": "${DATA_ROOT}/results/round11_v1/wo_dev/WO_JointSpatialWO_infovqa_v1",
+      "expected_QA": 32
+    },
+    {
+      "name": "WO_JointSpatialWO_docvqa_v1",
+      "dataset": "docvqa",
+      "mode": "JointSpatialWO",
+      "script": "code/round11_wo_runner_v1.py",
+      "script_sha256": "c83846fce9e41ef4308160e9e48dae78ba143c0ef9843e387e041ec632907517",
+      "config": "${DATA_ROOT}/configs/round11_v1/WO_JointSpatialWO_docvqa_v1.json",
+      "config_sha256": "17757e5ab6ed1c83e772beeb56c4f6fe268f40258a518b242dbdcd947e1faa3d",
+      "output": "${DATA_ROOT}/results/round11_v1/wo_dev/WO_JointSpatialWO_docvqa_v1",
+      "expected_QA": 16
+    },
+    {
+      "name": "WO_JointSpatialWO_chartqa_v1",
+      "dataset": "chartqa",
+      "mode": "JointSpatialWO",
+      "script": "code/round11_wo_runner_v1.py",
+      "script_sha256": "c83846fce9e41ef4308160e9e48dae78ba143c0ef9843e387e041ec632907517",
+      "config": "${DATA_ROOT}/configs/round11_v1/WO_JointSpatialWO_chartqa_v1.json",
+      "config_sha256": "f363ef7f45f1d25f8fcd8b71a3aae4da4e68f861582a1c641fec396fb0ba734d",
+      "output": "${DATA_ROOT}/results/round11_v1/wo_dev/WO_JointSpatialWO_chartqa_v1",
+      "expected_QA": 16
+    }
+  ]
+}

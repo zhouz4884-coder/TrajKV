@@ -1,0 +1,31 @@
+${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/cuda/__init__.py:58: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Loading weights:   0%|          | 0/781 [00:00<?, ?it/s]Loading weights:   0%|          | 1/781 [00:01<13:32,  1.04s/it]Loading weights:   5%|▌         | 40/781 [00:01<00:19, 38.10it/s]Loading weights:   7%|▋         | 53/781 [00:01<00:15, 48.31it/s]Loading weights:   8%|▊         | 64/781 [00:01<00:14, 51.00it/s]Loading weights:  10%|▉         | 76/781 [00:01<00:11, 59.47it/s]Loading weights:  11%|█▏        | 88/781 [00:02<00:12, 54.17it/s]Loading weights:  13%|█▎        | 101/781 [00:02<00:11, 58.56it/s]Loading weights:  14%|█▍        | 112/781 [00:02<00:11, 60.14it/s]Loading weights:  16%|█▌        | 125/781 [00:02<00:09, 66.40it/s]Loading weights:  17%|█▋        | 136/781 [00:02<00:10, 64.15it/s]Loading weights:  19%|█▉        | 148/781 [00:02<00:10, 60.66it/s]Loading weights:  20%|██        | 160/781 [00:03<00:09, 66.49it/s]Loading weights:  22%|██▏       | 172/781 [00:03<00:09, 62.30it/s]Loading weights:  24%|██▎       | 184/781 [00:03<00:09, 60.07it/s]Loading weights:  24%|██▍       | 191/781 [00:03<00:09, 61.33it/s]Loading weights:  25%|██▌       | 198/781 [00:03<00:09, 61.60it/s]Loading weights:  27%|██▋       | 208/781 [00:03<00:09, 62.35it/s]Loading weights:  28%|██▊       | 220/781 [00:04<00:10, 53.61it/s]Loading weights:  30%|██▉       | 232/781 [00:04<00:09, 60.13it/s]Loading weights:  31%|███       | 244/781 [00:04<00:09, 58.48it/s]Loading weights:  33%|███▎      | 256/781 [00:04<00:07, 65.93it/s]Loading weights:  34%|███▍      | 264/781 [00:04<00:07, 67.02it/s]Loading weights:  35%|███▍      | 272/781 [00:04<00:08, 59.59it/s]Loading weights:  36%|███▌      | 280/781 [00:05<00:09, 50.91it/s]Loading weights:  38%|███▊      | 293/781 [00:05<00:07, 63.34it/s]Loading weights:  39%|███▉      | 304/781 [00:05<00:08, 59.44it/s]Loading weights:  40%|████      | 316/781 [00:05<00:09, 51.46it/s]Loading weights:  42%|████▏     | 329/781 [00:06<00:07, 57.33it/s]Loading weights:  58%|█████▊    | 455/781 [00:06<00:01, 264.26it/s]Loading weights:  74%|███████▍  | 581/781 [00:06<00:00, 460.81it/s]Loading weights:  91%|█████████ | 707/781 [00:06<00:00, 603.75it/s]Loading weights: 100%|██████████| 781/781 [00:06<00:00, 122.02it/s]
+[transformers] The tied weights mapping and config for this model specifies to tie model.language_model.embed_tokens.weight to lm_head.weight, but both are present in the checkpoints with different values, so we will NOT tie them. You should update the config with `tie_word_embeddings=False` to silence this warning.
+[transformers] Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Traceback (most recent call last):
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py", line 396, in <module>
+    raise SystemExit(main())
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py", line 389, in main
+    result = run(config, args.output)
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py", line 364, in run
+    result = technical_one_source(model, processor, row, variant, config, output)
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py", line 248, in technical_one_source
+    cache, owners, metadata, signature = build_cache(native, batch, variant, config, mode=mode, encode=encode)
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py", line 136, in build_cache
+    owners, metadata = build_round11_value_owners(clone, batch.visual_positions, variant,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_value_bank_v1.py", line 154, in build_round11_value_owners
+    transformed, detail = transform_value_state(previous, source, selected, layer, mode=mode,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_value_bank_v1.py", line 94, in transform_value_state
+    bits, signs, alpha, item["joint"] = numerical.joint_encode(sourceV[0, head], l0, l1, bits, signs, alpha,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_joint_value_v1.py", line 210, in joint_encode
+    half_candidates(real, old_alpha[sl]), candidate_chunk=candidate_chunk)
+  File "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_joint_value_v1.py", line 117, in half_candidates
+    lower = torch.nextafter(rounded, torch.full_like(rounded, -float("inf")))
+RuntimeError: "nextafter_cuda" not implemented for 'Half'

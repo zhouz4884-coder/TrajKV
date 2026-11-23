@@ -1,0 +1,16 @@
+{
+  "schema": "trajkv.round11.technical_failure.v1",
+  "status": "FAIL_TECHNICAL_NO_QUALITY_ADMISSION",
+  "error_type": "RuntimeError",
+  "error": "\"nextafter_cuda\" not implemented for 'Half'",
+  "traceback": "Traceback (most recent call last):\n  File \"${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py\", line 364, in run\n    result = technical_one_source(model, processor, row, variant, config, output)\n  File \"${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py\", line 248, in technical_one_source\n    cache, owners, metadata, signature = build_cache(native, batch, variant, config, mode=mode, encode=encode)\n  File \"${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py\", line 136, in build_cache\n    owners, metadata = build_round11_value_owners(clone, batch.visual_positions, variant,\n  File \"${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/utils/_contextlib.py\", line 116, in decorate_context\n    return func(*args, **kwargs)\n  File \"${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_value_bank_v1.py\", line 154, in build_round11_value_owners\n    transformed, detail = transform_value_state(previous, source, selected, layer, mode=mode,\n  File \"${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/utils/_contextlib.py\", line 116, in decorate_context\n    return func(*args, **kwargs)\n  File \"${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_value_bank_v1.py\", line 94, in transform_value_state\n    bits, signs, alpha, item[\"joint\"] = numerical.joint_encode(sourceV[0, head], l0, l1, bits, signs, alpha,\n  File \"${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/utils/_contextlib.py\", line 116, in decorate_context\n    return func(*args, **kwargs)\n  File \"${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_joint_value_v1.py\", line 210, in joint_encode\n    half_candidates(real, old_alpha[sl]), candidate_chunk=candidate_chunk)\n  File \"${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_joint_value_v1.py\", line 117, in half_candidates\n    lower = torch.nextafter(rounded, torch.full_like(rounded, -float(\"inf\")))\nRuntimeError: \"nextafter_cuda\" not implemented for 'Half'\n",
+  "QA_events": 0,
+  "quality_claim": false,
+  "formal_free_QA_may_start": false,
+  "preserved_partial_controls": [
+    "mode0_JointSpatial.json",
+    "mode0_JointV.json",
+    "mode0_Shuffled.json",
+    "mode0_Spatial.json"
+  ]
+}

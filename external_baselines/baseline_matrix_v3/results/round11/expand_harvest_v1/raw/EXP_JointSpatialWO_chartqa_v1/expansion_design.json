@@ -1,0 +1,50 @@
+{
+  "schema": "trajkv.round11.expand384_design.v1",
+  "authorization": "User requested more questions to distinguish close effects from chance; size fixed now before additional outputs",
+  "original_selection_sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915",
+  "original_R128_manifest_sha256": "acdfb720120d55793a4f6e7dc2b43e5681c0727aff28e8c906ecbc6696578380",
+  "selected_modes": [
+    "JointV",
+    "JointSpatialWO"
+  ],
+  "references": [
+    "FP16",
+    "R7low",
+    "R7high"
+  ],
+  "additional_counts": {
+    "textvqa": 144,
+    "infovqa": 144,
+    "docvqa": 48,
+    "chartqa": 48
+  },
+  "original_counts": {
+    "textvqa": 48,
+    "infovqa": 48,
+    "docvqa": 16,
+    "chartqa": 16
+  },
+  "combined_counts": {
+    "textvqa": 192,
+    "infovqa": 192,
+    "docvqa": 64,
+    "chartqa": 64
+  },
+  "additional_sources": 384,
+  "combined_sources": 512,
+  "additional_fresh_free_QA": 1920,
+  "entire_stage_expected_new_free_QA": 3136,
+  "selection_seed": "Round11_expand384_20261123_v1",
+  "interim_R128_observed": true,
+  "interim_observation_scope": "Three refs Text/Info complete; JointV Text/Info available, first128 ongoing. Newmethods notretuned. Notpre-registeredbeforeinitialR128.",
+  "freeze_methods_and_size_before_additional_outcomes": true,
+  "no_stopping_on_p_or_favorable_scores": true,
+  "source_selection_uses_predictions_correctness_or_reference_answers": false,
+  "exclude_R128_plus_all_previous_history_development_formal500": true,
+  "report_original_additional_and_combined_separately": true,
+  "primary_new_replication_is_additional384": true,
+  "fixed_primary_contrast": "each selected candidate minus same-input R7low, per-domain; FP16/R7high also reported",
+  "same_model_prompt_generation_scoring_and_complete_B0": true,
+  "new_method_parameters_or_families": false,
+  "all_large_files_and_new_caches_on_8TB_data_volume": true
+}

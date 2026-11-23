@@ -1,0 +1,138 @@
+{
+  "Round10_all_cal64_D160_reserve224_overlap": 0,
+  "SHA_rejections": [],
+  "counts": {
+    "chartqa": 16,
+    "docvqa": 16,
+    "infovqa": 48,
+    "textvqa": 48
+  },
+  "exclusion_coverage": [
+    {
+      "count": 3860,
+      "path": "${DATA_ROOT}/audit/round10_inputs_v1/HISTORY_EXCLUSION_IDENTITIES_v5.jsonl",
+      "role": "known_historical_source_lists_v5",
+      "sha256": "25b8829e4b5410c87501f309da76731f0188f40f0f94edd6bef92cfc68d4cac0"
+    },
+    {
+      "count": 500,
+      "path": "${DATA_ROOT}/data/registry/v3/textvqa_p2_inputs.jsonl",
+      "role": "formal500",
+      "sha256": "9891e84b7589cce22ff398bab28b25ff94b0db92a4db63751a11e368fe3c18d8"
+    },
+    {
+      "count": 500,
+      "path": "${DATA_ROOT}/data/registry/v3/infovqa_p2_inputs.jsonl",
+      "role": "formal500",
+      "sha256": "353dba9f703dce8269e3653fe54106518e7b564a809bb8ced501643a78970969"
+    },
+    {
+      "count": 500,
+      "path": "${DATA_ROOT}/data/registry/v3/docvqa_p2_inputs.jsonl",
+      "role": "formal500",
+      "sha256": "f04642bccfe6f08027369cf4f21aff1782227371c120d7fff42888b8d92203b7"
+    },
+    {
+      "count": 500,
+      "path": "${DATA_ROOT}/data/registry/v3/chartqa_p2_inputs.jsonl",
+      "role": "formal500",
+      "sha256": "50c32cde2817abdc01fc1406a8e6899339e6ac9ab927d2e71d0d869a87d22282"
+    },
+    {
+      "count": 32,
+      "path": "${DATA_ROOT}/configs/round9_inputs_v1/calibration32_inputs.jsonl",
+      "role": "old_calibration",
+      "sha256": "2de0d5308892ee86bee48c3205c6eb49eee196ffee32ef6f8bcab19a30b6c216"
+    },
+    {
+      "count": 64,
+      "path": "${DATA_ROOT}/configs/round9_inputs_v1/textvqa_dev64_inputs.jsonl",
+      "role": "observed_round9_development",
+      "sha256": "3d60486933f8302a2c920241d325c4fb13043517475f9942bb49306fc78932cf"
+    },
+    {
+      "count": 64,
+      "path": "${DATA_ROOT}/configs/round9_inputs_v1/infovqa_dev64_inputs.jsonl",
+      "role": "observed_round9_development",
+      "sha256": "129d68470ffc73f79a5b691fe3525e838a1a126c3e9e9e446d7200f42553ae22"
+    },
+    {
+      "count": 32,
+      "path": "${DATA_ROOT}/configs/round9_confirm_reserve_v1/textvqa_confirm32_inputs.jsonl",
+      "role": "observed_round9_replication_selection",
+      "sha256": "8160812000349eaeb38a315c89916ac211dbcb012d6c010a7ab72b61e7acd233"
+    },
+    {
+      "count": 32,
+      "path": "${DATA_ROOT}/configs/round9_confirm_reserve_v1/infovqa_confirm32_inputs.jsonl",
+      "role": "observed_round9_replication_selection",
+      "sha256": "dd65980b1b9ec247d048b9e87d971a29ec8af0cd40ef6c9e0950332a8b067c24"
+    },
+    {
+      "count": 64,
+      "path": "${DATA_ROOT}/configs/round10_inputs_v1/calibration64_inputs.jsonl",
+      "role": "Round10_all_cal64_exclusion",
+      "sha256": "f5d954d2b8625aa4d6fbda53cacfd21e57d10a341e44328b8d32d1e974fa1051"
+    },
+    {
+      "count": 160,
+      "path": "${DATA_ROOT}/configs/round10_inputs_v1/D160_inputs.jsonl",
+      "role": "Round10_all_D160_exclusion",
+      "sha256": "cc822214db28a556e6b7ab7dc4a6e7f8c9db69b00430500e91fa19f5c51e9926"
+    },
+    {
+      "count": 224,
+      "path": "${DATA_ROOT}/configs/round10_inputs_v1/reserve224_inputs.jsonl",
+      "role": "Round10_all_reserve224_exclusion",
+      "sha256": "f470f70ea377eb0bfb1248e68674d9a1ce40737329223d7ec17750b28b609164"
+    }
+  ],
+  "historical_coverage_limits": [
+    "Known frozen64 historical sample-list inventories and272 recorded old manifest/capture observations as audited in history_v5; not a claim of exhaustive all-project/unknown history independence.",
+    "History_v5 has3860 excluded identity records; recovered source/doc identities are complete within this inventory (0 unresolved); original re-encoded SHA aliases remain separately recorded.",
+    "Native full-FP16 benchmark exposure is disclosed separately and not treated as compressed method tuning.",
+    "Doc validation only34 fresh parent documents remain after known exclusions; new Doc development/reserve use explicitly restricted official TRAIN first-shard pool, not full-train random/validation.",
+    "Chart calibration is true official val; Chart development/reserve are true test sources outside used500, regarded as observed development once evaluated.",
+    "All original Round10 calibration64, D160 and reserve224 questions, image sources/Doc parents and original-image SHA are excluded regardless of later use.",
+    "Known-history exclusion scope is inherited from frozen history_v5; no absolute all-project or model-pretraining-unseen claim."
+  ],
+  "identity_fields": [
+    "question_id",
+    "dataset/source_id",
+    "source_cluster_id including Doc parent",
+    "original_image_sha256 and explicit historical image hashes"
+  ],
+  "known_history_and_used_and_formal500_overlap": 0,
+  "no_pretraining_unseen_or_absolute_history_independence_claim": true,
+  "pool_counts": {
+    "chartqa": {
+      "QA_rows": 2500,
+      "requested": 16,
+      "selected": 16,
+      "source_clusters": 1509
+    },
+    "docvqa": {
+      "QA_rows": 3289,
+      "requested": 16,
+      "selected": 16,
+      "source_clusters": 528
+    },
+    "infovqa": {
+      "QA_rows": 23946,
+      "requested": 48,
+      "selected": 48,
+      "source_clusters": 4406
+    },
+    "textvqa": {
+      "QA_rows": 5000,
+      "requested": 48,
+      "selected": 48,
+      "source_clusters": 3166
+    }
+  },
+  "reference_text_decoded_after_complete_source_selection": true,
+  "schema": "trajkv.round11.confirm128_disjoint.v1",
+  "seed": "Round11_confirm128_20261123_v1",
+  "selected_count": 128,
+  "selection_reads_model_outcomes": false
+}

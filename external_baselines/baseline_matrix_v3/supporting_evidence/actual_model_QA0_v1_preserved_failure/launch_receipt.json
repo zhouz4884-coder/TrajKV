@@ -1,0 +1,36 @@
+{
+  "status": "LAUNCHED",
+  "pid": 237062,
+  "name": "bm_R11_model_technical_gpu0_v1",
+  "argv_executed": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-B",
+    "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source/code/round11_technical_v1.py",
+    "--config",
+    "${DATA_ROOT}/configs/round11_v1/technical_v1.json",
+    "--output",
+    "${DATA_ROOT}/results/round11_v1/model_technical_v1"
+  ],
+  "source_snapshot": "${DATA_ROOT}/jobs/bm_R11_model_technical_gpu0_v1.source",
+  "source_inventory_sha256": "ebf694a43aefda96b80b45582fe73f870fd9203d9717022c0d4de48fd157c070",
+  "job_sha256": "58aa249cff2fce1dd84270e7e4fbc84c19a5af4476b18e87777d95e6658ae0cd",
+  "log": "${DATA_ROOT}/logs/bm_R11_model_technical_gpu0_v1.log",
+  "cache_environment": {
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/round11_v1/tmp",
+    "TMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+    "TEMP": "${DATA_ROOT}/cache/round11_v1/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round11_v1/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round11_v1/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/round11_v1/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/round11_v1/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/round11_v1/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round11_v1/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/round11_v1/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round11_v1/xdg"
+  },
+  "CUDA_VISIBLE_DEVICES": "0",
+  "runtime_python": "${DATA_ROOT}/runtime/main_overlay_v1/bin/python"
+}

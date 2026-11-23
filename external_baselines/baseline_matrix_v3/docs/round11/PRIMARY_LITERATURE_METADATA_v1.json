@@ -1,0 +1,258 @@
+{
+  "retrieved_utc": "2026-11-23T12:15:59.698515+00:00",
+  "sources": [
+    {
+      "bytes": 42483,
+      "comments": null,
+      "journal": null,
+      "metadata": {
+        "citation_abstract": [
+          "1-bit key-value (KV) cache compression can combine quantizer calibration with selective high-precision storage to reduce reconstruction error. We propose Calibration and Fisher-guided Anchors for KV cache compression (CALFA-KV). Offline, we jointly fit a key center, radial normalization parameters, and K/V vector codebooks to match the frozen model's projected attention output. We also estimate channel-wise Fisher-type sensitivities from squared gradients of a reference next-token cross-entropy loss. Online, we use these sensitivities to weight the squared reconstruction errors of each KV state. Here, a KV state is one token's key-value pair within one layer and KV head. We retain the highest-scoring states at high precision under a per-layer, per-KV-head budget. Under exact restoration, we bound the excess risk of score-based anchor selection relative to the optimum at the same anchor budget, where risk is the conditional mean square of the first-order loss change. With a budget of 56 additional FP16 anchors per layer and KV head, CALFA-KV (d8b8) outperforms all evaluated nominal 1-bit baselines on the mean score across seven benchmarks for each of the three models. At the same anchor budget, CALFA-KV (d8b10) uses a nominal index rate of 1.25 bits per channel and narrows the gap to BF16 to 0.90--2.01 points on the same metric."
+        ],
+        "citation_arxiv_id": [
+          "2611.10511"
+        ],
+        "citation_author": [
+          "Tian, Xiancai",
+          "Zhang, Leichao",
+          "Zhang, Shenhui",
+          "Shan, Yi",
+          "Li, Hailong",
+          "Lin, Feng",
+          "Yu, Xiaotian",
+          "Li, Aijun"
+        ],
+        "citation_date": [
+          "2026/11/07"
+        ],
+        "citation_online_date": [
+          "2026/11/07"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2611.10511"
+        ],
+        "citation_title": [
+          "CALFA-KV: Joint Calibration and Fisher-Guided Anchors for 1-Bit KV Cache Compression"
+        ]
+      },
+      "name": "CALFA",
+      "primary_links": [],
+      "source_sha256": "54d37d1794ed655e5b0a86bf51b05672bce760246a163460d981f637d0cfecb1",
+      "url": "https://arxiv.org/abs/2611.10511"
+    },
+    {
+      "bytes": 42181,
+      "comments": null,
+      "journal": null,
+      "metadata": {
+        "citation_abstract": [
+          "The key-value (KV) cache has become a major memory and bandwidth bottleneck in long-context large language model inference, making ultra-low-bit quantization increasingly important. However, existing rotation-based INT2 methods optimize cache statistics or proxy errors before the complete attention readout, even though the model is ultimately affected by the error propagated through attention and the output projection $W_O$. To address this mismatch, we propose \\textit{OptR}, an output-aware rotation method that minimizes post-$W_O$ attention-output error. OptR decomposes the post-$W_O$ attention-output error into key- and value-induced terms and learns per-head orthogonal corrections through the full INT2 quantization and attention path. OptR further applies an attention-equivalent key reparameterization to reduce large channel-wise offsets without changing the softmax distribution. Across three models and five reasoning and coding benchmarks, OptR consistently improves both QuaRot and OSCAR and strengthens long-context retrieval, while preserving the paged KV-cache format with negligible inference overhead."
+        ],
+        "citation_arxiv_id": [
+          "2608.02691"
+        ],
+        "citation_author": [
+          "Yun, Vincent-Daniel",
+          "Lim, Woosang",
+          "Cheong, Minsoo",
+          "Lee, Sunwoo",
+          "Annavaram, Murali",
+          "Karimireddy, Sai Praneeth",
+          "Yoo, Sungjoo"
+        ],
+        "citation_date": [
+          "2026/08/03"
+        ],
+        "citation_online_date": [
+          "2026/09/23"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2608.02691"
+        ],
+        "citation_title": [
+          "Output-Aware Rotation for INT2 KV-Cache Quantization"
+        ]
+      },
+      "name": "OptR",
+      "primary_links": [],
+      "source_sha256": "a6d27d2fd8ea603009e015651567f00c4517a68b6ddeb8704b745433596ee5ac",
+      "url": "https://arxiv.org/abs/2608.02691"
+    },
+    {
+      "bytes": 42059,
+      "comments": null,
+      "journal": null,
+      "metadata": {
+        "citation_abstract": [
+          "The deployment of Large Language Models (LLMs) with extended context windows is increasingly constrained by the linear growth of Key-Value (KV) cache memory. Vector Quantization (VQ), particularly Residual Quantization (RQ), is a promising approach for pushing KV cache storage toward the sub-1-bit regime by progressively encoding residuals with small codebooks. However, most VQ methods still rely on standard $\\ell_2$ $K$-means as the core codebook-learning primitive. We identify a subtle high-dimensional issue of this primitive: Euclidean centroid averaging can induce centroid shrinkage, which weakens the angular alignment term in the $\\ell_2$ distortion and makes directional preservation harder. To address this issue, we propose Gain-Shape $K$-means (GSKM), a drop-in replacement for $K$-means that improves directional fidelity while matching, and in some regimes improving, $\\ell_2$ distortion. We then build Gain-Shape Residual Quantization (GSRQ) by incorporating a weighted extension of GSKM into an RQ pipeline. On LLaMA-3-8B, GSRQ substantially improves over strong KV cache quantization baselines across bit rates. At 1-bit, it improves the average accuracy across LongBench tasks from 11.34 to 33.54, a gain of 22.20 percentage points over VQLLM."
+        ],
+        "citation_arxiv_id": [
+          "2607.01065"
+        ],
+        "citation_author": [
+          "Kim, Soosung",
+          "Park, Minjae",
+          "Chung, Eui-Young",
+          "Chung, Jaeyong"
+        ],
+        "citation_date": [
+          "2026/07/01"
+        ],
+        "citation_online_date": [
+          "2026/07/01"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2607.01065"
+        ],
+        "citation_title": [
+          "GSRQ: Gain-Shape Residual Quantization for Sub-1-bit KV Cache"
+        ]
+      },
+      "name": "GSRQ",
+      "primary_links": [],
+      "source_sha256": "7d9c9dfba176711c0cb21fdd5b9ada2965ecb50783143838dca025e7d841aa49",
+      "url": "https://arxiv.org/abs/2607.01065"
+    },
+    {
+      "bytes": 42994,
+      "comments": null,
+      "journal": null,
+      "metadata": {
+        "citation_abstract": [
+          "Multimodal Large Language Models (MLLMs) have demonstrated remarkable performance across diverse applications. However, their computational overhead during deployment remains a critical bottleneck. While Key-Value (KV) caching effectively trades memory for computation to enhance inference efficiency, the growing memory footprint from extensive KV caches significantly reduces throughput and restricts prolonged deployment on memory-constrained GPU devices. To address this challenge, we propose CalibQuant, a simple yet highly effective visual quantization strategy that drastically reduces both memory and computational overhead. Specifically, CalibQuant introduces an extreme 1-bit quantization scheme, complemented by novel post-scaling and calibration techniques tailored to the intrinsic patterns of KV caches, thereby ensuring high efficiency without compromising model performance. Leveraging Triton for runtime optimization, we achieve a 10x throughput increase on InternVL models. Our method is designed to be plug-and-play, seamlessly integrating with various existing MLLMs without requiring architectural changes. Extensive experiments confirm that our approach significantly reduces memory usage while maintaining computational efficiency and preserving multimodal capabilities. Codes are available at https://github.com/insuhan/calibquant."
+        ],
+        "citation_arxiv_id": [
+          "2502.14882"
+        ],
+        "citation_author": [
+          "Han, Insu",
+          "Zhang, Zeliang",
+          "Wang, Zhiyuan",
+          "Zhu, Yifan",
+          "Liang, Susan",
+          "Liu, Jiani",
+          "Lin, Haiting",
+          "Zhao, Mingjie",
+          "Xu, Chenliang",
+          "Wan, Kun",
+          "Zhao, Wentian"
+        ],
+        "citation_date": [
+          "2025/02/15"
+        ],
+        "citation_online_date": [
+          "2025/03/24"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2502.14882"
+        ],
+        "citation_title": [
+          "CalibQuant: 1-Bit KV Cache Quantization for Multimodal LLMs"
+        ]
+      },
+      "name": "CalibQuant",
+      "primary_links": [
+        "https://github.com/insuhan/calibquant"
+      ],
+      "source_sha256": "6857a43098a0f314aae7fa58cf2b1b45ceae1d4b24e33f5ed14e3ac540172899",
+      "url": "https://arxiv.org/abs/2502.14882"
+    },
+    {
+      "bytes": 42664,
+      "comments": null,
+      "journal": null,
+      "metadata": {
+        "citation_abstract": [
+          "Transformer-based large language models (LLMs) are now deployed to hundreds of millions of users. LLM inference is commonly performed on batches of sequences that share a prefix, such as few-shot examples or a chatbot system prompt. Decoding in this large-batch setting can be bottlenecked by the attention operation, which reads large key-value (KV) caches from memory and computes inefficient matrix-vector products for every sequence in the batch. In this work, we introduce Hydragen, a hardware-aware exact implementation of attention with shared prefixes. Hydragen computes attention over the shared prefix and unique suffixes separately. This decomposition enables efficient prefix attention by batching queries together across sequences, reducing redundant memory reads and enabling the use of hardware-friendly matrix multiplications. Our method can improve end-to-end CodeLlama-13b throughput by up to 32x against competitive baselines, with speedup growing with the batch size and shared prefix length. Hydragen also enables the use of very long shared contexts: with a large batch size, increasing the prefix length from 1K to 16K tokens decreases Hydragen throughput by less than 15%, while the throughput of baselines drops by over 90%. Hydragen generalizes beyond simple prefix-suffix decomposition and can be applied to tree-based prompt sharing patterns, allowing us to further reduce inference time on competitive programming problems by 55%."
+        ],
+        "citation_arxiv_id": [
+          "2402.05099"
+        ],
+        "citation_author": [
+          "Juravsky, Jordan",
+          "Brown, Bradley",
+          "Ehrlich, Ryan",
+          "Fu, Daniel Y.",
+          "Ré, Christopher",
+          "Mirhoseini, Azalia"
+        ],
+        "citation_date": [
+          "2024/02/07"
+        ],
+        "citation_online_date": [
+          "2024/05/13"
+        ],
+        "citation_pdf_url": [
+          "https://arxiv.org/pdf/2402.05099"
+        ],
+        "citation_title": [
+          "Hydragen: High-Throughput LLM Inference with Shared Prefixes"
+        ]
+      },
+      "name": "Hydragen",
+      "primary_links": [],
+      "source_sha256": "acf682931fc90620e5ed8a157aaa6930c2e2e0bdd600491810d529af68ecd535",
+      "url": "https://arxiv.org/abs/2402.05099"
+    },
+    {
+      "bytes": 16183,
+      "comments": null,
+      "journal": null,
+      "metadata": {
+        "citation_abstract_html_url": [
+          "https://proceedings.mlr.press/v306/kim26bf.html"
+        ],
+        "citation_author": [
+          "Soosung Kim",
+          "Minjae Park",
+          "Eui-Young Chung",
+          "Jaeyong Chung"
+        ],
+        "citation_conference_title": [
+          "International Conference on Machine Learning"
+        ],
+        "citation_firstpage": [
+          "58743"
+        ],
+        "citation_inbook_title": [
+          "International Conference on Machine Learning"
+        ],
+        "citation_issn": [
+          "2640-3498"
+        ],
+        "citation_language": [
+          "en"
+        ],
+        "citation_lastpage": [
+          "58756"
+        ],
+        "citation_pdf_url": [
+          "https://raw.githubusercontent.com/mlresearch/v306/main/assets/kim26bf/kim26bf.pdf"
+        ],
+        "citation_publication_date": [
+          "2026/09/29"
+        ],
+        "citation_publisher": [
+          "PMLR"
+        ],
+        "citation_title": [
+          "GSRQ: Gain-Shape Residual Quantization for Sub-1-bit KV Cache"
+        ]
+      },
+      "name": "GSRQ_PMLR",
+      "primary_links": [
+        "https://github.com/mlresearch/v306",
+        "https://github.com/mlresearch/v306/edit/gh-pages/_posts/2026-09-29-kim26bf.md",
+        "https://openreview.net/forum?id=HoRGEhSUdN",
+        "https://proceedings.mlr.press",
+        "https://proceedings.mlr.press//v306/assets/rss/feed.xml",
+        "https://proceedings.mlr.press/v306/",
+        "https://proceedings.mlr.press/v306/assets/css/pmlr.css",
+        "https://proceedings.mlr.press/v306/assets/images/favicon-pmlr.ico",
+        "https://proceedings.mlr.press/v306/feed.xml"
+      ],
+      "source_sha256": "76c59831acb45e91aba4a700b93e03f4f8e408885ded3f9d6b3c28b5bf3d21a6",
+      "url": "https://proceedings.mlr.press/v306/kim26bf.html"
+    }
+  ]
+}
