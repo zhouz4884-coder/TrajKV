@@ -1,0 +1,60 @@
+{
+  "dataset": "docvqa",
+  "mode": "FP16",
+  "status": "PASS_FRESH_R128_SOURCE_SCORE",
+  "expected_QA": 16,
+  "primary_mean": 1.0,
+  "ci95": [
+    1.0,
+    1.0
+  ],
+  "groups": {
+    "overall": {
+      "expected_questions": 16,
+      "scored_pass_questions": 16,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 1.0,
+        "questions": 16,
+        "source_clusters": 16,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 1.0,
+        "questions": 16,
+        "source_clusters": 16,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    }
+  },
+  "resources": {
+    "complete_bytes": {
+      "n": 16,
+      "mean": 102774784,
+      "min": 102774784,
+      "max": 102774784
+    }
+  },
+  "source_receipt_sha256": "bf289794ab37e29a809e30336de2ce19d1d004bc50bbeb7a5cef8f04745277fe",
+  "fresh_QA": 16,
+  "reused_reference_views": 0,
+  "failed_QA_remain_in_primary_denominator": true,
+  "canonical_SourceRun_admission_claimed": false,
+  "quality_is_frozen_subset_offline_score": true,
+  "scored_records_sha256": "3d4e014c4c5cd336ff505fd45b3831d32414c6e87189fb140e84b95d87af0db1"
+}

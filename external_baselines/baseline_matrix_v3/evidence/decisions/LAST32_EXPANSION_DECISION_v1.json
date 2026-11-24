@@ -1,0 +1,35 @@
+{
+  "schema": "trajkv.round12.last32_decision.v1",
+  "source_report": "${EVIDENCE_ROOT}\\results\\round12\\harvest_v2\\collector_runs\\20261124T104008Z_ecd18201\\main_report\\summary.json",
+  "source_report_sha256": "28a3140224603cc53d297e400ea67b39722d4788ac902ef468d6df9a9096fb1e",
+  "source_evidence": {
+    "candidate": "R",
+    "reference": "R7high",
+    "dataset": "infovqa",
+    "n": 32,
+    "source_clusters": 32,
+    "primary_delta_pp": 2.8814935064935066,
+    "ci95_pp": [
+      -6.696428571428571,
+      12.5
+    ],
+    "improved": 2,
+    "worsened": 2,
+    "unchanged": 28,
+    "candidate_mean_on_common": 0.8614129230905547,
+    "reference_mean_on_common": 0.8325979880256196,
+    "status": "DESCRIPTIVE_DEVELOPMENT_NOT_CONFIRMATION",
+    "bootstrap": {
+      "repetitions": 2000,
+      "seed": 20261124,
+      "unit": "source_cluster_id"
+    }
+  },
+  "selection": "R Info32->64, natural main160 prefix order; new32 IDs only",
+  "reason": "R at G8-matched roughly1.55bit has +2.88pp versus old high on Info32 while G8 is -0.20; near/sparse four flips warrants source expansion before fixed500; no test output used.",
+  "budget_candidates_not_advanced": "Strict-memory spatial reallocation scored65.98Info32/84.21Doc16 and loses old low materially; keep as evidenced negative, no further gate tuning.",
+  "new_QA": 32,
+  "planned_development_total_with_oracles": 1200,
+  "protocol_pilots_separate": 2,
+  "fixed500_not_started": true
+}

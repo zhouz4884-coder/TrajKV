@@ -1,0 +1,218 @@
+{
+  "schema": "trajkv.round12.static_technical.v1",
+  "status": "PASS_ACTUAL_CUDA_PACKED_TECHNICAL_QA0",
+  "actual_CUDA": true,
+  "model_calls": 0,
+  "task_answer_events": 0,
+  "pack_checks": [
+    {
+      "bits": 4,
+      "words_per_token_head": 32,
+      "actual_bytes_per_token_head": 16,
+      "all_indices_exact": true
+    },
+    {
+      "bits": 8,
+      "words_per_token_head": 32,
+      "actual_bytes_per_token_head": 32,
+      "all_indices_exact": true
+    },
+    {
+      "bits": 10,
+      "words_per_token_head": 32,
+      "actual_bytes_per_token_head": 40,
+      "all_indices_exact": true
+    },
+    {
+      "bits": 12,
+      "words_per_token_head": 16,
+      "actual_bytes_per_token_head": 24,
+      "all_indices_exact": true
+    }
+  ],
+  "value_checks": {
+    "N": 256,
+    "kept_channel_reconstruction_bit_exact": true,
+    "dropped_center_decoder_requires_no_p": true,
+    "compact_bytes_per_token_head": 8,
+    "mask_bytes_per_head": 16,
+    "center_example_mu": 4.0
+  },
+  "attention_checks": [
+    {
+      "name": "K1V1",
+      "N": 32,
+      "key_bytes_per_token_head": 16,
+      "V_mode": 0,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 5.3646530432160944e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true,
+      "legacy_max_abs": 0.0,
+      "legacy_bit_exact": true
+    },
+    {
+      "name": "K2V1",
+      "N": 32,
+      "key_bytes_per_token_head": 32,
+      "V_mode": 0,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 5.486960071721114e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true,
+      "legacy_max_abs": 0.0,
+      "legacy_bit_exact": true
+    },
+    {
+      "name": "K2p5V1",
+      "N": 32,
+      "key_bytes_per_token_head": 40,
+      "V_mode": 0,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 5.869983942830004e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "G8V1",
+      "N": 32,
+      "key_bytes_per_token_head": 24,
+      "V_mode": 0,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 5.793066884507425e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "K1V2R",
+      "N": 32,
+      "key_bytes_per_token_head": 16,
+      "V_mode": 1,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 5.237841105554253e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "K2Vhalf",
+      "N": 32,
+      "key_bytes_per_token_head": 32,
+      "V_mode": 2,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 5.278122625895776e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "K2p5Vhalf",
+      "N": 32,
+      "key_bytes_per_token_head": 40,
+      "V_mode": 2,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 5.340180723578669e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "K1V1",
+      "N": 256,
+      "key_bytes_per_token_head": 16,
+      "V_mode": 0,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 3.284246122348122e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true,
+      "legacy_max_abs": 0.0,
+      "legacy_bit_exact": true
+    },
+    {
+      "name": "K2V1",
+      "N": 256,
+      "key_bytes_per_token_head": 32,
+      "V_mode": 0,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 3.664631367428228e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true,
+      "legacy_max_abs": 0.0,
+      "legacy_bit_exact": true
+    },
+    {
+      "name": "K2p5V1",
+      "N": 256,
+      "key_bytes_per_token_head": 40,
+      "V_mode": 0,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 3.599202318582684e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "G8V1",
+      "N": 256,
+      "key_bytes_per_token_head": 24,
+      "V_mode": 0,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 3.636805195128545e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "K1V2R",
+      "N": 256,
+      "key_bytes_per_token_head": 16,
+      "V_mode": 1,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 3.429744901950471e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "K2Vhalf",
+      "N": 256,
+      "key_bytes_per_token_head": 32,
+      "V_mode": 2,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 3.6511512007564306e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    },
+    {
+      "name": "K2p5Vhalf",
+      "N": 256,
+      "key_bytes_per_token_head": 40,
+      "V_mode": 2,
+      "dense_max_abs": 0.00048828125,
+      "dense_rmse": 3.3487522159703076e-05,
+      "dense_reference_tolerance": 0.008,
+      "complete_128d_output_checked": true,
+      "two_sequential_Half_K_and_V_stages_exercised": true
+    }
+  ],
+  "GPU": "NVIDIA GeForce RTX 3090",
+  "torch_version": "2.4.1+cu121",
+  "elapsed_seconds": 36.51871268404648,
+  "source_sha256": {
+    "round12_static_technical_v1.py": "9077d157a8614bdab1607ab0bc48571258e20be244a63777b72546be33b5a288",
+    "round12_static_codec_v1.py": "ffece79b6e4a61a9c3d473e8e63f681935c4d790f88fc5714da19b950f633417",
+    "round12_static_attention_v1.py": "f5839602116cf4de7fc0d866264e5daae336196d8992bff4204f031b71a300ef",
+    "round12_static_bank_v1.py": "f56ca11017690186453cc2321b81ef9ea56830d3ff16a84350006a4fae4e90a4"
+  },
+  "legacy_source_sha256": {
+    "fast_wht.py": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+    "round7_key_attention.py": "b054e8629083b7685ad9e02289b500008b45fbeadbd2bc48455f91d0b6a728a0"
+  }
+}

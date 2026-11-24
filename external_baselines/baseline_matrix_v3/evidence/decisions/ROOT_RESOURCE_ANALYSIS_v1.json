@@ -1,0 +1,69 @@
+{
+  "schema": "trajkv.round12.root_resource_analysis.v1",
+  "source": "code/round12_static_bank_v1.py expected_owner_bytes and mode R",
+  "analysis_type": "exact_integer_cost_arithmetic_only",
+  "new_GPU_calls": 0,
+  "new_task_answers": 0,
+  "complete_R_owner_formula": "(3816 + 18*m)*N + 89737",
+  "complete_G8_owner_formula": "5486*N + 155145",
+  "R_selection_formula": "min(224, floor((1670*N + 65408)/(18*N)))",
+  "scope": "maximum feasible prefix of an already frozen ordered list; not a task-quality optimum",
+  "quality_claims": [],
+  "reporting": "R is approximately 1.55 mean bit, not a uniform per-image 1.55-bit cap; report all-row maximum separately",
+  "cases": [
+    {
+      "visual_tokens": 256,
+      "R_residual_slots": 106,
+      "R_visual_owner_bytes": 1555081,
+      "G8_visual_owner_bytes": 1559561,
+      "unspent_bytes": 4480,
+      "R_actual_bits_per_element": 1.694903782435826,
+      "G8_actual_bits_per_element": 1.699786594935826
+    },
+    {
+      "visual_tokens": 768,
+      "R_residual_slots": 97,
+      "R_visual_owner_bytes": 4361353,
+      "G8_visual_owner_bytes": 4368393,
+      "unspent_bytes": 7040,
+      "R_actual_bits_per_element": 1.5844991774786086,
+      "G8_actual_bits_per_element": 1.5870568411690849
+    },
+    {
+      "visual_tokens": 1280,
+      "R_residual_slots": 95,
+      "R_visual_owner_bytes": 7163017,
+      "G8_visual_owner_bytes": 7177225,
+      "unspent_bytes": 14208,
+      "R_actual_bits_per_element": 1.5614137922014508,
+      "G8_actual_bits_per_element": 1.5645108904157365
+    },
+    {
+      "visual_tokens": 1792,
+      "R_residual_slots": 94,
+      "R_visual_owner_bytes": 9960073,
+      "G8_visual_owner_bytes": 9986057,
+      "unspent_bytes": 25984,
+      "R_actual_bits_per_element": 1.5508025811643016,
+      "G8_actual_bits_per_element": 1.554848340092873
+    },
+    {
+      "visual_tokens": 2304,
+      "R_residual_slots": 94,
+      "R_visual_owner_bytes": 12780169,
+      "G8_visual_owner_bytes": 12794889,
+      "unspent_bytes": 14720,
+      "R_actual_bits_per_element": 1.5476976424928695,
+      "G8_actual_bits_per_element": 1.549480256580171
+    },
+    {
+      "visual_tokens": 4096,
+      "R_residual_slots": 93,
+      "R_visual_owner_bytes": 22576777,
+      "G8_visual_owner_bytes": 22625801,
+      "unspent_bytes": 49024,
+      "R_actual_bits_per_element": 1.5379208837236678,
+      "G8_actual_bits_per_element": 1.5412603787013464
+    }
+  ]
+}

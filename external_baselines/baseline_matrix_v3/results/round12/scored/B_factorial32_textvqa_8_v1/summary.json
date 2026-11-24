@@ -1,0 +1,113 @@
+{
+  "schema": "baseline_matrix.offline_score.v1",
+  "status": "PASS_SCORED_COMPLETE",
+  "dataset": "textvqa",
+  "model_id": "M1",
+  "method": "TrajKV_R12_B_L43_v1",
+  "metric_contract_version": "matrix_v3_metrics_v1",
+  "metric_ids": [
+    "textvqa_mmf_ten_vote_leave_one_out_v1"
+  ],
+  "metric_provenance": [
+    "Meta MMF official TextVQA scorer"
+  ],
+  "groups": {
+    "overall": {
+      "expected_questions": 8,
+      "scored_pass_questions": 8,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 0.8999999999999999,
+        "questions": 8,
+        "source_clusters": 8,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.725,
+          1.0
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 0.8999999999999999,
+        "questions": 8,
+        "source_clusters": 8,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.725,
+          1.0
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    }
+  },
+  "primary_mean": 0.8999999999999999,
+  "primary_ci95": [
+    0.725,
+    1.0
+  ],
+  "primary_mean_percent": 89.99999999999999,
+  "primary_ci95_percent": [
+    72.5,
+    100.0
+  ],
+  "diagnostic_metrics_not_selected_by_score": {},
+  "raw_status_counts": {
+    "PASS": 8
+  },
+  "score_status_counts": {
+    "SCORED_PASS": 8
+  },
+  "expected_run_questions": 8,
+  "reference_cohort_questions": 8,
+  "entire_reference_cohort_selected": true,
+  "expected_ids_sha256": "fa8d34cbca1d4a5b5b3a74301524bb3187a824accf89f8a3b40e1ceacca56a8d",
+  "coverage_rule": "Any raw/scoring failure makes primary full-run mean/CI null; successful conditional mean is separately labeled, no fake zero or success-subset primary",
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261124,
+    "type": "percentile source-cluster resampling with replacement, question-weighted ratio",
+    "scale": "0..1"
+  },
+  "integrity": {
+    "status": "PASS_ALL_SHA_AND_EXPECTED_ID_CHECKS",
+    "raw_files": {
+      "manifest.json": "1e8530a52d1e0f9b0fe65b7c7cfcdbfd7126707d897081130b66063b635d54c3",
+      "records.jsonl": "e414e5812a151073d8cee205022f157996f3f49804ad7fdfd0231f91e811476e",
+      "complete.json": "80e1839f023654dc79b90a72f688e77fb231b005cb87ed989362e464a5ffdcb8"
+    },
+    "retrieval_receipt_sha256": "035a6bcc2bbc225a96cf63c503915ce4b8a2da2f4e6228e356cf11655073ee3f",
+    "derived_source_provenance": null,
+    "refs_sha256": "d069496a9e21c1c89be66ccdfc112926d9dde9e1a03bb96758f1f027fb5052be",
+    "inputs_sha256": "4cc40ca3b2ff5b640f2abadd3c7b573f864da0f2b10c27055664bd2db0492897",
+    "dataset_source_lock_sha256": "2075baaffdd295c0d5115cf393ae675b990dc923148ba223eba70ca98a27e3e5",
+    "metric_source_lock_sha256": "4ec78ff4f807843e358914afcf3e60e1a7eaf6f3013575a1f63787016da788e3",
+    "metric_code_hashes": {
+      "code/gates/metrics_gate.py": "e91887b55561759c2349860cf9a5acb2ed9284be99d6b3ae6469e8f2c4731606",
+      "code/metrics.py": "98b260c766e095f2b629d603de5cfd6519a91dccaaee471f02486955bb590d47",
+      "code/vendor_textvqa_metric.py": "b1a8e90abbf35e32e1e6c146c36c4a47ad72b71e73011f97cc3729aa1402b4c5"
+    },
+    "scorer_sha256": "72b5182eeb97e930403a970feebb4f1fadac23d04544c9646c6c9fd6b34bfba6",
+    "raw_dir": "${EVIDENCE_ROOT}\\results\\round12\\harvest_v2\\raw\\B_factorial32_textvqa_8_v1",
+    "refs_path": "${EVIDENCE_ROOT}\\results\\round12_v1\\bootstrap_inputs_v1\\factorial32_textvqa_refs.jsonl",
+    "fixture_only": false
+  },
+  "created_unix": 1795513578.52395,
+  "scoring_uses_GPU": false,
+  "prediction_provenance": {
+    "type": "original_raw_inference",
+    "inference_run": true,
+    "origin_counts": {
+      "fresh": 8,
+      "reused": 0
+    }
+  },
+  "derived_file_hashes": {
+    "scored_records.jsonl": "af0acaa07f013216a224c6a09cfcf9d6cba15c40924ec7f96d0965e873d02ef3",
+    "scores.csv": "2c9d9e0b4452d24904835eb57c97dee858d7bcd9b887dff7ad096948489217cf"
+  }
+}

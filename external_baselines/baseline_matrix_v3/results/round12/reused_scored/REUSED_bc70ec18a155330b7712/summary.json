@@ -1,0 +1,60 @@
+{
+  "dataset": "infovqa",
+  "mode": "FP16",
+  "status": "PASS_FRESH_R128_SOURCE_SCORE",
+  "expected_QA": 48,
+  "primary_mean": 0.9305555555555557,
+  "ci95": [
+    0.8541666666666666,
+    0.9861111111111112
+  ],
+  "groups": {
+    "overall": {
+      "expected_questions": 48,
+      "scored_pass_questions": 48,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 0.9305555555555557,
+        "questions": 48,
+        "source_clusters": 48,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.8541666666666666,
+          0.9861111111111112
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 0.9305555555555557,
+        "questions": 48,
+        "source_clusters": 48,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.8541666666666666,
+          0.9861111111111112
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    }
+  },
+  "resources": {
+    "complete_bytes": {
+      "n": 48,
+      "mean": 89316181.33333333,
+      "min": 14682112,
+      "max": 132139008
+    }
+  },
+  "source_receipt_sha256": "93ec3658ea7ea373c854cae3243433150809cd69a65c19d6bf623920932e7e0f",
+  "fresh_QA": 48,
+  "reused_reference_views": 0,
+  "failed_QA_remain_in_primary_denominator": true,
+  "canonical_SourceRun_admission_claimed": false,
+  "quality_is_frozen_subset_offline_score": true,
+  "scored_records_sha256": "2179f293ab50ca87f055198f1084793e90427b4e320417811e6d3ca690ea5fa1"
+}

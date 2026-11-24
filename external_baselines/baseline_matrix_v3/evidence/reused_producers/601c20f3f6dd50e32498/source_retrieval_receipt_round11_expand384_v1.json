@@ -1,0 +1,427 @@
+{
+  "schema": "trajkv.round11.expand384_source_proof.v1",
+  "status": "PASS_CONFIRMATION_EXECUTED_SOURCE_AND_RAW_SHA",
+  "remote_hashes_computed_independently": true,
+  "parent_producer": "bm_R11_expand384_gpu0_v1",
+  "cell_name": "EXP_R7high_docvqa_v1",
+  "actual_driver": "code/round11_expand_runner_v1.py",
+  "actual_child_start": {
+    "event": {
+      "event": "START_CELL",
+      "name": "EXP_R7high_docvqa_v1",
+      "pid": 350495,
+      "argv": [
+        "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+        "-B",
+        "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_expand_runner_v1.py",
+        "--config",
+        "${DATA_ROOT}/configs/round11_v1/EXP_R7high_docvqa_v1.json",
+        "--output",
+        "${DATA_ROOT}/results/round11_v1/expand384/EXP_R7high_docvqa_v1"
+      ],
+      "started_unix": 1795444494.6607523,
+      "config_sha256": "06a66a9fb3a0ddab6039b98e17f57959a1bc670b1759e2266c5c7655f07b59ab"
+    },
+    "line_number": 15,
+    "exact_line_utf8": "{\"event\": \"START_CELL\", \"name\": \"EXP_R7high_docvqa_v1\", \"pid\": 350495, \"argv\": [\"${DATA_ROOT}/runtime/main_overlay_v1/bin/python\", \"-B\", \"${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_expand_runner_v1.py\", \"--config\", \"${DATA_ROOT}/configs/round11_v1/EXP_R7high_docvqa_v1.json\", \"--output\", \"${DATA_ROOT}/results/round11_v1/expand384/EXP_R7high_docvqa_v1\"], \"started_unix\": 1795444494.6607523, \"config_sha256\": \"06a66a9fb3a0ddab6039b98e17f57959a1bc670b1759e2266c5c7655f07b59ab\"}\n",
+    "exact_line_sha256": "aac5b7971044728762cbc49e6a931951c47f4f7cb800df8622e7934b088e66f2"
+  },
+  "parent_cell_success": true,
+  "SourceRun_admission_established": false,
+  "parent_state_snapshot": {
+    "sha256": "de9838a261b83c0e970b4114ef1c8076bb386a7797a3870279da2ac6bd960aba",
+    "body_utf8": "{\n  \"schema\": \"trajkv.round10.sequence_execution.v1\",\n  \"status\": \"RUNNING\",\n  \"plan_sha256\": \"35821d5b47bae34a14920a16dfd3c0bea0d61ed6c4f168ba25fddb2ea24c3f18\",\n  \"CUDA_VISIBLE_DEVICES\": \"0\",\n  \"source_root\": \"${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source\",\n  \"started_unix\": 1795434939.0601718,\n  \"expected_cells\": 10,\n  \"completed_cells\": [\n    {\n      \"name\": \"EXP_FP16_textvqa_v1\",\n      \"exit_code\": 0,\n      \"wall_seconds\": 227.74070739746094,\n      \"output\": \"${DATA_ROOT}/results/round11_v1/expand384/EXP_FP16_textvqa_v1\",\n      \"log\": \"${DATA_ROOT}/results/round11_v1/queues/expand384_gpu0_v1/EXP_FP16_textvqa_v1.log\",\n      \"recorded_QA\": 144,\n      \"complete_sha256\": \"8f58e78c287f53b83fc8aaef17d6ceb81daa549e7fc2bd81982a966134b54241\"\n    },\n    {\n      \"name\": \"EXP_R7low_textvqa_v1\",\n      \"exit_code\": 0,\n      \"wall_seconds\": 1033.7015352249146,\n      \"output\": \"${DATA_ROOT}/results/round11_v1/expand384/EXP_R7low_textvqa_v1\",\n      \"log\": \"${DATA_ROOT}/results/round11_v1/queues/expand384_gpu0_v1/EXP_R7low_textvqa_v1.log\",\n      \"recorded_QA\": 144,\n      \"complete_sha256\": \"a4a4fb8bac651ee7d5a2812250a888a15ec5271567b73db1e05e05ed9aa9210d\"\n    },\n    {\n      \"name\": \"EXP_R7high_textvqa_v1\",\n      \"exit_code\": 0,\n      \"wall_seconds\": 1033.8070442676544,\n      \"output\": \"${DATA_ROOT}/results/round11_v1/expand384/EXP_R7high_textvqa_v1\",\n      \"log\": \"${DATA_ROOT}/results/round11_v1/queues/expand384_gpu0_v1/EXP_R7high_textvqa_v1.log\",\n      \"recorded_QA\": 144,\n      \"complete_sha256\": \"0471fd2b88b43e0fd5bdea20b5d13adcdff0da6f0af1f74d74641cbdf6664d46\"\n    },\n    {\n      \"name\": \"EXP_JointV_textvqa_v1\",\n      \"exit_code\": 0,\n      \"wall_seconds\": 2183.9947426319122,\n      \"output\": \"${DATA_ROOT}/results/round11_v1/expand384/EXP_JointV_textvqa_v1\",\n      \"log\": \"${DATA_ROOT}/results/round11_v1/queues/expand384_gpu0_v1/EXP_JointV_textvqa_v1.log\",\n      \"recorded_QA\": 144,\n      \"complete_sha256\": \"7b840e87c0ef6d0ffc2d4a529e7f2744f3a268219d998919c9b86a009b9ccd34\"\n    },\n    {\n      \"name\": \"EXP_JointSpatialWO_textvqa_v1\",\n      \"exit_code\": 0,\n      \"wall_seconds\": 4612.527367115021,\n      \"output\": \"${DATA_ROOT}/results/round11_v1/expand384/EXP_JointSpatialWO_textvqa_v1\",\n      \"log\": \"${DATA_ROOT}/results/round11_v1/queues/expand384_gpu0_v1/EXP_JointSpatialWO_textvqa_v1.log\",\n      \"recorded_QA\": 144,\n      \"complete_sha256\": \"e43273cede52b0e7be8fc4b8f189a4d0a79ba5da7feac2d5432ee376a1e7df1c\"\n    },\n    {\n      \"name\": \"EXP_FP16_docvqa_v1\",\n      \"exit_code\": 0,\n      \"wall_seconds\": 100.6936182975769,\n      \"output\": \"${DATA_ROOT}/results/round11_v1/expand384/EXP_FP16_docvqa_v1\",\n      \"log\": \"${DATA_ROOT}/results/round11_v1/queues/expand384_gpu0_v1/EXP_FP16_docvqa_v1.log\",\n      \"recorded_QA\": 48,\n      \"complete_sha256\": \"e21e6d46e45dc4fb01582140d155ec6657774e529b248366dd27a802c1410bdd\"\n    },\n    {\n      \"name\": \"EXP_R7low_docvqa_v1\",\n      \"exit_code\": 0,\n      \"wall_seconds\": 362.8641040325165,\n      \"output\": \"${DATA_ROOT}/results/round11_v1/expand384/EXP_R7low_docvqa_v1\",\n      \"log\": \"${DATA_ROOT}/results/round11_v1/queues/expand384_gpu0_v1/EXP_R7low_docvqa_v1.log\",\n      \"recorded_QA\": 48,\n      \"complete_sha256\": \"808d102fc14f1ac974099251d51b19eb4a36e5c7daf0a6aef29935d2d7022842\"\n    },\n    {\n      \"name\": \"EXP_R7high_docvqa_v1\",\n      \"exit_code\": 0,\n      \"wall_seconds\": 369.14195919036865,\n      \"output\": \"${DATA_ROOT}/results/round11_v1/expand384/EXP_R7high_docvqa_v1\",\n      \"log\": \"${DATA_ROOT}/results/round11_v1/queues/expand384_gpu0_v1/EXP_R7high_docvqa_v1.log\",\n      \"recorded_QA\": 48,\n      \"complete_sha256\": \"749e9fe2dfeb37ce5d68218acf5ff3d34c191e45041cc0c18c04e32bab37aee0\"\n    }\n  ],\n  \"active\": {\n    \"name\": \"EXP_JointV_docvqa_v1\",\n    \"pid\": 352351,\n    \"argv\": [\n      \"${DATA_ROOT}/runtime/main_overlay_v1/bin/python\",\n      \"-B\",\n      \"${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_expand_runner_v1.py\",\n      \"--config\",\n      \"${DATA_ROOT}/configs/round11_v1/EXP_JointV_docvqa_v1.json\",\n      \"--output\",\n      \"${DATA_ROOT}/results/round11_v1/expand384/EXP_JointV_docvqa_v1\"\n    ],\n    \"started_unix\": 1795444863.8345315,\n    \"config_sha256\": \"b36133907291f1c39961a39b1385f9983594843e60020b06f598bdd37383a29b\"\n  }\n}"
+  },
+  "files": [
+    {
+      "file": "manifest.json",
+      "remote_file": "${DATA_ROOT}/results/round11_v1/expand384/EXP_R7high_docvqa_v1/manifest.json",
+      "sha256": "601c20f3f6dd50e324980a7fdf793f551ecaecfec88506b7d8c120f60101217e",
+      "bytes": 60689
+    },
+    {
+      "file": "records.jsonl",
+      "remote_file": "${DATA_ROOT}/results/round11_v1/expand384/EXP_R7high_docvqa_v1/records.jsonl",
+      "sha256": "066db4b54dbca535538aab0fed1d998511f3c375d526d3ebc34cb3fd3da0ac3e",
+      "bytes": 14771828
+    },
+    {
+      "file": "complete.json",
+      "remote_file": "${DATA_ROOT}/results/round11_v1/expand384/EXP_R7high_docvqa_v1/complete.json",
+      "sha256": "749e9fe2dfeb37ce5d68218acf5ff3d34c191e45041cc0c18c04e32bab37aee0",
+      "bytes": 5121
+    },
+    {
+      "file": "source_job.json",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.json",
+      "sha256": "920e4e9964417918ff85fb68b64d788b6cb502e484fc43392c870a634145f5b0",
+      "bytes": 2652
+    },
+    {
+      "file": "launch_receipt.json",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.launch.json",
+      "sha256": "7e4792e875bc746885752400adccfc189bf26aa53d1259e82f648febe34e40d7",
+      "bytes": 3037
+    },
+    {
+      "file": "source_inventory.json",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/sha256.json",
+      "sha256": "a19ba5a2e53533104cfec0f9689cfc07fe95a26f48288037c85c1d90d09b1a7d",
+      "bytes": 53952
+    },
+    {
+      "file": "source_config.json",
+      "remote_file": "${DATA_ROOT}/configs/round11_v1/EXP_R7high_docvqa_v1.json",
+      "sha256": "06a66a9fb3a0ddab6039b98e17f57959a1bc670b1759e2266c5c7655f07b59ab",
+      "bytes": 21047
+    },
+    {
+      "file": "source_sequence_config.json",
+      "remote_file": "${DATA_ROOT}/configs/round10_v1/R11_expand384_gpu0_v1.json",
+      "sha256": "35821d5b47bae34a14920a16dfd3c0bea0d61ed6c4f168ba25fddb2ea24c3f18",
+      "bytes": 6700
+    },
+    {
+      "file": "source_parent_driver.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round10_sequence_v1.py",
+      "sha256": "2d0dce9da80156fb0224a04d48a9a3e3869ede5e9885885a6a25073ab511fe00",
+      "bytes": 4946
+    },
+    {
+      "file": "source_files/code/round10_runner_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round10_runner_v1.py",
+      "sha256": "22b5e45152ea9be982ae7ba77950ed09bd065ae574b58b80725beb0983c54e96",
+      "bytes": 43090
+    },
+    {
+      "file": "source_files/code/round10_value_bank_v2.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round10_value_bank_v2.py",
+      "sha256": "4c25f1bdd2174e07edac37f522e54005c0139e5e00103d42975bfaf3210de05c",
+      "bytes": 8140
+    },
+    {
+      "file": "source_files/code/round10_value_bank_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round10_value_bank_v1.py",
+      "sha256": "5c9880d9e7facdc1623473dd74759aee9064bd5ff313f1581390fe0ccd3aae1c",
+      "bytes": 19463
+    },
+    {
+      "file": "source_files/code/round9_value_bank_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round9_value_bank_v1.py",
+      "sha256": "14d242a6643a738457c9b8593d0f0eb6e383c5e979b2e196fcca28e7d37a5f2e",
+      "bytes": 18723
+    },
+    {
+      "file": "source_files/code/r7_legacy_bridge_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/r7_legacy_bridge_v1.py",
+      "sha256": "b97241c42cdaea96209ba81644b16483b04784e8202080469635184010caa48b",
+      "bytes": 21971
+    },
+    {
+      "file": "source_files/code/r7_legacy_bridge_v2.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/r7_legacy_bridge_v2.py",
+      "sha256": "608b1660896c8e8fd05484be47acf73e99f260db71731239937d0279ed842dad",
+      "bytes": 14850
+    },
+    {
+      "file": "source_files/code/m1_protocol.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/m1_protocol.py",
+      "sha256": "4ba12190fe3c6513c4a45822c4294c3e40cf82ea13ac791c6cb677aed3871427",
+      "bytes": 3906
+    },
+    {
+      "file": "source_files/code/model_registry.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/model_registry.py",
+      "sha256": "969b39c1df27b63166f4b783187084022cf8548799a6c08178b8665b54d13c58",
+      "bytes": 2793
+    },
+    {
+      "file": "source_files/code/dataset_registry.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/dataset_registry.py",
+      "sha256": "4aaf39f4d0725080e66a926754ba50c33247f115253c36e55433805d79bf0983",
+      "bytes": 4156
+    },
+    {
+      "file": "source_files/code/evaluate.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/evaluate.py",
+      "sha256": "dbb556d87827c146e596b1e01de6c58a7a8b08f788c4c13d18129f4b1f13f75c",
+      "bytes": 32359
+    },
+    {
+      "file": "source_files/code/cache_bridge.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/cache_bridge.py",
+      "sha256": "36b860522276895dd361120d315d745a785fd020cbddbff9e75051e26a907025",
+      "bytes": 16940
+    },
+    {
+      "file": "source_files/code/attention_bridge.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/attention_bridge.py",
+      "sha256": "eef35d19dfc04fab12f0b6f9ba618a8b34ed48f4488edd566ea4578fb3311876",
+      "bytes": 16777
+    },
+    {
+      "file": "source_files/code/ownership.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/ownership.py",
+      "sha256": "8443adca9e991663e42da6eff0609b54eb7ef0b13fee8ac09f4e12d1894a8456",
+      "bytes": 5756
+    },
+    {
+      "file": "source_files/code/round10_inputs_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round10_inputs_v1.py",
+      "sha256": "61cc6dca53d95f0f24ab0a3b160eeb7be5fbac179e5ded510a2c2852e8e3dd77",
+      "bytes": 5391
+    },
+    {
+      "file": "source_files/code/round11_runner_v2.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_runner_v2.py",
+      "sha256": "ec87b1270bfae11d4a2d98fcafc544fcf42a3c132c72bc30d41fe4176ee73ce1",
+      "bytes": 12401
+    },
+    {
+      "file": "source_files/code/round11_value_bank_v2.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_value_bank_v2.py",
+      "sha256": "f65273b2f69c39e6ca9271a62f337b3e57b808d0f9e59325c6ef055456985e16",
+      "bytes": 11880
+    },
+    {
+      "file": "source_files/code/round11_joint_value_v2.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_joint_value_v2.py",
+      "sha256": "b819a540f9a07dba153513b45a248f7b56cbe3b46f0115b6e2c7671260f5ea82",
+      "bytes": 13900
+    },
+    {
+      "file": "source_files/code/round11_joint_value_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_joint_value_v1.py",
+      "sha256": "6d76a770163d17574f5f15fa888886edc5cd1e12c6e153d610a856a78c95378b",
+      "bytes": 12630
+    },
+    {
+      "file": "source_files/code/round11_attention_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_attention_v1.py",
+      "sha256": "3290a1b372a8639f702e9ac3a9e183b06147c0b73ac402a24ef21bb35556119f",
+      "bytes": 9771
+    },
+    {
+      "file": "source_files/code/round11_wo_runner_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_wo_runner_v1.py",
+      "sha256": "c83846fce9e41ef4308160e9e48dae78ba143c0ef9843e387e041ec632907517",
+      "bytes": 15875
+    },
+    {
+      "file": "source_files/code/round11_wo_value_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_wo_value_v1.py",
+      "sha256": "b0f62f1c8ddbad41336b161891cf0943876a0087e9dcdec63e9bc6e312aaf69e",
+      "bytes": 33403
+    },
+    {
+      "file": "source_files/code/round11_expand_runner_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_expand_runner_v1.py",
+      "sha256": "bd38b4503423f77f5e61135894b9f210896c888f57886e7041844a75e9f9ed7a",
+      "bytes": 15731
+    },
+    {
+      "file": "source_files/code/round11_expand384_data_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_expand384_data_v1.py",
+      "sha256": "1fd95c1515237617c0a1eb26fa3d522d224d7b6218defaca2f125354c70b8778",
+      "bytes": 27024
+    },
+    {
+      "file": "source_files/code/round11_confirmation_data_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round11_confirmation_data_v1.py",
+      "sha256": "44297a3c58a493c26a17084a72c4800303b0b70143543217fe0ede3db02548cf",
+      "bytes": 23333
+    },
+    {
+      "file": "source_files/code/round10_data_builder_v1.py",
+      "remote_file": "${DATA_ROOT}/jobs/bm_R11_expand384_gpu0_v1.source/code/round10_data_builder_v1.py",
+      "sha256": "914dfa258e6fbcfc00c709df6e78cfba6cba5c385db7c51f1e15ebb5d0f59936",
+      "bytes": 24697
+    },
+    {
+      "file": "source_inputs.jsonl",
+      "remote_file": "${DATA_ROOT}/configs/round11_expand384_inputs_v1/docvqa_expand48_inputs.jsonl",
+      "sha256": "1993b666a812cf4e92dc14205d1d2e89a80f513b285f67fe86e73b656e7d1aca",
+      "bytes": 36314
+    },
+    {
+      "file": "input_manifest.json",
+      "remote_file": "${DATA_ROOT}/configs/round11_expand384_inputs_v1/EXPAND384_INPUT_MANIFEST_v1.json",
+      "sha256": "f7a37a254d59135c7f2e4364fd8a1a271e65f681620d7482e0b3e7e9077d1414",
+      "bytes": 7940
+    },
+    {
+      "file": "selection_manifest.json",
+      "remote_file": "${DATA_ROOT}/configs/round11_v1/CONF2_SELECTION_MANIFEST_v2.json",
+      "sha256": "45409e4adedae77660825c1bf1f9a39cf03d8a5dd14eae34374705b3b823f915",
+      "bytes": 512
+    },
+    {
+      "file": "expansion_design.json",
+      "remote_file": "${DATA_ROOT}/configs/round11_v1/EXPANSION_DESIGN_v1.json",
+      "sha256": "ebe818bbc67b1d189b4e27b15e2fdd4af59c0a7e5633c5b1125add1ccfac0c19",
+      "bytes": 1881
+    },
+    {
+      "file": "assets/original_profile.json",
+      "remote_file": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/confirm_doc128_s0.json",
+      "sha256": "aba87db8c87bd1ca8ca71685baa7a942c0450c8ecc1302c9ccbe183c67703ef4",
+      "bytes": 96588
+    },
+    {
+      "file": "assets/direction_book_path.json",
+      "remote_file": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/gaussian_vq_g4_256.json",
+      "sha256": "9d3ad3683cf6888c30f3c8ba9c6dd0d4dbcf40106a34567d578479245e7309ae",
+      "bytes": 25805
+    },
+    {
+      "file": "assets/metadata_factor_path.json",
+      "remote_file": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/factors_k2_original.json",
+      "sha256": "d60fe4ffcf31e36306ed2c5a4069634627c83b3af2f0b86fdb5c37e456113671",
+      "bytes": 94983
+    },
+    {
+      "file": "assets/round7_policy_path.json",
+      "remote_file": "${DATA_ROOT}/configs/r7_research/frozen_assets_v2/policy_k2_cond.json",
+      "sha256": "e8a58e602c047adbd4ca6ae253f6ba2eb3961158d7c75444d3e27a41ec47ed6e",
+      "bytes": 26501
+    },
+    {
+      "file": "legacy_sources/00625b902a290270_bytes.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/bytes.py",
+      "sha256": "00625b902a29027075c13d64ca9019753e4aa153215aea6f349d25902a848115",
+      "bytes": 787
+    },
+    {
+      "file": "legacy_sources/f1ab22bf04f59226_bank.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/experiments/bank.py",
+      "sha256": "f1ab22bf04f592263246bac82c415fd9a2b8c6adb4d813a5b46d056f08987ee5",
+      "bytes": 12355
+    },
+    {
+      "file": "legacy_sources/d0130e31d055f2c2_fused_progressive.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/experiments/fused_progressive.py",
+      "sha256": "d0130e31d055f2c2ced6de1cc26a5cbfa99eea0642eb60ce5f4b6c359cd6520c",
+      "bytes": 9631
+    },
+    {
+      "file": "legacy_sources/b7578afafcb4bc52_check_fused_progressive.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/experiments/check_fused_progressive.py",
+      "sha256": "b7578afafcb4bc522bc0742b99e4ee5ab49307fb120b3475dc553900076dac55",
+      "bytes": 18428
+    },
+    {
+      "file": "legacy_sources/1c46ceb968e679f9_fused_masked.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/fused_masked.py",
+      "sha256": "1c46ceb968e679f9b9c66c79ba9ab92bde61944df431be3928bfd13009f1c8f9",
+      "bytes": 11213
+    },
+    {
+      "file": "legacy_sources/7c313fddfdadc819_masked_bank.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/masked_bank.py",
+      "sha256": "7c313fddfdadc81939235b0a4fd843540961f8841c69d7400101b33a66737d9d",
+      "bytes": 16492
+    },
+    {
+      "file": "legacy_sources/58e036a878966aa6_fused_rates.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/fused_rates.py",
+      "sha256": "58e036a878966aa6813ffe9c13d64a11f7dbc8c86785d9234517f420e3659b63",
+      "bytes": 13404
+    },
+    {
+      "file": "legacy_sources/314bc458c9c2d845_quantizers.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/quantizers.py",
+      "sha256": "314bc458c9c2d84579b2a02cb8a45908e0099b613368be40a07669ca5d273e38",
+      "bytes": 2687
+    },
+    {
+      "file": "legacy_sources/ef30a5a6f14d5b71_rate_bank.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/rate_bank.py",
+      "sha256": "ef30a5a6f14d5b71c950a9ec12f05c5f1925ee01c6a6cefb3bb384852c587b20",
+      "bytes": 10719
+    },
+    {
+      "file": "legacy_sources/8090240cd1ee5edd_affine_rate_bank.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/affine_rate_bank.py",
+      "sha256": "8090240cd1ee5edde07d1252c41f4dfcaa8aebf167a2b7d890d37ae57edcd2c0",
+      "bytes": 3545
+    },
+    {
+      "file": "legacy_sources/9dc73998f66d5b7b_fast_wht.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/fast_wht.py",
+      "sha256": "9dc73998f66d5b7bafc96a5aa3db57974d1ca8e604e432e7539625f104d90ee3",
+      "bytes": 1595
+    },
+    {
+      "file": "legacy_sources/0f3b78a14cf62468_fused_learned_direction.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/fused_learned_direction.py",
+      "sha256": "0f3b78a14cf62468b2a3ba3a60ece3e37a010eed454ecf82bef5a88f198295b3",
+      "bytes": 4231
+    },
+    {
+      "file": "legacy_sources/0ee57d34ba74dd42_learned_direction_bank.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/learned_direction_bank.py",
+      "sha256": "0ee57d34ba74dd426aecb51e985efe3df50852a5e67b624122789719b7547c40",
+      "bytes": 6779
+    },
+    {
+      "file": "legacy_sources/bea958a75c8df847_metadata_direction_bank.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/metadata_direction_bank.py",
+      "sha256": "bea958a75c8df84702b20ba32836ae6f4f7ffaae8f6a1024ea6de3c18659ff61",
+      "bytes": 4369
+    },
+    {
+      "file": "legacy_sources/f96277c726c39f28_round6_depth_attention.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/round6_depth_attention.py",
+      "sha256": "f96277c726c39f2880e8618525b4bdcbac0049e68e7c4d3e2eb699fa24dfd945",
+      "bytes": 5856
+    },
+    {
+      "file": "legacy_sources/333ef93165fd786b_round6_depth_codec.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/round6_depth_codec.py",
+      "sha256": "333ef93165fd786bc40015f6f8c775ce3de20bb98da26ffa6555c38cba5f12d4",
+      "bytes": 8725
+    },
+    {
+      "file": "legacy_sources/1d423bf03cdc76c0_round6_depth_bank.py",
+      "remote_file": "${DATA_DISK}/VLAtest/TrajKV/code/a2/round6_depth_bank.py",
+      "sha256": "1d423bf03cdc76c0650776230d6a1093710e9c9fb8ac2cd84974d791aa65c6f7",
+      "bytes": 14921
+    },
+    {
+      "file": "legacy_sources/ca4bce75c1e80c0a_p185_single_state.py",
+      "remote_file": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts/p185_single_state.py",
+      "sha256": "ca4bce75c1e80c0a99eb18451323f2d0c2a07a8c707a3238f1a4e8d5d9114b3c",
+      "bytes": 5646
+    },
+    {
+      "file": "legacy_sources/bf09b996f098aea5_p185_segmented_kernel.py",
+      "remote_file": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts/p185_segmented_kernel.py",
+      "sha256": "bf09b996f098aea5027f25de54b50aef78f305225de105d9b8c9343751eb3f64",
+      "bytes": 5681
+    },
+    {
+      "file": "legacy_sources/437dbb5e9bd34e69_p185_model_state.py",
+      "remote_file": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts/p185_model_state.py",
+      "sha256": "437dbb5e9bd34e699ddc1f589834d207248074e214dfa821143781cd4fe3c4af",
+      "bytes": 4743
+    },
+    {
+      "file": "legacy_sources/1c278ebd1f648170_p176_kivi_codec.py",
+      "remote_file": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts/p176_kivi_codec.py",
+      "sha256": "1c278ebd1f648170696208ffed89a01e96960c18670610948d742262ad6b7cbb",
+      "bytes": 6802
+    },
+    {
+      "file": "legacy_sources/a1b8b84b9dbc655c_p201_refinement.py",
+      "remote_file": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts/p201_refinement.py",
+      "sha256": "a1b8b84b9dbc655c21ead0bffa032be1ae4af97b5da4768112fe2a6106e58afb",
+      "bytes": 2509
+    },
+    {
+      "file": "legacy_sources/292aca3d0f793c16_p202_refinement.py",
+      "remote_file": "${DATA_DISK}/VLAtest/VisContract_P14_2/scripts/p202_refinement.py",
+      "sha256": "292aca3d0f793c164b1d4204af21573cd4092597eb3f25055ded6d879afa04aa",
+      "bytes": 2616
+    }
+  ]
+}

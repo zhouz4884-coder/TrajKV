@@ -1,0 +1,58 @@
+{
+  "status": "PASS_ACTUAL_HISTORICAL_PUBLIC_ADMISSION_CHECKS",
+  "tests": [
+    {
+      "test": "actual_original_producer_FIXED500_FP16",
+      "status": "PASS"
+    },
+    {
+      "test": "actual_original_producer_FIXED500_KIVI_source_example_g32R32",
+      "status": "PASS"
+    },
+    {
+      "test": "actual_original_producer_DEV_FP16",
+      "status": "PASS"
+    },
+    {
+      "test": "actual_original_producer_FIXED500_R7low",
+      "status": "PASS"
+    },
+    {
+      "test": "historical_source_cannot_be_new_inference",
+      "status": "PASS_EXPECTED_REJECTION",
+      "reason": "ROUND12_LEGACY_PUBLIC: legacy binding cannot admit new inference"
+    },
+    {
+      "test": "original_proof_member_omitted",
+      "status": "PASS_EXPECTED_REJECTION",
+      "reason": "ROUND12_LEGACY_PUBLIC: original producer core member omitted"
+    },
+    {
+      "test": "derived_row_wrong_original_exact_line",
+      "status": "PASS_EXPECTED_REJECTION",
+      "reason": "ROUND12_LEGACY_PUBLIC: derived row is not exact original producer content"
+    },
+    {
+      "test": "actual_native_disjoint_regions_capacity",
+      "status": "PASS"
+    },
+    {
+      "test": "native_visual_region_wrong_capacity",
+      "status": "PASS_EXPECTED_REJECTION",
+      "reason": "ROUND12_PUBLIC: complete visual owner differs"
+    },
+    {
+      "test": "native_region_requires_explicit_native_owner",
+      "status": "PASS_EXPECTED_REJECTION",
+      "reason": "ROUND12_PUBLIC: native FP16 regions require actual56 K/V allocations"
+    }
+  ],
+  "input_scope_sha256": "273c6d92e3bb37456d107e055cd9bb5cb6ac03381133417b5a9dd3ac3ea48d14",
+  "new_model_calls": 0,
+  "new_GPU_calls": 0,
+  "credentials_accessed": false,
+  "network_calls": 0,
+  "GitHub_mutation": false,
+  "historical_inference_not_counted_as_new": true,
+  "actual_stage_sealed": false
+}

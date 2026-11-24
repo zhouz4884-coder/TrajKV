@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "${DATA_ROOT}/jobs/bm_R12_A_infovqa_head2_gpu0_v1.source/code/round12_runner_v1.py", line 249, in <module>
+    raise SystemExit(main())
+  File "${DATA_ROOT}/jobs/bm_R12_A_infovqa_head2_gpu0_v1.source/code/round12_runner_v1.py", line 245, in main
+    return frozen.main()
+  File "${DATA_ROOT}/jobs/bm_R12_A_infovqa_head2_gpu0_v1.source/code/round10_runner_v1.py", line 252, in main
+    config=validate_config(json.loads(args.config.read_text(encoding='utf-8-sig')))
+  File "${DATA_ROOT}/jobs/bm_R12_A_infovqa_head2_gpu0_v1.source/code/round12_runner_v1.py", line 98, in validate_config
+    require(config.get('position_owner_layout') == 'single_shared_visual_position_map', 'INPUT_CONTRACT: VP layout differs')
+  File "${DATA_ROOT}/jobs/bm_R12_A_infovqa_head2_gpu0_v1.source/code/round12_runner_v1.py", line 34, in require
+    frozen.require(value, 'ROUND12: ' + message)
+  File "${DATA_ROOT}/jobs/bm_R12_A_infovqa_head2_gpu0_v1.source/code/round10_runner_v1.py", line 42, in require
+    if not value: raise ValueError(message)
+ValueError: ROUND12: INPUT_CONTRACT: VP layout differs

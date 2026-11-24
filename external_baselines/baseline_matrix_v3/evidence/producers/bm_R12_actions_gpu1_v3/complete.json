@@ -1,0 +1,35 @@
+{
+  "schema": "trajkv.round10.sequence_execution.v1",
+  "status": "FAILED_SEQUENCE_PRESERVED",
+  "plan_sha256": "0508f775b319f049f01595fa44a8dd75157e0218e8b1136c087c038fa8ab48d8",
+  "CUDA_VISIBLE_DEVICES": "1",
+  "source_root": "${DATA_ROOT}/jobs/bm_R12_actions_gpu1_v3.source",
+  "started_unix": 1795508050.7325869,
+  "expected_cells": 6,
+  "completed_cells": [],
+  "active": {
+    "name": "Z_infovqa_64_v3",
+    "pid": 617558,
+    "argv": [
+      "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+      "-B",
+      "${DATA_ROOT}/jobs/bm_R12_actions_gpu1_v3.source/code/round12_action_runner_v3.py",
+      "--config",
+      "${DATA_ROOT}/configs/round12_v1/Z_infovqa_64_v3.json",
+      "--output",
+      "${DATA_ROOT}/results/round12_v1/raw/Z_infovqa_64_v3"
+    ],
+    "started_unix": 1795508050.7563465,
+    "config_sha256": "f16d79ca17a4649dee08b0e965457a05a3ca09bcfc0aaaa32ed6eff3964b2f85"
+  },
+  "failed_cell": {
+    "name": "Z_infovqa_64_v3",
+    "exit_code": 1,
+    "wall_seconds": 5.937794923782349,
+    "output": "${DATA_ROOT}/results/round12_v1/raw/Z_infovqa_64_v3",
+    "log": "${DATA_ROOT}/results/round12_v1/queues/actions_gpu1_v3/Z_infovqa_64_v3.log"
+  },
+  "error_type": "RuntimeError",
+  "error": "Child failed; original output preserved: Z_infovqa_64_v3",
+  "finished_unix": 1795508056.6945028
+}

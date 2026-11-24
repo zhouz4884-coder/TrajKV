@@ -1,0 +1,40 @@
+{
+  "schema": "trajkv.round12.adaptive_development_decision.v1",
+  "time_hong_kong": "2026-11-24T17:47:52.589444+08:00",
+  "based_on_development_only": true,
+  "source_report": "${EVIDENCE_ROOT}\\results\\round12\\harvest_v2\\collector_runs\\20261124T092316Z_00c3f677\\main_report\\summary.json",
+  "source_report_sha256": "c35f3baae3a1af938fe5b192f7c6803317f963d4ed327fb2de76aeaaff67fdd1",
+  "observed_Info64": {
+    "R7low": 83.77388388901547,
+    "R7high": 87.8910601155667,
+    "A": 88.33748868699527,
+    "D": 85.34432039695197,
+    "V2R": 86.59743186881344,
+    "Z": 83.40936147186147,
+    "Z-random": 75.99521175096832
+  },
+  "hypothesis": "Related crop has usable localization signal over random but retaining all global tiles adds cost and distracts. Trade global token density for higher K precision under original low first-answer complete-KV budget.",
+  "new_methods": [
+    "Z-budget-K2",
+    "Zrandom-budget-K2"
+  ],
+  "new_core_cases_each": {
+    "infovqa": 32,
+    "docvqa": 16
+  },
+  "source_panel": "middle64 first Info32/Doc16, pre-existing outcome-blind hash order",
+  "no_GT_in_algorithm": true,
+  "numerical_encoder": "existing validated A K2, original V1 and concrete43 coverage",
+  "resource_constraint": "actual full-question cache_storage.total_bytes before first sampled answer; old low cache must be released before chosen prefill",
+  "separate_recorded_costs": [
+    "initial/probe/prefill/encoding/generation",
+    "pixel/input payload, model and workspace peak",
+    "onsite fallback rebuilding cost"
+  ],
+  "old_v2_plan_preserved": true,
+  "replace_last128_extension_with": "96 budget-reallocation development events, then reserve32 for most relevant close comparison; log before outputs",
+  "planned_main_and_oracle_QA_max": 1200,
+  "earlier_protocol_pilot_terminal_events_separate": 2,
+  "fixed500_frozen_candidate_not_yet_selected": true,
+  "full5000_GPU_forbidden": true
+}
