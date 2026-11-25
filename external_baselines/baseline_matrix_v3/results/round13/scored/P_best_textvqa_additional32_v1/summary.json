@@ -1,0 +1,113 @@
+{
+  "schema": "baseline_matrix.offline_score.v1",
+  "status": "PASS_SCORED_COMPLETE",
+  "dataset": "textvqa",
+  "model_id": "M1",
+  "method": "TrajKV_R13_P_best_v1",
+  "metric_contract_version": "matrix_v3_metrics_v1",
+  "metric_ids": [
+    "textvqa_mmf_ten_vote_leave_one_out_v1"
+  ],
+  "metric_provenance": [
+    "Meta MMF official TextVQA scorer"
+  ],
+  "groups": {
+    "overall": {
+      "expected_questions": 32,
+      "scored_pass_questions": 32,
+      "failure_questions": 0,
+      "coverage_fraction": 1.0,
+      "primary": {
+        "mean": 0.8875,
+        "questions": 32,
+        "source_clusters": 32,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.778125,
+          0.96875
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP"
+      },
+      "conditional_success_only": {
+        "mean": 0.8875,
+        "questions": 32,
+        "source_clusters": 32,
+        "estimand": "question-weighted mean",
+        "resampling_unit": "source_cluster_id",
+        "ci95": [
+          0.778125,
+          0.96875
+        ],
+        "ci_status": "PERCENTILE_CLUSTER_BOOTSTRAP",
+        "is_full_cohort_quality": true
+      },
+      "failed_ids": []
+    }
+  },
+  "primary_mean": 0.8875,
+  "primary_ci95": [
+    0.778125,
+    0.96875
+  ],
+  "primary_mean_percent": 88.75,
+  "primary_ci95_percent": [
+    77.8125,
+    96.875
+  ],
+  "diagnostic_metrics_not_selected_by_score": {},
+  "raw_status_counts": {
+    "PASS": 32
+  },
+  "score_status_counts": {
+    "SCORED_PASS": 32
+  },
+  "expected_run_questions": 32,
+  "reference_cohort_questions": 32,
+  "entire_reference_cohort_selected": true,
+  "expected_ids_sha256": "6eac4d9bd911e28307b57077d08764d762ef5d90cb01c26caf574ca363f0f296",
+  "coverage_rule": "Any raw/scoring failure makes primary full-run mean/CI null; successful conditional mean is separately labeled, no fake zero or success-subset primary",
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261125,
+    "type": "percentile source-cluster resampling with replacement, question-weighted ratio",
+    "scale": "0..1"
+  },
+  "integrity": {
+    "status": "PASS_ALL_SHA_AND_EXPECTED_ID_CHECKS",
+    "raw_files": {
+      "manifest.json": "11b8ab630800faeb4d2e3d757409a961264d240b357a096b980edeac7e2a8d52",
+      "records.jsonl": "aff2b455b36e562990f1007dfdcc67b5b3e58ff2374031a4f00aa11c3e06099b",
+      "complete.json": "990259b09176d6dbc7a570f955b61ec6c62adce03223eaeb855e8c9b2eef0caf"
+    },
+    "retrieval_receipt_sha256": "1bf570ee0a6ef4c517a5a3e868ca69fd36d14e66eec66dc2db69876b130723c0",
+    "derived_source_provenance": null,
+    "refs_sha256": "96e0c181fa46f9b4b436629446302bd4f5cab1dc198b8b29a4302e402546cccc",
+    "inputs_sha256": "d21af9d30c29d2c241b84df50a1cde1d486288669b4331166e158f69b9f20373",
+    "dataset_source_lock_sha256": "5a4e79dc87a16f191da47b4203817ecb293668bede401ab502dc19f6a59440ae",
+    "metric_source_lock_sha256": "4ec78ff4f807843e358914afcf3e60e1a7eaf6f3013575a1f63787016da788e3",
+    "metric_code_hashes": {
+      "code/gates/metrics_gate.py": "e91887b55561759c2349860cf9a5acb2ed9284be99d6b3ae6469e8f2c4731606",
+      "code/metrics.py": "98b260c766e095f2b629d603de5cfd6519a91dccaaee471f02486955bb590d47",
+      "code/vendor_textvqa_metric.py": "b1a8e90abbf35e32e1e6c146c36c4a47ad72b71e73011f97cc3729aa1402b4c5"
+    },
+    "scorer_sha256": "72b5182eeb97e930403a970feebb4f1fadac23d04544c9646c6c9fd6b34bfba6",
+    "raw_dir": "${EVIDENCE_ROOT}\\results\\round13\\text32_extension_harvest_v1\\raw\\P_best_textvqa_additional32_v1",
+    "refs_path": "${EVIDENCE_ROOT}\\results\\round13\\text32_extension_harvest_v1\\scoring_cohorts_v1\\additional_text32_textvqa_refs.jsonl",
+    "fixture_only": false
+  },
+  "created_unix": 1795599324.118707,
+  "scoring_uses_GPU": false,
+  "prediction_provenance": {
+    "type": "original_raw_inference",
+    "inference_run": true,
+    "origin_counts": {
+      "fresh": 32,
+      "reused": 0
+    }
+  },
+  "derived_file_hashes": {
+    "scored_records.jsonl": "8a1592624dacd1a7b34754f3aed284bb625b75b3e85845d89d73ddef2f71a1af",
+    "scores.csv": "d76c123dad07fc975f4bdbfbf0c49c7ef9edd31efda0b6e1328b7708ee544c87"
+  }
+}

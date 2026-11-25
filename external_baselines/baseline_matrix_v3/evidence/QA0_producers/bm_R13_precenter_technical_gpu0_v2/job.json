@@ -1,0 +1,43 @@
+{
+  "name": "bm_R13_precenter_technical_gpu0_v2",
+  "env": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "TOKENIZERS_PARALLELISM": "false",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8",
+    "TRITON_CACHE_DIR": "${DATA_ROOT}/cache/round13_v1/triton",
+    "TMPDIR": "${DATA_ROOT}/cache/round13_v1/tmp",
+    "TMP": "${DATA_ROOT}/cache/round13_v1/tmp",
+    "TEMP": "${DATA_ROOT}/cache/round13_v1/tmp",
+    "TORCHINDUCTOR_CACHE_DIR": "${DATA_ROOT}/cache/round13_v1/inductor",
+    "CUDA_CACHE_PATH": "${DATA_ROOT}/cache/round13_v1/cuda",
+    "PYTHONPYCACHEPREFIX": "${DATA_ROOT}/cache/round13_v1/pycache",
+    "HF_HOME": "${DATA_ROOT}/cache/round13_v1/huggingface",
+    "HF_HUB_CACHE": "${DATA_ROOT}/cache/round13_v1/huggingface/hub",
+    "TORCH_HOME": "${DATA_ROOT}/cache/round13_v1/torch",
+    "TORCH_EXTENSIONS_DIR": "${DATA_ROOT}/cache/round13_v1/torch_extensions",
+    "PIP_CACHE_DIR": "${DATA_ROOT}/cache/round13_v1/pip",
+    "UV_CACHE_DIR": "${DATA_ROOT}/cache/round13_v1/uv",
+    "XDG_CACHE_HOME": "${DATA_ROOT}/cache/round13_v1/xdg",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "CUDA_CACHE_MAXSIZE": "1073741824"
+  },
+  "argv": [
+    "${DATA_ROOT}/runtime/main_overlay_v1/bin/python",
+    "-B",
+    "${DATA_ROOT}/code/round13_precenter_technical_launch_v1.py",
+    "--legacy-a2",
+    "${DATA_DISK}/VLAtest/TrajKV/code/a2",
+    "--output",
+    "${DATA_ROOT}/results/round13_v1/precenter_technical_v2/PRECENTER_CUDA_TECHNICAL_v1.json",
+    "--visual-tokens",
+    "32",
+    "--device",
+    "cuda:0",
+    "--dump-field-ptx"
+  ]
+}

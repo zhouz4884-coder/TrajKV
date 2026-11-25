@@ -1,0 +1,55 @@
+{"event": "START", "step": "exception", "time": 1795595511.7839668}
+${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/cuda/__init__.py:58: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+{"status": "PASS_ACTUAL_CUDA_PACKED_EXCEPTION_QA0", "checks": 45, "output": "${DATA_ROOT}/results/round13_v1/technical_v1/EXCEPTION_CUDA_TECHNICAL_v1.json"}
+{"event": "START", "step": "precision", "time": 1795595610.2005684}
+${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/cuda/__init__.py:58: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+Traceback (most recent call last):
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/language/core.py", line 35, in wrapper
+    return fn(*args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/language/core.py", line 1597, in load
+    return semantic.load(pointer, mask, other, boundary_check, padding_option, cache_modifier, eviction_policy,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/language/semantic.py", line 1037, in load
+    return _load_legacy(ptr, mask, other, boundary_check, padding, cache, eviction, is_volatile, builder)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/language/semantic.py", line 989, in _load_legacy
+    mask = broadcast_impl_shape(mask, ptr.type.get_block_shapes(), builder)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/language/semantic.py", line 636, in broadcast_impl_shape
+    raise ValueError(f"Cannot broadcast, the expanded size of the tensor ({shape[i]})"
+ValueError: Cannot broadcast, the expanded size of the tensor (1) must match the existing size (32) at non-singleton dimension 0: [32, 1], [1, 128]
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "${DATA_ROOT}/jobs/bm_R13_technical_gpu1_v1.source/code/round13_precision_technical_v1.py", line 231, in <module>
+    main()
+  File "${DATA_ROOT}/jobs/bm_R13_technical_gpu1_v1.source/code/round13_precision_technical_v1.py", line 216, in main
+    'attention': [item for n in args.visual_tokens for item in attention_checks(device, n, args.legacy_a2)]}
+  File "${DATA_ROOT}/jobs/bm_R13_technical_gpu1_v1.source/code/round13_precision_technical_v1.py", line 216, in <listcomp>
+    'attention': [item for n in args.visual_tokens for item in attention_checks(device, n, args.legacy_a2)]}
+  File "${DATA_ROOT}/jobs/bm_R13_technical_gpu1_v1.source/code/round13_precision_technical_v1.py", line 172, in attention_checks
+    actual = reader(q, state, low_book, n)
+  File "${DATA_ROOT}/jobs/bm_R13_technical_gpu1_v1.source/code/round13_precision_attention_v1.py", line 121, in attention
+    _read[(triton.cdiv(n, 16), h)](q, qr, bias, state.direction_code, state.round13_high_code,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/runtime/jit.py", line 345, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/runtime/jit.py", line 662, in run
+    kernel = self.compile(
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/compiler/compiler.py", line 276, in compile
+    module = src.make_ir(options, codegen_fns, context)
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/triton/compiler/compiler.py", line 113, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns)
+triton.compiler.errors.CompilationError: at 46:20:
+                low_value = tl.load(BL + li * 4 + dims[:, None] % 4,
+                                    valid[None, :] & (~high[None, :]), 0).to(tl.float32)
+            if HN > 0:
+                hi = tl.load(KH + (owner * HN + high_rank[None, :]) * 32 + dims[:, None] // 4,
+                             valid[None, :] & high[None, :], 0).to(tl.int32)
+                high_value = tl.load(BH + hi * 4 + dims[:, None] % 4,
+                                     valid[None, :] & high[None, :], 0).to(tl.float32)
+            k = (tl.where(high[None, :], high_value, low_value) * gain[None, :]).to(tl.float16)
+            word_v = tl.load(VC + (owner * D + dims[None, :]) * (nv // 32) + offset[:, None] // 32,
+                             valid[:, None], 0)
+            code_v = (word_v >> (offset[:, None] % 32)) & 1
+            scale = tl.load(VS + owner * D + dims[None, :], valid[:, None], 0)
+                    ^

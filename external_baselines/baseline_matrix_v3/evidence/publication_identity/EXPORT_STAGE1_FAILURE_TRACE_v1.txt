@@ -1,0 +1,20 @@
+Captured stderr from actual exec session29148, export_public_round13_v1.py, failed before DELIVERY.json or any GitHub mutation.
+Traceback (most recent call last):
+  File "${PROJECT_ROOT}\ops\export_public_round13_v1.py", line 208, in <module>
+    main()
+  File "${PROJECT_ROOT}\ops\export_public_round13_v1.py", line 202, in main
+    result = export(a.scope, a.stage, a.tag,
+        semantic_verifier={'relative_path': a.semantic_file, 'function': a.semantic_function})
+  File "${PROJECT_ROOT}\ops\export_public_round13_v1.py", line 177, in export
+    cold = verify(public, archive, semantic_callback=callback)
+  File "${PROJECT_ROOT}\ops\verify_public_round13_v1.py", line 180, in verify
+    semantic = semantic_callback(scope, source, allow_fixture=allow_fixture)
+  File "${PROJECT_ROOT}\ops\round13_public_semantics_v1.py", line 478, in verify_semantics
+    admitted, totals = admit_cells(scope, source, metric, scorer)
+  File "${PROJECT_ROOT}\ops\round13_public_semantics_v1.py", line 69, in admit_cells
+    result = adapter.validate_new_cell(cell, source, metric, scorer)
+  File "${PROJECT_ROOT}\ops\round13_public_adapter_v1.py", line 422, in validate_new_cell
+    require(source.path(paths[field]).stat().st_size == item['bytes'], 'R13 readback byte count differs')
+  File "${PROJECT_ROOT}\ops\round12_public_core_v1.py", line 36, in require
+    raise ValueError('ROUND12_PUBLIC: ' + message)
+ValueError: ROUND12_PUBLIC: R13 readback byte count differs

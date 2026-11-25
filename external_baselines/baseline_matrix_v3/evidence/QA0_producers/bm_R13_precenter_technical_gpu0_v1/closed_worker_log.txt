@@ -1,0 +1,23 @@
+${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/cuda/__init__.py:58: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+ROUND13_QA0_SYNTHETIC_ONLY_ALLOCATOR_CAP_10PCT_QUALITY_TIMING_OVERLAP
+Traceback (most recent call last):
+  File "${DATA_ROOT}/jobs/bm_R13_precenter_technical_gpu0_v1.source/code/round13_precenter_technical_launch_v1.py", line 12, in <module>
+    runpy.run_path(str(Path(__file__).with_name('round13_precenter_technical_v1.py')),run_name='__main__')
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/runpy.py", line 289, in run_path
+    return _run_module_code(code, init_globals, run_name,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/runpy.py", line 96, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "${DATA_ROOT}/jobs/bm_R13_precenter_technical_gpu0_v1.source/code/round13_precenter_technical_v1.py", line 270, in <module>
+    if __name__=='__main__':main()
+  File "${DATA_ROOT}/jobs/bm_R13_precenter_technical_gpu0_v1.source/code/round13_precenter_technical_v1.py", line 259, in main
+    'checks':cuda_checks(a.legacy_a2,a.visual_tokens,torch.device(a.device))}
+  File "${DATA_DISK}/VLAtest/_runtime/user/miniconda3_20261118/envs/p72_modern_vlm/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "${DATA_ROOT}/jobs/bm_R13_precenter_technical_gpu0_v1.source/code/round13_precenter_technical_v1.py", line 221, in cuda_checks
+    require(bits_equal(deployed_s,sm) and bits_equal(deployed_b,bias),
+  File "${DATA_ROOT}/jobs/bm_R13_precenter_technical_gpu0_v1.source/code/round13_precenter_technical_v1.py", line 25, in require
+    if not value:raise ValueError('ROUND13_PRECENTER_TECHNICAL: '+message)
+ValueError: ROUND13_PRECENTER_TECHNICAL: Triton/PyTorch deployed Half mean/bias fields differ
